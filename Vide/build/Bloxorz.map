@@ -1,0 +1,2411 @@
+ASxxxx Linker V05.00,  page 1.
+Hexidecimal  [16-Bits]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.  .ABS.                   0000        0000 =           0. bytes (ABS,OVR,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          0000  l__DATA                         
+          0000  l__CODE                         
+          0000  s__DATA                         
+          0000  s__CODE                         
+          0000  l_.text.unlikely                
+          0000  .__.ABS.                           crt0.c
+          0000  s_.cartridge                    
+          0000  l_.text.hot                     
+          0016  l_.data                         
+          001A  s_.text                         
+          001A  l_.cartridge                    
+          01F0  l_.bss                          
+          340A  l_.text                         
+          3424  s_.text.unlikely                
+          3424  s_.text.hot                     
+          C880  s_.data                         
+          C896  s_.bss                          
+          F000  _free                              gcc.c
+          F000  _malloc                            gcc.c
+          F000  _abort                             gcc.c
+ASxxxx Linker V05.00,  page 2.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.cartridge                 0000        001A =          26. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          0000  _game_header                       cartridge.enr.c
+
+ASxxxx Linker V05.00,  page 3.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.text                      001A        340A =       13322. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          001A  A$crt0$17                          crt0.c
+          001D  A$crt0$18                          crt0.c
+          0021  A$crt0$19                          crt0.c
+          0025  A$crt0$20                          crt0.c
+          0029  A$crt0$21                          crt0.c
+          002D  A$crt0$22                          crt0.c
+          0030  A$crt0$23                          crt0.c
+          0032  A$crt0$25                          crt0.c
+          0034  A$crt0$26                          crt0.c
+          0036  A$crt0$27                          crt0.c
+          0038  A$crt0$28                          crt0.c
+          003A  A$crt0$30                          crt0.c
+          003E  A$crt0$31                          crt0.c
+          0041  A$crt0$32                          crt0.c
+          0043  A$crt0$34                          crt0.c
+          0045  A$crt0$35                          crt0.c
+          0047  A$crt0$36                          crt0.c
+          0049  A$crt0$38                          crt0.c
+          004C  A$crt0$39                          crt0.c
+          004D  A$crt0$40                          crt0.c
+          004F  A$crt0$41                          crt0.c
+          0052  A$crt0$43                          crt0.c
+          0055  _memcmp                            gcc.c
+          00D3  _memcpy                            gcc.c
+          0115  _memmove                           gcc.c
+          01AC  _memset                            gcc.c
+          01E6  A$bloxorz$52                       bloxorz.enr.c
+          01E6  _isField                           bloxorz.enr.c
+          01E8  A$bloxorz$53                       bloxorz.enr.c
+          01EA  A$bloxorz$54                       bloxorz.enr.c
+          01EC  A$bloxorz$55                       bloxorz.enr.c
+          01EE  A$bloxorz$56                       bloxorz.enr.c
+          01F0  A$bloxorz$57                       bloxorz.enr.c
+          01F1  A$bloxorz$58                       bloxorz.enr.c
+          01F4  A$bloxorz$59                       bloxorz.enr.c
+          01F6  A$bloxorz$60                       bloxorz.enr.c
+          01F7  A$bloxorz$61                       bloxorz.enr.c
+          01F8  A$bloxorz$62                       bloxorz.enr.c
+          01F9  A$bloxorz$63                       bloxorz.enr.c
+          01FB  A$bloxorz$64                       bloxorz.enr.c
+          01FC  A$bloxorz$66                       bloxorz.enr.c
+          01FE  A$bloxorz$67                       bloxorz.enr.c
+          01FF  A$bloxorz$70                       bloxorz.enr.c
+          01FF  _x3d                               bloxorz.enr.c
+          0201  A$bloxorz$71                       bloxorz.enr.c
+          0203  A$bloxorz$72                       bloxorz.enr.c
+          0205  A$bloxorz$81                       bloxorz.enr.c
+          0207  A$bloxorz$82                       bloxorz.enr.c
+          0209  A$bloxorz$83                       bloxorz.enr.c
+ASxxxx Linker V05.00,  page 4.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.text                      001A        340A =       13322. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          020A  A$bloxorz$84                       bloxorz.enr.c
+          020C  A$bloxorz$85                       bloxorz.enr.c
+          020E  A$bloxorz$86                       bloxorz.enr.c
+          0210  A$bloxorz$87                       bloxorz.enr.c
+          0212  A$bloxorz$88                       bloxorz.enr.c
+          0213  A$bloxorz$89                       bloxorz.enr.c
+          0215  A$bloxorz$90                       bloxorz.enr.c
+          0217  A$bloxorz$91                       bloxorz.enr.c
+          0219  A$bloxorz$92                       bloxorz.enr.c
+          021B  A$bloxorz$93                       bloxorz.enr.c
+          021D  A$bloxorz$94                       bloxorz.enr.c
+          021F  A$bloxorz$95                       bloxorz.enr.c
+          0221  A$bloxorz$96                       bloxorz.enr.c
+          0223  A$bloxorz$97                       bloxorz.enr.c
+          0225  A$bloxorz$100                      bloxorz.enr.c
+          0225  _y3d                               bloxorz.enr.c
+          0227  A$bloxorz$109                      bloxorz.enr.c
+          0229  A$bloxorz$110                      bloxorz.enr.c
+          022B  A$bloxorz$111                      bloxorz.enr.c
+          022D  A$bloxorz$112                      bloxorz.enr.c
+          022E  A$bloxorz$113                      bloxorz.enr.c
+          0230  A$bloxorz$114                      bloxorz.enr.c
+          0232  A$bloxorz$115                      bloxorz.enr.c
+          0234  A$bloxorz$116                      bloxorz.enr.c
+          0236  A$bloxorz$117                      bloxorz.enr.c
+          0238  A$bloxorz$118                      bloxorz.enr.c
+          023A  A$bloxorz$119                      bloxorz.enr.c
+          023C  A$bloxorz$120                      bloxorz.enr.c
+          023E  A$bloxorz$121                      bloxorz.enr.c
+          023F  A$bloxorz$122                      bloxorz.enr.c
+          0241  A$bloxorz$123                      bloxorz.enr.c
+          0243  A$bloxorz$124                      bloxorz.enr.c
+          0245  A$bloxorz$125                      bloxorz.enr.c
+          0247  A$bloxorz$126                      bloxorz.enr.c
+          0248  _addLine                           bloxorz.enr.c
+          0248  A$bloxorz$129                      bloxorz.enr.c
+          024A  A$bloxorz$130                      bloxorz.enr.c
+          024C  A$bloxorz$131                      bloxorz.enr.c
+          024E  A$bloxorz$137                      bloxorz.enr.c
+          0251  A$bloxorz$138                      bloxorz.enr.c
+          0253  A$bloxorz$147                      bloxorz.enr.c
+          0254  A$bloxorz$148                      bloxorz.enr.c
+          0256  A$bloxorz$149                      bloxorz.enr.c
+          0258  A$bloxorz$150                      bloxorz.enr.c
+          025A  A$bloxorz$151                      bloxorz.enr.c
+          025B  A$bloxorz$152                      bloxorz.enr.c
+          025D  A$bloxorz$153                      bloxorz.enr.c
+          025F  A$bloxorz$154                      bloxorz.enr.c
+          0261  A$bloxorz$155                      bloxorz.enr.c
+          0263  A$bloxorz$156                      bloxorz.enr.c
+ASxxxx Linker V05.00,  page 5.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.text                      001A        340A =       13322. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          0265  A$bloxorz$157                      bloxorz.enr.c
+          0266  A$bloxorz$158                      bloxorz.enr.c
+          0268  A$bloxorz$159                      bloxorz.enr.c
+          026A  A$bloxorz$160                      bloxorz.enr.c
+          026C  A$bloxorz$161                      bloxorz.enr.c
+          026E  A$bloxorz$162                      bloxorz.enr.c
+          0270  A$bloxorz$163                      bloxorz.enr.c
+          0272  A$bloxorz$164                      bloxorz.enr.c
+          0274  A$bloxorz$165                      bloxorz.enr.c
+          0276  A$bloxorz$166                      bloxorz.enr.c
+          027A  A$bloxorz$178                      bloxorz.enr.c
+          027C  A$bloxorz$179                      bloxorz.enr.c
+          027D  A$bloxorz$180                      bloxorz.enr.c
+          027F  A$bloxorz$181                      bloxorz.enr.c
+          0281  A$bloxorz$182                      bloxorz.enr.c
+          0283  A$bloxorz$183                      bloxorz.enr.c
+          0285  A$bloxorz$184                      bloxorz.enr.c
+          0287  A$bloxorz$185                      bloxorz.enr.c
+          0289  A$bloxorz$186                      bloxorz.enr.c
+          028D  A$bloxorz$198                      bloxorz.enr.c
+          028F  A$bloxorz$199                      bloxorz.enr.c
+          0291  A$bloxorz$200                      bloxorz.enr.c
+          0292  A$bloxorz$201                      bloxorz.enr.c
+          0294  A$bloxorz$202                      bloxorz.enr.c
+          0296  A$bloxorz$203                      bloxorz.enr.c
+          0298  A$bloxorz$204                      bloxorz.enr.c
+          029A  A$bloxorz$205                      bloxorz.enr.c
+          029C  A$bloxorz$206                      bloxorz.enr.c
+          029D  A$bloxorz$207                      bloxorz.enr.c
+          029F  A$bloxorz$208                      bloxorz.enr.c
+          02A1  A$bloxorz$209                      bloxorz.enr.c
+          02A3  A$bloxorz$210                      bloxorz.enr.c
+          02A5  A$bloxorz$211                      bloxorz.enr.c
+          02A7  A$bloxorz$212                      bloxorz.enr.c
+          02A9  A$bloxorz$213                      bloxorz.enr.c
+          02AB  A$bloxorz$214                      bloxorz.enr.c
+          02AD  A$bloxorz$215                      bloxorz.enr.c
+          02B1  A$bloxorz$227                      bloxorz.enr.c
+          02B3  A$bloxorz$228                      bloxorz.enr.c
+          02B4  A$bloxorz$229                      bloxorz.enr.c
+          02B6  A$bloxorz$230                      bloxorz.enr.c
+          02B8  A$bloxorz$231                      bloxorz.enr.c
+          02BA  A$bloxorz$232                      bloxorz.enr.c
+          02BC  A$bloxorz$233                      bloxorz.enr.c
+          02BE  A$bloxorz$234                      bloxorz.enr.c
+          02C0  A$bloxorz$235                      bloxorz.enr.c
+          02C4  A$bloxorz$241                      bloxorz.enr.c
+          02C6  A$bloxorz$242                      bloxorz.enr.c
+          02C7  A$bloxorz$243                      bloxorz.enr.c
+          02CA  A$bloxorz$244                      bloxorz.enr.c
+ASxxxx Linker V05.00,  page 6.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.text                      001A        340A =       13322. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          02CC  A$bloxorz$245                      bloxorz.enr.c
+          02CE  _addTarget                         bloxorz.enr.c
+          02CE  A$bloxorz$248                      bloxorz.enr.c
+          02D0  A$bloxorz$249                      bloxorz.enr.c
+          02D2  A$bloxorz$250                      bloxorz.enr.c
+          02D4  A$bloxorz$256                      bloxorz.enr.c
+          02D7  A$bloxorz$257                      bloxorz.enr.c
+          02D9  A$bloxorz$266                      bloxorz.enr.c
+          02DB  A$bloxorz$267                      bloxorz.enr.c
+          02DD  A$bloxorz$268                      bloxorz.enr.c
+          02DF  A$bloxorz$269                      bloxorz.enr.c
+          02E1  A$bloxorz$270                      bloxorz.enr.c
+          02E2  A$bloxorz$271                      bloxorz.enr.c
+          02E4  A$bloxorz$272                      bloxorz.enr.c
+          02E6  A$bloxorz$273                      bloxorz.enr.c
+          02E8  A$bloxorz$274                      bloxorz.enr.c
+          02EA  A$bloxorz$275                      bloxorz.enr.c
+          02EC  A$bloxorz$276                      bloxorz.enr.c
+          02EE  A$bloxorz$277                      bloxorz.enr.c
+          02F1  A$bloxorz$278                      bloxorz.enr.c
+          02F3  A$bloxorz$279                      bloxorz.enr.c
+          02F4  A$bloxorz$280                      bloxorz.enr.c
+          02F6  A$bloxorz$281                      bloxorz.enr.c
+          02F8  A$bloxorz$282                      bloxorz.enr.c
+          02FA  A$bloxorz$283                      bloxorz.enr.c
+          02FC  A$bloxorz$284                      bloxorz.enr.c
+          02FD  A$bloxorz$285                      bloxorz.enr.c
+          02FF  A$bloxorz$286                      bloxorz.enr.c
+          0301  A$bloxorz$287                      bloxorz.enr.c
+          0303  A$bloxorz$288                      bloxorz.enr.c
+          0307  A$bloxorz$300                      bloxorz.enr.c
+          0309  A$bloxorz$301                      bloxorz.enr.c
+          030A  A$bloxorz$302                      bloxorz.enr.c
+          030C  A$bloxorz$303                      bloxorz.enr.c
+          030E  A$bloxorz$304                      bloxorz.enr.c
+          0310  A$bloxorz$305                      bloxorz.enr.c
+          0313  A$bloxorz$306                      bloxorz.enr.c
+          0314  A$bloxorz$307                      bloxorz.enr.c
+          0315  A$bloxorz$308                      bloxorz.enr.c
+          0316  A$bloxorz$309                      bloxorz.enr.c
+          0318  A$bloxorz$310                      bloxorz.enr.c
+          031A  A$bloxorz$311                      bloxorz.enr.c
+          031E  A$bloxorz$317                      bloxorz.enr.c
+          0321  A$bloxorz$318                      bloxorz.enr.c
+          0322  A$bloxorz$319                      bloxorz.enr.c
+          0324  A$bloxorz$320                      bloxorz.enr.c
+          0326  A$bloxorz$321                      bloxorz.enr.c
+          0327  A$bloxorz$322                      bloxorz.enr.c
+          0329  A$bloxorz$331                      bloxorz.enr.c
+          032B  A$bloxorz$332                      bloxorz.enr.c
+ASxxxx Linker V05.00,  page 7.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.text                      001A        340A =       13322. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          032D  A$bloxorz$333                      bloxorz.enr.c
+          032F  A$bloxorz$334                      bloxorz.enr.c
+          0330  A$bloxorz$335                      bloxorz.enr.c
+          0332  A$bloxorz$336                      bloxorz.enr.c
+          0334  A$bloxorz$337                      bloxorz.enr.c
+          0336  A$bloxorz$338                      bloxorz.enr.c
+          0338  A$bloxorz$339                      bloxorz.enr.c
+          033A  A$bloxorz$340                      bloxorz.enr.c
+          033B  A$bloxorz$341                      bloxorz.enr.c
+          033D  A$bloxorz$342                      bloxorz.enr.c
+          033F  A$bloxorz$343                      bloxorz.enr.c
+          0341  A$bloxorz$344                      bloxorz.enr.c
+          0343  A$bloxorz$345                      bloxorz.enr.c
+          0347  A$bloxorz$357                      bloxorz.enr.c
+          0349  A$bloxorz$358                      bloxorz.enr.c
+          034A  A$bloxorz$359                      bloxorz.enr.c
+          034C  A$bloxorz$360                      bloxorz.enr.c
+          034E  A$bloxorz$361                      bloxorz.enr.c
+          0350  A$bloxorz$362                      bloxorz.enr.c
+          0352  A$bloxorz$363                      bloxorz.enr.c
+          0353  A$bloxorz$364                      bloxorz.enr.c
+          0354  A$bloxorz$365                      bloxorz.enr.c
+          0355  A$bloxorz$366                      bloxorz.enr.c
+          0357  A$bloxorz$367                      bloxorz.enr.c
+          0359  A$bloxorz$368                      bloxorz.enr.c
+          035B  A$bloxorz$369                      bloxorz.enr.c
+          035F  A$bloxorz$375                      bloxorz.enr.c
+          0361  A$bloxorz$376                      bloxorz.enr.c
+          0362  A$bloxorz$377                      bloxorz.enr.c
+          0364  A$bloxorz$389                      bloxorz.enr.c
+          0365  A$bloxorz$390                      bloxorz.enr.c
+          0367  A$bloxorz$391                      bloxorz.enr.c
+          0369  A$bloxorz$392                      bloxorz.enr.c
+          036B  A$bloxorz$393                      bloxorz.enr.c
+          036F  A$bloxorz$405                      bloxorz.enr.c
+          0371  A$bloxorz$406                      bloxorz.enr.c
+          0373  A$bloxorz$407                      bloxorz.enr.c
+          0377  A$bloxorz$419                      bloxorz.enr.c
+          0379  A$bloxorz$420                      bloxorz.enr.c
+          037B  A$bloxorz$421                      bloxorz.enr.c
+          037F  A$bloxorz$433                      bloxorz.enr.c
+          0381  A$bloxorz$434                      bloxorz.enr.c
+          0383  A$bloxorz$435                      bloxorz.enr.c
+          0387  A$bloxorz$441                      bloxorz.enr.c
+          0389  A$bloxorz$442                      bloxorz.enr.c
+          038A  A$bloxorz$443                      bloxorz.enr.c
+          038D  A$bloxorz$444                      bloxorz.enr.c
+          038F  A$bloxorz$445                      bloxorz.enr.c
+          0391  _changeMusic                       bloxorz.enr.c
+          0391  A$bloxorz$453                      bloxorz.enr.c
+ASxxxx Linker V05.00,  page 8.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.text                      001A        340A =       13322. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          0393  A$bloxorz$454                      bloxorz.enr.c
+          0396  A$bloxorz$460                      bloxorz.enr.c
+          0399  A$bloxorz$461                      bloxorz.enr.c
+          039A  _moveBlock                         bloxorz.enr.c
+          039A  A$bloxorz$464                      bloxorz.enr.c
+          039C  A$bloxorz$470                      bloxorz.enr.c
+          039E  A$bloxorz$471                      bloxorz.enr.c
+          03A1  A$bloxorz$477                      bloxorz.enr.c
+          03A3  A$bloxorz$478                      bloxorz.enr.c
+          03A6  A$bloxorz$484                      bloxorz.enr.c
+          03A9  A$bloxorz$485                      bloxorz.enr.c
+          03AB  A$bloxorz$486                      bloxorz.enr.c
+          03AF  A$bloxorz$487                      bloxorz.enr.c
+          03B1  A$bloxorz$488                      bloxorz.enr.c
+          03B3  A$bloxorz$489                      bloxorz.enr.c
+          03B7  A$bloxorz$490                      bloxorz.enr.c
+          03B9  A$bloxorz$491                      bloxorz.enr.c
+          03BA  A$bloxorz$498                      bloxorz.enr.c
+          03BC  A$bloxorz$499                      bloxorz.enr.c
+          03BE  A$bloxorz$500                      bloxorz.enr.c
+          03C2  A$bloxorz$501                      bloxorz.enr.c
+          03C6  A$bloxorz$507                      bloxorz.enr.c
+          03C9  A$bloxorz$508                      bloxorz.enr.c
+          03CC  A$bloxorz$514                      bloxorz.enr.c
+          03CF  A$bloxorz$515                      bloxorz.enr.c
+          03D2  A$bloxorz$521                      bloxorz.enr.c
+          03D5  A$bloxorz$522                      bloxorz.enr.c
+          03D7  A$bloxorz$523                      bloxorz.enr.c
+          03DA  A$bloxorz$529                      bloxorz.enr.c
+          03DD  A$bloxorz$530                      bloxorz.enr.c
+          03E0  A$bloxorz$536                      bloxorz.enr.c
+          03E2  A$bloxorz$537                      bloxorz.enr.c
+          03E5  A$bloxorz$549                      bloxorz.enr.c
+          03E7  A$bloxorz$550                      bloxorz.enr.c
+          03E8  A$bloxorz$557                      bloxorz.enr.c
+          03EA  A$bloxorz$558                      bloxorz.enr.c
+          03EC  A$bloxorz$559                      bloxorz.enr.c
+          03F0  A$bloxorz$560                      bloxorz.enr.c
+          03F4  A$bloxorz$566                      bloxorz.enr.c
+          03F7  A$bloxorz$567                      bloxorz.enr.c
+          03FA  A$bloxorz$573                      bloxorz.enr.c
+          03FD  A$bloxorz$579                      bloxorz.enr.c
+          0400  A$bloxorz$580                      bloxorz.enr.c
+          0401  A$bloxorz$581                      bloxorz.enr.c
+          0404  A$bloxorz$587                      bloxorz.enr.c
+          0407  A$bloxorz$588                      bloxorz.enr.c
+          040A  A$bloxorz$600                      bloxorz.enr.c
+          040C  A$bloxorz$601                      bloxorz.enr.c
+          040D  A$bloxorz$608                      bloxorz.enr.c
+          040F  A$bloxorz$609                      bloxorz.enr.c
+ASxxxx Linker V05.00,  page 9.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.text                      001A        340A =       13322. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          0411  A$bloxorz$610                      bloxorz.enr.c
+          0415  A$bloxorz$611                      bloxorz.enr.c
+          0419  A$bloxorz$617                      bloxorz.enr.c
+          041C  A$bloxorz$618                      bloxorz.enr.c
+          041F  A$bloxorz$624                      bloxorz.enr.c
+          0422  A$bloxorz$625                      bloxorz.enr.c
+          0425  A$bloxorz$631                      bloxorz.enr.c
+          0428  A$bloxorz$632                      bloxorz.enr.c
+          0429  A$bloxorz$633                      bloxorz.enr.c
+          042C  A$bloxorz$639                      bloxorz.enr.c
+          042F  A$bloxorz$640                      bloxorz.enr.c
+          0432  A$bloxorz$646                      bloxorz.enr.c
+          0435  A$bloxorz$658                      bloxorz.enr.c
+          0437  A$bloxorz$659                      bloxorz.enr.c
+          0438  A$bloxorz$666                      bloxorz.enr.c
+          043B  A$bloxorz$667                      bloxorz.enr.c
+          043E  A$bloxorz$673                      bloxorz.enr.c
+          0441  A$bloxorz$679                      bloxorz.enr.c
+          0444  A$bloxorz$680                      bloxorz.enr.c
+          0447  A$bloxorz$686                      bloxorz.enr.c
+          044A  A$bloxorz$687                      bloxorz.enr.c
+          044B  A$bloxorz$688                      bloxorz.enr.c
+          044E  A$bloxorz$694                      bloxorz.enr.c
+          0450  A$bloxorz$701                      bloxorz.enr.c
+          0453  A$bloxorz$702                      bloxorz.enr.c
+          0456  A$bloxorz$708                      bloxorz.enr.c
+          0459  A$bloxorz$709                      bloxorz.enr.c
+          045C  A$bloxorz$715                      bloxorz.enr.c
+          045F  A$bloxorz$716                      bloxorz.enr.c
+          0462  A$bloxorz$722                      bloxorz.enr.c
+          0465  A$bloxorz$723                      bloxorz.enr.c
+          0467  A$bloxorz$724                      bloxorz.enr.c
+          046A  A$bloxorz$730                      bloxorz.enr.c
+          046D  A$bloxorz$736                      bloxorz.enr.c
+          0470  A$bloxorz$743                      bloxorz.enr.c
+          0473  A$bloxorz$744                      bloxorz.enr.c
+          0476  A$bloxorz$750                      bloxorz.enr.c
+          0479  A$bloxorz$751                      bloxorz.enr.c
+          047C  A$bloxorz$757                      bloxorz.enr.c
+          047F  A$bloxorz$758                      bloxorz.enr.c
+          0482  A$bloxorz$764                      bloxorz.enr.c
+          0485  A$bloxorz$765                      bloxorz.enr.c
+          0486  A$bloxorz$766                      bloxorz.enr.c
+          0489  A$bloxorz$772                      bloxorz.enr.c
+          048B  A$bloxorz$773                      bloxorz.enr.c
+          048E  A$bloxorz$779                      bloxorz.enr.c
+          0491  A$bloxorz$781                      bloxorz.enr.c
+          0493  A$bloxorz$782                      bloxorz.enr.c
+          0497  A$bloxorz$783                      bloxorz.enr.c
+          0499  A$bloxorz$784                      bloxorz.enr.c
+ASxxxx Linker V05.00,  page 10.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.text                      001A        340A =       13322. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          049D  A$bloxorz$790                      bloxorz.enr.c
+          04A0  A$bloxorz$791                      bloxorz.enr.c
+          04A3  A$bloxorz$797                      bloxorz.enr.c
+          04A6  A$bloxorz$798                      bloxorz.enr.c
+          04A9  A$bloxorz$804                      bloxorz.enr.c
+          04AC  A$bloxorz$805                      bloxorz.enr.c
+          04AF  A$bloxorz$811                      bloxorz.enr.c
+          04B2  A$bloxorz$812                      bloxorz.enr.c
+          04B3  A$bloxorz$813                      bloxorz.enr.c
+          04B6  A$bloxorz$819                      bloxorz.enr.c
+          04B9  A$bloxorz$825                      bloxorz.enr.c
+          04BC  A$bloxorz$827                      bloxorz.enr.c
+          04BE  A$bloxorz$828                      bloxorz.enr.c
+          04C2  A$bloxorz$829                      bloxorz.enr.c
+          04C4  A$bloxorz$830                      bloxorz.enr.c
+          04C8  A$bloxorz$836                      bloxorz.enr.c
+          04CB  A$bloxorz$837                      bloxorz.enr.c
+          04CE  A$bloxorz$843                      bloxorz.enr.c
+          04D1  A$bloxorz$844                      bloxorz.enr.c
+          04D4  A$bloxorz$850                      bloxorz.enr.c
+          04D7  A$bloxorz$851                      bloxorz.enr.c
+          04DA  A$bloxorz$857                      bloxorz.enr.c
+          04DD  A$bloxorz$858                      bloxorz.enr.c
+          04DF  A$bloxorz$859                      bloxorz.enr.c
+          04E2  A$bloxorz$865                      bloxorz.enr.c
+          04E4  A$bloxorz$866                      bloxorz.enr.c
+          04E7  A$bloxorz$872                      bloxorz.enr.c
+          04EA  A$bloxorz$874                      bloxorz.enr.c
+          04EC  A$bloxorz$875                      bloxorz.enr.c
+          04EE  A$bloxorz$876                      bloxorz.enr.c
+          04F0  A$bloxorz$877                      bloxorz.enr.c
+          04F4  A$bloxorz$883                      bloxorz.enr.c
+          04F7  A$bloxorz$884                      bloxorz.enr.c
+          04FA  A$bloxorz$890                      bloxorz.enr.c
+          04FD  A$bloxorz$891                      bloxorz.enr.c
+          0500  A$bloxorz$897                      bloxorz.enr.c
+          0503  A$bloxorz$898                      bloxorz.enr.c
+          0506  A$bloxorz$904                      bloxorz.enr.c
+          0509  A$bloxorz$905                      bloxorz.enr.c
+          050A  A$bloxorz$906                      bloxorz.enr.c
+          050D  A$bloxorz$912                      bloxorz.enr.c
+          0510  A$bloxorz$919                      bloxorz.enr.c
+          0513  A$bloxorz$920                      bloxorz.enr.c
+          0516  A$bloxorz$926                      bloxorz.enr.c
+          0519  A$bloxorz$927                      bloxorz.enr.c
+          051C  A$bloxorz$933                      bloxorz.enr.c
+          051F  A$bloxorz$934                      bloxorz.enr.c
+          0521  A$bloxorz$935                      bloxorz.enr.c
+          0524  A$bloxorz$941                      bloxorz.enr.c
+          0527  A$bloxorz$942                      bloxorz.enr.c
+ASxxxx Linker V05.00,  page 11.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.text                      001A        340A =       13322. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          052A  A$bloxorz$948                      bloxorz.enr.c
+          052D  A$bloxorz$954                      bloxorz.enr.c
+          0530  A$bloxorz$961                      bloxorz.enr.c
+          0533  A$bloxorz$962                      bloxorz.enr.c
+          0536  A$bloxorz$968                      bloxorz.enr.c
+          0539  A$bloxorz$969                      bloxorz.enr.c
+          053C  A$bloxorz$975                      bloxorz.enr.c
+          053F  A$bloxorz$976                      bloxorz.enr.c
+          0540  A$bloxorz$977                      bloxorz.enr.c
+          0543  A$bloxorz$983                      bloxorz.enr.c
+          0546  A$bloxorz$984                      bloxorz.enr.c
+          0549  A$bloxorz$990                      bloxorz.enr.c
+          054B  A$bloxorz$991                      bloxorz.enr.c
+          054E  A$bloxorz$997                      bloxorz.enr.c
+          0551  A$bloxorz$1004                     bloxorz.enr.c
+          0554  A$bloxorz$1005                     bloxorz.enr.c
+          0557  A$bloxorz$1011                     bloxorz.enr.c
+          055A  A$bloxorz$1012                     bloxorz.enr.c
+          055D  A$bloxorz$1018                     bloxorz.enr.c
+          0560  A$bloxorz$1019                     bloxorz.enr.c
+          0561  A$bloxorz$1020                     bloxorz.enr.c
+          0564  A$bloxorz$1026                     bloxorz.enr.c
+          0567  A$bloxorz$1027                     bloxorz.enr.c
+          056A  A$bloxorz$1033                     bloxorz.enr.c
+          056D  A$bloxorz$1041                     bloxorz.enr.c
+          056D  _startBlockFalling                 bloxorz.enr.c
+          056F  A$bloxorz$1042                     bloxorz.enr.c
+          0572  A$bloxorz$1048                     bloxorz.enr.c
+          0575  A$bloxorz$1054                     bloxorz.enr.c
+          0578  A$bloxorz$1055                     bloxorz.enr.c
+          057B  A$bloxorz$1064                     bloxorz.enr.c
+          057D  A$bloxorz$1065                     bloxorz.enr.c
+          0580  A$bloxorz$1071                     bloxorz.enr.c
+          0583  A$bloxorz$1072                     bloxorz.enr.c
+          0586  A$bloxorz$1073                     bloxorz.enr.c
+          0587  A$bloxorz$1081                     bloxorz.enr.c
+          0587  _drawField                         bloxorz.enr.c
+          0589  A$bloxorz$1084                     bloxorz.enr.c
+          058B  A$bloxorz$1085                     bloxorz.enr.c
+          058E  A$bloxorz$1089                     bloxorz.enr.c
+          0590  A$bloxorz$1092                     bloxorz.enr.c
+          0592  A$bloxorz$1095                     bloxorz.enr.c
+          0594  A$bloxorz$1098                     bloxorz.enr.c
+          0597  A$bloxorz$1101                     bloxorz.enr.c
+          059A  A$bloxorz$1107                     bloxorz.enr.c
+          059C  A$bloxorz$1110                     bloxorz.enr.c
+          059E  A$bloxorz$1113                     bloxorz.enr.c
+          05A1  A$bloxorz$1116                     bloxorz.enr.c
+          05A3  A$bloxorz$1119                     bloxorz.enr.c
+          05A7  A$bloxorz$1122                     bloxorz.enr.c
+ASxxxx Linker V05.00,  page 12.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.text                      001A        340A =       13322. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          05AB  A$bloxorz$1125                     bloxorz.enr.c
+          05AD  A$bloxorz$1128                     bloxorz.enr.c
+          05B0  A$bloxorz$1131                     bloxorz.enr.c
+          05B2  A$bloxorz$1134                     bloxorz.enr.c
+          05B6  A$bloxorz$1137                     bloxorz.enr.c
+          05BA  A$bloxorz$1140                     bloxorz.enr.c
+          05BE  A$bloxorz$1143                     bloxorz.enr.c
+          05C2  A$bloxorz$1146                     bloxorz.enr.c
+          05C4  A$bloxorz$1149                     bloxorz.enr.c
+          05C7  A$bloxorz$1152                     bloxorz.enr.c
+          05C9  A$bloxorz$1155                     bloxorz.enr.c
+          05CB  A$bloxorz$1158                     bloxorz.enr.c
+          05CD  A$bloxorz$1161                     bloxorz.enr.c
+          05CE  A$bloxorz$1164                     bloxorz.enr.c
+          05D0  A$bloxorz$1167                     bloxorz.enr.c
+          05D2  A$bloxorz$1170                     bloxorz.enr.c
+          05D3  A$bloxorz$1173                     bloxorz.enr.c
+          05D3  _drawBlock                         bloxorz.enr.c
+          05D5  A$bloxorz$1174                     bloxorz.enr.c
+          05D7  A$bloxorz$1175                     bloxorz.enr.c
+          05D9  A$bloxorz$1181                     bloxorz.enr.c
+          05DC  A$bloxorz$1188                     bloxorz.enr.c
+          05DE  A$bloxorz$1191                     bloxorz.enr.c
+          05E0  A$bloxorz$1192                     bloxorz.enr.c
+          05E3  A$bloxorz$1202                     bloxorz.enr.c
+          05E5  A$bloxorz$1203                     bloxorz.enr.c
+          05E7  A$bloxorz$1204                     bloxorz.enr.c
+          05E9  A$bloxorz$1207                     bloxorz.enr.c
+          05EB  A$bloxorz$1208                     bloxorz.enr.c
+          05ED  A$bloxorz$1209                     bloxorz.enr.c
+          05F0  A$bloxorz$1216                     bloxorz.enr.c
+          05F3  A$bloxorz$1217                     bloxorz.enr.c
+          05F5  A$bloxorz$1226                     bloxorz.enr.c
+          05F6  A$bloxorz$1227                     bloxorz.enr.c
+          05F8  A$bloxorz$1228                     bloxorz.enr.c
+          05FA  A$bloxorz$1229                     bloxorz.enr.c
+          05FD  A$bloxorz$1230                     bloxorz.enr.c
+          05FE  A$bloxorz$1231                     bloxorz.enr.c
+          05FF  A$bloxorz$1232                     bloxorz.enr.c
+          0600  A$bloxorz$1233                     bloxorz.enr.c
+          0602  A$bloxorz$1234                     bloxorz.enr.c
+          0604  A$bloxorz$1235                     bloxorz.enr.c
+          0606  A$bloxorz$1244                     bloxorz.enr.c
+          0608  A$bloxorz$1245                     bloxorz.enr.c
+          060A  A$bloxorz$1246                     bloxorz.enr.c
+          060C  A$bloxorz$1247                     bloxorz.enr.c
+          060D  A$bloxorz$1248                     bloxorz.enr.c
+          060F  A$bloxorz$1249                     bloxorz.enr.c
+          0612  A$bloxorz$1250                     bloxorz.enr.c
+          0614  A$bloxorz$1251                     bloxorz.enr.c
+ASxxxx Linker V05.00,  page 13.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.text                      001A        340A =       13322. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          0615  A$bloxorz$1252                     bloxorz.enr.c
+          0617  A$bloxorz$1253                     bloxorz.enr.c
+          0619  A$bloxorz$1254                     bloxorz.enr.c
+          061B  A$bloxorz$1255                     bloxorz.enr.c
+          061D  A$bloxorz$1256                     bloxorz.enr.c
+          061F  A$bloxorz$1257                     bloxorz.enr.c
+          0621  A$bloxorz$1263                     bloxorz.enr.c
+          0623  A$bloxorz$1264                     bloxorz.enr.c
+          0625  A$bloxorz$1265                     bloxorz.enr.c
+          0627  A$bloxorz$1266                     bloxorz.enr.c
+          0629  A$bloxorz$1269                     bloxorz.enr.c
+          062B  A$bloxorz$1270                     bloxorz.enr.c
+          062D  A$bloxorz$1271                     bloxorz.enr.c
+          0630  A$bloxorz$1278                     bloxorz.enr.c
+          0633  A$bloxorz$1279                     bloxorz.enr.c
+          0634  A$bloxorz$1280                     bloxorz.enr.c
+          0636  A$bloxorz$1281                     bloxorz.enr.c
+          0637  A$bloxorz$1282                     bloxorz.enr.c
+          0638  A$bloxorz$1283                     bloxorz.enr.c
+          063B  A$bloxorz$1284                     bloxorz.enr.c
+          063D  A$bloxorz$1285                     bloxorz.enr.c
+          063F  A$bloxorz$1288                     bloxorz.enr.c
+          0642  A$bloxorz$1292                     bloxorz.enr.c
+          0644  A$bloxorz$1293                     bloxorz.enr.c
+          0646  A$bloxorz$1301                     bloxorz.enr.c
+          0646  _doBlockAnimation                  bloxorz.enr.c
+          0649  A$bloxorz$1302                     bloxorz.enr.c
+          064B  A$bloxorz$1308                     bloxorz.enr.c
+          064E  A$bloxorz$1309                     bloxorz.enr.c
+          0651  A$bloxorz$1310                     bloxorz.enr.c
+          0653  A$bloxorz$1311                     bloxorz.enr.c
+          0655  A$bloxorz$1313                     bloxorz.enr.c
+          0656  A$bloxorz$1320                     bloxorz.enr.c
+          0659  A$bloxorz$1321                     bloxorz.enr.c
+          065C  A$bloxorz$1327                     bloxorz.enr.c
+          065F  A$bloxorz$1328                     bloxorz.enr.c
+          0662  A$bloxorz$1334                     bloxorz.enr.c
+          0665  A$bloxorz$1340                     bloxorz.enr.c
+          0668  A$bloxorz$1341                     bloxorz.enr.c
+          066B  A$bloxorz$1347                     bloxorz.enr.c
+          066E  A$bloxorz$1348                     bloxorz.enr.c
+          066F  A$bloxorz$1351                     bloxorz.enr.c
+          066F  _setupY                            bloxorz.enr.c
+          0671  A$bloxorz$1352                     bloxorz.enr.c
+          0673  A$bloxorz$1367                     bloxorz.enr.c
+          0676  A$bloxorz$1368                     bloxorz.enr.c
+          0678  A$bloxorz$1369                     bloxorz.enr.c
+          067A  A$bloxorz$1370                     bloxorz.enr.c
+          067C  A$bloxorz$1371                     bloxorz.enr.c
+          067E  A$bloxorz$1384                     bloxorz.enr.c
+ASxxxx Linker V05.00,  page 14.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.text                      001A        340A =       13322. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          0680  A$bloxorz$1385                     bloxorz.enr.c
+          0682  A$bloxorz$1386                     bloxorz.enr.c
+          0684  A$bloxorz$1387                     bloxorz.enr.c
+          0685  A$bloxorz$1388                     bloxorz.enr.c
+          0687  A$bloxorz$1389                     bloxorz.enr.c
+          0689  A$bloxorz$1390                     bloxorz.enr.c
+          068B  A$bloxorz$1391                     bloxorz.enr.c
+          068D  A$bloxorz$1392                     bloxorz.enr.c
+          068F  A$bloxorz$1393                     bloxorz.enr.c
+          0691  A$bloxorz$1394                     bloxorz.enr.c
+          0693  A$bloxorz$1395                     bloxorz.enr.c
+          0695  A$bloxorz$1396                     bloxorz.enr.c
+          0697  A$bloxorz$1397                     bloxorz.enr.c
+          0699  A$bloxorz$1398                     bloxorz.enr.c
+          069A  A$bloxorz$1399                     bloxorz.enr.c
+          069C  A$bloxorz$1400                     bloxorz.enr.c
+          069E  A$bloxorz$1401                     bloxorz.enr.c
+          06A0  A$bloxorz$1402                     bloxorz.enr.c
+          06A2  A$bloxorz$1403                     bloxorz.enr.c
+          06A4  A$bloxorz$1404                     bloxorz.enr.c
+          06A6  A$bloxorz$1405                     bloxorz.enr.c
+          06A8  A$bloxorz$1406                     bloxorz.enr.c
+          06AA  A$bloxorz$1407                     bloxorz.enr.c
+          06AD  A$bloxorz$1409                     bloxorz.enr.c
+          06AF  A$bloxorz$1410                     bloxorz.enr.c
+          06B3  A$bloxorz$1411                     bloxorz.enr.c
+          06B5  A$bloxorz$1412                     bloxorz.enr.c
+          06B9  A$bloxorz$1418                     bloxorz.enr.c
+          06BB  A$bloxorz$1419                     bloxorz.enr.c
+          06BD  A$bloxorz$1420                     bloxorz.enr.c
+          06C1  A$bloxorz$1421                     bloxorz.enr.c
+          06C3  A$bloxorz$1422                     bloxorz.enr.c
+          06C7  A$bloxorz$1423                     bloxorz.enr.c
+          06C9  A$bloxorz$1424                     bloxorz.enr.c
+          06CD  A$bloxorz$1430                     bloxorz.enr.c
+          06CF  A$bloxorz$1431                     bloxorz.enr.c
+          06D1  A$bloxorz$1432                     bloxorz.enr.c
+          06D5  A$bloxorz$1438                     bloxorz.enr.c
+          06D7  A$bloxorz$1439                     bloxorz.enr.c
+          06D8  A$bloxorz$1440                     bloxorz.enr.c
+          06DA  A$bloxorz$1446                     bloxorz.enr.c
+          06DD  A$bloxorz$1447                     bloxorz.enr.c
+          06DF  A$bloxorz$1456                     bloxorz.enr.c
+          06E0  A$bloxorz$1457                     bloxorz.enr.c
+          06E2  A$bloxorz$1458                     bloxorz.enr.c
+          06E4  A$bloxorz$1459                     bloxorz.enr.c
+          06E6  A$bloxorz$1460                     bloxorz.enr.c
+          06E7  A$bloxorz$1462                     bloxorz.enr.c
+          06E9  A$bloxorz$1463                     bloxorz.enr.c
+          06ED  A$bloxorz$1475                     bloxorz.enr.c
+ASxxxx Linker V05.00,  page 15.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.text                      001A        340A =       13322. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          06EF  A$bloxorz$1476                     bloxorz.enr.c
+          06F1  A$bloxorz$1477                     bloxorz.enr.c
+          06F3  A$bloxorz$1478                     bloxorz.enr.c
+          06F5  A$bloxorz$1479                     bloxorz.enr.c
+          06F7  A$bloxorz$1480                     bloxorz.enr.c
+          06FB  A$bloxorz$1492                     bloxorz.enr.c
+          06FD  A$bloxorz$1493                     bloxorz.enr.c
+          06FF  A$bloxorz$1494                     bloxorz.enr.c
+          0700  A$bloxorz$1495                     bloxorz.enr.c
+          0702  A$bloxorz$1497                     bloxorz.enr.c
+          0704  A$bloxorz$1498                     bloxorz.enr.c
+          0708  A$bloxorz$1510                     bloxorz.enr.c
+          070A  A$bloxorz$1511                     bloxorz.enr.c
+          070C  A$bloxorz$1512                     bloxorz.enr.c
+          070E  A$bloxorz$1513                     bloxorz.enr.c
+          0710  A$bloxorz$1514                     bloxorz.enr.c
+          0712  A$bloxorz$1515                     bloxorz.enr.c
+          0716  A$bloxorz$1521                     bloxorz.enr.c
+          0718  A$bloxorz$1522                     bloxorz.enr.c
+          0719  A$bloxorz$1523                     bloxorz.enr.c
+          071C  A$bloxorz$1529                     bloxorz.enr.c
+          071E  A$bloxorz$1530                     bloxorz.enr.c
+          0720  A$bloxorz$1532                     bloxorz.enr.c
+          0722  A$bloxorz$1533                     bloxorz.enr.c
+          0724  A$bloxorz$1534                     bloxorz.enr.c
+          0726  A$bloxorz$1535                     bloxorz.enr.c
+          0728  A$bloxorz$1536                     bloxorz.enr.c
+          072C  A$bloxorz$1546                     bloxorz.enr.c
+          072E  A$bloxorz$1547                     bloxorz.enr.c
+          0730  A$bloxorz$1553                     bloxorz.enr.c
+          0732  A$bloxorz$1554                     bloxorz.enr.c
+          0734  A$bloxorz$1563                     bloxorz.enr.c
+          0736  A$bloxorz$1564                     bloxorz.enr.c
+          0738  A$bloxorz$1565                     bloxorz.enr.c
+          073C  A$bloxorz$1572                     bloxorz.enr.c
+          073E  A$bloxorz$1573                     bloxorz.enr.c
+          0740  A$bloxorz$1574                     bloxorz.enr.c
+          0742  A$bloxorz$1581                     bloxorz.enr.c
+          0744  A$bloxorz$1582                     bloxorz.enr.c
+          0746  A$bloxorz$1583                     bloxorz.enr.c
+          0748  A$bloxorz$1584                     bloxorz.enr.c
+          074A  A$bloxorz$1585                     bloxorz.enr.c
+          074C  A$bloxorz$1586                     bloxorz.enr.c
+          074E  A$bloxorz$1587                     bloxorz.enr.c
+          0752  A$bloxorz$1589                     bloxorz.enr.c
+          0754  A$bloxorz$1590                     bloxorz.enr.c
+          0756  A$bloxorz$1591                     bloxorz.enr.c
+          0758  A$bloxorz$1592                     bloxorz.enr.c
+          075A  A$bloxorz$1593                     bloxorz.enr.c
+          075C  A$bloxorz$1594                     bloxorz.enr.c
+ASxxxx Linker V05.00,  page 16.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.text                      001A        340A =       13322. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          0760  A$bloxorz$1595                     bloxorz.enr.c
+          0762  A$bloxorz$1596                     bloxorz.enr.c
+          0764  A$bloxorz$1598                     bloxorz.enr.c
+          0766  A$bloxorz$1599                     bloxorz.enr.c
+          0768  A$bloxorz$1600                     bloxorz.enr.c
+          076A  A$bloxorz$1603                     bloxorz.enr.c
+          076A  _setupX                            bloxorz.enr.c
+          076C  A$bloxorz$1604                     bloxorz.enr.c
+          076F  A$bloxorz$1619                     bloxorz.enr.c
+          0772  A$bloxorz$1620                     bloxorz.enr.c
+          0775  A$bloxorz$1621                     bloxorz.enr.c
+          0777  A$bloxorz$1622                     bloxorz.enr.c
+          077A  A$bloxorz$1635                     bloxorz.enr.c
+          077D  A$bloxorz$1636                     bloxorz.enr.c
+          077F  A$bloxorz$1637                     bloxorz.enr.c
+          0781  A$bloxorz$1638                     bloxorz.enr.c
+          0783  A$bloxorz$1639                     bloxorz.enr.c
+          0785  A$bloxorz$1640                     bloxorz.enr.c
+          0787  A$bloxorz$1641                     bloxorz.enr.c
+          0788  A$bloxorz$1642                     bloxorz.enr.c
+          0789  A$bloxorz$1643                     bloxorz.enr.c
+          078A  A$bloxorz$1644                     bloxorz.enr.c
+          078C  A$bloxorz$1645                     bloxorz.enr.c
+          078E  A$bloxorz$1646                     bloxorz.enr.c
+          0790  A$bloxorz$1647                     bloxorz.enr.c
+          0792  A$bloxorz$1648                     bloxorz.enr.c
+          0795  A$bloxorz$1649                     bloxorz.enr.c
+          0797  A$bloxorz$1650                     bloxorz.enr.c
+          079A  A$bloxorz$1651                     bloxorz.enr.c
+          079E  A$bloxorz$1652                     bloxorz.enr.c
+          07A0  A$bloxorz$1653                     bloxorz.enr.c
+          07A2  A$bloxorz$1654                     bloxorz.enr.c
+          07A4  A$bloxorz$1655                     bloxorz.enr.c
+          07A7  A$bloxorz$1656                     bloxorz.enr.c
+          07A9  A$bloxorz$1657                     bloxorz.enr.c
+          07AA  A$bloxorz$1658                     bloxorz.enr.c
+          07AC  A$bloxorz$1659                     bloxorz.enr.c
+          07AF  A$bloxorz$1669                     bloxorz.enr.c
+          07B1  A$bloxorz$1670                     bloxorz.enr.c
+          07B3  A$bloxorz$1679                     bloxorz.enr.c
+          07B5  A$bloxorz$1680                     bloxorz.enr.c
+          07B7  A$bloxorz$1681                     bloxorz.enr.c
+          07BB  A$bloxorz$1682                     bloxorz.enr.c
+          07BD  A$bloxorz$1683                     bloxorz.enr.c
+          07C1  A$bloxorz$1684                     bloxorz.enr.c
+          07C3  A$bloxorz$1685                     bloxorz.enr.c
+          07C7  A$bloxorz$1691                     bloxorz.enr.c
+          07C9  A$bloxorz$1692                     bloxorz.enr.c
+          07CB  A$bloxorz$1693                     bloxorz.enr.c
+          07CF  A$bloxorz$1694                     bloxorz.enr.c
+ASxxxx Linker V05.00,  page 17.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.text                      001A        340A =       13322. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          07D1  A$bloxorz$1695                     bloxorz.enr.c
+          07D5  A$bloxorz$1696                     bloxorz.enr.c
+          07D7  A$bloxorz$1697                     bloxorz.enr.c
+          07DB  A$bloxorz$1703                     bloxorz.enr.c
+          07DD  A$bloxorz$1704                     bloxorz.enr.c
+          07DF  A$bloxorz$1705                     bloxorz.enr.c
+          07E3  A$bloxorz$1711                     bloxorz.enr.c
+          07E5  A$bloxorz$1712                     bloxorz.enr.c
+          07E6  A$bloxorz$1713                     bloxorz.enr.c
+          07E8  A$bloxorz$1719                     bloxorz.enr.c
+          07EB  A$bloxorz$1720                     bloxorz.enr.c
+          07ED  A$bloxorz$1729                     bloxorz.enr.c
+          07EE  A$bloxorz$1730                     bloxorz.enr.c
+          07F0  A$bloxorz$1731                     bloxorz.enr.c
+          07F2  A$bloxorz$1732                     bloxorz.enr.c
+          07F4  A$bloxorz$1733                     bloxorz.enr.c
+          07F6  A$bloxorz$1734                     bloxorz.enr.c
+          07F8  A$bloxorz$1735                     bloxorz.enr.c
+          07F9  A$bloxorz$1736                     bloxorz.enr.c
+          07FB  A$bloxorz$1737                     bloxorz.enr.c
+          07FD  A$bloxorz$1738                     bloxorz.enr.c
+          07FF  A$bloxorz$1739                     bloxorz.enr.c
+          0801  A$bloxorz$1740                     bloxorz.enr.c
+          0803  A$bloxorz$1741                     bloxorz.enr.c
+          0805  A$bloxorz$1742                     bloxorz.enr.c
+          0809  A$bloxorz$1754                     bloxorz.enr.c
+          080B  A$bloxorz$1755                     bloxorz.enr.c
+          080C  A$bloxorz$1756                     bloxorz.enr.c
+          080E  A$bloxorz$1757                     bloxorz.enr.c
+          0810  A$bloxorz$1758                     bloxorz.enr.c
+          0814  A$bloxorz$1770                     bloxorz.enr.c
+          0816  A$bloxorz$1771                     bloxorz.enr.c
+          0818  A$bloxorz$1772                     bloxorz.enr.c
+          081A  A$bloxorz$1773                     bloxorz.enr.c
+          081B  A$bloxorz$1774                     bloxorz.enr.c
+          081D  A$bloxorz$1775                     bloxorz.enr.c
+          081F  A$bloxorz$1777                     bloxorz.enr.c
+          0821  A$bloxorz$1778                     bloxorz.enr.c
+          0825  A$bloxorz$1790                     bloxorz.enr.c
+          0827  A$bloxorz$1791                     bloxorz.enr.c
+          0828  A$bloxorz$1792                     bloxorz.enr.c
+          082A  A$bloxorz$1793                     bloxorz.enr.c
+          082C  A$bloxorz$1794                     bloxorz.enr.c
+          0830  A$bloxorz$1800                     bloxorz.enr.c
+          0832  A$bloxorz$1801                     bloxorz.enr.c
+          0833  A$bloxorz$1802                     bloxorz.enr.c
+          0836  A$bloxorz$1808                     bloxorz.enr.c
+          0838  A$bloxorz$1809                     bloxorz.enr.c
+          083A  A$bloxorz$1811                     bloxorz.enr.c
+          083C  A$bloxorz$1812                     bloxorz.enr.c
+ASxxxx Linker V05.00,  page 18.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.text                      001A        340A =       13322. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          083E  A$bloxorz$1813                     bloxorz.enr.c
+          0841  A$bloxorz$1814                     bloxorz.enr.c
+          0843  A$bloxorz$1815                     bloxorz.enr.c
+          0846  A$bloxorz$1816                     bloxorz.enr.c
+          084A  A$bloxorz$1817                     bloxorz.enr.c
+          084E  A$bloxorz$1819                     bloxorz.enr.c
+          0850  A$bloxorz$1820                     bloxorz.enr.c
+          0852  A$bloxorz$1829                     bloxorz.enr.c
+          0854  A$bloxorz$1830                     bloxorz.enr.c
+          0856  A$bloxorz$1836                     bloxorz.enr.c
+          0858  A$bloxorz$1837                     bloxorz.enr.c
+          085A  A$bloxorz$1844                     bloxorz.enr.c
+          085C  A$bloxorz$1845                     bloxorz.enr.c
+          0860  A$bloxorz$1851                     bloxorz.enr.c
+          0862  A$bloxorz$1852                     bloxorz.enr.c
+          0865  A$bloxorz$1858                     bloxorz.enr.c
+          0867  A$bloxorz$1859                     bloxorz.enr.c
+          086A  A$bloxorz$1860                     bloxorz.enr.c
+          086D  A$bloxorz$1867                     bloxorz.enr.c
+          086F  A$bloxorz$1868                     bloxorz.enr.c
+          0871  A$bloxorz$1869                     bloxorz.enr.c
+          0873  A$bloxorz$1876                     bloxorz.enr.c
+          0875  A$bloxorz$1877                     bloxorz.enr.c
+          0877  A$bloxorz$1878                     bloxorz.enr.c
+          087A  A$bloxorz$1880                     bloxorz.enr.c
+          087C  A$bloxorz$1881                     bloxorz.enr.c
+          087E  A$bloxorz$1882                     bloxorz.enr.c
+          0880  A$bloxorz$1892                     bloxorz.enr.c
+          0883  A$bloxorz$1893                     bloxorz.enr.c
+          0885  A$bloxorz$1902                     bloxorz.enr.c
+          0887  A$bloxorz$1903                     bloxorz.enr.c
+          0889  A$bloxorz$1904                     bloxorz.enr.c
+          088A  A$bloxorz$1905                     bloxorz.enr.c
+          088C  A$bloxorz$1906                     bloxorz.enr.c
+          088E  A$bloxorz$1907                     bloxorz.enr.c
+          0891  A$bloxorz$1908                     bloxorz.enr.c
+          0893  A$bloxorz$1909                     bloxorz.enr.c
+          0894  A$bloxorz$1910                     bloxorz.enr.c
+          0896  A$bloxorz$1911                     bloxorz.enr.c
+          0899  A$bloxorz$1912                     bloxorz.enr.c
+          089B  A$bloxorz$1913                     bloxorz.enr.c
+          089E  A$bloxorz$1914                     bloxorz.enr.c
+          08A1  A$bloxorz$1915                     bloxorz.enr.c
+          08A5  A$bloxorz$1927                     bloxorz.enr.c
+          08A7  A$bloxorz$1928                     bloxorz.enr.c
+          08A8  A$bloxorz$1929                     bloxorz.enr.c
+          08AA  A$bloxorz$1930                     bloxorz.enr.c
+          08AC  A$bloxorz$1931                     bloxorz.enr.c
+          08AE  A$bloxorz$1932                     bloxorz.enr.c
+          08AF  A$bloxorz$1933                     bloxorz.enr.c
+ASxxxx Linker V05.00,  page 19.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.text                      001A        340A =       13322. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          08B0  A$bloxorz$1934                     bloxorz.enr.c
+          08B1  A$bloxorz$1935                     bloxorz.enr.c
+          08B3  A$bloxorz$1936                     bloxorz.enr.c
+          08B6  A$bloxorz$1937                     bloxorz.enr.c
+          08B8  A$bloxorz$1938                     bloxorz.enr.c
+          08BC  A$bloxorz$1950                     bloxorz.enr.c
+          08BF  A$bloxorz$1951                     bloxorz.enr.c
+          08C3  A$bloxorz$1963                     bloxorz.enr.c
+          08C5  A$bloxorz$1964                     bloxorz.enr.c
+          08C6  A$bloxorz$1965                     bloxorz.enr.c
+          08C7  A$bloxorz$1966                     bloxorz.enr.c
+          08C8  A$bloxorz$1967                     bloxorz.enr.c
+          08CA  A$bloxorz$1968                     bloxorz.enr.c
+          08CC  A$bloxorz$1969                     bloxorz.enr.c
+          08CE  A$bloxorz$1970                     bloxorz.enr.c
+          08D2  A$bloxorz$1976                     bloxorz.enr.c
+          08D4  A$bloxorz$1977                     bloxorz.enr.c
+          08D5  A$bloxorz$1978                     bloxorz.enr.c
+          08D7  A$bloxorz$1990                     bloxorz.enr.c
+          08D8  A$bloxorz$1991                     bloxorz.enr.c
+          08DA  A$bloxorz$1992                     bloxorz.enr.c
+          08DD  A$bloxorz$1993                     bloxorz.enr.c
+          08DF  A$bloxorz$1994                     bloxorz.enr.c
+          08E2  A$bloxorz$1995                     bloxorz.enr.c
+          08E5  A$bloxorz$1996                     bloxorz.enr.c
+          08E8  A$bloxorz$1997                     bloxorz.enr.c
+          08EC  A$bloxorz$1998                     bloxorz.enr.c
+          08EF  A$bloxorz$1999                     bloxorz.enr.c
+          08F1  A$bloxorz$2000                     bloxorz.enr.c
+          08F4  A$bloxorz$2012                     bloxorz.enr.c
+          08F7  A$bloxorz$2013                     bloxorz.enr.c
+          08F9  A$bloxorz$2014                     bloxorz.enr.c
+          08FC  A$bloxorz$2015                     bloxorz.enr.c
+          08FE  A$bloxorz$2016                     bloxorz.enr.c
+          0901  A$bloxorz$2017                     bloxorz.enr.c
+          0905  A$bloxorz$2029                     bloxorz.enr.c
+          0908  A$bloxorz$2030                     bloxorz.enr.c
+          090A  A$bloxorz$2031                     bloxorz.enr.c
+          090E  A$bloxorz$2043                     bloxorz.enr.c
+          0910  A$bloxorz$2044                     bloxorz.enr.c
+          0912  A$bloxorz$2045                     bloxorz.enr.c
+          0914  A$bloxorz$2046                     bloxorz.enr.c
+          0918  A$bloxorz$2052                     bloxorz.enr.c
+          091A  A$bloxorz$2053                     bloxorz.enr.c
+          091B  A$bloxorz$2054                     bloxorz.enr.c
+          091E  A$bloxorz$2060                     bloxorz.enr.c
+          0920  A$bloxorz$2061                     bloxorz.enr.c
+          0923  A$bloxorz$2067                     bloxorz.enr.c
+          0925  A$bloxorz$2068                     bloxorz.enr.c
+          0928  A$bloxorz$2069                     bloxorz.enr.c
+ASxxxx Linker V05.00,  page 20.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.text                      001A        340A =       13322. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          092A  A$bloxorz$2070                     bloxorz.enr.c
+          092D  A$bloxorz$2072                     bloxorz.enr.c
+          092F  A$bloxorz$2073                     bloxorz.enr.c
+          0931  A$bloxorz$2074                     bloxorz.enr.c
+          0933  A$bloxorz$2075                     bloxorz.enr.c
+          0936  A$bloxorz$2076                     bloxorz.enr.c
+          0939  A$bloxorz$2077                     bloxorz.enr.c
+          093C  A$bloxorz$2078                     bloxorz.enr.c
+          093F  A$bloxorz$2079                     bloxorz.enr.c
+          0941  A$bloxorz$2080                     bloxorz.enr.c
+          0943  A$bloxorz$2081                     bloxorz.enr.c
+          0947  A$bloxorz$2082                     bloxorz.enr.c
+          094A  A$bloxorz$2083                     bloxorz.enr.c
+          094C  _blockMoving                       bloxorz.enr.c
+          094C  A$bloxorz$2086                     bloxorz.enr.c
+          094E  A$bloxorz$2087                     bloxorz.enr.c
+          0950  A$bloxorz$2093                     bloxorz.enr.c
+          0953  A$bloxorz$2102                     bloxorz.enr.c
+          0956  A$bloxorz$2109                     bloxorz.enr.c
+          0958  A$bloxorz$2112                     bloxorz.enr.c
+          095A  A$bloxorz$2113                     bloxorz.enr.c
+          095D  A$bloxorz$2123                     bloxorz.enr.c
+          095F  A$bloxorz$2124                     bloxorz.enr.c
+          0961  A$bloxorz$2127                     bloxorz.enr.c
+          0963  A$bloxorz$2128                     bloxorz.enr.c
+          0965  A$bloxorz$2129                     bloxorz.enr.c
+          0968  A$bloxorz$2136                     bloxorz.enr.c
+          096B  A$bloxorz$2137                     bloxorz.enr.c
+          096D  A$bloxorz$2146                     bloxorz.enr.c
+          096E  A$bloxorz$2147                     bloxorz.enr.c
+          0970  A$bloxorz$2148                     bloxorz.enr.c
+          0972  A$bloxorz$2149                     bloxorz.enr.c
+          0975  A$bloxorz$2150                     bloxorz.enr.c
+          0976  A$bloxorz$2151                     bloxorz.enr.c
+          0977  A$bloxorz$2152                     bloxorz.enr.c
+          0978  A$bloxorz$2153                     bloxorz.enr.c
+          097A  A$bloxorz$2154                     bloxorz.enr.c
+          097C  A$bloxorz$2155                     bloxorz.enr.c
+          097E  A$bloxorz$2164                     bloxorz.enr.c
+          0980  A$bloxorz$2165                     bloxorz.enr.c
+          0982  A$bloxorz$2166                     bloxorz.enr.c
+          0984  A$bloxorz$2167                     bloxorz.enr.c
+          0985  A$bloxorz$2168                     bloxorz.enr.c
+          0987  A$bloxorz$2169                     bloxorz.enr.c
+          098A  A$bloxorz$2170                     bloxorz.enr.c
+          098C  A$bloxorz$2171                     bloxorz.enr.c
+          098D  A$bloxorz$2172                     bloxorz.enr.c
+          098F  A$bloxorz$2173                     bloxorz.enr.c
+          0991  A$bloxorz$2174                     bloxorz.enr.c
+          0993  A$bloxorz$2175                     bloxorz.enr.c
+ASxxxx Linker V05.00,  page 21.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.text                      001A        340A =       13322. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          0995  A$bloxorz$2176                     bloxorz.enr.c
+          0997  A$bloxorz$2177                     bloxorz.enr.c
+          0999  A$bloxorz$2183                     bloxorz.enr.c
+          099B  A$bloxorz$2184                     bloxorz.enr.c
+          099D  A$bloxorz$2185                     bloxorz.enr.c
+          099F  A$bloxorz$2186                     bloxorz.enr.c
+          09A1  A$bloxorz$2189                     bloxorz.enr.c
+          09A3  A$bloxorz$2190                     bloxorz.enr.c
+          09A5  A$bloxorz$2191                     bloxorz.enr.c
+          09A8  A$bloxorz$2198                     bloxorz.enr.c
+          09AB  A$bloxorz$2199                     bloxorz.enr.c
+          09AC  A$bloxorz$2200                     bloxorz.enr.c
+          09AE  A$bloxorz$2201                     bloxorz.enr.c
+          09AF  A$bloxorz$2202                     bloxorz.enr.c
+          09B0  A$bloxorz$2203                     bloxorz.enr.c
+          09B3  A$bloxorz$2204                     bloxorz.enr.c
+          09B5  A$bloxorz$2205                     bloxorz.enr.c
+          09B7  A$bloxorz$2208                     bloxorz.enr.c
+          09BA  A$bloxorz$2218                     bloxorz.enr.c
+          09BD  A$bloxorz$2219                     bloxorz.enr.c
+          09BF  A$bloxorz$2225                     bloxorz.enr.c
+          09C2  A$bloxorz$2226                     bloxorz.enr.c
+          09C5  A$bloxorz$2227                     bloxorz.enr.c
+          09C7  A$bloxorz$2228                     bloxorz.enr.c
+          09CB  A$bloxorz$2235                     bloxorz.enr.c
+          09CE  A$bloxorz$2236                     bloxorz.enr.c
+          09D2  A$bloxorz$2242                     bloxorz.enr.c
+          09D5  A$bloxorz$2243                     bloxorz.enr.c
+          09D7  A$bloxorz$2244                     bloxorz.enr.c
+          09D8  A$bloxorz$2245                     bloxorz.enr.c
+          09DA  A$bloxorz$2246                     bloxorz.enr.c
+          09DD  A$bloxorz$2247                     bloxorz.enr.c
+          09DE  A$bloxorz$2248                     bloxorz.enr.c
+          09E0  A$bloxorz$2249                     bloxorz.enr.c
+          09E2  A$bloxorz$2250                     bloxorz.enr.c
+          09E4  A$bloxorz$2251                     bloxorz.enr.c
+          09E6  A$bloxorz$2257                     bloxorz.enr.c
+          09E8  A$bloxorz$2258                     bloxorz.enr.c
+          09EB  A$bloxorz$2259                     bloxorz.enr.c
+          09ED  A$bloxorz$2260                     bloxorz.enr.c
+          09EF  A$bloxorz$2266                     bloxorz.enr.c
+          09F1  A$bloxorz$2267                     bloxorz.enr.c
+          09F5  A$bloxorz$2268                     bloxorz.enr.c
+          09F7  A$bloxorz$2269                     bloxorz.enr.c
+          09FB  A$bloxorz$2270                     bloxorz.enr.c
+          09FD  A$bloxorz$2271                     bloxorz.enr.c
+          09FE  A$bloxorz$2272                     bloxorz.enr.c
+          0A01  A$bloxorz$2273                     bloxorz.enr.c
+          0A03  A$bloxorz$2274                     bloxorz.enr.c
+          0A04  A$bloxorz$2275                     bloxorz.enr.c
+ASxxxx Linker V05.00,  page 22.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.text                      001A        340A =       13322. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          0A05  A$bloxorz$2276                     bloxorz.enr.c
+          0A06  A$bloxorz$2277                     bloxorz.enr.c
+          0A08  A$bloxorz$2278                     bloxorz.enr.c
+          0A0A  A$bloxorz$2285                     bloxorz.enr.c
+          0A0C  A$bloxorz$2291                     bloxorz.enr.c
+          0A0E  A$bloxorz$2292                     bloxorz.enr.c
+          0A12  A$bloxorz$2293                     bloxorz.enr.c
+          0A14  A$bloxorz$2294                     bloxorz.enr.c
+          0A18  A$bloxorz$2295                     bloxorz.enr.c
+          0A1A  A$bloxorz$2296                     bloxorz.enr.c
+          0A1B  A$bloxorz$2297                     bloxorz.enr.c
+          0A1E  A$bloxorz$2298                     bloxorz.enr.c
+          0A20  A$bloxorz$2299                     bloxorz.enr.c
+          0A21  A$bloxorz$2300                     bloxorz.enr.c
+          0A22  A$bloxorz$2301                     bloxorz.enr.c
+          0A23  A$bloxorz$2302                     bloxorz.enr.c
+          0A25  A$bloxorz$2303                     bloxorz.enr.c
+          0A27  A$bloxorz$2310                     bloxorz.enr.c
+          0A29  A$bloxorz$2316                     bloxorz.enr.c
+          0A2B  A$bloxorz$2317                     bloxorz.enr.c
+          0A2D  A$bloxorz$2318                     bloxorz.enr.c
+          0A2F  A$bloxorz$2319                     bloxorz.enr.c
+          0A31  A$bloxorz$2320                     bloxorz.enr.c
+          0A33  A$bloxorz$2321                     bloxorz.enr.c
+          0A34  A$bloxorz$2322                     bloxorz.enr.c
+          0A37  A$bloxorz$2323                     bloxorz.enr.c
+          0A39  A$bloxorz$2324                     bloxorz.enr.c
+          0A3A  A$bloxorz$2325                     bloxorz.enr.c
+          0A3B  A$bloxorz$2326                     bloxorz.enr.c
+          0A3C  A$bloxorz$2327                     bloxorz.enr.c
+          0A3E  A$bloxorz$2328                     bloxorz.enr.c
+          0A40  A$bloxorz$2334                     bloxorz.enr.c
+          0A43  A$bloxorz$2335                     bloxorz.enr.c
+          0A45  A$bloxorz$2336                     bloxorz.enr.c
+          0A47  A$bloxorz$2338                     bloxorz.enr.c
+          0A49  A$bloxorz$2339                     bloxorz.enr.c
+          0A4D  A$bloxorz$2340                     bloxorz.enr.c
+          0A4F  A$bloxorz$2341                     bloxorz.enr.c
+          0A53  A$bloxorz$2348                     bloxorz.enr.c
+          0A56  A$bloxorz$2349                     bloxorz.enr.c
+          0A58  A$bloxorz$2350                     bloxorz.enr.c
+          0A5B  A$bloxorz$2351                     bloxorz.enr.c
+          0A5E  A$bloxorz$2352                     bloxorz.enr.c
+          0A62  A$bloxorz$2359                     bloxorz.enr.c
+          0A65  A$bloxorz$2360                     bloxorz.enr.c
+          0A67  A$bloxorz$2361                     bloxorz.enr.c
+          0A69  A$bloxorz$2367                     bloxorz.enr.c
+          0A6B  A$bloxorz$2368                     bloxorz.enr.c
+          0A6E  A$bloxorz$2370                     bloxorz.enr.c
+          0A70  A$bloxorz$2371                     bloxorz.enr.c
+ASxxxx Linker V05.00,  page 23.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.text                      001A        340A =       13322. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          0A72  A$bloxorz$2373                     bloxorz.enr.c
+          0A74  A$bloxorz$2374                     bloxorz.enr.c
+          0A76  A$bloxorz$2375                     bloxorz.enr.c
+          0A79  A$bloxorz$2377                     bloxorz.enr.c
+          0A7B  A$bloxorz$2378                     bloxorz.enr.c
+          0A7D  A$bloxorz$2384                     bloxorz.enr.c
+          0A80  A$bloxorz$2385                     bloxorz.enr.c
+          0A82  A$bloxorz$2386                     bloxorz.enr.c
+          0A84  A$bloxorz$2393                     bloxorz.enr.c
+          0A86  A$bloxorz$2394                     bloxorz.enr.c
+          0A88  A$bloxorz$2395                     bloxorz.enr.c
+          0A8A  A$bloxorz$2396                     bloxorz.enr.c
+          0A8C  A$bloxorz$2403                     bloxorz.enr.c
+          0A8F  A$bloxorz$2410                     bloxorz.enr.c
+          0A92  A$bloxorz$2412                     bloxorz.enr.c
+          0A94  A$bloxorz$2413                     bloxorz.enr.c
+          0A96  A$bloxorz$2414                     bloxorz.enr.c
+          0A99  A$bloxorz$2421                     bloxorz.enr.c
+          0A9B  A$bloxorz$2422                     bloxorz.enr.c
+          0A9F  A$bloxorz$2429                     bloxorz.enr.c
+          0AA2  A$bloxorz$2436                     bloxorz.enr.c
+          0AA5  A$bloxorz$2437                     bloxorz.enr.c
+          0AA8  A$bloxorz$2443                     bloxorz.enr.c
+          0AAB  A$bloxorz$2444                     bloxorz.enr.c
+          0AAE  A$bloxorz$2450                     bloxorz.enr.c
+          0AB1  A$bloxorz$2456                     bloxorz.enr.c
+          0AB4  A$bloxorz$2457                     bloxorz.enr.c
+          0AB7  A$bloxorz$2463                     bloxorz.enr.c
+          0ABA  A$bloxorz$2464                     bloxorz.enr.c
+          0ABD  A$bloxorz$2471                     bloxorz.enr.c
+          0ABF  A$bloxorz$2472                     bloxorz.enr.c
+          0AC1  A$bloxorz$2473                     bloxorz.enr.c
+          0AC3  A$bloxorz$2474                     bloxorz.enr.c
+          0AC5  A$bloxorz$2481                     bloxorz.enr.c
+          0AC8  A$bloxorz$2488                     bloxorz.enr.c
+          0ACB  A$bloxorz$2490                     bloxorz.enr.c
+          0ACE  A$bloxorz$2491                     bloxorz.enr.c
+          0AD1  A$bloxorz$2492                     bloxorz.enr.c
+          0AD5  A$bloxorz$2498                     bloxorz.enr.c
+          0AD8  A$bloxorz$2504                     bloxorz.enr.c
+          0ADA  A$bloxorz$2505                     bloxorz.enr.c
+          0ADD  A$bloxorz$2514                     bloxorz.enr.c
+          0ADF  A$bloxorz$2515                     bloxorz.enr.c
+          0AE2  A$bloxorz$2521                     bloxorz.enr.c
+          0AE5  A$bloxorz$2522                     bloxorz.enr.c
+          0AE8  A$bloxorz$2523                     bloxorz.enr.c
+          0AEB  A$bloxorz$2530                     bloxorz.enr.c
+          0AEE  A$bloxorz$2531                     bloxorz.enr.c
+          0AF1  A$bloxorz$2534                     bloxorz.enr.c
+          0AF1  _blockMovingToStart                bloxorz.enr.c
+ASxxxx Linker V05.00,  page 24.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.text                      001A        340A =       13322. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          0AF3  A$bloxorz$2535                     bloxorz.enr.c
+          0AF5  A$bloxorz$2541                     bloxorz.enr.c
+          0AF8  A$bloxorz$2547                     bloxorz.enr.c
+          0AFB  A$bloxorz$2548                     bloxorz.enr.c
+          0AFD  A$bloxorz$2554                     bloxorz.enr.c
+          0B00  A$bloxorz$2561                     bloxorz.enr.c
+          0B02  A$bloxorz$2564                     bloxorz.enr.c
+          0B04  A$bloxorz$2565                     bloxorz.enr.c
+          0B07  A$bloxorz$2575                     bloxorz.enr.c
+          0B09  A$bloxorz$2576                     bloxorz.enr.c
+          0B0B  A$bloxorz$2577                     bloxorz.enr.c
+          0B0D  A$bloxorz$2580                     bloxorz.enr.c
+          0B0F  A$bloxorz$2581                     bloxorz.enr.c
+          0B11  A$bloxorz$2582                     bloxorz.enr.c
+          0B14  A$bloxorz$2589                     bloxorz.enr.c
+          0B17  A$bloxorz$2590                     bloxorz.enr.c
+          0B19  A$bloxorz$2599                     bloxorz.enr.c
+          0B1A  A$bloxorz$2600                     bloxorz.enr.c
+          0B1C  A$bloxorz$2601                     bloxorz.enr.c
+          0B1E  A$bloxorz$2602                     bloxorz.enr.c
+          0B21  A$bloxorz$2603                     bloxorz.enr.c
+          0B22  A$bloxorz$2604                     bloxorz.enr.c
+          0B23  A$bloxorz$2605                     bloxorz.enr.c
+          0B24  A$bloxorz$2606                     bloxorz.enr.c
+          0B26  A$bloxorz$2607                     bloxorz.enr.c
+          0B28  A$bloxorz$2608                     bloxorz.enr.c
+          0B2A  A$bloxorz$2617                     bloxorz.enr.c
+          0B2C  A$bloxorz$2618                     bloxorz.enr.c
+          0B2E  A$bloxorz$2619                     bloxorz.enr.c
+          0B30  A$bloxorz$2620                     bloxorz.enr.c
+          0B31  A$bloxorz$2621                     bloxorz.enr.c
+          0B33  A$bloxorz$2622                     bloxorz.enr.c
+          0B36  A$bloxorz$2623                     bloxorz.enr.c
+          0B38  A$bloxorz$2624                     bloxorz.enr.c
+          0B39  A$bloxorz$2625                     bloxorz.enr.c
+          0B3B  A$bloxorz$2626                     bloxorz.enr.c
+          0B3D  A$bloxorz$2627                     bloxorz.enr.c
+          0B3F  A$bloxorz$2628                     bloxorz.enr.c
+          0B41  A$bloxorz$2629                     bloxorz.enr.c
+          0B43  A$bloxorz$2630                     bloxorz.enr.c
+          0B45  A$bloxorz$2636                     bloxorz.enr.c
+          0B47  A$bloxorz$2637                     bloxorz.enr.c
+          0B49  A$bloxorz$2638                     bloxorz.enr.c
+          0B4B  A$bloxorz$2639                     bloxorz.enr.c
+          0B4D  A$bloxorz$2642                     bloxorz.enr.c
+          0B4F  A$bloxorz$2643                     bloxorz.enr.c
+          0B51  A$bloxorz$2644                     bloxorz.enr.c
+          0B54  A$bloxorz$2651                     bloxorz.enr.c
+          0B57  A$bloxorz$2652                     bloxorz.enr.c
+          0B58  A$bloxorz$2653                     bloxorz.enr.c
+ASxxxx Linker V05.00,  page 25.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.text                      001A        340A =       13322. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          0B5A  A$bloxorz$2654                     bloxorz.enr.c
+          0B5B  A$bloxorz$2655                     bloxorz.enr.c
+          0B5C  A$bloxorz$2656                     bloxorz.enr.c
+          0B5F  A$bloxorz$2657                     bloxorz.enr.c
+          0B61  A$bloxorz$2658                     bloxorz.enr.c
+          0B63  A$bloxorz$2661                     bloxorz.enr.c
+          0B66  A$bloxorz$2668                     bloxorz.enr.c
+          0B69  A$bloxorz$2669                     bloxorz.enr.c
+          0B6C  A$bloxorz$2675                     bloxorz.enr.c
+          0B6D  A$bloxorz$2676                     bloxorz.enr.c
+          0B6F  A$bloxorz$2682                     bloxorz.enr.c
+          0B71  A$bloxorz$2683                     bloxorz.enr.c
+          0B74  A$bloxorz$2685                     bloxorz.enr.c
+          0B76  A$bloxorz$2686                     bloxorz.enr.c
+          0B78  A$bloxorz$2689                     bloxorz.enr.c
+          0B78  _blockWaiting                      bloxorz.enr.c
+          0B7A  A$bloxorz$2690                     bloxorz.enr.c
+          0B7C  A$bloxorz$2696                     bloxorz.enr.c
+          0B7F  A$bloxorz$2705                     bloxorz.enr.c
+          0B82  A$bloxorz$2712                     bloxorz.enr.c
+          0B84  A$bloxorz$2715                     bloxorz.enr.c
+          0B86  A$bloxorz$2716                     bloxorz.enr.c
+          0B89  A$bloxorz$2726                     bloxorz.enr.c
+          0B8B  A$bloxorz$2727                     bloxorz.enr.c
+          0B8D  A$bloxorz$2730                     bloxorz.enr.c
+          0B8F  A$bloxorz$2731                     bloxorz.enr.c
+          0B91  A$bloxorz$2732                     bloxorz.enr.c
+          0B94  A$bloxorz$2739                     bloxorz.enr.c
+          0B97  A$bloxorz$2740                     bloxorz.enr.c
+          0B99  A$bloxorz$2749                     bloxorz.enr.c
+          0B9A  A$bloxorz$2750                     bloxorz.enr.c
+          0B9C  A$bloxorz$2751                     bloxorz.enr.c
+          0B9E  A$bloxorz$2752                     bloxorz.enr.c
+          0BA1  A$bloxorz$2753                     bloxorz.enr.c
+          0BA2  A$bloxorz$2754                     bloxorz.enr.c
+          0BA3  A$bloxorz$2755                     bloxorz.enr.c
+          0BA4  A$bloxorz$2756                     bloxorz.enr.c
+          0BA6  A$bloxorz$2757                     bloxorz.enr.c
+          0BA8  A$bloxorz$2758                     bloxorz.enr.c
+          0BAA  A$bloxorz$2767                     bloxorz.enr.c
+          0BAC  A$bloxorz$2768                     bloxorz.enr.c
+          0BAE  A$bloxorz$2769                     bloxorz.enr.c
+          0BB0  A$bloxorz$2770                     bloxorz.enr.c
+          0BB1  A$bloxorz$2771                     bloxorz.enr.c
+          0BB3  A$bloxorz$2772                     bloxorz.enr.c
+          0BB6  A$bloxorz$2773                     bloxorz.enr.c
+          0BB8  A$bloxorz$2774                     bloxorz.enr.c
+          0BB9  A$bloxorz$2775                     bloxorz.enr.c
+          0BBB  A$bloxorz$2776                     bloxorz.enr.c
+          0BBD  A$bloxorz$2777                     bloxorz.enr.c
+ASxxxx Linker V05.00,  page 26.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.text                      001A        340A =       13322. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          0BBF  A$bloxorz$2778                     bloxorz.enr.c
+          0BC1  A$bloxorz$2779                     bloxorz.enr.c
+          0BC3  A$bloxorz$2780                     bloxorz.enr.c
+          0BC5  A$bloxorz$2786                     bloxorz.enr.c
+          0BC7  A$bloxorz$2787                     bloxorz.enr.c
+          0BC9  A$bloxorz$2788                     bloxorz.enr.c
+          0BCB  A$bloxorz$2789                     bloxorz.enr.c
+          0BCD  A$bloxorz$2792                     bloxorz.enr.c
+          0BCF  A$bloxorz$2793                     bloxorz.enr.c
+          0BD1  A$bloxorz$2794                     bloxorz.enr.c
+          0BD4  A$bloxorz$2801                     bloxorz.enr.c
+          0BD7  A$bloxorz$2802                     bloxorz.enr.c
+          0BD8  A$bloxorz$2803                     bloxorz.enr.c
+          0BDA  A$bloxorz$2804                     bloxorz.enr.c
+          0BDB  A$bloxorz$2805                     bloxorz.enr.c
+          0BDC  A$bloxorz$2806                     bloxorz.enr.c
+          0BDF  A$bloxorz$2807                     bloxorz.enr.c
+          0BE1  A$bloxorz$2808                     bloxorz.enr.c
+          0BE3  A$bloxorz$2811                     bloxorz.enr.c
+          0BE6  A$bloxorz$2818                     bloxorz.enr.c
+          0BE9  A$bloxorz$2825                     bloxorz.enr.c
+          0BEC  A$bloxorz$2826                     bloxorz.enr.c
+          0BEE  A$bloxorz$2827                     bloxorz.enr.c
+          0BF2  A$bloxorz$2828                     bloxorz.enr.c
+          0BF5  A$bloxorz$2829                     bloxorz.enr.c
+          0BF7  A$bloxorz$2830                     bloxorz.enr.c
+          0BF9  A$bloxorz$2831                     bloxorz.enr.c
+          0BFC  A$bloxorz$2832                     bloxorz.enr.c
+          0BFE  A$bloxorz$2833                     bloxorz.enr.c
+          0C02  A$bloxorz$2834                     bloxorz.enr.c
+          0C05  A$bloxorz$2835                     bloxorz.enr.c
+          0C07  A$bloxorz$2836                     bloxorz.enr.c
+          0C0B  A$bloxorz$2843                     bloxorz.enr.c
+          0C0E  A$bloxorz$2844                     bloxorz.enr.c
+          0C10  A$bloxorz$2845                     bloxorz.enr.c
+          0C12  A$bloxorz$2854                     bloxorz.enr.c
+          0C14  A$bloxorz$2855                     bloxorz.enr.c
+          0C17  A$bloxorz$2861                     bloxorz.enr.c
+          0C1A  A$bloxorz$2862                     bloxorz.enr.c
+          0C1D  A$bloxorz$2864                     bloxorz.enr.c
+          0C1F  A$bloxorz$2865                     bloxorz.enr.c
+          0C21  A$bloxorz$2872                     bloxorz.enr.c
+          0C23  A$bloxorz$2873                     bloxorz.enr.c
+          0C26  A$bloxorz$2879                     bloxorz.enr.c
+          0C28  A$bloxorz$2880                     bloxorz.enr.c
+          0C2B  A$bloxorz$2881                     bloxorz.enr.c
+          0C2D  A$bloxorz$2888                     bloxorz.enr.c
+          0C2E  A$bloxorz$2889                     bloxorz.enr.c
+          0C31  A$bloxorz$2895                     bloxorz.enr.c
+          0C33  A$bloxorz$2896                     bloxorz.enr.c
+ASxxxx Linker V05.00,  page 27.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.text                      001A        340A =       13322. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          0C36  A$bloxorz$2897                     bloxorz.enr.c
+          0C39  A$bloxorz$2904                     bloxorz.enr.c
+          0C3B  A$bloxorz$2905                     bloxorz.enr.c
+          0C3E  A$bloxorz$2911                     bloxorz.enr.c
+          0C40  A$bloxorz$2912                     bloxorz.enr.c
+          0C43  A$bloxorz$2913                     bloxorz.enr.c
+          0C46  A$bloxorz$2920                     bloxorz.enr.c
+          0C48  A$bloxorz$2921                     bloxorz.enr.c
+          0C4B  A$bloxorz$2927                     bloxorz.enr.c
+          0C4D  A$bloxorz$2928                     bloxorz.enr.c
+          0C50  A$bloxorz$2929                     bloxorz.enr.c
+          0C53  _startLevel                        bloxorz.enr.c
+          0C53  A$bloxorz$2932                     bloxorz.enr.c
+          0C55  A$bloxorz$2933                     bloxorz.enr.c
+          0C57  A$bloxorz$2939                     bloxorz.enr.c
+          0C5A  A$bloxorz$2940                     bloxorz.enr.c
+          0C5E  A$bloxorz$2941                     bloxorz.enr.c
+          0C60  A$bloxorz$2942                     bloxorz.enr.c
+          0C64  A$bloxorz$2948                     bloxorz.enr.c
+          0C67  A$bloxorz$2949                     bloxorz.enr.c
+          0C6A  A$bloxorz$2956                     bloxorz.enr.c
+          0C6D  A$bloxorz$2962                     bloxorz.enr.c
+          0C70  A$bloxorz$2980                     bloxorz.enr.c
+          0C74  A$bloxorz$2981                     bloxorz.enr.c
+          0C76  A$bloxorz$2982                     bloxorz.enr.c
+          0C78  A$bloxorz$2995                     bloxorz.enr.c
+          0C7A  A$bloxorz$2996                     bloxorz.enr.c
+          0C7B  A$bloxorz$2997                     bloxorz.enr.c
+          0C7D  A$bloxorz$2998                     bloxorz.enr.c
+          0C7F  A$bloxorz$2999                     bloxorz.enr.c
+          0C81  A$bloxorz$3000                     bloxorz.enr.c
+          0C83  A$bloxorz$3001                     bloxorz.enr.c
+          0C85  A$bloxorz$3002                     bloxorz.enr.c
+          0C86  A$bloxorz$3003                     bloxorz.enr.c
+          0C88  A$bloxorz$3004                     bloxorz.enr.c
+          0C8A  A$bloxorz$3005                     bloxorz.enr.c
+          0C8C  A$bloxorz$3006                     bloxorz.enr.c
+          0C8E  A$bloxorz$3007                     bloxorz.enr.c
+          0C90  A$bloxorz$3008                     bloxorz.enr.c
+          0C92  A$bloxorz$3009                     bloxorz.enr.c
+          0C94  A$bloxorz$3010                     bloxorz.enr.c
+          0C96  A$bloxorz$3011                     bloxorz.enr.c
+          0C99  A$bloxorz$3013                     bloxorz.enr.c
+          0C9B  A$bloxorz$3014                     bloxorz.enr.c
+          0C9F  A$bloxorz$3015                     bloxorz.enr.c
+          0CA1  A$bloxorz$3016                     bloxorz.enr.c
+          0CA5  A$bloxorz$3022                     bloxorz.enr.c
+          0CA7  A$bloxorz$3023                     bloxorz.enr.c
+          0CA9  A$bloxorz$3024                     bloxorz.enr.c
+          0CAD  A$bloxorz$3025                     bloxorz.enr.c
+ASxxxx Linker V05.00,  page 28.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.text                      001A        340A =       13322. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          0CAF  A$bloxorz$3026                     bloxorz.enr.c
+          0CB3  A$bloxorz$3027                     bloxorz.enr.c
+          0CB5  A$bloxorz$3028                     bloxorz.enr.c
+          0CB9  A$bloxorz$3034                     bloxorz.enr.c
+          0CBB  A$bloxorz$3035                     bloxorz.enr.c
+          0CBD  A$bloxorz$3036                     bloxorz.enr.c
+          0CC1  A$bloxorz$3042                     bloxorz.enr.c
+          0CC3  A$bloxorz$3043                     bloxorz.enr.c
+          0CC4  A$bloxorz$3044                     bloxorz.enr.c
+          0CC6  A$bloxorz$3050                     bloxorz.enr.c
+          0CC9  A$bloxorz$3051                     bloxorz.enr.c
+          0CCB  A$bloxorz$3060                     bloxorz.enr.c
+          0CCC  A$bloxorz$3061                     bloxorz.enr.c
+          0CCE  A$bloxorz$3062                     bloxorz.enr.c
+          0CD0  A$bloxorz$3063                     bloxorz.enr.c
+          0CD2  A$bloxorz$3064                     bloxorz.enr.c
+          0CD3  A$bloxorz$3066                     bloxorz.enr.c
+          0CD5  A$bloxorz$3067                     bloxorz.enr.c
+          0CD9  A$bloxorz$3079                     bloxorz.enr.c
+          0CDB  A$bloxorz$3080                     bloxorz.enr.c
+          0CDD  A$bloxorz$3081                     bloxorz.enr.c
+          0CDF  A$bloxorz$3082                     bloxorz.enr.c
+          0CE1  A$bloxorz$3083                     bloxorz.enr.c
+          0CE3  A$bloxorz$3084                     bloxorz.enr.c
+          0CE7  A$bloxorz$3096                     bloxorz.enr.c
+          0CE9  A$bloxorz$3097                     bloxorz.enr.c
+          0CEB  A$bloxorz$3098                     bloxorz.enr.c
+          0CEC  A$bloxorz$3099                     bloxorz.enr.c
+          0CEE  A$bloxorz$3101                     bloxorz.enr.c
+          0CF0  A$bloxorz$3102                     bloxorz.enr.c
+          0CF4  A$bloxorz$3114                     bloxorz.enr.c
+          0CF6  A$bloxorz$3115                     bloxorz.enr.c
+          0CF8  A$bloxorz$3116                     bloxorz.enr.c
+          0CFA  A$bloxorz$3117                     bloxorz.enr.c
+          0CFC  A$bloxorz$3118                     bloxorz.enr.c
+          0CFE  A$bloxorz$3119                     bloxorz.enr.c
+          0D02  A$bloxorz$3125                     bloxorz.enr.c
+          0D04  A$bloxorz$3126                     bloxorz.enr.c
+          0D05  A$bloxorz$3127                     bloxorz.enr.c
+          0D08  A$bloxorz$3133                     bloxorz.enr.c
+          0D0A  A$bloxorz$3134                     bloxorz.enr.c
+          0D0C  A$bloxorz$3136                     bloxorz.enr.c
+          0D0E  A$bloxorz$3137                     bloxorz.enr.c
+          0D10  A$bloxorz$3138                     bloxorz.enr.c
+          0D12  A$bloxorz$3139                     bloxorz.enr.c
+          0D14  A$bloxorz$3140                     bloxorz.enr.c
+          0D18  A$bloxorz$3150                     bloxorz.enr.c
+          0D1A  A$bloxorz$3151                     bloxorz.enr.c
+          0D1C  A$bloxorz$3157                     bloxorz.enr.c
+          0D1E  A$bloxorz$3158                     bloxorz.enr.c
+ASxxxx Linker V05.00,  page 29.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.text                      001A        340A =       13322. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          0D20  A$bloxorz$3167                     bloxorz.enr.c
+          0D22  A$bloxorz$3168                     bloxorz.enr.c
+          0D24  A$bloxorz$3169                     bloxorz.enr.c
+          0D28  A$bloxorz$3176                     bloxorz.enr.c
+          0D2A  A$bloxorz$3177                     bloxorz.enr.c
+          0D2C  A$bloxorz$3178                     bloxorz.enr.c
+          0D30  A$bloxorz$3185                     bloxorz.enr.c
+          0D32  A$bloxorz$3186                     bloxorz.enr.c
+          0D34  A$bloxorz$3187                     bloxorz.enr.c
+          0D36  A$bloxorz$3188                     bloxorz.enr.c
+          0D38  A$bloxorz$3189                     bloxorz.enr.c
+          0D3A  A$bloxorz$3190                     bloxorz.enr.c
+          0D3C  A$bloxorz$3191                     bloxorz.enr.c
+          0D40  A$bloxorz$3193                     bloxorz.enr.c
+          0D42  A$bloxorz$3194                     bloxorz.enr.c
+          0D44  A$bloxorz$3195                     bloxorz.enr.c
+          0D46  A$bloxorz$3196                     bloxorz.enr.c
+          0D48  A$bloxorz$3197                     bloxorz.enr.c
+          0D4C  A$bloxorz$3203                     bloxorz.enr.c
+          0D4F  A$bloxorz$3204                     bloxorz.enr.c
+          0D52  A$bloxorz$3210                     bloxorz.enr.c
+          0D55  A$bloxorz$3211                     bloxorz.enr.c
+          0D58  A$bloxorz$3217                     bloxorz.enr.c
+          0D5B  A$bloxorz$3218                     bloxorz.enr.c
+          0D5E  A$bloxorz$3224                     bloxorz.enr.c
+          0D61  A$bloxorz$3230                     bloxorz.enr.c
+          0D64  A$bloxorz$3236                     bloxorz.enr.c
+          0D67  A$bloxorz$3242                     bloxorz.enr.c
+          0D69  A$bloxorz$3243                     bloxorz.enr.c
+          0D6C  A$bloxorz$3249                     bloxorz.enr.c
+          0D6F  A$bloxorz$3258                     bloxorz.enr.c
+          0D71  A$bloxorz$3259                     bloxorz.enr.c
+          0D74  A$bloxorz$3265                     bloxorz.enr.c
+          0D77  A$bloxorz$3266                     bloxorz.enr.c
+          0D7A  A$bloxorz$3267                     bloxorz.enr.c
+          0D7C  A$bloxorz$3268                     bloxorz.enr.c
+          0D7E  A$bloxorz$3270                     bloxorz.enr.c
+          0D80  A$bloxorz$3271                     bloxorz.enr.c
+          0D82  A$bloxorz$3272                     bloxorz.enr.c
+          0D85  A$bloxorz$3279                     bloxorz.enr.c
+          0D88  A$bloxorz$3280                     bloxorz.enr.c
+          0D8B  A$bloxorz$3281                     bloxorz.enr.c
+          0D8E  A$bloxorz$3288                     bloxorz.enr.c
+          0D91  A$bloxorz$3289                     bloxorz.enr.c
+          0D94  A$bloxorz$3290                     bloxorz.enr.c
+          0D97  _blockMovingAtEnd                  bloxorz.enr.c
+          0D97  A$bloxorz$3293                     bloxorz.enr.c
+          0D99  A$bloxorz$3294                     bloxorz.enr.c
+          0D9B  A$bloxorz$3300                     bloxorz.enr.c
+          0D9E  A$bloxorz$3306                     bloxorz.enr.c
+ASxxxx Linker V05.00,  page 30.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.text                      001A        340A =       13322. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          0DA1  A$bloxorz$3307                     bloxorz.enr.c
+          0DA3  A$bloxorz$3313                     bloxorz.enr.c
+          0DA6  A$bloxorz$3320                     bloxorz.enr.c
+          0DA8  A$bloxorz$3323                     bloxorz.enr.c
+          0DAA  A$bloxorz$3324                     bloxorz.enr.c
+          0DAD  A$bloxorz$3334                     bloxorz.enr.c
+          0DAF  A$bloxorz$3335                     bloxorz.enr.c
+          0DB1  A$bloxorz$3336                     bloxorz.enr.c
+          0DB3  A$bloxorz$3339                     bloxorz.enr.c
+          0DB5  A$bloxorz$3340                     bloxorz.enr.c
+          0DB7  A$bloxorz$3341                     bloxorz.enr.c
+          0DBA  A$bloxorz$3348                     bloxorz.enr.c
+          0DBD  A$bloxorz$3349                     bloxorz.enr.c
+          0DBF  A$bloxorz$3358                     bloxorz.enr.c
+          0DC0  A$bloxorz$3359                     bloxorz.enr.c
+          0DC2  A$bloxorz$3360                     bloxorz.enr.c
+          0DC4  A$bloxorz$3361                     bloxorz.enr.c
+          0DC7  A$bloxorz$3362                     bloxorz.enr.c
+          0DC8  A$bloxorz$3363                     bloxorz.enr.c
+          0DC9  A$bloxorz$3364                     bloxorz.enr.c
+          0DCA  A$bloxorz$3365                     bloxorz.enr.c
+          0DCC  A$bloxorz$3366                     bloxorz.enr.c
+          0DCE  A$bloxorz$3367                     bloxorz.enr.c
+          0DD0  A$bloxorz$3376                     bloxorz.enr.c
+          0DD2  A$bloxorz$3377                     bloxorz.enr.c
+          0DD4  A$bloxorz$3378                     bloxorz.enr.c
+          0DD6  A$bloxorz$3379                     bloxorz.enr.c
+          0DD7  A$bloxorz$3380                     bloxorz.enr.c
+          0DD9  A$bloxorz$3381                     bloxorz.enr.c
+          0DDC  A$bloxorz$3382                     bloxorz.enr.c
+          0DDE  A$bloxorz$3383                     bloxorz.enr.c
+          0DDF  A$bloxorz$3384                     bloxorz.enr.c
+          0DE1  A$bloxorz$3385                     bloxorz.enr.c
+          0DE3  A$bloxorz$3386                     bloxorz.enr.c
+          0DE5  A$bloxorz$3387                     bloxorz.enr.c
+          0DE7  A$bloxorz$3388                     bloxorz.enr.c
+          0DE9  A$bloxorz$3389                     bloxorz.enr.c
+          0DEB  A$bloxorz$3395                     bloxorz.enr.c
+          0DED  A$bloxorz$3396                     bloxorz.enr.c
+          0DEF  A$bloxorz$3397                     bloxorz.enr.c
+          0DF1  A$bloxorz$3398                     bloxorz.enr.c
+          0DF3  A$bloxorz$3401                     bloxorz.enr.c
+          0DF5  A$bloxorz$3402                     bloxorz.enr.c
+          0DF7  A$bloxorz$3403                     bloxorz.enr.c
+          0DFA  A$bloxorz$3410                     bloxorz.enr.c
+          0DFD  A$bloxorz$3411                     bloxorz.enr.c
+          0DFE  A$bloxorz$3412                     bloxorz.enr.c
+          0E00  A$bloxorz$3413                     bloxorz.enr.c
+          0E01  A$bloxorz$3414                     bloxorz.enr.c
+          0E02  A$bloxorz$3415                     bloxorz.enr.c
+ASxxxx Linker V05.00,  page 31.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.text                      001A        340A =       13322. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          0E05  A$bloxorz$3416                     bloxorz.enr.c
+          0E07  A$bloxorz$3417                     bloxorz.enr.c
+          0E09  A$bloxorz$3420                     bloxorz.enr.c
+          0E0C  A$bloxorz$3427                     bloxorz.enr.c
+          0E0F  A$bloxorz$3428                     bloxorz.enr.c
+          0E12  A$bloxorz$3434                     bloxorz.enr.c
+          0E14  A$bloxorz$3435                     bloxorz.enr.c
+          0E16  A$bloxorz$3436                     bloxorz.enr.c
+          0E18  A$bloxorz$3437                     bloxorz.enr.c
+          0E1A  A$bloxorz$3444                     bloxorz.enr.c
+          0E1D  A$bloxorz$3445                     bloxorz.enr.c
+          0E20  A$bloxorz$3451                     bloxorz.enr.c
+          0E22  A$bloxorz$3452                     bloxorz.enr.c
+          0E24  A$bloxorz$3453                     bloxorz.enr.c
+          0E27  A$bloxorz$3460                     bloxorz.enr.c
+          0E2A  A$bloxorz$3461                     bloxorz.enr.c
+          0E2C  A$bloxorz$3462                     bloxorz.enr.c
+          0E2E  _main                              bloxorz.enr.c
+          0E2E  A$bloxorz$3465                     bloxorz.enr.c
+          0E30  A$bloxorz$3466                     bloxorz.enr.c
+          0E33  A$bloxorz$3472                     bloxorz.enr.c
+          0E35  A$bloxorz$3473                     bloxorz.enr.c
+          0E38  A$bloxorz$3479                     bloxorz.enr.c
+          0E3A  A$bloxorz$3480                     bloxorz.enr.c
+          0E3D  A$bloxorz$3486                     bloxorz.enr.c
+          0E40  A$bloxorz$3492                     bloxorz.enr.c
+          0E43  A$bloxorz$3498                     bloxorz.enr.c
+          0E46  A$bloxorz$3510                     bloxorz.enr.c
+          0E49  A$bloxorz$3517                     bloxorz.enr.c
+          0E4C  A$bloxorz$3518                     bloxorz.enr.c
+          0E4E  A$bloxorz$3519                     bloxorz.enr.c
+          0E52  A$bloxorz$3520                     bloxorz.enr.c
+          0E53  A$bloxorz$3521                     bloxorz.enr.c
+          0E54  A$bloxorz$3522                     bloxorz.enr.c
+          0E55  A$bloxorz$3523                     bloxorz.enr.c
+          0E57  A$bloxorz$3524                     bloxorz.enr.c
+          0E65  A$bloxorz$3540                     bloxorz.enr.c
+          0E68  A$bloxorz$3546                     bloxorz.enr.c
+          0E6B  A$bloxorz$3547                     bloxorz.enr.c
+          0E6D  A$bloxorz$3553                     bloxorz.enr.c
+          0E70  A$bloxorz$3560                     bloxorz.enr.c
+          0E72  A$bloxorz$3563                     bloxorz.enr.c
+          0E74  A$bloxorz$3564                     bloxorz.enr.c
+          0E77  A$bloxorz$3574                     bloxorz.enr.c
+          0E79  A$bloxorz$3575                     bloxorz.enr.c
+          0E7C  A$bloxorz$3576                     bloxorz.enr.c
+          0E7F  A$bloxorz$3579                     bloxorz.enr.c
+          0E82  A$bloxorz$3580                     bloxorz.enr.c
+          0E85  A$bloxorz$3581                     bloxorz.enr.c
+          0E88  A$bloxorz$3588                     bloxorz.enr.c
+ASxxxx Linker V05.00,  page 32.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.text                      001A        340A =       13322. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          0E8B  A$bloxorz$3589                     bloxorz.enr.c
+          0E8D  A$bloxorz$3598                     bloxorz.enr.c
+          0E8E  A$bloxorz$3599                     bloxorz.enr.c
+          0E90  A$bloxorz$3600                     bloxorz.enr.c
+          0E92  A$bloxorz$3601                     bloxorz.enr.c
+          0E95  A$bloxorz$3602                     bloxorz.enr.c
+          0E96  A$bloxorz$3603                     bloxorz.enr.c
+          0E97  A$bloxorz$3604                     bloxorz.enr.c
+          0E98  A$bloxorz$3605                     bloxorz.enr.c
+          0E9A  A$bloxorz$3606                     bloxorz.enr.c
+          0E9C  A$bloxorz$3607                     bloxorz.enr.c
+          0E9E  A$bloxorz$3616                     bloxorz.enr.c
+          0EA0  A$bloxorz$3617                     bloxorz.enr.c
+          0EA2  A$bloxorz$3618                     bloxorz.enr.c
+          0EA4  A$bloxorz$3619                     bloxorz.enr.c
+          0EA5  A$bloxorz$3620                     bloxorz.enr.c
+          0EA7  A$bloxorz$3621                     bloxorz.enr.c
+          0EAA  A$bloxorz$3622                     bloxorz.enr.c
+          0EAC  A$bloxorz$3623                     bloxorz.enr.c
+          0EAD  A$bloxorz$3624                     bloxorz.enr.c
+          0EAF  A$bloxorz$3625                     bloxorz.enr.c
+          0EB1  A$bloxorz$3626                     bloxorz.enr.c
+          0EB3  A$bloxorz$3627                     bloxorz.enr.c
+          0EB5  A$bloxorz$3628                     bloxorz.enr.c
+          0EB7  A$bloxorz$3629                     bloxorz.enr.c
+          0EB9  A$bloxorz$3635                     bloxorz.enr.c
+          0EBB  A$bloxorz$3636                     bloxorz.enr.c
+          0EBE  A$bloxorz$3637                     bloxorz.enr.c
+          0EC0  A$bloxorz$3638                     bloxorz.enr.c
+          0EC3  A$bloxorz$3641                     bloxorz.enr.c
+          0EC6  A$bloxorz$3642                     bloxorz.enr.c
+          0EC9  A$bloxorz$3643                     bloxorz.enr.c
+          0ECC  A$bloxorz$3650                     bloxorz.enr.c
+          0ECF  A$bloxorz$3651                     bloxorz.enr.c
+          0ED0  A$bloxorz$3652                     bloxorz.enr.c
+          0ED1  A$bloxorz$3653                     bloxorz.enr.c
+          0ED2  A$bloxorz$3654                     bloxorz.enr.c
+          0ED5  A$bloxorz$3655                     bloxorz.enr.c
+          0ED7  A$bloxorz$3656                     bloxorz.enr.c
+          0ED9  A$bloxorz$3659                     bloxorz.enr.c
+          0EDC  A$bloxorz$3666                     bloxorz.enr.c
+          0EDF  A$bloxorz$3667                     bloxorz.enr.c
+          0EE2  A$bloxorz$3673                     bloxorz.enr.c
+          0EE4  A$bloxorz$3674                     bloxorz.enr.c
+          0EE8  A$bloxorz$3687                     bloxorz.enr.c
+          0EEB  A$bloxorz$3694                     bloxorz.enr.c
+          0EEE  A$bloxorz$3695                     bloxorz.enr.c
+          0EF1  A$bloxorz$3702                     bloxorz.enr.c
+          0EF4  A$bloxorz$3709                     bloxorz.enr.c
+          0EF7  A$bloxorz$3713                     bloxorz.enr.c
+ASxxxx Linker V05.00,  page 33.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.text                      001A        340A =       13322. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          0EFA  A$bloxorz$3723                     bloxorz.enr.c
+          0EFD  A$bloxorz$3729                     bloxorz.enr.c
+          0F00  A$bloxorz$3730                     bloxorz.enr.c
+          0F01  A$bloxorz$3731                     bloxorz.enr.c
+          0F03  A$bloxorz$3732                     bloxorz.enr.c
+          0F06  A$bloxorz$3738                     bloxorz.enr.c
+          0F08  A$bloxorz$3739                     bloxorz.enr.c
+          0F0C  A$bloxorz$3746                     bloxorz.enr.c
+          0F0F  A$bloxorz$3747                     bloxorz.enr.c
+          0F11  A$bloxorz$3748                     bloxorz.enr.c
+          0F15  A$bloxorz$3755                     bloxorz.enr.c
+          0F18  A$bloxorz$3762                     bloxorz.enr.c
+          0F1B  A$bloxorz$3768                     bloxorz.enr.c
+          0F1E  A$bloxorz$3778                     bloxorz.enr.c
+          0F21  A$bloxorz$3784                     bloxorz.enr.c
+          0F24  A$bloxorz$3785                     bloxorz.enr.c
+          0F26  A$bloxorz$3791                     bloxorz.enr.c
+          0F29  A$bloxorz$3798                     bloxorz.enr.c
+          0F2B  A$bloxorz$3801                     bloxorz.enr.c
+          0F2D  A$bloxorz$3802                     bloxorz.enr.c
+          0F30  A$bloxorz$3812                     bloxorz.enr.c
+          0F32  A$bloxorz$3813                     bloxorz.enr.c
+          0F35  A$bloxorz$3814                     bloxorz.enr.c
+          0F38  A$bloxorz$3817                     bloxorz.enr.c
+          0F3B  A$bloxorz$3818                     bloxorz.enr.c
+          0F3E  A$bloxorz$3819                     bloxorz.enr.c
+          0F41  A$bloxorz$3826                     bloxorz.enr.c
+          0F44  A$bloxorz$3827                     bloxorz.enr.c
+          0F46  A$bloxorz$3836                     bloxorz.enr.c
+          0F47  A$bloxorz$3837                     bloxorz.enr.c
+          0F49  A$bloxorz$3838                     bloxorz.enr.c
+          0F4B  A$bloxorz$3839                     bloxorz.enr.c
+          0F4E  A$bloxorz$3840                     bloxorz.enr.c
+          0F4F  A$bloxorz$3841                     bloxorz.enr.c
+          0F50  A$bloxorz$3842                     bloxorz.enr.c
+          0F51  A$bloxorz$3843                     bloxorz.enr.c
+          0F53  A$bloxorz$3844                     bloxorz.enr.c
+          0F55  A$bloxorz$3845                     bloxorz.enr.c
+          0F57  A$bloxorz$3854                     bloxorz.enr.c
+          0F59  A$bloxorz$3855                     bloxorz.enr.c
+          0F5B  A$bloxorz$3856                     bloxorz.enr.c
+          0F5D  A$bloxorz$3857                     bloxorz.enr.c
+          0F5E  A$bloxorz$3858                     bloxorz.enr.c
+          0F60  A$bloxorz$3859                     bloxorz.enr.c
+          0F63  A$bloxorz$3860                     bloxorz.enr.c
+          0F65  A$bloxorz$3861                     bloxorz.enr.c
+          0F66  A$bloxorz$3862                     bloxorz.enr.c
+          0F68  A$bloxorz$3863                     bloxorz.enr.c
+          0F6A  A$bloxorz$3864                     bloxorz.enr.c
+          0F6C  A$bloxorz$3865                     bloxorz.enr.c
+ASxxxx Linker V05.00,  page 34.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.text                      001A        340A =       13322. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          0F6E  A$bloxorz$3866                     bloxorz.enr.c
+          0F70  A$bloxorz$3867                     bloxorz.enr.c
+          0F72  A$bloxorz$3873                     bloxorz.enr.c
+          0F74  A$bloxorz$3874                     bloxorz.enr.c
+          0F77  A$bloxorz$3875                     bloxorz.enr.c
+          0F79  A$bloxorz$3876                     bloxorz.enr.c
+          0F7C  A$bloxorz$3879                     bloxorz.enr.c
+          0F7F  A$bloxorz$3880                     bloxorz.enr.c
+          0F82  A$bloxorz$3881                     bloxorz.enr.c
+          0F85  A$bloxorz$3888                     bloxorz.enr.c
+          0F88  A$bloxorz$3889                     bloxorz.enr.c
+          0F89  A$bloxorz$3890                     bloxorz.enr.c
+          0F8A  A$bloxorz$3891                     bloxorz.enr.c
+          0F8B  A$bloxorz$3892                     bloxorz.enr.c
+          0F8E  A$bloxorz$3893                     bloxorz.enr.c
+          0F90  A$bloxorz$3894                     bloxorz.enr.c
+          0F92  A$bloxorz$3897                     bloxorz.enr.c
+          0F95  A$bloxorz$3904                     bloxorz.enr.c
+          0F98  A$bloxorz$3905                     bloxorz.enr.c
+          0F9B  A$bloxorz$3911                     bloxorz.enr.c
+          0F9C  A$bloxorz$3912                     bloxorz.enr.c
+          0F9E  A$bloxorz$3918                     bloxorz.enr.c
+          0FA0  A$bloxorz$3919                     bloxorz.enr.c
+          0FA3  A$bloxorz$3926                     bloxorz.enr.c
+          0FA6  A$bloxorz$3933                     bloxorz.enr.c
+          0FA9  A$bloxorz$3939                     bloxorz.enr.c
+          0FAC  A$bloxorz$3946                     bloxorz.enr.c
+          0FAF  A$bloxorz$3947                     bloxorz.enr.c
+          0FB2  A$bloxorz$3953                     bloxorz.enr.c
+          0FB4  A$bloxorz$3954                     bloxorz.enr.c
+          0FB6  A$bloxorz$3955                     bloxorz.enr.c
+          0FB9  A$bloxorz$3962                     bloxorz.enr.c
+          0FBC  A$bloxorz$3963                     bloxorz.enr.c
+          0FBF  A$bloxorz$3970                     bloxorz.enr.c
+          0FC0  A$bloxorz$3971                     bloxorz.enr.c
+          0FC2  A$bloxorz$3972                     bloxorz.enr.c
+          0FC3  A$bloxorz$3973                     bloxorz.enr.c
+          0FC5  A$bloxorz$3979                     bloxorz.enr.c
+          0FC8  A$bloxorz$3986                     bloxorz.enr.c
+          0FCA  A$bloxorz$3989                     bloxorz.enr.c
+          0FCC  A$bloxorz$3990                     bloxorz.enr.c
+          0FCF  A$bloxorz$4000                     bloxorz.enr.c
+          0FD1  A$bloxorz$4001                     bloxorz.enr.c
+          0FD4  A$bloxorz$4002                     bloxorz.enr.c
+          0FD7  A$bloxorz$4005                     bloxorz.enr.c
+          0FDA  A$bloxorz$4006                     bloxorz.enr.c
+          0FDD  A$bloxorz$4007                     bloxorz.enr.c
+          0FE0  A$bloxorz$4014                     bloxorz.enr.c
+          0FE3  A$bloxorz$4015                     bloxorz.enr.c
+          0FE5  A$bloxorz$4024                     bloxorz.enr.c
+ASxxxx Linker V05.00,  page 35.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.text                      001A        340A =       13322. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          0FE6  A$bloxorz$4025                     bloxorz.enr.c
+          0FE8  A$bloxorz$4026                     bloxorz.enr.c
+          0FEA  A$bloxorz$4027                     bloxorz.enr.c
+          0FED  A$bloxorz$4028                     bloxorz.enr.c
+          0FEE  A$bloxorz$4029                     bloxorz.enr.c
+          0FEF  A$bloxorz$4030                     bloxorz.enr.c
+          0FF0  A$bloxorz$4031                     bloxorz.enr.c
+          0FF2  A$bloxorz$4032                     bloxorz.enr.c
+          0FF4  A$bloxorz$4033                     bloxorz.enr.c
+          0FF6  A$bloxorz$4042                     bloxorz.enr.c
+          0FF8  A$bloxorz$4043                     bloxorz.enr.c
+          0FFA  A$bloxorz$4044                     bloxorz.enr.c
+          0FFC  A$bloxorz$4045                     bloxorz.enr.c
+          0FFD  A$bloxorz$4046                     bloxorz.enr.c
+          0FFF  A$bloxorz$4047                     bloxorz.enr.c
+          1002  A$bloxorz$4048                     bloxorz.enr.c
+          1004  A$bloxorz$4049                     bloxorz.enr.c
+          1005  A$bloxorz$4050                     bloxorz.enr.c
+          1007  A$bloxorz$4051                     bloxorz.enr.c
+          1009  A$bloxorz$4052                     bloxorz.enr.c
+          100B  A$bloxorz$4053                     bloxorz.enr.c
+          100D  A$bloxorz$4054                     bloxorz.enr.c
+          100F  A$bloxorz$4055                     bloxorz.enr.c
+          1011  A$bloxorz$4061                     bloxorz.enr.c
+          1013  A$bloxorz$4062                     bloxorz.enr.c
+          1016  A$bloxorz$4063                     bloxorz.enr.c
+          1018  A$bloxorz$4064                     bloxorz.enr.c
+          101B  A$bloxorz$4067                     bloxorz.enr.c
+          101E  A$bloxorz$4068                     bloxorz.enr.c
+          1021  A$bloxorz$4069                     bloxorz.enr.c
+          1024  A$bloxorz$4076                     bloxorz.enr.c
+          1027  A$bloxorz$4077                     bloxorz.enr.c
+          1028  A$bloxorz$4078                     bloxorz.enr.c
+          1029  A$bloxorz$4079                     bloxorz.enr.c
+          102A  A$bloxorz$4080                     bloxorz.enr.c
+          102D  A$bloxorz$4081                     bloxorz.enr.c
+          102F  A$bloxorz$4082                     bloxorz.enr.c
+          1031  A$bloxorz$4085                     bloxorz.enr.c
+          1034  A$bloxorz$4095                     bloxorz.enr.c
+          1037  A$bloxorz$4096                     bloxorz.enr.c
+          103B  A$bloxorz$4102                     bloxorz.enr.c
+          103E  A$bloxorz$4103                     bloxorz.enr.c
+          1041  A$bloxorz$4104                     bloxorz.enr.c
+          1043  A$bloxorz$4105                     bloxorz.enr.c
+          1047  A$bloxorz$4111                     bloxorz.enr.c
+          104A  A$bloxorz$4112                     bloxorz.enr.c
+          104D  A$bloxorz$4118                     bloxorz.enr.c
+          1050  A$bloxorz$4119                     bloxorz.enr.c
+          1053  A$bloxorz$4125                     bloxorz.enr.c
+          1056  A$bloxorz$4131                     bloxorz.enr.c
+ASxxxx Linker V05.00,  page 36.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.text                      001A        340A =       13322. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          1059  A$bloxorz$4132                     bloxorz.enr.c
+          105C  A$bloxorz$4138                     bloxorz.enr.c
+          105F  A$bloxorz$4144                     bloxorz.enr.c
+          1062  A$bloxorz$4145                     bloxorz.enr.c
+          1064  A$bloxorz$4146                     bloxorz.enr.c
+          1068  A$bloxorz$4153                     bloxorz.enr.c
+          106B  A$bloxorz$4154                     bloxorz.enr.c
+          106E  _blockFalling                      bloxorz.enr.c
+          106E  A$bloxorz$4157                     bloxorz.enr.c
+          1070  A$bloxorz$4158                     bloxorz.enr.c
+          1072  A$bloxorz$4164                     bloxorz.enr.c
+          1075  A$bloxorz$4170                     bloxorz.enr.c
+          1078  A$bloxorz$4171                     bloxorz.enr.c
+          1079  A$bloxorz$4172                     bloxorz.enr.c
+          107B  A$bloxorz$4173                     bloxorz.enr.c
+          107E  A$bloxorz$4179                     bloxorz.enr.c
+          1080  A$bloxorz$4180                     bloxorz.enr.c
+          1082  A$bloxorz$4187                     bloxorz.enr.c
+          1085  A$bloxorz$4188                     bloxorz.enr.c
+          1087  A$bloxorz$4189                     bloxorz.enr.c
+          108B  A$bloxorz$4190                     bloxorz.enr.c
+          108D  A$bloxorz$4191                     bloxorz.enr.c
+          108F  A$bloxorz$4198                     bloxorz.enr.c
+          1090  A$bloxorz$4199                     bloxorz.enr.c
+          1092  A$bloxorz$4200                     bloxorz.enr.c
+          1093  A$bloxorz$4201                     bloxorz.enr.c
+          1095  A$bloxorz$4207                     bloxorz.enr.c
+          1098  A$bloxorz$4214                     bloxorz.enr.c
+          109A  A$bloxorz$4217                     bloxorz.enr.c
+          109C  A$bloxorz$4218                     bloxorz.enr.c
+          109F  A$bloxorz$4228                     bloxorz.enr.c
+          10A1  A$bloxorz$4229                     bloxorz.enr.c
+          10A3  A$bloxorz$4230                     bloxorz.enr.c
+          10A5  A$bloxorz$4233                     bloxorz.enr.c
+          10A7  A$bloxorz$4234                     bloxorz.enr.c
+          10A9  A$bloxorz$4235                     bloxorz.enr.c
+          10AC  A$bloxorz$4242                     bloxorz.enr.c
+          10AF  A$bloxorz$4243                     bloxorz.enr.c
+          10B1  A$bloxorz$4252                     bloxorz.enr.c
+          10B2  A$bloxorz$4253                     bloxorz.enr.c
+          10B4  A$bloxorz$4254                     bloxorz.enr.c
+          10B6  A$bloxorz$4255                     bloxorz.enr.c
+          10B9  A$bloxorz$4256                     bloxorz.enr.c
+          10BA  A$bloxorz$4257                     bloxorz.enr.c
+          10BB  A$bloxorz$4258                     bloxorz.enr.c
+          10BC  A$bloxorz$4259                     bloxorz.enr.c
+          10BE  A$bloxorz$4260                     bloxorz.enr.c
+          10C0  A$bloxorz$4261                     bloxorz.enr.c
+          10C2  A$bloxorz$4270                     bloxorz.enr.c
+          10C4  A$bloxorz$4271                     bloxorz.enr.c
+ASxxxx Linker V05.00,  page 37.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.text                      001A        340A =       13322. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          10C6  A$bloxorz$4272                     bloxorz.enr.c
+          10C8  A$bloxorz$4273                     bloxorz.enr.c
+          10C9  A$bloxorz$4274                     bloxorz.enr.c
+          10CB  A$bloxorz$4275                     bloxorz.enr.c
+          10CE  A$bloxorz$4276                     bloxorz.enr.c
+          10D0  A$bloxorz$4277                     bloxorz.enr.c
+          10D1  A$bloxorz$4278                     bloxorz.enr.c
+          10D3  A$bloxorz$4279                     bloxorz.enr.c
+          10D5  A$bloxorz$4280                     bloxorz.enr.c
+          10D7  A$bloxorz$4281                     bloxorz.enr.c
+          10D9  A$bloxorz$4282                     bloxorz.enr.c
+          10DB  A$bloxorz$4283                     bloxorz.enr.c
+          10DD  A$bloxorz$4289                     bloxorz.enr.c
+          10DF  A$bloxorz$4290                     bloxorz.enr.c
+          10E1  A$bloxorz$4291                     bloxorz.enr.c
+          10E3  A$bloxorz$4292                     bloxorz.enr.c
+          10E5  A$bloxorz$4295                     bloxorz.enr.c
+          10E7  A$bloxorz$4296                     bloxorz.enr.c
+          10E9  A$bloxorz$4297                     bloxorz.enr.c
+          10EC  A$bloxorz$4304                     bloxorz.enr.c
+          10EF  A$bloxorz$4305                     bloxorz.enr.c
+          10F0  A$bloxorz$4306                     bloxorz.enr.c
+          10F2  A$bloxorz$4307                     bloxorz.enr.c
+          10F3  A$bloxorz$4308                     bloxorz.enr.c
+          10F4  A$bloxorz$4309                     bloxorz.enr.c
+          10F7  A$bloxorz$4310                     bloxorz.enr.c
+          10F9  A$bloxorz$4311                     bloxorz.enr.c
+          10FB  A$bloxorz$4314                     bloxorz.enr.c
+          10FE  A$bloxorz$4324                     bloxorz.enr.c
+          1101  A$bloxorz$4325                     bloxorz.enr.c
+          1105  A$bloxorz$4331                     bloxorz.enr.c
+          1108  A$bloxorz$4332                     bloxorz.enr.c
+          110B  A$bloxorz$4333                     bloxorz.enr.c
+          110D  A$bloxorz$4334                     bloxorz.enr.c
+          1111  A$bloxorz$4340                     bloxorz.enr.c
+          1114  A$bloxorz$4341                     bloxorz.enr.c
+          1117  A$bloxorz$4347                     bloxorz.enr.c
+          111A  A$bloxorz$4348                     bloxorz.enr.c
+          111D  A$bloxorz$4354                     bloxorz.enr.c
+          1120  A$bloxorz$4360                     bloxorz.enr.c
+          1123  A$bloxorz$4361                     bloxorz.enr.c
+          1126  A$bloxorz$4367                     bloxorz.enr.c
+          1129  A$bloxorz$4368                     bloxorz.enr.c
+          112C  A$bloxorz$4375                     bloxorz.enr.c
+          112F  A$bloxorz$4376                     bloxorz.enr.c
+          1131  A$bloxorz$4377                     bloxorz.enr.c
+          1133  _startMusic                        bloxorz.enr.c
+          1153  _levelEndMusic                     bloxorz.enr.c
+          116D  _fallingMusic                      bloxorz.enr.c
+          118D  _movingMusic                       bloxorz.enr.c
+ASxxxx Linker V05.00,  page 38.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.text                      001A        340A =       13322. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          13FC  _height2FallingLeft0               bloxorz.enr.c
+          142D  _height2RisingRight0               bloxorz.enr.c
+          1461  _height2FallingRight0              bloxorz.enr.c
+          1492  _height2RisingLeft0                bloxorz.enr.c
+          14C6  _height2FallingBack0               bloxorz.enr.c
+          14F7  _height2RisingFront0               bloxorz.enr.c
+          152B  _height2FallingFront0              bloxorz.enr.c
+          155C  _height2RisingBack0                bloxorz.enr.c
+          1590  _depth2RollingLeft0                bloxorz.enr.c
+          15C1  _depth2RollingRight0               bloxorz.enr.c
+          15F2  _width2RollingFront0               bloxorz.enr.c
+          1623  _width2RollingBack0                bloxorz.enr.c
+          1654  _height2FallingLeft1               bloxorz.enr.c
+          1685  _height2RisingRight1               bloxorz.enr.c
+          16B9  _height2FallingRight1              bloxorz.enr.c
+          16ED  _height2RisingLeft1                bloxorz.enr.c
+          1721  _height2FallingBack1               bloxorz.enr.c
+          1755  _height2RisingFront1               bloxorz.enr.c
+          1789  _height2FallingFront1              bloxorz.enr.c
+          17BA  _height2RisingBack1                bloxorz.enr.c
+          17EE  _depth2RollingLeft1                bloxorz.enr.c
+          181F  _depth2RollingRight1               bloxorz.enr.c
+          1853  _width2RollingFront1               bloxorz.enr.c
+          1884  _width2RollingBack1                bloxorz.enr.c
+          18B8  _height2FallingLeft2               bloxorz.enr.c
+          18E9  _height2RisingRight2               bloxorz.enr.c
+          191D  _height2FallingRight2              bloxorz.enr.c
+          1951  _height2RisingLeft2                bloxorz.enr.c
+          1985  _height2FallingBack2               bloxorz.enr.c
+          19B9  _height2RisingFront2               bloxorz.enr.c
+          19ED  _height2FallingFront2              bloxorz.enr.c
+          1A1E  _height2RisingBack2                bloxorz.enr.c
+          1A52  _depth2RollingLeft2                bloxorz.enr.c
+          1A83  _depth2RollingRight2               bloxorz.enr.c
+          1AB7  _width2RollingFront2               bloxorz.enr.c
+          1AE8  _width2RollingBack2                bloxorz.enr.c
+          1B1C  _height2FallingLeft3               bloxorz.enr.c
+          1B4D  _height2RisingRight3               bloxorz.enr.c
+          1B81  _height2FallingRight3              bloxorz.enr.c
+          1BB5  _height2RisingLeft3                bloxorz.enr.c
+          1BE9  _height2FallingBack3               bloxorz.enr.c
+          1C1D  _height2RisingFront3               bloxorz.enr.c
+          1C51  _height2FallingFront3              bloxorz.enr.c
+          1C82  _height2RisingBack3                bloxorz.enr.c
+          1CB6  _depth2RollingLeft3                bloxorz.enr.c
+          1CE7  _depth2RollingRight3               bloxorz.enr.c
+          1D1B  _width2RollingFront3               bloxorz.enr.c
+          1D4C  _width2RollingBack3                bloxorz.enr.c
+          1D80  _height2FallingLeft4               bloxorz.enr.c
+          1DB1  _height2RisingRight4               bloxorz.enr.c
+ASxxxx Linker V05.00,  page 39.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.text                      001A        340A =       13322. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          1DE5  _height2FallingRight4              bloxorz.enr.c
+          1E19  _height2RisingLeft4                bloxorz.enr.c
+          1E4D  _height2FallingBack4               bloxorz.enr.c
+          1E81  _height2RisingFront4               bloxorz.enr.c
+          1EB5  _height2FallingFront4              bloxorz.enr.c
+          1EE6  _height2RisingBack4                bloxorz.enr.c
+          1F1A  _depth2RollingLeft4                bloxorz.enr.c
+          1F4B  _depth2RollingRight4               bloxorz.enr.c
+          1F7F  _width2RollingFront4               bloxorz.enr.c
+          1FB0  _width2RollingBack4                bloxorz.enr.c
+          1FE4  _height2FallingLeft5               bloxorz.enr.c
+          2015  _height2RisingRight5               bloxorz.enr.c
+          2049  _height2FallingRight5              bloxorz.enr.c
+          207D  _height2RisingLeft5                bloxorz.enr.c
+          20B1  _height2FallingBack5               bloxorz.enr.c
+          20E5  _height2RisingFront5               bloxorz.enr.c
+          2119  _height2FallingFront5              bloxorz.enr.c
+          214A  _height2RisingBack5                bloxorz.enr.c
+          217E  _depth2RollingLeft5                bloxorz.enr.c
+          21AF  _depth2RollingRight5               bloxorz.enr.c
+          21E3  _width2RollingFront5               bloxorz.enr.c
+          2214  _width2RollingBack5                bloxorz.enr.c
+          2248  _height2FallingLeft6               bloxorz.enr.c
+          2279  _height2RisingRight6               bloxorz.enr.c
+          22AD  _height2FallingRight6              bloxorz.enr.c
+          22E1  _height2RisingLeft6                bloxorz.enr.c
+          2315  _height2FallingBack6               bloxorz.enr.c
+          2349  _height2RisingFront6               bloxorz.enr.c
+          237D  _height2FallingFront6              bloxorz.enr.c
+          23AE  _height2RisingBack6                bloxorz.enr.c
+          23E2  _depth2RollingLeft6                bloxorz.enr.c
+          2413  _depth2RollingRight6               bloxorz.enr.c
+          2447  _width2RollingFront6               bloxorz.enr.c
+          2478  _width2RollingBack6                bloxorz.enr.c
+          24AC  _height2FallingLeft7               bloxorz.enr.c
+          24DD  _height2RisingRight7               bloxorz.enr.c
+          2511  _height2FallingRight7              bloxorz.enr.c
+          2545  _height2RisingLeft7                bloxorz.enr.c
+          2579  _height2FallingBack7               bloxorz.enr.c
+          25AD  _height2RisingFront7               bloxorz.enr.c
+          25E1  _height2FallingFront7              bloxorz.enr.c
+          2612  _height2RisingBack7                bloxorz.enr.c
+          2646  _depth2RollingLeft7                bloxorz.enr.c
+          2677  _depth2RollingRight7               bloxorz.enr.c
+          26AB  _width2RollingFront7               bloxorz.enr.c
+          26DC  _width2RollingBack7                bloxorz.enr.c
+          2710  _height2FallingLeft8               bloxorz.enr.c
+          2741  _height2RisingRight8               bloxorz.enr.c
+          2775  _height2FallingRight8              bloxorz.enr.c
+          27A9  _height2RisingLeft8                bloxorz.enr.c
+ASxxxx Linker V05.00,  page 40.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.text                      001A        340A =       13322. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          27DD  _height2FallingBack8               bloxorz.enr.c
+          2811  _height2RisingFront8               bloxorz.enr.c
+          2845  _height2FallingFront8              bloxorz.enr.c
+          2876  _height2RisingBack8                bloxorz.enr.c
+          28AA  _depth2RollingLeft8                bloxorz.enr.c
+          28DB  _depth2RollingRight8               bloxorz.enr.c
+          290F  _width2RollingFront8               bloxorz.enr.c
+          2940  _width2RollingBack8                bloxorz.enr.c
+          2974  _height2FallingLeft9               bloxorz.enr.c
+          29A5  _height2RisingRight9               bloxorz.enr.c
+          29D9  _height2FallingRight9              bloxorz.enr.c
+          2A0D  _height2RisingLeft9                bloxorz.enr.c
+          2A41  _height2FallingBack9               bloxorz.enr.c
+          2A75  _height2RisingFront9               bloxorz.enr.c
+          2AA9  _height2FallingFront9              bloxorz.enr.c
+          2ADA  _height2RisingBack9                bloxorz.enr.c
+          2B0E  _depth2RollingLeft9                bloxorz.enr.c
+          2B3F  _depth2RollingRight9               bloxorz.enr.c
+          2B73  _width2RollingFront9               bloxorz.enr.c
+          2BA4  _width2RollingBack9                bloxorz.enr.c
+          2BD8  _height2FallingLeft10              bloxorz.enr.c
+          2C09  _height2RisingRight10              bloxorz.enr.c
+          2C3D  _height2FallingRight10             bloxorz.enr.c
+          2C71  _height2RisingLeft10               bloxorz.enr.c
+          2CA5  _height2FallingBack10              bloxorz.enr.c
+          2CD9  _height2RisingFront10              bloxorz.enr.c
+          2D0D  _height2FallingFront10             bloxorz.enr.c
+          2D3E  _height2RisingBack10               bloxorz.enr.c
+          2D72  _depth2RollingLeft10               bloxorz.enr.c
+          2DA3  _depth2RollingRight10              bloxorz.enr.c
+          2DD7  _width2RollingFront10              bloxorz.enr.c
+          2E08  _width2RollingBack10               bloxorz.enr.c
+          2E3C  _height2FallingLeft11              bloxorz.enr.c
+          2E6D  _height2RisingRight11              bloxorz.enr.c
+          2EA1  _height2FallingRight11             bloxorz.enr.c
+          2ED5  _height2RisingLeft11               bloxorz.enr.c
+          2F09  _height2FallingBack11              bloxorz.enr.c
+          2F3D  _height2RisingFront11              bloxorz.enr.c
+          2F71  _height2FallingFront11             bloxorz.enr.c
+          2FA2  _height2RisingBack11               bloxorz.enr.c
+          2FD6  _depth2RollingLeft11               bloxorz.enr.c
+          3007  _depth2RollingRight11              bloxorz.enr.c
+          303B  _width2RollingFront11              bloxorz.enr.c
+          306C  _width2RollingBack11               bloxorz.enr.c
+          30A0  _height2FallingLeft12              bloxorz.enr.c
+          30D1  _height2RisingRight12              bloxorz.enr.c
+          3105  _height2FallingRight12             bloxorz.enr.c
+          3139  _height2RisingLeft12               bloxorz.enr.c
+          316D  _height2FallingBack12              bloxorz.enr.c
+          31A1  _height2RisingFront12              bloxorz.enr.c
+ASxxxx Linker V05.00,  page 41.
+Hexidecimal  [16-Bits]
+[ Bank == rom ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.text                      001A        340A =       13322. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          31D5  _height2FallingFront12             bloxorz.enr.c
+          3206  _height2RisingBack12               bloxorz.enr.c
+          323A  _depth2RollingLeft12               bloxorz.enr.c
+          326B  _depth2RollingRight12              bloxorz.enr.c
+          329F  _width2RollingFront12              bloxorz.enr.c
+          32D0  _width2RollingBack12               bloxorz.enr.c
+          3304  _height2FallingLeft                bloxorz.enr.c
+          331C  _height2RisingRight                bloxorz.enr.c
+          3334  _height2FallingRight               bloxorz.enr.c
+          334C  _height2RisingLeft                 bloxorz.enr.c
+          3364  _height2FallingBack                bloxorz.enr.c
+          337C  _height2RisingFront                bloxorz.enr.c
+          3394  _height2FallingFront               bloxorz.enr.c
+          33AC  _height2RisingBack                 bloxorz.enr.c
+          33C4  _depth2RollingLeft                 bloxorz.enr.c
+          33DC  _depth2RollingRight                bloxorz.enr.c
+          33F4  _width2RollingFront                bloxorz.enr.c
+          340C  _width2RollingBack                 bloxorz.enr.c
+
+ASxxxx Linker V05.00,  page 42.
+Hexidecimal  [16-Bits]
+[ Bank == ram ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.data                      C880        0016 =          22. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          C880  __mc6809                           mc6809.c
+          C888  _currentMusic                      bloxorz.enr.c
+          C88A  _level0                            bloxorz.enr.c
+          C88C  _level1                            bloxorz.enr.c
+          C88E  _level2                            bloxorz.enr.c
+          C890  _lineCount                         bloxorz.enr.c
+          C891  _startX                            bloxorz.enr.c
+          C892  _startY                            bloxorz.enr.c
+          C893  _endX                              bloxorz.enr.c
+          C894  _endY                              bloxorz.enr.c
+          C895  _levelNumber                       bloxorz.enr.c
+
+ASxxxx Linker V05.00,  page 43.
+Hexidecimal  [16-Bits]
+[ Bank == ram ]
+
+Area                       Addr        Size        Decimal Bytes (Attributes)
+--------------------       ----        ----        ------- ----- ------------
+.bss                       C896        01F0 =         496. bytes (REL,CON,CSEG)
+
+         Value  Global                             Global Defined In Module
+         -----  --------------------------------   ------------------------
+          C896  _lineX0                            bloxorz.enr.c
+          C90E  _lineY0                            bloxorz.enr.c
+          C986  _lineX1                            bloxorz.enr.c
+          C9FE  _lineY1                            bloxorz.enr.c
+          CA76  _blockOrientation                  bloxorz.enr.c
+          CA77  _blockX                            bloxorz.enr.c
+          CA78  _blockY                            bloxorz.enr.c
+          CA79  _blockAnimation                    bloxorz.enr.c
+          CA7B  _nextBlockAnimation                bloxorz.enr.c
+          CA7D  _blockAnimationStep                bloxorz.enr.c
+          CA7E  _blockAnimating                    bloxorz.enr.c
+          CA7F  _nextBlockX                        bloxorz.enr.c
+          CA80  _nextBlockY                        bloxorz.enr.c
+          CA81  _lastBlockDirection                bloxorz.enr.c
+          CA82  _blockYOfs                         bloxorz.enr.c
+          CA83  _level                             bloxorz.enr.c
+          CA85  _gameState                         bloxorz.enr.c
+
+ASxxxx Linker V05.00,  page 44.
+
+Files Linked                              [ module(s) ]
+
+/home/frank/Downloads/Vide2.0_RC14/C/Pee  [ crt0.c ]
+/home/frank/Downloads/Vide2.0_RC14/C/Pee  [ mc6809.c ]
+/home/frank/Downloads/Vide2.0_RC14/C/Pee  [ gcc.c ]
+/home/frank/Downloads/Vide2.0_RC14/proje  [ cartridge.enr.c ]
+/home/frank/Downloads/Vide2.0_RC14/proje  [ bloxorz.enr.c ]
+
+
+

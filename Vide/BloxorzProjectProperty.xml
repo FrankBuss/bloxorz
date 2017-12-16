@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<AllProjectProperties>
+	<ProjectProperties>
+		<Class>Project</Class>
+		<Name>Bloxorz</Name>
+		<ProjectName>Bloxorz</ProjectName>
+		<DirectoryName></DirectoryName>
+		<Path>projects</Path>
+		<MainFile>Bloxorz.asm</MainFile>
+		<Description></Description>
+		<Version>1.0</Version>
+		<Author>Frank Buss</Author>
+		<Bankswitching>none</Bankswitching>
+		<createBankswitchCode>false</createBankswitchCode>
+		<createGameLoopCode>false</createGameLoopCode>
+		<NumberOfBanks>1</NumberOfBanks>
+		<BankMainFiless>
+			<BankMainFiles>Bloxorz.asm</BankMainFiles>
+		</BankMainFiless>
+		<Extras>0</Extras>
+		<ProjectPreScriptClass></ProjectPreScriptClass>
+		<ProjectPreScriptName></ProjectPreScriptName>
+		<ProjectPostScriptClass></ProjectPostScriptClass>
+		<ProjectPostScriptName></ProjectPostScriptName>
+		<BankDefiness>
+			<BankDefines></BankDefines>
+		</BankDefiness>
+		<WheelName></WheelName>
+		<IsCDebugging>true</IsCDebugging>
+		<IsCProject>false</IsCProject>
+		<IsPeerCProject>true</IsPeerCProject>
+		<CFLAGS>-O3 -quiet -fverbose-asm -W -Wall -Wextra -Wconversion -Werror -fomit-frame-pointer -mint8 -msoft-reg-count=0 -std=gnu99 -fno-time-report -IC/PeerC/vectrex/include</CFLAGS>
+	</ProjectProperties>
+</AllProjectProperties>
