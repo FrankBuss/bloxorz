@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"144 mcc_generated_files/pin_manager.h
+"156 mcc_generated_files/pin_manager.h
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
 "83 mcc_generated_files/mcc.h
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
@@ -5479,8 +5479,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 192: extern unsigned char __resetbits;
 [; ;pic.h: 193: extern __bit __powerdown;
 [; ;pic.h: 194: extern __bit __timeout;
-[; ;pin_manager.h: 144: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 156: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 156: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 168: void PIN_MANAGER_IOC(void);
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
 [; ;stdint.h: 38: typedef signed long int int32_t;
@@ -5504,13 +5504,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 222: typedef int16_t intptr_t;
 [; ;stdint.h: 227: typedef uint16_t uintptr_t;
 [; ;stdbool.h: 12: typedef unsigned char bool;
-[; ;clc1.h: 91: void CLC1_Initialize(void);
-[; ;clc1.h: 113: bool CLC1_OutputStatusGet(void);
-[; ;clc2.h: 91: void CLC2_Initialize(void);
-[; ;clc2.h: 113: bool CLC2_OutputStatusGet(void);
 [; ;eusart.h: 94: void EUSART_Initialize(void);
 [; ;eusart.h: 114: uint8_t EUSART_Read(void);
 [; ;eusart.h: 134: void EUSART_Write(uint8_t txData);
+[; ;clc2.h: 91: void CLC2_Initialize(void);
+[; ;clc2.h: 113: bool CLC2_OutputStatusGet(void);
+[; ;clc1.h: 91: void CLC1_Initialize(void);
+[; ;clc1.h: 113: bool CLC1_OutputStatusGet(void);
 [; ;mcc.h: 70: void SYSTEM_Initialize(void);
 [; ;mcc.h: 83: void OSCILLATOR_Initialize(void);
 [; ;mcc.h: 96: void WDT_Initialize(void);

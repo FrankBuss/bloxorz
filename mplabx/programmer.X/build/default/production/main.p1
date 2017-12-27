@@ -1,5 +1,41 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"7266 /opt/microchip/xc8/v1.42/include/pic18f45k50.h
+"7060 /opt/microchip/xc8/v1.42/include/pic18f45k50.h
+[s S285 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S285 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
+"7070
+[s S286 :3 `uc 1 :1 `uc 1 ]
+[n S286 . . ADEN ]
+"7074
+[s S287 :1 `uc 1 :5 `uc 1 :1 `uc 1 ]
+[n S287 . RCD8 . RC8_9 ]
+"7079
+[s S288 :6 `uc 1 :1 `uc 1 ]
+[n S288 . . RC9 ]
+"7083
+[s S289 :5 `uc 1 :1 `uc 1 ]
+[n S289 . . SRENA ]
+"7059
+[u S284 `S285 1 `S286 1 `S287 1 `S288 1 `S289 1 ]
+[n S284 . . . . . . ]
+"7088
+[v _RCSTA1bits `VS284 ~T0 @X0 0 e@4011 ]
+"6293
+[s S250 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S250 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF ACTIF ]
+"6303
+[s S251 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S251 . . SSP1IF TX1IF RC1IF . STIF ]
+"6311
+[s S252 :7 `uc 1 :1 `uc 1 ]
+[n S252 . . PSPIF ]
+"6292
+[u S249 `S250 1 `S251 1 `S252 1 ]
+[n S249 . . . . ]
+"6316
+[v _PIR1bits `VS249 ~T0 @X0 0 e@3998 ]
+"7587
+[v _RCREG1 `Vuc ~T0 @X0 0 e@4014 ]
+"7266
 [s S297 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S297 . TX9D TRMT BRGH SENDB SYNC TXEN TX9 CSRC ]
 "7276
@@ -34,26 +70,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S296 . . . . . . . . . . . ]
 "7313
 [v _TXSTA1bits `VS296 ~T0 @X0 0 e@4012 ]
-"7060
-[s S285 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S285 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
-"7070
-[s S286 :3 `uc 1 :1 `uc 1 ]
-[n S286 . . ADEN ]
-"7074
-[s S287 :1 `uc 1 :5 `uc 1 :1 `uc 1 ]
-[n S287 . RCD8 . RC8_9 ]
-"7079
-[s S288 :6 `uc 1 :1 `uc 1 ]
-[n S288 . . RC9 ]
-"7083
-[s S289 :5 `uc 1 :1 `uc 1 ]
-[n S289 . . SRENA ]
-"7059
-[u S284 `S285 1 `S286 1 `S287 1 `S288 1 `S289 1 ]
-[n S284 . . . . . . ]
-"7088
-[v _RCSTA1bits `VS284 ~T0 @X0 0 e@4011 ]
 "8713
 [s S377 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S377 . ABDEN WUE . BRG16 TXCKP RXDTP RCIDL ABDOVF ]
@@ -82,22 +98,80 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _BAUDCON1bits `VS376 ~T0 @X0 0 e@4024 ]
 "7625
 [v _SPBRG1 `Vuc ~T0 @X0 0 e@4015 ]
-"6293
-[s S250 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S250 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF ACTIF ]
-"6303
-[s S251 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S251 . . SSP1IF TX1IF RC1IF . STIF ]
-"6311
-[s S252 :7 `uc 1 :1 `uc 1 ]
-[n S252 . . PSPIF ]
-"6292
-[u S249 `S250 1 `S251 1 `S252 1 ]
-[n S249 . . . . ]
-"6316
-[v _PIR1bits `VS249 ~T0 @X0 0 e@3998 ]
-"7587
-[v _RCREG1 `Vuc ~T0 @X0 0 e@4014 ]
+"12137
+[s S536 :1 `uc 1 ]
+[n S536 . NOT_BOR ]
+"12140
+[s S537 :1 `uc 1 :1 `uc 1 ]
+[n S537 . . NOT_POR ]
+"12144
+[s S538 :2 `uc 1 :1 `uc 1 ]
+[n S538 . . NOT_PD ]
+"12148
+[s S539 :3 `uc 1 :1 `uc 1 ]
+[n S539 . . NOT_TO ]
+"12152
+[s S540 :4 `uc 1 :1 `uc 1 ]
+[n S540 . . NOT_RI ]
+"12156
+[s S541 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S541 . nBOR nPOR nPD nTO nRI . SBOREN IPEN ]
+"12166
+[s S542 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S542 . BOR POR PD TO RI ]
+"12136
+[u S535 `S536 1 `S537 1 `S538 1 `S539 1 `S540 1 `S541 1 `S542 1 ]
+[n S535 . . . . . . . . ]
+"12174
+[v _RCONbits `VS535 ~T0 @X0 0 e@4048 ]
+"13229
+[s S607 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S607 . IOCIF INT0IF TMR0IF IOCIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
+"13239
+[s S608 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S608 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
+"13249
+[s S609 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S609 . . GIEL GIEH ]
+"13228
+[u S606 `S607 1 `S608 1 `S609 1 ]
+[n S606 . . . . ]
+"13255
+[v _INTCONbits `VS606 ~T0 @X0 0 e@4082 ]
+"6194
+[s S246 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S246 . TMR1IE TMR2IE CCP1IE SSPIE TXIE RCIE ADIE ACTIE ]
+"6204
+[s S247 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S247 . . SSP1IE TX1IE RC1IE . STIE ]
+"6212
+[s S248 :7 `uc 1 :1 `uc 1 ]
+[n S248 . . PSPIE ]
+"6193
+[u S245 `S246 1 `S247 1 `S248 1 ]
+[n S245 . . . . ]
+"6217
+[v _PIE1bits `VS245 ~T0 @X0 0 e@3997 ]
+"2899
+[v _PORTA `Vuc ~T0 @X0 0 e@3968 ]
+"3051
+[v _PORTB `Vuc ~T0 @X0 0 e@3969 ]
+"3161
+[v _PORTC `Vuc ~T0 @X0 0 e@3970 ]
+"3303
+[v _PORTD `Vuc ~T0 @X0 0 e@3971 ]
+"3424
+[v _PORTE `Vuc ~T0 @X0 0 e@3972 ]
+"4624
+[v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
+"4846
+[v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
+"5068
+[v _TRISC `Vuc ~T0 @X0 0 e@3988 ]
+"5246
+[v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
+"5468
+[v _TRISE `Vuc ~T0 @X0 0 e@3990 ]
 "7549
 [v _TXREG1 `Vuc ~T0 @X0 0 e@4013 ]
 [p mainexit ]
@@ -118,97 +192,89 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _ANSELC `Vuc ~T0 @X0 0 e@3933 ]
 "9773
 [v _ADCON0 `Vuc ~T0 @X0 0 e@4034 ]
-"3161
-[v _PORTC `Vuc ~T0 @X0 0 e@3970 ]
-"4624
-[v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
-"4846
-[v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
-"5068
-[v _TRISC `Vuc ~T0 @X0 0 e@3988 ]
-"5246
-[v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
-"7 main.c
+"23 receiver.h
+[v _onData `(v ~T0 @X0 0 ef1`uc ]
+"6 main.c
 [p x PLLSEL=PLL4X ]
-"8
+"7
 [p x CFGPLLEN=OFF ]
-"9
+"8
 [p x CPUDIV=NOCLKDIV ]
-"10
+"9
 [p x LS48MHZ=SYS24X4 ]
+"12
+[p x FOSC=INTOSCIO ]
 "13
-[p x FOSC=INTOSCCLKO ]
-"14
 [p x PCLKEN=ON ]
-"15
+"14
 [p x FCMEN=OFF ]
-"16
+"15
 [p x IESO=OFF ]
-"19
+"18
 [p x nPWRTEN=OFF ]
-"20
+"19
 [p x BOREN=SBORDIS ]
-"21
+"20
 [p x BORV=190 ]
-"22
+"21
 [p x nLPBOR=OFF ]
-"25
+"24
 [p x WDTEN=OFF ]
-"26
+"25
 [p x WDTPS=32768 ]
-"29
+"28
 [p x CCP2MX=RC1 ]
-"30
+"29
 [p x PBADEN=OFF ]
-"31
+"30
 [p x T3CMX=RC0 ]
-"32
+"31
 [p x SDOMX=RB3 ]
-"33
+"32
 [p x MCLRE=OFF ]
-"36
+"35
 [p x STVREN=ON ]
-"37
+"36
 [p x LVP=ON ]
-"38
+"37
 [p x ICPRT=OFF ]
-"39
+"38
 [p x XINST=OFF ]
-"42
+"41
 [p x CP0=OFF ]
-"43
+"42
 [p x CP1=OFF ]
-"44
+"43
 [p x CP2=OFF ]
-"45
+"44
 [p x CP3=OFF ]
-"48
+"47
 [p x CPB=OFF ]
-"49
+"48
 [p x CPD=OFF ]
-"52
+"51
 [p x WRT0=OFF ]
-"53
+"52
 [p x WRT1=OFF ]
-"54
+"53
 [p x WRT2=OFF ]
-"55
+"54
 [p x WRT3=OFF ]
-"58
+"57
 [p x WRTC=OFF ]
-"59
+"58
 [p x WRTB=OFF ]
-"60
+"59
 [p x WRTD=OFF ]
-"63
+"62
 [p x EBTR0=OFF ]
-"64
+"63
 [p x EBTR1=OFF ]
-"65
+"64
 [p x EBTR2=OFF ]
-"66
+"65
 [p x EBTR3=OFF ]
-"69
+"68
 [p x EBTRB=OFF ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
@@ -5509,179 +5575,519 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 217: typedef uint32_t uintmax_t;
 [; ;stdint.h: 222: typedef int16_t intptr_t;
 [; ;stdint.h: 227: typedef uint16_t uintptr_t;
-"77 main.c
-[v _init_uart `(v ~T0 @X0 1 ef ]
-"78
-{
-[; ;main.c: 77: void init_uart()
-[; ;main.c: 78: {
-[e :U _init_uart ]
-[f ]
-[; ;main.c: 79: TXSTA1bits.SYNC = 0;
-"79
-[e = . . _TXSTA1bits 0 4 -> -> 0 `i `uc ]
-[; ;main.c: 80: TXSTA1bits.TX9 = 0;
+[; ;receiver.h: 6: void writePortA(uint8_t data);
+[; ;receiver.h: 7: void writePortB(uint8_t data);
+[; ;receiver.h: 8: void writePortC(uint8_t data);
+[; ;receiver.h: 9: void writePortD(uint8_t data);
+[; ;receiver.h: 10: void writePortE(uint8_t data);
+[; ;receiver.h: 11: void writeTrisA(uint8_t data);
+[; ;receiver.h: 12: void writeTrisB(uint8_t data);
+[; ;receiver.h: 13: void writeTrisC(uint8_t data);
+[; ;receiver.h: 14: void writeTrisD(uint8_t data);
+[; ;receiver.h: 15: void writeTrisE(uint8_t data);
+[; ;receiver.h: 16: uint8_t readPortA(void);
+[; ;receiver.h: 17: uint8_t readPortB(void);
+[; ;receiver.h: 18: uint8_t readPortC(void);
+[; ;receiver.h: 19: uint8_t readPortD(void);
+[; ;receiver.h: 20: uint8_t readPortE(void);
+[; ;receiver.h: 22: void writeChar(uint8_t d);
+[; ;receiver.h: 23: void onData(uint8_t d);
+"79 main.c
+[v _uartBuf `Vuc ~T0 @X0 -> 16 `i e ]
+[; ;main.c: 79: volatile uint8_t uartBuf[16];
 "80
-[e = . . _TXSTA1bits 0 6 -> -> 0 `i `uc ]
-[; ;main.c: 81: TXSTA1bits.TXEN = 1;
+[v _uartReadIndex `Vuc ~T0 @X0 1 e ]
+[i _uartReadIndex
+-> -> 0 `i `uc
+]
+[; ;main.c: 80: volatile uint8_t uartReadIndex = 0;
 "81
-[e = . . _TXSTA1bits 0 5 -> -> 1 `i `uc ]
-[; ;main.c: 83: RCSTA1bits.RX9 = 0;
+[v _uartWriteIndex `Vuc ~T0 @X0 1 e ]
+[i _uartWriteIndex
+-> -> 0 `i `uc
+]
+[; ;main.c: 81: volatile uint8_t uartWriteIndex = 0;
+[v $root$_receiveData `(v ~T0 @X0 0 e ]
+[v F5786 `(v ~T0 @X0 1 tf ]
 "83
-[e = . . _RCSTA1bits 0 6 -> -> 0 `i `uc ]
-[; ;main.c: 84: RCSTA1bits.CREN = 1;
-"84
-[e = . . _RCSTA1bits 0 4 -> -> 1 `i `uc ]
-[; ;main.c: 85: RCSTA1bits.SPEN = 1;
-"85
-[e = . . _RCSTA1bits 0 7 -> -> 1 `i `uc ]
-[; ;main.c: 87: BAUDCON1bits.BRG16 = 1;
-"87
-[e = . . _BAUDCON1bits 0 3 -> -> 1 `i `uc ]
-[; ;main.c: 88: TXSTA1bits.BRGH = 1;
-"88
-[e = . . _TXSTA1bits 0 2 -> -> 1 `i `uc ]
-[; ;main.c: 89: SPBRG1 = 7;
-"89
-[e = _SPBRG1 -> -> 7 `i `uc ]
-[; ;main.c: 90: }
-"90
-[e :UE 631 ]
-}
-"92
-[v _read_char `(uc ~T0 @X0 1 ef ]
-"93
+[v _receiveData `IF5786 ~T0 @X0 1 e ]
 {
-[; ;main.c: 92: uint8_t read_char()
-[; ;main.c: 93: {
-[e :U _read_char ]
+[; ;main.c: 83: void interrupt receiveData() {
+[e :U _receiveData ]
 [f ]
-[; ;main.c: 94: while (PIR1bits.RC1IF == 0) {
-"94
-[e $U 633  ]
-[e :U 634 ]
+[; ;main.c: 84: if (RCSTA1bits.OERR == 1) {
+"84
+[e $ ! == -> . . _RCSTA1bits 0 1 `i -> 1 `i 632  ]
 {
-[; ;main.c: 95: if (RCSTA1bits.OERR == 1) {
-"95
-[e $ ! == -> . . _RCSTA1bits 0 1 `i -> 1 `i 636  ]
-{
-[; ;main.c: 96: RCSTA1bits.OERR = 0;
-"96
+[; ;main.c: 85: RCSTA1bits.OERR = 0;
+"85
 [e = . . _RCSTA1bits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 97: RCSTA1bits.CREN = 0;
-"97
+[; ;main.c: 86: RCSTA1bits.CREN = 0;
+"86
 [e = . . _RCSTA1bits 0 4 -> -> 0 `i `uc ]
-[; ;main.c: 98: RCSTA1bits.CREN = 1;
-"98
+[; ;main.c: 87: RCSTA1bits.CREN = 1;
+"87
 [e = . . _RCSTA1bits 0 4 -> -> 1 `i `uc ]
-"99
+"88
 }
-[e :U 636 ]
-"100
+[e :U 632 ]
+[; ;main.c: 88: }
+[; ;main.c: 89: if (PIR1bits.RC1IF == 1) {
+"89
+[e $ ! == -> . . _PIR1bits 1 3 `i -> 1 `i 633  ]
+{
+[; ;main.c: 90: uartBuf[uartWriteIndex] = RCREG1;
+"90
+[e = *U + &U _uartBuf * -> _uartWriteIndex `ux -> -> # *U &U _uartBuf `ui `ux _RCREG1 ]
+[; ;main.c: 91: uartWriteIndex++;
+"91
+[e ++ _uartWriteIndex -> -> 1 `i `uc ]
+[; ;main.c: 92: if (uartWriteIndex == 16) uartWriteIndex = 0;
+"92
+[e $ ! == -> _uartWriteIndex `i -> 16 `i 634  ]
+[e = _uartWriteIndex -> -> 0 `i `uc ]
+[e :U 634 ]
+"93
 }
 [e :U 633 ]
+[; ;main.c: 93: }
+[; ;main.c: 94: }
 "94
-[e $ == -> . . _PIR1bits 1 3 `i -> 0 `i 634  ]
-[e :U 635 ]
-[; ;main.c: 99: }
-[; ;main.c: 100: }
-[; ;main.c: 101: return RCREG1;
-"101
-[e ) _RCREG1 ]
-[e $UE 632  ]
-[; ;main.c: 102: }
-"102
-[e :UE 632 ]
+[e :UE 631 ]
 }
-"104
-[v _write_char `(v ~T0 @X0 1 ef1`uc ]
-"105
+"96
+[v _initUart `(v ~T0 @X0 1 ef ]
+"97
 {
-[; ;main.c: 104: void write_char(uint8_t data)
-[; ;main.c: 105: {
-[e :U _write_char ]
-"104
-[v _data `uc ~T0 @X0 1 r1 ]
-"105
+[; ;main.c: 96: void initUart()
+[; ;main.c: 97: {
+[e :U _initUart ]
 [f ]
-[; ;main.c: 106: while (TXSTA1bits.TRMT == 0) {}
+[; ;main.c: 98: TXSTA1bits.SYNC = 0;
+"98
+[e = . . _TXSTA1bits 0 4 -> -> 0 `i `uc ]
+[; ;main.c: 99: TXSTA1bits.TX9 = 0;
+"99
+[e = . . _TXSTA1bits 0 6 -> -> 0 `i `uc ]
+[; ;main.c: 100: TXSTA1bits.TXEN = 1;
+"100
+[e = . . _TXSTA1bits 0 5 -> -> 1 `i `uc ]
+[; ;main.c: 102: RCSTA1bits.RX9 = 0;
+"102
+[e = . . _RCSTA1bits 0 6 -> -> 0 `i `uc ]
+[; ;main.c: 103: RCSTA1bits.CREN = 1;
+"103
+[e = . . _RCSTA1bits 0 4 -> -> 1 `i `uc ]
+[; ;main.c: 104: RCSTA1bits.SPEN = 1;
+"104
+[e = . . _RCSTA1bits 0 7 -> -> 1 `i `uc ]
+[; ;main.c: 106: BAUDCON1bits.BRG16 = 1;
 "106
-[e $U 638  ]
-[e :U 639 ]
-{
-}
-[e :U 638 ]
-[e $ == -> . . _TXSTA1bits 0 1 `i -> 0 `i 639  ]
-[e :U 640 ]
-[; ;main.c: 107: TXREG1 = data;
+[e = . . _BAUDCON1bits 0 3 -> -> 1 `i `uc ]
+[; ;main.c: 107: TXSTA1bits.BRGH = 1;
 "107
-[e = _TXREG1 _data ]
-[; ;main.c: 108: }
+[e = . . _TXSTA1bits 0 2 -> -> 1 `i `uc ]
+[; ;main.c: 108: SPBRG1 = 7;
 "108
+[e = _SPBRG1 -> -> 7 `i `uc ]
+[; ;main.c: 111: RCONbits.IPEN = 1;
+"111
+[e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
+[; ;main.c: 112: INTCONbits.GIE = 1;
+"112
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[; ;main.c: 113: INTCONbits.PEIE = 1;
+"113
+[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
+[; ;main.c: 116: PIE1bits.RCIE = 1;
+"116
+[e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
+[; ;main.c: 117: }
+"117
+[e :UE 635 ]
+}
+"119
+[v _writePortA `(v ~T0 @X0 1 ef1`uc ]
+"120
+{
+[; ;main.c: 119: void writePortA(uint8_t data)
+[; ;main.c: 120: {
+[e :U _writePortA ]
+"119
+[v _data `uc ~T0 @X0 1 r1 ]
+"120
+[f ]
+[; ;main.c: 121: PORTA = data;
+"121
+[e = _PORTA _data ]
+[; ;main.c: 122: }
+"122
+[e :UE 636 ]
+}
+"124
+[v _writePortB `(v ~T0 @X0 1 ef1`uc ]
+"125
+{
+[; ;main.c: 124: void writePortB(uint8_t data)
+[; ;main.c: 125: {
+[e :U _writePortB ]
+"124
+[v _data `uc ~T0 @X0 1 r1 ]
+"125
+[f ]
+[; ;main.c: 126: PORTB = data;
+"126
+[e = _PORTB _data ]
+[; ;main.c: 127: }
+"127
 [e :UE 637 ]
 }
-[v $root$_main `(v ~T0 @X0 0 e ]
-"110
-[v _main `(i ~T0 @X0 1 ef ]
-"111
+"129
+[v _writePortC `(v ~T0 @X0 1 ef1`uc ]
+"130
 {
-[; ;main.c: 110: int main()
-[; ;main.c: 111: {
+[; ;main.c: 129: void writePortC(uint8_t data)
+[; ;main.c: 130: {
+[e :U _writePortC ]
+"129
+[v _data `uc ~T0 @X0 1 r1 ]
+"130
+[f ]
+[; ;main.c: 131: PORTC = data;
+"131
+[e = _PORTC _data ]
+[; ;main.c: 132: }
+"132
+[e :UE 638 ]
+}
+"134
+[v _writePortD `(v ~T0 @X0 1 ef1`uc ]
+"135
+{
+[; ;main.c: 134: void writePortD(uint8_t data)
+[; ;main.c: 135: {
+[e :U _writePortD ]
+"134
+[v _data `uc ~T0 @X0 1 r1 ]
+"135
+[f ]
+[; ;main.c: 136: PORTD = data;
+"136
+[e = _PORTD _data ]
+[; ;main.c: 137: }
+"137
+[e :UE 639 ]
+}
+"139
+[v _writePortE `(v ~T0 @X0 1 ef1`uc ]
+"140
+{
+[; ;main.c: 139: void writePortE(uint8_t data)
+[; ;main.c: 140: {
+[e :U _writePortE ]
+"139
+[v _data `uc ~T0 @X0 1 r1 ]
+"140
+[f ]
+[; ;main.c: 141: PORTE = data;
+"141
+[e = _PORTE _data ]
+[; ;main.c: 142: }
+"142
+[e :UE 640 ]
+}
+"144
+[v _writeTrisA `(v ~T0 @X0 1 ef1`uc ]
+"145
+{
+[; ;main.c: 144: void writeTrisA(uint8_t data)
+[; ;main.c: 145: {
+[e :U _writeTrisA ]
+"144
+[v _data `uc ~T0 @X0 1 r1 ]
+"145
+[f ]
+[; ;main.c: 146: TRISA = data;
+"146
+[e = _TRISA _data ]
+[; ;main.c: 147: }
+"147
+[e :UE 641 ]
+}
+"149
+[v _writeTrisB `(v ~T0 @X0 1 ef1`uc ]
+"150
+{
+[; ;main.c: 149: void writeTrisB(uint8_t data)
+[; ;main.c: 150: {
+[e :U _writeTrisB ]
+"149
+[v _data `uc ~T0 @X0 1 r1 ]
+"150
+[f ]
+[; ;main.c: 151: TRISB = data;
+"151
+[e = _TRISB _data ]
+[; ;main.c: 152: }
+"152
+[e :UE 642 ]
+}
+"154
+[v _writeTrisC `(v ~T0 @X0 1 ef1`uc ]
+"155
+{
+[; ;main.c: 154: void writeTrisC(uint8_t data)
+[; ;main.c: 155: {
+[e :U _writeTrisC ]
+"154
+[v _data `uc ~T0 @X0 1 r1 ]
+"155
+[f ]
+[; ;main.c: 157: TRISC = data & 0b10111111 | 0x80;
+"157
+[e = _TRISC -> | & -> _data `i -> 191 `i -> 128 `i `uc ]
+[; ;main.c: 158: }
+"158
+[e :UE 643 ]
+}
+"160
+[v _writeTrisD `(v ~T0 @X0 1 ef1`uc ]
+"161
+{
+[; ;main.c: 160: void writeTrisD(uint8_t data)
+[; ;main.c: 161: {
+[e :U _writeTrisD ]
+"160
+[v _data `uc ~T0 @X0 1 r1 ]
+"161
+[f ]
+[; ;main.c: 162: TRISD = data;
+"162
+[e = _TRISD _data ]
+[; ;main.c: 163: }
+"163
+[e :UE 644 ]
+}
+"165
+[v _writeTrisE `(v ~T0 @X0 1 ef1`uc ]
+"166
+{
+[; ;main.c: 165: void writeTrisE(uint8_t data)
+[; ;main.c: 166: {
+[e :U _writeTrisE ]
+"165
+[v _data `uc ~T0 @X0 1 r1 ]
+"166
+[f ]
+[; ;main.c: 167: TRISE = data;
+"167
+[e = _TRISE _data ]
+[; ;main.c: 168: }
+"168
+[e :UE 645 ]
+}
+"170
+[v _readPortA `(uc ~T0 @X0 1 ef ]
+"171
+{
+[; ;main.c: 170: uint8_t readPortA()
+[; ;main.c: 171: {
+[e :U _readPortA ]
+[f ]
+[; ;main.c: 172: return PORTA;
+"172
+[e ) _PORTA ]
+[e $UE 646  ]
+[; ;main.c: 173: }
+"173
+[e :UE 646 ]
+}
+"175
+[v _readPortB `(uc ~T0 @X0 1 ef ]
+"176
+{
+[; ;main.c: 175: uint8_t readPortB()
+[; ;main.c: 176: {
+[e :U _readPortB ]
+[f ]
+[; ;main.c: 177: return PORTB;
+"177
+[e ) _PORTB ]
+[e $UE 647  ]
+[; ;main.c: 178: }
+"178
+[e :UE 647 ]
+}
+"180
+[v _readPortC `(uc ~T0 @X0 1 ef ]
+"181
+{
+[; ;main.c: 180: uint8_t readPortC()
+[; ;main.c: 181: {
+[e :U _readPortC ]
+[f ]
+[; ;main.c: 182: return PORTC;
+"182
+[e ) _PORTC ]
+[e $UE 648  ]
+[; ;main.c: 183: }
+"183
+[e :UE 648 ]
+}
+"185
+[v _readPortD `(uc ~T0 @X0 1 ef ]
+"186
+{
+[; ;main.c: 185: uint8_t readPortD()
+[; ;main.c: 186: {
+[e :U _readPortD ]
+[f ]
+[; ;main.c: 187: return PORTD;
+"187
+[e ) _PORTD ]
+[e $UE 649  ]
+[; ;main.c: 188: }
+"188
+[e :UE 649 ]
+}
+"190
+[v _readPortE `(uc ~T0 @X0 1 ef ]
+"191
+{
+[; ;main.c: 190: uint8_t readPortE()
+[; ;main.c: 191: {
+[e :U _readPortE ]
+[f ]
+[; ;main.c: 192: return PORTE;
+"192
+[e ) _PORTE ]
+[e $UE 650  ]
+[; ;main.c: 193: }
+"193
+[e :UE 650 ]
+}
+"195
+[v _readChar `(uc ~T0 @X0 1 ef ]
+"196
+{
+[; ;main.c: 195: uint8_t readChar()
+[; ;main.c: 196: {
+[e :U _readChar ]
+[f ]
+"197
+[v _data `uc ~T0 @X0 1 a ]
+[; ;main.c: 197: uint8_t data;
+[; ;main.c: 198: while (uartReadIndex == uartWriteIndex) ;
+"198
+[e $U 652  ]
+[e :U 653 ]
+[e :U 652 ]
+[e $ == -> _uartReadIndex `i -> _uartWriteIndex `i 653  ]
+[e :U 654 ]
+[; ;main.c: 199: data = uartBuf[uartReadIndex];
+"199
+[e = _data *U + &U _uartBuf * -> _uartReadIndex `ux -> -> # *U &U _uartBuf `ui `ux ]
+[; ;main.c: 200: uartReadIndex++;
+"200
+[e ++ _uartReadIndex -> -> 1 `i `uc ]
+[; ;main.c: 201: if (uartReadIndex == 16) uartReadIndex = 0;
+"201
+[e $ ! == -> _uartReadIndex `i -> 16 `i 655  ]
+[e = _uartReadIndex -> -> 0 `i `uc ]
+[e :U 655 ]
+[; ;main.c: 202: return data;
+"202
+[e ) _data ]
+[e $UE 651  ]
+[; ;main.c: 203: }
+"203
+[e :UE 651 ]
+}
+"205
+[v _writeChar `(v ~T0 @X0 1 ef1`uc ]
+"206
+{
+[; ;main.c: 205: void writeChar(uint8_t data)
+[; ;main.c: 206: {
+[e :U _writeChar ]
+"205
+[v _data `uc ~T0 @X0 1 r1 ]
+"206
+[f ]
+[; ;main.c: 207: while (TXSTA1bits.TRMT == 0) {}
+"207
+[e $U 657  ]
+[e :U 658 ]
+{
+}
+[e :U 657 ]
+[e $ == -> . . _TXSTA1bits 0 1 `i -> 0 `i 658  ]
+[e :U 659 ]
+[; ;main.c: 208: TXREG1 = data;
+"208
+[e = _TXREG1 _data ]
+[; ;main.c: 209: }
+"209
+[e :UE 656 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"211
+[v _main `(i ~T0 @X0 1 ef ]
+"212
+{
+[; ;main.c: 211: int main()
+[; ;main.c: 212: {
 [e :U _main ]
 [f ]
-[; ;main.c: 113: OSCCONbits.IRCF = 7;
-"113
+[; ;main.c: 214: OSCCONbits.IRCF = 7;
+"214
 [e = . . _OSCCONbits 0 3 -> -> 7 `i `uc ]
-[; ;main.c: 116: ANSELA = 0;
-"116
+[; ;main.c: 217: ANSELA = 0;
+"217
 [e = _ANSELA -> -> 0 `i `uc ]
-[; ;main.c: 117: ANSELC = 0;
-"117
+[; ;main.c: 218: ANSELC = 0;
+"218
 [e = _ANSELC -> -> 0 `i `uc ]
-[; ;main.c: 120: ADCON0 = 0;
-"120
+[; ;main.c: 221: ADCON0 = 0;
+"221
 [e = _ADCON0 -> -> 0 `i `uc ]
-[; ;main.c: 123: PORTC = 0xff;
-"123
+[; ;main.c: 224: PORTC = 0xff;
+"224
 [e = _PORTC -> -> 255 `i `uc ]
-[; ;main.c: 126: TRISA = 0xff;
-"126
+[; ;main.c: 227: TRISA = 0xff;
+"227
 [e = _TRISA -> -> 255 `i `uc ]
-[; ;main.c: 127: TRISB = 0xff;
-"127
+[; ;main.c: 228: TRISB = 0xff;
+"228
 [e = _TRISB -> -> 255 `i `uc ]
-[; ;main.c: 128: TRISC = 0b10111111;
-"128
+[; ;main.c: 229: TRISC = 0b10111111;
+"229
 [e = _TRISC -> -> 191 `i `uc ]
-[; ;main.c: 129: TRISD = 0xff;
-"129
+[; ;main.c: 230: TRISD = 0xff;
+"230
 [e = _TRISD -> -> 255 `i `uc ]
-[; ;main.c: 131: init_uart();
-"131
-[e ( _init_uart ..  ]
-[; ;main.c: 134: while (1) {
-"134
-[e :U 643 ]
+[; ;main.c: 232: initUart();
+"232
+[e ( _initUart ..  ]
+[; ;main.c: 235: while (1) {
+"235
+[e :U 662 ]
 {
-"136
-[v _d `uc ~T0 @X0 1 a ]
-[; ;main.c: 136: uint8_t d = read_char();
-[e = _d ( _read_char ..  ]
-[; ;main.c: 137: write_char(d+1);
-"137
-[e ( _write_char (1 -> + -> _d `i -> 1 `i `uc ]
-"141
+[; ;main.c: 236: onData(readChar());
+"236
+[e ( _onData (1 ( _readChar ..  ]
+"238
 }
-[e :U 642 ]
-"134
-[e $U 643  ]
-[e :U 644 ]
-[; ;main.c: 141: }
-[; ;main.c: 143: return 0;
-"143
+[e :U 661 ]
+"235
+[e $U 662  ]
+[e :U 663 ]
+[; ;main.c: 238: }
+[; ;main.c: 240: return 0;
+"240
 [e ) -> 0 `i ]
-[e $UE 641  ]
-[; ;main.c: 144: }
-"144
-[e :UE 641 ]
+[e $UE 660  ]
+[; ;main.c: 241: }
+"241
+[e :UE 660 ]
 }

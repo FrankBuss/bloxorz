@@ -1,4 +1,3 @@
-
 // PIC18F45K50 Configuration Bit Settings
 
 // 'C' source line config statements
@@ -10,7 +9,7 @@
 #pragma config LS48MHZ = SYS24X4// Low Speed USB mode with 48 MHz system clock (System clock at 24 MHz, USB clock divider is set to 4)
 
 // CONFIG1H
-#pragma config FOSC = INTOSCCLKO// Oscillator Selection (Internal oscillator, clock output on OSC2)
+#pragma config FOSC = INTOSCIO  // Oscillator Selection (Internal oscillator)
 #pragma config PCLKEN = ON      // Primary Oscillator Shutdown (Primary oscillator enabled)
 #pragma config FCMEN = OFF      // Fail-Safe Clock Monitor (Fail-Safe Clock Monitor disabled)
 #pragma config IESO = OFF       // Internal/External Oscillator Switchover (Oscillator Switchover mode disabled)
@@ -68,13 +67,33 @@
 // CONFIG7H
 #pragma config EBTRB = OFF      // Boot Block Table Read Protect (Boot block is not protected from table reads executed in other blocks)
 
-#define _XTAL_FREQ 16000000
+// #pragma config statements should precede project file includes.
+// Use project enums instead of #define for ON and OFF.
 
 #include <xc.h>
 
 #include <stdint.h>
 
-void init_uart()
+#include "receiver.h"
+
+volatile uint8_t uartBuf[16];
+volatile uint8_t uartReadIndex = 0;
+volatile uint8_t uartWriteIndex = 0;
+
+void interrupt receiveData() {
+    if (RCSTA1bits.OERR == 1) {
+        RCSTA1bits.OERR = 0;
+        RCSTA1bits.CREN = 0;
+        RCSTA1bits.CREN = 1;
+    }
+    if (PIR1bits.RC1IF == 1) {
+        uartBuf[uartWriteIndex] = RCREG1;
+        uartWriteIndex++;
+        if (uartWriteIndex == 16) uartWriteIndex = 0;
+    }
+}
+
+void initUart()
 {
     TXSTA1bits.SYNC = 0;
     TXSTA1bits.TX9 = 0;
@@ -87,21 +106,103 @@ void init_uart()
     BAUDCON1bits.BRG16 = 1;
     TXSTA1bits.BRGH = 1;
     SPBRG1 = 7;
+
+    // enable interrupts
+    RCONbits.IPEN   = 1;
+	INTCONbits.GIE  = 1;
+	INTCONbits.PEIE = 1;
+
+    // enable receiver interrupts, löw priority
+    PIE1bits.RCIE = 1;
 }
 
-uint8_t read_char()
+void writePortA(uint8_t data)
 {
-    while (PIR1bits.RC1IF == 0) {
-        if (RCSTA1bits.OERR == 1) {
-            RCSTA1bits.OERR = 0;
-            RCSTA1bits.CREN = 0;
-            RCSTA1bits.CREN = 1;
-        }
-    }
-    return RCREG1;
+    PORTA = data;
 }
 
-void write_char(uint8_t data)
+void writePortB(uint8_t data)
+{
+    PORTB = data;
+}
+
+void writePortC(uint8_t data)
+{
+    PORTC = data;
+}
+
+void writePortD(uint8_t data)
+{
+    PORTD = data;
+}
+
+void writePortE(uint8_t data)
+{
+    PORTE = data;
+}
+
+void writeTrisA(uint8_t data)
+{
+    TRISA = data;
+}
+
+void writeTrisB(uint8_t data)
+{
+    TRISB = data;
+}
+
+void writeTrisC(uint8_t data)
+{
+    // configure UART TX always as output, and UART RX always as input
+    TRISC = data & 0b10111111 | 0x80;
+}
+
+void writeTrisD(uint8_t data)
+{
+    TRISD = data;
+}
+
+void writeTrisE(uint8_t data)
+{
+    TRISE = data;
+}
+
+uint8_t readPortA()
+{
+    return PORTA;
+}
+
+uint8_t readPortB()
+{
+    return PORTB;
+}
+
+uint8_t readPortC()
+{
+    return PORTC;
+}
+
+uint8_t readPortD()
+{
+    return PORTD;
+}
+
+uint8_t readPortE()
+{
+    return PORTE;
+}
+
+uint8_t readChar()
+{
+    uint8_t data;
+    while (uartReadIndex == uartWriteIndex) ;
+    data = uartBuf[uartReadIndex];
+    uartReadIndex++;
+    if (uartReadIndex == 16) uartReadIndex = 0;
+    return data;
+}
+
+void writeChar(uint8_t data)
 {
     while (TXSTA1bits.TRMT == 0) {}
     TXREG1 = data;
@@ -128,16 +229,12 @@ int main()
     TRISC = 0b10111111;
     TRISD = 0xff;
     
-    init_uart();
+    initUart();
 
-    // echo test
+    // communication loop
     while (1) {
-#if 1
-        uint8_t d = read_char();
-        write_char(d+1);
-#else
-        write_char(0x55);
-#endif
+        onData(readChar());
+        //writeChar(readChar() - 1);
     } 
 
     return 0;

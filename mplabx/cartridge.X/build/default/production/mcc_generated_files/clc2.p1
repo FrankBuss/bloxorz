@@ -5490,9 +5490,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;clc2.c: 62: CLC2POL = 0x02;
 "62
 [e = _CLC2POL -> -> 2 `i `uc ]
-[; ;clc2.c: 65: CLC2SEL0 = 0x02;
+[; ;clc2.c: 65: CLC2SEL0 = 0x01;
 "65
-[e = _CLC2SEL0 -> -> 2 `i `uc ]
+[e = _CLC2SEL0 -> -> 1 `i `uc ]
 [; ;clc2.c: 68: CLC2SEL1 = 0x00;
 "68
 [e = _CLC2SEL1 -> -> 0 `i `uc ]

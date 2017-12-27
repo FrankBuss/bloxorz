@@ -61,8 +61,8 @@ void CLC2_Initialize(void)
     // LC2G1POL not_inverted; LC2G2POL inverted; LC2G3POL not_inverted; LC2G4POL not_inverted; LC2POL not_inverted; 
     CLC2POL = 0x02;
 
-    // LC2D1S CLCIN2 (CLCIN2PPS); 
-    CLC2SEL0 = 0x02;
+    // LC2D1S CLCIN1 (CLCIN1PPS); 
+    CLC2SEL0 = 0x01;
 
     // LC2D2S CLCIN0 (CLCIN0PPS); 
     CLC2SEL1 = 0x00;

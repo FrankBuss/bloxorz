@@ -11,20 +11,20 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$/tmp/xcXIufMHR.obj
+$/tmp/xcXhAxFSo.obj
 reset_vec CODE 0 0 0 1 2
 end_init CODE 0 1 1 1 2
 config CONFIG 0 8007 8007 4 2
 $dist/default/production/cartridge.X.production.obj
 cinit CODE 0 7FE 7FE 2 2
-text1 CODE 0 782 782 7 2
-text2 CODE 0 77E 77E 4 2
-text3 CODE 0 7BF 7BF 3F 2
-text4 CODE 0 794 794 B 2
-text5 CODE 0 789 789 B 2
-text6 CODE 0 7AF 7AF 10 2
-text7 CODE 0 79F 79F 10 2
-maintext CODE 0 77C 77C 2 2
+text1 CODE 0 77C 77C 7 2
+text2 CODE 0 778 778 4 2
+text3 CODE 0 7BB 7BB 43 2
+text4 CODE 0 78E 78E B 2
+text5 CODE 0 783 783 B 2
+text6 CODE 0 799 799 10 2
+text7 CODE 0 7A9 7A9 12 2
+maintext CODE 0 776 776 2 2
 cstackCOMMON COMMON 1 70 70 1 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -38,8 +38,8 @@ RAM 120-16F 1
 BANK0 20-6F 1
 BANK1 A0-EF 1
 BANK2 120-16F 1
-CONST 2-77B 2
-ENTRY 2-77B 2
+CONST 2-775 2
+ENTRY 2-775 2
 IDLOC 8000-8003 2
 SFR10 500-56F 1
 SFR11 580-5EF 1
@@ -64,7 +64,7 @@ SFR29 E80-EEF 1
 SFR30 F00-F6F 1
 SFR31 F80-FEF 1
 STACK 2000-20EF 1
-CODE 2-77B 2
+CODE 2-775 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-11F 1
@@ -78,8 +78,8 @@ SFR9 480-4EF 1
 BIGRAM 2000-20EF 1
 COMMON 71-7D 1
 EEDATA F000-F0FF 2
-STRCODE 2-77B 2
-STRING 2-77B 2
+STRCODE 2-775 2
+STRING 2-775 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -94,91 +94,92 @@ STRING 2-77B 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production/cartridge.X.production.obj
-7FE cinit CODE >3314:/tmp/xcXL1m2kt
-7FE cinit CODE >3317:/tmp/xcXL1m2kt
-7FE cinit CODE >3323:/tmp/xcXL1m2kt
-7FE cinit CODE >3325:/tmp/xcXL1m2kt
-7FF cinit CODE >3326:/tmp/xcXL1m2kt
-79F text7 CODE >57:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc1.c
-79F text7 CODE >62:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc1.c
-7A2 text7 CODE >65:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc1.c
-7A3 text7 CODE >68:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc1.c
-7A5 text7 CODE >71:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc1.c
-7A6 text7 CODE >74:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc1.c
-7A7 text7 CODE >77:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc1.c
-7A9 text7 CODE >80:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc1.c
-7AA text7 CODE >83:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc1.c
-7AB text7 CODE >86:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc1.c
-7AC text7 CODE >89:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc1.c
-7AE text7 CODE >91:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc1.c
-7AF text6 CODE >57:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc2.c
-7AF text6 CODE >62:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc2.c
-7B2 text6 CODE >65:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc2.c
-7B4 text6 CODE >68:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc2.c
-7B5 text6 CODE >71:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc2.c
-7B6 text6 CODE >74:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc2.c
-7B7 text6 CODE >77:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc2.c
-7B9 text6 CODE >80:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc2.c
-7BA text6 CODE >83:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc2.c
-7BB text6 CODE >86:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc2.c
-7BC text6 CODE >89:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc2.c
-7BE text6 CODE >91:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc2.c
-789 text5 CODE >55:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/eusart.c
-789 text5 CODE >60:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/eusart.c
-78C text5 CODE >63:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/eusart.c
-78E text5 CODE >66:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/eusart.c
-790 text5 CODE >69:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/eusart.c
-792 text5 CODE >72:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/eusart.c
-793 text5 CODE >74:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/eusart.c
-794 text4 CODE >87:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
-794 text4 CODE >90:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
-797 text4 CODE >92:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
-798 text4 CODE >94:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
-799 text4 CODE >96:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
-79B text4 CODE >98:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
-79C text4 CODE >100:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
-79C text4 CODE >102:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
-7BF text3 CODE >51:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
-7BF text3 CODE >56:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
-7C1 text3 CODE >57:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
-7C2 text3 CODE >62:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
-7C5 text3 CODE >63:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
-7C7 text3 CODE >68:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
-7C9 text3 CODE >69:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
-7CA text3 CODE >74:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
-7CC text3 CODE >75:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
-7CD text3 CODE >80:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
-7CF text3 CODE >81:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
-7D0 text3 CODE >88:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
-7D4 text3 CODE >89:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
-7D5 text3 CODE >90:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
-7D8 text3 CODE >91:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
-7DA text3 CODE >92:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
-7DB text3 CODE >94:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
-7DD text3 CODE >95:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
-7E1 text3 CODE >96:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
-7E5 text3 CODE >97:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
-7E9 text3 CODE >98:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
-7EE text3 CODE >99:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
-7F2 text3 CODE >101:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
-7F5 text3 CODE >102:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
-7F7 text3 CODE >103:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
-7F8 text3 CODE >105:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
-7FD text3 CODE >106:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
-77E text2 CODE >105:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
-77E text2 CODE >108:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
-781 text2 CODE >109:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
-782 text1 CODE >76:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
-782 text1 CODE >79:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
-783 text1 CODE >80:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
-784 text1 CODE >81:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
-785 text1 CODE >82:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
-786 text1 CODE >83:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
-787 text1 CODE >84:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
-788 text1 CODE >85:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
-77C maintext CODE >6:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/main.c
-77C maintext CODE >8:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/main.c
-77D maintext CODE >11:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/main.c
+7FE cinit CODE >3316:/tmp/xcXi4q1wJ
+7FE cinit CODE >3319:/tmp/xcXi4q1wJ
+7FE cinit CODE >3325:/tmp/xcXi4q1wJ
+7FE cinit CODE >3327:/tmp/xcXi4q1wJ
+7FF cinit CODE >3328:/tmp/xcXi4q1wJ
+7A9 text7 CODE >57:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc1.c
+7A9 text7 CODE >62:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc1.c
+7AB text7 CODE >65:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc1.c
+7AC text7 CODE >68:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc1.c
+7AE text7 CODE >71:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc1.c
+7B0 text7 CODE >74:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc1.c
+7B2 text7 CODE >77:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc1.c
+7B4 text7 CODE >80:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc1.c
+7B6 text7 CODE >83:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc1.c
+7B7 text7 CODE >86:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc1.c
+7B8 text7 CODE >89:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc1.c
+7BA text7 CODE >91:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc1.c
+799 text6 CODE >57:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc2.c
+799 text6 CODE >62:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc2.c
+79C text6 CODE >65:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc2.c
+79E text6 CODE >68:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc2.c
+79F text6 CODE >71:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc2.c
+7A0 text6 CODE >74:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc2.c
+7A1 text6 CODE >77:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc2.c
+7A3 text6 CODE >80:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc2.c
+7A4 text6 CODE >83:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc2.c
+7A5 text6 CODE >86:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc2.c
+7A6 text6 CODE >89:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc2.c
+7A8 text6 CODE >91:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc2.c
+783 text5 CODE >55:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/eusart.c
+783 text5 CODE >60:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/eusart.c
+786 text5 CODE >63:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/eusart.c
+788 text5 CODE >66:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/eusart.c
+78A text5 CODE >69:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/eusart.c
+78C text5 CODE >72:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/eusart.c
+78D text5 CODE >74:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/eusart.c
+78E text4 CODE >87:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
+78E text4 CODE >90:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
+791 text4 CODE >92:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
+792 text4 CODE >94:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
+793 text4 CODE >96:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
+795 text4 CODE >98:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
+796 text4 CODE >100:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
+796 text4 CODE >102:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
+7BB text3 CODE >51:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
+7BB text3 CODE >56:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
+7BD text3 CODE >57:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
+7BE text3 CODE >62:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
+7C1 text3 CODE >63:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
+7C3 text3 CODE >68:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
+7C5 text3 CODE >69:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
+7C6 text3 CODE >74:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
+7C8 text3 CODE >75:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
+7C9 text3 CODE >80:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
+7CB text3 CODE >81:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
+7CC text3 CODE >88:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
+7D0 text3 CODE >89:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
+7D1 text3 CODE >90:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
+7D4 text3 CODE >91:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
+7D6 text3 CODE >92:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
+7D7 text3 CODE >94:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
+7DB text3 CODE >95:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
+7DF text3 CODE >96:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
+7E1 text3 CODE >97:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
+7E5 text3 CODE >98:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
+7E9 text3 CODE >99:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
+7EE text3 CODE >100:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
+7F2 text3 CODE >102:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
+7F5 text3 CODE >103:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
+7F7 text3 CODE >104:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
+7F8 text3 CODE >106:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
+7FD text3 CODE >107:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
+778 text2 CODE >105:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
+778 text2 CODE >108:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
+77B text2 CODE >109:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
+77C text1 CODE >76:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
+77C text1 CODE >79:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
+77D text1 CODE >80:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
+77E text1 CODE >81:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
+77F text1 CODE >82:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
+780 text1 CODE >83:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
+781 text1 CODE >84:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
+782 text1 CODE >85:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
+776 maintext CODE >6:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/main.c
+776 maintext CODE >8:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/main.c
+777 maintext CODE >11:/home/frank/data/projects/bloxorz/mplabx/cartridge.X/main.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -202,30 +203,30 @@ _CLC2CON F1A 0 ABS 0 - dist/default/production/cartridge.X.production.obj
 _CLC2POL F1B 0 ABS 0 - dist/default/production/cartridge.X.production.obj
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 _RXPPSbits E24 0 ABS 0 - dist/default/production/cartridge.X.production.obj
-__end_of_WDT_Initialize F04 0 CODE 0 text2 dist/default/production/cartridge.X.production.obj
+__end_of_WDT_Initialize EF8 0 CODE 0 text2 dist/default/production/cartridge.X.production.obj
 __Hstrings 0 0 ABS 0 strings -
 _LATA 10C 0 ABS 0 - dist/default/production/cartridge.X.production.obj
 _LATC 10E 0 ABS 0 - dist/default/production/cartridge.X.production.obj
 _PLLR 48E0 0 ABS 0 - dist/default/production/cartridge.X.production.obj
 _WPUA 20C 0 ABS 0 - dist/default/production/cartridge.X.production.obj
 _WPUC 20E 0 ABS 0 - dist/default/production/cartridge.X.production.obj
-___sp 0 0 STACK 2 stack /tmp/xcXIufMHR.obj
-_main EF8 0 CODE 0 maintext dist/default/production/cartridge.X.production.obj
+___sp 0 0 STACK 2 stack /tmp/xcXhAxFSo.obj
+_main EEC 0 CODE 0 maintext dist/default/production/cartridge.X.production.obj
 btemp 7E 0 ABS 0 - dist/default/production/cartridge.X.production.obj
-start 2 0 CODE 0 init /tmp/xcXIufMHR.obj
+start 2 0 CODE 0 init /tmp/xcXhAxFSo.obj
 _RC3PPSbits EA3 0 ABS 0 - dist/default/production/cartridge.X.production.obj
 __size_of_main 0 0 ABS 0 - dist/default/production/cartridge.X.production.obj
 __CFG_DEBUG$OFF 0 0 ABS 0 - dist/default/production/cartridge.X.production.obj
-__end_of_CLC1_Initialize F5E 0 CODE 0 text7 dist/default/production/cartridge.X.production.obj
-__end_of_EUSART_Initialize F28 0 CODE 0 text5 dist/default/production/cartridge.X.production.obj
+__end_of_CLC1_Initialize F76 0 CODE 0 text7 dist/default/production/cartridge.X.production.obj
+__end_of_EUSART_Initialize F1C 0 CODE 0 text5 dist/default/production/cartridge.X.production.obj
 __Hpowerup 0 0 CODE 0 powerup -
 __size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/production/cartridge.X.production.obj
-intlevel0 0 0 CODE 0 functab /tmp/xcXIufMHR.obj
-intlevel1 0 0 CODE 0 functab /tmp/xcXIufMHR.obj
-intlevel2 0 0 CODE 0 functab /tmp/xcXIufMHR.obj
-intlevel3 0 0 CODE 0 functab /tmp/xcXIufMHR.obj
-intlevel4 0 0 CODE 0 functab /tmp/xcXIufMHR.obj
-intlevel5 0 0 CODE 0 functab /tmp/xcXIufMHR.obj
+intlevel0 0 0 CODE 0 functab /tmp/xcXhAxFSo.obj
+intlevel1 0 0 CODE 0 functab /tmp/xcXhAxFSo.obj
+intlevel2 0 0 CODE 0 functab /tmp/xcXhAxFSo.obj
+intlevel3 0 0 CODE 0 functab /tmp/xcXhAxFSo.obj
+intlevel4 0 0 CODE 0 functab /tmp/xcXhAxFSo.obj
+intlevel5 0 0 CODE 0 functab /tmp/xcXhAxFSo.obj
 _CLC2CONbits F1A 0 ABS 0 - dist/default/production/cartridge.X.production.obj
 wtemp0 7E 0 ABS 0 - dist/default/production/cartridge.X.production.obj
 __Hfunctab 0 0 CODE 0 functab -
@@ -233,29 +234,29 @@ _RC1STAbits 19D 0 ABS 0 - dist/default/production/cartridge.X.production.obj
 __Hclrtext 0 0 ABS 0 clrtext -
 _ANSELA 18C 0 ABS 0 - dist/default/production/cartridge.X.production.obj
 _ANSELC 18E 0 ABS 0 - dist/default/production/cartridge.X.production.obj
-_CLC1_Initialize F3E 0 CODE 0 text7 dist/default/production/cartridge.X.production.obj
+_CLC1_Initialize F52 0 CODE 0 text7 dist/default/production/cartridge.X.production.obj
 _CLC1CONbits F10 0 ABS 0 - dist/default/production/cartridge.X.production.obj
 __CFG_RSTOSC$EXT4X 0 0 ABS 0 - dist/default/production/cartridge.X.production.obj
 __Lmaintext 0 0 ABS 0 maintext -
 __CFG_FEXTOSC$ECM 0 0 ABS 0 - dist/default/production/cartridge.X.production.obj
-__end_of_CLC2_Initialize F7E 0 CODE 0 text6 dist/default/production/cartridge.X.production.obj
+__end_of_CLC2_Initialize F52 0 CODE 0 text6 dist/default/production/cartridge.X.production.obj
 PIN_MANAGER_Initialize@state 70 0 COMMON 1 cstackCOMMON dist/default/production/cartridge.X.production.obj
-_EUSART_Initialize F12 0 CODE 0 text5 dist/default/production/cartridge.X.production.obj
+_EUSART_Initialize F06 0 CODE 0 text5 dist/default/production/cartridge.X.production.obj
 __CFG_MCLRE$OFF 0 0 ABS 0 - dist/default/production/cartridge.X.production.obj
-_PIN_MANAGER_Initialize F7E 0 CODE 0 text3 dist/default/production/cartridge.X.production.obj
+_PIN_MANAGER_Initialize F76 0 CODE 0 text3 dist/default/production/cartridge.X.production.obj
 start_initialization FFC 0 CODE 0 cinit dist/default/production/cartridge.X.production.obj
 _ODCONA 28C 0 ABS 0 - dist/default/production/cartridge.X.production.obj
 _ODCONC 28E 0 ABS 0 - dist/default/production/cartridge.X.production.obj
 _OSCFRQ 91F 0 ABS 0 - dist/default/production/cartridge.X.production.obj
 _RC1REG 199 0 ABS 0 - dist/default/production/cartridge.X.production.obj
 _RC1STA 19D 0 ABS 0 - dist/default/production/cartridge.X.production.obj
-__end_of_SYSTEM_Initialize F12 0 CODE 0 text1 dist/default/production/cartridge.X.production.obj
+__end_of_SYSTEM_Initialize F06 0 CODE 0 text1 dist/default/production/cartridge.X.production.obj
 _TX1REG 19A 0 ABS 0 - dist/default/production/cartridge.X.production.obj
 _TX1STA 19E 0 ABS 0 - dist/default/production/cartridge.X.production.obj
 __size_of_CLC1_Initialize 0 0 ABS 0 - dist/default/production/cartridge.X.production.obj
-_CLC2_Initialize F5E 0 CODE 0 text6 dist/default/production/cartridge.X.production.obj
+_CLC2_Initialize F32 0 CODE 0 text6 dist/default/production/cartridge.X.production.obj
 _WDTCON 97 0 ABS 0 - dist/default/production/cartridge.X.production.obj
-___int_sp 0 0 STACK 2 stack /tmp/xcXIufMHR.obj
+___int_sp 0 0 STACK 2 stack /tmp/xcXhAxFSo.obj
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -405,11 +406,11 @@ __S0 800B 0 ABS 0 - -
 __S1 71 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-_SYSTEM_Initialize F04 0 CODE 0 text1 dist/default/production/cartridge.X.production.obj
+_SYSTEM_Initialize EF8 0 CODE 0 text1 dist/default/production/cartridge.X.production.obj
 __CFG_BOREN$ON 0 0 ABS 0 - dist/default/production/cartridge.X.production.obj
 __CFG_BORV$LOW 0 0 ABS 0 - dist/default/production/cartridge.X.production.obj
 __Lintentry 2 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec /tmp/xcXIufMHR.obj
+reset_vec 0 0 CODE 0 reset_vec /tmp/xcXhAxFSo.obj
 __size_of_CLC2_Initialize 0 0 ABS 0 - dist/default/production/cartridge.X.production.obj
 __CFG_FCMEN$ON 0 0 ABS 0 - dist/default/production/cartridge.X.production.obj
 __end_of_PIN_MANAGER_Initialize FFC 0 CODE 0 text3 dist/default/production/cartridge.X.production.obj
@@ -435,14 +436,14 @@ __Lbank28 0 0 BANK28 1 bank28 -
 __Lbank29 0 0 BANK29 1 bank29 -
 __Lbank30 0 0 BANK30 1 bank30 -
 __Lbank31 0 0 BANK31 1 bank31 -
-__pmaintext EF8 0 CODE 0 maintext dist/default/production/cartridge.X.production.obj
+__pmaintext EEC 0 CODE 0 maintext dist/default/production/cartridge.X.production.obj
 __Lbigram 0 0 ABS 0 bigram -
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 1000E 0 CONFIG 0 config -
 __CFG_CP$OFF 0 0 ABS 0 - dist/default/production/cartridge.X.production.obj
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production/cartridge.X.production.obj
-stackhi 20EF 0 ABS 0 - /tmp/xcXIufMHR.obj
-stacklo 2000 0 ABS 0 - /tmp/xcXIufMHR.obj
+stackhi 20EF 0 ABS 0 - /tmp/xcXhAxFSo.obj
+stacklo 2000 0 ABS 0 - /tmp/xcXhAxFSo.obj
 _OSCCON1 919 0 ABS 0 - dist/default/production/cartridge.X.production.obj
 _OSCCON3 91B 0 ABS 0 - dist/default/production/cartridge.X.production.obj
 _OSCTUNE 91E 0 ABS 0 - dist/default/production/cartridge.X.production.obj
@@ -462,13 +463,14 @@ __CFG_STVREN$ON 0 0 ABS 0 - dist/default/production/cartridge.X.production.obj
 _PPSLOCKbits E0F 0 ABS 0 - dist/default/production/cartridge.X.production.obj
 __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 2 0 CODE 0 reset_vec -
-__ptext1 F04 0 CODE 0 text1 dist/default/production/cartridge.X.production.obj
-__ptext2 EFC 0 CODE 0 text2 dist/default/production/cartridge.X.production.obj
-__ptext3 F7E 0 CODE 0 text3 dist/default/production/cartridge.X.production.obj
-__ptext4 F28 0 CODE 0 text4 dist/default/production/cartridge.X.production.obj
-__ptext5 F12 0 CODE 0 text5 dist/default/production/cartridge.X.production.obj
-__ptext6 F5E 0 CODE 0 text6 dist/default/production/cartridge.X.production.obj
-__ptext7 F3E 0 CODE 0 text7 dist/default/production/cartridge.X.production.obj
+_CLCIN3PPSbits E2B 0 ABS 0 - dist/default/production/cartridge.X.production.obj
+__ptext1 EF8 0 CODE 0 text1 dist/default/production/cartridge.X.production.obj
+__ptext2 EF0 0 CODE 0 text2 dist/default/production/cartridge.X.production.obj
+__ptext3 F76 0 CODE 0 text3 dist/default/production/cartridge.X.production.obj
+__ptext4 F1C 0 CODE 0 text4 dist/default/production/cartridge.X.production.obj
+__ptext5 F06 0 CODE 0 text5 dist/default/production/cartridge.X.production.obj
+__ptext6 F32 0 CODE 0 text6 dist/default/production/cartridge.X.production.obj
+__ptext7 F52 0 CODE 0 text7 dist/default/production/cartridge.X.production.obj
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __Lreset_vec 0 0 CODE 0 reset_vec -
@@ -482,7 +484,7 @@ __Lclrtext 0 0 ABS 0 clrtext -
 __size_of_EUSART_Initialize 0 0 ABS 0 - dist/default/production/cartridge.X.production.obj
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production/cartridge.X.production.obj
 __Hend_init 4 0 CODE 0 end_init -
-__end_of_main EFC 0 CODE 0 maintext dist/default/production/cartridge.X.production.obj
+__end_of_main EF0 0 CODE 0 maintext dist/default/production/cartridge.X.production.obj
 _RC5PPSbits EA5 0 ABS 0 - dist/default/production/cartridge.X.production.obj
 _CLCIN1PPSbits E29 0 ABS 0 - dist/default/production/cartridge.X.production.obj
 _OSCEN 91D 0 ABS 0 - dist/default/production/cartridge.X.production.obj
@@ -492,15 +494,15 @@ __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 __CFG_CPD$OFF 0 0 ABS 0 - dist/default/production/cartridge.X.production.obj
 __size_of_PIN_MANAGER_Initialize 0 0 ABS 0 - dist/default/production/cartridge.X.production.obj
-_WDT_Initialize EFC 0 CODE 0 text2 dist/default/production/cartridge.X.production.obj
-__end_of_OSCILLATOR_Initialize F3E 0 CODE 0 text4 dist/default/production/cartridge.X.production.obj
+_WDT_Initialize EF0 0 CODE 0 text2 dist/default/production/cartridge.X.production.obj
+__end_of_OSCILLATOR_Initialize F32 0 CODE 0 text4 dist/default/production/cartridge.X.production.obj
 __CFG_PPS1WAY$ON 0 0 ABS 0 - dist/default/production/cartridge.X.production.obj
 __initialization FFC 0 CODE 0 cinit dist/default/production/cartridge.X.production.obj
 __CFG_PWRTE$OFF 0 0 ABS 0 - dist/default/production/cartridge.X.production.obj
 _PPSLOCK E0F 0 ABS 0 - dist/default/production/cartridge.X.production.obj
 __CFG_WRT$OFF 0 0 ABS 0 - dist/default/production/cartridge.X.production.obj
 _CLCIN0PPSbits E28 0 ABS 0 - dist/default/production/cartridge.X.production.obj
-_OSCILLATOR_Initialize F28 0 CODE 0 text4 dist/default/production/cartridge.X.production.obj
+_OSCILLATOR_Initialize F1C 0 CODE 0 text4 dist/default/production/cartridge.X.production.obj
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -527,14 +529,14 @@ _OSCILLATOR_Initialize F28 0 CODE 0 text4 dist/default/production/cartridge.X.pr
 # All other numeric quantities are in decimal.
 %SEGMENTS
 cinit 0 7FE FFC 2 2
-text1 0 782 F04 7 2
-text2 0 77E EFC 4 2
-text3 0 7BF F7E 3F 2
-text4 0 794 F28 B 2
-text5 0 789 F12 B 2
-text6 0 7AF F5E 10 2
-text7 0 79F F3E 10 2
-maintext 0 77C EF8 2 2
+text1 0 77C EF8 7 2
+text2 0 778 EF0 4 2
+text3 0 7BB F76 43 2
+text4 0 78E F1C B 2
+text5 0 783 F06 B 2
+text6 0 799 F32 10 2
+text7 0 7A9 F52 12 2
+maintext 0 776 EEC 2 2
 cstackCOMMON 1 70 70 1 1
 reset_vec 0 0 0 2 2
 config 0 8007 1000E 4 2

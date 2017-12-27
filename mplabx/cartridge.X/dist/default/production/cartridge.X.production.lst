@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V1.42 build -159332390 
-                                                                                               Sat Dec 16 22:48:29 2017
+                                                                                               Wed Dec 27 00:13:52 2017
 
 Microchip Technology Omniscient Code Generator v1.42 (Free mode) build 201704130522
      1                           	processor	16F18323
@@ -1648,694 +1648,703 @@ Microchip Technology Omniscient Code Generator v1.42 (Free mode) build 201704130
   1634  091B                     _OSCCON3	set	2331
   1635  0919                     _OSCCON1	set	2329
   1636  48E0                     _PLLR	set	18656
-  1637  0E2A                     _CLCIN2PPSbits	set	3626
-  1638  0E28                     _CLCIN0PPSbits	set	3624
-  1639  0E24                     _RXPPSbits	set	3620
-  1640  0E29                     _CLCIN1PPSbits	set	3625
-  1641  0E0F                     _PPSLOCKbits	set	3599
-  1642  0E0F                     _PPSLOCK	set	3599
-  1643  0EA5                     _RC5PPSbits	set	3749
-  1644  0EA3                     _RC3PPSbits	set	3747
-  1645  0F1A                     _CLC2CONbits	set	3866
-  1646  0F1A                     _CLC2CON	set	3866
-  1647  0F23                     _CLC2GLS3	set	3875
-  1648  0F22                     _CLC2GLS2	set	3874
-  1649  0F21                     _CLC2GLS1	set	3873
-  1650  0F20                     _CLC2GLS0	set	3872
-  1651  0F1F                     _CLC2SEL3	set	3871
-  1652  0F1E                     _CLC2SEL2	set	3870
-  1653  0F1D                     _CLC2SEL1	set	3869
-  1654  0F1C                     _CLC2SEL0	set	3868
-  1655  0F1B                     _CLC2POL	set	3867
-  1656  0F10                     _CLC1CONbits	set	3856
-  1657  0F10                     _CLC1CON	set	3856
-  1658  0F19                     _CLC1GLS3	set	3865
-  1659  0F18                     _CLC1GLS2	set	3864
-  1660  0F17                     _CLC1GLS1	set	3863
-  1661  0F16                     _CLC1GLS0	set	3862
-  1662  0F15                     _CLC1SEL3	set	3861
-  1663  0F14                     _CLC1SEL2	set	3860
-  1664  0F13                     _CLC1SEL1	set	3859
-  1665  0F12                     _CLC1SEL0	set	3858
-  1666  0F11                     _CLC1POL	set	3857
-  1667                           
-  1668                           ; #config settings
-  1669  0000                     
-  1670                           	psect	cinit
-  1671  07FE                     start_initialization:	
-  1672  07FE                     __initialization:	
-  1673  07FE                     end_of_initialization:	
-  1674                           ;End of C runtime variable initialization code
-  1675                           
-  1676  07FE                     __end_of__initialization:	
-  1677  07FE  0020               	movlb	0
-  1678  07FF  2F7C               	ljmp	_main	;jump to C main() function
-  1679                           
-  1680                           	psect	cstackCOMMON
-  1681  0070                     __pcstackCOMMON:	
-  1682  0070                     ?_OSCILLATOR_Initialize:	
-  1683  0070                     ??_OSCILLATOR_Initialize:	
-  1684                           ; 1 bytes @ 0x0
-  1685                           
-  1686  0070                     ?_WDT_Initialize:	
-  1687                           ; 1 bytes @ 0x0
-  1688                           
-  1689  0070                     ??_WDT_Initialize:	
-  1690                           ; 1 bytes @ 0x0
-  1691                           
-  1692  0070                     ?_CLC2_Initialize:	
-  1693                           ; 1 bytes @ 0x0
-  1694                           
-  1695  0070                     ??_CLC2_Initialize:	
-  1696                           ; 1 bytes @ 0x0
-  1697                           
-  1698  0070                     ?_EUSART_Initialize:	
-  1699                           ; 1 bytes @ 0x0
-  1700                           
-  1701  0070                     ??_EUSART_Initialize:	
-  1702                           ; 1 bytes @ 0x0
-  1703                           
-  1704  0070                     ?_PIN_MANAGER_Initialize:	
-  1705                           ; 1 bytes @ 0x0
-  1706                           
-  1707  0070                     ??_PIN_MANAGER_Initialize:	
-  1708                           ; 1 bytes @ 0x0
-  1709                           
-  1710  0070                     ?_CLC1_Initialize:	
-  1711                           ; 1 bytes @ 0x0
-  1712                           
-  1713  0070                     ??_CLC1_Initialize:	
-  1714                           ; 1 bytes @ 0x0
-  1715                           
-  1716  0070                     ?_SYSTEM_Initialize:	
-  1717                           ; 1 bytes @ 0x0
-  1718                           
-  1719  0070                     ?_main:	
-  1720                           ; 1 bytes @ 0x0
-  1721                           
-  1722  0070                     PIN_MANAGER_Initialize@state:	
-  1723                           ; 2 bytes @ 0x0
-  1724                           
+  1637  0E2B                     _CLCIN3PPSbits	set	3627
+  1638  0E2A                     _CLCIN2PPSbits	set	3626
+  1639  0E28                     _CLCIN0PPSbits	set	3624
+  1640  0E24                     _RXPPSbits	set	3620
+  1641  0E29                     _CLCIN1PPSbits	set	3625
+  1642  0E0F                     _PPSLOCKbits	set	3599
+  1643  0E0F                     _PPSLOCK	set	3599
+  1644  0EA5                     _RC5PPSbits	set	3749
+  1645  0EA3                     _RC3PPSbits	set	3747
+  1646  0F1A                     _CLC2CONbits	set	3866
+  1647  0F1A                     _CLC2CON	set	3866
+  1648  0F23                     _CLC2GLS3	set	3875
+  1649  0F22                     _CLC2GLS2	set	3874
+  1650  0F21                     _CLC2GLS1	set	3873
+  1651  0F20                     _CLC2GLS0	set	3872
+  1652  0F1F                     _CLC2SEL3	set	3871
+  1653  0F1E                     _CLC2SEL2	set	3870
+  1654  0F1D                     _CLC2SEL1	set	3869
+  1655  0F1C                     _CLC2SEL0	set	3868
+  1656  0F1B                     _CLC2POL	set	3867
+  1657  0F10                     _CLC1CONbits	set	3856
+  1658  0F10                     _CLC1CON	set	3856
+  1659  0F19                     _CLC1GLS3	set	3865
+  1660  0F18                     _CLC1GLS2	set	3864
+  1661  0F17                     _CLC1GLS1	set	3863
+  1662  0F16                     _CLC1GLS0	set	3862
+  1663  0F15                     _CLC1SEL3	set	3861
+  1664  0F14                     _CLC1SEL2	set	3860
+  1665  0F13                     _CLC1SEL1	set	3859
+  1666  0F12                     _CLC1SEL0	set	3858
+  1667  0F11                     _CLC1POL	set	3857
+  1668                           
+  1669                           ; #config settings
+  1670  0000                     
+  1671                           	psect	cinit
+  1672  07FE                     start_initialization:	
+  1673  07FE                     __initialization:	
+  1674  07FE                     end_of_initialization:	
+  1675                           ;End of C runtime variable initialization code
+  1676                           
+  1677  07FE                     __end_of__initialization:	
+  1678  07FE  0020               	movlb	0
+  1679  07FF  2F76               	ljmp	_main	;jump to C main() function
+  1680                           
+  1681                           	psect	cstackCOMMON
+  1682  0070                     __pcstackCOMMON:	
+  1683  0070                     ?_OSCILLATOR_Initialize:	
+  1684  0070                     ??_OSCILLATOR_Initialize:	
+  1685                           ; 1 bytes @ 0x0
+  1686                           
+  1687  0070                     ?_WDT_Initialize:	
+  1688                           ; 1 bytes @ 0x0
+  1689                           
+  1690  0070                     ??_WDT_Initialize:	
+  1691                           ; 1 bytes @ 0x0
+  1692                           
+  1693  0070                     ?_CLC2_Initialize:	
+  1694                           ; 1 bytes @ 0x0
+  1695                           
+  1696  0070                     ??_CLC2_Initialize:	
+  1697                           ; 1 bytes @ 0x0
+  1698                           
+  1699  0070                     ?_EUSART_Initialize:	
+  1700                           ; 1 bytes @ 0x0
+  1701                           
+  1702  0070                     ??_EUSART_Initialize:	
+  1703                           ; 1 bytes @ 0x0
+  1704                           
+  1705  0070                     ?_PIN_MANAGER_Initialize:	
+  1706                           ; 1 bytes @ 0x0
+  1707                           
+  1708  0070                     ??_PIN_MANAGER_Initialize:	
+  1709                           ; 1 bytes @ 0x0
+  1710                           
+  1711  0070                     ?_CLC1_Initialize:	
+  1712                           ; 1 bytes @ 0x0
+  1713                           
+  1714  0070                     ??_CLC1_Initialize:	
+  1715                           ; 1 bytes @ 0x0
+  1716                           
+  1717  0070                     ?_SYSTEM_Initialize:	
+  1718                           ; 1 bytes @ 0x0
+  1719                           
+  1720  0070                     ?_main:	
+  1721                           ; 1 bytes @ 0x0
+  1722                           
+  1723  0070                     PIN_MANAGER_Initialize@state:	
+  1724                           ; 2 bytes @ 0x0
   1725                           
-  1726                           ; 1 bytes @ 0x0
-  1727  0070                     	ds	1
-  1728  0071                     ??_SYSTEM_Initialize:	
-  1729  0071                     ??_main:	
-  1730                           ; 1 bytes @ 0x1
-  1731                           
+  1726                           
+  1727                           ; 1 bytes @ 0x0
+  1728  0070                     	ds	1
+  1729  0071                     ??_SYSTEM_Initialize:	
+  1730  0071                     ??_main:	
+  1731                           ; 1 bytes @ 0x1
   1732                           
-  1733                           	psect	maintext
-  1734  077C                     __pmaintext:	
-  1735                           ; 1 bytes @ 0x1
-  1736 ;;
-  1737 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
-  1738 ;;
-  1739 ;; *************** function _main *****************
-  1740 ;; Defined at:
-  1741 ;;		line 6 in file "main.c"
-  1742 ;; Parameters:    Size  Location     Type
-  1743 ;;		None
-  1744 ;; Auto vars:     Size  Location     Type
-  1745 ;;		None
-  1746 ;; Return value:  Size  Location     Type
-  1747 ;;                  2  178[None  ] int 
-  1748 ;; Registers used:
-  1749 ;;		wreg, status,2, status,0, pclath, cstack
-  1750 ;; Tracked objects:
-  1751 ;;		On entry : B1F/0
-  1752 ;;		On exit  : 0/0
-  1753 ;;		Unchanged: 0/0
-  1754 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
-  1755 ;;      Params:         0       0       0       0
-  1756 ;;      Locals:         0       0       0       0
-  1757 ;;      Temps:          0       0       0       0
-  1758 ;;      Totals:         0       0       0       0
-  1759 ;;Total ram usage:        0 bytes
-  1760 ;; Hardware stack levels required when called:    2
-  1761 ;; This function calls:
-  1762 ;;		_SYSTEM_Initialize
-  1763 ;; This function is called by:
-  1764 ;;		Startup code after reset
-  1765 ;; This function uses a non-reentrant model
-  1766 ;;
-  1767                           
+  1733                           
+  1734                           	psect	maintext
+  1735  0776                     __pmaintext:	
+  1736                           ; 1 bytes @ 0x1
+  1737 ;;
+  1738 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+  1739 ;;
+  1740 ;; *************** function _main *****************
+  1741 ;; Defined at:
+  1742 ;;		line 6 in file "main.c"
+  1743 ;; Parameters:    Size  Location     Type
+  1744 ;;		None
+  1745 ;; Auto vars:     Size  Location     Type
+  1746 ;;		None
+  1747 ;; Return value:  Size  Location     Type
+  1748 ;;                  2  180[None  ] int 
+  1749 ;; Registers used:
+  1750 ;;		wreg, status,2, status,0, pclath, cstack
+  1751 ;; Tracked objects:
+  1752 ;;		On entry : B1F/0
+  1753 ;;		On exit  : 0/0
+  1754 ;;		Unchanged: 0/0
+  1755 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1756 ;;      Params:         0       0       0       0
+  1757 ;;      Locals:         0       0       0       0
+  1758 ;;      Temps:          0       0       0       0
+  1759 ;;      Totals:         0       0       0       0
+  1760 ;;Total ram usage:        0 bytes
+  1761 ;; Hardware stack levels required when called:    2
+  1762 ;; This function calls:
+  1763 ;;		_SYSTEM_Initialize
+  1764 ;; This function is called by:
+  1765 ;;		Startup code after reset
+  1766 ;; This function uses a non-reentrant model
+  1767 ;;
   1768                           
-  1769                           ;psect for function _main
-  1770  077C                     _main:	
-  1771                           
-  1772                           ;main.c: 8: SYSTEM_Initialize();
-  1773                           
-  1774                           ;incstack = 0
-  1775                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
-  1776  077C  2782               	fcall	_SYSTEM_Initialize
-  1777  077D                     l179:	
-  1778                           ;main.c: 11: while (1) {
-  1779                           
-  1780  077D  2F7D               	goto	l179
-  1781  077E                     __end_of_main:	
-  1782                           ;main.c: 18: }
-  1783                           ;main.c: 20: return 0;
-  1784                           ;	Return value of _main is never used
-  1785                           
+  1769                           
+  1770                           ;psect for function _main
+  1771  0776                     _main:	
+  1772                           
+  1773                           ;main.c: 8: SYSTEM_Initialize();
+  1774                           
+  1775                           ;incstack = 0
+  1776                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
+  1777  0776  277C               	fcall	_SYSTEM_Initialize
+  1778  0777                     l181:	
+  1779                           ;main.c: 11: while (1) {
+  1780                           
+  1781  0777  2F77               	goto	l181
+  1782  0778                     __end_of_main:	
+  1783                           ;main.c: 18: }
+  1784                           ;main.c: 20: return 0;
+  1785                           ;	Return value of _main is never used
   1786                           
-  1787                           	psect	text1
-  1788  0782                     __ptext1:	
-  1789 ;; *************** function _SYSTEM_Initialize *****************
-  1790 ;; Defined at:
-  1791 ;;		line 76 in file "mcc_generated_files/mcc.c"
-  1792 ;; Parameters:    Size  Location     Type
-  1793 ;;		None
-  1794 ;; Auto vars:     Size  Location     Type
-  1795 ;;		None
-  1796 ;; Return value:  Size  Location     Type
-  1797 ;;                  1    wreg      void 
-  1798 ;; Registers used:
-  1799 ;;		wreg, status,2, status,0, pclath, cstack
-  1800 ;; Tracked objects:
-  1801 ;;		On entry : 0/0
-  1802 ;;		On exit  : 0/0
-  1803 ;;		Unchanged: 0/0
-  1804 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
-  1805 ;;      Params:         0       0       0       0
-  1806 ;;      Locals:         0       0       0       0
-  1807 ;;      Temps:          0       0       0       0
-  1808 ;;      Totals:         0       0       0       0
-  1809 ;;Total ram usage:        0 bytes
-  1810 ;; Hardware stack levels used:    1
-  1811 ;; Hardware stack levels required when called:    1
-  1812 ;; This function calls:
-  1813 ;;		_CLC1_Initialize
-  1814 ;;		_CLC2_Initialize
-  1815 ;;		_EUSART_Initialize
-  1816 ;;		_OSCILLATOR_Initialize
-  1817 ;;		_PIN_MANAGER_Initialize
-  1818 ;;		_WDT_Initialize
-  1819 ;; This function is called by:
-  1820 ;;		_main
-  1821 ;; This function uses a non-reentrant model
-  1822 ;;
-  1823                           
+  1787                           
+  1788                           	psect	text1
+  1789  077C                     __ptext1:	
+  1790 ;; *************** function _SYSTEM_Initialize *****************
+  1791 ;; Defined at:
+  1792 ;;		line 76 in file "mcc_generated_files/mcc.c"
+  1793 ;; Parameters:    Size  Location     Type
+  1794 ;;		None
+  1795 ;; Auto vars:     Size  Location     Type
+  1796 ;;		None
+  1797 ;; Return value:  Size  Location     Type
+  1798 ;;                  1    wreg      void 
+  1799 ;; Registers used:
+  1800 ;;		wreg, status,2, status,0, pclath, cstack
+  1801 ;; Tracked objects:
+  1802 ;;		On entry : 0/0
+  1803 ;;		On exit  : 0/0
+  1804 ;;		Unchanged: 0/0
+  1805 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1806 ;;      Params:         0       0       0       0
+  1807 ;;      Locals:         0       0       0       0
+  1808 ;;      Temps:          0       0       0       0
+  1809 ;;      Totals:         0       0       0       0
+  1810 ;;Total ram usage:        0 bytes
+  1811 ;; Hardware stack levels used:    1
+  1812 ;; Hardware stack levels required when called:    1
+  1813 ;; This function calls:
+  1814 ;;		_CLC1_Initialize
+  1815 ;;		_CLC2_Initialize
+  1816 ;;		_EUSART_Initialize
+  1817 ;;		_OSCILLATOR_Initialize
+  1818 ;;		_PIN_MANAGER_Initialize
+  1819 ;;		_WDT_Initialize
+  1820 ;; This function is called by:
+  1821 ;;		_main
+  1822 ;; This function uses a non-reentrant model
+  1823 ;;
   1824                           
-  1825                           ;psect for function _SYSTEM_Initialize
-  1826  0782                     _SYSTEM_Initialize:	
-  1827                           
-  1828                           ;mcc.c: 79: PIN_MANAGER_Initialize();
-  1829                           
-  1830                           ;incstack = 0
-  1831                           ; Regs used in _SYSTEM_Initialize: [wreg+status,2+status,0+pclath+cstack]
-  1832  0782  27BF               	fcall	_PIN_MANAGER_Initialize
-  1833                           
-  1834                           ;mcc.c: 80: OSCILLATOR_Initialize();
-  1835  0783  2794               	fcall	_OSCILLATOR_Initialize
-  1836                           
-  1837                           ;mcc.c: 81: WDT_Initialize();
-  1838  0784  277E               	fcall	_WDT_Initialize
-  1839                           
-  1840                           ;mcc.c: 82: CLC2_Initialize();
-  1841  0785  27AF               	fcall	_CLC2_Initialize
-  1842                           
-  1843                           ;mcc.c: 83: CLC1_Initialize();
-  1844  0786  279F               	fcall	_CLC1_Initialize
-  1845                           
-  1846                           ;mcc.c: 84: EUSART_Initialize();
-  1847  0787  2789               	fcall	_EUSART_Initialize
-  1848  0788  0008               	return
-  1849  0789                     __end_of_SYSTEM_Initialize:	
-  1850                           
-  1851                           	psect	text2
-  1852  077E                     __ptext2:	
-  1853 ;; *************** function _WDT_Initialize *****************
-  1854 ;; Defined at:
-  1855 ;;		line 105 in file "mcc_generated_files/mcc.c"
-  1856 ;; Parameters:    Size  Location     Type
-  1857 ;;		None
-  1858 ;; Auto vars:     Size  Location     Type
-  1859 ;;		None
-  1860 ;; Return value:  Size  Location     Type
-  1861 ;;                  1    wreg      void 
-  1862 ;; Registers used:
-  1863 ;;		wreg
-  1864 ;; Tracked objects:
-  1865 ;;		On entry : 0/0
-  1866 ;;		On exit  : 0/0
-  1867 ;;		Unchanged: 0/0
-  1868 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
-  1869 ;;      Params:         0       0       0       0
-  1870 ;;      Locals:         0       0       0       0
-  1871 ;;      Temps:          0       0       0       0
-  1872 ;;      Totals:         0       0       0       0
-  1873 ;;Total ram usage:        0 bytes
-  1874 ;; Hardware stack levels used:    1
-  1875 ;; This function calls:
-  1876 ;;		Nothing
-  1877 ;; This function is called by:
-  1878 ;;		_SYSTEM_Initialize
-  1879 ;; This function uses a non-reentrant model
-  1880 ;;
-  1881                           
+  1825                           
+  1826                           ;psect for function _SYSTEM_Initialize
+  1827  077C                     _SYSTEM_Initialize:	
+  1828                           
+  1829                           ;mcc.c: 79: PIN_MANAGER_Initialize();
+  1830                           
+  1831                           ;incstack = 0
+  1832                           ; Regs used in _SYSTEM_Initialize: [wreg+status,2+status,0+pclath+cstack]
+  1833  077C  27BB               	fcall	_PIN_MANAGER_Initialize
+  1834                           
+  1835                           ;mcc.c: 80: OSCILLATOR_Initialize();
+  1836  077D  278E               	fcall	_OSCILLATOR_Initialize
+  1837                           
+  1838                           ;mcc.c: 81: WDT_Initialize();
+  1839  077E  2778               	fcall	_WDT_Initialize
+  1840                           
+  1841                           ;mcc.c: 82: CLC2_Initialize();
+  1842  077F  2799               	fcall	_CLC2_Initialize
+  1843                           
+  1844                           ;mcc.c: 83: CLC1_Initialize();
+  1845  0780  27A9               	fcall	_CLC1_Initialize
+  1846                           
+  1847                           ;mcc.c: 84: EUSART_Initialize();
+  1848  0781  2783               	fcall	_EUSART_Initialize
+  1849  0782  0008               	return
+  1850  0783                     __end_of_SYSTEM_Initialize:	
+  1851                           
+  1852                           	psect	text2
+  1853  0778                     __ptext2:	
+  1854 ;; *************** function _WDT_Initialize *****************
+  1855 ;; Defined at:
+  1856 ;;		line 105 in file "mcc_generated_files/mcc.c"
+  1857 ;; Parameters:    Size  Location     Type
+  1858 ;;		None
+  1859 ;; Auto vars:     Size  Location     Type
+  1860 ;;		None
+  1861 ;; Return value:  Size  Location     Type
+  1862 ;;                  1    wreg      void 
+  1863 ;; Registers used:
+  1864 ;;		wreg
+  1865 ;; Tracked objects:
+  1866 ;;		On entry : 0/0
+  1867 ;;		On exit  : 0/0
+  1868 ;;		Unchanged: 0/0
+  1869 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1870 ;;      Params:         0       0       0       0
+  1871 ;;      Locals:         0       0       0       0
+  1872 ;;      Temps:          0       0       0       0
+  1873 ;;      Totals:         0       0       0       0
+  1874 ;;Total ram usage:        0 bytes
+  1875 ;; Hardware stack levels used:    1
+  1876 ;; This function calls:
+  1877 ;;		Nothing
+  1878 ;; This function is called by:
+  1879 ;;		_SYSTEM_Initialize
+  1880 ;; This function uses a non-reentrant model
+  1881 ;;
   1882                           
-  1883                           ;psect for function _WDT_Initialize
-  1884  077E                     _WDT_Initialize:	
-  1885                           
-  1886                           ;mcc.c: 108: WDTCON = 0x16;
-  1887                           
-  1888                           ;incstack = 0
-  1889                           ; Regs used in _WDT_Initialize: [wreg]
-  1890  077E  3016               	movlw	22
-  1891  077F  0021               	movlb	1	; select bank1
-  1892  0780  0097               	movwf	23	;volatile
-  1893  0781  0008               	return
-  1894  0782                     __end_of_WDT_Initialize:	
-  1895                           
-  1896                           	psect	text3
-  1897  07BF                     __ptext3:	
-  1898 ;; *************** function _PIN_MANAGER_Initialize *****************
-  1899 ;; Defined at:
-  1900 ;;		line 51 in file "mcc_generated_files/pin_manager.c"
-  1901 ;; Parameters:    Size  Location     Type
-  1902 ;;		None
-  1903 ;; Auto vars:     Size  Location     Type
-  1904 ;;  state           1    0[COMMON] unsigned char 
-  1905 ;; Return value:  Size  Location     Type
-  1906 ;;                  1    wreg      void 
-  1907 ;; Registers used:
-  1908 ;;		wreg, status,2, status,0
-  1909 ;; Tracked objects:
-  1910 ;;		On entry : 0/0
-  1911 ;;		On exit  : 0/0
-  1912 ;;		Unchanged: 0/0
-  1913 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
-  1914 ;;      Params:         0       0       0       0
-  1915 ;;      Locals:         1       0       0       0
-  1916 ;;      Temps:          0       0       0       0
-  1917 ;;      Totals:         1       0       0       0
-  1918 ;;Total ram usage:        1 bytes
-  1919 ;; Hardware stack levels used:    1
-  1920 ;; This function calls:
-  1921 ;;		Nothing
-  1922 ;; This function is called by:
-  1923 ;;		_SYSTEM_Initialize
-  1924 ;; This function uses a non-reentrant model
-  1925 ;;
-  1926                           
+  1883                           
+  1884                           ;psect for function _WDT_Initialize
+  1885  0778                     _WDT_Initialize:	
+  1886                           
+  1887                           ;mcc.c: 108: WDTCON = 0x16;
+  1888                           
+  1889                           ;incstack = 0
+  1890                           ; Regs used in _WDT_Initialize: [wreg]
+  1891  0778  3016               	movlw	22
+  1892  0779  0021               	movlb	1	; select bank1
+  1893  077A  0097               	movwf	23	;volatile
+  1894  077B  0008               	return
+  1895  077C                     __end_of_WDT_Initialize:	
+  1896                           
+  1897                           	psect	text3
+  1898  07BB                     __ptext3:	
+  1899 ;; *************** function _PIN_MANAGER_Initialize *****************
+  1900 ;; Defined at:
+  1901 ;;		line 51 in file "mcc_generated_files/pin_manager.c"
+  1902 ;; Parameters:    Size  Location     Type
+  1903 ;;		None
+  1904 ;; Auto vars:     Size  Location     Type
+  1905 ;;  state           1    0[COMMON] unsigned char 
+  1906 ;; Return value:  Size  Location     Type
+  1907 ;;                  1    wreg      void 
+  1908 ;; Registers used:
+  1909 ;;		wreg, status,2, status,0
+  1910 ;; Tracked objects:
+  1911 ;;		On entry : 0/0
+  1912 ;;		On exit  : 0/0
+  1913 ;;		Unchanged: 0/0
+  1914 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1915 ;;      Params:         0       0       0       0
+  1916 ;;      Locals:         1       0       0       0
+  1917 ;;      Temps:          0       0       0       0
+  1918 ;;      Totals:         1       0       0       0
+  1919 ;;Total ram usage:        1 bytes
+  1920 ;; Hardware stack levels used:    1
+  1921 ;; This function calls:
+  1922 ;;		Nothing
+  1923 ;; This function is called by:
+  1924 ;;		_SYSTEM_Initialize
+  1925 ;; This function uses a non-reentrant model
+  1926 ;;
   1927                           
-  1928                           ;psect for function _PIN_MANAGER_Initialize
-  1929  07BF                     _PIN_MANAGER_Initialize:	
-  1930                           
-  1931                           ;pin_manager.c: 56: LATA = 0x00;
-  1932                           
-  1933                           ;incstack = 0
-  1934                           ; Regs used in _PIN_MANAGER_Initialize: [wreg+status,2+status,0]
-  1935  07BF  0022               	movlb	2	; select bank2
-  1936  07C0  018C               	clrf	12	;volatile
-  1937                           
-  1938                           ;pin_manager.c: 57: LATC = 0x00;
-  1939  07C1  018E               	clrf	14	;volatile
-  1940                           
-  1941                           ;pin_manager.c: 62: TRISA = 0x37;
-  1942  07C2  3037               	movlw	55
-  1943  07C3  0021               	movlb	1	; select bank1
-  1944  07C4  008C               	movwf	12	;volatile
-  1945                           
-  1946                           ;pin_manager.c: 63: TRISC = 0x10;
-  1947  07C5  3010               	movlw	16
-  1948  07C6  008E               	movwf	14	;volatile
-  1949                           
-  1950                           ;pin_manager.c: 68: ANSELC = 0x00;
-  1951  07C7  0023               	movlb	3	; select bank3
-  1952  07C8  018E               	clrf	14	;volatile
-  1953                           
-  1954                           ;pin_manager.c: 69: ANSELA = 0x00;
-  1955  07C9  018C               	clrf	12	;volatile
-  1956                           
-  1957                           ;pin_manager.c: 74: WPUA = 0x00;
-  1958  07CA  0024               	movlb	4	; select bank4
-  1959  07CB  018C               	clrf	12	;volatile
-  1960                           
-  1961                           ;pin_manager.c: 75: WPUC = 0x00;
-  1962  07CC  018E               	clrf	14	;volatile
-  1963                           
-  1964                           ;pin_manager.c: 80: ODCONA = 0x00;
-  1965  07CD  0025               	movlb	5	; select bank5
-  1966  07CE  018C               	clrf	12	;volatile
-  1967                           
-  1968                           ;pin_manager.c: 81: ODCONC = 0x00;
-  1969  07CF  018E               	clrf	14	;volatile
-  1970                           
-  1971                           ;pin_manager.c: 88: bool state = GIE;
-  1972  07D0  3000               	movlw	0
-  1973  07D1  1B8B               	btfsc	11,7	;volatile
-  1974  07D2  3001               	movlw	1
-  1975  07D3  00F0               	movwf	PIN_MANAGER_Initialize@state
-  1976                           
-  1977                           ;pin_manager.c: 89: GIE = 0;
-  1978  07D4  138B               	bcf	11,7	;volatile
-  1979                           
-  1980                           ;pin_manager.c: 90: PPSLOCK = 0x55;
-  1981  07D5  3055               	movlw	85
-  1982  07D6  003C               	movlb	28	; select bank28
-  1983  07D7  008F               	movwf	15	;volatile
-  1984                           
-  1985                           ;pin_manager.c: 91: PPSLOCK = 0xAA;
-  1986  07D8  30AA               	movlw	170
-  1987  07D9  008F               	movwf	15	;volatile
-  1988                           
-  1989                           ;pin_manager.c: 92: PPSLOCKbits.PPSLOCKED = 0x00;
-  1990  07DA  100F               	bcf	15,0	;volatile
-  1991                           
-  1992                           ;pin_manager.c: 94: CLCIN1PPSbits.CLCIN1PPS = 0x00;
-  1993  07DB  30E0               	movlw	-32
-  1994  07DC  05A9               	andwf	41,f	;volatile
-  1995                           
-  1996                           ;pin_manager.c: 95: RXPPSbits.RXPPS = 0x14;
-  1997  07DD  0824               	movf	36,w	;volatile
-  1998  07DE  39E0               	andlw	-32
-  1999  07DF  3814               	iorlw	20
-  2000  07E0  00A4               	movwf	36	;volatile
-  2001                           
-  2002                           ;pin_manager.c: 96: CLCIN0PPSbits.CLCIN0PPS = 0x02;
-  2003  07E1  0828               	movf	40,w	;volatile
-  2004  07E2  39E0               	andlw	-32
-  2005  07E3  3802               	iorlw	2
-  2006  07E4  00A8               	movwf	40	;volatile
-  2007                           
-  2008                           ;pin_manager.c: 97: CLCIN2PPSbits.CLCIN2PPS = 0x01;
-  2009  07E5  082A               	movf	42,w	;volatile
-  2010  07E6  39E0               	andlw	-32
-  2011  07E7  3801               	iorlw	1
-  2012  07E8  00AA               	movwf	42	;volatile
-  2013                           
-  2014                           ;pin_manager.c: 98: RC3PPSbits.RC3PPS = 0x05;
-  2015  07E9  003D               	movlb	29	; select bank29
-  2016  07EA  0823               	movf	35,w	;volatile
-  2017  07EB  39E0               	andlw	-32
-  2018  07EC  3805               	iorlw	5
-  2019  07ED  00A3               	movwf	35	;volatile
+  1928                           
+  1929                           ;psect for function _PIN_MANAGER_Initialize
+  1930  07BB                     _PIN_MANAGER_Initialize:	
+  1931                           
+  1932                           ;pin_manager.c: 56: LATA = 0x00;
+  1933                           
+  1934                           ;incstack = 0
+  1935                           ; Regs used in _PIN_MANAGER_Initialize: [wreg+status,2+status,0]
+  1936  07BB  0022               	movlb	2	; select bank2
+  1937  07BC  018C               	clrf	12	;volatile
+  1938                           
+  1939                           ;pin_manager.c: 57: LATC = 0x00;
+  1940  07BD  018E               	clrf	14	;volatile
+  1941                           
+  1942                           ;pin_manager.c: 62: TRISA = 0x37;
+  1943  07BE  3037               	movlw	55
+  1944  07BF  0021               	movlb	1	; select bank1
+  1945  07C0  008C               	movwf	12	;volatile
+  1946                           
+  1947                           ;pin_manager.c: 63: TRISC = 0x10;
+  1948  07C1  3010               	movlw	16
+  1949  07C2  008E               	movwf	14	;volatile
+  1950                           
+  1951                           ;pin_manager.c: 68: ANSELC = 0x00;
+  1952  07C3  0023               	movlb	3	; select bank3
+  1953  07C4  018E               	clrf	14	;volatile
+  1954                           
+  1955                           ;pin_manager.c: 69: ANSELA = 0x00;
+  1956  07C5  018C               	clrf	12	;volatile
+  1957                           
+  1958                           ;pin_manager.c: 74: WPUA = 0x00;
+  1959  07C6  0024               	movlb	4	; select bank4
+  1960  07C7  018C               	clrf	12	;volatile
+  1961                           
+  1962                           ;pin_manager.c: 75: WPUC = 0x00;
+  1963  07C8  018E               	clrf	14	;volatile
+  1964                           
+  1965                           ;pin_manager.c: 80: ODCONA = 0x00;
+  1966  07C9  0025               	movlb	5	; select bank5
+  1967  07CA  018C               	clrf	12	;volatile
+  1968                           
+  1969                           ;pin_manager.c: 81: ODCONC = 0x00;
+  1970  07CB  018E               	clrf	14	;volatile
+  1971                           
+  1972                           ;pin_manager.c: 88: bool state = GIE;
+  1973  07CC  3000               	movlw	0
+  1974  07CD  1B8B               	btfsc	11,7	;volatile
+  1975  07CE  3001               	movlw	1
+  1976  07CF  00F0               	movwf	PIN_MANAGER_Initialize@state
+  1977                           
+  1978                           ;pin_manager.c: 89: GIE = 0;
+  1979  07D0  138B               	bcf	11,7	;volatile
+  1980                           
+  1981                           ;pin_manager.c: 90: PPSLOCK = 0x55;
+  1982  07D1  3055               	movlw	85
+  1983  07D2  003C               	movlb	28	; select bank28
+  1984  07D3  008F               	movwf	15	;volatile
+  1985                           
+  1986                           ;pin_manager.c: 91: PPSLOCK = 0xAA;
+  1987  07D4  30AA               	movlw	170
+  1988  07D5  008F               	movwf	15	;volatile
+  1989                           
+  1990                           ;pin_manager.c: 92: PPSLOCKbits.PPSLOCKED = 0x00;
+  1991  07D6  100F               	bcf	15,0	;volatile
+  1992                           
+  1993                           ;pin_manager.c: 94: CLCIN1PPSbits.CLCIN1PPS = 0x01;
+  1994  07D7  0829               	movf	41,w	;volatile
+  1995  07D8  39E0               	andlw	-32
+  1996  07D9  3801               	iorlw	1
+  1997  07DA  00A9               	movwf	41	;volatile
+  1998                           
+  1999                           ;pin_manager.c: 95: RXPPSbits.RXPPS = 0x14;
+  2000  07DB  0824               	movf	36,w	;volatile
+  2001  07DC  39E0               	andlw	-32
+  2002  07DD  3814               	iorlw	20
+  2003  07DE  00A4               	movwf	36	;volatile
+  2004                           
+  2005                           ;pin_manager.c: 96: CLCIN0PPSbits.CLCIN0PPS = 0x00;
+  2006  07DF  30E0               	movlw	-32
+  2007  07E0  05A8               	andwf	40,f	;volatile
+  2008                           
+  2009                           ;pin_manager.c: 97: CLCIN2PPSbits.CLCIN2PPS = 0x02;
+  2010  07E1  082A               	movf	42,w	;volatile
+  2011  07E2  39E0               	andlw	-32
+  2012  07E3  3802               	iorlw	2
+  2013  07E4  00AA               	movwf	42	;volatile
+  2014                           
+  2015                           ;pin_manager.c: 98: CLCIN3PPSbits.CLCIN3PPS = 0x04;
+  2016  07E5  082B               	movf	43,w	;volatile
+  2017  07E6  39E0               	andlw	-32
+  2018  07E7  3804               	iorlw	4
+  2019  07E8  00AB               	movwf	43	;volatile
   2020                           
-  2021                           ;pin_manager.c: 99: RC5PPSbits.RC5PPS = 0x04;
-  2022  07EE  0825               	movf	37,w	;volatile
-  2023  07EF  39E0               	andlw	-32
-  2024  07F0  3804               	iorlw	4
-  2025  07F1  00A5               	movwf	37	;volatile
-  2026                           
-  2027                           ;pin_manager.c: 101: PPSLOCK = 0x55;
-  2028  07F2  3055               	movlw	85
-  2029  07F3  003C               	movlb	28	; select bank28
-  2030  07F4  008F               	movwf	15	;volatile
-  2031                           
-  2032                           ;pin_manager.c: 102: PPSLOCK = 0xAA;
-  2033  07F5  30AA               	movlw	170
-  2034  07F6  008F               	movwf	15	;volatile
-  2035                           
-  2036                           ;pin_manager.c: 103: PPSLOCKbits.PPSLOCKED = 0x01;
-  2037  07F7  140F               	bsf	15,0	;volatile
+  2021                           ;pin_manager.c: 99: RC3PPSbits.RC3PPS = 0x05;
+  2022  07E9  003D               	movlb	29	; select bank29
+  2023  07EA  0823               	movf	35,w	;volatile
+  2024  07EB  39E0               	andlw	-32
+  2025  07EC  3805               	iorlw	5
+  2026  07ED  00A3               	movwf	35	;volatile
+  2027                           
+  2028                           ;pin_manager.c: 100: RC5PPSbits.RC5PPS = 0x04;
+  2029  07EE  0825               	movf	37,w	;volatile
+  2030  07EF  39E0               	andlw	-32
+  2031  07F0  3804               	iorlw	4
+  2032  07F1  00A5               	movwf	37	;volatile
+  2033                           
+  2034                           ;pin_manager.c: 102: PPSLOCK = 0x55;
+  2035  07F2  3055               	movlw	85
+  2036  07F3  003C               	movlb	28	; select bank28
+  2037  07F4  008F               	movwf	15	;volatile
   2038                           
-  2039                           ;pin_manager.c: 105: GIE = state;
-  2040  07F8  1C70               	btfss	PIN_MANAGER_Initialize@state,0
-  2041  07F9  2FFC               	goto	u10
-  2042  07FA  178B               	bsf	11,7	;volatile
-  2043  07FB  0008               	return
-  2044  07FC                     u10:	
-  2045  07FC  138B               	bcf	11,7	;volatile
-  2046  07FD  0008               	return
-  2047  07FE                     __end_of_PIN_MANAGER_Initialize:	
-  2048                           
-  2049                           	psect	text4
-  2050  0794                     __ptext4:	
-  2051 ;; *************** function _OSCILLATOR_Initialize *****************
-  2052 ;; Defined at:
-  2053 ;;		line 87 in file "mcc_generated_files/mcc.c"
-  2054 ;; Parameters:    Size  Location     Type
-  2055 ;;		None
-  2056 ;; Auto vars:     Size  Location     Type
-  2057 ;;		None
-  2058 ;; Return value:  Size  Location     Type
-  2059 ;;                  1    wreg      void 
-  2060 ;; Registers used:
-  2061 ;;		wreg, status,2
-  2062 ;; Tracked objects:
-  2063 ;;		On entry : 0/0
-  2064 ;;		On exit  : 0/0
-  2065 ;;		Unchanged: 0/0
-  2066 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
-  2067 ;;      Params:         0       0       0       0
-  2068 ;;      Locals:         0       0       0       0
-  2069 ;;      Temps:          0       0       0       0
-  2070 ;;      Totals:         0       0       0       0
-  2071 ;;Total ram usage:        0 bytes
-  2072 ;; Hardware stack levels used:    1
-  2073 ;; This function calls:
-  2074 ;;		Nothing
-  2075 ;; This function is called by:
-  2076 ;;		_SYSTEM_Initialize
-  2077 ;; This function uses a non-reentrant model
-  2078 ;;
-  2079                           
-  2080                           
-  2081                           ;psect for function _OSCILLATOR_Initialize
-  2082  0794                     _OSCILLATOR_Initialize:	
-  2083                           
-  2084                           ;mcc.c: 90: OSCCON1 = 0x10;
-  2085                           
-  2086                           ;incstack = 0
-  2087                           ; Regs used in _OSCILLATOR_Initialize: [wreg+status,2]
-  2088  0794  3010               	movlw	16
-  2089  0795  0032               	movlb	18	; select bank18
-  2090  0796  0099               	movwf	25	;volatile
-  2091                           
-  2092                           ;mcc.c: 92: OSCCON3 = 0x00;
-  2093  0797  019B               	clrf	27	;volatile
-  2094                           
-  2095                           ;mcc.c: 94: OSCEN = 0x00;
-  2096  0798  019D               	clrf	29	;volatile
-  2097                           
-  2098                           ;mcc.c: 96: OSCFRQ = 0x03;
-  2099  0799  3003               	movlw	3
-  2100  079A  009F               	movwf	31	;volatile
+  2039                           ;pin_manager.c: 103: PPSLOCK = 0xAA;
+  2040  07F5  30AA               	movlw	170
+  2041  07F6  008F               	movwf	15	;volatile
+  2042                           
+  2043                           ;pin_manager.c: 104: PPSLOCKbits.PPSLOCKED = 0x01;
+  2044  07F7  140F               	bsf	15,0	;volatile
+  2045                           
+  2046                           ;pin_manager.c: 106: GIE = state;
+  2047  07F8  1C70               	btfss	PIN_MANAGER_Initialize@state,0
+  2048  07F9  2FFC               	goto	u10
+  2049  07FA  178B               	bsf	11,7	;volatile
+  2050  07FB  0008               	return
+  2051  07FC                     u10:	
+  2052  07FC  138B               	bcf	11,7	;volatile
+  2053  07FD  0008               	return
+  2054  07FE                     __end_of_PIN_MANAGER_Initialize:	
+  2055                           
+  2056                           	psect	text4
+  2057  078E                     __ptext4:	
+  2058 ;; *************** function _OSCILLATOR_Initialize *****************
+  2059 ;; Defined at:
+  2060 ;;		line 87 in file "mcc_generated_files/mcc.c"
+  2061 ;; Parameters:    Size  Location     Type
+  2062 ;;		None
+  2063 ;; Auto vars:     Size  Location     Type
+  2064 ;;		None
+  2065 ;; Return value:  Size  Location     Type
+  2066 ;;                  1    wreg      void 
+  2067 ;; Registers used:
+  2068 ;;		wreg, status,2
+  2069 ;; Tracked objects:
+  2070 ;;		On entry : 0/0
+  2071 ;;		On exit  : 0/0
+  2072 ;;		Unchanged: 0/0
+  2073 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2074 ;;      Params:         0       0       0       0
+  2075 ;;      Locals:         0       0       0       0
+  2076 ;;      Temps:          0       0       0       0
+  2077 ;;      Totals:         0       0       0       0
+  2078 ;;Total ram usage:        0 bytes
+  2079 ;; Hardware stack levels used:    1
+  2080 ;; This function calls:
+  2081 ;;		Nothing
+  2082 ;; This function is called by:
+  2083 ;;		_SYSTEM_Initialize
+  2084 ;; This function uses a non-reentrant model
+  2085 ;;
+  2086                           
+  2087                           
+  2088                           ;psect for function _OSCILLATOR_Initialize
+  2089  078E                     _OSCILLATOR_Initialize:	
+  2090                           
+  2091                           ;mcc.c: 90: OSCCON1 = 0x10;
+  2092                           
+  2093                           ;incstack = 0
+  2094                           ; Regs used in _OSCILLATOR_Initialize: [wreg+status,2]
+  2095  078E  3010               	movlw	16
+  2096  078F  0032               	movlb	18	; select bank18
+  2097  0790  0099               	movwf	25	;volatile
+  2098                           
+  2099                           ;mcc.c: 92: OSCCON3 = 0x00;
+  2100  0791  019B               	clrf	27	;volatile
   2101                           
-  2102                           ;mcc.c: 98: OSCTUNE = 0x00;
-  2103  079B  019E               	clrf	30	;volatile
-  2104  079C                     l104:	
-  2105                           ;mcc.c: 101: {
-  2106                           
-  2107                           ;mcc.c: 100: while(PLLR == 0)
+  2102                           ;mcc.c: 94: OSCEN = 0x00;
+  2103  0792  019D               	clrf	29	;volatile
+  2104                           
+  2105                           ;mcc.c: 96: OSCFRQ = 0x03;
+  2106  0793  3003               	movlw	3
+  2107  0794  009F               	movwf	31	;volatile
   2108                           
-  2109  079C  181C               	btfsc	28,0	;volatile
-  2110  079D  0008               	return
-  2111  079E  2F9C               	goto	l104
-  2112  079F                     __end_of_OSCILLATOR_Initialize:	
+  2109                           ;mcc.c: 98: OSCTUNE = 0x00;
+  2110  0795  019E               	clrf	30	;volatile
+  2111  0796                     l106:	
+  2112                           ;mcc.c: 101: {
   2113                           
-  2114                           	psect	text5
-  2115  0789                     __ptext5:	
-  2116 ;; *************** function _EUSART_Initialize *****************
-  2117 ;; Defined at:
-  2118 ;;		line 55 in file "mcc_generated_files/eusart.c"
-  2119 ;; Parameters:    Size  Location     Type
-  2120 ;;		None
-  2121 ;; Auto vars:     Size  Location     Type
-  2122 ;;		None
-  2123 ;; Return value:  Size  Location     Type
-  2124 ;;                  1    wreg      void 
-  2125 ;; Registers used:
-  2126 ;;		wreg, status,2
-  2127 ;; Tracked objects:
-  2128 ;;		On entry : 0/0
-  2129 ;;		On exit  : 0/0
-  2130 ;;		Unchanged: 0/0
-  2131 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
-  2132 ;;      Params:         0       0       0       0
-  2133 ;;      Locals:         0       0       0       0
-  2134 ;;      Temps:          0       0       0       0
-  2135 ;;      Totals:         0       0       0       0
-  2136 ;;Total ram usage:        0 bytes
-  2137 ;; Hardware stack levels used:    1
-  2138 ;; This function calls:
-  2139 ;;		Nothing
-  2140 ;; This function is called by:
-  2141 ;;		_SYSTEM_Initialize
-  2142 ;; This function uses a non-reentrant model
-  2143 ;;
-  2144                           
-  2145                           
-  2146                           ;psect for function _EUSART_Initialize
-  2147  0789                     _EUSART_Initialize:	
-  2148                           
-  2149                           ;eusart.c: 60: BAUD1CON = 0x08;
-  2150                           
-  2151                           ;incstack = 0
-  2152                           ; Regs used in _EUSART_Initialize: [wreg+status,2]
-  2153  0789  3008               	movlw	8
-  2154  078A  0023               	movlb	3	; select bank3
-  2155  078B  009F               	movwf	31	;volatile
-  2156                           
-  2157                           ;eusart.c: 63: RC1STA = 0x90;
-  2158  078C  3090               	movlw	144
-  2159  078D  009D               	movwf	29	;volatile
-  2160                           
-  2161                           ;eusart.c: 66: TX1STA = 0x04;
-  2162  078E  3004               	movlw	4
-  2163  078F  009E               	movwf	30	;volatile
-  2164                           
-  2165                           ;eusart.c: 69: SP1BRGL = 0xFF;
-  2166  0790  30FF               	movlw	255
-  2167  0791  009B               	movwf	27	;volatile
-  2168                           
-  2169                           ;eusart.c: 72: SP1BRGH = 0x00;
-  2170  0792  019C               	clrf	28	;volatile
-  2171  0793  0008               	return
-  2172  0794                     __end_of_EUSART_Initialize:	
-  2173                           
-  2174                           	psect	text6
-  2175  07AF                     __ptext6:	
-  2176 ;; *************** function _CLC2_Initialize *****************
-  2177 ;; Defined at:
-  2178 ;;		line 57 in file "mcc_generated_files/clc2.c"
-  2179 ;; Parameters:    Size  Location     Type
-  2180 ;;		None
-  2181 ;; Auto vars:     Size  Location     Type
-  2182 ;;		None
-  2183 ;; Return value:  Size  Location     Type
-  2184 ;;                  1    wreg      void 
-  2185 ;; Registers used:
-  2186 ;;		wreg, status,2
-  2187 ;; Tracked objects:
-  2188 ;;		On entry : 0/0
-  2189 ;;		On exit  : 0/0
-  2190 ;;		Unchanged: 0/0
-  2191 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
-  2192 ;;      Params:         0       0       0       0
-  2193 ;;      Locals:         0       0       0       0
-  2194 ;;      Temps:          0       0       0       0
-  2195 ;;      Totals:         0       0       0       0
-  2196 ;;Total ram usage:        0 bytes
-  2197 ;; Hardware stack levels used:    1
-  2198 ;; This function calls:
-  2199 ;;		Nothing
-  2200 ;; This function is called by:
-  2201 ;;		_SYSTEM_Initialize
-  2202 ;; This function uses a non-reentrant model
-  2203 ;;
-  2204                           
-  2205                           
-  2206                           ;psect for function _CLC2_Initialize
-  2207  07AF                     _CLC2_Initialize:	
-  2208                           
-  2209                           ;clc2.c: 62: CLC2POL = 0x02;
-  2210                           
-  2211                           ;incstack = 0
-  2212                           ; Regs used in _CLC2_Initialize: [wreg+status,2]
-  2213  07AF  3002               	movlw	2
-  2214  07B0  003E               	movlb	30	; select bank30
-  2215  07B1  009B               	movwf	27	;volatile
-  2216                           
-  2217                           ;clc2.c: 65: CLC2SEL0 = 0x02;
-  2218  07B2  3002               	movlw	2
-  2219  07B3  009C               	movwf	28	;volatile
-  2220                           
-  2221                           ;clc2.c: 68: CLC2SEL1 = 0x00;
-  2222  07B4  019D               	clrf	29	;volatile
+  2114                           ;mcc.c: 100: while(PLLR == 0)
+  2115                           
+  2116  0796  181C               	btfsc	28,0	;volatile
+  2117  0797  0008               	return
+  2118  0798  2F96               	goto	l106
+  2119  0799                     __end_of_OSCILLATOR_Initialize:	
+  2120                           
+  2121                           	psect	text5
+  2122  0783                     __ptext5:	
+  2123 ;; *************** function _EUSART_Initialize *****************
+  2124 ;; Defined at:
+  2125 ;;		line 55 in file "mcc_generated_files/eusart.c"
+  2126 ;; Parameters:    Size  Location     Type
+  2127 ;;		None
+  2128 ;; Auto vars:     Size  Location     Type
+  2129 ;;		None
+  2130 ;; Return value:  Size  Location     Type
+  2131 ;;                  1    wreg      void 
+  2132 ;; Registers used:
+  2133 ;;		wreg, status,2
+  2134 ;; Tracked objects:
+  2135 ;;		On entry : 0/0
+  2136 ;;		On exit  : 0/0
+  2137 ;;		Unchanged: 0/0
+  2138 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2139 ;;      Params:         0       0       0       0
+  2140 ;;      Locals:         0       0       0       0
+  2141 ;;      Temps:          0       0       0       0
+  2142 ;;      Totals:         0       0       0       0
+  2143 ;;Total ram usage:        0 bytes
+  2144 ;; Hardware stack levels used:    1
+  2145 ;; This function calls:
+  2146 ;;		Nothing
+  2147 ;; This function is called by:
+  2148 ;;		_SYSTEM_Initialize
+  2149 ;; This function uses a non-reentrant model
+  2150 ;;
+  2151                           
+  2152                           
+  2153                           ;psect for function _EUSART_Initialize
+  2154  0783                     _EUSART_Initialize:	
+  2155                           
+  2156                           ;eusart.c: 60: BAUD1CON = 0x08;
+  2157                           
+  2158                           ;incstack = 0
+  2159                           ; Regs used in _EUSART_Initialize: [wreg+status,2]
+  2160  0783  3008               	movlw	8
+  2161  0784  0023               	movlb	3	; select bank3
+  2162  0785  009F               	movwf	31	;volatile
+  2163                           
+  2164                           ;eusart.c: 63: RC1STA = 0x90;
+  2165  0786  3090               	movlw	144
+  2166  0787  009D               	movwf	29	;volatile
+  2167                           
+  2168                           ;eusart.c: 66: TX1STA = 0x04;
+  2169  0788  3004               	movlw	4
+  2170  0789  009E               	movwf	30	;volatile
+  2171                           
+  2172                           ;eusart.c: 69: SP1BRGL = 0xFF;
+  2173  078A  30FF               	movlw	255
+  2174  078B  009B               	movwf	27	;volatile
+  2175                           
+  2176                           ;eusart.c: 72: SP1BRGH = 0x00;
+  2177  078C  019C               	clrf	28	;volatile
+  2178  078D  0008               	return
+  2179  078E                     __end_of_EUSART_Initialize:	
+  2180                           
+  2181                           	psect	text6
+  2182  0799                     __ptext6:	
+  2183 ;; *************** function _CLC2_Initialize *****************
+  2184 ;; Defined at:
+  2185 ;;		line 57 in file "mcc_generated_files/clc2.c"
+  2186 ;; Parameters:    Size  Location     Type
+  2187 ;;		None
+  2188 ;; Auto vars:     Size  Location     Type
+  2189 ;;		None
+  2190 ;; Return value:  Size  Location     Type
+  2191 ;;                  1    wreg      void 
+  2192 ;; Registers used:
+  2193 ;;		wreg, status,2
+  2194 ;; Tracked objects:
+  2195 ;;		On entry : 0/0
+  2196 ;;		On exit  : 0/0
+  2197 ;;		Unchanged: 0/0
+  2198 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2199 ;;      Params:         0       0       0       0
+  2200 ;;      Locals:         0       0       0       0
+  2201 ;;      Temps:          0       0       0       0
+  2202 ;;      Totals:         0       0       0       0
+  2203 ;;Total ram usage:        0 bytes
+  2204 ;; Hardware stack levels used:    1
+  2205 ;; This function calls:
+  2206 ;;		Nothing
+  2207 ;; This function is called by:
+  2208 ;;		_SYSTEM_Initialize
+  2209 ;; This function uses a non-reentrant model
+  2210 ;;
+  2211                           
+  2212                           
+  2213                           ;psect for function _CLC2_Initialize
+  2214  0799                     _CLC2_Initialize:	
+  2215                           
+  2216                           ;clc2.c: 62: CLC2POL = 0x02;
+  2217                           
+  2218                           ;incstack = 0
+  2219                           ; Regs used in _CLC2_Initialize: [wreg+status,2]
+  2220  0799  3002               	movlw	2
+  2221  079A  003E               	movlb	30	; select bank30
+  2222  079B  009B               	movwf	27	;volatile
   2223                           
-  2224                           ;clc2.c: 71: CLC2SEL2 = 0x00;
-  2225  07B5  019E               	clrf	30	;volatile
-  2226                           
-  2227                           ;clc2.c: 74: CLC2SEL3 = 0x00;
-  2228  07B6  019F               	clrf	31	;volatile
-  2229                           
-  2230                           ;clc2.c: 77: CLC2GLS0 = 0x02;
-  2231  07B7  3002               	movlw	2
-  2232  07B8  00A0               	movwf	32	;volatile
+  2224                           ;clc2.c: 65: CLC2SEL0 = 0x01;
+  2225  079C  3001               	movlw	1
+  2226  079D  009C               	movwf	28	;volatile
+  2227                           
+  2228                           ;clc2.c: 68: CLC2SEL1 = 0x00;
+  2229  079E  019D               	clrf	29	;volatile
+  2230                           
+  2231                           ;clc2.c: 71: CLC2SEL2 = 0x00;
+  2232  079F  019E               	clrf	30	;volatile
   2233                           
-  2234                           ;clc2.c: 80: CLC2GLS1 = 0x00;
-  2235  07B9  01A1               	clrf	33	;volatile
+  2234                           ;clc2.c: 74: CLC2SEL3 = 0x00;
+  2235  07A0  019F               	clrf	31	;volatile
   2236                           
-  2237                           ;clc2.c: 83: CLC2GLS2 = 0x00;
-  2238  07BA  01A2               	clrf	34	;volatile
-  2239                           
-  2240                           ;clc2.c: 86: CLC2GLS3 = 0x00;
-  2241  07BB  01A3               	clrf	35	;volatile
-  2242                           
-  2243                           ;clc2.c: 89: CLC2CON = 0x80;
-  2244  07BC  3080               	movlw	128
-  2245  07BD  009A               	movwf	26	;volatile
-  2246  07BE  0008               	return
-  2247  07BF                     __end_of_CLC2_Initialize:	
-  2248                           
-  2249                           	psect	text7
-  2250  079F                     __ptext7:	
-  2251 ;; *************** function _CLC1_Initialize *****************
-  2252 ;; Defined at:
-  2253 ;;		line 57 in file "mcc_generated_files/clc1.c"
-  2254 ;; Parameters:    Size  Location     Type
-  2255 ;;		None
-  2256 ;; Auto vars:     Size  Location     Type
-  2257 ;;		None
-  2258 ;; Return value:  Size  Location     Type
-  2259 ;;                  1    wreg      void 
-  2260 ;; Registers used:
-  2261 ;;		wreg, status,2
-  2262 ;; Tracked objects:
-  2263 ;;		On entry : 0/0
-  2264 ;;		On exit  : 0/0
-  2265 ;;		Unchanged: 0/0
-  2266 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
-  2267 ;;      Params:         0       0       0       0
-  2268 ;;      Locals:         0       0       0       0
-  2269 ;;      Temps:          0       0       0       0
-  2270 ;;      Totals:         0       0       0       0
-  2271 ;;Total ram usage:        0 bytes
-  2272 ;; Hardware stack levels used:    1
-  2273 ;; This function calls:
-  2274 ;;		Nothing
-  2275 ;; This function is called by:
-  2276 ;;		_SYSTEM_Initialize
-  2277 ;; This function uses a non-reentrant model
-  2278 ;;
-  2279                           
-  2280                           
-  2281                           ;psect for function _CLC1_Initialize
-  2282  079F                     _CLC1_Initialize:	
-  2283                           
-  2284                           ;clc1.c: 62: CLC1POL = 0x02;
-  2285                           
-  2286                           ;incstack = 0
-  2287                           ; Regs used in _CLC1_Initialize: [wreg+status,2]
-  2288  079F  3002               	movlw	2
-  2289  07A0  003E               	movlb	30	; select bank30
-  2290  07A1  0091               	movwf	17	;volatile
-  2291                           
-  2292                           ;clc1.c: 65: CLC1SEL0 = 0x00;
-  2293  07A2  0192               	clrf	18	;volatile
-  2294                           
-  2295                           ;clc1.c: 68: CLC1SEL1 = 0x01;
-  2296  07A3  3001               	movlw	1
-  2297  07A4  0093               	movwf	19	;volatile
-  2298                           
-  2299                           ;clc1.c: 71: CLC1SEL2 = 0x00;
-  2300  07A5  0194               	clrf	20	;volatile
-  2301                           
-  2302                           ;clc1.c: 74: CLC1SEL3 = 0x00;
-  2303  07A6  0195               	clrf	21	;volatile
+  2237                           ;clc2.c: 77: CLC2GLS0 = 0x02;
+  2238  07A1  3002               	movlw	2
+  2239  07A2  00A0               	movwf	32	;volatile
+  2240                           
+  2241                           ;clc2.c: 80: CLC2GLS1 = 0x00;
+  2242  07A3  01A1               	clrf	33	;volatile
+  2243                           
+  2244                           ;clc2.c: 83: CLC2GLS2 = 0x00;
+  2245  07A4  01A2               	clrf	34	;volatile
+  2246                           
+  2247                           ;clc2.c: 86: CLC2GLS3 = 0x00;
+  2248  07A5  01A3               	clrf	35	;volatile
+  2249                           
+  2250                           ;clc2.c: 89: CLC2CON = 0x80;
+  2251  07A6  3080               	movlw	128
+  2252  07A7  009A               	movwf	26	;volatile
+  2253  07A8  0008               	return
+  2254  07A9                     __end_of_CLC2_Initialize:	
+  2255                           
+  2256                           	psect	text7
+  2257  07A9                     __ptext7:	
+  2258 ;; *************** function _CLC1_Initialize *****************
+  2259 ;; Defined at:
+  2260 ;;		line 57 in file "mcc_generated_files/clc1.c"
+  2261 ;; Parameters:    Size  Location     Type
+  2262 ;;		None
+  2263 ;; Auto vars:     Size  Location     Type
+  2264 ;;		None
+  2265 ;; Return value:  Size  Location     Type
+  2266 ;;                  1    wreg      void 
+  2267 ;; Registers used:
+  2268 ;;		wreg, status,2
+  2269 ;; Tracked objects:
+  2270 ;;		On entry : 0/0
+  2271 ;;		On exit  : 0/0
+  2272 ;;		Unchanged: 0/0
+  2273 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2274 ;;      Params:         0       0       0       0
+  2275 ;;      Locals:         0       0       0       0
+  2276 ;;      Temps:          0       0       0       0
+  2277 ;;      Totals:         0       0       0       0
+  2278 ;;Total ram usage:        0 bytes
+  2279 ;; Hardware stack levels used:    1
+  2280 ;; This function calls:
+  2281 ;;		Nothing
+  2282 ;; This function is called by:
+  2283 ;;		_SYSTEM_Initialize
+  2284 ;; This function uses a non-reentrant model
+  2285 ;;
+  2286                           
+  2287                           
+  2288                           ;psect for function _CLC1_Initialize
+  2289  07A9                     _CLC1_Initialize:	
+  2290                           
+  2291                           ;clc1.c: 62: CLC1POL = 0x00;
+  2292                           
+  2293                           ;incstack = 0
+  2294                           ; Regs used in _CLC1_Initialize: [wreg+status,2]
+  2295  07A9  003E               	movlb	30	; select bank30
+  2296  07AA  0191               	clrf	17	;volatile
+  2297                           
+  2298                           ;clc1.c: 65: CLC1SEL0 = 0x00;
+  2299  07AB  0192               	clrf	18	;volatile
+  2300                           
+  2301                           ;clc1.c: 68: CLC1SEL1 = 0x02;
+  2302  07AC  3002               	movlw	2
+  2303  07AD  0093               	movwf	19	;volatile
   2304                           
-  2305                           ;clc1.c: 77: CLC1GLS0 = 0x0A;
-  2306  07A7  300A               	movlw	10
-  2307  07A8  0096               	movwf	22	;volatile
+  2305                           ;clc1.c: 71: CLC1SEL2 = 0x03;
+  2306  07AE  3003               	movlw	3
+  2307  07AF  0094               	movwf	20	;volatile
   2308                           
-  2309                           ;clc1.c: 80: CLC1GLS1 = 0x00;
-  2310  07A9  0197               	clrf	23	;volatile
-  2311                           
-  2312                           ;clc1.c: 83: CLC1GLS2 = 0x00;
-  2313  07AA  0198               	clrf	24	;volatile
-  2314                           
-  2315                           ;clc1.c: 86: CLC1GLS3 = 0x00;
-  2316  07AB  0199               	clrf	25	;volatile
-  2317                           
-  2318                           ;clc1.c: 89: CLC1CON = 0x80;
-  2319  07AC  3080               	movlw	128
-  2320  07AD  0090               	movwf	16	;volatile
-  2321  07AE  0008               	return
-  2322  07AF                     __end_of_CLC1_Initialize:	
-  2323  007E                     btemp	set	126	;btemp
-  2324  007E                     wtemp0	set	126
+  2309                           ;clc1.c: 74: CLC1SEL3 = 0x03;
+  2310  07B0  3003               	movlw	3
+  2311  07B1  0095               	movwf	21	;volatile
+  2312                           
+  2313                           ;clc1.c: 77: CLC1GLS0 = 0x0A;
+  2314  07B2  300A               	movlw	10
+  2315  07B3  0096               	movwf	22	;volatile
+  2316                           
+  2317                           ;clc1.c: 80: CLC1GLS1 = 0x20;
+  2318  07B4  3020               	movlw	32
+  2319  07B5  0097               	movwf	23	;volatile
+  2320                           
+  2321                           ;clc1.c: 83: CLC1GLS2 = 0x00;
+  2322  07B6  0198               	clrf	24	;volatile
+  2323                           
+  2324                           ;clc1.c: 86: CLC1GLS3 = 0x00;
+  2325  07B7  0199               	clrf	25	;volatile
+  2326                           
+  2327                           ;clc1.c: 89: CLC1CON = 0x80;
+  2328  07B8  3080               	movlw	128
+  2329  07B9  0090               	movwf	16	;volatile
+  2330  07BA  0008               	return
+  2331  07BB                     __end_of_CLC1_Initialize:	
+  2332  007E                     btemp	set	126	;btemp
+  2333  007E                     wtemp0	set	126
 
 
 Data Sizes:
@@ -2500,51 +2509,51 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V1.42 build -159332390 
-Symbol Table                                                                                   Sat Dec 16 22:48:29 2017
+Symbol Table                                                                                   Wed Dec 27 00:13:52 2017
 
                     __CFG_CP$OFF 0000                               u10 07FC                      __CFG_LVP$ON 0000  
-                            l104 079C                              l179 077D                              _GIE 005F  
+                            l106 0796                              l181 0777                              _GIE 005F  
                    __CFG_CPD$OFF 0000                ??_CLC2_Initialize 0070                             _LATA 010C  
                            _LATC 010E                             _PLLR 48E0                             _WPUA 020C  
                            _WPUC 020E                     __CFG_WRT$OFF 0000                    __CFG_FCMEN$ON 0000  
-                           _main 077C                             btemp 007E                    __CFG_BOREN$ON 0000  
+                           _main 0776                             btemp 007E                    __CFG_BOREN$ON 0000  
                   __CFG_BORV$LOW 0000                             start 0001                    __CFG_CSWEN$ON 0000  
- __size_of_OSCILLATOR_Initialize 000B    __end_of_OSCILLATOR_Initialize 079F                            ?_main 0070  
+ __size_of_OSCILLATOR_Initialize 000B    __end_of_OSCILLATOR_Initialize 0799                            ?_main 0070  
                   __CFG_WDTE$OFF 0000                   __CFG_DEBUG$OFF 0000                            _OSCEN 091D  
-                          _TRISA 008C                            _TRISC 008E                   _WDT_Initialize 077E  
+                          _TRISA 008C                            _TRISC 008E                   _WDT_Initialize 0778  
                           wtemp0 007E                   __CFG_MCLRE$OFF 0000                  __initialization 07FE  
-                   __end_of_main 077E                           ??_main 0071           __end_of_WDT_Initialize 0782  
+                   __end_of_main 0778                           ??_main 0071           __end_of_WDT_Initialize 077C  
                          _ANSELA 018C                           _ANSELC 018E                           _RC1REG 0199  
                          _RC1STA 019D                           _ODCONA 028C                           _ODCONC 028E  
                          _OSCFRQ 091F                           _TX1REG 019A                           _WDTCON 0097  
                          _TX1STA 019E                   __CFG_PWRTE$OFF 0000                   __CFG_STVREN$ON 0000  
-                ?_WDT_Initialize 0070                  _CLC1_Initialize 079F                _SYSTEM_Initialize 0782  
+                ?_WDT_Initialize 0070                  _CLC1_Initialize 07A9                _SYSTEM_Initialize 077C  
         __end_of__initialization 07FE               ?_SYSTEM_Initialize 0070                   __pcstackCOMMON 0070  
-            ??_SYSTEM_Initialize 0071                  _CLC2_Initialize 07AF        __end_of_SYSTEM_Initialize 0789  
-                     __pmaintext 077C                    _CLCIN0PPSbits 0E28                    _CLCIN1PPSbits 0E29  
-                  _CLCIN2PPSbits 0E2A                  __CFG_PPS1WAY$ON 0000                          _CLC1CON 0F10  
-                        _CLC2CON 0F1A                          _CLC1POL 0F11                          _CLC2POL 0F1B  
-        __end_of_CLC1_Initialize 07AF                          _SP1BRGH 019C                          _SP1BRGL 019B  
-                        _OSCCON1 0919                          _OSCCON3 091B                          _OSCTUNE 091E  
-                        _PPSLOCK 0E0F          __end_of_CLC2_Initialize 07BF                          __ptext1 0782  
-                        __ptext2 077E                          __ptext3 07BF                          __ptext4 0794  
-                        __ptext5 0789                          __ptext6 07AF                          __ptext7 079F  
-          _OSCILLATOR_Initialize 0794         ??_PIN_MANAGER_Initialize 0070       __size_of_SYSTEM_Initialize 0007  
-           end_of_initialization 07FE                _EUSART_Initialize 0789               ?_EUSART_Initialize 0070  
-            ??_EUSART_Initialize 0070                 ??_WDT_Initialize 0070                 ?_CLC1_Initialize 0070  
-               __CFG_FEXTOSC$ECM 0000                        _RXPPSbits 0E24        __end_of_EUSART_Initialize 0794  
-               ?_CLC2_Initialize 0070                      _CLC1CONbits 0F10                      _CLC2CONbits 0F1A  
-         ?_OSCILLATOR_Initialize 0070              start_initialization 07FE  __size_of_PIN_MANAGER_Initialize 003F  
-              __CFG_RSTOSC$EXT4X 0000                 __CFG_LPBOREN$OFF 0000                        ___latbits 0000  
-     __size_of_EUSART_Initialize 000B           _PIN_MANAGER_Initialize 07BF                         _BAUD1CON 019F  
-                       _CLC1GLS0 0F16                         _CLC1GLS1 0F17                         _CLC1GLS2 0F18  
-                       _CLC1GLS3 0F19                         _CLC2GLS0 0F20                         _CLC2GLS1 0F21  
-                       _CLC2GLS2 0F22                         _CLC2GLS3 0F23                         _CLC1SEL0 0F12  
-                       _CLC1SEL1 0F13                         _CLC1SEL2 0F14                         _CLC1SEL3 0F15  
-                       _CLC2SEL0 0F1C                         _CLC2SEL1 0F1D                         _CLC2SEL2 0F1E  
-                       _CLC2SEL3 0F1F                         _PIR1bits 0011          ??_OSCILLATOR_Initialize 0070  
-       __size_of_CLC1_Initialize 0010                    __size_of_main 0002                       _RC1STAbits 019D  
-                     _RC3PPSbits 0EA3                       _RC5PPSbits 0EA5         __size_of_CLC2_Initialize 0010  
-    PIN_MANAGER_Initialize@state 0070          __size_of_WDT_Initialize 0004          ?_PIN_MANAGER_Initialize 0070  
-              __CFG_CLKOUTEN$OFF 0000                      _PPSLOCKbits 0E0F   __end_of_PIN_MANAGER_Initialize 07FE  
-              ??_CLC1_Initialize 0070  
+            ??_SYSTEM_Initialize 0071                  _CLC2_Initialize 0799        __end_of_SYSTEM_Initialize 0783  
+                     __pmaintext 0776                    _CLCIN0PPSbits 0E28                    _CLCIN1PPSbits 0E29  
+                  _CLCIN2PPSbits 0E2A                  __CFG_PPS1WAY$ON 0000                    _CLCIN3PPSbits 0E2B  
+                        _CLC1CON 0F10                          _CLC2CON 0F1A                          _CLC1POL 0F11  
+                        _CLC2POL 0F1B          __end_of_CLC1_Initialize 07BB                          _SP1BRGH 019C  
+                        _SP1BRGL 019B                          _OSCCON1 0919                          _OSCCON3 091B  
+                        _OSCTUNE 091E                          _PPSLOCK 0E0F          __end_of_CLC2_Initialize 07A9  
+                        __ptext1 077C                          __ptext2 0778                          __ptext3 07BB  
+                        __ptext4 078E                          __ptext5 0783                          __ptext6 0799  
+                        __ptext7 07A9            _OSCILLATOR_Initialize 078E         ??_PIN_MANAGER_Initialize 0070  
+     __size_of_SYSTEM_Initialize 0007             end_of_initialization 07FE                _EUSART_Initialize 0783  
+             ?_EUSART_Initialize 0070              ??_EUSART_Initialize 0070                 ??_WDT_Initialize 0070  
+               ?_CLC1_Initialize 0070                 __CFG_FEXTOSC$ECM 0000                        _RXPPSbits 0E24  
+      __end_of_EUSART_Initialize 078E                 ?_CLC2_Initialize 0070                      _CLC1CONbits 0F10  
+                    _CLC2CONbits 0F1A           ?_OSCILLATOR_Initialize 0070              start_initialization 07FE  
+__size_of_PIN_MANAGER_Initialize 0043                __CFG_RSTOSC$EXT4X 0000                 __CFG_LPBOREN$OFF 0000  
+                      ___latbits 0000       __size_of_EUSART_Initialize 000B           _PIN_MANAGER_Initialize 07BB  
+                       _BAUD1CON 019F                         _CLC1GLS0 0F16                         _CLC1GLS1 0F17  
+                       _CLC1GLS2 0F18                         _CLC1GLS3 0F19                         _CLC2GLS0 0F20  
+                       _CLC2GLS1 0F21                         _CLC2GLS2 0F22                         _CLC2GLS3 0F23  
+                       _CLC1SEL0 0F12                         _CLC1SEL1 0F13                         _CLC1SEL2 0F14  
+                       _CLC1SEL3 0F15                         _CLC2SEL0 0F1C                         _CLC2SEL1 0F1D  
+                       _CLC2SEL2 0F1E                         _CLC2SEL3 0F1F                         _PIR1bits 0011  
+        ??_OSCILLATOR_Initialize 0070         __size_of_CLC1_Initialize 0012                    __size_of_main 0002  
+                     _RC1STAbits 019D                       _RC3PPSbits 0EA3                       _RC5PPSbits 0EA5  
+       __size_of_CLC2_Initialize 0010      PIN_MANAGER_Initialize@state 0070          __size_of_WDT_Initialize 0004  
+        ?_PIN_MANAGER_Initialize 0070                __CFG_CLKOUTEN$OFF 0000                      _PPSLOCKbits 0E0F  
+ __end_of_PIN_MANAGER_Initialize 07FE                ??_CLC1_Initialize 0070  

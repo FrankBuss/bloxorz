@@ -2,14 +2,16 @@
 # 1 "main.c"
 
 
-# 7
+
+
+
 #pragma config PLLSEL = PLL4X
 #pragma config CFGPLLEN = OFF
 #pragma config CPUDIV = NOCLKDIV
 #pragma config LS48MHZ = SYS24X4
 
 
-#pragma config FOSC = INTOSCCLKO
+#pragma config FOSC = INTOSCIO
 #pragma config PCLKEN = ON
 #pragma config FCMEN = OFF
 #pragma config IESO = OFF
@@ -7113,8 +7115,45 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 
-# 77 "main.c"
-void init_uart()
+# 6 "receiver.h"
+void writePortA(uint8_t data);
+void writePortB(uint8_t data);
+void writePortC(uint8_t data);
+void writePortD(uint8_t data);
+void writePortE(uint8_t data);
+void writeTrisA(uint8_t data);
+void writeTrisB(uint8_t data);
+void writeTrisC(uint8_t data);
+void writeTrisD(uint8_t data);
+void writeTrisE(uint8_t data);
+uint8_t readPortA(void);
+uint8_t readPortB(void);
+uint8_t readPortC(void);
+uint8_t readPortD(void);
+uint8_t readPortE(void);
+
+void writeChar(uint8_t d);
+void onData(uint8_t d);
+
+# 79 "main.c"
+volatile uint8_t uartBuf[16];
+volatile uint8_t uartReadIndex = 0;
+volatile uint8_t uartWriteIndex = 0;
+
+void interrupt receiveData() {
+if (RCSTA1bits.OERR == 1) {
+RCSTA1bits.OERR = 0;
+RCSTA1bits.CREN = 0;
+RCSTA1bits.CREN = 1;
+}
+if (PIR1bits.RC1IF == 1) {
+uartBuf[uartWriteIndex] = RCREG1;
+uartWriteIndex++;
+if (uartWriteIndex == 16) uartWriteIndex = 0;
+}
+}
+
+void initUart()
 {
 TXSTA1bits.SYNC = 0;
 TXSTA1bits.TX9 = 0;
@@ -7127,21 +7166,103 @@ RCSTA1bits.SPEN = 1;
 BAUDCON1bits.BRG16 = 1;
 TXSTA1bits.BRGH = 1;
 SPBRG1 = 7;
+
+
+RCONbits.IPEN = 1;
+INTCONbits.GIE = 1;
+INTCONbits.PEIE = 1;
+
+
+PIE1bits.RCIE = 1;
 }
 
-uint8_t read_char()
+void writePortA(uint8_t data)
 {
-while (PIR1bits.RC1IF == 0) {
-if (RCSTA1bits.OERR == 1) {
-RCSTA1bits.OERR = 0;
-RCSTA1bits.CREN = 0;
-RCSTA1bits.CREN = 1;
-}
-}
-return RCREG1;
+PORTA = data;
 }
 
-void write_char(uint8_t data)
+void writePortB(uint8_t data)
+{
+PORTB = data;
+}
+
+void writePortC(uint8_t data)
+{
+PORTC = data;
+}
+
+void writePortD(uint8_t data)
+{
+PORTD = data;
+}
+
+void writePortE(uint8_t data)
+{
+PORTE = data;
+}
+
+void writeTrisA(uint8_t data)
+{
+TRISA = data;
+}
+
+void writeTrisB(uint8_t data)
+{
+TRISB = data;
+}
+
+void writeTrisC(uint8_t data)
+{
+
+TRISC = data & 0b10111111 | 0x80;
+}
+
+void writeTrisD(uint8_t data)
+{
+TRISD = data;
+}
+
+void writeTrisE(uint8_t data)
+{
+TRISE = data;
+}
+
+uint8_t readPortA()
+{
+return PORTA;
+}
+
+uint8_t readPortB()
+{
+return PORTB;
+}
+
+uint8_t readPortC()
+{
+return PORTC;
+}
+
+uint8_t readPortD()
+{
+return PORTD;
+}
+
+uint8_t readPortE()
+{
+return PORTE;
+}
+
+uint8_t readChar()
+{
+uint8_t data;
+while (uartReadIndex == uartWriteIndex) ;
+data = uartBuf[uartReadIndex];
+uartReadIndex++;
+if (uartReadIndex == 16) uartReadIndex = 0;
+return data;
+}
+
+void writeChar(uint8_t data)
 {
 while (TXSTA1bits.TRMT == 0) {}
 TXREG1 = data;
@@ -7168,15 +7289,12 @@ TRISB = 0xff;
 TRISC = 0b10111111;
 TRISD = 0xff;
 
-init_uart();
+initUart();
 
 
 while (1) {
+onData(readChar());
 
-uint8_t d = read_char();
-write_char(d+1);
-
-# 141
 }
 
 return 0;
