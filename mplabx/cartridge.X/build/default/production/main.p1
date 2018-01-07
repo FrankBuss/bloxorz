@@ -5445,11 +5445,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 222: typedef int16_t intptr_t;
 [; ;stdint.h: 227: typedef uint16_t uintptr_t;
 [; ;stdbool.h: 12: typedef unsigned char bool;
+[; ;clc2.h: 91: void CLC2_Initialize(void);
+[; ;clc2.h: 113: bool CLC2_OutputStatusGet(void);
 [; ;eusart.h: 94: void EUSART_Initialize(void);
 [; ;eusart.h: 114: uint8_t EUSART_Read(void);
 [; ;eusart.h: 134: void EUSART_Write(uint8_t txData);
-[; ;clc2.h: 91: void CLC2_Initialize(void);
-[; ;clc2.h: 113: bool CLC2_OutputStatusGet(void);
 [; ;clc1.h: 91: void CLC1_Initialize(void);
 [; ;clc1.h: 113: bool CLC1_OutputStatusGet(void);
 [; ;mcc.h: 70: void SYSTEM_Initialize(void);
@@ -5467,22 +5467,22 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 8: SYSTEM_Initialize();
 "8
 [e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 11: while (1) {
-"11
+[; ;main.c: 9: while (1) {
+"9
 [e :U 698 ]
 {
-"18
+"16
 }
 [e :U 697 ]
-"11
+"9
 [e $U 698  ]
 [e :U 699 ]
-[; ;main.c: 18: }
-[; ;main.c: 20: return 0;
-"20
+[; ;main.c: 16: }
+[; ;main.c: 18: return 0;
+"18
 [e ) -> 0 `i ]
 [e $UE 696  ]
-[; ;main.c: 21: }
-"21
+[; ;main.c: 19: }
+"19
 [e :UE 696 ]
 }

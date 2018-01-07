@@ -6,8 +6,6 @@
 int main()
 {
     SYSTEM_Initialize();
-    
-    // test output on RC2
     while (1) {
         /*
         PORTC = 0b11111111;

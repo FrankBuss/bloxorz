@@ -5504,11 +5504,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 222: typedef int16_t intptr_t;
 [; ;stdint.h: 227: typedef uint16_t uintptr_t;
 [; ;stdbool.h: 12: typedef unsigned char bool;
+[; ;clc2.h: 91: void CLC2_Initialize(void);
+[; ;clc2.h: 113: bool CLC2_OutputStatusGet(void);
 [; ;eusart.h: 94: void EUSART_Initialize(void);
 [; ;eusart.h: 114: uint8_t EUSART_Read(void);
 [; ;eusart.h: 134: void EUSART_Write(uint8_t txData);
-[; ;clc2.h: 91: void CLC2_Initialize(void);
-[; ;clc2.h: 113: bool CLC2_OutputStatusGet(void);
 [; ;clc1.h: 91: void CLC1_Initialize(void);
 [; ;clc1.h: 113: bool CLC1_OutputStatusGet(void);
 [; ;mcc.h: 70: void SYSTEM_Initialize(void);

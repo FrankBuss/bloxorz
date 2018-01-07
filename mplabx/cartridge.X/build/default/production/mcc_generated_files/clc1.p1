@@ -5487,33 +5487,33 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;clc1.c: 58: {
 [e :U _CLC1_Initialize ]
 [f ]
-[; ;clc1.c: 62: CLC1POL = 0x00;
+[; ;clc1.c: 62: CLC1POL = 0x04;
 "62
-[e = _CLC1POL -> -> 0 `i `uc ]
+[e = _CLC1POL -> -> 4 `i `uc ]
 [; ;clc1.c: 65: CLC1SEL0 = 0x00;
 "65
 [e = _CLC1SEL0 -> -> 0 `i `uc ]
-[; ;clc1.c: 68: CLC1SEL1 = 0x02;
+[; ;clc1.c: 68: CLC1SEL1 = 0x01;
 "68
-[e = _CLC1SEL1 -> -> 2 `i `uc ]
-[; ;clc1.c: 71: CLC1SEL2 = 0x03;
+[e = _CLC1SEL1 -> -> 1 `i `uc ]
+[; ;clc1.c: 71: CLC1SEL2 = 0x02;
 "71
-[e = _CLC1SEL2 -> -> 3 `i `uc ]
+[e = _CLC1SEL2 -> -> 2 `i `uc ]
 [; ;clc1.c: 74: CLC1SEL3 = 0x03;
 "74
 [e = _CLC1SEL3 -> -> 3 `i `uc ]
-[; ;clc1.c: 77: CLC1GLS0 = 0x0A;
+[; ;clc1.c: 77: CLC1GLS0 = 0x00;
 "77
-[e = _CLC1GLS0 -> -> 10 `i `uc ]
-[; ;clc1.c: 80: CLC1GLS1 = 0x20;
+[e = _CLC1GLS0 -> -> 0 `i `uc ]
+[; ;clc1.c: 80: CLC1GLS1 = 0x00;
 "80
-[e = _CLC1GLS1 -> -> 32 `i `uc ]
+[e = _CLC1GLS1 -> -> 0 `i `uc ]
 [; ;clc1.c: 83: CLC1GLS2 = 0x00;
 "83
 [e = _CLC1GLS2 -> -> 0 `i `uc ]
-[; ;clc1.c: 86: CLC1GLS3 = 0x00;
+[; ;clc1.c: 86: CLC1GLS3 = 0x80;
 "86
-[e = _CLC1GLS3 -> -> 0 `i `uc ]
+[e = _CLC1GLS3 -> -> 128 `i `uc ]
 [; ;clc1.c: 89: CLC1CON = 0x80;
 "89
 [e = _CLC1CON -> -> 128 `i `uc ]

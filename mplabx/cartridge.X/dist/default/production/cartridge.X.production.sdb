@@ -115,17 +115,17 @@
 ]
 [u S66 . 1 `S58 1 . 1 0 `S60 1 . 1 0 ]
 [v _RXPPSbits RXPPSbits `VES66  1 e 1 @3620 ]
-[s S78 . 1 `uc 1 CLCIN0PPS 1 0 :5:0 
+[s S98 . 1 `uc 1 CLCIN0PPS 1 0 :5:0 
 ]
 "10737
-[s S80 . 1 `uc 1 CLCIN0PPS0 1 0 :1:0 
+[s S100 . 1 `uc 1 CLCIN0PPS0 1 0 :1:0 
 `uc 1 CLCIN0PPS1 1 0 :1:1 
 `uc 1 CLCIN0PPS2 1 0 :1:2 
 `uc 1 CLCIN0PPS3 1 0 :1:3 
 `uc 1 CLCIN0PPS4 1 0 :1:4 
 ]
-[u S86 . 1 `S78 1 . 1 0 `S80 1 . 1 0 ]
-[v _CLCIN0PPSbits CLCIN0PPSbits `VES86  1 e 1 @3624 ]
+[u S106 . 1 `S98 1 . 1 0 `S100 1 . 1 0 ]
+[v _CLCIN0PPSbits CLCIN0PPSbits `VES106  1 e 1 @3624 ]
 [s S38 . 1 `uc 1 CLCIN1PPS 1 0 :5:0 
 ]
 "10789
@@ -137,39 +137,39 @@
 ]
 [u S46 . 1 `S38 1 . 1 0 `S40 1 . 1 0 ]
 [v _CLCIN1PPSbits CLCIN1PPSbits `VES46  1 e 1 @3625 ]
-[s S98 . 1 `uc 1 CLCIN2PPS 1 0 :5:0 
+[s S118 . 1 `uc 1 CLCIN2PPS 1 0 :5:0 
 ]
 "10841
-[s S100 . 1 `uc 1 CLCIN2PPS0 1 0 :1:0 
+[s S120 . 1 `uc 1 CLCIN2PPS0 1 0 :1:0 
 `uc 1 CLCIN2PPS1 1 0 :1:1 
 `uc 1 CLCIN2PPS2 1 0 :1:2 
 `uc 1 CLCIN2PPS3 1 0 :1:3 
 `uc 1 CLCIN2PPS4 1 0 :1:4 
 ]
-[u S106 . 1 `S98 1 . 1 0 `S100 1 . 1 0 ]
-[v _CLCIN2PPSbits CLCIN2PPSbits `VES106  1 e 1 @3626 ]
-[s S118 . 1 `uc 1 CLCIN3PPS 1 0 :5:0 
+[u S126 . 1 `S118 1 . 1 0 `S120 1 . 1 0 ]
+[v _CLCIN2PPSbits CLCIN2PPSbits `VES126  1 e 1 @3626 ]
+[s S138 . 1 `uc 1 CLCIN3PPS 1 0 :5:0 
 ]
 "10893
-[s S120 . 1 `uc 1 CLCIN3PPS0 1 0 :1:0 
+[s S140 . 1 `uc 1 CLCIN3PPS0 1 0 :1:0 
 `uc 1 CLCIN3PPS1 1 0 :1:1 
 `uc 1 CLCIN3PPS2 1 0 :1:2 
 `uc 1 CLCIN3PPS3 1 0 :1:3 
 `uc 1 CLCIN3PPS4 1 0 :1:4 
 ]
-[u S126 . 1 `S118 1 . 1 0 `S120 1 . 1 0 ]
-[v _CLCIN3PPSbits CLCIN3PPSbits `VES126  1 e 1 @3627 ]
-[s S138 . 1 `uc 1 RC3PPS 1 0 :5:0 
-]
-"11361
-[s S140 . 1 `uc 1 RC3PPS0 1 0 :1:0 
-`uc 1 RC3PPS1 1 0 :1:1 
-`uc 1 RC3PPS2 1 0 :1:2 
-`uc 1 RC3PPS3 1 0 :1:3 
-`uc 1 RC3PPS4 1 0 :1:4 
-]
 [u S146 . 1 `S138 1 . 1 0 `S140 1 . 1 0 ]
-[v _RC3PPSbits RC3PPSbits `VES146  1 e 1 @3747 ]
+[v _CLCIN3PPSbits CLCIN3PPSbits `VES146  1 e 1 @3627 ]
+[s S78 . 1 `uc 1 RC0PPS 1 0 :5:0 
+]
+"11205
+[s S80 . 1 `uc 1 RC0PPS0 1 0 :1:0 
+`uc 1 RC0PPS1 1 0 :1:1 
+`uc 1 RC0PPS2 1 0 :1:2 
+`uc 1 RC0PPS3 1 0 :1:3 
+`uc 1 RC0PPS4 1 0 :1:4 
+]
+[u S86 . 1 `S78 1 . 1 0 `S80 1 . 1 0 ]
+[v _RC0PPSbits RC0PPSbits `VES86  1 e 1 @3744 ]
 [s S158 . 1 `uc 1 RC5PPS 1 0 :5:0 
 ]
 "11465
@@ -267,7 +267,7 @@
 "6 /home/frank/data/projects/bloxorz/mplabx/cartridge.X/main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"21
+"19
 } 0
 "76 /home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]

@@ -7135,10 +7135,10 @@ uint8_t readPortE(void);
 void writeChar(uint8_t d);
 void onData(uint8_t d);
 
-# 79 "main.c"
-volatile uint8_t uartBuf[16];
-volatile uint8_t uartReadIndex = 0;
-volatile uint8_t uartWriteIndex = 0;
+# 80 "main.c"
+volatile uint8_t uartBuf[1024];
+volatile uint16_t uartReadIndex = 0;
+volatile uint16_t uartWriteIndex = 0;
 
 void interrupt receiveData() {
 if (RCSTA1bits.OERR == 1) {
@@ -7149,7 +7149,7 @@ RCSTA1bits.CREN = 1;
 if (PIR1bits.RC1IF == 1) {
 uartBuf[uartWriteIndex] = RCREG1;
 uartWriteIndex++;
-if (uartWriteIndex == 16) uartWriteIndex = 0;
+if (uartWriteIndex == 1024) uartWriteIndex = 0;
 }
 }
 
@@ -7165,7 +7165,7 @@ RCSTA1bits.SPEN = 1;
 
 BAUDCON1bits.BRG16 = 1;
 TXSTA1bits.BRGH = 1;
-SPBRG1 = 7;
+SPBRG1 = 15;
 
 
 RCONbits.IPEN = 1;
@@ -7258,7 +7258,7 @@ uint8_t data;
 while (uartReadIndex == uartWriteIndex) ;
 data = uartBuf[uartReadIndex];
 uartReadIndex++;
-if (uartReadIndex == 16) uartReadIndex = 0;
+if (uartReadIndex == 1024) uartReadIndex = 0;
 return data;
 }
 

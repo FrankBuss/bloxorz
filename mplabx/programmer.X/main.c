@@ -76,9 +76,10 @@
 
 #include "receiver.h"
 
-volatile uint8_t uartBuf[16];
-volatile uint8_t uartReadIndex = 0;
-volatile uint8_t uartWriteIndex = 0;
+#define UART_BUFFER_SIZE 1024
+volatile uint8_t uartBuf[UART_BUFFER_SIZE];
+volatile uint16_t uartReadIndex = 0;
+volatile uint16_t uartWriteIndex = 0;
 
 void interrupt receiveData() {
     if (RCSTA1bits.OERR == 1) {
@@ -89,7 +90,7 @@ void interrupt receiveData() {
     if (PIR1bits.RC1IF == 1) {
         uartBuf[uartWriteIndex] = RCREG1;
         uartWriteIndex++;
-        if (uartWriteIndex == 16) uartWriteIndex = 0;
+        if (uartWriteIndex == UART_BUFFER_SIZE) uartWriteIndex = 0;
     }
 }
 
@@ -105,7 +106,7 @@ void initUart()
     
     BAUDCON1bits.BRG16 = 1;
     TXSTA1bits.BRGH = 1;
-    SPBRG1 = 7;
+    SPBRG1 = 15;
 
     // enable interrupts
     RCONbits.IPEN   = 1;
@@ -198,7 +199,7 @@ uint8_t readChar()
     while (uartReadIndex == uartWriteIndex) ;
     data = uartBuf[uartReadIndex];
     uartReadIndex++;
-    if (uartReadIndex == 16) uartReadIndex = 0;
+    if (uartReadIndex == UART_BUFFER_SIZE) uartReadIndex = 0;
     return data;
 }
 

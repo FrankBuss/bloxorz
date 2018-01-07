@@ -5487,27 +5487,27 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;clc2.c: 58: {
 [e :U _CLC2_Initialize ]
 [f ]
-[; ;clc2.c: 62: CLC2POL = 0x02;
+[; ;clc2.c: 62: CLC2POL = 0x00;
 "62
-[e = _CLC2POL -> -> 2 `i `uc ]
-[; ;clc2.c: 65: CLC2SEL0 = 0x01;
+[e = _CLC2POL -> -> 0 `i `uc ]
+[; ;clc2.c: 65: CLC2SEL0 = 0x00;
 "65
-[e = _CLC2SEL0 -> -> 1 `i `uc ]
-[; ;clc2.c: 68: CLC2SEL1 = 0x00;
+[e = _CLC2SEL0 -> -> 0 `i `uc ]
+[; ;clc2.c: 68: CLC2SEL1 = 0x01;
 "68
-[e = _CLC2SEL1 -> -> 0 `i `uc ]
-[; ;clc2.c: 71: CLC2SEL2 = 0x00;
+[e = _CLC2SEL1 -> -> 1 `i `uc ]
+[; ;clc2.c: 71: CLC2SEL2 = 0x02;
 "71
-[e = _CLC2SEL2 -> -> 0 `i `uc ]
-[; ;clc2.c: 74: CLC2SEL3 = 0x00;
+[e = _CLC2SEL2 -> -> 2 `i `uc ]
+[; ;clc2.c: 74: CLC2SEL3 = 0x03;
 "74
-[e = _CLC2SEL3 -> -> 0 `i `uc ]
-[; ;clc2.c: 77: CLC2GLS0 = 0x02;
+[e = _CLC2SEL3 -> -> 3 `i `uc ]
+[; ;clc2.c: 77: CLC2GLS0 = 0x22;
 "77
-[e = _CLC2GLS0 -> -> 2 `i `uc ]
-[; ;clc2.c: 80: CLC2GLS1 = 0x00;
+[e = _CLC2GLS0 -> -> 34 `i `uc ]
+[; ;clc2.c: 80: CLC2GLS1 = 0x08;
 "80
-[e = _CLC2GLS1 -> -> 0 `i `uc ]
+[e = _CLC2GLS1 -> -> 8 `i `uc ]
 [; ;clc2.c: 83: CLC2GLS2 = 0x00;
 "83
 [e = _CLC2GLS2 -> -> 0 `i `uc ]

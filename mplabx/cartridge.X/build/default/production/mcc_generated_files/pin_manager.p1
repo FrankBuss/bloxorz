@@ -53,6 +53,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S541 . . . ]
 "10633
 [v _RXPPSbits `VS541 ~T0 @X0 0 e@3620 ]
+"11194
+[s S575 :5 `uc 1 ]
+[n S575 . RC0PPS ]
+"11197
+[s S576 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S576 . RC0PPS0 RC0PPS1 RC0PPS2 RC0PPS3 RC0PPS4 ]
+"11193
+[u S574 `S575 1 `S576 1 ]
+[n S574 . . . ]
+"11205
+[v _RC0PPSbits `VS574 ~T0 @X0 0 e@3744 ]
 "10726
 [s S548 :5 `uc 1 ]
 [n S548 . CLCIN0PPS ]
@@ -86,17 +97,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S556 . . . ]
 "10893
 [v _CLCIN3PPSbits `VS556 ~T0 @X0 0 e@3627 ]
-"11350
-[s S584 :5 `uc 1 ]
-[n S584 . RC3PPS ]
-"11353
-[s S585 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S585 . RC3PPS0 RC3PPS1 RC3PPS2 RC3PPS3 RC3PPS4 ]
-"11349
-[u S583 `S584 1 `S585 1 ]
-[n S583 . . . ]
-"11361
-[v _RC3PPSbits `VS583 ~T0 @X0 0 e@3747 ]
 "11454
 [s S590 :5 `uc 1 ]
 [n S590 . RC5PPS ]
@@ -5543,12 +5543,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pin_manager.c: 57: LATC = 0x00;
 "57
 [e = _LATC -> -> 0 `i `uc ]
-[; ;pin_manager.c: 62: TRISA = 0x37;
+[; ;pin_manager.c: 62: TRISA = 0x31;
 "62
-[e = _TRISA -> -> 55 `i `uc ]
-[; ;pin_manager.c: 63: TRISC = 0x10;
+[e = _TRISA -> -> 49 `i `uc ]
+[; ;pin_manager.c: 63: TRISC = 0x1C;
 "63
-[e = _TRISC -> -> 16 `i `uc ]
+[e = _TRISC -> -> 28 `i `uc ]
 [; ;pin_manager.c: 68: ANSELC = 0x00;
 "68
 [e = _ANSELC -> -> 0 `i `uc ]
@@ -5583,27 +5583,27 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pin_manager.c: 92: PPSLOCKbits.PPSLOCKED = 0x00;
 "92
 [e = . . _PPSLOCKbits 0 0 -> -> 0 `i `uc ]
-[; ;pin_manager.c: 94: CLCIN1PPSbits.CLCIN1PPS = 0x01;
+[; ;pin_manager.c: 94: CLCIN1PPSbits.CLCIN1PPS = 0x04;
 "94
-[e = . . _CLCIN1PPSbits 0 0 -> -> 1 `i `uc ]
+[e = . . _CLCIN1PPSbits 0 0 -> -> 4 `i `uc ]
 [; ;pin_manager.c: 95: RXPPSbits.RXPPS = 0x14;
 "95
 [e = . . _RXPPSbits 0 0 -> -> 20 `i `uc ]
-[; ;pin_manager.c: 96: CLCIN0PPSbits.CLCIN0PPS = 0x00;
+[; ;pin_manager.c: 96: RC0PPSbits.RC0PPS = 0x04;
 "96
-[e = . . _CLCIN0PPSbits 0 0 -> -> 0 `i `uc ]
-[; ;pin_manager.c: 97: CLCIN2PPSbits.CLCIN2PPS = 0x02;
+[e = . . _RC0PPSbits 0 0 -> -> 4 `i `uc ]
+[; ;pin_manager.c: 97: CLCIN0PPSbits.CLCIN0PPS = 0x00;
 "97
-[e = . . _CLCIN2PPSbits 0 0 -> -> 2 `i `uc ]
-[; ;pin_manager.c: 98: CLCIN3PPSbits.CLCIN3PPS = 0x04;
+[e = . . _CLCIN0PPSbits 0 0 -> -> 0 `i `uc ]
+[; ;pin_manager.c: 98: CLCIN2PPSbits.CLCIN2PPS = 0x12;
 "98
-[e = . . _CLCIN3PPSbits 0 0 -> -> 4 `i `uc ]
-[; ;pin_manager.c: 99: RC3PPSbits.RC3PPS = 0x05;
+[e = . . _CLCIN2PPSbits 0 0 -> -> 18 `i `uc ]
+[; ;pin_manager.c: 99: CLCIN3PPSbits.CLCIN3PPS = 0x13;
 "99
-[e = . . _RC3PPSbits 0 0 -> -> 5 `i `uc ]
-[; ;pin_manager.c: 100: RC5PPSbits.RC5PPS = 0x04;
+[e = . . _CLCIN3PPSbits 0 0 -> -> 19 `i `uc ]
+[; ;pin_manager.c: 100: RC5PPSbits.RC5PPS = 0x05;
 "100
-[e = . . _RC5PPSbits 0 0 -> -> 4 `i `uc ]
+[e = . . _RC5PPSbits 0 0 -> -> 5 `i `uc ]
 [; ;pin_manager.c: 102: PPSLOCK = 0x55;
 "102
 [e = _PPSLOCK -> -> 85 `i `uc ]
