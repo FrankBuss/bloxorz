@@ -25,6 +25,16 @@
 
 #include <vectrex.h>
 
+// PIC commands
+#define CMD_VERSION 1
+#define CMD_SET_EEPROM_ADR 2
+#define CMD_EEPROM_WRITE 3
+#define CMD_EEPROM_READ 4
+
+extern void* memcpy (void* dest, const void* src, long unsigned int len);
+
+typedef unsigned long uint16_t;
+
 typedef signed char int8_t;
 typedef unsigned char uint8_t;
 
@@ -66,6 +76,16 @@ void reqout();
 #define epot3 (*((volatile uint8_t *) 0xc822))
 
 #define t1lolc (*((volatile uint8_t *) 0xd004))
+
+extern void picWrite(uint8_t b);
+extern uint8_t picRead();
+extern void delay10ms();
+
+char infoText[10];
+
+uint16_t moveCount;
+
+uint8_t picAvailable;
 
 const uint8_t startMusic[] = {
 	0xFE,0xE8,   0xFE,0xB6,  // ADSR and twang address tables, in Vectrex ROM
@@ -133,7 +153,7 @@ int8_t lineX0[120];
 int8_t lineY0[120];
 int8_t lineX1[120];
 int8_t lineY1[120];
-int8_t lineCount = 0;
+uint8_t lineCount = 0;
 int8_t startX = 0;
 int8_t startY = 0;
 int8_t endX = 0;
@@ -159,6 +179,7 @@ int8_t lastBlockDirection;
 int8_t blockYOfs;
 const char* level;
 int8_t levelNumber = 0;
+uint16_t levelHighscore;
 
 enum GameState_t {
 	BlockMovingToStart,
@@ -171,6 +192,56 @@ enum GameState_t {
 enum BlockDirection_t {
 	Left, Up, Right, Down
 };
+
+uint8_t sendCommand(uint8_t cmd, uint8_t arg)
+{
+	uint8_t result;
+	picWrite('V');
+	picWrite(cmd);
+	picWrite(arg);
+	result = picRead();
+	delay10ms();
+	return result;
+}
+
+void writeEeprom(uint8_t address, uint8_t data)
+{
+	if (picAvailable) {
+	    	sendCommand(CMD_SET_EEPROM_ADR, address);
+	    	sendCommand(CMD_EEPROM_WRITE, data);
+	}
+}
+
+uint8_t readEeprom(uint8_t address)
+{
+	if (picAvailable) {
+		return sendCommand(CMD_EEPROM_READ, address);
+	} else {
+		return 0xff;
+	}
+}
+
+
+// converts a number to 4 digits and stores it in text, with leading zeros
+void itoa(uint16_t number, char* text)
+{
+	uint16_t muls[] = { 100, 10, 1 };
+	if (number > 999) number = 999;
+	for (uint8_t i = 0; i < 3; i++) {
+		uint8_t d = 0;
+		while (number >= muls[i]) {
+			d++;
+			number -= muls[i];
+		}
+		text[i] = d + '0';
+	}
+}
+
+void updateInfoText()
+{
+	itoa(moveCount, &infoText[0]);
+	itoa(levelHighscore, &infoText[6]);
+}
 
 char isField(char c)
 {
@@ -396,6 +467,8 @@ void moveBlock(enum BlockDirection_t move)
 		}
 		break;
 	}
+	if (moveCount < 999) moveCount++;
+	updateInfoText();
 }
 
 void startBlockFalling()
@@ -415,6 +488,9 @@ void startLevel()
 	} else {
 		level = level2;
 	}
+	levelHighscore = readEeprom((uint8_t) (levelNumber * 2));
+	levelHighscore |= ((uint16_t) readEeprom((uint8_t) (levelNumber * 2 + 1))) << 8;
+	if (levelHighscore == 0) levelHighscore = 999;
 	lineCount = 0;
 	setupX();
 	setupY();
@@ -427,6 +503,8 @@ void startLevel()
 	blockYOfs = -30;
 	gameState = BlockMovingToStart;
 	changeMusic(startMusic);
+	moveCount = 0;
+	updateInfoText();
 }
 
 void __attribute__((noinline)) drawField()
@@ -436,8 +514,8 @@ void __attribute__((noinline)) drawField()
 	intens(0x55);
 	
 	// draw field lines
-	/*
-	for (int i = 0; i < lineCount; i++) {
+/*
+	for (uint8_t i = 0; i < lineCount; i++) {
 		zergnd();
 		positd(lineX0[i], lineY0[i]);
 		int8_t dx = lineX1[i] - lineX0[i];
@@ -445,8 +523,8 @@ void __attribute__((noinline)) drawField()
 		diffab( dy, dx);
 	}
 	*/
-	
 	// hand optimized assembler of the previous C code
+
 	asm("	pshs a, b, dp, x, u");
 	asm("	lda #0xd0");
 	asm("	tfr a, dp");
@@ -599,6 +677,10 @@ void blockMovingAtEnd()
 	drawBlock(blockYOfs);
 	blockYOfs++;
 	if (blockYOfs == 30) {
+		if (moveCount < levelHighscore) {
+			writeEeprom((uint8_t) (2 * levelNumber), (uint8_t) (moveCount & 0xff));
+			writeEeprom((uint8_t) (2 * levelNumber + 1), (uint8_t) (moveCount >> 8));
+		}
 		levelNumber++;
 		if (levelNumber > 2) levelNumber = 0;
 		startLevel();
@@ -607,8 +689,16 @@ void blockMovingAtEnd()
 
 int main()
 {
-	//	int8_t i;
-	//	int8_t dx, dy;
+	// check if PIC is available
+	picAvailable = 0;
+	sendCommand(CMD_VERSION, 0);
+	sendCommand(CMD_VERSION, 0);
+	if (sendCommand(CMD_VERSION, 0) == 4) {
+		picAvailable = 1;
+	}
+
+	// initial info text for current and best move count
+	memcpy(infoText, "001 / 999\x80", 10);
 	
 	// setup joystick read function to read only joystick 1
 	epot0 = 1;
@@ -621,6 +711,10 @@ int main()
 		// wait for frame boundary (one frame = 30,000 cyles = 50 Hz)
 		frwait();
 		
+        Intensity_a(0x5f);
+        Vec_Text_Width = 100;
+        Print_Str_d(100, -80, infoText);
+
 		switch (gameState) {
 			case BlockMovingToStart:
 			blockMovingToStart();

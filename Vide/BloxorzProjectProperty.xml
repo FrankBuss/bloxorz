@@ -3,13 +3,14 @@
 	<ProjectProperties>
 		<Class>Project</Class>
 		<Name>Bloxorz</Name>
+		<FileVersion>2</FileVersion>
 		<ProjectName>Bloxorz</ProjectName>
 		<DirectoryName></DirectoryName>
 		<Path>projects</Path>
 		<MainFile>Bloxorz.asm</MainFile>
 		<Description></Description>
 		<Version>1.0</Version>
-		<Author>Frank Buss</Author>
+		<Author>Frank Busse</Author>
 		<Bankswitching>none</Bankswitching>
 		<createBankswitchCode>false</createBankswitchCode>
 		<createGameLoopCode>false</createGameLoopCode>
@@ -27,8 +28,11 @@
 		</BankDefiness>
 		<WheelName></WheelName>
 		<IsCDebugging>true</IsCDebugging>
+		<IsCPeephole>true</IsCPeephole>
+		<IsCKeepEnriched>false</IsCKeepEnriched>
 		<IsCProject>false</IsCProject>
 		<IsPeerCProject>true</IsPeerCProject>
 		<CFLAGS>-O3 -quiet -fverbose-asm -W -Wall -Wextra -Wconversion -Werror -fomit-frame-pointer -mint8 -msoft-reg-count=0 -std=gnu99 -fno-time-report -IC/PeerC/vectrex/include</CFLAGS>
+		<IsCRumInlined>true</IsCRumInlined>
 	</ProjectProperties>
 </AllProjectProperties>

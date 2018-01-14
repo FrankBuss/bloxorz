@@ -65,7 +65,7 @@
 
 // CONFIG3
 #pragma config WRT = OFF    // User NVM self-write protection bits->Write protection off
-#pragma config LVP = ON    // Low Voltage Programming Enable bit->Low Voltage programming enabled. MCLR/VPP pin function is MCLR. MCLRE configuration bit is ignored.
+#pragma config LVP = OFF    // Low Voltage Programming Enable bit->High Voltage on MCLR/VPP must be used for programming.
 
 // CONFIG4
 #pragma config CP = OFF    // User NVM Program Memory Code Protection bit->User NVM code protection disabled
@@ -79,8 +79,10 @@ void SYSTEM_Initialize(void)
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
     WDT_Initialize();
-    CLC2_Initialize();
     CLC1_Initialize();
+    CLC2_Initialize();
+    TMR1_Initialize();
+    TMR0_Initialize();
     EUSART_Initialize();
 }
 
@@ -92,8 +94,8 @@ void OSCILLATOR_Initialize(void)
     OSCCON3 = 0x00;
     // LFOEN disabled; ADOEN disabled; SOSCEN disabled; EXTOEN disabled; HFOEN disabled; 
     OSCEN = 0x00;
-    // HFFRQ 4_MHz; 
-    OSCFRQ = 0x03;
+    // HFFRQ 8_MHz; 
+    OSCFRQ = 0x04;
     // HFTUN 0; 
     OSCTUNE = 0x00;
     // Wait for PLL to stabilize

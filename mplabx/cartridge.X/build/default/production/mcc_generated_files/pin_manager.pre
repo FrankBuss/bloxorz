@@ -7193,10 +7193,10 @@ extern unsigned char __resetbits;
 extern __bit __powerdown;
 extern __bit __timeout;
 
-# 156 "mcc_generated_files/pin_manager.h"
+# 168 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
-# 168
+# 180
 void PIN_MANAGER_IOC(void);
 
 # 12 "/opt/microchip/xc8/v1.42/include/stdbool.h"
@@ -7233,8 +7233,10 @@ PPSLOCK = 0x55;
 PPSLOCK = 0xAA;
 PPSLOCKbits.PPSLOCKED = 0x00;
 
+RC1PPSbits.RC1PPS = 0x14;
 CLCIN1PPSbits.CLCIN1PPS = 0x04;
 RXPPSbits.RXPPS = 0x14;
+T1GPPSbits.T1GPPS = 0x13;
 RC0PPSbits.RC0PPS = 0x04;
 CLCIN0PPSbits.CLCIN0PPS = 0x00;
 CLCIN2PPSbits.CLCIN2PPS = 0x12;

@@ -1,6 +1,78 @@
 
 # 1 "main.c"
 
+# 13 "/opt/microchip/xc8/v1.42/include/stdint.h"
+typedef signed char int8_t;
+
+# 20
+typedef signed int int16_t;
+
+# 38
+typedef signed long int int32_t;
+
+# 45
+typedef unsigned char uint8_t;
+
+# 51
+typedef unsigned int uint16_t;
+
+# 67
+typedef unsigned long int uint32_t;
+
+# 75
+typedef signed char int_least8_t;
+
+# 82
+typedef signed int int_least16_t;
+
+# 104
+typedef signed long int int_least32_t;
+
+# 111
+typedef unsigned char uint_least8_t;
+
+# 117
+typedef unsigned int uint_least16_t;
+
+# 136
+typedef unsigned long int uint_least32_t;
+
+# 145
+typedef signed char int_fast8_t;
+
+# 152
+typedef signed int int_fast16_t;
+
+# 174
+typedef signed long int int_fast32_t;
+
+# 181
+typedef unsigned char uint_fast8_t;
+
+# 187
+typedef unsigned int uint_fast16_t;
+
+# 206
+typedef unsigned long int uint_fast32_t;
+
+# 212
+typedef int32_t intmax_t;
+
+
+
+
+typedef uint32_t uintmax_t;
+
+
+
+
+typedef int16_t intptr_t;
+
+
+
+
+typedef uint16_t uintptr_t;
+
 # 26 "/opt/microchip/xc8/v1.42/include/htc.h"
 extern const char __xc8_OPTIM_SPEED;
 
@@ -7193,86 +7265,86 @@ extern unsigned char __resetbits;
 extern __bit __powerdown;
 extern __bit __timeout;
 
-# 156 "mcc_generated_files/pin_manager.h"
+# 168 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
-# 168
+# 180
 void PIN_MANAGER_IOC(void);
-
-# 13 "/opt/microchip/xc8/v1.42/include/stdint.h"
-typedef signed char int8_t;
-
-# 20
-typedef signed int int16_t;
-
-# 38
-typedef signed long int int32_t;
-
-# 45
-typedef unsigned char uint8_t;
-
-# 51
-typedef unsigned int uint16_t;
-
-# 67
-typedef unsigned long int uint32_t;
-
-# 75
-typedef signed char int_least8_t;
-
-# 82
-typedef signed int int_least16_t;
-
-# 104
-typedef signed long int int_least32_t;
-
-# 111
-typedef unsigned char uint_least8_t;
-
-# 117
-typedef unsigned int uint_least16_t;
-
-# 136
-typedef unsigned long int uint_least32_t;
-
-# 145
-typedef signed char int_fast8_t;
-
-# 152
-typedef signed int int_fast16_t;
-
-# 174
-typedef signed long int int_fast32_t;
-
-# 181
-typedef unsigned char uint_fast8_t;
-
-# 187
-typedef unsigned int uint_fast16_t;
-
-# 206
-typedef unsigned long int uint_fast32_t;
-
-# 212
-typedef int32_t intmax_t;
-
-
-
-
-typedef uint32_t uintmax_t;
-
-
-
-
-typedef int16_t intptr_t;
-
-
-
-
-typedef uint16_t uintptr_t;
 
 # 12 "/opt/microchip/xc8/v1.42/include/stdbool.h"
 typedef unsigned char bool;
+
+# 98 "mcc_generated_files/memory.h"
+uint16_t FLASH_ReadWord(uint16_t flashAddr);
+
+# 127
+void FLASH_WriteWord(uint16_t flashAddr, uint16_t *ramBuf, uint16_t word);
+
+# 163
+int8_t FLASH_WriteBlock(uint16_t writeAddr, uint16_t *flashWordArray);
+
+# 188
+void FLASH_EraseBlock(uint16_t startAddr);
+
+# 222
+void DATAEE_WriteByte(uint16_t bAdd, uint8_t bData);
+
+# 248
+uint8_t DATAEE_ReadByte(uint16_t bAdd);
+
+# 99 "mcc_generated_files/tmr1.h"
+void TMR1_Initialize(void);
+
+# 128
+void TMR1_StartTimer(void);
+
+# 160
+void TMR1_StopTimer(void);
+
+# 195
+uint16_t TMR1_ReadTimer(void);
+
+# 234
+void TMR1_WriteTimer(uint16_t timerVal);
+
+# 270
+void TMR1_Reload(void);
+
+# 309
+void TMR1_StartSinglePulseAcquisition(void);
+
+# 348
+uint8_t TMR1_CheckGateValueStatus(void);
+
+# 386
+bool TMR1_HasOverflowOccured(void);
+
+# 91 "mcc_generated_files/clc1.h"
+void CLC1_Initialize(void);
+
+# 113
+bool CLC1_OutputStatusGet(void);
+
+# 99 "mcc_generated_files/tmr0.h"
+void TMR0_Initialize(void);
+
+# 128
+void TMR0_StartTimer(void);
+
+# 160
+void TMR0_StopTimer(void);
+
+# 195
+uint8_t TMR0_Read8bitTimer(void);
+
+# 234
+void TMR0_Write8bitTimer(uint8_t timerVal);
+
+# 271
+void TMR0_Load8bitPeriod(uint8_t periodVal);
+
+# 307
+bool TMR0_HasOverflowOccured(void);
 
 # 91 "mcc_generated_files/clc2.h"
 void CLC2_Initialize(void);
@@ -7289,28 +7361,244 @@ uint8_t EUSART_Read(void);
 # 134
 void EUSART_Write(uint8_t txData);
 
-# 91 "mcc_generated_files/clc1.h"
-void CLC1_Initialize(void);
-
-# 113
-bool CLC1_OutputStatusGet(void);
-
-# 70 "mcc_generated_files/mcc.h"
+# 73 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
 
-# 83
+# 86
 void OSCILLATOR_Initialize(void);
 
-# 96
+# 99
 void WDT_Initialize(void);
 
-# 6 "main.c"
+# 15 "main.c"
+volatile uint8_t shift;
+volatile uint8_t shiftCounter;
+volatile uint8_t id;
+volatile uint8_t cmd;
+volatile uint8_t arg;
+volatile uint16_t eepromAdr;
+
+uint8_t readByte()
+{
+shiftCounter = 8;
+
+# 25
+#asm
+        ; STATUS bits
+        C EQU 0
+        Z EQU 2
+
+                ; select bank for PORTC (bank 0)
+        BANKSEL(PORTC)
+
+                        ; reset timer 1 and count pulse length
+start_read:
+        movlw 0
+        movwf TMR1L
+        movwf TMR1H
+rwait1:
+        btfss PORTC, 3
+        goto rwait1
+rwait0:
+        btfsc PORTC, 3
+        goto rwait0
+
+        ; test for 1 or 0 bit length
+        movf TMR1L, W
+        sublw 50
+        btfss STATUS, C
+        goto rbit1
+rbit0: movlw 0
+        goto rbits
+rbit1: movlw 1
+rbits: BANKSEL(_shift)
+        lslf ((_shift)&07Fh), f
+        iorwf _shift, f
+
+                        ; shift all bits
+        BANKSEL(_shiftCounter)
+        decfsz ((_shiftCounter)&07Fh), f
+        goto start_read
+
+#endasm 
+    return shift;
+}
+
+void writeByte(uint8_t b)
+{
+shiftCounter = 8;
+shift = b;
+
+# 70
+#asm
+        ; STATUS bits
+        C EQU 0
+        Z EQU 2
+
+                ; select bank for PORTC (bank 0)
+        BANKSEL(PORTC)
+
+                        ; wait for PB6 high
+wait1:
+        btfss PORTC, 3
+        goto wait1
+
+                                ; wait 201 us
+        movlw 0
+        movwf TMR0L
+wait201:
+        movf TMR0L, W
+        sublw 201
+        btfsc STATUS, C
+        goto wait201
+
+        ; wait 202 us
+        movlw 0
+        movwf TMR0L
+wait202:
+        movf TMR0L, W
+        sublw 202
+        btfsc STATUS, C
+        goto wait202
+
+                ; set PB6 low
+        bcf PORTC, 3
+        BANKSEL(TRISC)
+        bcf ((TRISC)&07Fh), 3
+        BANKSEL(PORTC)
+
+        ; wait 200 us
+        movlw 0
+        movwf TMR0L
+wait200:
+        movf TMR0L, W
+        sublw 200
+        btfsc STATUS, C
+        goto wait200
+
+start_write:
+        bsf PORTC, 3
+bits: BANKSEL(_shift)
+        btfss _shift, 7
+        goto bit0
+
+; send 1 bit: 80 us 1, 120 us pause
+        BANKSEL(PORTC)
+        movlw 0
+        movwf TMR0L
+wait160:
+        movf TMR0L, W
+        sublw 160
+        btfsc STATUS, C
+        goto wait160
+        bcf PORTC, 3
+        movlw 0
+        movwf TMR0L
+wait140:
+        movf TMR0L, W
+        sublw 140
+        btfsc STATUS, C
+        goto wait140
+        goto write_end
+
+        ; send 0 bit: 80 us 1, 220 us pause
+bit0:
+        BANKSEL(PORTC)
+        movlw 0
+        movwf TMR0L
+wait80:
+        movf TMR0L, W
+        sublw 80
+        btfsc STATUS, C
+        goto wait80
+        bcf PORTC, 3
+        movlw 0
+        movwf TMR0L
+wait220:
+        movf TMR0L, W
+        sublw 220
+        btfsc STATUS, C
+        goto wait220
+
+write_end:
+        BANKSEL(_shift)
+        lslf ((_shift)&07Fh), f
+
+; shift all bits
+        BANKSEL(_shiftCounter)
+        decfsz ((_shiftCounter)&07Fh), f
+        goto start_write
+
+; set PB6 back to input
+        BANKSEL(TRISC)
+        bsf ((TRISC)&07Fh), 3
+
+#endasm 
+    }
+
+void waitStart()
+{
+
+# 178
+#asm
+        ; STATUS bits
+        C EQU 0
+        Z EQU 2
+
+                ; select bank for PORTC (bank 0)
+        BANKSEL(PORTC)
+
+                        ; wait for at least 5 us low on PB6
+winit_wait:
+        movlw 0
+        movwf TMR0L
+wait:
+        btfsc PORTC, 3
+        goto winit_wait
+        movf TMR0L, W
+        sublw 5
+        btfsc STATUS, C
+        goto wait
+#endasm 
+    }
+
+void readCommand()
+{
+waitStart();
+id = readByte();
+cmd = readByte();
+arg = readByte();
+if (id =='V') {
+switch (cmd) {
+case 1:
+writeByte(4);
+break;
+case 2:
+eepromAdr = 0xf000 + arg;
+writeByte(arg);
+break;
+case 3:
+DATAEE_WriteByte(eepromAdr, arg);
+writeByte(DATAEE_ReadByte(eepromAdr));
+break;
+case 4:
+writeByte(DATAEE_ReadByte(0xf000 + arg));
+break;
+default:
+writeByte(0);
+break;
+}
+}
+}
+
 int main()
 {
 SYSTEM_Initialize();
+_delay((unsigned long)((100)*(32000000/4000.0)));
 while (1) {
+readCommand();
 
-# 16
+# 242
 }
 
 return 0;

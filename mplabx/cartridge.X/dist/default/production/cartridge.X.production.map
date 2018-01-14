@@ -5,8 +5,8 @@ Linker command line:
 -W-3 --edf=/opt/microchip/xc8/v1.42/dat/en_msgs.txt -cs \
   -h+dist/default/production/cartridge.X.production.sym \
   --cmf=dist/default/production/cartridge.X.production.cmf -z -Q16F18323 \
-  -o/tmp/xcXYfuk4R -Mdist/default/production/cartridge.X.production.map -E1 \
-  -ver=XC8 -ASTACK=02000h-020efh -pstack=STACK -ACODE=00h-07FFh \
+  -o/tmp/xcXEq0505 -Mdist/default/production/cartridge.X.production.map -E1 \
+  -ver=XC8 -ASTACK=02004h-020efh -pstack=STACK -ACODE=00h-07FFh \
   -ASTRCODE=00h-07FFh -ASTRING=00h-0FFhx8 -ACONST=00h-0FFhx8 \
   -AENTRY=00h-0FFhx8 -ACOMMON=070h-07Fh -ABANK0=020h-06Fh -ABANK1=0A0h-0EFh \
   -ABANK2=0120h-016Fh -ABIGRAM=02000h-020EFh \
@@ -26,7 +26,7 @@ Linker command line:
   -pfunctab=CODE -ACONFIG=08007h-0800Ah -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/0F000h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k /tmp/xcX1LiDgx.obj \
+  -DENTRY=2 -k /tmp/xcXUNW2d4.obj \
   dist/default/production/cartridge.X.production.obj 
 
 Object code version is 3.11
@@ -36,37 +36,59 @@ Machine type is 16F18323
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-/tmp/xcX1LiDgx.obj
+/tmp/xcXUNW2d4.obj
                 end_init                              1        1        1        0       0
                 reset_vec                             0        0        1        0       0
                 config                             8007     8007        4    1000E       0
 dist/default/production/cartridge.X.production.obj
-                cinit                               7FE      7FE        2      FFC       0
-                text7                               795      795       12      F2A       0
-                text6                               7A7      7A7       12      F4E       0
-                text5                               77F      77F        B      EFE       0
-                text4                               78A      78A        B      F14       0
-                text3                               7B9      7B9       45      F72       0
-                text2                               774      774        4      EE8       0
-                text1                               778      778        7      EF0       0
-                maintext                            772      772        2      EE4       0
-                cstackCOMMON                         70       70        1       70       1
+                cinit                               7F2      7F2        E      FE4       0
+                text17                              6B0      6B0       11      D60       0
+                text16                              6C1      6C1       12      D82       0
+                text15                              672      672        B      CE4       0
+                text14                              67D      67D        B      CFA       0
+                text13                              7A3      7A3       4F      F46       0
+                text12                              64B      64B        3      C96       0
+                text11                              65E      65E        A      CBC       0
+                text10                              64E      64E        3      C9C       0
+                text9                               694      694        D      D28       0
+                text8                               651      651        4      CA2       0
+                text7                               655      655        9      CAA       0
+                text6                               688      688        C      D10       0
+                text5                               6EE      6EE       1C      DDC       0
+                text4                               6D3      6D3       1B      DA6       0
+                text3                               668      668        A      CD0       0
+                text2                               70A      70A       4B      E14       0
+                text1                               755      755       4E      EAA       0
+                maintext                            6A1      6A1        F      D42       0
+                cstackCOMMON                         77       77        7       70       1
+                bssBANK0                             20       20        4       20       1
+                bssCOMMON                            70       70        7       70       1
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
 
         CLASS   CODE           
                 end_init                              1        1        1         0
-                cinit                               7FE      7FE        2         0
+                cinit                               7F2      7F2        E         0
                 reset_vec                             0        0        1         0
-                text7                               795      795       12         0
-                text6                               7A7      7A7       12         0
-                text5                               77F      77F        B         0
-                text4                               78A      78A        B         0
-                text3                               7B9      7B9       45         0
-                text2                               774      774        4         0
-                text1                               778      778        7         0
-                maintext                            772      772        2         0
+                text17                              6B0      6B0       11         0
+                text16                              6C1      6C1       12         0
+                text15                              672      672        B         0
+                text14                              67D      67D        B         0
+                text13                              7A3      7A3       4F         0
+                text12                              64B      64B        3         0
+                text11                              65E      65E        A         0
+                text10                              64E      64E        3         0
+                text9                               694      694        D         0
+                text8                               651      651        4         0
+                text7                               655      655        9         0
+                text6                               688      688        C         0
+                text5                               6EE      6EE       1C         0
+                text4                               6D3      6D3       1B         0
+                text3                               668      668        A         0
+                text2                               70A      70A       4B         0
+                text1                               755      755       4E         0
+                maintext                            6A1      6A1        F         0
 
         CLASS   STRCODE        
 
@@ -77,9 +99,11 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   ENTRY          
 
         CLASS   COMMON         
-                cstackCOMMON                         70       70        1         1
+                cstackCOMMON                         77       77        7         1
+                bssCOMMON                            70       70        7         1
 
         CLASS   BANK0          
+                bssBANK0                             20       20        4         1
 
         CLASS   BANK1          
 
@@ -226,33 +250,43 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
                 reset_vec                      000000  000002  000002         0       0  CODE        2
-                cstackCOMMON                   000070  000001  000071        70       1  COMMON      1
-                maintext                       000772  000002  000774       EE4       0  CODE        2
-                text2                          000774  000004  000778       EE8       0  CODE        2
-                text1                          000778  000007  00077F       EF0       0  CODE        2
-                text5                          00077F  00000B  00078A       EFE       0  CODE        2
-                text4                          00078A  00000B  000795       F14       0  CODE        2
-                text7                          000795  000012  0007A7       F2A       0  CODE        2
-                text6                          0007A7  000012  0007B9       F4E       0  CODE        2
-                text3                          0007B9  000045  0007FE       F72       0  CODE        2
-                cinit                          0007FE  000002  000800       FFC       0  CODE        2
+                bssBANK0                       000020  000004  000024        20       1  BANK0       1
+                bssCOMMON                      000070  00000E  00007E        70       1  COMMON      1
+                text12                         00064B  000003  00064E       C96       0  CODE        2
+                text10                         00064E  000003  000651       C9C       0  CODE        2
+                text8                          000651  000004  000655       CA2       0  CODE        2
+                text7                          000655  000009  00065E       CAA       0  CODE        2
+                text11                         00065E  00000A  000668       CBC       0  CODE        2
+                text3                          000668  00000A  000672       CD0       0  CODE        2
+                text15                         000672  00000B  00067D       CE4       0  CODE        2
+                text14                         00067D  00000B  000688       CFA       0  CODE        2
+                text6                          000688  00000C  000694       D10       0  CODE        2
+                text9                          000694  00000D  0006A1       D28       0  CODE        2
+                maintext                       0006A1  00000F  0006B0       D42       0  CODE        2
+                text17                         0006B0  000011  0006C1       D60       0  CODE        2
+                text16                         0006C1  000012  0006D3       D82       0  CODE        2
+                text4                          0006D3  00001B  0006EE       DA6       0  CODE        2
+                text5                          0006EE  00001C  00070A       DDC       0  CODE        2
+                text2                          00070A  00004B  000755       E14       0  CODE        2
+                text1                          000755  00004E  0007A3       EAA       0  CODE        2
+                text13                         0007A3  00004F  0007F2       F46       0  CODE        2
+                cinit                          0007F2  00000E  000800       FE4       0  CODE        2
                 config                         008007  000004  00800B     1000E       0  CONFIG      2
 
 
 UNUSED ADDRESS RANGES
 
         Name                Unused          Largest block    Delta
-        BANK0            00020-0006F              50           1
+        BANK0            00024-0006F              4C           1
         BANK1            000A0-000EF              50           1
         BANK2            00120-0016F              50           1
         BIGRAM           02000-020EF              F0           1
-        CODE             00002-00771             770           2
-        COMMON           00071-0007D               D           1
-        CONST            00002-00771             100           2
+        CODE             00002-0064A             649           2
+        CONST            00002-0064A             100           2
         EEDATA           0F000-0F0FF             100           2
-        ENTRY            00002-00771             100           2
+        ENTRY            00002-0064A             100           2
         IDLOC            08000-08003               4           2
-        RAM              00020-0006F              50           1
+        RAM              00024-0006F              4C           1
                          000A0-000EF              50
                          00120-0016F              50
         SFR0             00000-0001F              20           1
@@ -287,13 +321,17 @@ UNUSED ADDRESS RANGES
         SFR7             00380-003EF              70           1
         SFR8             00400-0046F              70           1
         SFR9             00480-004EF              70           1
-        STACK            02000-020EF              F0           1
-        STRCODE          00002-00771             770           2
-        STRING           00002-00771             100           2
+        STACK            02004-020EF              EC           1
+        STRCODE          00002-0064A             649           2
+        STRING           00002-0064A             100           2
 
                                   Symbol Table
 
-PIN_MANAGER_Initialize@state     cstackCOMMON 00070
+DATAEE_ReadByte@bAdd             cstackCOMMON 00077
+DATAEE_WriteByte@GIEBitValue     cstackCOMMON 0007A
+DATAEE_WriteByte@bAdd            cstackCOMMON 00077
+DATAEE_WriteByte@bData           cstackCOMMON 00079
+PIN_MANAGER_Initialize@state     cstackCOMMON 00077
 _ANSELA                          (abs)        0018C
 _ANSELC                          (abs)        0018E
 _BAUD1CON                        (abs)        0019F
@@ -308,7 +346,7 @@ _CLC1SEL0                        (abs)        00F12
 _CLC1SEL1                        (abs)        00F13
 _CLC1SEL2                        (abs)        00F14
 _CLC1SEL3                        (abs)        00F15
-_CLC1_Initialize                 text7        00795
+_CLC1_Initialize                 text17       006B0
 _CLC2CON                         (abs)        00F1A
 _CLC2CONbits                     (abs)        00F1A
 _CLC2GLS0                        (abs)        00F20
@@ -320,29 +358,40 @@ _CLC2SEL0                        (abs)        00F1C
 _CLC2SEL1                        (abs)        00F1D
 _CLC2SEL2                        (abs)        00F1E
 _CLC2SEL3                        (abs)        00F1F
-_CLC2_Initialize                 text6        007A7
+_CLC2_Initialize                 text16       006C1
 _CLCIN0PPSbits                   (abs)        00E28
 _CLCIN1PPSbits                   (abs)        00E29
 _CLCIN2PPSbits                   (abs)        00E2A
 _CLCIN3PPSbits                   (abs)        00E2B
-_EUSART_Initialize               text5        0077F
+_DATAEE_ReadByte                 text6        00688
+_DATAEE_WriteByte                text5        006EE
+_EUSART_Initialize               text15       00672
 _GIE                             (abs)        0005F
+_INTCONbits                      (abs)        0000B
 _LATA                            (abs)        0010C
 _LATC                            (abs)        0010E
+_NVMADRH                         (abs)        00892
+_NVMADRL                         (abs)        00891
+_NVMCON1bits                     (abs)        00895
+_NVMCON2                         (abs)        00896
+_NVMDATH                         (abs)        00894
+_NVMDATL                         (abs)        00893
 _ODCONA                          (abs)        0028C
 _ODCONC                          (abs)        0028E
 _OSCCON1                         (abs)        00919
 _OSCCON3                         (abs)        0091B
 _OSCEN                           (abs)        0091D
 _OSCFRQ                          (abs)        0091F
-_OSCILLATOR_Initialize           text4        0078A
+_OSCILLATOR_Initialize           text14       0067D
 _OSCTUNE                         (abs)        0091E
-_PIN_MANAGER_Initialize          text3        007B9
+_PIN_MANAGER_Initialize          text13       007A3
+_PIR0bits                        (abs)        00010
 _PIR1bits                        (abs)        00011
 _PLLR                            (abs)        048E0
 _PPSLOCK                         (abs)        00E0F
 _PPSLOCKbits                     (abs)        00E0F
 _RC0PPSbits                      (abs)        00EA0
+_RC1PPSbits                      (abs)        00EA1
 _RC1REG                          (abs)        00199
 _RC1STA                          (abs)        0019D
 _RC1STAbits                      (abs)        0019D
@@ -350,13 +399,29 @@ _RC5PPSbits                      (abs)        00EA5
 _RXPPSbits                       (abs)        00E24
 _SP1BRGH                         (abs)        0019C
 _SP1BRGL                         (abs)        0019B
-_SYSTEM_Initialize               text1        00778
+_SYSTEM_Initialize               text7        00655
+_T0CON0                          (abs)        00017
+_T0CON0bits                      (abs)        00017
+_T0CON1                          (abs)        00018
+_T1CON                           (abs)        0001B
+_T1CONbits                       (abs)        0001B
+_T1GCON                          (abs)        0001C
+_T1GCONbits                      (abs)        0001C
+_T1GPPSbits                      (abs)        00E13
+_TMR0H                           (abs)        00016
+_TMR0L                           (abs)        00015
+_TMR0_Initialize                 text11       0065E
+_TMR0_StartTimer                 text12       0064B
+_TMR1H                           (abs)        0001A
+_TMR1L                           (abs)        00019
+_TMR1_Initialize                 text9        00694
+_TMR1_StartTimer                 text10       0064E
 _TRISA                           (abs)        0008C
 _TRISC                           (abs)        0008E
 _TX1REG                          (abs)        0019A
 _TX1STA                          (abs)        0019E
 _WDTCON                          (abs)        00097
-_WDT_Initialize                  text2        00774
+_WDT_Initialize                  text8        00651
 _WPUA                            (abs)        0020C
 _WPUC                            (abs)        0020E
 __CFG_BOREN$ON                   (abs)        00000
@@ -369,7 +434,7 @@ __CFG_DEBUG$OFF                  (abs)        00000
 __CFG_FCMEN$ON                   (abs)        00000
 __CFG_FEXTOSC$ECM                (abs)        00000
 __CFG_LPBOREN$OFF                (abs)        00000
-__CFG_LVP$ON                     (abs)        00000
+__CFG_LVP$OFF                    (abs)        00000
 __CFG_MCLRE$OFF                  (abs)        00000
 __CFG_PPS1WAY$ON                 (abs)        00000
 __CFG_PWRTE$OFF                  (abs)        00000
@@ -411,6 +476,8 @@ __Hbank7                         bank7        00000
 __Hbank8                         bank8        00000
 __Hbank9                         bank9        00000
 __Hbigram                        bigram       00000
+__HbssBANK0                      bssBANK0     00000
+__HbssCOMMON                     bssCOMMON    00000
 __Hcinit                         cinit        00800
 __Hclrtext                       clrtext      00000
 __Hcode                          code         00000
@@ -460,7 +527,7 @@ __Hsfr7                          sfr7         00000
 __Hsfr8                          sfr8         00000
 __Hsfr9                          sfr9         00000
 __Hspace_0                       (abs)        0800B
-__Hspace_1                       (abs)        00071
+__Hspace_1                       (abs)        0007E
 __Hspace_2                       (abs)        00000
 __Hspace_3                       (abs)        00000
 __Hstack                         stack        00000
@@ -500,7 +567,9 @@ __Lbank7                         bank7        00000
 __Lbank8                         bank8        00000
 __Lbank9                         bank9        00000
 __Lbigram                        bigram       00000
-__Lcinit                         cinit        007FE
+__LbssBANK0                      bssBANK0     00000
+__LbssCOMMON                     bssCOMMON    00000
+__Lcinit                         cinit        007F2
 __Lclrtext                       clrtext      00000
 __Lcode                          code         00000
 __Lcommon                        common       00000
@@ -556,40 +625,83 @@ __Lstack                         stack        00000
 __Lstrings                       strings      00000
 __Ltext                          text         00000
 __S0                             (abs)        0800B
-__S1                             (abs)        00071
+__S1                             (abs)        0007E
 __S2                             (abs)        00000
 __S3                             (abs)        00000
 ___int_sp                        stack        00000
 ___latbits                       (abs)        00000
 ___sp                            stack        00000
-__end_of_CLC1_Initialize         text7        007A7
-__end_of_CLC2_Initialize         text6        007B9
-__end_of_EUSART_Initialize       text5        0078A
-__end_of_OSCILLATOR_Initialize   text4        00795
-__end_of_PIN_MANAGER_Initialize  text3        007FE
-__end_of_SYSTEM_Initialize       text1        0077F
-__end_of_WDT_Initialize          text2        00778
+__end_of_CLC1_Initialize         text17       006C1
+__end_of_CLC2_Initialize         text16       006D3
+__end_of_DATAEE_ReadByte         text6        00694
+__end_of_DATAEE_WriteByte        text5        0070A
+__end_of_EUSART_Initialize       text15       0067D
+__end_of_OSCILLATOR_Initialize   text14       00688
+__end_of_PIN_MANAGER_Initialize  text13       007F2
+__end_of_SYSTEM_Initialize       text7        0065E
+__end_of_TMR0_Initialize         text11       00668
+__end_of_TMR0_StartTimer         text12       0064E
+__end_of_TMR1_Initialize         text9        006A1
+__end_of_TMR1_StartTimer         text10       00651
+__end_of_WDT_Initialize          text8        00655
 __end_of__initialization         cinit        007FE
-__end_of_main                    maintext     00774
-__initialization                 cinit        007FE
-__pcstackCOMMON                  cstackCOMMON 00070
-__pmaintext                      maintext     00772
-__ptext1                         text1        00778
-__ptext2                         text2        00774
-__ptext3                         text3        007B9
-__ptext4                         text4        0078A
-__ptext5                         text5        0077F
-__ptext6                         text6        007A7
-__ptext7                         text7        00795
+__end_of_main                    maintext     006B0
+__end_of_readByte                text4        006EE
+__end_of_readCommand             text1        007A3
+__end_of_waitStart               text3        00672
+__end_of_writeByte               text2        00755
+__initialization                 cinit        007F2
+__pbssBANK0                      bssBANK0     00020
+__pbssCOMMON                     bssCOMMON    00070
+__pcstackCOMMON                  cstackCOMMON 00077
+__pmaintext                      maintext     006A1
+__ptext1                         text1        00755
+__ptext10                        text10       0064E
+__ptext11                        text11       0065E
+__ptext12                        text12       0064B
+__ptext13                        text13       007A3
+__ptext14                        text14       0067D
+__ptext15                        text15       00672
+__ptext16                        text16       006C1
+__ptext17                        text17       006B0
+__ptext2                         text2        0070A
+__ptext3                         text3        00668
+__ptext4                         text4        006D3
+__ptext5                         text5        006EE
+__ptext6                         text6        00688
+__ptext7                         text7        00655
+__ptext8                         text8        00651
+__ptext9                         text9        00694
 __size_of_CLC1_Initialize        (abs)        00000
 __size_of_CLC2_Initialize        (abs)        00000
+__size_of_DATAEE_ReadByte        (abs)        00000
+__size_of_DATAEE_WriteByte       (abs)        00000
 __size_of_EUSART_Initialize      (abs)        00000
 __size_of_OSCILLATOR_Initialize  (abs)        00000
 __size_of_PIN_MANAGER_Initialize (abs)        00000
 __size_of_SYSTEM_Initialize      (abs)        00000
+__size_of_TMR0_Initialize        (abs)        00000
+__size_of_TMR0_StartTimer        (abs)        00000
+__size_of_TMR1_Initialize        (abs)        00000
+__size_of_TMR1_StartTimer        (abs)        00000
 __size_of_WDT_Initialize         (abs)        00000
 __size_of_main                   (abs)        00000
-_main                            maintext     00772
+__size_of_readByte               (abs)        00000
+__size_of_readCommand            (abs)        00000
+__size_of_waitStart              (abs)        00000
+__size_of_writeByte              (abs)        00000
+_arg                             bssCOMMON    00072
+_cmd                             bssCOMMON    00073
+_eepromAdr                       bssBANK0     00020
+_id                              bssCOMMON    00074
+_main                            maintext     006A1
+_readByte                        text4        006D3
+_readCommand                     text1        00755
+_shift                           bssCOMMON    00076
+_shiftCounter                    bssCOMMON    00075
+_timer1ReloadVal                 bssCOMMON    00070
+_waitStart                       text3        00668
+_writeByte                       text2        0070A
 btemp                            (abs)        0007E
 end_of_initialization            cinit        007FE
 intlevel0                        functab      00000
@@ -600,9 +712,10 @@ intlevel4                        functab      00000
 intlevel5                        functab      00000
 reset_vec                        reset_vec    00000
 stackhi                          (abs)        020EF
-stacklo                          (abs)        02000
+stacklo                          (abs)        02004
 start                            init         00001
-start_initialization             cinit        007FE
+start_initialization             cinit        007F2
+writeByte@b                      cstackCOMMON 00078
 wtemp0                           (abs)        0007E
 
 
@@ -610,15 +723,108 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 6 in file "main.c"
+		line 229 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
-                  2  180[None  ] int 
+                  2  357[None  ] int 
  Registers used:
-		wreg, status,2, status,0, pclath, cstack
+		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK2
+      Params:         0       0       0       0
+      Locals:         0       0       0       0
+      Temps:          2       0       0       0
+      Totals:         2       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels required when called:    3
+ This function calls:
+		_SYSTEM_Initialize
+		_readCommand
+ This function is called by:
+		Startup code after reset
+ This function uses a non-reentrant model
+
+
+ *************** function _readCommand *****************
+ Defined at:
+		line 200 in file "main.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK2
+      Params:         0       0       0       0
+      Locals:         0       0       0       0
+      Temps:          1       0       0       0
+      Totals:         1       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
+ This function calls:
+		_DATAEE_ReadByte
+		_DATAEE_WriteByte
+		_readByte
+		_waitStart
+		_writeByte
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _writeByte *****************
+ Defined at:
+		line 66 in file "main.c"
+ Parameters:    Size  Location     Type
+  b               1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  b               1    1[COMMON] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK2
+      Params:         0       0       0       0
+      Locals:         1       0       0       0
+      Temps:          1       0       0       0
+      Totals:         2       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_readCommand
+ This function uses a non-reentrant model
+
+
+ *************** function _waitStart *****************
+ Defined at:
+		line 176 in file "main.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		None
  Tracked objects:
 		On entry : 
 		On exit  : 
@@ -629,11 +835,99 @@ FUNCTION INFORMATION:
       Temps:          0       0       0       0
       Totals:         0       0       0       0
 Total ram usage:        0 bytes
- Hardware stack levels required when called:    2
+ Hardware stack levels used:    1
  This function calls:
-		_SYSTEM_Initialize
+		Nothing
  This function is called by:
-		Startup code after reset
+		_readCommand
+ This function uses a non-reentrant model
+
+
+ *************** function _readByte *****************
+ Defined at:
+		line 22 in file "main.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK2
+      Params:         0       0       0       0
+      Locals:         0       0       0       0
+      Temps:          1       0       0       0
+      Totals:         1       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_readCommand
+ This function uses a non-reentrant model
+
+
+ *************** function _DATAEE_WriteByte *****************
+ Defined at:
+		line 179 in file "mcc_generated_files/memory.c"
+ Parameters:    Size  Location     Type
+  bAdd            2    0[COMMON] unsigned int 
+  bData           1    2[COMMON] unsigned char 
+ Auto vars:     Size  Location     Type
+  GIEBitValue     1    3[COMMON] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK2
+      Params:         3       0       0       0
+      Locals:         1       0       0       0
+      Temps:          0       0       0       0
+      Totals:         4       0       0       0
+Total ram usage:        4 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_readCommand
+ This function uses a non-reentrant model
+
+
+ *************** function _DATAEE_ReadByte *****************
+ Defined at:
+		line 201 in file "mcc_generated_files/memory.c"
+ Parameters:    Size  Location     Type
+  bAdd            2    0[COMMON] unsigned int 
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, status,2
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK2
+      Params:         2       0       0       0
+      Locals:         0       0       0       0
+      Temps:          0       0       0       0
+      Totals:         2       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_readCommand
  This function uses a non-reentrant model
 
 
@@ -659,13 +953,15 @@ Total ram usage:        0 bytes
       Totals:         0       0       0       0
 Total ram usage:        0 bytes
  Hardware stack levels used:    1
- Hardware stack levels required when called:    1
+ Hardware stack levels required when called:    2
  This function calls:
 		_CLC1_Initialize
 		_CLC2_Initialize
 		_EUSART_Initialize
 		_OSCILLATOR_Initialize
 		_PIN_MANAGER_Initialize
+		_TMR0_Initialize
+		_TMR1_Initialize
 		_WDT_Initialize
  This function is called by:
 		_main
@@ -674,7 +970,7 @@ Total ram usage:        0 bytes
 
  *************** function _WDT_Initialize *****************
  Defined at:
-		line 105 in file "mcc_generated_files/mcc.c"
+		line 107 in file "mcc_generated_files/mcc.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -698,6 +994,124 @@ Total ram usage:        0 bytes
 		Nothing
  This function is called by:
 		_SYSTEM_Initialize
+ This function uses a non-reentrant model
+
+
+ *************** function _TMR1_Initialize *****************
+ Defined at:
+		line 63 in file "mcc_generated_files/tmr1.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK2
+      Params:         0       0       0       0
+      Locals:         0       0       0       0
+      Temps:          0       0       0       0
+      Totals:         0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
+ This function calls:
+		_TMR1_StartTimer
+ This function is called by:
+		_SYSTEM_Initialize
+ This function uses a non-reentrant model
+
+
+ *************** function _TMR1_StartTimer *****************
+ Defined at:
+		line 89 in file "mcc_generated_files/tmr1.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		None
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK2
+      Params:         0       0       0       0
+      Locals:         0       0       0       0
+      Temps:          0       0       0       0
+      Totals:         0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_TMR1_Initialize
+ This function uses a non-reentrant model
+
+
+ *************** function _TMR0_Initialize *****************
+ Defined at:
+		line 59 in file "mcc_generated_files/tmr0.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0, pclath, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK2
+      Params:         0       0       0       0
+      Locals:         0       0       0       0
+      Temps:          0       0       0       0
+      Totals:         0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
+ This function calls:
+		_TMR0_StartTimer
+ This function is called by:
+		_SYSTEM_Initialize
+ This function uses a non-reentrant model
+
+
+ *************** function _TMR0_StartTimer *****************
+ Defined at:
+		line 83 in file "mcc_generated_files/tmr0.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		None
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMMON   BANK0   BANK1   BANK2
+      Params:         0       0       0       0
+      Locals:         0       0       0       0
+      Temps:          0       0       0       0
+      Totals:         0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_TMR0_Initialize
  This function uses a non-reentrant model
 
 
@@ -732,7 +1146,7 @@ Total ram usage:        1 bytes
 
  *************** function _OSCILLATOR_Initialize *****************
  Defined at:
-		line 87 in file "mcc_generated_files/mcc.c"
+		line 89 in file "mcc_generated_files/mcc.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -850,40 +1264,62 @@ Total ram usage:        0 bytes
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
-mcc_generated_files/pin_manager.c
-		_PIN_MANAGER_Initialize		CODE           	07B9	0000	70
+mcc_generated_files/tmr0.c
+		_TMR0_StartTimer		CODE           	064B	0000	4
+		_TMR0_Initialize		CODE           	065E	0000	11
 
-mcc_generated_files/pin_manager.c estimated size: 70
+mcc_generated_files/tmr0.c estimated size: 15
+
+mcc_generated_files/pin_manager.c
+		_PIN_MANAGER_Initialize		CODE           	07A3	0000	80
+
+mcc_generated_files/pin_manager.c estimated size: 80
 
 mcc_generated_files/clc2.c
-		_CLC2_Initialize		CODE           	07A7	0000	19
+		_CLC2_Initialize		CODE           	06C1	0000	19
 
 mcc_generated_files/clc2.c estimated size: 19
 
 shared
-		__initialization		CODE           	07FE	0000	1
+		__initialization		CODE           	07F2	0000	13
 
-shared estimated size: 1
+shared estimated size: 13
 
 mcc_generated_files/mcc.c
-		_WDT_Initialize		CODE           	0774	0000	5
-		_OSCILLATOR_Initialize		CODE           	078A	0000	12
-		_SYSTEM_Initialize		CODE           	0778	0000	8
+		_WDT_Initialize		CODE           	0651	0000	5
+		_OSCILLATOR_Initialize		CODE           	067D	0000	12
+		_SYSTEM_Initialize		CODE           	0655	0000	10
 
-mcc_generated_files/mcc.c estimated size: 25
+mcc_generated_files/mcc.c estimated size: 27
+
+mcc_generated_files/tmr1.c
+		_TMR1_Initialize		CODE           	0694	0000	14
+		_TMR1_StartTimer		CODE           	064E	0000	4
+
+mcc_generated_files/tmr1.c estimated size: 18
+
+mcc_generated_files/memory.c
+		_DATAEE_WriteByte		CODE           	06EE	0000	29
+		_DATAEE_ReadByte		CODE           	0688	0000	13
+
+mcc_generated_files/memory.c estimated size: 42
 
 mcc_generated_files/eusart.c
-		_EUSART_Initialize		CODE           	077F	0000	12
+		_EUSART_Initialize		CODE           	0672	0000	12
 
 mcc_generated_files/eusart.c estimated size: 12
 
 main.c
-		_main          		CODE           	0772	0000	3
+		_readByte      		CODE           	06D3	0000	28
+		_main          		CODE           	06A1	0000	16
+		_writeByte     		CODE           	070A	0000	76
+		_waitStart     		CODE           	0668	0000	11
+		_readCommand   		CODE           	0755	0000	79
 
-main.c estimated size: 3
+main.c estimated size: 210
 
 mcc_generated_files/clc1.c
-		_CLC1_Initialize		CODE           	0795	0000	19
+		_CLC1_Initialize		CODE           	06B0	0000	18
 
-mcc_generated_files/clc1.c estimated size: 19
+mcc_generated_files/clc1.c estimated size: 18
 

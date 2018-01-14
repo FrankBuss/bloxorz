@@ -1,17 +1,17 @@
 /**
-  CLC1 Generated Driver File
+  TMR0 Generated Driver File
 
   @Company
     Microchip Technology Inc.
 
   @File Name
-    clc1.c
+    tmr0.c
 
   @Summary
-    This is the generated driver implementation file for the CLC1 driver using MPLAB(c) Code Configurator
+    This is the generated driver implementation file for the TMR0 driver using MPLAB(c) Code Configurator
 
   @Description
-    This source file provides implementations for driver APIs for CLC1.
+    This source file provides APIs for TMR0.
     Generation Information :
         Product Revision  :  MPLAB(c) Code Configurator - 4.15.5
         Device            :  PIC16F18323
@@ -48,54 +48,77 @@
 */
 
 #include <xc.h>
-#include "clc1.h"
+#include "tmr0.h"
+
 
 /**
-  Section: CLC1 APIs
+  Section: TMR0 APIs
 */
 
-void CLC1_Initialize(void)
+
+void TMR0_Initialize(void)
 {
-    // Set the CLC1 to the options selected in the User Interface
+    // Set TMR0 to the options selected in the User Interface
 
-    // LC1G1POL not_inverted; LC1G2POL not_inverted; LC1G3POL inverted; LC1G4POL not_inverted; LC1POL not_inverted; 
-    CLC1POL = 0x04;
+    // T0OUTPS 1:1; T0EN disabled; T016BIT 8-bit; 
+    T0CON0 = 0x00;
 
-    // LC1D1S CLCIN0 (CLCIN0PPS); 
-    CLC1SEL0 = 0x00;
+    // T0CS FOSC/4; T0CKPS 1:8; T0ASYNC synchronised; 
+    T0CON1 = 0x43;
 
-    // LC1D2S CLCIN1 (CLCIN1PPS); 
-    CLC1SEL1 = 0x01;
+    // TMR0H 255; 
+    TMR0H = 0xFF;
 
-    // LC1D3S CLCIN2 (CLCIN2PPS); 
-    CLC1SEL2 = 0x02;
+    // TMR0L 0; 
+    TMR0L = 0x00;
 
-    // LC1D4S CLCIN3 (CLCIN3PPS); 
-    CLC1SEL3 = 0x03;
 
-    // LC1G1D3N disabled; LC1G1D2N disabled; LC1G1D4N disabled; LC1G1D1T disabled; LC1G1D3T disabled; LC1G1D2T disabled; LC1G1D4T disabled; LC1G1D1N disabled; 
-    CLC1GLS0 = 0x00;
+    // Clearing IF flag
+    PIR0bits.TMR0IF = 0;
 
-    // LC1G2D2N disabled; LC1G2D1N disabled; LC1G2D4N disabled; LC1G2D3N disabled; LC1G2D2T disabled; LC1G2D1T disabled; LC1G2D4T disabled; LC1G2D3T disabled; 
-    CLC1GLS1 = 0x00;
-
-    // LC1G3D1N disabled; LC1G3D2N disabled; LC1G3D3N disabled; LC1G3D4N disabled; LC1G3D1T disabled; LC1G3D2T disabled; LC1G3D3T disabled; LC1G3D4T disabled; 
-    CLC1GLS2 = 0x00;
-
-    // LC1G4D1N disabled; LC1G4D2N disabled; LC1G4D3N disabled; LC1G4D4N disabled; LC1G4D1T disabled; LC1G4D2T disabled; LC1G4D3T disabled; LC1G4D4T enabled; 
-    CLC1GLS3 = 0x80;
-
-    // LC1EN disabled; INTN disabled; INTP disabled; MODE AND-OR; 
-    CLC1CON = 0x00;
-
+    // Start TMR0
+    TMR0_StartTimer();
 }
 
-
-bool CLC1_OutputStatusGet(void)
+void TMR0_StartTimer(void)
 {
-    return(CLC1CONbits.LC1OUT);
+    // Start the Timer by writing to TMR0ON bit
+    T0CON0bits.T0EN = 1;
+}
 
+void TMR0_StopTimer(void)
+{
+    // Stop the Timer by writing to TMR0ON bit
+    T0CON0bits.T0EN = 0;
+}
+
+uint8_t TMR0_Read8bitTimer(void)
+{
+    uint8_t readVal;
+
+    // read Timer0, low register only
+    readVal = TMR0L;
+
+    return readVal;
+}
+
+void TMR0_Write8bitTimer(uint8_t timerVal)
+{
+    // Write to Timer0 registers, low register only
+    TMR0L = timerVal;
+ }
+
+void TMR0_Load8bitPeriod(uint8_t periodVal)
+{
+   // Write to Timer0 registers, high register only
+   TMR0H = periodVal;
+}
+
+bool TMR0_HasOverflowOccured(void)
+{
+    // check if  overflow has occurred by checking the TMRIF bit
+    return(PIR0bits.TMR0IF);
 }
 /**
- End of File
+  End of File
 */

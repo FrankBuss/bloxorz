@@ -1,14 +1,18 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"156 mcc_generated_files/pin_manager.h
+"168 mcc_generated_files/pin_manager.h
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
-"83 mcc_generated_files/mcc.h
+"86 mcc_generated_files/mcc.h
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
-"96
+"99
 [v _WDT_Initialize `(v ~T0 @X0 0 ef ]
-"91 mcc_generated_files/clc2.h
-[v _CLC2_Initialize `(v ~T0 @X0 0 ef ]
 "91 mcc_generated_files/clc1.h
 [v _CLC1_Initialize `(v ~T0 @X0 0 ef ]
+"91 mcc_generated_files/clc2.h
+[v _CLC2_Initialize `(v ~T0 @X0 0 ef ]
+"99 mcc_generated_files/tmr1.h
+[v _TMR1_Initialize `(v ~T0 @X0 0 ef ]
+"99 mcc_generated_files/tmr0.h
+[v _TMR0_Initialize `(v ~T0 @X0 0 ef ]
 "94 mcc_generated_files/eusart.h
 [v _EUSART_Initialize `(v ~T0 @X0 0 ef ]
 "9533 /opt/microchip/xc8/v1.42/include/pic16f18323.h
@@ -56,7 +60,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "67
 [p x WRT=OFF ]
 "68
-[p x LVP=ON ]
+[p x LVP=OFF ]
 "71
 [p x CP=OFF ]
 "72
@@ -5479,8 +5483,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 192: extern unsigned char __resetbits;
 [; ;pic.h: 193: extern __bit __powerdown;
 [; ;pic.h: 194: extern __bit __timeout;
-[; ;pin_manager.h: 156: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 168: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 168: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 180: void PIN_MANAGER_IOC(void);
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
 [; ;stdint.h: 38: typedef signed long int int32_t;
@@ -5504,16 +5508,38 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 222: typedef int16_t intptr_t;
 [; ;stdint.h: 227: typedef uint16_t uintptr_t;
 [; ;stdbool.h: 12: typedef unsigned char bool;
+[; ;memory.h: 98: uint16_t FLASH_ReadWord(uint16_t flashAddr);
+[; ;memory.h: 127: void FLASH_WriteWord(uint16_t flashAddr, uint16_t *ramBuf, uint16_t word);
+[; ;memory.h: 163: int8_t FLASH_WriteBlock(uint16_t writeAddr, uint16_t *flashWordArray);
+[; ;memory.h: 188: void FLASH_EraseBlock(uint16_t startAddr);
+[; ;memory.h: 222: void DATAEE_WriteByte(uint16_t bAdd, uint8_t bData);
+[; ;memory.h: 248: uint8_t DATAEE_ReadByte(uint16_t bAdd);
+[; ;tmr1.h: 99: void TMR1_Initialize(void);
+[; ;tmr1.h: 128: void TMR1_StartTimer(void);
+[; ;tmr1.h: 160: void TMR1_StopTimer(void);
+[; ;tmr1.h: 195: uint16_t TMR1_ReadTimer(void);
+[; ;tmr1.h: 234: void TMR1_WriteTimer(uint16_t timerVal);
+[; ;tmr1.h: 270: void TMR1_Reload(void);
+[; ;tmr1.h: 309: void TMR1_StartSinglePulseAcquisition(void);
+[; ;tmr1.h: 348: uint8_t TMR1_CheckGateValueStatus(void);
+[; ;tmr1.h: 386: bool TMR1_HasOverflowOccured(void);
+[; ;clc1.h: 91: void CLC1_Initialize(void);
+[; ;clc1.h: 113: bool CLC1_OutputStatusGet(void);
+[; ;tmr0.h: 99: void TMR0_Initialize(void);
+[; ;tmr0.h: 128: void TMR0_StartTimer(void);
+[; ;tmr0.h: 160: void TMR0_StopTimer(void);
+[; ;tmr0.h: 195: uint8_t TMR0_Read8bitTimer(void);
+[; ;tmr0.h: 234: void TMR0_Write8bitTimer(uint8_t timerVal);
+[; ;tmr0.h: 271: void TMR0_Load8bitPeriod(uint8_t periodVal);
+[; ;tmr0.h: 307: bool TMR0_HasOverflowOccured(void);
 [; ;clc2.h: 91: void CLC2_Initialize(void);
 [; ;clc2.h: 113: bool CLC2_OutputStatusGet(void);
 [; ;eusart.h: 94: void EUSART_Initialize(void);
 [; ;eusart.h: 114: uint8_t EUSART_Read(void);
 [; ;eusart.h: 134: void EUSART_Write(uint8_t txData);
-[; ;clc1.h: 91: void CLC1_Initialize(void);
-[; ;clc1.h: 113: bool CLC1_OutputStatusGet(void);
-[; ;mcc.h: 70: void SYSTEM_Initialize(void);
-[; ;mcc.h: 83: void OSCILLATOR_Initialize(void);
-[; ;mcc.h: 96: void WDT_Initialize(void);
+[; ;mcc.h: 73: void SYSTEM_Initialize(void);
+[; ;mcc.h: 86: void OSCILLATOR_Initialize(void);
+[; ;mcc.h: 99: void WDT_Initialize(void);
 "76 mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize `(v ~T0 @X0 1 ef ]
 "77
@@ -5531,72 +5557,78 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;mcc.c: 81: WDT_Initialize();
 "81
 [e ( _WDT_Initialize ..  ]
-[; ;mcc.c: 82: CLC2_Initialize();
+[; ;mcc.c: 82: CLC1_Initialize();
 "82
-[e ( _CLC2_Initialize ..  ]
-[; ;mcc.c: 83: CLC1_Initialize();
-"83
 [e ( _CLC1_Initialize ..  ]
-[; ;mcc.c: 84: EUSART_Initialize();
+[; ;mcc.c: 83: CLC2_Initialize();
+"83
+[e ( _CLC2_Initialize ..  ]
+[; ;mcc.c: 84: TMR1_Initialize();
 "84
-[e ( _EUSART_Initialize ..  ]
-[; ;mcc.c: 85: }
+[e ( _TMR1_Initialize ..  ]
+[; ;mcc.c: 85: TMR0_Initialize();
 "85
+[e ( _TMR0_Initialize ..  ]
+[; ;mcc.c: 86: EUSART_Initialize();
+"86
+[e ( _EUSART_Initialize ..  ]
+[; ;mcc.c: 87: }
+"87
 [e :UE 696 ]
 }
-"87
+"89
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
-"88
+"90
 {
-[; ;mcc.c: 87: void OSCILLATOR_Initialize(void)
-[; ;mcc.c: 88: {
+[; ;mcc.c: 89: void OSCILLATOR_Initialize(void)
+[; ;mcc.c: 90: {
 [e :U _OSCILLATOR_Initialize ]
 [f ]
-[; ;mcc.c: 90: OSCCON1 = 0x10;
-"90
-[e = _OSCCON1 -> -> 16 `i `uc ]
-[; ;mcc.c: 92: OSCCON3 = 0x00;
+[; ;mcc.c: 92: OSCCON1 = 0x10;
 "92
-[e = _OSCCON3 -> -> 0 `i `uc ]
-[; ;mcc.c: 94: OSCEN = 0x00;
+[e = _OSCCON1 -> -> 16 `i `uc ]
+[; ;mcc.c: 94: OSCCON3 = 0x00;
 "94
-[e = _OSCEN -> -> 0 `i `uc ]
-[; ;mcc.c: 96: OSCFRQ = 0x03;
+[e = _OSCCON3 -> -> 0 `i `uc ]
+[; ;mcc.c: 96: OSCEN = 0x00;
 "96
-[e = _OSCFRQ -> -> 3 `i `uc ]
-[; ;mcc.c: 98: OSCTUNE = 0x00;
+[e = _OSCEN -> -> 0 `i `uc ]
+[; ;mcc.c: 98: OSCFRQ = 0x04;
 "98
-[e = _OSCTUNE -> -> 0 `i `uc ]
-[; ;mcc.c: 100: while(PLLR == 0)
+[e = _OSCFRQ -> -> 4 `i `uc ]
+[; ;mcc.c: 100: OSCTUNE = 0x00;
 "100
+[e = _OSCTUNE -> -> 0 `i `uc ]
+[; ;mcc.c: 102: while(PLLR == 0)
+"102
 [e $U 698  ]
 [e :U 699 ]
-[; ;mcc.c: 101: {
-"101
+[; ;mcc.c: 103: {
+"103
 {
-"102
+"104
 }
 [e :U 698 ]
-"100
+"102
 [e $ == -> _PLLR `i -> 0 `i 699  ]
 [e :U 700 ]
-[; ;mcc.c: 102: }
-[; ;mcc.c: 103: }
-"103
+[; ;mcc.c: 104: }
+[; ;mcc.c: 105: }
+"105
 [e :UE 697 ]
 }
-"105
+"107
 [v _WDT_Initialize `(v ~T0 @X0 1 ef ]
-"106
+"108
 {
-[; ;mcc.c: 105: void WDT_Initialize(void)
-[; ;mcc.c: 106: {
+[; ;mcc.c: 107: void WDT_Initialize(void)
+[; ;mcc.c: 108: {
 [e :U _WDT_Initialize ]
 [f ]
-[; ;mcc.c: 108: WDTCON = 0x16;
-"108
+[; ;mcc.c: 110: WDTCON = 0x16;
+"110
 [e = _WDTCON -> -> 22 `i `uc ]
-[; ;mcc.c: 109: }
-"109
+[; ;mcc.c: 111: }
+"111
 [e :UE 701 ]
 }

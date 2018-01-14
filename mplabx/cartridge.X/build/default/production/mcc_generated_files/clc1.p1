@@ -5514,9 +5514,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;clc1.c: 86: CLC1GLS3 = 0x80;
 "86
 [e = _CLC1GLS3 -> -> 128 `i `uc ]
-[; ;clc1.c: 89: CLC1CON = 0x80;
+[; ;clc1.c: 89: CLC1CON = 0x00;
 "89
-[e = _CLC1CON -> -> 128 `i `uc ]
+[e = _CLC1CON -> -> 0 `i `uc ]
 [; ;clc1.c: 91: }
 "91
 [e :UE 696 ]
