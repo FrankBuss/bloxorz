@@ -1,3 +1,5 @@
+#define _XTAL_FREQ 16000000
+
 // PIC18F45K50 Configuration Bit Settings
 
 // 'C' source line config statements
@@ -75,6 +77,9 @@
 #include <stdint.h>
 
 #include "receiver.h"
+
+extern void sendBankCommand(uint8_t bank);
+
 
 #define UART_BUFFER_SIZE 1024
 volatile uint8_t uartBuf[UART_BUFFER_SIZE];
@@ -155,12 +160,13 @@ void writeTrisB(uint8_t data)
 void writeTrisC(uint8_t data)
 {
     // configure UART TX always as output, and UART RX always as input
-    TRISC = data & 0b10111111 | 0x80;
+    TRISC = (uint8_t) (data & 0b10111111 | 0x80);
 }
 
 void writeTrisD(uint8_t data)
 {
-    TRISD = data;
+    // RD7 for PB6 always input, changed to output just in sendBankCommand
+    TRISD = (uint8_t) (data | 0x80);
 }
 
 void writeTrisE(uint8_t data)
@@ -235,7 +241,6 @@ int main()
     // communication loop
     while (1) {
         onData(readChar());
-        //writeChar(readChar() - 1);
     } 
 
     return 0;

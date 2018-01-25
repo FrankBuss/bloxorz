@@ -71,8 +71,8 @@ void PIN_MANAGER_Initialize(void)
     /**
     WPUx registers
     */ 
-    WPUA = 0x00;
-    WPUC = 0x00;
+    WPUA = 0x08;
+    WPUC = 0x10;
 
     /**
     ODx registers
@@ -95,7 +95,6 @@ void PIN_MANAGER_Initialize(void)
     CLCIN1PPSbits.CLCIN1PPS = 0x04;   //RA4->CLC2:CLCIN1;
     RXPPSbits.RXPPS = 0x14;   //RC4->EUSART:RX;
     T1GPPSbits.T1GPPS = 0x13;   //RC3->TMR1:T1G;
-    RC0PPSbits.RC0PPS = 0x04;   //RC0->CLC1:CLC1OUT;
     CLCIN0PPSbits.CLCIN0PPS = 0x00;   //RA0->CLC2:CLCIN0;
     CLCIN2PPSbits.CLCIN2PPS = 0x12;   //RC2->CLC2:CLCIN2;
     CLCIN3PPSbits.CLCIN3PPS = 0x13;   //RC3->CLC1:CLCIN3;

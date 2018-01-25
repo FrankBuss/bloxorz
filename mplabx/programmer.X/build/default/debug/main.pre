@@ -2,9 +2,7 @@
 # 1 "main.c"
 
 
-
-
-
+# 8
 #pragma config PLLSEL = PLL4X
 #pragma config CFGPLLEN = OFF
 #pragma config CPUDIV = NOCLKDIV
@@ -7135,7 +7133,11 @@ uint8_t readPortE(void);
 void writeChar(uint8_t d);
 void onData(uint8_t d);
 
-# 80 "main.c"
+# 81 "main.c"
+extern void sendBankCommand(uint8_t bank);
+
+
+
 volatile uint8_t uartBuf[1024];
 volatile uint16_t uartReadIndex = 0;
 volatile uint16_t uartWriteIndex = 0;
@@ -7214,12 +7216,13 @@ TRISB = data;
 void writeTrisC(uint8_t data)
 {
 
-TRISC = data & 0b10111111 | 0x80;
+TRISC = (uint8_t) (data & 0b10111111 | 0x80);
 }
 
 void writeTrisD(uint8_t data)
 {
-TRISD = data;
+
+TRISD = (uint8_t) (data | 0x80);
 }
 
 void writeTrisE(uint8_t data)
@@ -7294,7 +7297,6 @@ initUart();
 
 while (1) {
 onData(readChar());
-
 }
 
 return 0;

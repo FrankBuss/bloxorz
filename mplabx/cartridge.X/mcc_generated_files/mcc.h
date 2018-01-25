@@ -49,12 +49,12 @@
 #include "pin_manager.h"
 #include <stdint.h>
 #include <stdbool.h>
-#include "memory.h"
-#include "tmr1.h"
-#include "clc1.h"
-#include "tmr0.h"
 #include "clc2.h"
 #include "eusart.h"
+#include "clc1.h"
+#include "tmr1.h"
+#include "memory.h"
+#include "tmr0.h"
 
 #define _XTAL_FREQ  32000000
 

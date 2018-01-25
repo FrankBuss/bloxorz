@@ -83,18 +83,6 @@
 #define RA4_SetAnalogMode() do { ANSELAbits.ANSA4 = 1; } while(0)
 #define RA4_SetDigitalMode()do { ANSELAbits.ANSA4 = 0; } while(0)
 
-// get/set RC0 procedures
-#define RC0_SetHigh()    do { LATCbits.LATC0 = 1; } while(0)
-#define RC0_SetLow()   do { LATCbits.LATC0 = 0; } while(0)
-#define RC0_Toggle()   do { LATCbits.LATC0 = ~LATCbits.LATC0; } while(0)
-#define RC0_GetValue()         PORTCbits.RC0
-#define RC0_SetDigitalInput()   do { TRISCbits.TRISC0 = 1; } while(0)
-#define RC0_SetDigitalOutput()  do { TRISCbits.TRISC0 = 0; } while(0)
-#define RC0_SetPullup()     do { WPUCbits.WPUC0 = 1; } while(0)
-#define RC0_ResetPullup()   do { WPUCbits.WPUC0 = 0; } while(0)
-#define RC0_SetAnalogMode() do { ANSELCbits.ANSC0 = 1; } while(0)
-#define RC0_SetDigitalMode()do { ANSELCbits.ANSC0 = 0; } while(0)
-
 // get/set RC1 procedures
 #define RC1_SetHigh()    do { LATCbits.LATC1 = 1; } while(0)
 #define RC1_SetLow()   do { LATCbits.LATC1 = 0; } while(0)

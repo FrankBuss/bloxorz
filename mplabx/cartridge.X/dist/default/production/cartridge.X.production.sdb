@@ -11,15 +11,15 @@
 [v _eecpymem eecpymem `(v  1 e 1 0 ]
 "39
 [v _memcpyee memcpyee `(v  1 e 1 0 ]
-"22 /home/frank/data/projects/bloxorz/mplabx/cartridge.X/main.c
+"24 /home/frank/data/projects/bloxorz/mplabx/cartridge.X/main.c
 [v _readByte readByte `(uc  1 e 1 0 ]
-"66
+"68
 [v _writeByte writeByte `(v  1 e 1 0 ]
-"176
+"178
 [v _waitStart waitStart `(v  1 e 1 0 ]
-"200
+"202
 [v _readCommand readCommand `(v  1 e 1 0 ]
-"229
+"239
 [v _main main `(i  1 e 2 0 ]
 "57 /home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc1.c
 [v _CLC1_Initialize CLC1_Initialize `(v  1 e 1 0 ]
@@ -53,23 +53,33 @@
 [v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
 "89
 [v _TMR1_StartTimer TMR1_StartTimer `(v  1 e 1 0 ]
-[s S643 . 1 `uc 1 INTEDG 1 0 :1:0 
+[s S622 . 1 `uc 1 INTEDG 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
 "362 /opt/microchip/xc8/v1.42/include/pic16f18323.h
-[u S648 . 1 `S643 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES648  1 e 1 @11 ]
-[s S478 . 1 `uc 1 INTF 1 0 :1:0 
+[u S627 . 1 `S622 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES627  1 e 1 @11 ]
+[s S720 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+]
+"447
+[u S727 . 1 `S720 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES727  1 e 1 @14 ]
+[s S457 . 1 `uc 1 INTF 1 0 :1:0 
 `uc 1 . 1 0 :3:1 
 `uc 1 IOCIF 1 0 :1:4 
 `uc 1 TMR0IF 1 0 :1:5 
 ]
 "495
-[u S483 . 1 `S478 1 . 1 0 ]
-[v _PIR0bits PIR0bits `VES483  1 e 1 @16 ]
-[s S342 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S462 . 1 `S457 1 . 1 0 ]
+[v _PIR0bits PIR0bits `VES462  1 e 1 @16 ]
+[s S321 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 BCL1IF 1 0 :1:2 
 `uc 1 SSP1IF 1 0 :1:3 
@@ -79,28 +89,28 @@
 `uc 1 TMR1GIF 1 0 :1:7 
 ]
 "532
-[u S351 . 1 `S342 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES351  1 e 1 @17 ]
+[u S330 . 1 `S321 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES330  1 e 1 @17 ]
 "688
 [v _TMR0L TMR0L `VEuc  1 e 1 @21 ]
 "826
 [v _TMR0H TMR0H `VEuc  1 e 1 @22 ]
 "1080
 [v _T0CON0 T0CON0 `VEuc  1 e 1 @23 ]
-[s S495 . 1 `uc 1 T0OUTPS 1 0 :4:0 
+[s S474 . 1 `uc 1 T0OUTPS 1 0 :4:0 
 `uc 1 T016BIT 1 0 :1:4 
 `uc 1 T0OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 T0EN 1 0 :1:7 
 ]
 "1100
-[s S501 . 1 `uc 1 T0OUTPS0 1 0 :1:0 
+[s S480 . 1 `uc 1 T0OUTPS0 1 0 :1:0 
 `uc 1 T0OUTPS1 1 0 :1:1 
 `uc 1 T0OUTPS2 1 0 :1:2 
 `uc 1 T0OUTPS3 1 0 :1:3 
 ]
-[u S506 . 1 `S495 1 . 1 0 `S501 1 . 1 0 ]
-[v _T0CON0bits T0CON0bits `VES506  1 e 1 @23 ]
+[u S485 . 1 `S474 1 . 1 0 `S480 1 . 1 0 ]
+[v _T0CON0bits T0CON0bits `VES485  1 e 1 @23 ]
 "1145
 [v _T0CON1 T0CON1 `VEuc  1 e 1 @24 ]
 "1229
@@ -109,7 +119,7 @@
 [v _TMR1H TMR1H `VEuc  1 e 1 @26 ]
 "1269
 [v _T1CON T1CON `VEuc  1 e 1 @27 ]
-[s S561 . 1 `uc 1 TMR1ON 1 0 :1:0 
+[s S540 . 1 `uc 1 TMR1ON 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 T1SYNC 1 0 :1:2 
 `uc 1 T1SOSC 1 0 :1:3 
@@ -117,17 +127,17 @@
 `uc 1 TMR1CS 1 0 :2:6 
 ]
 "1291
-[s S568 . 1 `uc 1 . 1 0 :4:0 
+[s S547 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 T1CKPS0 1 0 :1:4 
 `uc 1 T1CKPS1 1 0 :1:5 
 `uc 1 TMR1CS0 1 0 :1:6 
 `uc 1 TMR1CS1 1 0 :1:7 
 ]
-[u S574 . 1 `S561 1 . 1 0 `S568 1 . 1 0 ]
-[v _T1CONbits T1CONbits `VES574  1 e 1 @27 ]
+[u S553 . 1 `S540 1 . 1 0 `S547 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES553  1 e 1 @27 ]
 "1341
 [v _T1GCON T1GCON `VEuc  1 e 1 @28 ]
-[s S591 . 1 `uc 1 T1GSS 1 0 :2:0 
+[s S570 . 1 `uc 1 T1GSS 1 0 :2:0 
 `uc 1 T1GVAL 1 0 :1:2 
 `uc 1 T1GGO_nDONE 1 0 :1:3 
 `uc 1 T1GSPM 1 0 :1:4 
@@ -136,11 +146,11 @@
 `uc 1 TMR1GE 1 0 :1:7 
 ]
 "1361
-[s S599 . 1 `uc 1 T1GSS0 1 0 :1:0 
+[s S578 . 1 `uc 1 T1GSS0 1 0 :1:0 
 `uc 1 T1GSS1 1 0 :1:1 
 ]
-[u S602 . 1 `S591 1 . 1 0 `S599 1 . 1 0 ]
-[v _T1GCONbits T1GCONbits `VES602  1 e 1 @28 ]
+[u S581 . 1 `S570 1 . 1 0 `S578 1 . 1 0 ]
+[v _T1GCONbits T1GCONbits `VES581  1 e 1 @28 ]
 "1522
 [v _TRISA TRISA `VEuc  1 e 1 @140 ]
 "1567
@@ -165,7 +175,7 @@
 [v _SP1BRGH SP1BRGH `VEuc  1 e 1 @412 ]
 "3076
 [v _RC1STA RC1STA `VEuc  1 e 1 @413 ]
-[s S363 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S342 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -175,8 +185,8 @@
 `uc 1 SPEN 1 0 :1:7 
 ]
 "3102
-[u S372 . 1 `S363 1 . 1 0 ]
-[v _RC1STAbits RC1STAbits `VES372  1 e 1 @413 ]
+[u S351 . 1 `S342 1 . 1 0 ]
+[v _RC1STAbits RC1STAbits `VES351  1 e 1 @413 ]
 "3256
 [v _TX1STA TX1STA `VEuc  1 e 1 @414 ]
 "3436
@@ -197,7 +207,7 @@
 [v _NVMDATL NVMDATL `VEuc  1 e 1 @2195 ]
 "8675
 [v _NVMDATH NVMDATH `VEuc  1 e 1 @2196 ]
-[s S658 . 1 `uc 1 RD 1 0 :1:0 
+[s S637 . 1 `uc 1 RD 1 0 :1:0 
 `uc 1 WR 1 0 :1:1 
 `uc 1 WREN 1 0 :1:2 
 `uc 1 WRERR 1 0 :1:3 
@@ -206,11 +216,11 @@
 `uc 1 NVMREGS 1 0 :1:6 
 ]
 "8920
-[s S666 . 1 `uc 1 . 1 0 :6:0 
+[s S645 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 CFGS 1 0 :1:6 
 ]
-[u S669 . 1 `S658 1 . 1 0 `S666 1 . 1 0 ]
-[v _NVMCON1bits NVMCON1bits `VES669  1 e 1 @2197 ]
+[u S648 . 1 `S637 1 . 1 0 `S645 1 . 1 0 ]
+[v _NVMCON1bits NVMCON1bits `VES648  1 e 1 @2197 ]
 "9080
 [v _NVMCON2 NVMCON2 `VEuc  1 e 1 @2198 ]
 "9533
@@ -252,17 +262,17 @@
 ]
 [u S86 . 1 `S78 1 . 1 0 `S80 1 . 1 0 ]
 [v _RXPPSbits RXPPSbits `VES86  1 e 1 @3620 ]
-[s S138 . 1 `uc 1 CLCIN0PPS 1 0 :5:0 
+[s S118 . 1 `uc 1 CLCIN0PPS 1 0 :5:0 
 ]
 "10737
-[s S140 . 1 `uc 1 CLCIN0PPS0 1 0 :1:0 
+[s S120 . 1 `uc 1 CLCIN0PPS0 1 0 :1:0 
 `uc 1 CLCIN0PPS1 1 0 :1:1 
 `uc 1 CLCIN0PPS2 1 0 :1:2 
 `uc 1 CLCIN0PPS3 1 0 :1:3 
 `uc 1 CLCIN0PPS4 1 0 :1:4 
 ]
-[u S146 . 1 `S138 1 . 1 0 `S140 1 . 1 0 ]
-[v _CLCIN0PPSbits CLCIN0PPSbits `VES146  1 e 1 @3624 ]
+[u S126 . 1 `S118 1 . 1 0 `S120 1 . 1 0 ]
+[v _CLCIN0PPSbits CLCIN0PPSbits `VES126  1 e 1 @3624 ]
 [s S58 . 1 `uc 1 CLCIN1PPS 1 0 :5:0 
 ]
 "10789
@@ -274,39 +284,28 @@
 ]
 [u S66 . 1 `S58 1 . 1 0 `S60 1 . 1 0 ]
 [v _CLCIN1PPSbits CLCIN1PPSbits `VES66  1 e 1 @3625 ]
-[s S158 . 1 `uc 1 CLCIN2PPS 1 0 :5:0 
+[s S138 . 1 `uc 1 CLCIN2PPS 1 0 :5:0 
 ]
 "10841
-[s S160 . 1 `uc 1 CLCIN2PPS0 1 0 :1:0 
+[s S140 . 1 `uc 1 CLCIN2PPS0 1 0 :1:0 
 `uc 1 CLCIN2PPS1 1 0 :1:1 
 `uc 1 CLCIN2PPS2 1 0 :1:2 
 `uc 1 CLCIN2PPS3 1 0 :1:3 
 `uc 1 CLCIN2PPS4 1 0 :1:4 
 ]
-[u S166 . 1 `S158 1 . 1 0 `S160 1 . 1 0 ]
-[v _CLCIN2PPSbits CLCIN2PPSbits `VES166  1 e 1 @3626 ]
-[s S178 . 1 `uc 1 CLCIN3PPS 1 0 :5:0 
+[u S146 . 1 `S138 1 . 1 0 `S140 1 . 1 0 ]
+[v _CLCIN2PPSbits CLCIN2PPSbits `VES146  1 e 1 @3626 ]
+[s S158 . 1 `uc 1 CLCIN3PPS 1 0 :5:0 
 ]
 "10893
-[s S180 . 1 `uc 1 CLCIN3PPS0 1 0 :1:0 
+[s S160 . 1 `uc 1 CLCIN3PPS0 1 0 :1:0 
 `uc 1 CLCIN3PPS1 1 0 :1:1 
 `uc 1 CLCIN3PPS2 1 0 :1:2 
 `uc 1 CLCIN3PPS3 1 0 :1:3 
 `uc 1 CLCIN3PPS4 1 0 :1:4 
 ]
-[u S186 . 1 `S178 1 . 1 0 `S180 1 . 1 0 ]
-[v _CLCIN3PPSbits CLCIN3PPSbits `VES186  1 e 1 @3627 ]
-[s S118 . 1 `uc 1 RC0PPS 1 0 :5:0 
-]
-"11205
-[s S120 . 1 `uc 1 RC0PPS0 1 0 :1:0 
-`uc 1 RC0PPS1 1 0 :1:1 
-`uc 1 RC0PPS2 1 0 :1:2 
-`uc 1 RC0PPS3 1 0 :1:3 
-`uc 1 RC0PPS4 1 0 :1:4 
-]
-[u S126 . 1 `S118 1 . 1 0 `S120 1 . 1 0 ]
-[v _RC0PPSbits RC0PPSbits `VES126  1 e 1 @3744 ]
+[u S166 . 1 `S158 1 . 1 0 `S160 1 . 1 0 ]
+[v _CLCIN3PPSbits CLCIN3PPSbits `VES166  1 e 1 @3627 ]
 [s S38 . 1 `uc 1 RC1PPS 1 0 :5:0 
 ]
 "11257
@@ -318,20 +317,20 @@
 ]
 [u S46 . 1 `S38 1 . 1 0 `S40 1 . 1 0 ]
 [v _RC1PPSbits RC1PPSbits `VES46  1 e 1 @3745 ]
-[s S198 . 1 `uc 1 RC5PPS 1 0 :5:0 
+[s S178 . 1 `uc 1 RC5PPS 1 0 :5:0 
 ]
 "11465
-[s S200 . 1 `uc 1 RC5PPS0 1 0 :1:0 
+[s S180 . 1 `uc 1 RC5PPS0 1 0 :1:0 
 `uc 1 RC5PPS1 1 0 :1:1 
 `uc 1 RC5PPS2 1 0 :1:2 
 `uc 1 RC5PPS3 1 0 :1:3 
 `uc 1 RC5PPS4 1 0 :1:4 
 ]
-[u S206 . 1 `S198 1 . 1 0 `S200 1 . 1 0 ]
-[v _RC5PPSbits RC5PPSbits `VES206  1 e 1 @3749 ]
+[u S186 . 1 `S178 1 . 1 0 `S180 1 . 1 0 ]
+[v _RC5PPSbits RC5PPSbits `VES186  1 e 1 @3749 ]
 "11526
 [v _CLC1CON CLC1CON `VEuc  1 e 1 @3856 ]
-[s S241 . 1 `uc 1 LC1MODE 1 0 :3:0 
+[s S220 . 1 `uc 1 LC1MODE 1 0 :3:0 
 `uc 1 LC1INTN 1 0 :1:3 
 `uc 1 LC1INTP 1 0 :1:4 
 `uc 1 LC1OUT 1 0 :1:5 
@@ -339,23 +338,23 @@
 `uc 1 LC1EN 1 0 :1:7 
 ]
 "11559
-[s S248 . 1 `uc 1 LC1MODE0 1 0 :1:0 
+[s S227 . 1 `uc 1 LC1MODE0 1 0 :1:0 
 `uc 1 LC1MODE1 1 0 :1:1 
 `uc 1 LC1MODE2 1 0 :1:2 
 ]
-[s S252 . 1 `uc 1 MODE 1 0 :3:0 
+[s S231 . 1 `uc 1 MODE 1 0 :3:0 
 `uc 1 INTN 1 0 :1:3 
 `uc 1 INTP 1 0 :1:4 
 `uc 1 OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 EN 1 0 :1:7 
 ]
-[s S259 . 1 `uc 1 MODE0 1 0 :1:0 
+[s S238 . 1 `uc 1 MODE0 1 0 :1:0 
 `uc 1 MODE1 1 0 :1:1 
 `uc 1 MODE2 1 0 :1:2 
 ]
-[u S263 . 1 `S241 1 . 1 0 `S248 1 . 1 0 `S252 1 . 1 0 `S259 1 . 1 0 ]
-[v _CLC1CONbits CLC1CONbits `VES263  1 e 1 @3856 ]
+[u S242 . 1 `S220 1 . 1 0 `S227 1 . 1 0 `S231 1 . 1 0 `S238 1 . 1 0 ]
+[v _CLC1CONbits CLC1CONbits `VES242  1 e 1 @3856 ]
 "11644
 [v _CLC1POL CLC1POL `VEuc  1 e 1 @3857 ]
 "11722
@@ -376,7 +375,7 @@
 [v _CLC1GLS3 CLC1GLS3 `VEuc  1 e 1 @3865 ]
 "12538
 [v _CLC2CON CLC2CON `VEuc  1 e 1 @3866 ]
-[s S416 . 1 `uc 1 LC2MODE 1 0 :3:0 
+[s S395 . 1 `uc 1 LC2MODE 1 0 :3:0 
 `uc 1 LC2INTN 1 0 :1:3 
 `uc 1 LC2INTP 1 0 :1:4 
 `uc 1 LC2OUT 1 0 :1:5 
@@ -384,12 +383,12 @@
 `uc 1 LC2EN 1 0 :1:7 
 ]
 "12571
-[s S423 . 1 `uc 1 LC2MODE0 1 0 :1:0 
+[s S402 . 1 `uc 1 LC2MODE0 1 0 :1:0 
 `uc 1 LC2MODE1 1 0 :1:1 
 `uc 1 LC2MODE2 1 0 :1:2 
 ]
-[u S438 . 1 `S416 1 . 1 0 `S423 1 . 1 0 `S252 1 . 1 0 `S259 1 . 1 0 ]
-[v _CLC2CONbits CLC2CONbits `VES438  1 e 1 @3866 ]
+[u S417 . 1 `S395 1 . 1 0 `S402 1 . 1 0 `S231 1 . 1 0 `S238 1 . 1 0 ]
+[v _CLC2CONbits CLC2CONbits `VES417  1 e 1 @3866 ]
 "12656
 [v _CLC2POL CLC2POL `VEuc  1 e 1 @3867 ]
 "12734
@@ -412,48 +411,48 @@
 [v _GIE GIE `VEb  1 e 0 @95 ]
 "15081
 [v _PLLR PLLR `VEb  1 e 0 @18656 ]
-"15 /home/frank/data/projects/bloxorz/mplabx/cartridge.X/main.c
+"17 /home/frank/data/projects/bloxorz/mplabx/cartridge.X/main.c
 [v _shift shift `VEuc  1 e 1 0 ]
-"16
-[v _shiftCounter shiftCounter `VEuc  1 e 1 0 ]
-"17
-[v _id id `VEuc  1 e 1 0 ]
 "18
-[v _cmd cmd `VEuc  1 e 1 0 ]
+[v _shiftCounter shiftCounter `VEuc  1 e 1 0 ]
 "19
-[v _arg arg `VEuc  1 e 1 0 ]
+[v _id id `VEuc  1 e 1 0 ]
 "20
+[v _cmd cmd `VEuc  1 e 1 0 ]
+"21
+[v _arg arg `VEuc  1 e 1 0 ]
+"22
 [v _eepromAdr eepromAdr `VEui  1 e 2 0 ]
 "56 /home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/tmr1.c
 [v _timer1ReloadVal timer1ReloadVal `VEui  1 e 2 0 ]
-"229 /home/frank/data/projects/bloxorz/mplabx/cartridge.X/main.c
+"239 /home/frank/data/projects/bloxorz/mplabx/cartridge.X/main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"245
+"248
 } 0
-"200
+"202
 [v _readCommand readCommand `(v  1 e 1 0 ]
 {
-"227
+"237
 } 0
-"66
+"68
 [v _writeByte writeByte `(v  1 e 1 0 ]
 {
 [v writeByte@b b `uc  1 a 1 wreg ]
 [v writeByte@b b `uc  1 a 1 wreg ]
-"68
+"70
 [v writeByte@b b `uc  1 a 1 1 ]
-"174
-} 0
 "176
+} 0
+"178
 [v _waitStart waitStart `(v  1 e 1 0 ]
 {
-"198
+"200
 } 0
-"22
+"24
 [v _readByte readByte `(uc  1 e 1 0 ]
 {
-"64
+"66
 } 0
 "179 /home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/memory.c
 [v _DATAEE_WriteByte DATAEE_WriteByte `(v  1 e 1 0 ]
@@ -506,7 +505,7 @@
 {
 "88
 [v PIN_MANAGER_Initialize@state state `uc  1 a 1 0 ]
-"109
+"108
 } 0
 "89 /home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]

@@ -1,6 +1,7 @@
 #define _XTAL_FREQ 32000000
 
 #include <stdint.h>
+#include <pic16f18323.h>
 #include "mcc.h"
 
 // commands
@@ -8,6 +9,7 @@
 #define CMD_SET_EEPROM_ADR 2
 #define CMD_EEPROM_WRITE 3
 #define CMD_EEPROM_READ 4
+#define CMD_SET_BANK 5
 
 // firmware version
 #define VERSION 4
@@ -219,6 +221,14 @@ void readCommand()
             case CMD_EEPROM_READ:
                 writeByte(DATAEE_ReadByte(0xf000 + arg));
                 break;
+            case CMD_SET_BANK:
+                if (arg & 1) {
+                    PORTCbits.RC0 = 1;
+                } else {
+                    PORTCbits.RC0 = 0;
+                }
+                writeByte(arg);
+                break;
             default:
                 writeByte(0);
                 break;
@@ -232,13 +242,6 @@ int main()
     __delay_ms(100);
     while (1) {
         readCommand();
-        //__delay_ms(50);
-        /*
-        PORTC = 0b11111111;
-        __delay_ms(50);
-        PORTC = 0b11111011;
-        __delay_ms(50);
-         */
     } 
 
     return 0;

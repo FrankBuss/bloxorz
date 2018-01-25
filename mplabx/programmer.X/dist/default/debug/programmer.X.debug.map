@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=/opt/microchip/xc8/v1.42/dat/en_msgs.txt -cs \
   -h+dist/default/debug/programmer.X.debug.sym \
   --cmf=dist/default/debug/programmer.X.debug.cmf -z -Q18F45K50 \
-  -o/tmp/xcXDaODZX -Mdist/default/debug/programmer.X.debug.map -E1 -ver=XC8 \
+  -o/tmp/xcXeMXtpw -Mdist/default/debug/programmer.X.debug.map -E1 -ver=XC8 \
   -ASTACK=0600h-07ffh -pstack=STACK -ACODE=00h-07FFFh -ACONST=00h-07FFFh \
   -ASMALLCONST=0800h-08FFhx120 -AMEDIUMCONST=0800h-07FFFh -ACOMRAM=01h-05Fh \
   -AABS1=00h-07FFh -ABIGRAM=01h-07FFh -ARAM=060h-0FFh,0100h-01FFhx7 \
@@ -21,7 +21,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  /tmp/xcXLaTq4t.obj dist/default/debug/programmer.X.debug.obj 
+  /tmp/xcXOfG088.obj dist/default/debug/programmer.X.debug.obj 
 
 Object code version is 3.11
 
@@ -33,51 +33,53 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-/tmp/xcXLaTq4t.obj
+/tmp/xcXOfG088.obj
                 init                                 B2       B2        4        4       0
                 reset_vec                             0        0        6        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
 dist/default/debug/programmer.X.debug.obj
                 intcode                               8        8       AA        4       0
-                temp                                 2B       2B        1        1       1
+                temp                                 2E       2E        1        1       1
                 smallconst                          800      800       14      400       0
-                text28                              E70      E70       1E      40A       0
-                text27                              EA6      EA6        C      40A       0
-                text26                              E9A      E9A        C      40A       0
-                text25                              E1E      E1E       2A      40A       0
-                text24                              F0A      F0A        4      40A       0
-                text23                              EF2      EF2        8      40A       0
-                text22                              EEA      EEA        8      40A       0
-                text21                              EE2      EE2        8      40A       0
-                text20                              E48      E48       28      40A       0
-                text19                              F06      F06        4      40A       0
-                text18                              F02      F02        4      40A       0
-                text17                              EFE      EFE        4      40A       0
-                text16                              EFA      EFA        4      40A       0
-                text15                              CD4      CD4       4C      40A       0
-                text14                              C34      C34       52      40A       0
-                text13                              DF4      DF4       2A      40A       0
-                text12                              EDA      EDA        8      40A       0
-                text11                              ED2      ED2        8      40A       0
-                text10                              ECA      ECA        8      40A       0
-                text9                               D20      D20       3E      40A       0
-                text8                               DC6      DC6       2E      40A       0
-                text7                               C86      C86       4E      40A       0
-                text6                               EC2      EC2        8      40A       0
-                text5                               E8E      E8E        C      40A       0
-                text4                               EBA      EBA        8      40A       0
-                text3                               EB2      EB2        8      40A       0
-                text2                               814      814      3C6      40A       0
-                text1                               D5E      D5E       38      40A       0
-                text0                               D96      D96       30      40A       0
+                text30                              F22      F22       1E      40A       0
+                text29                              F74      F74        C      40A       0
+                text28                              F68      F68        C      40A       0
+                text27                              ED0      ED0       2A      40A       0
+                text26                              FDA      FDA        4      40A       0
+                text25                              FC2      FC2        8      40A       0
+                text24                              FBA      FBA        8      40A       0
+                text23                              FB2      FB2        8      40A       0
+                text22                              EFA      EFA       28      40A       0
+                text21                              FD6      FD6        4      40A       0
+                text20                              FD2      FD2        4      40A       0
+                text19                              FCE      FCE        4      40A       0
+                text18                              FCA      FCA        4      40A       0
+                text17                              D86      D86       4C      40A       0
+                text16                              C04      C04       88      40A       0
+                text15                              F40      F40       1C      40A       0
+                text14                              CE6      CE6       52      40A       0
+                text13                              EA6      EA6       2A      40A       0
+                text12                              FAA      FAA        8      40A       0
+                text11                              FA2      FA2        8      40A       0
+                text10                              F9A      F9A        8      40A       0
+                text9                               DD2      DD2       3E      40A       0
+                text8                               E78      E78       2E      40A       0
+                text7                               D38      D38       4E      40A       0
+                text6                               F92      F92        8      40A       0
+                text5                               F5C      F5C        C      40A       0
+                text4                               F80      F80        A      40A       0
+                text3                               F8A      F8A        8      40A       0
+                text2                               814      814      3F0      40A       0
+                text1                               E10      E10       38      40A       0
+                text0                               E48      E48       30      40A       0
                 cstackCOMRAM                          1        1       1A        1       1
                 bssBIGRAM                           200      200      400      200       1
                 bssBANK1                            100      100      100      100       1
-                dataCOMRAM                           29       29        2        1       1
-                bssCOMRAM                            1B       1B        E        1       1
-                cinit                               BDA      BDA       5A      40A       0
-                idataCOMRAM                         F0E      F0E        2      40A       0
+                dataCOMRAM                           2C       2C        2        1       1
+                bssCOMRAM                            1B       1B       11        1       1
+                cinit                               C8C      C8C       5A      40A       0
+                idataCOMRAM                         FDE      FDE        2      40A       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
@@ -86,37 +88,39 @@ TOTAL           Name                               Link     Load   Length     Sp
                 intcode                               8        8       AA         0
                 init                                 B2       B2        4         0
                 reset_vec                             0        0        6         0
-                text28                              E70      E70       1E         0
-                text27                              EA6      EA6        C         0
-                text26                              E9A      E9A        C         0
-                text25                              E1E      E1E       2A         0
-                text24                              F0A      F0A        4         0
-                text23                              EF2      EF2        8         0
-                text22                              EEA      EEA        8         0
-                text21                              EE2      EE2        8         0
-                text20                              E48      E48       28         0
-                text19                              F06      F06        4         0
-                text18                              F02      F02        4         0
-                text17                              EFE      EFE        4         0
-                text16                              EFA      EFA        4         0
-                text15                              CD4      CD4       4C         0
-                text14                              C34      C34       52         0
-                text13                              DF4      DF4       2A         0
-                text12                              EDA      EDA        8         0
-                text11                              ED2      ED2        8         0
-                text10                              ECA      ECA        8         0
-                text9                               D20      D20       3E         0
-                text8                               DC6      DC6       2E         0
-                text7                               C86      C86       4E         0
-                text6                               EC2      EC2        8         0
-                text5                               E8E      E8E        C         0
-                text4                               EBA      EBA        8         0
-                text3                               EB2      EB2        8         0
-                text2                               814      814      3C6         0
-                text1                               D5E      D5E       38         0
-                text0                               D96      D96       30         0
-                cinit                               BDA      BDA       5A         0
-                idataCOMRAM                         F0E      F0E        2         0
+                text30                              F22      F22       1E         0
+                text29                              F74      F74        C         0
+                text28                              F68      F68        C         0
+                text27                              ED0      ED0       2A         0
+                text26                              FDA      FDA        4         0
+                text25                              FC2      FC2        8         0
+                text24                              FBA      FBA        8         0
+                text23                              FB2      FB2        8         0
+                text22                              EFA      EFA       28         0
+                text21                              FD6      FD6        4         0
+                text20                              FD2      FD2        4         0
+                text19                              FCE      FCE        4         0
+                text18                              FCA      FCA        4         0
+                text17                              D86      D86       4C         0
+                text16                              C04      C04       88         0
+                text15                              F40      F40       1C         0
+                text14                              CE6      CE6       52         0
+                text13                              EA6      EA6       2A         0
+                text12                              FAA      FAA        8         0
+                text11                              FA2      FA2        8         0
+                text10                              F9A      F9A        8         0
+                text9                               DD2      DD2       3E         0
+                text8                               E78      E78       2E         0
+                text7                               D38      D38       4E         0
+                text6                               F92      F92        8         0
+                text5                               F5C      F5C        C         0
+                text4                               F80      F80        A         0
+                text3                               F8A      F8A        8         0
+                text2                               814      814      3F0         0
+                text1                               E10      E10       38         0
+                text0                               E48      E48       30         0
+                cinit                               C8C      C8C       5A         0
+                idataCOMRAM                         FDE      FDE        2         0
 
         CLASS   CONST          
 
@@ -126,10 +130,10 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   MEDIUMCONST    
 
         CLASS   COMRAM         
-                temp                                 2B       2B        1         1
+                temp                                 2E       2E        1         1
                 cstackCOMRAM                          1        1       1A         1
-                dataCOMRAM                           29       29        2         1
-                bssCOMRAM                            1B       1B        E         1
+                dataCOMRAM                           2C       2C        2         1
+                bssCOMRAM                            1B       1B       11         1
 
         CLASS   ABS1           
 
@@ -172,12 +176,12 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
 
                 reset_vec                      000000  000006  000006         0       0  CODE    
-                cstackCOMRAM                   000001  00002B  00002C         1       1  COMRAM  
+                cstackCOMRAM                   000001  00002E  00002F         1       1  COMRAM  
                 intcode                        000008  0000AE  0000B6         4       0  CODE    
                 bssBANK1                       000100  000100  000200       100       1  BANK1   
                 bssBIGRAM                      000200  000400  000600       200       1  BIGRAM  
                 smallconst                     000800  000014  000814       400       0  SMALLCON
-                text2                          000814  0006FC  000F10       40A       0  CODE    
+                text2                          000814  0007CC  000FE0       40A       0  CODE    
                 idloc                          200000  000008  200008    200000       0  IDLOC   
                 config                         300000  00000E  30000E    300000       0  CONFIG  
 
@@ -188,21 +192,21 @@ UNUSED ADDRESS RANGES
         BANK0            000060-0000FF               A0
         BANK6            000600-0006FF              100
         BANK7            000700-0007FF              100
-        BIGRAM           00002C-0000FF               D4
+        BIGRAM           00002F-0000FF               D1
                          000600-0007FF              200
         CODE             000006-000007                2
                          0000B6-0007FF              74A
-                         000F10-007FFF             70F0
-        COMRAM           00002C-00005F               34
+                         000FE0-007FFF             7020
+        COMRAM           00002F-00005F               31
         CONST            000006-000007                2
                          0000B6-0007FF              74A
-                         000F10-007FFF             70F0
+                         000FE0-007FFF             7020
         EEDATA           F00000-F000FF              100
-        MEDIUMCONST      000F10-007FFF             70F0
+        MEDIUMCONST      000FE0-007FFF             7020
         RAM              000060-0000FF               A0
                          000600-0007FF              100
         SFR              000F53-000FFC                D
-        SMALLCONST       000F10-007FFF              100
+        SMALLCONST       000FE0-007FFF              100
         STACK            000600-0007FF              200
 
                                   Symbol Table
@@ -220,6 +224,7 @@ _PORTA                           (abs)        000F80
 _PORTB                           (abs)        000F81
 _PORTC                           (abs)        000F82
 _PORTD                           (abs)        000F83
+_PORTDbits                       (abs)        000F83
 _PORTE                           (abs)        000F84
 _RCONbits                        (abs)        000FD0
 _RCREG1                          (abs)        000FAE
@@ -229,6 +234,7 @@ _TRISA                           (abs)        000F92
 _TRISB                           (abs)        000F93
 _TRISC                           (abs)        000F94
 _TRISD                           (abs)        000F95
+_TRISDbits                       (abs)        000F95
 _TRISE                           (abs)        000F96
 _TXREG1                          (abs)        000FAD
 _TXSTA1bits                      (abs)        000FAC
@@ -334,7 +340,7 @@ __Hspace_1                       (abs)        000600
 __Hspace_2                       (abs)        000000
 __Hstack                         stack        000000
 __Hstruct                        struct       000000
-__Htemp                          temp         00002C
+__Htemp                          temp         00002F
 __Htext                          text         000000
 __Htext0                         text0        000000
 __Htext1                         text1        000000
@@ -358,7 +364,9 @@ __Htext25                        text25       000000
 __Htext26                        text26       000000
 __Htext27                        text27       000000
 __Htext28                        text28       000000
+__Htext29                        text29       000000
 __Htext3                         text3        000000
+__Htext30                        text30       000000
 __Htext4                         text4        000000
 __Htext5                         text5        000000
 __Htext6                         text6        000000
@@ -426,7 +434,7 @@ __Lspace_1                       (abs)        000000
 __Lspace_2                       (abs)        000000
 __Lstack                         stack        000000
 __Lstruct                        struct       000000
-__Ltemp                          temp         00002B
+__Ltemp                          temp         00002E
 __Ltext                          text         000000
 __Ltext0                         text0        000000
 __Ltext1                         text1        000000
@@ -450,7 +458,9 @@ __Ltext25                        text25       000000
 __Ltext26                        text26       000000
 __Ltext27                        text27       000000
 __Ltext28                        text28       000000
+__Ltext29                        text29       000000
 __Ltext3                         text3        000000
+__Ltext30                        text30       000000
 __Ltext4                         text4        000000
 __Ltext5                         text5        000000
 __Ltext6                         text6        000000
@@ -467,77 +477,81 @@ ___rparam_used                   (abs)        000001
 ___sp                            stack        000000
 __accesstop                      (abs)        000060
 __activetblptr                   (abs)        000002
-__end_of__initialization         cinit        000C26
-__end_of_error                   text26       000EA6
-__end_of_initUart                text28       000E8E
-__end_of_logicAddressToPhysical  text14       000C86
-__end_of_logicDataToPhysical     text13       000E1E
-__end_of_main                    text0        000DC6
-__end_of_onData                  text2        000BDA
-__end_of_parseHex                text25       000E48
-__end_of_readAddress             text20       000E70
-__end_of_readChar                text1        000D96
-__end_of_readPort                text15       000D20
-__end_of_readPortA               text24       000F0E
-__end_of_readPortB               text19       000F0A
-__end_of_readPortC               text18       000F06
-__end_of_readPortD               text17       000F02
-__end_of_readPortE               text16       000EFE
+__end_of__initialization         cinit        000CD8
+__end_of_error                   text28       000F74
+__end_of_initUart                text30       000F40
+__end_of_logicAddressToPhysical  text14       000D38
+__end_of_logicDataToPhysical     text13       000ED0
+__end_of_main                    text0        000E78
+__end_of_onData                  text2        000C04
+__end_of_parseHex                text27       000EFA
+__end_of_readAddress             text22       000F22
+__end_of_readChar                text1        000E48
+__end_of_readPort                text17       000DD2
+__end_of_readPortA               text26       000FDE
+__end_of_readPortB               text21       000FDA
+__end_of_readPortC               text20       000FD6
+__end_of_readPortD               text19       000FD2
+__end_of_readPortE               text18       000FCE
 __end_of_receiveData             intcode      0000B2
-__end_of_writeAddress            text9        000D5E
-__end_of_writeAddressPhysical    text8        000DF4
-__end_of_writeChar               text27       000EB2
-__end_of_writeHex                text7        000CD4
-__end_of_writePortA              text12       000EE2
-__end_of_writePortB              text23       000EFA
-__end_of_writePortC              text22       000EF2
-__end_of_writePortD              text21       000EEA
-__end_of_writePortE              text11       000EDA
-__end_of_writeTrisA              text10       000ED2
-__end_of_writeTrisB              text6        000ECA
-__end_of_writeTrisC              text5        000E9A
-__end_of_writeTrisD              text4        000EC2
-__end_of_writeTrisE              text3        000EBA
-__initialization                 cinit        000BDA
+__end_of_sendBankCommand         text15       000F5C
+__end_of_writeAddress            text9        000E10
+__end_of_writeAddressPhysical    text8        000EA6
+__end_of_writeByte               text16       000C8C
+__end_of_writeChar               text29       000F80
+__end_of_writeHex                text7        000D86
+__end_of_writePortA              text12       000FB2
+__end_of_writePortB              text25       000FCA
+__end_of_writePortC              text24       000FC2
+__end_of_writePortD              text23       000FBA
+__end_of_writePortE              text11       000FAA
+__end_of_writeTrisA              text10       000FA2
+__end_of_writeTrisB              text6        000F9A
+__end_of_writeTrisC              text5        000F68
+__end_of_writeTrisD              text4        000F8A
+__end_of_writeTrisE              text3        000F92
+__initialization                 cinit        000C8C
 __mediumconst                    mediumconst  000000
 __pbssBANK1                      bssBANK1     000100
 __pbssBIGRAM                     bssBIGRAM    000200
 __pbssCOMRAM                     bssCOMRAM    00001B
-__pcinit                         cinit        000BDA
+__pcinit                         cinit        000C8C
 __pcstackCOMRAM                  cstackCOMRAM 000001
-__pdataCOMRAM                    dataCOMRAM   000029
-__pidataCOMRAM                   idataCOMRAM  000F0E
+__pdataCOMRAM                    dataCOMRAM   00002C
+__pidataCOMRAM                   idataCOMRAM  000FDE
 __pintcode                       intcode      000008
 __psmallconst                    smallconst   000800
-__ptext0                         text0        000D96
-__ptext1                         text1        000D5E
-__ptext10                        text10       000ECA
-__ptext11                        text11       000ED2
-__ptext12                        text12       000EDA
-__ptext13                        text13       000DF4
-__ptext14                        text14       000C34
-__ptext15                        text15       000CD4
-__ptext16                        text16       000EFA
-__ptext17                        text17       000EFE
-__ptext18                        text18       000F02
-__ptext19                        text19       000F06
+__ptext0                         text0        000E48
+__ptext1                         text1        000E10
+__ptext10                        text10       000F9A
+__ptext11                        text11       000FA2
+__ptext12                        text12       000FAA
+__ptext13                        text13       000EA6
+__ptext14                        text14       000CE6
+__ptext15                        text15       000F40
+__ptext16                        text16       000C04
+__ptext17                        text17       000D86
+__ptext18                        text18       000FCA
+__ptext19                        text19       000FCE
 __ptext2                         text2        000814
-__ptext20                        text20       000E48
-__ptext21                        text21       000EE2
-__ptext22                        text22       000EEA
-__ptext23                        text23       000EF2
-__ptext24                        text24       000F0A
-__ptext25                        text25       000E1E
-__ptext26                        text26       000E9A
-__ptext27                        text27       000EA6
-__ptext28                        text28       000E70
-__ptext3                         text3        000EB2
-__ptext4                         text4        000EBA
-__ptext5                         text5        000E8E
-__ptext6                         text6        000EC2
-__ptext7                         text7        000C86
-__ptext8                         text8        000DC6
-__ptext9                         text9        000D20
+__ptext20                        text20       000FD2
+__ptext21                        text21       000FD6
+__ptext22                        text22       000EFA
+__ptext23                        text23       000FB2
+__ptext24                        text24       000FBA
+__ptext25                        text25       000FC2
+__ptext26                        text26       000FDA
+__ptext27                        text27       000ED0
+__ptext28                        text28       000F68
+__ptext29                        text29       000F74
+__ptext3                         text3        000F8A
+__ptext30                        text30       000F22
+__ptext4                         text4        000F80
+__ptext5                         text5        000F5C
+__ptext6                         text6        000F92
+__ptext7                         text7        000D38
+__ptext8                         text8        000E78
+__ptext9                         text9        000DD2
 __ramtop                         ramtop       000800
 __size_of_error                  (abs)        000000
 __size_of_initUart               (abs)        000000
@@ -555,8 +569,10 @@ __size_of_readPortC              (abs)        000000
 __size_of_readPortD              (abs)        000000
 __size_of_readPortE              (abs)        000000
 __size_of_receiveData            (abs)        000000
+__size_of_sendBankCommand        (abs)        000000
 __size_of_writeAddress           (abs)        000000
 __size_of_writeAddressPhysical   (abs)        000000
+__size_of_writeByte              (abs)        000000
 __size_of_writeChar              (abs)        000000
 __size_of_writeHex               (abs)        000000
 __size_of_writePortA             (abs)        000000
@@ -570,74 +586,80 @@ __size_of_writeTrisC             (abs)        000000
 __size_of_writeTrisD             (abs)        000000
 __size_of_writeTrisE             (abs)        000000
 __smallconst                     smallconst   000800
-_adr                             bssCOMRAM    00001B
-_checksum                        bssCOMRAM    000026
-_checksumCalculated              bssCOMRAM    000025
-_command                         bssCOMRAM    000023
-_error                           text26       000E9A
+_adr                             bssCOMRAM    00001D
+_checksum                        bssCOMRAM    000029
+_checksumCalculated              bssCOMRAM    000028
+_command                         bssCOMRAM    000026
+_error                           text28       000F68
 _flashBuffer                     bssBANK1     000100
-_flashBufferIndex                bssCOMRAM    000021
-_hex                             dataCOMRAM   000029
-_initUart                        text28       000E70
-_logicAddressToPhysical          text14       000C34
-_logicDataToPhysical             text13       000DF4
-_main                            text0        000D96
+_flashBufferIndex                bssCOMRAM    00001B
+_hex                             dataCOMRAM   00002C
+_initUart                        text30       000F22
+_logicAddressToPhysical          text14       000CE6
+_logicDataToPhysical             text13       000EA6
+_main                            text0        000E48
 _onData                          text2        000814
-_parseHex                        text25       000E1E
-_port                            bssCOMRAM    000022
-_readAddress                     text20       000E48
-_readChar                        text1        000D5E
-_readPort                        text15       000CD4
-_readPortA                       text24       000F0A
-_readPortB                       text19       000F06
-_readPortC                       text18       000F02
-_readPortD                       text17       000EFE
-_readPortE                       text16       000EFA
+_parseHex                        text27       000ED0
+_port                            bssCOMRAM    000025
+_readAddress                     text22       000EFA
+_readChar                        text1        000E10
+_readPort                        text17       000D86
+_readPortA                       text26       000FDA
+_readPortB                       text21       000FD6
+_readPortC                       text20       000FD2
+_readPortD                       text19       000FCE
+_readPortE                       text18       000FCA
 _receiveData                     intcode      000008
-_state                           bssCOMRAM    000028
-_temp                            bssCOMRAM    000024
+_sendBankCommand                 text15       000F40
+_shift                           bssCOMRAM    000023
+_shiftCounter                    bssCOMRAM    000024
+_state                           bssCOMRAM    00002B
+_temp                            bssCOMRAM    000027
 _uartBuf                         bssBIGRAM    000200
-_uartReadIndex                   bssCOMRAM    00001F
-_uartWriteIndex                  bssCOMRAM    00001D
-_value                           bssCOMRAM    000027
-_writeAddress                    text9        000D20
-_writeAddressPhysical            text8        000DC6
-_writeChar                       text27       000EA6
-_writeHex                        text7        000C86
-_writePortA                      text12       000EDA
-_writePortB                      text23       000EF2
-_writePortC                      text22       000EEA
-_writePortD                      text21       000EE2
-_writePortE                      text11       000ED2
-_writeTrisA                      text10       000ECA
-_writeTrisB                      text6        000EC2
-_writeTrisC                      text5        000E8E
-_writeTrisD                      text4        000EBA
-_writeTrisE                      text3        000EB2
-btemp                            temp         00002B
-end_of_initialization            cinit        000C26
-int$flags                        temp         00002B
+_uartReadIndex                   bssCOMRAM    000021
+_uartWriteIndex                  bssCOMRAM    00001F
+_value                           bssCOMRAM    00002A
+_writeAddress                    text9        000DD2
+_writeAddressPhysical            text8        000E78
+_writeByte                       text16       000C04
+_writeChar                       text29       000F74
+_writeHex                        text7        000D38
+_writePortA                      text12       000FAA
+_writePortB                      text25       000FC2
+_writePortC                      text24       000FBA
+_writePortD                      text23       000FB2
+_writePortE                      text11       000FA2
+_writeTrisA                      text10       000F9A
+_writeTrisB                      text6        000F92
+_writeTrisC                      text5        000F5C
+_writeTrisD                      text4        000F80
+_writeTrisE                      text3        000F8A
+btemp                            temp         00002E
+end_of_initialization            cinit        000CD8
+int$flags                        temp         00002E
 intlevel0                        text         000000
 intlevel1                        text         000000
 intlevel2                        text         000000
 intlevel3                        text         000000
-logicAddressToPhysical@adr       cstackCOMRAM 000011
 logicAddressToPhysical@adr0      cstackCOMRAM 00000F
-logicDataToPhysical@value        cstackCOMRAM 00000F
+logicAddressToPhysical@padr      cstackCOMRAM 000011
+logicDataToPhysical@pvalue       cstackCOMRAM 00000F
 logicDataToPhysical@value0       cstackCOMRAM 000010
 onData@d                         cstackCOMRAM 00001A
 parseHex@x                       cstackCOMRAM 00000F
 readAddress@adr                  cstackCOMRAM 000010
 readAddress@d                    cstackCOMRAM 000012
 readChar@data                    cstackCOMRAM 00000F
+sendBankCommand@bank             cstackCOMRAM 000010
 stackhi                          (abs)        0007FF
 stacklo                          (abs)        000600
 start                            init         0000B2
-start_initialization             cinit        000BDA
+start_initialization             cinit        000C8C
 writeAddress@adr                 cstackCOMRAM 000010
 writeAddress@value               cstackCOMRAM 000012
 writeAddressPhysical@adr         cstackCOMRAM 000013
 writeAddressPhysical@value       cstackCOMRAM 000015
+writeByte@b                      cstackCOMRAM 00000F
 writeChar@data                   cstackCOMRAM 00000F
 writeHex@data                    cstackCOMRAM 000013
 writePortA@data                  cstackCOMRAM 00000F
@@ -656,7 +678,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 212 in file "main.c"
+		line 218 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -664,7 +686,7 @@ FUNCTION INFORMATION:
  Return value:  Size  Location     Type
                   2  129[None  ] int 
  Registers used:
-		wreg, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
+		wreg, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, cstack
  Tracked objects:
 		On entry : 
 		On exit  : 
@@ -687,7 +709,7 @@ Total ram usage:        0 bytes
 
  *************** function _readChar *****************
  Defined at:
-		line 196 in file "main.c"
+		line 202 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -717,7 +739,7 @@ Total ram usage:        1 bytes
 
  *************** function _onData *****************
  Defined at:
-		line 216 in file "receiver.c"
+		line 291 in file "receiver.c"
  Parameters:    Size  Location     Type
   d               1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -725,7 +747,7 @@ Total ram usage:        1 bytes
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
-		wreg, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
+		wreg, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, cstack
  Tracked objects:
 		On entry : 
 		On exit  : 
@@ -743,6 +765,7 @@ Total ram usage:        5 bytes
 		_parseHex
 		_readAddress
 		_readPort
+		_sendBankCommand
 		_writeAddress
 		_writeAddressPhysical
 		_writeHex
@@ -763,7 +786,7 @@ Total ram usage:        5 bytes
 
  *************** function _writeTrisE *****************
  Defined at:
-		line 166 in file "main.c"
+		line 172 in file "main.c"
  Parameters:    Size  Location     Type
   data            1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -793,7 +816,7 @@ Total ram usage:        1 bytes
 
  *************** function _writeTrisD *****************
  Defined at:
-		line 161 in file "main.c"
+		line 166 in file "main.c"
  Parameters:    Size  Location     Type
   data            1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -801,7 +824,7 @@ Total ram usage:        1 bytes
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
-		wreg
+		wreg, status,2, status,0
  Tracked objects:
 		On entry : 
 		On exit  : 
@@ -823,7 +846,7 @@ Total ram usage:        1 bytes
 
  *************** function _writeTrisC *****************
  Defined at:
-		line 155 in file "main.c"
+		line 160 in file "main.c"
  Parameters:    Size  Location     Type
   data            1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -853,7 +876,7 @@ Total ram usage:        1 bytes
 
  *************** function _writeTrisB *****************
  Defined at:
-		line 150 in file "main.c"
+		line 155 in file "main.c"
  Parameters:    Size  Location     Type
   data            1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -883,7 +906,7 @@ Total ram usage:        1 bytes
 
  *************** function _writeHex *****************
  Defined at:
-		line 93 in file "receiver.c"
+		line 96 in file "receiver.c"
  Parameters:    Size  Location     Type
   data            1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -913,7 +936,7 @@ Total ram usage:        4 bytes
 
  *************** function _writeAddressPhysical *****************
  Defined at:
-		line 184 in file "receiver.c"
+		line 173 in file "receiver.c"
  Parameters:    Size  Location     Type
   adr             2   18[COMRAM] unsigned int 
   value           1   20[COMRAM] unsigned char 
@@ -946,7 +969,7 @@ Total ram usage:        3 bytes
 
  *************** function _writeAddress *****************
  Defined at:
-		line 164 in file "receiver.c"
+		line 153 in file "receiver.c"
  Parameters:    Size  Location     Type
   adr             2   15[COMRAM] unsigned int 
   value           1   17[COMRAM] unsigned char 
@@ -983,7 +1006,7 @@ Total ram usage:        3 bytes
 
  *************** function _writeTrisA *****************
  Defined at:
-		line 145 in file "main.c"
+		line 150 in file "main.c"
  Parameters:    Size  Location     Type
   data            1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1014,7 +1037,7 @@ Total ram usage:        1 bytes
 
  *************** function _writePortE *****************
  Defined at:
-		line 140 in file "main.c"
+		line 145 in file "main.c"
  Parameters:    Size  Location     Type
   data            1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1045,7 +1068,7 @@ Total ram usage:        1 bytes
 
  *************** function _writePortA *****************
  Defined at:
-		line 120 in file "main.c"
+		line 125 in file "main.c"
  Parameters:    Size  Location     Type
   data            1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1076,12 +1099,12 @@ Total ram usage:        1 bytes
 
  *************** function _logicDataToPhysical *****************
  Defined at:
-		line 136 in file "receiver.c"
+		line 139 in file "receiver.c"
  Parameters:    Size  Location     Type
   value0          1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
   value0          1   15[COMRAM] unsigned char 
-  value           1   14[COMRAM] unsigned char 
+  pvalue          1   14[COMRAM] unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      unsigned char 
  Registers used:
@@ -1107,11 +1130,11 @@ Total ram usage:        2 bytes
 
  *************** function _logicAddressToPhysical *****************
  Defined at:
-		line 114 in file "receiver.c"
+		line 117 in file "receiver.c"
  Parameters:    Size  Location     Type
   adr0            2   14[COMRAM] unsigned int 
  Auto vars:     Size  Location     Type
-  adr             2   16[COMRAM] unsigned int 
+  padr            2   16[COMRAM] unsigned int 
  Return value:  Size  Location     Type
                   2   14[COMRAM] unsigned int 
  Registers used:
@@ -1132,13 +1155,72 @@ Total ram usage:        4 bytes
 		Nothing
  This function is called by:
 		_writeAddressPhysical
-		_readAddressPhysical
+ This function uses a non-reentrant model
+
+
+ *************** function _sendBankCommand *****************
+ Defined at:
+		line 281 in file "receiver.c"
+ Parameters:    Size  Location     Type
+  bank            1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  bank            1   15[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+      Params:         0       0       0       0       0       0       0       0       0
+      Locals:         1       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0
+      Totals:         1       0       0       0       0       0       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		_writeByte
+ This function is called by:
+		_onData
+ This function uses a non-reentrant model
+
+
+ *************** function _writeByte *****************
+ Defined at:
+		line 198 in file "receiver.c"
+ Parameters:    Size  Location     Type
+  b               1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  b               1   14[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+      Params:         0       0       0       0       0       0       0       0       0
+      Locals:         1       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0
+      Totals:         1       0       0       0       0       0       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_sendBankCommand
  This function uses a non-reentrant model
 
 
  *************** function _readPort *****************
  Defined at:
-		line 99 in file "receiver.c"
+		line 102 in file "receiver.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1172,7 +1254,7 @@ Total ram usage:        0 bytes
 
  *************** function _readPortE *****************
  Defined at:
-		line 191 in file "main.c"
+		line 197 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1202,7 +1284,7 @@ Total ram usage:        0 bytes
 
  *************** function _readPortD *****************
  Defined at:
-		line 186 in file "main.c"
+		line 192 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1232,7 +1314,7 @@ Total ram usage:        0 bytes
 
  *************** function _readPortC *****************
  Defined at:
-		line 181 in file "main.c"
+		line 187 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1262,7 +1344,7 @@ Total ram usage:        0 bytes
 
  *************** function _readPortB *****************
  Defined at:
-		line 176 in file "main.c"
+		line 182 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1292,7 +1374,7 @@ Total ram usage:        0 bytes
 
  *************** function _readAddress *****************
  Defined at:
-		line 191 in file "receiver.c"
+		line 180 in file "receiver.c"
  Parameters:    Size  Location     Type
   adr             2   15[COMRAM] unsigned int 
  Auto vars:     Size  Location     Type
@@ -1320,13 +1402,12 @@ Total ram usage:        3 bytes
 		_writePortD
  This function is called by:
 		_onData
-		_readAddressPhysical
  This function uses a non-reentrant model
 
 
  *************** function _writePortD *****************
  Defined at:
-		line 135 in file "main.c"
+		line 140 in file "main.c"
  Parameters:    Size  Location     Type
   data            1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1358,7 +1439,7 @@ Total ram usage:        1 bytes
 
  *************** function _writePortC *****************
  Defined at:
-		line 130 in file "main.c"
+		line 135 in file "main.c"
  Parameters:    Size  Location     Type
   data            1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1390,7 +1471,7 @@ Total ram usage:        1 bytes
 
  *************** function _writePortB *****************
  Defined at:
-		line 125 in file "main.c"
+		line 130 in file "main.c"
  Parameters:    Size  Location     Type
   data            1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1422,7 +1503,7 @@ Total ram usage:        1 bytes
 
  *************** function _readPortA *****************
  Defined at:
-		line 171 in file "main.c"
+		line 177 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1453,7 +1534,7 @@ Total ram usage:        0 bytes
 
  *************** function _parseHex *****************
  Defined at:
-		line 76 in file "receiver.c"
+		line 79 in file "receiver.c"
  Parameters:    Size  Location     Type
   x               1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1483,7 +1564,7 @@ Total ram usage:        1 bytes
 
  *************** function _error *****************
  Defined at:
-		line 86 in file "receiver.c"
+		line 89 in file "receiver.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1513,7 +1594,7 @@ Total ram usage:        0 bytes
 
  *************** function _writeChar *****************
  Defined at:
-		line 206 in file "main.c"
+		line 212 in file "main.c"
  Parameters:    Size  Location     Type
   data            1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -1544,7 +1625,7 @@ Total ram usage:        1 bytes
 
  *************** function _initUart *****************
  Defined at:
-		line 97 in file "main.c"
+		line 102 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1574,7 +1655,7 @@ Total ram usage:        0 bytes
 
  *************** function _receiveData *****************
  Defined at:
-		line 84 in file "main.c"
+		line 89 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1606,45 +1687,47 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 shared
-		__initialization		CODE           	0BDA	0000	77
+		__initialization		CODE           	0C8C	0000	77
 
 shared estimated size: 77
 
 receiver.c
-		_logicDataToPhysical		CODE           	0DF4	0000	43
-		_onData        		CODE           	0814	0000	967
-		_readPort      		CODE           	0CD4	0000	77
-		_readAddress   		CODE           	0E48	0000	41
-		_error         		CODE           	0E9A	0000	13
-		_writeAddressPhysical		CODE           	0DC6	0000	47
-		_parseHex      		CODE           	0E1E	0000	43
-		_writeAddress  		CODE           	0D20	0000	63
-		_writeHex      		CODE           	0C86	0000	79
-		_logicAddressToPhysical		CODE           	0C34	0000	83
+		_logicDataToPhysical		CODE           	0EA6	0000	43
+		_onData        		CODE           	0814	0000	1009
+		_readPort      		CODE           	0D86	0000	77
+		_writeByte     		CODE           	0C04	0000	137
+		_readAddress   		CODE           	0EFA	0000	41
+		_error         		CODE           	0F68	0000	13
+		_writeAddressPhysical		CODE           	0E78	0000	47
+		_sendBankCommand		CODE           	0F40	0000	29
+		_parseHex      		CODE           	0ED0	0000	43
+		_writeAddress  		CODE           	0DD2	0000	63
+		_writeHex      		CODE           	0D38	0000	79
+		_logicAddressToPhysical		CODE           	0CE6	0000	83
 
-receiver.c estimated size: 1456
+receiver.c estimated size: 1664
 
 main.c
-		_writeChar     		CODE           	0EA6	0000	13
-		_readChar      		CODE           	0D5E	0000	57
-		_main          		CODE           	0D96	0000	49
-		_initUart      		CODE           	0E70	0000	31
-		_writePortA    		CODE           	0EDA	0000	9
-		_writePortB    		CODE           	0EF2	0000	9
-		_writePortC    		CODE           	0EEA	0000	9
-		_writePortD    		CODE           	0EE2	0000	9
-		_writePortE    		CODE           	0ED2	0000	9
+		_writeChar     		CODE           	0F74	0000	13
+		_readChar      		CODE           	0E10	0000	57
+		_main          		CODE           	0E48	0000	49
+		_initUart      		CODE           	0F22	0000	31
+		_writePortA    		CODE           	0FAA	0000	9
+		_writePortB    		CODE           	0FC2	0000	9
+		_writePortC    		CODE           	0FBA	0000	9
+		_writePortD    		CODE           	0FB2	0000	9
+		_writePortE    		CODE           	0FA2	0000	9
 		_receiveData   		CODE           	0008	0000	171
-		_readPortA     		CODE           	0F0A	0000	5
-		_readPortB     		CODE           	0F06	0000	5
-		_readPortC     		CODE           	0F02	0000	5
-		_readPortD     		CODE           	0EFE	0000	5
-		_readPortE     		CODE           	0EFA	0000	5
-		_writeTrisA    		CODE           	0ECA	0000	9
-		_writeTrisB    		CODE           	0EC2	0000	9
-		_writeTrisC    		CODE           	0E8E	0000	13
-		_writeTrisD    		CODE           	0EBA	0000	9
-		_writeTrisE    		CODE           	0EB2	0000	9
+		_readPortA     		CODE           	0FDA	0000	5
+		_readPortB     		CODE           	0FD6	0000	5
+		_readPortC     		CODE           	0FD2	0000	5
+		_readPortD     		CODE           	0FCE	0000	5
+		_readPortE     		CODE           	0FCA	0000	5
+		_writeTrisA    		CODE           	0F9A	0000	9
+		_writeTrisB    		CODE           	0F92	0000	9
+		_writeTrisC    		CODE           	0F5C	0000	13
+		_writeTrisD    		CODE           	0F80	0000	11
+		_writeTrisE    		CODE           	0F8A	0000	9
 
-main.c estimated size: 440
+main.c estimated size: 442
 

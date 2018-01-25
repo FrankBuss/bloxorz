@@ -7220,10 +7220,10 @@ extern unsigned char __resetbits;
 extern __bit __powerdown;
 extern __bit __timeout;
 
-# 168 "mcc_generated_files/pin_manager.h"
+# 156 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
-# 180
+# 168
 void PIN_MANAGER_IOC(void);
 
 # 13 "/opt/microchip/xc8/v1.42/include/stdint.h"
@@ -7301,23 +7301,26 @@ typedef uint16_t uintptr_t;
 # 12 "/opt/microchip/xc8/v1.42/include/stdbool.h"
 typedef unsigned char bool;
 
-# 98 "mcc_generated_files/memory.h"
-uint16_t FLASH_ReadWord(uint16_t flashAddr);
+# 91 "mcc_generated_files/clc2.h"
+void CLC2_Initialize(void);
 
-# 127
-void FLASH_WriteWord(uint16_t flashAddr, uint16_t *ramBuf, uint16_t word);
+# 113
+bool CLC2_OutputStatusGet(void);
 
-# 163
-int8_t FLASH_WriteBlock(uint16_t writeAddr, uint16_t *flashWordArray);
+# 94 "mcc_generated_files/eusart.h"
+void EUSART_Initialize(void);
 
-# 188
-void FLASH_EraseBlock(uint16_t startAddr);
+# 114
+uint8_t EUSART_Read(void);
 
-# 222
-void DATAEE_WriteByte(uint16_t bAdd, uint8_t bData);
+# 134
+void EUSART_Write(uint8_t txData);
 
-# 248
-uint8_t DATAEE_ReadByte(uint16_t bAdd);
+# 91 "mcc_generated_files/clc1.h"
+void CLC1_Initialize(void);
+
+# 113
+bool CLC1_OutputStatusGet(void);
 
 # 99 "mcc_generated_files/tmr1.h"
 void TMR1_Initialize(void);
@@ -7346,11 +7349,23 @@ uint8_t TMR1_CheckGateValueStatus(void);
 # 386
 bool TMR1_HasOverflowOccured(void);
 
-# 91 "mcc_generated_files/clc1.h"
-void CLC1_Initialize(void);
+# 98 "mcc_generated_files/memory.h"
+uint16_t FLASH_ReadWord(uint16_t flashAddr);
 
-# 113
-bool CLC1_OutputStatusGet(void);
+# 127
+void FLASH_WriteWord(uint16_t flashAddr, uint16_t *ramBuf, uint16_t word);
+
+# 163
+int8_t FLASH_WriteBlock(uint16_t writeAddr, uint16_t *flashWordArray);
+
+# 188
+void FLASH_EraseBlock(uint16_t startAddr);
+
+# 222
+void DATAEE_WriteByte(uint16_t bAdd, uint8_t bData);
+
+# 248
+uint8_t DATAEE_ReadByte(uint16_t bAdd);
 
 # 99 "mcc_generated_files/tmr0.h"
 void TMR0_Initialize(void);
@@ -7372,21 +7387,6 @@ void TMR0_Load8bitPeriod(uint8_t periodVal);
 
 # 307
 bool TMR0_HasOverflowOccured(void);
-
-# 91 "mcc_generated_files/clc2.h"
-void CLC2_Initialize(void);
-
-# 113
-bool CLC2_OutputStatusGet(void);
-
-# 94 "mcc_generated_files/eusart.h"
-void EUSART_Initialize(void);
-
-# 114
-uint8_t EUSART_Read(void);
-
-# 134
-void EUSART_Write(uint8_t txData);
 
 # 73 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);

@@ -1928,25 +1928,25 @@ static inline __attribute__((always_inline)) void Wait_Bound(void)
 # 49 "/home/frank/Downloads/Vide2.0_RC17/C/PeerC/vectrex/include/vec_rum.h" 2
 # 44 "/home/frank/Downloads/Vide2.0_RC17/C/PeerC/vectrex/include/vectrex.h" 2
 # 27 "/home/frank/Downloads/Vide2.0_RC17/projects/Bloxorz/source/bloxorz.c" 2
-
-
-
-
-
-
-
+# 35 "/home/frank/Downloads/Vide2.0_RC17/projects/Bloxorz/source/bloxorz.c"
 extern void* memcpy (void* dest, const void* src, long unsigned int len);
 
 typedef unsigned long uint16_t;
 
 typedef signed char int8_t;
 typedef unsigned char uint8_t;
-# 49 "/home/frank/Downloads/Vide2.0_RC17/projects/Bloxorz/source/bloxorz.c"
+# 50 "/home/frank/Downloads/Vide2.0_RC17/projects/Bloxorz/source/bloxorz.c"
 static inline __attribute__((always_inline)) void positd (int8_t x, int8_t y)
 {
- Moveto_d_7F(y,x);
+ dp_VIA_t1_cnt_lo = 0x80;
+ Moveto_d(y,x);
 }
-# 80 "/home/frank/Downloads/Vide2.0_RC17/projects/Bloxorz/source/bloxorz.c"
+static inline __attribute__((always_inline)) void Draw_VLp_80(void* const x)
+{
+ dp_VIA_t1_cnt_lo = 0x80;
+ Draw_VLp(x);
+}
+# 87 "/home/frank/Downloads/Vide2.0_RC17/projects/Bloxorz/source/bloxorz.c"
 extern void picWrite(uint8_t b);
 extern uint8_t picRead();
 extern void delay10ms();
@@ -2079,7 +2079,7 @@ const char* level2 =
  "    ...     "
  "            "
 ;
-# 150 "/home/frank/Downloads/Vide2.0_RC17/projects/Bloxorz/source/bloxorz.c" 2
+# 157 "/home/frank/Downloads/Vide2.0_RC17/projects/Bloxorz/source/bloxorz.c" 2
 # 1 "/home/frank/Downloads/Vide2.0_RC17/projects/Bloxorz/source/block.i" 1
 
 const int8_t height2FallingLeft0[] = {
@@ -5326,12 +5326,18 @@ const int8_t* width2RollingBack[] __attribute__ ((section(".text"))) = {
  width2RollingBack10,
  width2RollingBack11,
 };
-# 151 "/home/frank/Downloads/Vide2.0_RC17/projects/Bloxorz/source/bloxorz.c" 2
+# 158 "/home/frank/Downloads/Vide2.0_RC17/projects/Bloxorz/source/bloxorz.c" 2
 
-int8_t lineX0[120];
-int8_t lineY0[120];
-int8_t lineX1[120];
-int8_t lineY1[120];
+
+
+uint8_t moveScale[80];
+unsigned long int moveTo[80];
+
+uint8_t lineScale[80];
+int8_t lineX0[80];
+int8_t lineY0[80];
+int8_t lineX1[80];
+int8_t lineY1[80];
 uint8_t lineCount = 0;
 int8_t startX = 0;
 int8_t startY = 0;
@@ -5361,6 +5367,8 @@ int8_t levelNumber = 0;
 uint16_t levelHighscore;
 
 enum GameState_t {
+ MainMenu,
+ ClearMenu,
  BlockMovingToStart,
  BlockWaiting,
  BlockMoving,
@@ -5441,14 +5449,83 @@ int8_t y3d(int8_t x, int8_t y, int8_t z)
  return 3 * x + 13 * y + 8 * z;
 }
 
+uint8_t scaleDown(uint8_t oldScale)
+{
+ return (uint8_t)(oldScale>>1);
+}
+
+unsigned long int toLong(int hi, int lo)
+{
+ unsigned long int t = (unsigned long int)hi;
+ t = t << 8;
+ unsigned long int t2 = (unsigned long int)lo;
+ t2 = t2 & 0xff;
+ t = t & 0xff00;
+ t = t + t2;
+ return t;
+}
+
+
+uint8_t correctScale(uint8_t s)
+{
+ if (s==0x80) return 0x80;
+ if (s==0x40) return 0x40-1;
+ if (s==0x20) return 0x20-2;
+ return s;
+}
+
 void addLine(int8_t x0, int8_t y0, int8_t x1, int8_t y1)
 {
+
  lineX0[lineCount] = x3d(x0, 0, y0);
  lineY0[lineCount] = y3d(x0, 0, y0);
  lineX1[lineCount] = x3d(x1, 0, y1);
  lineY1[lineCount] = y3d(x1, 0, y1);
+
+ lineScale[lineCount] = 0x80;
+ moveScale[lineCount] = 0x80;
+
+ int xpos = lineX0[lineCount];
+ int ypos = lineY0[lineCount];
+
+
+
+ int difx = (lineX1[lineCount]-lineX0[lineCount]);
+ int dify = (lineY1[lineCount]-lineY0[lineCount]);
+ if (difx<0) difx = -difx;
+ if (dify<0) dify = -dify;
+ if ((difx<64) && (dify<64)) lineScale[lineCount] = scaleDown(lineScale[lineCount]);
+ if ((difx<32) && (dify<32)) lineScale[lineCount] = scaleDown(lineScale[lineCount]);
+
+
+   difx = lineX0[lineCount];
+     dify = lineY0[lineCount];
+     if (difx<0) difx = -difx;
+     if (dify<0) dify = -dify;
+     if ((difx<64) && (dify<64))
+ {
+  moveScale[lineCount] = scaleDown(moveScale[lineCount]);
+  xpos = xpos<<1;
+  ypos = ypos<<1;
+ }
+     if ((difx<32) && (dify<32))
+ {
+  moveScale[lineCount] = scaleDown(moveScale[lineCount]);
+  xpos = xpos<<1;
+  ypos = ypos<<1;
+ }
+
+
+ lineScale[lineCount] = correctScale(lineScale[lineCount]);
+ moveScale[lineCount] = correctScale(moveScale[lineCount]);
+
+
+
+
+ moveTo[lineCount] =toLong(ypos, xpos);
  lineCount++;
 }
+
 
 void addTarget(int8_t x, int8_t y)
 {
@@ -5456,14 +5533,92 @@ void addTarget(int8_t x, int8_t y)
  lineY0[lineCount] = y3d(x, 0, y);
  lineX1[lineCount] = x3d(x + 1, 0, y + 1);
  lineY1[lineCount] = y3d(x + 1, 0, y + 1);
+
+ lineScale[lineCount] = 0x80;
+ moveScale[lineCount] = 0x80;
+ int xpos = lineX0[lineCount];
+ int ypos = lineY0[lineCount];
+
+
+
+ int difx = lineX1[lineCount] - lineX0[lineCount];
+ int dify = lineY1[lineCount] - lineY0[lineCount];
+ if (difx<0) difx = -difx;
+ if (dify<0) dify = -dify;
+ if ((difx<64) && (dify<64)) lineScale[lineCount] = scaleDown(lineScale[lineCount]);
+ if ((difx<32) && (dify<32)) lineScale[lineCount] = scaleDown(lineScale[lineCount]);
+
+
+ difx = lineX0[lineCount];
+     dify = lineY0[lineCount];
+     if (difx<0) difx = -difx;
+     if (dify<0) dify = -dify;
+
+ if ((difx<64) && (dify<64))
+ {
+  moveScale[lineCount] = scaleDown(moveScale[lineCount]);
+  xpos = xpos<<1;
+  ypos = ypos<<1;
+ }
+     if ((difx<32) && (dify<32))
+ {
+  moveScale[lineCount] = scaleDown(moveScale[lineCount]);
+  xpos = xpos<<1;
+  ypos = ypos<<1;
+ }
+ lineScale[lineCount] = correctScale(lineScale[lineCount]);
+ moveScale[lineCount] = correctScale(moveScale[lineCount]);
+
+ moveTo[lineCount] =toLong(ypos, xpos);
  lineCount++;
+
+
+
  lineX0[lineCount] = x3d(x + 1, 0, y);
  lineY0[lineCount] = y3d(x + 1, 0, y);
  lineX1[lineCount] = x3d(x, 0, y + 1);
  lineY1[lineCount] = y3d(x, 0, y + 1);
+
+ lineScale[lineCount] = 0x80;
+ moveScale[lineCount] = 0x80;
+
+ xpos = lineX0[lineCount];
+ ypos = lineY0[lineCount];
+
+
+
+ difx = lineX1[lineCount] - lineX0[lineCount];
+ dify = lineY1[lineCount] - lineY0[lineCount];
+ if (difx<0) difx = -difx;
+ if (dify<0) dify = -dify;
+ if ((difx<64) && (dify<64)) lineScale[lineCount] = scaleDown(lineScale[lineCount]);
+ if ((difx<32) && (dify<32)) lineScale[lineCount] = scaleDown(lineScale[lineCount]);
+
+
+     difx = lineX0[lineCount];
+     dify = lineY0[lineCount];
+     if (difx<0) difx = -difx;
+     if (dify<0) dify = -dify;
+
+ if ((difx<64) && (dify<64))
+ {
+  moveScale[lineCount] = scaleDown(moveScale[lineCount]);
+  xpos = xpos<<1;
+  ypos = ypos<<1;
+ }
+     if ((difx<32) && (dify<32))
+ {
+  moveScale[lineCount] = scaleDown(moveScale[lineCount]);
+  xpos = xpos<<1;
+  ypos = ypos<<1;
+ }
+ lineScale[lineCount] = correctScale(lineScale[lineCount]);
+ moveScale[lineCount] = correctScale(moveScale[lineCount]);
+
+ moveTo[lineCount] =toLong(ypos, xpos);
  lineCount++;
 }
-# 297 "/home/frank/Downloads/Vide2.0_RC17/projects/Bloxorz/source/bloxorz.c"
+# 459 "/home/frank/Downloads/Vide2.0_RC17/projects/Bloxorz/source/bloxorz.c"
 void setupX()
 {
 
@@ -5545,97 +5700,97 @@ void moveBlock(enum BlockDirection_t move)
  lastBlockDirection = move;
  switch (blockOrientation) {
   case Standing:
-  switch (move) {
-   case Left:
-   blockAnimation = height2FallingLeft;
-   nextBlockAnimation = width2RollingFront;
-   nextBlockX = blockX - 2;
-   nextBlockY = blockY;
-   blockOrientation = Horizontal;
-   break;
-   case Right:
-   blockAnimation = height2FallingRight;
-   nextBlockAnimation = width2RollingFront;
-   nextBlockX = blockX + 1;
-   nextBlockY = blockY;
-   blockOrientation = Horizontal;
-   break;
-   case Up:
-   blockAnimation = height2FallingBack;
-   nextBlockAnimation = depth2RollingLeft;
-   nextBlockX = blockX;
-   nextBlockY = blockY + 1;
-   blockOrientation = Vertical;
-   break;
-   case Down:
-   blockAnimation = height2FallingFront;
-   nextBlockAnimation = depth2RollingLeft;
-   nextBlockX = blockX;
-   nextBlockY = blockY - 2;
-   blockOrientation = Vertical;
-   break;
-  }
-  break;
+          switch (move) {
+           case Left:
+               blockAnimation = height2FallingLeft;
+                nextBlockAnimation = width2RollingFront;
+                nextBlockX = blockX - 2;
+                nextBlockY = blockY;
+                blockOrientation = Horizontal;
+                break;
+           case Right:
+                blockAnimation = height2FallingRight;
+                nextBlockAnimation = width2RollingFront;
+                nextBlockX = blockX + 1;
+                nextBlockY = blockY;
+                blockOrientation = Horizontal;
+                break;
+           case Up:
+                blockAnimation = height2FallingBack;
+                nextBlockAnimation = depth2RollingLeft;
+                nextBlockX = blockX;
+                nextBlockY = blockY + 1;
+                blockOrientation = Vertical;
+                break;
+           case Down:
+                blockAnimation = height2FallingFront;
+                nextBlockAnimation = depth2RollingLeft;
+                nextBlockX = blockX;
+                nextBlockY = blockY - 2;
+                blockOrientation = Vertical;
+                break;
+          }
+          break;
   case Vertical:
-  switch (move) {
-   case Left:
-   blockAnimation = depth2RollingLeft;
-   nextBlockAnimation = depth2RollingLeft;
-   nextBlockX = blockX - 1;
-   nextBlockY = blockY;
-   break;
-   case Right:
-   blockAnimation = depth2RollingRight;
-   nextBlockAnimation = depth2RollingLeft;
-   nextBlockX = blockX + 1;
-   nextBlockY = blockY;
-   break;
-   case Up:
-   blockAnimation = height2RisingBack;
-   nextBlockAnimation = height2FallingFront;
-   nextBlockX = blockX;
-   nextBlockY = blockY + 2;
-   blockOrientation = Standing;
-   break;
-   case Down:
-   blockAnimation = height2RisingFront;
-   nextBlockAnimation = height2FallingFront;
-   nextBlockX = blockX;
-   nextBlockY = blockY - 1;
-   blockOrientation = Standing;
-   break;
-  }
-  break;
+          switch (move) {
+           case Left:
+               blockAnimation = depth2RollingLeft;
+               nextBlockAnimation = depth2RollingLeft;
+               nextBlockX = blockX - 1;
+               nextBlockY = blockY;
+               break;
+           case Right:
+               blockAnimation = depth2RollingRight;
+               nextBlockAnimation = depth2RollingLeft;
+               nextBlockX = blockX + 1;
+               nextBlockY = blockY;
+               break;
+           case Up:
+               blockAnimation = height2RisingBack;
+               nextBlockAnimation = height2FallingFront;
+               nextBlockX = blockX;
+               nextBlockY = blockY + 2;
+               blockOrientation = Standing;
+               break;
+           case Down:
+               blockAnimation = height2RisingFront;
+               nextBlockAnimation = height2FallingFront;
+               nextBlockX = blockX;
+               nextBlockY = blockY - 1;
+               blockOrientation = Standing;
+               break;
+          }
+          break;
   case Horizontal:
-  switch (move) {
-   case Left:
-   blockAnimation = height2RisingLeft;
-   nextBlockAnimation = height2FallingRight;
-   nextBlockX = blockX - 1;
-   nextBlockY = blockY;
-   blockOrientation = Standing;
-   break;
-   case Right:
-   blockAnimation = height2RisingRight;
-   nextBlockAnimation = height2FallingLeft;
-   nextBlockX = blockX + 2;
-   nextBlockY = blockY;
-   blockOrientation = Standing;
-   break;
-   case Up:
-   blockAnimation = width2RollingBack;
-   nextBlockAnimation = width2RollingBack;
-   nextBlockX = blockX;
-   nextBlockY = blockY + 1;
-   break;
-   case Down:
-   blockAnimation = width2RollingFront;
-   nextBlockAnimation = width2RollingBack;
-   nextBlockX = blockX;
-   nextBlockY = blockY - 1;
-   break;
-  }
-  break;
+          switch (move) {
+           case Left:
+               blockAnimation = height2RisingLeft;
+               nextBlockAnimation = height2FallingRight;
+               nextBlockX = blockX - 1;
+               nextBlockY = blockY;
+               blockOrientation = Standing;
+               break;
+           case Right:
+               blockAnimation = height2RisingRight;
+               nextBlockAnimation = height2FallingLeft;
+               nextBlockX = blockX + 2;
+               nextBlockY = blockY;
+               blockOrientation = Standing;
+               break;
+           case Up:
+               blockAnimation = width2RollingBack;
+               nextBlockAnimation = width2RollingBack;
+               nextBlockX = blockX;
+               nextBlockY = blockY + 1;
+               break;
+           case Down:
+               blockAnimation = width2RollingFront;
+               nextBlockAnimation = width2RollingBack;
+               nextBlockX = blockX;
+               nextBlockY = blockY - 1;
+               break;
+          }
+          break;
  }
  if (moveCount < 999) moveCount++;
  updateInfoText();
@@ -5658,6 +5813,7 @@ void startLevel()
  } else {
   level = level2;
  }
+
  levelHighscore = readEeprom((uint8_t) (levelNumber * 2));
  levelHighscore |= ((uint16_t) readEeprom((uint8_t) (levelNumber * 2 + 1))) << 8;
  if (levelHighscore == 0) levelHighscore = 999;
@@ -5677,41 +5833,17 @@ void startLevel()
  updateInfoText();
 }
 
+
+
+extern void drawFieldAsmScale();
 void __attribute__((noinline)) drawField()
 {
 
 
  Intensity_a(0x55);
-# 528 "/home/frank/Downloads/Vide2.0_RC17/projects/Bloxorz/source/bloxorz.c"
- asm("	pshs a, b, dp, x, u");
- asm("	lda #0xd0");
- asm("	tfr a, dp");
- asm("	ldx #0");
- asm("	ldb _lineCount");
- asm("drawFieldLoop:");
- asm("	pshs b");
- asm("	pshs x");
- asm("	jsr 0xf354");
- asm("	puls x");
- asm("	lda _lineY0,x");
- asm("	ldb _lineX0,x");
- asm("	pshs x");
- asm("	jsr 0xf2fc");
- asm("	puls x");
- asm("	lda _lineY1,x");
- asm("	ldb _lineX1,x");
- asm("	suba _lineY0,x");
- asm("	subb _lineX0,x");
- asm("	pshs x");
- asm("	jsr 0xf3df");
- asm("	puls x");
- asm("	lda ,x+");
- asm("	puls b");
- asm("	decb");
- asm("	bne drawFieldLoop");
- asm("	puls a, b, dp, x, u");
-
+ drawFieldAsmScale();
 }
+
 
 void drawBlock(int8_t yofs)
 {
@@ -5720,8 +5852,7 @@ void drawBlock(int8_t yofs)
  positd(0, yofs);
 
  positd(x3d(blockX, 0, blockY), y3d(blockX, 0, blockY));
-
- Draw_VLp_7F((void*)(blockAnimation[blockAnimationStep]));
+ Draw_VLp_80((void*)(blockAnimation[blockAnimationStep]));
 }
 
 void blockMovingToStart()
@@ -5845,6 +5976,94 @@ void blockMovingAtEnd()
  }
 }
 
+void mainMenu()
+{
+ Read_Btns();
+    Intensity_a(0x5f);
+    Vec_Text_Width = 90;
+    Print_Str_d(100, -70, "MAIN MENU\x80");
+    Print_Str_d(50, -110, "1 START GAME\x80");
+    Print_Str_d(20, -110, "2 CLEAR HIGHSCORE\x80");
+    Print_Str_d(-10, -110, "3 BANKING TEST\x80");
+ if (Vec_Buttons & 1) {
+  startLevel();
+ }
+ if (Vec_Buttons & 2) {
+  gameState = ClearMenu;
+ }
+ if (Vec_Buttons & 4) {
+  sendCommand(5, 1);
+  asm("	jmp 0xf000");
+ }
+}
+
+void clearMenu()
+{
+ Read_Btns();
+    Intensity_a(0x5f);
+    Vec_Text_Width = 90;
+    Print_Str_d(100, -80, "CLEAR SCORE?\x80");
+    Print_Str_d(50, -110, "3 YES\x80");
+    Print_Str_d(20, -110, "4 NO\x80");
+ if (Vec_Buttons & 4) {
+  for (uint8_t i = 0; i < 6; i++) {
+   writeEeprom(i, 0xff);
+  }
+  gameState = MainMenu;
+ }
+ if (Vec_Buttons & 8) {
+  gameState = MainMenu;
+ }
+}
+
+const int8_t led8[] = {
+ (int8_t) 255, 0, 5,
+ (int8_t) 255, -5, 0,
+ (int8_t) 255, 0, -5,
+ (int8_t) 255, 5, 0,
+ (int8_t) 255, 5, 0,
+ (int8_t) 255, 0, 5,
+ (int8_t) 255, -5, 0,
+ 1
+};
+
+void showInfo2()
+{
+ Reset0Ref();
+ Intensity_a(0x50);
+
+ Reset0Ref();
+ positd(-50, 100);
+ Draw_VLp_80((void*)led8);
+
+ Reset0Ref();
+ positd(-40, 110);
+ Draw_VLp_80((void*)led8);
+
+ Reset0Ref();
+ positd(-30, 120);
+ Draw_VLp_80((void*)led8);
+
+ Reset0Ref();
+ positd(0, 120);
+ Draw_VLp_80((void*)led8);
+
+ Reset0Ref();
+ positd(10, 120);
+ Draw_VLp_80((void*)led8);
+
+ Reset0Ref();
+ positd(20, 120);
+ Draw_VLp_80((void*)led8);
+}
+
+void showInfo()
+{
+    Intensity_a(0x5f);
+    Vec_Text_Width = 100;
+    Print_Str_d(100, -70, infoText);
+}
+
 int main()
 {
 
@@ -5864,31 +6083,39 @@ int main()
  (*((volatile uint8_t *) 0xc821)) = 0;
  (*((volatile uint8_t *) 0xc822)) = 0;
 
- startLevel();
+ gameState = MainMenu;
+
  while (1) {
 
   Wait_Recal();
 
-        Intensity_a(0x5f);
-        Vec_Text_Width = 100;
-        Print_Str_d(100, -80, infoText);
-
   switch (gameState) {
+   case MainMenu:
+           mainMenu();
+           break;
+   case ClearMenu:
+    clearMenu();
+    break;
    case BlockMovingToStart:
-   blockMovingToStart();
-   break;
+    showInfo();
+           blockMovingToStart();
+           break;
    case BlockWaiting:
-   blockWaiting();
-   break;
+    showInfo();
+           blockWaiting();
+           break;
    case BlockMoving:
-   blockMoving();
-   break;
+    showInfo();
+           blockMoving();
+           break;
    case BlockFalling:
-   blockFalling();
-   break;
+    showInfo();
+           blockFalling();
+           break;
    case BlockMovingAtEnd:
-   blockMovingAtEnd();
-   break;
+    showInfo();
+           blockMovingAtEnd();
+           break;
   }
 
 

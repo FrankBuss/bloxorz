@@ -3,6 +3,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _DATAEE_WriteByte `(v ~T0 @X0 0 ef2`ui`uc ]
 "248
 [v _DATAEE_ReadByte `(uc ~T0 @X0 0 ef1`ui ]
+"438 /opt/microchip/xc8/v1.42/include/pic16f18323.h
+[s S30 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S30 . RC0 RC1 RC2 RC3 RC4 RC5 ]
+"437
+[u S29 `S30 1 ]
+[n S29 . . ]
+"447
+[v _PORTCbits `VS29 ~T0 @X0 0 e@14 ]
 [p mainexit ]
 "73 mcc_generated_files/mcc.h
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
@@ -32,9 +40,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 217: typedef uint32_t uintmax_t;
 [; ;stdint.h: 222: typedef int16_t intptr_t;
 [; ;stdint.h: 227: typedef uint16_t uintptr_t;
-[; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
-[; ;htc.h: 28: extern double __fpnormalize(double);
-[; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic16f18323.h: 50: extern volatile unsigned char INDF0 @ 0x000;
 "52 /opt/microchip/xc8/v1.42/include/pic16f18323.h
 [; ;pic16f18323.h: 52: asm("INDF0 equ 00h");
@@ -5439,6 +5444,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic16f18323.h: 15763: extern volatile __bit nRMCLR @ (((unsigned) &PCON0)*8) + 3;
 [; ;pic16f18323.h: 15765: extern volatile __bit nRWDT @ (((unsigned) &PCON0)*8) + 4;
 [; ;pic16f18323.h: 15767: extern volatile __bit nTO @ (((unsigned) &STATUS)*8) + 4;
+[; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
+[; ;htc.h: 28: extern double __fpnormalize(double);
+[; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic.h: 28: extern void __nop(void);
 [; ;eeprom_routines.h: 114: extern void eeprom_write(unsigned char addr, unsigned char value);
 [; ;eeprom_routines.h: 115: extern unsigned char eeprom_read(unsigned char addr);
@@ -5450,15 +5458,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 192: extern unsigned char __resetbits;
 [; ;pic.h: 193: extern __bit __powerdown;
 [; ;pic.h: 194: extern __bit __timeout;
-[; ;pin_manager.h: 168: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 180: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 156: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 168: void PIN_MANAGER_IOC(void);
 [; ;stdbool.h: 12: typedef unsigned char bool;
-[; ;memory.h: 98: uint16_t FLASH_ReadWord(uint16_t flashAddr);
-[; ;memory.h: 127: void FLASH_WriteWord(uint16_t flashAddr, uint16_t *ramBuf, uint16_t word);
-[; ;memory.h: 163: int8_t FLASH_WriteBlock(uint16_t writeAddr, uint16_t *flashWordArray);
-[; ;memory.h: 188: void FLASH_EraseBlock(uint16_t startAddr);
-[; ;memory.h: 222: void DATAEE_WriteByte(uint16_t bAdd, uint8_t bData);
-[; ;memory.h: 248: uint8_t DATAEE_ReadByte(uint16_t bAdd);
+[; ;clc2.h: 91: void CLC2_Initialize(void);
+[; ;clc2.h: 113: bool CLC2_OutputStatusGet(void);
+[; ;eusart.h: 94: void EUSART_Initialize(void);
+[; ;eusart.h: 114: uint8_t EUSART_Read(void);
+[; ;eusart.h: 134: void EUSART_Write(uint8_t txData);
+[; ;clc1.h: 91: void CLC1_Initialize(void);
+[; ;clc1.h: 113: bool CLC1_OutputStatusGet(void);
 [; ;tmr1.h: 99: void TMR1_Initialize(void);
 [; ;tmr1.h: 128: void TMR1_StartTimer(void);
 [; ;tmr1.h: 160: void TMR1_StopTimer(void);
@@ -5468,8 +5477,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;tmr1.h: 309: void TMR1_StartSinglePulseAcquisition(void);
 [; ;tmr1.h: 348: uint8_t TMR1_CheckGateValueStatus(void);
 [; ;tmr1.h: 386: bool TMR1_HasOverflowOccured(void);
-[; ;clc1.h: 91: void CLC1_Initialize(void);
-[; ;clc1.h: 113: bool CLC1_OutputStatusGet(void);
+[; ;memory.h: 98: uint16_t FLASH_ReadWord(uint16_t flashAddr);
+[; ;memory.h: 127: void FLASH_WriteWord(uint16_t flashAddr, uint16_t *ramBuf, uint16_t word);
+[; ;memory.h: 163: int8_t FLASH_WriteBlock(uint16_t writeAddr, uint16_t *flashWordArray);
+[; ;memory.h: 188: void FLASH_EraseBlock(uint16_t startAddr);
+[; ;memory.h: 222: void DATAEE_WriteByte(uint16_t bAdd, uint8_t bData);
+[; ;memory.h: 248: uint8_t DATAEE_ReadByte(uint16_t bAdd);
 [; ;tmr0.h: 99: void TMR0_Initialize(void);
 [; ;tmr0.h: 128: void TMR0_StartTimer(void);
 [; ;tmr0.h: 160: void TMR0_StopTimer(void);
@@ -5477,510 +5490,535 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;tmr0.h: 234: void TMR0_Write8bitTimer(uint8_t timerVal);
 [; ;tmr0.h: 271: void TMR0_Load8bitPeriod(uint8_t periodVal);
 [; ;tmr0.h: 307: bool TMR0_HasOverflowOccured(void);
-[; ;clc2.h: 91: void CLC2_Initialize(void);
-[; ;clc2.h: 113: bool CLC2_OutputStatusGet(void);
-[; ;eusart.h: 94: void EUSART_Initialize(void);
-[; ;eusart.h: 114: uint8_t EUSART_Read(void);
-[; ;eusart.h: 134: void EUSART_Write(uint8_t txData);
 [; ;mcc.h: 73: void SYSTEM_Initialize(void);
 [; ;mcc.h: 86: void OSCILLATOR_Initialize(void);
 [; ;mcc.h: 99: void WDT_Initialize(void);
-"15 main.c
+"17 main.c
 [v _shift `Vuc ~T0 @X0 1 e ]
-[; ;main.c: 15: volatile uint8_t shift;
-"16
-[v _shiftCounter `Vuc ~T0 @X0 1 e ]
-[; ;main.c: 16: volatile uint8_t shiftCounter;
-"17
-[v _id `Vuc ~T0 @X0 1 e ]
-[; ;main.c: 17: volatile uint8_t id;
+[; ;main.c: 17: volatile uint8_t shift;
 "18
-[v _cmd `Vuc ~T0 @X0 1 e ]
-[; ;main.c: 18: volatile uint8_t cmd;
+[v _shiftCounter `Vuc ~T0 @X0 1 e ]
+[; ;main.c: 18: volatile uint8_t shiftCounter;
 "19
-[v _arg `Vuc ~T0 @X0 1 e ]
-[; ;main.c: 19: volatile uint8_t arg;
+[v _id `Vuc ~T0 @X0 1 e ]
+[; ;main.c: 19: volatile uint8_t id;
 "20
-[v _eepromAdr `Vui ~T0 @X0 1 e ]
-[; ;main.c: 20: volatile uint16_t eepromAdr;
+[v _cmd `Vuc ~T0 @X0 1 e ]
+[; ;main.c: 20: volatile uint8_t cmd;
+"21
+[v _arg `Vuc ~T0 @X0 1 e ]
+[; ;main.c: 21: volatile uint8_t arg;
 "22
+[v _eepromAdr `Vui ~T0 @X0 1 e ]
+[; ;main.c: 22: volatile uint16_t eepromAdr;
+"24
 [v _readByte `(uc ~T0 @X0 1 ef ]
-"23
+"25
 {
-[; ;main.c: 22: uint8_t readByte()
-[; ;main.c: 23: {
+[; ;main.c: 24: uint8_t readByte()
+[; ;main.c: 25: {
 [e :U _readByte ]
 [f ]
-[; ;main.c: 24: shiftCounter = 8;
-"24
-[e = _shiftCounter -> -> 8 `i `uc ]
+[; ;main.c: 26: shiftCounter = 8;
 "26
-[; <"         ; STATUS bits ;# ">
-"27
-[; <"         C EQU 0 ;# ">
+[e = _shiftCounter -> -> 8 `i `uc ]
 "28
-[; <"         Z EQU 2 ;# ">
+[; <"         ; STATUS bits ;# ">
 "29
+[; <"         C EQU 0 ;# ">
 "30
-[; <"                 ; select bank for PORTC (bank 0) ;# ">
+[; <"         Z EQU 2 ;# ">
 "31
-[; <"         BANKSEL(PORTC) ;# ">
 "32
+[; <"                 ; select bank for PORTC (bank 0) ;# ">
 "33
-[; <"                         ; reset timer 1 and count pulse length ;# ">
+[; <"         BANKSEL(PORTC) ;# ">
 "34
-[; <" start_read: ;# ">
 "35
-[; <"         movlw 0 ;# ">
+[; <"                         ; reset timer 1 and count pulse length ;# ">
 "36
-[; <"         movwf TMR1L ;# ">
+[; <" start_read: ;# ">
 "37
-[; <"         movwf TMR1H ;# ">
+[; <"         movlw 0 ;# ">
 "38
-[; <" rwait1: ;# ">
+[; <"         movwf TMR1L ;# ">
 "39
-[; <"         btfss PORTC, 3 ;# ">
+[; <"         movwf TMR1H ;# ">
 "40
-[; <"         goto rwait1 ;# ">
+[; <" rwait1: ;# ">
 "41
-[; <" rwait0: ;# ">
+[; <"         btfss PORTC, 3 ;# ">
 "42
-[; <"         btfsc PORTC, 3 ;# ">
+[; <"         goto rwait1 ;# ">
 "43
-[; <"         goto rwait0 ;# ">
+[; <" rwait0: ;# ">
 "44
+[; <"         btfsc PORTC, 3 ;# ">
 "45
-[; <"         ; test for 1 or 0 bit length ;# ">
+[; <"         goto rwait0 ;# ">
 "46
-[; <"         movf TMR1L, W ;# ">
 "47
-[; <"         sublw 50 ;# ">
+[; <"         ; test for 1 or 0 bit length ;# ">
 "48
-[; <"         btfss STATUS, C ;# ">
+[; <"         movf TMR1L, W ;# ">
 "49
-[; <"         goto rbit1 ;# ">
+[; <"         sublw 50 ;# ">
 "50
-[; <" rbit0: movlw 0 ;# ">
+[; <"         btfss STATUS, C ;# ">
 "51
-[; <"         goto rbits ;# ">
+[; <"         goto rbit1 ;# ">
 "52
-[; <" rbit1: movlw 1 ;# ">
+[; <" rbit0: movlw 0 ;# ">
 "53
-[; <" rbits: BANKSEL(_shift) ;# ">
+[; <"         goto rbits ;# ">
 "54
-[; <"         lslf ((_shift)&07Fh), f ;# ">
+[; <" rbit1: movlw 1 ;# ">
 "55
-[; <"         iorwf _shift, f ;# ">
+[; <" rbits: BANKSEL(_shift) ;# ">
 "56
+[; <"         lslf ((_shift)&07Fh), f ;# ">
 "57
-[; <"                         ; shift all bits ;# ">
+[; <"         iorwf _shift, f ;# ">
 "58
-[; <"         BANKSEL(_shiftCounter) ;# ">
 "59
-[; <"         decfsz ((_shiftCounter)&07Fh), f ;# ">
+[; <"                         ; shift all bits ;# ">
 "60
-[; <"         goto start_read ;# ">
+[; <"         BANKSEL(_shiftCounter) ;# ">
 "61
-[; ;main.c: 63: return shift;
+[; <"         decfsz ((_shiftCounter)&07Fh), f ;# ">
+"62
+[; <"         goto start_read ;# ">
 "63
+[; ;main.c: 65: return shift;
+"65
 [e ) _shift ]
 [e $UE 696  ]
-[; ;main.c: 64: }
-"64
+[; ;main.c: 66: }
+"66
 [e :UE 696 ]
 }
-"66
-[v _writeByte `(v ~T0 @X0 1 ef1`uc ]
-"67
-{
-[; ;main.c: 66: void writeByte(uint8_t b)
-[; ;main.c: 67: {
-[e :U _writeByte ]
-"66
-[v _b `uc ~T0 @X0 1 r1 ]
-"67
-[f ]
-[; ;main.c: 68: shiftCounter = 8;
 "68
-[e = _shiftCounter -> -> 8 `i `uc ]
-[; ;main.c: 69: shift = b;
+[v _writeByte `(v ~T0 @X0 1 ef1`uc ]
 "69
-[e = _shift _b ]
+{
+[; ;main.c: 68: void writeByte(uint8_t b)
+[; ;main.c: 69: {
+[e :U _writeByte ]
+"68
+[v _b `uc ~T0 @X0 1 r1 ]
+"69
+[f ]
+[; ;main.c: 70: shiftCounter = 8;
+"70
+[e = _shiftCounter -> -> 8 `i `uc ]
+[; ;main.c: 71: shift = b;
 "71
-[; <"         ; STATUS bits ;# ">
-"72
-[; <"         C EQU 0 ;# ">
+[e = _shift _b ]
 "73
-[; <"         Z EQU 2 ;# ">
+[; <"         ; STATUS bits ;# ">
 "74
+[; <"         C EQU 0 ;# ">
 "75
-[; <"                 ; select bank for PORTC (bank 0) ;# ">
+[; <"         Z EQU 2 ;# ">
 "76
-[; <"         BANKSEL(PORTC) ;# ">
 "77
+[; <"                 ; select bank for PORTC (bank 0) ;# ">
 "78
-[; <"                         ; wait for PB6 high ;# ">
+[; <"         BANKSEL(PORTC) ;# ">
 "79
-[; <" wait1: ;# ">
 "80
-[; <"         btfss PORTC, 3 ;# ">
+[; <"                         ; wait for PB6 high ;# ">
 "81
-[; <"         goto wait1 ;# ">
+[; <" wait1: ;# ">
 "82
+[; <"         btfss PORTC, 3 ;# ">
 "83
-[; <"                                 ; wait 201 us ;# ">
+[; <"         goto wait1 ;# ">
 "84
-[; <"         movlw 0 ;# ">
 "85
-[; <"         movwf TMR0L ;# ">
+[; <"                                 ; wait 201 us ;# ">
 "86
-[; <" wait201: ;# ">
+[; <"         movlw 0 ;# ">
 "87
-[; <"         movf TMR0L, W ;# ">
+[; <"         movwf TMR0L ;# ">
 "88
-[; <"         sublw 201 ;# ">
+[; <" wait201: ;# ">
 "89
-[; <"         btfsc STATUS, C ;# ">
+[; <"         movf TMR0L, W ;# ">
 "90
-[; <"         goto wait201 ;# ">
+[; <"         sublw 201 ;# ">
 "91
+[; <"         btfsc STATUS, C ;# ">
 "92
-[; <"         ; wait 202 us ;# ">
+[; <"         goto wait201 ;# ">
 "93
-[; <"         movlw 0 ;# ">
 "94
-[; <"         movwf TMR0L ;# ">
+[; <"         ; wait 202 us ;# ">
 "95
-[; <" wait202: ;# ">
+[; <"         movlw 0 ;# ">
 "96
-[; <"         movf TMR0L, W ;# ">
+[; <"         movwf TMR0L ;# ">
 "97
-[; <"         sublw 202 ;# ">
+[; <" wait202: ;# ">
 "98
-[; <"         btfsc STATUS, C ;# ">
+[; <"         movf TMR0L, W ;# ">
 "99
-[; <"         goto wait202 ;# ">
+[; <"         sublw 202 ;# ">
 "100
+[; <"         btfsc STATUS, C ;# ">
 "101
-[; <"                 ; set PB6 low ;# ">
+[; <"         goto wait202 ;# ">
 "102
-[; <"         bcf PORTC, 3 ;# ">
 "103
-[; <"         BANKSEL(TRISC) ;# ">
+[; <"                 ; set PB6 low ;# ">
 "104
-[; <"         bcf ((TRISC)&07Fh), 3 ;# ">
+[; <"         bcf PORTC, 3 ;# ">
 "105
-[; <"         BANKSEL(PORTC) ;# ">
-"106
-"107
-[; <"         ; wait 200 us ;# ">
-"108
-[; <"         movlw 0 ;# ">
-"109
-[; <"         movwf TMR0L ;# ">
-"110
-[; <" wait200: ;# ">
-"111
-[; <"         movf TMR0L, W ;# ">
-"112
-[; <"         sublw 200 ;# ">
-"113
-[; <"         btfsc STATUS, C ;# ">
-"114
-[; <"         goto wait200 ;# ">
-"115
-"116
-[; <" start_write: ;# ">
-"117
-[; <"         bsf PORTC, 3 ;# ">
-"118
-[; <" bits: BANKSEL(_shift) ;# ">
-"119
-[; <"         btfss _shift, 7 ;# ">
-"120
-[; <"         goto bit0 ;# ">
-"121
-"122
-[; <" ; send 1 bit: 80 us 1, 120 us pause ;# ">
-"123
-[; <"         BANKSEL(PORTC) ;# ">
-"124
-[; <"         movlw 0 ;# ">
-"125
-[; <"         movwf TMR0L ;# ">
-"126
-[; <" wait160: ;# ">
-"127
-[; <"         movf TMR0L, W ;# ">
-"128
-[; <"         sublw 160 ;# ">
-"129
-[; <"         btfsc STATUS, C ;# ">
-"130
-[; <"         goto wait160 ;# ">
-"131
-[; <"         bcf PORTC, 3 ;# ">
-"132
-[; <"         movlw 0 ;# ">
-"133
-[; <"         movwf TMR0L ;# ">
-"134
-[; <" wait140: ;# ">
-"135
-[; <"         movf TMR0L, W ;# ">
-"136
-[; <"         sublw 140 ;# ">
-"137
-[; <"         btfsc STATUS, C ;# ">
-"138
-[; <"         goto wait140 ;# ">
-"139
-[; <"         goto write_end ;# ">
-"140
-"141
-[; <"         ; send 0 bit: 80 us 1, 220 us pause ;# ">
-"142
-[; <" bit0: ;# ">
-"143
-[; <"         BANKSEL(PORTC) ;# ">
-"144
-[; <"         movlw 0 ;# ">
-"145
-[; <"         movwf TMR0L ;# ">
-"146
-[; <" wait80: ;# ">
-"147
-[; <"         movf TMR0L, W ;# ">
-"148
-[; <"         sublw 80 ;# ">
-"149
-[; <"         btfsc STATUS, C ;# ">
-"150
-[; <"         goto wait80 ;# ">
-"151
-[; <"         bcf PORTC, 3 ;# ">
-"152
-[; <"         movlw 0 ;# ">
-"153
-[; <"         movwf TMR0L ;# ">
-"154
-[; <" wait220: ;# ">
-"155
-[; <"         movf TMR0L, W ;# ">
-"156
-[; <"         sublw 220 ;# ">
-"157
-[; <"         btfsc STATUS, C ;# ">
-"158
-[; <"         goto wait220 ;# ">
-"159
-"160
-[; <" write_end: ;# ">
-"161
-[; <"         BANKSEL(_shift) ;# ">
-"162
-[; <"         lslf ((_shift)&07Fh), f ;# ">
-"163
-"164
-[; <" ; shift all bits ;# ">
-"165
-[; <"         BANKSEL(_shiftCounter) ;# ">
-"166
-[; <"         decfsz ((_shiftCounter)&07Fh), f ;# ">
-"167
-[; <"         goto start_write ;# ">
-"168
-"169
-[; <" ; set PB6 back to input ;# ">
-"170
 [; <"         BANKSEL(TRISC) ;# ">
+"106
+[; <"         bcf ((TRISC)&07Fh), 3 ;# ">
+"107
+[; <"         BANKSEL(PORTC) ;# ">
+"108
+"109
+[; <"         ; wait 200 us ;# ">
+"110
+[; <"         movlw 0 ;# ">
+"111
+[; <"         movwf TMR0L ;# ">
+"112
+[; <" wait200: ;# ">
+"113
+[; <"         movf TMR0L, W ;# ">
+"114
+[; <"         sublw 200 ;# ">
+"115
+[; <"         btfsc STATUS, C ;# ">
+"116
+[; <"         goto wait200 ;# ">
+"117
+"118
+[; <" start_write: ;# ">
+"119
+[; <"         bsf PORTC, 3 ;# ">
+"120
+[; <" bits: BANKSEL(_shift) ;# ">
+"121
+[; <"         btfss _shift, 7 ;# ">
+"122
+[; <"         goto bit0 ;# ">
+"123
+"124
+[; <" ; send 1 bit: 80 us 1, 120 us pause ;# ">
+"125
+[; <"         BANKSEL(PORTC) ;# ">
+"126
+[; <"         movlw 0 ;# ">
+"127
+[; <"         movwf TMR0L ;# ">
+"128
+[; <" wait160: ;# ">
+"129
+[; <"         movf TMR0L, W ;# ">
+"130
+[; <"         sublw 160 ;# ">
+"131
+[; <"         btfsc STATUS, C ;# ">
+"132
+[; <"         goto wait160 ;# ">
+"133
+[; <"         bcf PORTC, 3 ;# ">
+"134
+[; <"         movlw 0 ;# ">
+"135
+[; <"         movwf TMR0L ;# ">
+"136
+[; <" wait140: ;# ">
+"137
+[; <"         movf TMR0L, W ;# ">
+"138
+[; <"         sublw 140 ;# ">
+"139
+[; <"         btfsc STATUS, C ;# ">
+"140
+[; <"         goto wait140 ;# ">
+"141
+[; <"         goto write_end ;# ">
+"142
+"143
+[; <"         ; send 0 bit: 80 us 1, 220 us pause ;# ">
+"144
+[; <" bit0: ;# ">
+"145
+[; <"         BANKSEL(PORTC) ;# ">
+"146
+[; <"         movlw 0 ;# ">
+"147
+[; <"         movwf TMR0L ;# ">
+"148
+[; <" wait80: ;# ">
+"149
+[; <"         movf TMR0L, W ;# ">
+"150
+[; <"         sublw 80 ;# ">
+"151
+[; <"         btfsc STATUS, C ;# ">
+"152
+[; <"         goto wait80 ;# ">
+"153
+[; <"         bcf PORTC, 3 ;# ">
+"154
+[; <"         movlw 0 ;# ">
+"155
+[; <"         movwf TMR0L ;# ">
+"156
+[; <" wait220: ;# ">
+"157
+[; <"         movf TMR0L, W ;# ">
+"158
+[; <"         sublw 220 ;# ">
+"159
+[; <"         btfsc STATUS, C ;# ">
+"160
+[; <"         goto wait220 ;# ">
+"161
+"162
+[; <" write_end: ;# ">
+"163
+[; <"         BANKSEL(_shift) ;# ">
+"164
+[; <"         lslf ((_shift)&07Fh), f ;# ">
+"165
+"166
+[; <" ; shift all bits ;# ">
+"167
+[; <"         BANKSEL(_shiftCounter) ;# ">
+"168
+[; <"         decfsz ((_shiftCounter)&07Fh), f ;# ">
+"169
+[; <"         goto start_write ;# ">
+"170
 "171
-[; <"         bsf ((TRISC)&07Fh), 3 ;# ">
+[; <" ; set PB6 back to input ;# ">
 "172
-[; ;main.c: 174: }
+[; <"         BANKSEL(TRISC) ;# ">
+"173
+[; <"         bsf ((TRISC)&07Fh), 3 ;# ">
 "174
+[; ;main.c: 176: }
+"176
 [e :UE 697 ]
 }
-"176
+"178
 [v _waitStart `(v ~T0 @X0 1 ef ]
-"177
+"179
 {
-[; ;main.c: 176: void waitStart()
-[; ;main.c: 177: {
+[; ;main.c: 178: void waitStart()
+[; ;main.c: 179: {
 [e :U _waitStart ]
 [f ]
-"179
-[; <"         ; STATUS bits ;# ">
-"180
-[; <"         C EQU 0 ;# ">
 "181
-[; <"         Z EQU 2 ;# ">
+[; <"         ; STATUS bits ;# ">
 "182
+[; <"         C EQU 0 ;# ">
 "183
-[; <"                 ; select bank for PORTC (bank 0) ;# ">
+[; <"         Z EQU 2 ;# ">
 "184
-[; <"         BANKSEL(PORTC) ;# ">
 "185
+[; <"                 ; select bank for PORTC (bank 0) ;# ">
 "186
-[; <"                         ; wait for at least 5 us low on PB6 ;# ">
+[; <"         BANKSEL(PORTC) ;# ">
 "187
-[; <" winit_wait: ;# ">
 "188
-[; <"         movlw 0 ;# ">
+[; <"                         ; wait for at least 5 us low on PB6 ;# ">
 "189
-[; <"         movwf TMR0L ;# ">
+[; <" winit_wait: ;# ">
 "190
-[; <" wait: ;# ">
+[; <"         movlw 0 ;# ">
 "191
-[; <"         btfsc PORTC, 3 ;# ">
+[; <"         movwf TMR0L ;# ">
 "192
-[; <"         goto winit_wait ;# ">
+[; <" wait: ;# ">
 "193
-[; <"         movf TMR0L, W ;# ">
+[; <"         btfsc PORTC, 3 ;# ">
 "194
-[; <"         sublw 5 ;# ">
+[; <"         goto winit_wait ;# ">
 "195
-[; <"         btfsc STATUS, C ;# ">
+[; <"         movf TMR0L, W ;# ">
 "196
-[; <"         goto wait ;# ">
-[; ;main.c: 198: }
+[; <"         sublw 5 ;# ">
+"197
+[; <"         btfsc STATUS, C ;# ">
 "198
+[; <"         goto wait ;# ">
+[; ;main.c: 200: }
+"200
 [e :UE 698 ]
 }
-"200
+"202
 [v _readCommand `(v ~T0 @X0 1 ef ]
-"201
+"203
 {
-[; ;main.c: 200: void readCommand()
-[; ;main.c: 201: {
+[; ;main.c: 202: void readCommand()
+[; ;main.c: 203: {
 [e :U _readCommand ]
 [f ]
-[; ;main.c: 202: waitStart();
-"202
-[e ( _waitStart ..  ]
-[; ;main.c: 203: id = readByte();
-"203
-[e = _id ( _readByte ..  ]
-[; ;main.c: 204: cmd = readByte();
+[; ;main.c: 204: waitStart();
 "204
-[e = _cmd ( _readByte ..  ]
-[; ;main.c: 205: arg = readByte();
+[e ( _waitStart ..  ]
+[; ;main.c: 205: id = readByte();
 "205
-[e = _arg ( _readByte ..  ]
-[; ;main.c: 206: if (id =='V') {
+[e = _id ( _readByte ..  ]
+[; ;main.c: 206: cmd = readByte();
 "206
+[e = _cmd ( _readByte ..  ]
+[; ;main.c: 207: arg = readByte();
+"207
+[e = _arg ( _readByte ..  ]
+[; ;main.c: 208: if (id =='V') {
+"208
 [e $ ! == -> _id `ui -> 86 `ui 700  ]
 {
-[; ;main.c: 207: switch (cmd) {
-"207
+[; ;main.c: 209: switch (cmd) {
+"209
 [e $U 702  ]
 {
-[; ;main.c: 208: case 1:
-"208
-[e :U 703 ]
-[; ;main.c: 209: writeByte(4);
-"209
-[e ( _writeByte (1 -> -> 4 `i `uc ]
-[; ;main.c: 210: break;
+[; ;main.c: 210: case 1:
 "210
-[e $U 701  ]
-[; ;main.c: 211: case 2:
+[e :U 703 ]
+[; ;main.c: 211: writeByte(4);
 "211
-[e :U 704 ]
-[; ;main.c: 212: eepromAdr = 0xf000 + arg;
+[e ( _writeByte (1 -> -> 4 `i `uc ]
+[; ;main.c: 212: break;
 "212
-[e = _eepromAdr + -> 61440 `ui -> _arg `ui ]
-[; ;main.c: 213: writeByte(arg);
+[e $U 701  ]
+[; ;main.c: 213: case 2:
 "213
-[e ( _writeByte (1 _arg ]
-[; ;main.c: 214: break;
+[e :U 704 ]
+[; ;main.c: 214: eepromAdr = 0xf000 + arg;
 "214
-[e $U 701  ]
-[; ;main.c: 215: case 3:
+[e = _eepromAdr + -> 61440 `ui -> _arg `ui ]
+[; ;main.c: 215: writeByte(arg);
 "215
-[e :U 705 ]
-[; ;main.c: 216: DATAEE_WriteByte(eepromAdr, arg);
+[e ( _writeByte (1 _arg ]
+[; ;main.c: 216: break;
 "216
-[e ( _DATAEE_WriteByte (2 , _eepromAdr _arg ]
-[; ;main.c: 217: writeByte(DATAEE_ReadByte(eepromAdr));
+[e $U 701  ]
+[; ;main.c: 217: case 3:
 "217
-[e ( _writeByte (1 ( _DATAEE_ReadByte (1 _eepromAdr ]
-[; ;main.c: 218: break;
+[e :U 705 ]
+[; ;main.c: 218: DATAEE_WriteByte(eepromAdr, arg);
 "218
-[e $U 701  ]
-[; ;main.c: 219: case 4:
+[e ( _DATAEE_WriteByte (2 , _eepromAdr _arg ]
+[; ;main.c: 219: writeByte(DATAEE_ReadByte(eepromAdr));
 "219
-[e :U 706 ]
-[; ;main.c: 220: writeByte(DATAEE_ReadByte(0xf000 + arg));
+[e ( _writeByte (1 ( _DATAEE_ReadByte (1 _eepromAdr ]
+[; ;main.c: 220: break;
 "220
-[e ( _writeByte (1 ( _DATAEE_ReadByte (1 + -> 61440 `ui -> _arg `ui ]
-[; ;main.c: 221: break;
+[e $U 701  ]
+[; ;main.c: 221: case 4:
 "221
-[e $U 701  ]
-[; ;main.c: 222: default:
+[e :U 706 ]
+[; ;main.c: 222: writeByte(DATAEE_ReadByte(0xf000 + arg));
 "222
-[e :U 707 ]
-[; ;main.c: 223: writeByte(0);
+[e ( _writeByte (1 ( _DATAEE_ReadByte (1 + -> 61440 `ui -> _arg `ui ]
+[; ;main.c: 223: break;
 "223
-[e ( _writeByte (1 -> -> 0 `i `uc ]
-[; ;main.c: 224: break;
+[e $U 701  ]
+[; ;main.c: 224: case 5:
 "224
-[e $U 701  ]
+[e :U 707 ]
+[; ;main.c: 225: if (arg & 1) {
 "225
+[e $ ! != & -> _arg `i -> 1 `i -> 0 `i 708  ]
+{
+[; ;main.c: 226: PORTCbits.RC0 = 1;
+"226
+[e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
+"227
 }
-[; ;main.c: 225: }
+[; ;main.c: 227: } else {
+[e $U 709  ]
+[e :U 708 ]
+{
+[; ;main.c: 228: PORTCbits.RC0 = 0;
+"228
+[e = . . _PORTCbits 0 0 -> -> 0 `i `uc ]
+"229
+}
+[e :U 709 ]
+[; ;main.c: 229: }
+[; ;main.c: 230: writeByte(arg);
+"230
+[e ( _writeByte (1 _arg ]
+[; ;main.c: 231: break;
+"231
 [e $U 701  ]
-"207
+[; ;main.c: 232: default:
+"232
+[e :U 710 ]
+[; ;main.c: 233: writeByte(0);
+"233
+[e ( _writeByte (1 -> -> 0 `i `uc ]
+[; ;main.c: 234: break;
+"234
+[e $U 701  ]
+"235
+}
+[; ;main.c: 235: }
+[e $U 701  ]
+"209
 [e :U 702 ]
 [e [\ _cmd , $ -> -> 1 `i `uc 703
  , $ -> -> 2 `i `uc 704
  , $ -> -> 3 `i `uc 705
  , $ -> -> 4 `i `uc 706
- 707 ]
-"225
+ , $ -> -> 5 `i `uc 707
+ 710 ]
+"235
 [e :U 701 ]
-"226
+"236
 }
 [e :U 700 ]
-[; ;main.c: 226: }
-[; ;main.c: 227: }
-"227
+[; ;main.c: 236: }
+[; ;main.c: 237: }
+"237
 [e :UE 699 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"229
+"239
 [v _main `(i ~T0 @X0 1 ef ]
-"230
+"240
 {
-[; ;main.c: 229: int main()
-[; ;main.c: 230: {
+[; ;main.c: 239: int main()
+[; ;main.c: 240: {
 [e :U _main ]
 [f ]
-[; ;main.c: 231: SYSTEM_Initialize();
-"231
+[; ;main.c: 241: SYSTEM_Initialize();
+"241
 [e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 232: _delay((unsigned long)((100)*(32000000/4000.0)));
-"232
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-[; ;main.c: 233: while (1) {
-"233
-[e :U 710 ]
-{
-[; ;main.c: 234: readCommand();
-"234
-[e ( _readCommand ..  ]
+[; ;main.c: 242: _delay((unsigned long)((100)*(32000000/4000.0)));
 "242
-}
-[e :U 709 ]
-"233
-[e $U 710  ]
-[e :U 711 ]
-[; ;main.c: 242: }
-[; ;main.c: 244: return 0;
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
+[; ;main.c: 243: while (1) {
+"243
+[e :U 713 ]
+{
+[; ;main.c: 244: readCommand();
 "244
-[e ) -> 0 `i ]
-[e $UE 708  ]
-[; ;main.c: 245: }
+[e ( _readCommand ..  ]
 "245
-[e :UE 708 ]
+}
+[e :U 712 ]
+"243
+[e $U 713  ]
+[e :U 714 ]
+[; ;main.c: 245: }
+[; ;main.c: 247: return 0;
+"247
+[e ) -> 0 `i ]
+[e $UE 711  ]
+[; ;main.c: 248: }
+"248
+[e :UE 711 ]
 }

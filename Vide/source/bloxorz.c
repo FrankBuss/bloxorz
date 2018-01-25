@@ -30,6 +30,7 @@
 #define CMD_SET_EEPROM_ADR 2
 #define CMD_EEPROM_WRITE 3
 #define CMD_EEPROM_READ 4
+#define CMD_SET_BANK 5
 
 extern void* memcpy (void* dest, const void* src, long unsigned int len);
 
@@ -42,13 +43,19 @@ typedef unsigned char uint8_t;
 #define frwait Wait_Recal
 #define intens Intensity_a
 #define diffab Draw_Line_d
-#define pack1x Draw_VLp_7F
+#define pack1x Draw_VLp_80
 #define joybit Joy_Digital
 #define replay Init_Music_chk
 #define reqout Do_Sound
 __INLINE void positd (int8_t x, int8_t y)
 {
-	Moveto_d_7F(y,x);
+	dp_VIA_t1_cnt_lo = 0x80;
+	Moveto_d(y,x);
+}
+__INLINE void Draw_VLp_80(void* const x)
+{
+	dp_VIA_t1_cnt_lo = 0x80;
+	Draw_VLp(x);
 }
 
 /*
@@ -149,10 +156,16 @@ const uint8_t* currentMusic = startMusic;
 #include "level.i"
 #include "block.i"
 
-int8_t lineX0[120];
-int8_t lineY0[120];
-int8_t lineX1[120];
-int8_t lineY1[120];
+
+#define MAX_LINES 80
+uint8_t moveScale[MAX_LINES];
+unsigned long int moveTo[MAX_LINES];
+
+uint8_t lineScale[MAX_LINES];
+int8_t lineX0[MAX_LINES];
+int8_t lineY0[MAX_LINES];
+int8_t lineX1[MAX_LINES];
+int8_t lineY1[MAX_LINES];
 uint8_t lineCount = 0;
 int8_t startX = 0;
 int8_t startY = 0;
@@ -182,6 +195,8 @@ int8_t levelNumber = 0;
 uint16_t levelHighscore;
 
 enum GameState_t {
+	MainMenu,
+	ClearMenu,
 	BlockMovingToStart,
 	BlockWaiting,
 	BlockMoving,
@@ -262,14 +277,83 @@ int8_t y3d(int8_t x, int8_t y, int8_t z)
 	return 3 * x + 13 * y + 8 * z;
 }
 
+uint8_t scaleDown(uint8_t oldScale)
+{
+	return (uint8_t)(oldScale>>1);
+}
+
+unsigned long int toLong(int hi, int lo)
+{
+	unsigned long int t = (unsigned long int)hi;
+	t = t << 8;
+	unsigned long int t2 = (unsigned long int)lo;
+	t2 = t2 & 0xff;
+	t = t & 0xff00;
+	t = t + t2;
+	return t;
+}
+
+
+uint8_t correctScale(uint8_t s)
+{
+	if (s==0x80) return 0x80;
+	if (s==0x40) return 0x40-1;
+	if (s==0x20) return 0x20-2;
+	return s;
+}
+#define DO_SCALE 1
 void addLine(int8_t x0, int8_t y0, int8_t x1, int8_t y1)
 {
+
 	lineX0[lineCount] = x3d(x0, 0, y0);
 	lineY0[lineCount] = y3d(x0, 0, y0);
 	lineX1[lineCount] = x3d(x1, 0, y1);
 	lineY1[lineCount] = y3d(x1, 0, y1);
+
+	lineScale[lineCount] = 0x80;
+	moveScale[lineCount] = 0x80;
+
+	int xpos = lineX0[lineCount]; 
+	int ypos = lineY0[lineCount]; 
+#ifdef DO_SCALE	
+
+	// Line	
+	int difx = (lineX1[lineCount]-lineX0[lineCount]); 
+	int dify = (lineY1[lineCount]-lineY0[lineCount]); 
+	if (difx<0) difx = -difx;
+	if (dify<0) dify = -dify;
+	if ((difx<64) && (dify<64)) lineScale[lineCount] = scaleDown(lineScale[lineCount]);
+	if ((difx<32) && (dify<32)) lineScale[lineCount] = scaleDown(lineScale[lineCount]);
+
+	// Move	
+  	difx = lineX0[lineCount]; 
+    	dify = lineY0[lineCount]; 
+    	if (difx<0) difx = -difx;
+    	if (dify<0) dify = -dify;
+    	if ((difx<64) && (dify<64)) 
+	{
+		moveScale[lineCount] = scaleDown(moveScale[lineCount]);
+		xpos = xpos<<1;
+		ypos = ypos<<1;
+	}
+    	if ((difx<32) && (dify<32)) 
+	{
+		moveScale[lineCount] = scaleDown(moveScale[lineCount]);
+		xpos = xpos<<1;
+		ypos = ypos<<1;
+	}
+
+	
+	lineScale[lineCount] = correctScale(lineScale[lineCount]);
+	moveScale[lineCount] = correctScale(moveScale[lineCount]);
+	
+	
+#endif
+	
+	moveTo[lineCount] =toLong(ypos, xpos);
 	lineCount++;
 }
+
 
 void addTarget(int8_t x, int8_t y)
 {
@@ -277,11 +361,89 @@ void addTarget(int8_t x, int8_t y)
 	lineY0[lineCount] = y3d(x, 0, y);
 	lineX1[lineCount] = x3d(x + 1, 0, y + 1);
 	lineY1[lineCount] = y3d(x + 1, 0, y + 1);
+
+	lineScale[lineCount] = 0x80;
+	moveScale[lineCount] = 0x80;
+	int xpos = lineX0[lineCount]; 
+	int ypos = lineY0[lineCount]; 
+
+#ifdef DO_SCALE	
+	// Line
+	int difx = lineX1[lineCount] - lineX0[lineCount]; 
+	int dify = lineY1[lineCount] - lineY0[lineCount]; 
+	if (difx<0) difx = -difx;
+	if (dify<0) dify = -dify;
+	if ((difx<64) && (dify<64)) lineScale[lineCount] = scaleDown(lineScale[lineCount]);
+	if ((difx<32) && (dify<32)) lineScale[lineCount] = scaleDown(lineScale[lineCount]);
+
+	// Move
+	difx = lineX0[lineCount]; 
+    	dify = lineY0[lineCount]; 
+    	if (difx<0) difx = -difx;
+    	if (dify<0) dify = -dify;
+
+	if ((difx<64) && (dify<64)) 
+	{
+		moveScale[lineCount] = scaleDown(moveScale[lineCount]);
+		xpos = xpos<<1;
+		ypos = ypos<<1;
+	}
+    	if ((difx<32) && (dify<32)) 
+	{
+		moveScale[lineCount] = scaleDown(moveScale[lineCount]);
+		xpos = xpos<<1;
+		ypos = ypos<<1;
+	}
+	lineScale[lineCount] = correctScale(lineScale[lineCount]);
+	moveScale[lineCount] = correctScale(moveScale[lineCount]);
+#endif
+	moveTo[lineCount] =toLong(ypos, xpos);
 	lineCount++;
+
+
+
 	lineX0[lineCount] = x3d(x + 1, 0, y);
 	lineY0[lineCount] = y3d(x + 1, 0, y);
 	lineX1[lineCount] = x3d(x, 0, y + 1);
 	lineY1[lineCount] = y3d(x, 0, y + 1);
+	
+	lineScale[lineCount] = 0x80;
+	moveScale[lineCount] = 0x80;
+
+	xpos = lineX0[lineCount]; 
+	ypos = lineY0[lineCount]; 
+	
+#ifdef DO_SCALE	
+// Line	
+	difx = lineX1[lineCount] - lineX0[lineCount]; 
+	dify = lineY1[lineCount] - lineY0[lineCount]; 
+	if (difx<0) difx = -difx;
+	if (dify<0) dify = -dify;
+	if ((difx<64) && (dify<64)) lineScale[lineCount] = scaleDown(lineScale[lineCount]);
+	if ((difx<32) && (dify<32)) lineScale[lineCount] =  scaleDown(lineScale[lineCount]);
+
+// Move
+    	difx = lineX0[lineCount]; 
+    	dify = lineY0[lineCount]; 
+    	if (difx<0) difx = -difx;
+    	if (dify<0) dify = -dify;
+
+	if ((difx<64) && (dify<64)) 
+	{
+		moveScale[lineCount] = scaleDown(moveScale[lineCount]);
+		xpos = xpos<<1;
+		ypos = ypos<<1;
+	}
+    	if ((difx<32) && (dify<32)) 
+	{
+		moveScale[lineCount] = scaleDown(moveScale[lineCount]);
+		xpos = xpos<<1;
+		ypos = ypos<<1;
+	}
+	lineScale[lineCount] = correctScale(lineScale[lineCount]);
+	moveScale[lineCount] = correctScale(moveScale[lineCount]);
+#endif
+	moveTo[lineCount] =toLong(ypos, xpos);
 	lineCount++;
 }
 
@@ -375,97 +537,97 @@ void moveBlock(enum BlockDirection_t move)
 	lastBlockDirection = move;
 	switch (blockOrientation) {
 		case Standing:
-		switch (move) {
-			case Left:
-			blockAnimation = height2FallingLeft;
-			nextBlockAnimation = width2RollingFront;
-			nextBlockX = blockX - 2;
-			nextBlockY = blockY;
-			blockOrientation = Horizontal;
-			break;
-			case Right:
-			blockAnimation = height2FallingRight;
-			nextBlockAnimation = width2RollingFront;
-			nextBlockX = blockX + 1;
-			nextBlockY = blockY;
-			blockOrientation = Horizontal;
-			break;
-			case Up:
-			blockAnimation = height2FallingBack;
-			nextBlockAnimation = depth2RollingLeft;
-			nextBlockX = blockX;
-			nextBlockY = blockY + 1;
-			blockOrientation = Vertical;
-			break;
-			case Down:
-			blockAnimation = height2FallingFront;
-			nextBlockAnimation = depth2RollingLeft;
-			nextBlockX = blockX;
-			nextBlockY = blockY - 2;
-			blockOrientation = Vertical;
-			break;
-		}
-		break;
+        		switch (move) {
+        			case Left:
+            			blockAnimation = height2FallingLeft;
+             			nextBlockAnimation = width2RollingFront;
+             			nextBlockX = blockX - 2;
+             			nextBlockY = blockY;
+             			blockOrientation = Horizontal;
+             			break;
+        			case Right:
+             			blockAnimation = height2FallingRight;
+             			nextBlockAnimation = width2RollingFront;
+             			nextBlockX = blockX + 1;
+             			nextBlockY = blockY;
+             			blockOrientation = Horizontal;
+             			break;
+        			case Up:
+             			blockAnimation = height2FallingBack;
+             			nextBlockAnimation = depth2RollingLeft;
+             			nextBlockX = blockX;
+             			nextBlockY = blockY + 1;
+             			blockOrientation = Vertical;
+             			break;
+        			case Down:
+             			blockAnimation = height2FallingFront;
+             			nextBlockAnimation = depth2RollingLeft;
+             			nextBlockX = blockX;
+             			nextBlockY = blockY - 2;
+             			blockOrientation = Vertical;
+             			break;
+        		}
+        		break;
 		case Vertical:
-		switch (move) {
-			case Left:
-			blockAnimation = depth2RollingLeft;
-			nextBlockAnimation = depth2RollingLeft;
-			nextBlockX = blockX - 1;
-			nextBlockY = blockY;
-			break;
-			case Right:
-			blockAnimation = depth2RollingRight;
-			nextBlockAnimation = depth2RollingLeft;
-			nextBlockX = blockX + 1;
-			nextBlockY = blockY;
-			break;
-			case Up:
-			blockAnimation = height2RisingBack;
-			nextBlockAnimation = height2FallingFront;
-			nextBlockX = blockX;
-			nextBlockY = blockY + 2;
-			blockOrientation = Standing;
-			break;
-			case Down:
-			blockAnimation = height2RisingFront;
-			nextBlockAnimation = height2FallingFront;
-			nextBlockX = blockX;
-			nextBlockY = blockY - 1;
-			blockOrientation = Standing;
-			break;
-		}
-		break;
+        		switch (move) {
+        			case Left:
+            			blockAnimation = depth2RollingLeft;
+            			nextBlockAnimation = depth2RollingLeft;
+            			nextBlockX = blockX - 1;
+            			nextBlockY = blockY;
+            			break;
+        			case Right:
+            			blockAnimation = depth2RollingRight;
+            			nextBlockAnimation = depth2RollingLeft;
+            			nextBlockX = blockX + 1;
+            			nextBlockY = blockY;
+            			break;
+        			case Up:
+            			blockAnimation = height2RisingBack;
+            			nextBlockAnimation = height2FallingFront;
+            			nextBlockX = blockX;
+            			nextBlockY = blockY + 2;
+            			blockOrientation = Standing;
+            			break;
+        			case Down:
+            			blockAnimation = height2RisingFront;
+            			nextBlockAnimation = height2FallingFront;
+            			nextBlockX = blockX;
+            			nextBlockY = blockY - 1;
+            			blockOrientation = Standing;
+            			break;
+        		}
+        		break;
 		case Horizontal:
-		switch (move) {
-			case Left:
-			blockAnimation = height2RisingLeft;
-			nextBlockAnimation = height2FallingRight;
-			nextBlockX = blockX - 1;
-			nextBlockY = blockY;
-			blockOrientation = Standing;
-			break;
-			case Right:
-			blockAnimation = height2RisingRight;
-			nextBlockAnimation = height2FallingLeft;
-			nextBlockX = blockX + 2;
-			nextBlockY = blockY;
-			blockOrientation = Standing;
-			break;
-			case Up:
-			blockAnimation = width2RollingBack;
-			nextBlockAnimation = width2RollingBack;
-			nextBlockX = blockX;
-			nextBlockY = blockY + 1;
-			break;
-			case Down:
-			blockAnimation = width2RollingFront;
-			nextBlockAnimation = width2RollingBack;
-			nextBlockX = blockX;
-			nextBlockY = blockY - 1;
-			break;
-		}
-		break;
+        		switch (move) {
+        			case Left:
+            			blockAnimation = height2RisingLeft;
+            			nextBlockAnimation = height2FallingRight;
+            			nextBlockX = blockX - 1;
+            			nextBlockY = blockY;
+            			blockOrientation = Standing;
+            			break;
+        			case Right:
+            			blockAnimation = height2RisingRight;
+            			nextBlockAnimation = height2FallingLeft;
+            			nextBlockX = blockX + 2;
+            			nextBlockY = blockY;
+            			blockOrientation = Standing;
+            			break;
+        			case Up:
+            			blockAnimation = width2RollingBack;
+            			nextBlockAnimation = width2RollingBack;
+            			nextBlockX = blockX;
+            			nextBlockY = blockY + 1;
+            			break;
+        			case Down:
+            			blockAnimation = width2RollingFront;
+            			nextBlockAnimation = width2RollingBack;
+            			nextBlockX = blockX;
+            			nextBlockY = blockY - 1;
+            			break;
+        		}
+        		break;
 	}
 	if (moveCount < 999) moveCount++;
 	updateInfoText();
@@ -488,6 +650,7 @@ void startLevel()
 	} else {
 		level = level2;
 	}
+//		level = level2;
 	levelHighscore = readEeprom((uint8_t) (levelNumber * 2));
 	levelHighscore |= ((uint16_t) readEeprom((uint8_t) (levelNumber * 2 + 1))) << 8;
 	if (levelHighscore == 0) levelHighscore = 999;
@@ -507,53 +670,17 @@ void startLevel()
 	updateInfoText();
 }
 
+
+
+extern void drawFieldAsmScale();
 void __attribute__((noinline)) drawField()
 {
 	
 	// set high intensity and beam position
 	intens(0x55);
-	
-	// draw field lines
-/*
-	for (uint8_t i = 0; i < lineCount; i++) {
-		zergnd();
-		positd(lineX0[i], lineY0[i]);
-		int8_t dx = lineX1[i] - lineX0[i];
-		int8_t dy = lineY1[i] - lineY0[i];
-		diffab( dy, dx);
-	}
-	*/
-	// hand optimized assembler of the previous C code
-
-	asm("	pshs a, b, dp, x, u");
-	asm("	lda #0xd0");
-	asm("	tfr a, dp");
-	asm("	ldx #0");
-	asm("	ldb _lineCount");
-	asm("drawFieldLoop:");
-	asm("	pshs b");
-	asm("	pshs x");
-	asm("	jsr 0xf354");  // _zergnd
-	asm("	puls x");
-	asm("	lda _lineY0,x");
-	asm("	ldb _lineX0,x");
-	asm("	pshs x");
-	asm("	jsr 0xf2fc");  // positd
-	asm("	puls x");
-	asm("	lda _lineY1,x");
-	asm("	ldb _lineX1,x");
-	asm("	suba _lineY0,x");
-	asm("	subb _lineX0,x");
-	asm("	pshs x");
-	asm("	jsr 0xf3df");  // diffab
-	asm("	puls x");
-	asm("	lda ,x+");
-	asm("	puls b");
-	asm("	decb");
-	asm("	bne drawFieldLoop");
-	asm("	puls a, b, dp, x, u");
-
+	drawFieldAsmScale();
 }
+
 
 void drawBlock(int8_t yofs)
 {
@@ -562,7 +689,6 @@ void drawBlock(int8_t yofs)
 	positd(0, yofs);
 	
 	positd(x3d(blockX, 0, blockY), y3d(blockX, 0, blockY));
-	//	pack1x(blockAnimation[blockAnimationStep], 0);
 	pack1x((void*)(blockAnimation[blockAnimationStep]));
 }
 
@@ -687,6 +813,94 @@ void blockMovingAtEnd()
 	}
 }
 
+void mainMenu()
+{
+	Read_Btns();
+    Intensity_a(0x5f);
+    Vec_Text_Width = 90;
+    Print_Str_d(100, -70, "MAIN MENU\x80");
+    Print_Str_d(50, -110, "1 START GAME\x80");
+    Print_Str_d(20, -110, "2 CLEAR HIGHSCORE\x80");
+    Print_Str_d(-10, -110, "3 BANKING TEST\x80");
+	if (Vec_Buttons & 1) {
+		startLevel();
+	}
+	if (Vec_Buttons & 2) {
+		gameState = ClearMenu;
+	}
+	if (Vec_Buttons & 4) {
+		sendCommand(CMD_SET_BANK, 1);
+		asm("	jmp 0xf000");
+	}
+}
+
+void clearMenu()
+{
+	Read_Btns();
+    Intensity_a(0x5f);
+    Vec_Text_Width = 90;
+    Print_Str_d(100, -80, "CLEAR SCORE?\x80");
+    Print_Str_d(50, -110, "3 YES\x80");
+    Print_Str_d(20, -110, "4 NO\x80");
+	if (Vec_Buttons & 4) {
+		for (uint8_t i = 0; i < 6; i++) {
+			writeEeprom(i, 0xff);
+		}
+		gameState = MainMenu;
+	}
+	if (Vec_Buttons & 8) {
+		gameState = MainMenu;
+	}
+}
+
+const int8_t led8[] = {
+	(int8_t) 255, 0, 5,
+	(int8_t) 255, -5, 0,
+	(int8_t) 255, 0, -5,
+	(int8_t) 255, 5, 0,
+	(int8_t) 255, 5, 0,
+	(int8_t) 255, 0, 5,
+	(int8_t) 255, -5, 0,
+	1
+};
+
+void showInfo2()
+{
+	zergnd();
+	intens(0x50);
+
+	zergnd();
+	positd(-50, 100);
+	pack1x((void*)led8);
+
+	zergnd();
+	positd(-40, 110);
+	pack1x((void*)led8);
+
+	zergnd();
+	positd(-30, 120);
+	pack1x((void*)led8);
+
+	zergnd();
+	positd(0, 120);
+	pack1x((void*)led8);
+
+	zergnd();
+	positd(10, 120);
+	pack1x((void*)led8);
+
+	zergnd();
+	positd(20, 120);
+	pack1x((void*)led8);
+}
+
+void showInfo()
+{
+    Intensity_a(0x5f);
+    Vec_Text_Width = 100;
+    Print_Str_d(100, -70, infoText);
+}
+
 int main()
 {
 	// check if PIC is available
@@ -706,31 +920,39 @@ int main()
 	epot2 = 0;
 	epot3 = 0;
 	
-	startLevel();
+	gameState = MainMenu;
+
 	while (1) {
 		// wait for frame boundary (one frame = 30,000 cyles = 50 Hz)
 		frwait();
-		
-        Intensity_a(0x5f);
-        Vec_Text_Width = 100;
-        Print_Str_d(100, -80, infoText);
 
 		switch (gameState) {
+			case MainMenu:
+        			mainMenu();
+        			break;
+			case ClearMenu:
+				clearMenu();
+				break;
 			case BlockMovingToStart:
-			blockMovingToStart();
-			break;
+				showInfo();
+        			blockMovingToStart();
+        			break;
 			case BlockWaiting:
-			blockWaiting();
-			break;
+				showInfo();
+        			blockWaiting();
+        			break;
 			case BlockMoving:
-			blockMoving();
-			break;
+				showInfo();
+        			blockMoving();
+        			break;
 			case BlockFalling:
-			blockFalling();
-			break;
+				showInfo();
+        			blockFalling();
+        			break;
 			case BlockMovingAtEnd:
-			blockMovingAtEnd();
-			break;
+				showInfo();
+        			blockMovingAtEnd();
+        			break;
 		}
 		
 		// play next music note

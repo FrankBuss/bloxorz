@@ -1940,7 +1940,8 @@ struct cartridge_t
  unsigned int title_width;
  int title_y;
  int title_x;
- char title[];
+ char title[9];
+ char unused[8192];
 };
 
 
