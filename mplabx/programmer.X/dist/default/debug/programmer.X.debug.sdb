@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 18F45K50 ]
 [d frameptr 4065 ]
-"66 /home/frank/data/projects/bloxorz/mplabx/programmer.X/receiver.c
+"67 /home/frank/data/projects/bloxorz/mplabx/programmer.X/receiver.c
 [e E5782 State_t `uc
 STATE_IDLE 0
 STATE_COMMAND 1
@@ -14,15 +14,15 @@ STATE_CHECKSUM_HIGH_NIBBLE 5
 STATE_CHECKSUM_LOW_NIBBLE 6
 STATE_END 7
 ]
-"104
-[e E5800 Port_t `uc
+"105
+[e E5801 Port_t `uc
 PORT_A 0
 PORT_B 1
 PORT_C 2
 PORT_D 3
 PORT_E 4
 ]
-"304
+"315
 [e E5791 Command_t `uc
 COMMAND_READ 0
 COMMAND_WRITE 1
@@ -32,6 +32,7 @@ COMMAND_ADR_HIGH 4
 COMMAND_FLASH 5
 COMMAND_VERIFY 6
 COMMAND_BANK 7
+COMMAND_PROGRAMMER_ENABLE 8
 ]
 "62 /opt/microchip/xc8/v1.42/sources/common/float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
@@ -93,29 +94,31 @@ COMMAND_BANK 7
 [v _writeChar writeChar `(v  1 e 1 0 ]
 "218
 [v _main main `(i  1 e 2 0 ]
-"79 /home/frank/data/projects/bloxorz/mplabx/programmer.X/receiver.c
+"80 /home/frank/data/projects/bloxorz/mplabx/programmer.X/receiver.c
 [v _parseHex parseHex `(c  1 e 1 0 ]
-"89
+"90
 [v _error error `(v  1 e 1 0 ]
-"96
+"97
 [v _writeHex writeHex `(v  1 e 1 0 ]
-"102
+"103
 [v _readPort readPort `(v  1 e 1 0 ]
-"117
+"118
 [v _logicAddressToPhysical logicAddressToPhysical `(ui  1 e 2 0 ]
-"139
+"140
 [v _logicDataToPhysical logicDataToPhysical `(uc  1 e 1 0 ]
-"153
+"154
 [v _writeAddress writeAddress `(v  1 e 1 0 ]
-"173
+"174
 [v _writeAddressPhysical writeAddressPhysical `(v  1 e 1 0 ]
-"180
+"181
 [v _readAddress readAddress `(uc  1 e 1 0 ]
-"198
+"199
 [v _writeByte writeByte `(v  1 e 1 0 ]
-"281
+"282
 [v _sendBankCommand sendBankCommand `(v  1 e 1 0 ]
-"291
+"292
+[v _sendProgrammerEnableCommand sendProgrammerEnableCommand `(v  1 e 1 0 ]
+"302
 [v _onData onData `(v  1 e 1 0 ]
 "230 /opt/microchip/xc8/v1.42/include/pic18f45k50.h
 [v _ANSELA ANSELA `VEuc  1 e 1 @3931 ]
@@ -414,31 +417,31 @@ COMMAND_BANK 7
 [v _uartReadIndex uartReadIndex `VEui  1 e 2 0 ]
 "87
 [v _uartWriteIndex uartWriteIndex `VEui  1 e 2 0 ]
-"66 /home/frank/data/projects/bloxorz/mplabx/programmer.X/receiver.c
+"67 /home/frank/data/projects/bloxorz/mplabx/programmer.X/receiver.c
 [v _state state `uc  1 s 1 state ]
-"67
-[v _value value `uc  1 s 1 value ]
 "68
-[v _checksum checksum `uc  1 s 1 checksum ]
+[v _value value `uc  1 s 1 value ]
 "69
-[v _checksumCalculated checksumCalculated `uc  1 s 1 checksumCalculated ]
+[v _checksum checksum `uc  1 s 1 checksum ]
 "70
-[v _temp temp `c  1 s 1 temp ]
+[v _checksumCalculated checksumCalculated `uc  1 s 1 checksumCalculated ]
 "71
-[v _command command `uc  1 s 1 command ]
+[v _temp temp `c  1 s 1 temp ]
 "72
-[v _port port `uc  1 s 1 port ]
+[v _command command `uc  1 s 1 command ]
 "73
-[v _adr adr `ui  1 s 2 adr ]
+[v _port port `uc  1 s 1 port ]
 "74
-[v _flashBuffer flashBuffer `[256]uc  1 s 256 flashBuffer ]
+[v _adr adr `ui  1 s 2 adr ]
 "75
-[v _flashBufferIndex flashBufferIndex `ui  1 s 2 flashBufferIndex ]
+[v _flashBuffer flashBuffer `[256]uc  1 s 256 flashBuffer ]
 "76
-[v _shiftCounter shiftCounter `uc  1 s 1 shiftCounter ]
+[v _flashBufferIndex flashBufferIndex `ui  1 s 2 flashBufferIndex ]
 "77
+[v _shiftCounter shiftCounter `uc  1 s 1 shiftCounter ]
+"78
 [v _shift shift `uc  1 s 1 shift ]
-"95
+"96
 [v _hex hex `*.25uc  1 e 2 0 ]
 "218 /home/frank/data/projects/bloxorz/mplabx/programmer.X/main.c
 [v _main main `(i  1 e 2 0 ]
@@ -452,13 +455,13 @@ COMMAND_BANK 7
 [v readChar@data data `uc  1 a 1 14 ]
 "210
 } 0
-"291 /home/frank/data/projects/bloxorz/mplabx/programmer.X/receiver.c
+"302 /home/frank/data/projects/bloxorz/mplabx/programmer.X/receiver.c
 [v _onData onData `(v  1 e 1 0 ]
 {
 [v onData@d d `uc  1 a 1 wreg ]
 [v onData@d d `uc  1 a 1 wreg ]
 [v onData@d d `uc  1 a 1 25 ]
-"468
+"484
 } 0
 "172 /home/frank/data/projects/bloxorz/mplabx/programmer.X/main.c
 [v _writeTrisE writeTrisE `(v  1 e 1 0 ]
@@ -496,30 +499,30 @@ COMMAND_BANK 7
 [v writeTrisB@data data `uc  1 a 1 14 ]
 "158
 } 0
-"96 /home/frank/data/projects/bloxorz/mplabx/programmer.X/receiver.c
+"97 /home/frank/data/projects/bloxorz/mplabx/programmer.X/receiver.c
 [v _writeHex writeHex `(v  1 e 1 0 ]
 {
 [v writeHex@data data `uc  1 a 1 wreg ]
 [v writeHex@data data `uc  1 a 1 wreg ]
-"98
+"99
 [v writeHex@data data `uc  1 a 1 18 ]
-"100
+"101
 } 0
-"173
+"174
 [v _writeAddressPhysical writeAddressPhysical `(v  1 e 1 0 ]
 {
-"174
+"175
 [v writeAddressPhysical@adr adr `ui  1 p 2 18 ]
 [v writeAddressPhysical@value value `uc  1 p 1 20 ]
-"178
+"179
 } 0
-"153
+"154
 [v _writeAddress writeAddress `(v  1 e 1 0 ]
 {
-"154
+"155
 [v writeAddress@adr adr `ui  1 p 2 15 ]
 [v writeAddress@value value `uc  1 p 1 17 ]
-"171
+"172
 } 0
 "150 /home/frank/data/projects/bloxorz/mplabx/programmer.X/main.c
 [v _writeTrisA writeTrisA `(v  1 e 1 0 ]
@@ -548,49 +551,58 @@ COMMAND_BANK 7
 [v writePortA@data data `uc  1 a 1 14 ]
 "128
 } 0
-"139 /home/frank/data/projects/bloxorz/mplabx/programmer.X/receiver.c
+"140 /home/frank/data/projects/bloxorz/mplabx/programmer.X/receiver.c
 [v _logicDataToPhysical logicDataToPhysical `(uc  1 e 1 0 ]
 {
 [v logicDataToPhysical@value0 value0 `uc  1 a 1 wreg ]
-"141
+"142
 [v logicDataToPhysical@pvalue pvalue `uc  1 a 1 14 ]
-"139
+"140
 [v logicDataToPhysical@value0 value0 `uc  1 a 1 wreg ]
-"141
+"142
 [v logicDataToPhysical@value0 value0 `uc  1 a 1 15 ]
-"151
+"152
 } 0
-"117
+"118
 [v _logicAddressToPhysical logicAddressToPhysical `(ui  1 e 2 0 ]
 {
-"119
+"120
 [v logicAddressToPhysical@padr padr `ui  1 a 2 16 ]
-"117
+"118
 [v logicAddressToPhysical@adr0 adr0 `ui  1 p 2 14 ]
-"137
+"138
 } 0
-"281
+"292
+[v _sendProgrammerEnableCommand sendProgrammerEnableCommand `(v  1 e 1 0 ]
+{
+[v sendProgrammerEnableCommand@enable enable `uc  1 a 1 wreg ]
+[v sendProgrammerEnableCommand@enable enable `uc  1 a 1 wreg ]
+"294
+[v sendProgrammerEnableCommand@enable enable `uc  1 a 1 15 ]
+"300
+} 0
+"282
 [v _sendBankCommand sendBankCommand `(v  1 e 1 0 ]
 {
 [v sendBankCommand@bank bank `uc  1 a 1 wreg ]
 [v sendBankCommand@bank bank `uc  1 a 1 wreg ]
-"283
+"284
 [v sendBankCommand@bank bank `uc  1 a 1 15 ]
-"289
+"290
 } 0
-"198
+"199
 [v _writeByte writeByte `(v  1 e 1 0 ]
 {
 [v writeByte@b b `uc  1 a 1 wreg ]
 [v writeByte@b b `uc  1 a 1 wreg ]
-"200
+"201
 [v writeByte@b b `uc  1 a 1 14 ]
-"279
+"280
 } 0
-"102
+"103
 [v _readPort readPort `(v  1 e 1 0 ]
 {
-"115
+"116
 } 0
 "197 /home/frank/data/projects/bloxorz/mplabx/programmer.X/main.c
 [v _readPortE readPortE `(uc  1 e 1 0 ]
@@ -612,14 +624,14 @@ COMMAND_BANK 7
 {
 "185
 } 0
-"180 /home/frank/data/projects/bloxorz/mplabx/programmer.X/receiver.c
+"181 /home/frank/data/projects/bloxorz/mplabx/programmer.X/receiver.c
 [v _readAddress readAddress `(uc  1 e 1 0 ]
 {
-"182
+"183
 [v readAddress@d d `uc  1 a 1 17 ]
-"181
+"182
 [v readAddress@adr adr `ui  1 p 2 15 ]
-"196
+"197
 } 0
 "140 /home/frank/data/projects/bloxorz/mplabx/programmer.X/main.c
 [v _writePortD writePortD `(v  1 e 1 0 ]
@@ -653,19 +665,19 @@ COMMAND_BANK 7
 {
 "180
 } 0
-"79 /home/frank/data/projects/bloxorz/mplabx/programmer.X/receiver.c
+"80 /home/frank/data/projects/bloxorz/mplabx/programmer.X/receiver.c
 [v _parseHex parseHex `(c  1 e 1 0 ]
 {
 [v parseHex@x x `uc  1 a 1 wreg ]
 [v parseHex@x x `uc  1 a 1 wreg ]
-"81
+"82
 [v parseHex@x x `uc  1 a 1 14 ]
-"87
+"88
 } 0
-"89
+"90
 [v _error error `(v  1 e 1 0 ]
 {
-"93
+"94
 } 0
 "212 /home/frank/data/projects/bloxorz/mplabx/programmer.X/main.c
 [v _writeChar writeChar `(v  1 e 1 0 ]

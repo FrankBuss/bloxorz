@@ -7280,7 +7280,7 @@ void CLC2_Initialize(void)
 
 
 
-CLC2POL = 0x00;
+CLC2POL = 0x02;
 
 
 CLC2SEL0 = 0x00;
@@ -7298,7 +7298,7 @@ CLC2SEL3 = 0x03;
 CLC2GLS0 = 0x22;
 
 
-CLC2GLS1 = 0x08;
+CLC2GLS1 = 0x00;
 
 
 CLC2GLS2 = 0x00;

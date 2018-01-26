@@ -11,15 +11,17 @@
 [v _eecpymem eecpymem `(v  1 e 1 0 ]
 "39
 [v _memcpyee memcpyee `(v  1 e 1 0 ]
-"24 /home/frank/data/projects/bloxorz/mplabx/cartridge.X/main.c
+"26 /home/frank/data/projects/bloxorz/mplabx/cartridge.X/main.c
 [v _readByte readByte `(uc  1 e 1 0 ]
-"68
+"87
 [v _writeByte writeByte `(v  1 e 1 0 ]
-"178
+"197
 [v _waitStart waitStart `(v  1 e 1 0 ]
-"202
+"221
 [v _readCommand readCommand `(v  1 e 1 0 ]
-"239
+"290
+[v _tmr0irq tmr0irq `(v  1 e 1 0 ]
+"295
 [v _main main `(i  1 e 2 0 ]
 "57 /home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/clc1.c
 [v _CLC1_Initialize CLC1_Initialize `(v  1 e 1 0 ]
@@ -27,6 +29,8 @@
 [v _CLC2_Initialize CLC2_Initialize `(v  1 e 1 0 ]
 "55 /home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
+"51 /home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
 "76 /home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 "89
@@ -45,23 +49,39 @@
 [v _DATAEE_ReadByte DATAEE_ReadByte `(uc  1 e 1 0 ]
 "51 /home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
-"59 /home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/tmr0.c
+"60 /home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
-"83
+"89
 [v _TMR0_StartTimer TMR0_StartTimer `(v  1 e 1 0 ]
+"123
+[v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
+"136
+[v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
+"140
+[v _TMR0_DefaultInterruptHandler TMR0_DefaultInterruptHandler `(v  1 e 1 0 ]
 "63 /home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/tmr1.c
 [v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
 "89
 [v _TMR1_StartTimer TMR1_StartTimer `(v  1 e 1 0 ]
-[s S622 . 1 `uc 1 INTEDG 1 0 :1:0 
+[s S658 . 1 `uc 1 INTEDG 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
 "362 /opt/microchip/xc8/v1.42/include/pic16f18323.h
-[u S627 . 1 `S622 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES627  1 e 1 @11 ]
-[s S720 . 1 `uc 1 RC0 1 0 :1:0 
+[u S663 . 1 `S658 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES663  1 e 1 @11 ]
+[s S798 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+]
+"397
+[u S805 . 1 `S798 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES805  1 e 1 @12 ]
+[s S781 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -69,16 +89,16 @@
 `uc 1 RC5 1 0 :1:5 
 ]
 "447
-[u S727 . 1 `S720 1 . 1 0 ]
-[v _PORTCbits PORTCbits `VES727  1 e 1 @14 ]
-[s S457 . 1 `uc 1 INTF 1 0 :1:0 
+[u S788 . 1 `S781 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES788  1 e 1 @14 ]
+[s S458 . 1 `uc 1 INTF 1 0 :1:0 
 `uc 1 . 1 0 :3:1 
 `uc 1 IOCIF 1 0 :1:4 
 `uc 1 TMR0IF 1 0 :1:5 
 ]
 "495
-[u S462 . 1 `S457 1 . 1 0 ]
-[v _PIR0bits PIR0bits `VES462  1 e 1 @16 ]
+[u S463 . 1 `S458 1 . 1 0 ]
+[v _PIR0bits PIR0bits `VES463  1 e 1 @16 ]
 [s S321 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 BCL1IF 1 0 :1:2 
@@ -97,20 +117,20 @@
 [v _TMR0H TMR0H `VEuc  1 e 1 @22 ]
 "1080
 [v _T0CON0 T0CON0 `VEuc  1 e 1 @23 ]
-[s S474 . 1 `uc 1 T0OUTPS 1 0 :4:0 
+[s S497 . 1 `uc 1 T0OUTPS 1 0 :4:0 
 `uc 1 T016BIT 1 0 :1:4 
 `uc 1 T0OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 T0EN 1 0 :1:7 
 ]
 "1100
-[s S480 . 1 `uc 1 T0OUTPS0 1 0 :1:0 
+[s S503 . 1 `uc 1 T0OUTPS0 1 0 :1:0 
 `uc 1 T0OUTPS1 1 0 :1:1 
 `uc 1 T0OUTPS2 1 0 :1:2 
 `uc 1 T0OUTPS3 1 0 :1:3 
 ]
-[u S485 . 1 `S474 1 . 1 0 `S480 1 . 1 0 ]
-[v _T0CON0bits T0CON0bits `VES485  1 e 1 @23 ]
+[u S508 . 1 `S497 1 . 1 0 `S503 1 . 1 0 ]
+[v _T0CON0bits T0CON0bits `VES508  1 e 1 @23 ]
 "1145
 [v _T0CON1 T0CON1 `VEuc  1 e 1 @24 ]
 "1229
@@ -119,7 +139,7 @@
 [v _TMR1H TMR1H `VEuc  1 e 1 @26 ]
 "1269
 [v _T1CON T1CON `VEuc  1 e 1 @27 ]
-[s S540 . 1 `uc 1 TMR1ON 1 0 :1:0 
+[s S576 . 1 `uc 1 TMR1ON 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 T1SYNC 1 0 :1:2 
 `uc 1 T1SOSC 1 0 :1:3 
@@ -127,17 +147,17 @@
 `uc 1 TMR1CS 1 0 :2:6 
 ]
 "1291
-[s S547 . 1 `uc 1 . 1 0 :4:0 
+[s S583 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 T1CKPS0 1 0 :1:4 
 `uc 1 T1CKPS1 1 0 :1:5 
 `uc 1 TMR1CS0 1 0 :1:6 
 `uc 1 TMR1CS1 1 0 :1:7 
 ]
-[u S553 . 1 `S540 1 . 1 0 `S547 1 . 1 0 ]
-[v _T1CONbits T1CONbits `VES553  1 e 1 @27 ]
+[u S589 . 1 `S576 1 . 1 0 `S583 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES589  1 e 1 @27 ]
 "1341
 [v _T1GCON T1GCON `VEuc  1 e 1 @28 ]
-[s S570 . 1 `uc 1 T1GSS 1 0 :2:0 
+[s S606 . 1 `uc 1 T1GSS 1 0 :2:0 
 `uc 1 T1GVAL 1 0 :1:2 
 `uc 1 T1GGO_nDONE 1 0 :1:3 
 `uc 1 T1GSPM 1 0 :1:4 
@@ -146,15 +166,23 @@
 `uc 1 TMR1GE 1 0 :1:7 
 ]
 "1361
-[s S578 . 1 `uc 1 T1GSS0 1 0 :1:0 
+[s S614 . 1 `uc 1 T1GSS0 1 0 :1:0 
 `uc 1 T1GSS1 1 0 :1:1 
 ]
-[u S581 . 1 `S570 1 . 1 0 `S578 1 . 1 0 ]
-[v _T1GCONbits T1GCONbits `VES581  1 e 1 @28 ]
+[u S617 . 1 `S606 1 . 1 0 `S614 1 . 1 0 ]
+[v _T1GCONbits T1GCONbits `VES617  1 e 1 @28 ]
 "1522
 [v _TRISA TRISA `VEuc  1 e 1 @140 ]
 "1567
 [v _TRISC TRISC `VEuc  1 e 1 @142 ]
+[s S471 . 1 `uc 1 INTE 1 0 :1:0 
+`uc 1 . 1 0 :3:1 
+`uc 1 IOCIE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+]
+"1630
+[u S476 . 1 `S471 1 . 1 0 ]
+[v _PIE0bits PIE0bits `VES476  1 e 1 @144 ]
 "1823
 [v _WDTCON WDTCON `VEuc  1 e 1 @151 ]
 "2133
@@ -207,7 +235,7 @@
 [v _NVMDATL NVMDATL `VEuc  1 e 1 @2195 ]
 "8675
 [v _NVMDATH NVMDATH `VEuc  1 e 1 @2196 ]
-[s S637 . 1 `uc 1 RD 1 0 :1:0 
+[s S673 . 1 `uc 1 RD 1 0 :1:0 
 `uc 1 WR 1 0 :1:1 
 `uc 1 WREN 1 0 :1:2 
 `uc 1 WRERR 1 0 :1:3 
@@ -216,11 +244,11 @@
 `uc 1 NVMREGS 1 0 :1:6 
 ]
 "8920
-[s S645 . 1 `uc 1 . 1 0 :6:0 
+[s S681 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 CFGS 1 0 :1:6 
 ]
-[u S648 . 1 `S637 1 . 1 0 `S645 1 . 1 0 ]
-[v _NVMCON1bits NVMCON1bits `VES648  1 e 1 @2197 ]
+[u S684 . 1 `S673 1 . 1 0 `S681 1 . 1 0 ]
+[v _NVMCON1bits NVMCON1bits `VES684  1 e 1 @2197 ]
 "9080
 [v _NVMCON2 NVMCON2 `VEuc  1 e 1 @2198 ]
 "9533
@@ -411,63 +439,67 @@
 [v _GIE GIE `VEb  1 e 0 @95 ]
 "15081
 [v _PLLR PLLR `VEb  1 e 0 @18656 ]
-"17 /home/frank/data/projects/bloxorz/mplabx/cartridge.X/main.c
+"18 /home/frank/data/projects/bloxorz/mplabx/cartridge.X/main.c
 [v _shift shift `VEuc  1 e 1 0 ]
-"18
-[v _shiftCounter shiftCounter `VEuc  1 e 1 0 ]
 "19
-[v _id id `VEuc  1 e 1 0 ]
+[v _shiftCounter shiftCounter `VEuc  1 e 1 0 ]
 "20
-[v _cmd cmd `VEuc  1 e 1 0 ]
+[v _id id `VEuc  1 e 1 0 ]
 "21
-[v _arg arg `VEuc  1 e 1 0 ]
+[v _cmd cmd `VEuc  1 e 1 0 ]
 "22
+[v _arg arg `VEuc  1 e 1 0 ]
+"23
 [v _eepromAdr eepromAdr `VEui  1 e 2 0 ]
+"24
+[v _timeout timeout `VEuc  1 e 1 0 ]
+"58 /home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/tmr0.c
+[v _TMR0_InterruptHandler TMR0_InterruptHandler `*.37(v  1 e 2 0 ]
 "56 /home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/tmr1.c
 [v _timer1ReloadVal timer1ReloadVal `VEui  1 e 2 0 ]
-"239 /home/frank/data/projects/bloxorz/mplabx/cartridge.X/main.c
+"295 /home/frank/data/projects/bloxorz/mplabx/cartridge.X/main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"248
+"307
 } 0
-"202
+"221
 [v _readCommand readCommand `(v  1 e 1 0 ]
 {
-"237
+"288
 } 0
-"68
+"87
 [v _writeByte writeByte `(v  1 e 1 0 ]
 {
 [v writeByte@b b `uc  1 a 1 wreg ]
 [v writeByte@b b `uc  1 a 1 wreg ]
-"70
-[v writeByte@b b `uc  1 a 1 1 ]
-"176
+"89
+[v writeByte@b b `uc  1 a 1 3 ]
+"195
 } 0
-"178
+"197
 [v _waitStart waitStart `(v  1 e 1 0 ]
 {
-"200
+"219
 } 0
-"24
+"26
 [v _readByte readByte `(uc  1 e 1 0 ]
 {
-"66
+"85
 } 0
 "179 /home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/memory.c
 [v _DATAEE_WriteByte DATAEE_WriteByte `(v  1 e 1 0 ]
 {
 "181
-[v DATAEE_WriteByte@GIEBitValue GIEBitValue `uc  1 a 1 3 ]
+[v DATAEE_WriteByte@GIEBitValue GIEBitValue `uc  1 a 1 5 ]
 "179
-[v DATAEE_WriteByte@bAdd bAdd `ui  1 p 2 0 ]
-[v DATAEE_WriteByte@bData bData `uc  1 p 1 2 ]
+[v DATAEE_WriteByte@bAdd bAdd `ui  1 p 2 2 ]
+[v DATAEE_WriteByte@bData bData `uc  1 p 1 4 ]
 "199
 } 0
 "201
 [v _DATAEE_ReadByte DATAEE_ReadByte `(uc  1 e 1 0 ]
 {
-[v DATAEE_ReadByte@bAdd bAdd `ui  1 p 2 0 ]
+[v DATAEE_ReadByte@bAdd bAdd `ui  1 p 2 2 ]
 "211
 } 0
 "76 /home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
@@ -490,21 +522,27 @@
 {
 "93
 } 0
-"59 /home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/tmr0.c
+"60 /home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
 {
-"81
+"87
 } 0
-"83
+"89
 [v _TMR0_StartTimer TMR0_StartTimer `(v  1 e 1 0 ]
 {
-"87
+"93
+} 0
+"136
+[v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v TMR0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37v  1 p 2 2 ]
+"138
 } 0
 "51 /home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
 "88
-[v PIN_MANAGER_Initialize@state state `uc  1 a 1 0 ]
+[v PIN_MANAGER_Initialize@state state `uc  1 a 1 2 ]
 "108
 } 0
 "89 /home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/mcc.c
@@ -526,4 +564,24 @@
 [v _CLC1_Initialize CLC1_Initialize `(v  1 e 1 0 ]
 {
 "91
+} 0
+"51 /home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
+{
+"62
+} 0
+"123 /home/frank/data/projects/bloxorz/mplabx/cartridge.X/mcc_generated_files/tmr0.c
+[v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
+{
+"133
+} 0
+"140
+[v _TMR0_DefaultInterruptHandler TMR0_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"143
+} 0
+"290 /home/frank/data/projects/bloxorz/mplabx/cartridge.X/main.c
+[v _tmr0irq tmr0irq `(v  1 e 1 0 ]
+{
+"293
 } 0

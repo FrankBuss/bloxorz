@@ -53,6 +53,7 @@ enum Command_t {
     COMMAND_FLASH,
     COMMAND_VERIFY,
     COMMAND_BANK,
+    COMMAND_PROGRAMMER_ENABLE
 };
 
 enum Port_t {
@@ -288,6 +289,16 @@ void sendBankCommand(uint8_t bank)
     TRISDbits.TRISD7 = 1;
 }
 
+void sendProgrammerEnableCommand(uint8_t enable)
+{
+    PORTDbits.RD7 = 0;
+    TRISDbits.TRISD7 = 0;
+    writeByte('V');
+    writeByte(6);  // CMD_ENABLE_PROGRAMMER
+    writeByte(enable);
+    TRISDbits.TRISD7 = 1;
+}
+
 void onData(uint8_t d)
 {
     switch (state) {
@@ -322,6 +333,9 @@ void onData(uint8_t d)
             } else if (d == 'b') {
                 state = STATE_VALUE_HIGH_NIBBLE;
                 command = COMMAND_BANK;
+            } else if (d == 'p') {
+                state = STATE_VALUE_HIGH_NIBBLE;
+                command = COMMAND_PROGRAMMER_ENABLE;
             } else {
                 error();
             }
@@ -451,6 +465,8 @@ void onData(uint8_t d)
                         adr++;
                     } else if (command == COMMAND_BANK) {
                         sendBankCommand(value);
+                    } else if (command == COMMAND_PROGRAMMER_ENABLE                    ) {
+                        sendProgrammerEnableCommand(value);
                     }
                     if (command != COMMAND_FLASH) {
                         writeHex(value);

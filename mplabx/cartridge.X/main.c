@@ -10,6 +10,7 @@
 #define CMD_EEPROM_WRITE 3
 #define CMD_EEPROM_READ 4
 #define CMD_SET_BANK 5
+#define CMD_ENABLE_PROGRAMMER 6
 
 // firmware version
 #define VERSION 4
@@ -20,9 +21,12 @@ volatile uint8_t id;
 volatile uint8_t cmd;
 volatile uint8_t arg;
 volatile uint16_t eepromAdr;
+volatile uint8_t timeout;
 
 uint8_t readByte()
 {
+    timeout = 0;
+    TMR0L = 0;
     shiftCounter = 8;
   #asm
         ; STATUS bits
@@ -35,12 +39,24 @@ uint8_t readByte()
         ; reset timer 1 and count pulse length
 start_read:
         movlw 0
+        movwf TMR0L
         movwf TMR1L
         movwf TMR1H
-rwait1:                        
+rwait1:
+        BANKSEL(_timeout)
+        btfsc _timeout, 0
+        goto timeout_exit
+        BANKSEL(PORTC)
         btfss PORTC, 3
         goto rwait1
+        BANKSEL(PORTC)
+        movlw 0
+        movwf TMR0L
 rwait0:                        
+        BANKSEL(_timeout)
+        btfsc _timeout, 0
+        goto timeout_exit
+        BANKSEL(PORTC)
         btfsc PORTC, 3
         goto rwait0
 
@@ -61,6 +77,9 @@ rbits:   BANKSEL(_shift)
         decfsz BANKMASK(_shiftCounter), f
         goto start_read
 
+timeout_exit:
+        BANKSEL(_shiftCounter)
+                
     #endasm
     return shift;
 }
@@ -203,8 +222,11 @@ void readCommand()
 {
     waitStart();
     id = readByte();
+    if (timeout) return;
     cmd = readByte();
+    if (timeout) return;
     arg = readByte();
+    if (timeout) return;
     if (id =='V') {
         switch (cmd) {
             case CMD_VERSION:
@@ -227,6 +249,35 @@ void readCommand()
                 } else {
                     PORTCbits.RC0 = 0;
                 }
+                if (arg & 2) {
+                    PORTAbits.RA2 = 1;
+                } else {
+                    PORTAbits.RA2 = 0;
+                }
+                if (arg & 4) {
+                    PORTCbits.RC1 = 1;
+                } else {
+                    PORTCbits.RC1 = 0;
+                }
+                if (arg & 8) {
+                    PORTAbits.RA1 = 1;
+                } else {
+                    PORTAbits.RA1 = 0;
+                }
+                writeByte(arg);
+                break;
+            case CMD_ENABLE_PROGRAMMER:
+                if (arg) {
+                    // LC2G1POL not_inverted; LC2G2POL not_inverted; LC2G3POL not_inverted; LC2G4POL not_inverted; LC2POL not_inverted; 
+                    CLC2POL = 0x00;
+                    // LC2G2D2N disabled; LC2G2D1N disabled; LC2G2D4N disabled; LC2G2D3N disabled; LC2G2D2T enabled; LC2G2D1T disabled; LC2G2D4T disabled; LC2G2D3T disabled; 
+                    CLC2GLS1 = 0x08;
+                } else {
+                    // LC2G1POL not_inverted; LC2G2POL inverted; LC2G3POL not_inverted; LC2G4POL not_inverted; LC2POL not_inverted; 
+                    CLC2POL = 0x02;
+                    // LC2G2D2N disabled; LC2G2D1N disabled; LC2G2D4N disabled; LC2G2D3N disabled; LC2G2D2T disabled; LC2G2D1T disabled; LC2G2D4T disabled; LC2G2D3T disabled; 
+                    CLC2GLS1 = 0x00;
+                }
                 writeByte(arg);
                 break;
             default:
@@ -236,9 +287,17 @@ void readCommand()
     }
 }
 
+void tmr0irq()
+{
+    timeout = 1;
+}
+
 int main()
 {
+    TMR0_InterruptHandler = tmr0irq;
     SYSTEM_Initialize();
+    INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
     __delay_ms(100);
     while (1) {
         readCommand();

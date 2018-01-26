@@ -55,6 +55,7 @@
   Section: TMR0 APIs
 */
 
+void (*TMR0_InterruptHandler)(void);
 
 void TMR0_Initialize(void)
 {
@@ -72,9 +73,14 @@ void TMR0_Initialize(void)
     // TMR0L 0; 
     TMR0L = 0x00;
 
-
-    // Clearing IF flag
+    // Clear Interrupt flag before enabling the interrupt
     PIR0bits.TMR0IF = 0;
+
+    // Enabling TMR0 interrupt.
+    PIE0bits.TMR0IE = 1;
+
+    // Set Default Interrupt Handler
+    TMR0_SetInterruptHandler(TMR0_DefaultInterruptHandler);
 
     // Start TMR0
     TMR0_StartTimer();
@@ -114,11 +120,28 @@ void TMR0_Load8bitPeriod(uint8_t periodVal)
    TMR0H = periodVal;
 }
 
-bool TMR0_HasOverflowOccured(void)
+void TMR0_ISR(void)
 {
-    // check if  overflow has occurred by checking the TMRIF bit
-    return(PIR0bits.TMR0IF);
+    // clear the TMR0 interrupt flag
+    PIR0bits.TMR0IF = 0;
+    if(TMR0_InterruptHandler)
+    {
+        TMR0_InterruptHandler();
+    }
+
+    // add your TMR0 interrupt custom code
 }
+
+
+void TMR0_SetInterruptHandler(void* InterruptHandler){
+    TMR0_InterruptHandler = InterruptHandler;
+}
+
+void TMR0_DefaultInterruptHandler(void){
+    // add your TMR0 interrupt custom code
+    // or set custom function using TMR0_SetInterruptHandler()
+}
+
 /**
   End of File
 */

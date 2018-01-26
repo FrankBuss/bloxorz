@@ -1,9 +1,9 @@
 Version 3.2 HI-TECH Software Intermediate Code
 "156 mcc_generated_files/pin_manager.h
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
-"86 mcc_generated_files/mcc.h
+"87 mcc_generated_files/mcc.h
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
-"99
+"100
 [v _WDT_Initialize `(v ~T0 @X0 0 ef ]
 "91 mcc_generated_files/clc1.h
 [v _CLC1_Initialize `(v ~T0 @X0 0 ef ]
@@ -5508,13 +5508,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 222: typedef int16_t intptr_t;
 [; ;stdint.h: 227: typedef uint16_t uintptr_t;
 [; ;stdbool.h: 12: typedef unsigned char bool;
-[; ;clc2.h: 91: void CLC2_Initialize(void);
-[; ;clc2.h: 113: bool CLC2_OutputStatusGet(void);
-[; ;eusart.h: 94: void EUSART_Initialize(void);
-[; ;eusart.h: 114: uint8_t EUSART_Read(void);
-[; ;eusart.h: 134: void EUSART_Write(uint8_t txData);
-[; ;clc1.h: 91: void CLC1_Initialize(void);
-[; ;clc1.h: 113: bool CLC1_OutputStatusGet(void);
+[; ;interrupt_manager.h: 110: void interrupt INTERRUPT_InterruptManager(void);
+[; ;tmr0.h: 99: void TMR0_Initialize(void);
+[; ;tmr0.h: 128: void TMR0_StartTimer(void);
+[; ;tmr0.h: 160: void TMR0_StopTimer(void);
+[; ;tmr0.h: 195: uint8_t TMR0_Read8bitTimer(void);
+[; ;tmr0.h: 234: void TMR0_Write8bitTimer(uint8_t timerVal);
+[; ;tmr0.h: 271: void TMR0_Load8bitPeriod(uint8_t periodVal);
+[; ;tmr0.h: 290: void TMR0_ISR(void);
+[; ;tmr0.h: 309: void TMR0_SetInterruptHandler(void *InterruptHandler);
+[; ;tmr0.h: 327: extern void (*TMR0_InterruptHandler)(void);
+[; ;tmr0.h: 345: void TMR0_DefaultInterruptHandler(void);
 [; ;tmr1.h: 99: void TMR1_Initialize(void);
 [; ;tmr1.h: 128: void TMR1_StartTimer(void);
 [; ;tmr1.h: 160: void TMR1_StopTimer(void);
@@ -5524,22 +5528,22 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;tmr1.h: 309: void TMR1_StartSinglePulseAcquisition(void);
 [; ;tmr1.h: 348: uint8_t TMR1_CheckGateValueStatus(void);
 [; ;tmr1.h: 386: bool TMR1_HasOverflowOccured(void);
+[; ;eusart.h: 94: void EUSART_Initialize(void);
+[; ;eusart.h: 114: uint8_t EUSART_Read(void);
+[; ;eusart.h: 134: void EUSART_Write(uint8_t txData);
 [; ;memory.h: 98: uint16_t FLASH_ReadWord(uint16_t flashAddr);
 [; ;memory.h: 127: void FLASH_WriteWord(uint16_t flashAddr, uint16_t *ramBuf, uint16_t word);
 [; ;memory.h: 163: int8_t FLASH_WriteBlock(uint16_t writeAddr, uint16_t *flashWordArray);
 [; ;memory.h: 188: void FLASH_EraseBlock(uint16_t startAddr);
 [; ;memory.h: 222: void DATAEE_WriteByte(uint16_t bAdd, uint8_t bData);
 [; ;memory.h: 248: uint8_t DATAEE_ReadByte(uint16_t bAdd);
-[; ;tmr0.h: 99: void TMR0_Initialize(void);
-[; ;tmr0.h: 128: void TMR0_StartTimer(void);
-[; ;tmr0.h: 160: void TMR0_StopTimer(void);
-[; ;tmr0.h: 195: uint8_t TMR0_Read8bitTimer(void);
-[; ;tmr0.h: 234: void TMR0_Write8bitTimer(uint8_t timerVal);
-[; ;tmr0.h: 271: void TMR0_Load8bitPeriod(uint8_t periodVal);
-[; ;tmr0.h: 307: bool TMR0_HasOverflowOccured(void);
-[; ;mcc.h: 73: void SYSTEM_Initialize(void);
-[; ;mcc.h: 86: void OSCILLATOR_Initialize(void);
-[; ;mcc.h: 99: void WDT_Initialize(void);
+[; ;clc2.h: 91: void CLC2_Initialize(void);
+[; ;clc2.h: 113: bool CLC2_OutputStatusGet(void);
+[; ;clc1.h: 91: void CLC1_Initialize(void);
+[; ;clc1.h: 113: bool CLC1_OutputStatusGet(void);
+[; ;mcc.h: 74: void SYSTEM_Initialize(void);
+[; ;mcc.h: 87: void OSCILLATOR_Initialize(void);
+[; ;mcc.h: 100: void WDT_Initialize(void);
 "76 mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize `(v ~T0 @X0 1 ef ]
 "77

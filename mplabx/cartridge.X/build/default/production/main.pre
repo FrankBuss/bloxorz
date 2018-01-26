@@ -7274,26 +7274,38 @@ void PIN_MANAGER_IOC(void);
 # 12 "/opt/microchip/xc8/v1.42/include/stdbool.h"
 typedef unsigned char bool;
 
-# 91 "mcc_generated_files/clc2.h"
-void CLC2_Initialize(void);
+# 110 "mcc_generated_files/interrupt_manager.h"
+void interrupt INTERRUPT_InterruptManager(void);
 
-# 113
-bool CLC2_OutputStatusGet(void);
+# 99 "mcc_generated_files/tmr0.h"
+void TMR0_Initialize(void);
 
-# 94 "mcc_generated_files/eusart.h"
-void EUSART_Initialize(void);
+# 128
+void TMR0_StartTimer(void);
 
-# 114
-uint8_t EUSART_Read(void);
+# 160
+void TMR0_StopTimer(void);
 
-# 134
-void EUSART_Write(uint8_t txData);
+# 195
+uint8_t TMR0_Read8bitTimer(void);
 
-# 91 "mcc_generated_files/clc1.h"
-void CLC1_Initialize(void);
+# 234
+void TMR0_Write8bitTimer(uint8_t timerVal);
 
-# 113
-bool CLC1_OutputStatusGet(void);
+# 271
+void TMR0_Load8bitPeriod(uint8_t periodVal);
+
+# 290
+void TMR0_ISR(void);
+
+# 309
+void TMR0_SetInterruptHandler(void *InterruptHandler);
+
+# 327
+extern void (*TMR0_InterruptHandler)(void);
+
+# 345
+void TMR0_DefaultInterruptHandler(void);
 
 # 99 "mcc_generated_files/tmr1.h"
 void TMR1_Initialize(void);
@@ -7322,6 +7334,15 @@ uint8_t TMR1_CheckGateValueStatus(void);
 # 386
 bool TMR1_HasOverflowOccured(void);
 
+# 94 "mcc_generated_files/eusart.h"
+void EUSART_Initialize(void);
+
+# 114
+uint8_t EUSART_Read(void);
+
+# 134
+void EUSART_Write(uint8_t txData);
+
 # 98 "mcc_generated_files/memory.h"
 uint16_t FLASH_ReadWord(uint16_t flashAddr);
 
@@ -7340,49 +7361,43 @@ void DATAEE_WriteByte(uint16_t bAdd, uint8_t bData);
 # 248
 uint8_t DATAEE_ReadByte(uint16_t bAdd);
 
-# 99 "mcc_generated_files/tmr0.h"
-void TMR0_Initialize(void);
+# 91 "mcc_generated_files/clc2.h"
+void CLC2_Initialize(void);
 
-# 128
-void TMR0_StartTimer(void);
+# 113
+bool CLC2_OutputStatusGet(void);
 
-# 160
-void TMR0_StopTimer(void);
+# 91 "mcc_generated_files/clc1.h"
+void CLC1_Initialize(void);
 
-# 195
-uint8_t TMR0_Read8bitTimer(void);
+# 113
+bool CLC1_OutputStatusGet(void);
 
-# 234
-void TMR0_Write8bitTimer(uint8_t timerVal);
-
-# 271
-void TMR0_Load8bitPeriod(uint8_t periodVal);
-
-# 307
-bool TMR0_HasOverflowOccured(void);
-
-# 73 "mcc_generated_files/mcc.h"
+# 74 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
 
-# 86
+# 87
 void OSCILLATOR_Initialize(void);
 
-# 99
+# 100
 void WDT_Initialize(void);
 
-# 17 "main.c"
+# 18 "main.c"
 volatile uint8_t shift;
 volatile uint8_t shiftCounter;
 volatile uint8_t id;
 volatile uint8_t cmd;
 volatile uint8_t arg;
 volatile uint16_t eepromAdr;
+volatile uint8_t timeout;
 
 uint8_t readByte()
 {
+timeout = 0;
+TMR0L = 0;
 shiftCounter = 8;
 
-# 27
+# 31
 #asm
         ; STATUS bits
         C EQU 0
@@ -7394,12 +7409,24 @@ shiftCounter = 8;
                         ; reset timer 1 and count pulse length
 start_read:
         movlw 0
+        movwf TMR0L
         movwf TMR1L
         movwf TMR1H
 rwait1:
+        BANKSEL(_timeout)
+        btfsc _timeout, 0
+        goto timeout_exit
+        BANKSEL(PORTC)
         btfss PORTC, 3
         goto rwait1
+        BANKSEL(PORTC)
+        movlw 0
+        movwf TMR0L
 rwait0:
+        BANKSEL(_timeout)
+        btfsc _timeout, 0
+        goto timeout_exit
+        BANKSEL(PORTC)
         btfsc PORTC, 3
         goto rwait0
 
@@ -7420,8 +7447,11 @@ rbits: BANKSEL(_shift)
         decfsz ((_shiftCounter)&07Fh), f
         goto start_read
 
+timeout_exit:
+        BANKSEL(_shiftCounter)
+
 #endasm 
-    return shift;
+                    return shift;
 }
 
 void writeByte(uint8_t b)
@@ -7429,7 +7459,7 @@ void writeByte(uint8_t b)
 shiftCounter = 8;
 shift = b;
 
-# 72
+# 91
 #asm
         ; STATUS bits
         C EQU 0
@@ -7539,7 +7569,7 @@ write_end:
 void waitStart()
 {
 
-# 180
+# 199
 #asm
         ; STATUS bits
         C EQU 0
@@ -7566,8 +7596,11 @@ void readCommand()
 {
 waitStart();
 id = readByte();
+if (timeout) return;
 cmd = readByte();
+if (timeout) return;
 arg = readByte();
+if (timeout) return;
 if (id =='V') {
 switch (cmd) {
 case 1:
@@ -7590,6 +7623,35 @@ PORTCbits.RC0 = 1;
 } else {
 PORTCbits.RC0 = 0;
 }
+if (arg & 2) {
+PORTAbits.RA2 = 1;
+} else {
+PORTAbits.RA2 = 0;
+}
+if (arg & 4) {
+PORTCbits.RC1 = 1;
+} else {
+PORTCbits.RC1 = 0;
+}
+if (arg & 8) {
+PORTAbits.RA1 = 1;
+} else {
+PORTAbits.RA1 = 0;
+}
+writeByte(arg);
+break;
+case 6:
+if (arg) {
+
+CLC2POL = 0x00;
+
+CLC2GLS1 = 0x08;
+} else {
+
+CLC2POL = 0x02;
+
+CLC2GLS1 = 0x00;
+}
 writeByte(arg);
 break;
 default:
@@ -7599,9 +7661,17 @@ break;
 }
 }
 
+void tmr0irq()
+{
+timeout = 1;
+}
+
 int main()
 {
+TMR0_InterruptHandler = tmr0irq;
 SYSTEM_Initialize();
+INTCONbits.GIE = 1;
+INTCONbits.PEIE = 1;
 _delay((unsigned long)((100)*(32000000/4000.0)));
 while (1) {
 readCommand();
