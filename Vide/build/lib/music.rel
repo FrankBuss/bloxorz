@@ -1,0 +1,109 @@
+;!FILE /home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/build/lib/music.s
+XH2
+H 3 areas 34 global symbols 2 banks 1 modes
+G 00 00 80 81 82 83 84 85 86 87 88 89 8A 8B 8C 8D 8E 8F
+B _CSEG base 0 size 0 map 0 flags 0
+B _DSEG base 0 size 0 map 0 flags 4 fsfx _DS
+S PLY_INIT Ref0000
+S PLY_PLAY Ref0000
+S PLY_PSGREG0 Ref0000
+S aks_song Ref0000
+S .__.ABS. Def0000
+A _CODE size 0 flags CC80 bank 0
+A _DATA size 0 flags CCC0 bank 1
+A .text size 6E flags D00
+S _player_test Def0021
+S A$music$30 Def0018
+S A$music$31 Def001A
+S A$music$50 Def0034
+S A$music$41 Def0021
+S A$music$32 Def001D
+S A$music$23 Def000E
+S A$music$51 Def0036
+S A$music$42 Def0024
+S A$music$24 Def0010
+S A$music$15 Def0000
+S A$music$70 Def004C
+S A$music$43 Def0027
+S A$music$34 Def001F
+S A$music$25 Def0013
+S A$music$80 Def005A
+S A$music$71 Def004E
+S A$music$62 Def0040
+S A$music$53 Def0039
+S A$music$26 Def0016
+S A$music$90 Def006B
+S A$music$81 Def005C
+S A$music$72 Def0050
+S A$music$63 Def0042
+S A$music$54 Def003C
+S A$music$45 Def0029
+S A$music$82 Def005E
+S A$music$46 Def002C
+S _musicInit Def000E
+S A$music$83 Def0060
+S A$music$74 Def0052
+S A$music$56 Def003E
+S A$music$93 Def006D
+S A$music$84 Def0062
+S A$music$66 Def0044
+S A$music$48 Def002F
+S _musicPlay Def0018
+S A$music$85 Def0064
+S A$music$67 Def0046
+S A$music$49 Def0032
+S A$music$86 Def0066
+S A$music$77 Def0054
+S A$music$68 Def0049
+S A$music$87 Def0068
+S A$music$78 Def0056
+S A$music$79 Def0058
+S A$music$89 Def006A
+T 00 00 00 01 D0 00
+P 00 00 00 02
+T 00 00
+R 00 00 00 02
+T 00 00 41 52 4B 4F 53 20 50 4C 41 59 45 52 80
+R 00 00 00 02
+T 00 0D 00
+R 00 00 00 02
+T 00 0E
+R 00 00 00 02
+T 00 0E 34 1E CE 00 00 BD 00 00 35 9E
+R 00 00 00 02 81 05 00 03 81 08 00 00
+T 00 18
+R 00 00 00 02
+T 00 18 34 1E BD 00 00 8D 21 35 9E
+R 00 00 00 02 81 05 00 01
+T 00 21
+R 00 00 00 02
+T 00 21 CE 00 00 BD 00 00 20 00
+R 00 00 00 02 81 03 00 03 81 06 00 00
+T 00 29
+R 00 00 00 02
+T 00 29 BD F1 92 BD F2 A5 CE 00 00 86 10 C6 50
+R 00 00 00 02 01 09 00 02
+T 00 36 BD F3 7A BD 00 00 8D 02 20 E9
+R 00 00 00 02 81 06 00 01
+T 00 40
+R 00 00 00 02
+T 00 40 86 D0 1F 8B 86 0D 8E 00 00 CE C8 00
+R 00 00 00 02 81 09 00 02
+T 00 4C
+R 00 00 00 02
+T 00 4C E6 86 E1 C6 27 18 E7 C6 97 D0 01 86 19
+R 00 00 00 02 20 0B 00 01
+T 00 58 97 D0 00 86 01 97 D0 00 96
+R 00 00 00 02 20 03 00 01 20 08 00 01
+T 00 5F D0 01 D7 D0 01 C6 11 D7
+R 00 00 00 02 20 02 00 01 20 05 00 01
+T 00 65 D0 00 C6 01 D7 D0 00
+R 00 00 00 02 20 02 00 01 20 07 00 01
+T 00 6A
+R 00 00 00 02
+T 00 6A 4A 2A DF
+R 00 00 00 02
+T 00 6D
+R 00 00 00 02
+T 00 6D 39
+R 00 00 00 02

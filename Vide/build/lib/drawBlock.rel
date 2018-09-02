@@ -1,0 +1,161 @@
+;!FILE /home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/build/lib/drawBlock.s
+XH2
+H 3 areas 5E global symbols 2 banks 1 modes
+G 00 00 80 81 82 83 84 85 86 87 88 89 8A 8B 8C 8D 8E 8F
+B _CSEG base 0 size 0 map 0 flags 0
+B _DSEG base 0 size 0 map 0 flags 4 fsfx _DS
+S _lineX0 Ref0000
+S _lineCount Ref0000
+S _lineX1 Ref0000
+S _lineY0 Ref0000
+S _lineY1 Ref0000
+S _moveTo Ref0000
+S .__.ABS. Def0000
+S _lineScale Ref0000
+S _moveScale Ref0000
+A _CODE size 0 flags CC80 bank 0
+A _DATA size 0 flags CCC0 bank 1
+A .text size AF flags D00
+S A$drawBlock$10 Def0006
+S A$drawBlock$11 Def0009
+S A$drawBlock$21 Def0017
+S A$drawBlock$12 Def000C
+S A$drawBlock$40 Def0038
+S A$drawBlock$22 Def0019
+S A$drawBlock$13 Def000E
+S A$drawBlock$50 Def0045
+S A$drawBlock$41 Def0039
+S A$drawBlock$23 Def001B
+S A$drawBlock$14 Def0011
+S A$drawBlock$60 Def0059
+S A$drawBlock$51 Def0049
+S A$drawBlock$42 Def003B
+S A$drawBlock$33 Def0026
+S A$drawBlock$24 Def001C
+S A$drawBlock$52 Def004D
+S A$drawBlock$43 Def003D
+S A$drawBlock$34 Def002A
+S A$drawBlock$25 Def001E
+S A$drawBlock$62 Def005B
+S A$drawBlock$53 Def004F
+S A$drawBlock$17 Def0013
+S A$drawBlock$81 Def006A
+S A$drawBlock$63 Def005D
+S A$drawBlock$54 Def0051
+S A$drawBlock$45 Def003E
+S A$drawBlock$36 Def002C
+S A$drawBlock$27 Def0020
+S A$drawBlock$18 Def0014
+S A$drawBlock$91 Def0075
+S A$drawBlock$82 Def006C
+S A$drawBlock$64 Def005F
+S A$drawBlock$55 Def0052
+S A$drawBlock$46 Def003F
+S A$drawBlock$37 Def0030
+S A$drawBlock$28 Def0022
+S A$drawBlock$19 Def0015
+S A$drawBlock$92 Def0079
+S A$drawBlock$83 Def006E
+S A$drawBlock$65 Def0062
+S A$drawBlock$56 Def0054
+S A$drawBlock$38 Def0034
+S A$drawBlock$29 Def0024
+S A$drawBlock$84 Def0071
+S A$drawBlock$66 Def0064
+S A$drawBlock$57 Def0056
+S A$drawBlock$39 Def0036
+S A$drawBlock$94 Def007B
+S A$drawBlock$85 Def0073
+S A$drawBlock$67 Def0066
+S A$drawBlock$49 Def0041
+S A$drawBlock$95 Def007D
+S A$drawBlock$68 Def0068
+S A$drawBlock$59 Def0057
+S A$drawBlock$96 Def007E
+S A$drawBlock$97 Def0081
+S A$drawBlock$98 Def0083
+S A$drawBlock$99 Def0085
+S A$drawBlock$4 Def0000
+S A$drawBlock$7 Def0000
+S A$drawBlock$8 Def0002
+S A$drawBlock$9 Def0004
+S A$drawBlock$100 Def0087
+S A$drawBlock$101 Def0089
+S A$drawBlock$120 Def00A2
+S A$drawBlock$111 Def0093
+S A$drawBlock$102 Def008A
+S A$drawBlock$121 Def00A4
+S A$drawBlock$112 Def0095
+S A$drawBlock$103 Def008C
+S A$drawBlock$122 Def00A6
+S A$drawBlock$113 Def0097
+S A$drawBlock$123 Def00A8
+S A$drawBlock$105 Def008E
+S A$drawBlock$124 Def00A9
+S A$drawBlock$106 Def0090
+S A$drawBlock$125 Def00AA
+S A$drawBlock$116 Def0099
+S _drawFieldAsmScale Def0000
+S A$drawBlock$126 Def00AC
+S A$drawBlock$117 Def009B
+S A$drawBlock$127 Def00AE
+S A$drawBlock$118 Def009D
+S A$drawBlock$119 Def00A0
+T 00 00 00 01 D0 00
+P 00 00 00 02
+T 00 00
+R 00 00 00 02
+T 00 00 34 60 C6 CC D7 D0 0C 8E 00 00 B6 00 00
+R 00 00 00 02 20 07 00 01 81 0D 00 08
+T 00 0C 97 D0 04 FC 00 00 20 04
+R 00 00 00 02 20 03 00 01 81 06 00 05
+T 00 13
+R 00 00 00 02
+T 00 13 12 12 1F 30
+R 00 00 00 02
+T 00 17
+R 00 00 00 02
+T 00 17 97 D0 01 0F D0 00 12 86 CE 97
+R 00 00 00 02 20 03 00 01 20 06 00 01
+T 00 1F D0 0C 0C D0 00 D7
+R 00 00 00 02 20 02 00 01 20 05 00 01
+T 00 23 D0 01 0F D0 05 A6 89
+R 00 00 00 02 20 02 00 01 20 05 00 01
+T 00 28 00 00 97 D0 04 E6 89
+R 00 00 00 02 81 02 00 07 20 05 00 01
+T 00 2E 00 00 E0 89 00 00 81 7F 24 06 58 81 3A
+R 00 00 00 02 81 02 00 04 81 06 00 03
+T 00 3B 24 01 58
+R 00 00 00 02
+T 00 3E
+R 00 00 00 02
+T 00 3E 4F 1F 03 E6 89 00 00 E0 89 00 00 A6 89
+R 00 00 00 02 81 07 00 02 81 0B 00 00
+T 00 4B 00 00 81 7F 24 06 58 81 3A 24 01 58
+R 00 00 00 02 81 02 00 07
+T 00 57
+R 00 00 00 02
+T 00 57 86 01 1F 02 30 01 1F 10 F1 00 00 27 2F
+R 00 00 00 02 81 0B 00 01
+T 00 64 C6 40 D5 D0 0D 27 FC DF D0 00 C6 FF 10
+R 00 00 00 02 20 05 00 01 20 0A 00 01
+T 00 6F 9F D0 00 D7 D0 0A 97
+R 00 00 00 02 20 03 00 01 20 06 00 01
+T 00 74 D0 05 A6 89 00 00 97
+R 00 00 00 02 20 02 00 01 81 06 00 08
+T 00 7A D0 04 1F 10 58 CE 00 00 EE C5 C6 40 D5
+R 00 00 00 02 20 02 00 01 81 08 00 05
+T 00 86 D0 0D 27 FC 12 C6 CC 97 D0 0A D7
+R 00 00 00 02 20 02 00 01 20 0A 00 01
+T 00 8F D0 0C 7E 00 13
+R 00 00 00 02 20 02 00 01 01 05 00 02
+T 00 93
+R 00 00 00 02
+T 00 93 C6 40 D5 D0 0D 27 FC DF D0 00 C6 40 10
+R 00 00 00 02 20 05 00 01 20 0A 00 01
+T 00 9E 9F D0 00 0A D0 0A 97
+R 00 00 00 02 20 03 00 01 20 06 00 01
+T 00 A3 D0 05 D5 D0 0D 27 FC 12 12 97
+R 00 00 00 02 20 02 00 01 20 05 00 01
+T 00 AB D0 0A 35 60 39
+R 00 00 00 02 20 02 00 01

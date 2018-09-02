@@ -9,10 +9,10 @@
 ;  options passed:  -O3 -fverbose-asm -W -Wall -Wextra -Wconversion -Werror
 ;  -fomit-frame-pointer -mint8 -msoft-reg-count=0 -std=gnu99
 ;  -fno-time-report
-;  -I/home/frank/Downloads/Vide2.0_RC17/C/PeerC/vectrex/include
+;  -I/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include
 ;  -D__RUM_INLINE=1 -DOMMIT_FRAMEPOINTER=1
-;  -I/home/frank/Downloads/Vide2.0_RC17/projects/Bloxorz/include
-;  /home/frank/Downloads/Vide2.0_RC17/projects/Bloxorz/source/cartridge.enr.c
+;  -I/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/include
+;  /home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/cartridge.enr.c
 ;  options enabled:  -falign-loops -fargument-alias -fauto-inc-dec
 ;  -fbranch-count-reg -fcaller-saves -fcommon -fcprop-registers
 ;  -fcrossjumping -fcse-follow-jumps -fdefer-pop

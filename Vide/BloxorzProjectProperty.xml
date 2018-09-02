@@ -10,7 +10,7 @@
 		<MainFile>Bloxorz.asm</MainFile>
 		<Description></Description>
 		<Version>1.0</Version>
-		<Author>Frank Busse</Author>
+		<Author>Frank Buss</Author>
 		<Bankswitching>none</Bankswitching>
 		<createBankswitchCode>false</createBankswitchCode>
 		<createGameLoopCode>false</createGameLoopCode>

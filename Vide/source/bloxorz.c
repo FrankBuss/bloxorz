@@ -88,6 +88,9 @@ extern void picWrite(uint8_t b);
 extern uint8_t picRead();
 extern void delay10ms();
 
+extern void musicInit();
+extern void musicPlay();
+
 char infoText[10];
 
 uint16_t moveCount;
@@ -157,7 +160,7 @@ const uint8_t* currentMusic = startMusic;
 #include "block.i"
 
 
-#define MAX_LINES 80
+#define MAX_LINES 40
 uint8_t moveScale[MAX_LINES];
 unsigned long int moveTo[MAX_LINES];
 
@@ -921,6 +924,7 @@ int main()
 	epot3 = 0;
 	
 	gameState = MainMenu;
+	musicInit();
 
 	while (1) {
 		// wait for frame boundary (one frame = 30,000 cyles = 50 Hz)
@@ -929,9 +933,11 @@ int main()
 		switch (gameState) {
 			case MainMenu:
         			mainMenu();
+				musicPlay();
         			break;
 			case ClearMenu:
 				clearMenu();
+				musicPlay();
 				break;
 			case BlockMovingToStart:
 				showInfo();
@@ -956,10 +962,12 @@ int main()
 		}
 		
 		// play next music note
-		DP_to_C8();
-		replay(currentMusic);
-		DP_to_D0();
-		reqout();
+		if (gameState > ClearMenu) {
+    			DP_to_C8();
+    			replay(currentMusic);
+    			DP_to_D0();
+    			reqout();
+		}
 	}
 	return 0;
 }
