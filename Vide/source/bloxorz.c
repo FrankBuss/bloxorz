@@ -197,6 +197,8 @@ const char* level;
 int8_t levelNumber = 0;
 uint16_t levelHighscore;
 
+uint8_t* vecx = (uint8_t*) 0x8000;
+
 enum GameState_t {
 	MainMenu,
 	ClearMenu,
@@ -642,6 +644,7 @@ void startBlockFalling()
 	blockYOfs = 0;
 	moveBlock(lastBlockDirection);
 	changeMusic(fallingMusic);
+	*vecx = 0;
 }
 
 void startLevel()
@@ -669,6 +672,7 @@ void startLevel()
 	blockYOfs = -30;
 	gameState = BlockMovingToStart;
 	changeMusic(startMusic);
+	*vecx = 2;
 	moveCount = 0;
 	updateInfoText();
 }
@@ -725,6 +729,7 @@ void blockWaiting()
 	}
 	if (gameState == BlockMoving) {
 		changeMusic(movingMusic);
+		*vecx = 3;
 	}
 }
 
@@ -778,6 +783,7 @@ void blockMoving()
 			blockYOfs = 0;
 			gameState = BlockMovingAtEnd;
 			changeMusic(levelEndMusic);
+			*vecx = 1;
 		} else {
 			// if not falling, wait for next joystick movement
 			if (gameState != BlockFalling) {
@@ -906,6 +912,8 @@ void showInfo()
 
 int main()
 {
+	*vecx = 4;
+
 	// check if PIC is available
 	picAvailable = 0;
 	sendCommand(CMD_VERSION, 0);

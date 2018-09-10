@@ -8,11 +8,10 @@
 ;  GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 ;  options passed:  -O3 -fverbose-asm -W -Wall -Wextra -Wconversion -Werror
 ;  -fomit-frame-pointer -mint8 -msoft-reg-count=0 -std=gnu99
-;  -fno-time-report
-;  -I/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include
+;  -fno-time-report -I/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include
 ;  -D__RUM_INLINE=1 -DOMMIT_FRAMEPOINTER=1
-;  -I/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/include
-;  /home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c
+;  -I/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/include
+;  /home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c
 ;  options enabled:  -falign-loops -fargument-alias -fauto-inc-dec
 ;  -fbranch-count-reg -fcaller-saves -fcommon -fcprop-registers
 ;  -fcrossjumping -fcse-follow-jumps -fdefer-pop
@@ -44,8 +43,8 @@ _itoa:
 	pshs	y,u	; 
 	leas	-16,s	; ,,
 ;----- asm -----
-;  263 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[245]	uint16_t muls[] = { 100, 10, 1 };
+;  265 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[247]	uint16_t muls[] = { 100, 10, 1 };
 ;  0 "" 2
 ;--- end asm ---
 	ldd	#100	; ,
@@ -55,87 +54,87 @@ _itoa:
 	ldd	#1	; ,
 	std	14,s	; , muls
 ;----- asm -----
-;  265 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[246]	if (number > 999) number = 999;
+;  267 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[248]	if (number > 999) number = 999;
 ;  0 "" 2
 ;--- end asm ---
-	stx	,s	;  number, number.110
+	stx	,s	;  number, number.115
 	cmpx	#999	;cmphi:	;  number,
 	bls	L2	; 
 	ldx	#999	; ,
-	stx	,s	; , number.110
+	stx	,s	; , number.115
 L2:
 ;----- asm -----
-;  267 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[247]	for (uint8_t i = 0; i < 3; i++) {
+;  269 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[249]	for (uint8_t i = 0; i < 3; i++) {
 ;  0 "" 2
 ;--- end asm ---
 	leax	10,s	; ,,
-	stx	6,s	; , ivtmp.106
+	stx	6,s	; , ivtmp.111
 	ldd	22,s	; , text
-	std	8,s	; , ivtmp.108
+	std	8,s	; , ivtmp.113
 L6:
 ;----- asm -----
-;  269 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[248]		uint8_t d = 0;
+;  271 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[250]		uint8_t d = 0;
 ;  0 "" 2
-;  271 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[249]		while (number >= muls[i]) {
+;  273 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[251]		while (number >= muls[i]) {
 ;  0 "" 2
 ;--- end asm ---
-	ldu	,x	;  D.2393, muls
+	ldu	,x	;  D.2394, muls
 	ldb	#48	; ,
-	stb	3,s	; , prephitmp.87
-	cmpu	,s	;cmphi:	;  D.2393, number.110
+	stb	3,s	; , prephitmp.92
+	cmpu	,s	;cmphi:	;  D.2394, number.115
 	bhi	L4	; 
-	tfr	u,d	;  D.2393,
+	tfr	u,d	;  D.2394,
 	nega
 	negb
 	sbca	#0
-	std	4,s	; , ivtmp.96
-	ldd	,s	; , number.110
-	pshs	u	;subhi: R:d -= R:u	;  D.2393,
+	std	4,s	; , ivtmp.101
+	ldd	,s	; , number.115
+	pshs	u	;subhi: R:d -= R:u	;  D.2394,
 	subd	,s++	; 
-	std	,s	; , number.110
+	std	,s	; , number.115
 	clr	2,s	;  d
 L5:
 ;----- asm -----
-;  273 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[250]			d++;
+;  275 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[252]			d++;
 ;  0 "" 2
 ;--- end asm ---
 	inc	2,s	;  d
 ;----- asm -----
-;  275 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[251]			number -= muls[i];
+;  277 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[253]			number -= muls[i];
 ;  0 "" 2
 ;--- end asm ---
-	ldy	,s	;  number.112, number.110
+	ldy	,s	;  number.117, number.115
 	tfr	y,d	; ,
-	addd	4,s	; , ivtmp.96
-	std	,s	; , number.110
-	leax	d,u	;  tmp87,, D.2393
-	pshs	x	;cmphi: R:x with R:u	;  tmp87, D.2393
-	cmpu	,s++	;cmphi:	;  D.2393
+	addd	4,s	; , ivtmp.101
+	std	,s	; , number.115
+	leax	d,u	;  tmp87,, D.2394
+	pshs	x	;cmphi: R:x with R:u	;  tmp87, D.2394
+	cmpu	,s++	;cmphi:	;  D.2394
 	bls	L5	; 
-	sty	,s	;  number.112, number.110
+	sty	,s	;  number.117, number.115
 	ldb	2,s	; , d
 	addb	#48	; ,
-	stb	3,s	; , prephitmp.87
+	stb	3,s	; , prephitmp.92
 L4:
 ;----- asm -----
-;  278 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[253]		text[i] = d + '0';
+;  280 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[255]		text[i] = d + '0';
 ;  0 "" 2
 ;--- end asm ---
-	ldx	8,s	; , ivtmp.108
+	ldx	8,s	; , ivtmp.113
 	leax	1,x	; ,,
-	stx	8,s	; , ivtmp.108
+	stx	8,s	; , ivtmp.113
 	leax	-1,x	; ,,
 	stb	,x+	; ,
-	ldx	6,s	; , ivtmp.106
+	ldx	6,s	; , ivtmp.111
 	leax	2,x	; ,,
-	stx	6,s	; , ivtmp.106
+	stx	6,s	; , ivtmp.111
 	tfr	s,d	; ,
 	addd	#16	; ,
 	pshs	d	;cmphi: R:d with R:x	; ,
@@ -146,8 +145,8 @@ L4:
 	.globl _isField
 _isField:
 ;----- asm -----
-;  293 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[265]	return (char)(c == '.' || c == 'a' || c == 'o');
+;  295 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[267]	return (char)(c == '.' || c == 'a' || c == 'o');
 ;  0 "" 2
 ;--- end asm ---
 	cmpb	#46	;cmpqi:	;  c,
@@ -164,7 +163,7 @@ _isField:
 	andb	#1	; ,
 	rts
 L12:
-	ldb	#1	;  prephitmp.120,
+	ldb	#1	;  prephitmp.125,
 	rts
 	.globl _x3d
 _x3d:
@@ -172,11 +171,11 @@ _x3d:
 	leas	-2,s	; ,,
 	stb	,s	;  x, x
 ;----- asm -----
-;  300 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[271]	x -= LEVEL_WIDTH / 2 - 4;
+;  302 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[273]	x -= LEVEL_WIDTH / 2 - 4;
 ;  0 "" 2
-;  302 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[272]	return 14 * x - 6 * z+0*y;
+;  304 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[274]	return 14 * x - 6 * z+0*y;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	7,s	; , z
@@ -200,11 +199,11 @@ _x3d:
 _y3d:
 	pshs	b	; 
 ;----- asm -----
-;  309 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[278]	y -= LEVEL_HEIGHT / 2;
+;  311 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[280]	y -= LEVEL_HEIGHT / 2;
 ;  0 "" 2
-;  311 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[279]	return 3 * x + 13 * y + 8 * z;
+;  313 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[281]	return 3 * x + 13 * y + 8 * z;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	3,s	; , y
@@ -228,8 +227,8 @@ _y3d:
 	.globl _scaleDown
 _scaleDown:
 ;----- asm -----
-;  317 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[284]	return (uint8_t)(oldScale>>1);
+;  319 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[286]	return (uint8_t)(oldScale>>1);
 ;  0 "" 2
 ;--- end asm ---
 	lsrb	;  oldScale
@@ -238,71 +237,71 @@ _scaleDown:
 _toLong:
 	leas	-2,s	; ,,
 ;----- asm -----
-;  323 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[289]	unsigned long int t = (unsigned long int)hi;
+;  325 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[291]	unsigned long int t = (unsigned long int)hi;
 ;  0 "" 2
 ;--- end asm ---
 	sex		;extendqihi2: R:b -> R:d	;  hi, t
 ;----- asm -----
-;  325 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[290]	t = t << 8;
+;  327 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[292]	t = t << 8;
 ;  0 "" 2
 ;--- end asm ---
 	tfr	b,a	; ,
 	clrb	; 
-	tfr	d,x	;  t, t.167
+	tfr	d,x	;  t, t.172
 ;----- asm -----
-;  327 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[291]	unsigned long int t2 = (unsigned long int)lo;
+;  329 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[293]	unsigned long int t2 = (unsigned long int)lo;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	4,s	; , lo
 	sex		;extendqihi2: R:b -> R:d	; ,
 ;----- asm -----
-;  329 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[292]	t2 = t2 & 0xff;
+;  331 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[294]	t2 = t2 & 0xff;
 ;  0 "" 2
-;  331 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[293]	t = t & 0xff00;
+;  333 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[295]	t = t & 0xff00;
 ;  0 "" 2
-;  333 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[294]	t = t + t2;
+;  335 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[296]	t = t + t2;
 ;  0 "" 2
-;  335 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[295]	return t;
+;  337 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[297]	return t;
 ;  0 "" 2
 ;--- end asm ---
 	clra	;andqi(ZERO)	; 
 		;andqi(-1)
-	leax	d,x	;  tmp33, tmp34, t.167
+	leax	d,x	;  tmp33, tmp34, t.172
 	leas	2,s	; ,,
 	rts
 	.globl _correctScale
 _correctScale:
 ;----- asm -----
-;  342 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[301]	if (s==0x80) return 0x80;
+;  344 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[303]	if (s==0x80) return 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	cmpb	#-128	;cmpqi:	;  s,
 	beq	L25	; 
 ;----- asm -----
-;  344 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[302]	if (s==0x40) return 0x40-1;
+;  346 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[304]	if (s==0x40) return 0x40-1;
 ;  0 "" 2
 ;--- end asm ---
 	cmpb	#64	;cmpqi:	;  s,
 	beq	L29	; 
 ;----- asm -----
-;  346 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[303]	if (s==0x20) return 0x20-2;
+;  348 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[305]	if (s==0x20) return 0x20-2;
 ;  0 "" 2
 ;--- end asm ---
 	cmpb	#32	;cmpqi:	;  s,
 	beq	L30	; 
 ;----- asm -----
-;  348 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[304]	return s;
+;  350 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[306]	return s;
 ;  0 "" 2
 ;--- end asm ---
 L25:
@@ -319,18 +318,18 @@ _addLine:
 	leas	-12,s	; ,,
 	stb	3,s	;  x0, x0
 ;----- asm -----
-;  355 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[310]	lineX0[lineCount] = x3d(x0, 0, y0);
+;  357 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[312]	lineX0[lineCount] = x3d(x0, 0, y0);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_lineCount	; , lineCount
 	stb	4,s	; , lineCount.8
 ;----- asm -----
-;  300 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[271]	x -= LEVEL_WIDTH / 2 - 4;
+;  302 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[273]	x -= LEVEL_WIDTH / 2 - 4;
 ;  0 "" 2
-;  302 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[272]	return 14 * x - 6 * z+0*y;
+;  304 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[274]	return 14 * x - 6 * z+0*y;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	18,s	; , y0
@@ -357,14 +356,14 @@ _addLine:
 	ldb	5,s	; , xpos
 	stb	_lineX0,u	; , lineX0
 ;----- asm -----
-;  357 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[311]	lineY0[lineCount] = y3d(x0, 0, y0);
+;  359 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[313]	lineY0[lineCount] = y3d(x0, 0, y0);
 ;  0 "" 2
-;  309 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[278]	y -= LEVEL_HEIGHT / 2;
+;  311 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[280]	y -= LEVEL_HEIGHT / 2;
 ;  0 "" 2
-;  311 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[279]	return 3 * x + 13 * y + 8 * z;
+;  313 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[281]	return 3 * x + 13 * y + 8 * z;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	3,s	; , x0
@@ -378,14 +377,14 @@ _addLine:
 	stb	6,s	; , ypos
 	stb	_lineY0,u	; , lineY0
 ;----- asm -----
-;  359 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[312]	lineX1[lineCount] = x3d(x1, 0, y1);
+;  361 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[314]	lineX1[lineCount] = x3d(x1, 0, y1);
 ;  0 "" 2
-;  300 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[271]	x -= LEVEL_WIDTH / 2 - 4;
+;  302 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[273]	x -= LEVEL_WIDTH / 2 - 4;
 ;  0 "" 2
-;  302 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[272]	return 14 * x - 6 * z+0*y;
+;  304 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[274]	return 14 * x - 6 * z+0*y;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	20,s	; , y1
@@ -402,20 +401,20 @@ _addLine:
 	addb	#2	; ,
 	stb	19,s	; , x1
 	tfr	x,d	;movlsbqihi: R:x -> R:b	;  tmp63,
-	stb	9,s	; , D.2969
+	stb	9,s	; , D.2975
 	tfr	y,d	;movlsbqihi: R:y -> R:b	;  tmp65, tmp67
-	addb	9,s	;  tmp67, D.2969
-	stb	9,s	;  tmp67, D.2969
+	addb	9,s	;  tmp67, D.2975
+	stb	9,s	;  tmp67, D.2975
 	stb	_lineX1,u	;  tmp67, lineX1
 ;----- asm -----
-;  361 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[313]	lineY1[lineCount] = y3d(x1, 0, y1);
+;  363 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[315]	lineY1[lineCount] = y3d(x1, 0, y1);
 ;  0 "" 2
-;  309 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[278]	y -= LEVEL_HEIGHT / 2;
+;  311 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[280]	y -= LEVEL_HEIGHT / 2;
 ;  0 "" 2
-;  311 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[279]	return 3 * x + 13 * y + 8 * z;
+;  313 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[281]	return 3 * x + 13 * y + 8 * z;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	19,s	; , x1
@@ -426,245 +425,245 @@ _addLine:
 	asl	20,s	;  y1
 	asl	20,s	;  y1
 	addb	20,s	; , y1
-	stb	,s	; , D.2976
+	stb	,s	; , D.2982
 	stb	_lineY1,u	; , lineY1
 ;----- asm -----
-;  364 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[315]	lineScale[lineCount] = 0x80;
+;  366 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[317]	lineScale[lineCount] = 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-128	; ,
 	stb	_lineScale,u	; , lineScale
 ;----- asm -----
-;  366 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[316]	moveScale[lineCount] = 0x80;
+;  368 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[318]	moveScale[lineCount] = 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	stb	_moveScale,u	; , moveScale
 ;----- asm -----
-;  369 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[318]	int xpos = lineX0[lineCount]; 
+;  371 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[320]	int xpos = lineX0[lineCount]; 
 ;  0 "" 2
-;  371 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[319]	int ypos = lineY0[lineCount]; 
+;  373 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[321]	int ypos = lineY0[lineCount]; 
 ;  0 "" 2
-;  373 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[320]#ifdef DO_SCALE	
+;  375 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[322]#ifdef DO_SCALE	
 ;  0 "" 2
-;  377 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[323]	int difx = (lineX1[lineCount]-lineX0[lineCount]); 
+;  379 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[325]	int difx = (lineX1[lineCount]-lineX0[lineCount]); 
 ;  0 "" 2
 ;--- end asm ---
-	ldb	9,s	; , D.2969
+	ldb	9,s	; , D.2975
 	subb	5,s	; , xpos
 	stb	7,s	; , difx
 ;----- asm -----
-;  379 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[324]	int dify = (lineY1[lineCount]-lineY0[lineCount]); 
+;  381 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[326]	int dify = (lineY1[lineCount]-lineY0[lineCount]); 
 ;  0 "" 2
 ;--- end asm ---
-	ldb	,s	; , D.2976
+	ldb	,s	; , D.2982
 	subb	6,s	; , ypos
 	stb	8,s	; , dify
 ;----- asm -----
-;  381 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[325]	if (difx<0) difx = -difx;
+;  383 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[327]	if (difx<0) difx = -difx;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	7,s	; , difx
-	stb	2,s	; , difx.190
+	stb	2,s	; , difx.195
 	lblt	L47	; 
 L32:
 ;----- asm -----
-;  383 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[326]	if (dify<0) dify = -dify;
+;  385 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[328]	if (dify<0) dify = -dify;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	8,s	; , dify
-	stb	10,s	; , dify.191
+	stb	10,s	; , dify.196
 	lblt	L48	; 
 L33:
 ;----- asm -----
-;  385 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[327]	if ((difx<64) && (dify<64)) lineScale[lineCount] = scaleDown(lineScale[lineCount]);
+;  387 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[329]	if ((difx<64) && (dify<64)) lineScale[lineCount] = scaleDown(lineScale[lineCount]);
 ;  0 "" 2
 ;--- end asm ---
-	ldb	2,s	; , difx.190
+	ldb	2,s	; , difx.195
 	cmpb	#63	;cmpqi:	; ,
 	bgt	L34	; 
-	ldb	10,s	; , dify.191
+	ldb	10,s	; , dify.196
 	cmpb	#63	;cmpqi:	; ,
 	lble	L49	; 
 L34:
 ;----- asm -----
-;  387 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[328]	if ((difx<32) && (dify<32)) lineScale[lineCount] = scaleDown(lineScale[lineCount]);
+;  389 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[330]	if ((difx<32) && (dify<32)) lineScale[lineCount] = scaleDown(lineScale[lineCount]);
 ;  0 "" 2
 ;--- end asm ---
-	ldb	2,s	; , difx.190
+	ldb	2,s	; , difx.195
 	cmpb	#31	;cmpqi:	; ,
 	bgt	L35	; 
-	ldb	10,s	; , dify.191
+	ldb	10,s	; , dify.196
 	cmpb	#31	;cmpqi:	; ,
 	lble	L50	; 
 L35:
 ;----- asm -----
-;  391 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[331]  	difx = lineX0[lineCount]; 
+;  393 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[333]  	difx = lineX0[lineCount]; 
 ;  0 "" 2
-;  393 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[332]    	dify = lineY0[lineCount]; 
+;  395 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[334]    	dify = lineY0[lineCount]; 
 ;  0 "" 2
-;  395 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[333]    	if (difx<0) difx = -difx;
+;  397 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[335]    	if (difx<0) difx = -difx;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	5,s	; , xpos
-	stb	2,s	; , difx.192
+	stb	2,s	; , difx.197
 	lblt	L51	; 
 L36:
 ;----- asm -----
-;  397 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[334]    	if (dify<0) dify = -dify;
+;  399 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[336]    	if (dify<0) dify = -dify;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	6,s	; , ypos
-	stb	11,s	; , dify.193
+	stb	11,s	; , dify.198
 	lblt	L52	; 
 L37:
 ;----- asm -----
-;  399 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[335]    	if ((difx<64) && (dify<64)) 
+;  401 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[337]    	if ((difx<64) && (dify<64)) 
 ;  0 "" 2
 ;--- end asm ---
-	ldb	2,s	; , difx.192
+	ldb	2,s	; , difx.197
 	cmpb	#63	;cmpqi:	; ,
 	bgt	L38	; 
-	ldb	11,s	; , dify.193
+	ldb	11,s	; , dify.198
 	cmpb	#63	;cmpqi:	; ,
 	lble	L53	; 
 L38:
 ;----- asm -----
-;  409 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[341]    	if ((difx<32) && (dify<32)) 
+;  411 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[343]    	if ((difx<32) && (dify<32)) 
 ;  0 "" 2
 ;--- end asm ---
-	ldb	2,s	; , difx.192
+	ldb	2,s	; , difx.197
 	cmpb	#31	;cmpqi:	; ,
 	bgt	L39	; 
-	ldb	11,s	; , dify.193
+	ldb	11,s	; , dify.198
 	cmpb	#31	;cmpqi:	; ,
 	lble	L54	; 
 L39:
 ;----- asm -----
-;  421 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[349]	lineScale[lineCount] = correctScale(lineScale[lineCount]);
+;  423 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[351]	lineScale[lineCount] = correctScale(lineScale[lineCount]);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_lineScale,u	;  s, lineScale
 ;----- asm -----
-;  342 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[301]	if (s==0x80) return 0x80;
+;  344 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[303]	if (s==0x80) return 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	cmpb	#-128	;cmpqi:	;  s,
 	beq	L40	; 
 ;----- asm -----
-;  344 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[302]	if (s==0x40) return 0x40-1;
+;  346 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[304]	if (s==0x40) return 0x40-1;
 ;  0 "" 2
 ;--- end asm ---
 	cmpb	#64	;cmpqi:	;  s,
 	lbeq	L55	; 
 ;----- asm -----
-;  346 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[303]	if (s==0x20) return 0x20-2;
+;  348 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[305]	if (s==0x20) return 0x20-2;
 ;  0 "" 2
 ;--- end asm ---
 	cmpb	#32	;cmpqi:	;  s,
 	lbeq	L56	; 
 ;----- asm -----
-;  348 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[304]	return s;
+;  350 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[306]	return s;
 ;  0 "" 2
 ;--- end asm ---
 L40:
 	stb	_lineScale,u	;  s, lineScale
 ;----- asm -----
-;  423 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[350]	moveScale[lineCount] = correctScale(moveScale[lineCount]);
+;  425 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[352]	moveScale[lineCount] = correctScale(moveScale[lineCount]);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_moveScale,u	;  s, moveScale
 ;----- asm -----
-;  342 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[301]	if (s==0x80) return 0x80;
+;  344 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[303]	if (s==0x80) return 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	cmpb	#-128	;cmpqi:	;  s,
 	beq	L43	; 
 ;----- asm -----
-;  344 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[302]	if (s==0x40) return 0x40-1;
+;  346 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[304]	if (s==0x40) return 0x40-1;
 ;  0 "" 2
 ;--- end asm ---
 	cmpb	#64	;cmpqi:	;  s,
 	lbeq	L57	; 
 ;----- asm -----
-;  346 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[303]	if (s==0x20) return 0x20-2;
+;  348 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[305]	if (s==0x20) return 0x20-2;
 ;  0 "" 2
 ;--- end asm ---
 	cmpb	#32	;cmpqi:	;  s,
 	lbeq	L58	; 
 ;----- asm -----
-;  348 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[304]	return s;
+;  350 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[306]	return s;
 ;  0 "" 2
 ;--- end asm ---
 L43:
 	stb	_moveScale,u	;  s, moveScale
 ;----- asm -----
-;  427 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[353]#endif
+;  429 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[355]#endif
 ;  0 "" 2
-;  430 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[355]	moveTo[lineCount] =toLong(ypos, xpos);
+;  432 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[357]	moveTo[lineCount] =toLong(ypos, xpos);
 ;  0 "" 2
-;  323 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[289]	unsigned long int t = (unsigned long int)hi;
+;  325 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[291]	unsigned long int t = (unsigned long int)hi;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	6,s	; , ypos
 	sex		;extendqihi2: R:b -> R:d	; ,
 ;----- asm -----
-;  325 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[290]	t = t << 8;
+;  327 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[292]	t = t << 8;
 ;  0 "" 2
 ;--- end asm ---
 	tfr	b,a	; ,
 	clrb	; 
-	tfr	d,y	; , t.194
+	tfr	d,y	; , t.199
 ;----- asm -----
-;  327 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[291]	unsigned long int t2 = (unsigned long int)lo;
+;  329 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[293]	unsigned long int t2 = (unsigned long int)lo;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	5,s	; , xpos
 	sex		;extendqihi2: R:b -> R:d	; ,
 	std	,s	; , t2
 ;----- asm -----
-;  329 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[292]	t2 = t2 & 0xff;
+;  331 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[294]	t2 = t2 & 0xff;
 ;  0 "" 2
-;  331 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[293]	t = t & 0xff00;
+;  333 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[295]	t = t & 0xff00;
 ;  0 "" 2
-;  333 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[294]	t = t + t2;
+;  335 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[296]	t = t + t2;
 ;  0 "" 2
-;  335 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[295]	return t;
+;  337 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[297]	return t;
 ;  0 "" 2
 ;--- end asm ---
 	tfr	u,d	;  lineCount.8,
@@ -674,11 +673,11 @@ L43:
 	ldd	,s	;  tmp119, t2
 	clra	;andqi(ZERO)	; 
 		;andqi(-1)
-	leay	d,y	; , tmp119, t.194
+	leay	d,y	; , tmp119, t.199
 	sty	_moveTo,x	; , moveTo
 ;----- asm -----
-;  432 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[356]	lineCount++;
+;  434 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[358]	lineCount++;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	4,s	; , lineCount.8
@@ -688,63 +687,63 @@ L43:
 	puls	y,u,pc	; 
 L54:
 ;----- asm -----
-;  412 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[343]		moveScale[lineCount] = scaleDown(moveScale[lineCount]);
+;  414 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[345]		moveScale[lineCount] = scaleDown(moveScale[lineCount]);
 ;  0 "" 2
-;  317 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[284]	return (uint8_t)(oldScale>>1);
+;  319 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[286]	return (uint8_t)(oldScale>>1);
 ;  0 "" 2
 ;--- end asm ---
 	lsr	_moveScale,u	;  moveScale
 ;----- asm -----
-;  414 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[344]		xpos = xpos<<1;
+;  416 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[346]		xpos = xpos<<1;
 ;  0 "" 2
 ;--- end asm ---
 	asl	5,s	;  xpos
 ;----- asm -----
-;  416 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[345]		ypos = ypos<<1;
+;  418 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[347]		ypos = ypos<<1;
 ;  0 "" 2
 ;--- end asm ---
 	asl	6,s	;  ypos
 	jmp	L39	; 
 L53:
 ;----- asm -----
-;  402 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[337]		moveScale[lineCount] = scaleDown(moveScale[lineCount]);
+;  404 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[339]		moveScale[lineCount] = scaleDown(moveScale[lineCount]);
 ;  0 "" 2
-;  317 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[284]	return (uint8_t)(oldScale>>1);
+;  319 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[286]	return (uint8_t)(oldScale>>1);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#64	; ,
 	stb	_moveScale,u	; , moveScale
 ;----- asm -----
-;  404 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[338]		xpos = xpos<<1;
+;  406 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[340]		xpos = xpos<<1;
 ;  0 "" 2
 ;--- end asm ---
 	asl	5,s	;  xpos
 ;----- asm -----
-;  406 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[339]		ypos = ypos<<1;
+;  408 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[341]		ypos = ypos<<1;
 ;  0 "" 2
 ;--- end asm ---
 	asl	6,s	;  ypos
 	jmp	L38	; 
 L50:
 ;----- asm -----
-;  317 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[284]	return (uint8_t)(oldScale>>1);
+;  319 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[286]	return (uint8_t)(oldScale>>1);
 ;  0 "" 2
 ;--- end asm ---
 	lsr	_lineScale,u	;  lineScale
 	jmp	L35	; 
 L49:
 ;----- asm -----
-;  317 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[284]	return (uint8_t)(oldScale>>1);
+;  319 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[286]	return (uint8_t)(oldScale>>1);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#64	; ,
@@ -755,17 +754,17 @@ L55:
 	jmp	L40	; 
 L52:
 	negb	; 
-	stb	11,s	; , dify.193
+	stb	11,s	; , dify.198
 	jmp	L37	; 
 L51:
 	negb	; 
-	stb	2,s	; , difx.192
+	stb	2,s	; , difx.197
 	jmp	L36	; 
 L48:
-	neg	10,s	;  dify.191
+	neg	10,s	;  dify.196
 	jmp	L33	; 
 L47:
-	neg	2,s	;  difx.190
+	neg	2,s	;  difx.195
 	jmp	L32	; 
 L57:
 	ldb	#63	;  s,
@@ -782,18 +781,18 @@ _addTarget:
 	leas	-28,s	; ,,
 	stb	3,s	;  x, x
 ;----- asm -----
-;  439 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[362]	lineX0[lineCount] = x3d(x, 0, y);
+;  441 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[364]	lineX0[lineCount] = x3d(x, 0, y);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_lineCount	; , lineCount
 	stb	4,s	; , lineCount.10
 ;----- asm -----
-;  300 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[271]	x -= LEVEL_WIDTH / 2 - 4;
+;  302 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[273]	x -= LEVEL_WIDTH / 2 - 4;
 ;  0 "" 2
-;  302 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[272]	return 14 * x - 6 * z+0*y;
+;  304 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[274]	return 14 * x - 6 * z+0*y;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	3,s	; , x
@@ -806,7 +805,7 @@ _addTarget:
 	addb	#2	; ,
 	stb	3,s	; , x
 	tfr	x,d	;movlsbqihi: R:x -> R:b	;  tmp72,
-	stb	12,s	; , D.3007
+	stb	12,s	; , D.3013
 	ldb	32,s	; , y
 	lda	#-6	;mulqihi3	; 
 	mul
@@ -814,8 +813,8 @@ _addTarget:
 	tfr	d,x	; , tmp73
 ; ORG>	tfr	d,x	; , tmp73
 ; ORG>	tfr	x,d	;movlsbqihi: R:x -> R:b	;  tmp73,
-	stb	11,s	; , D.3008
-	addb	12,s	; , D.3007
+	stb	11,s	; , D.3014
+	addb	12,s	; , D.3013
 	stb	8,s	; , xpos
 	ldb	4,s	; , lineCount.10
 	clra		;zero_extendqihi: R:b -> R:d	; ,
@@ -823,46 +822,46 @@ _addTarget:
 	ldb	8,s	; , xpos
 	stb	_lineX0,x	; , lineX0
 ;----- asm -----
-;  441 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[363]	lineY0[lineCount] = y3d(x, 0, y);
+;  443 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[365]	lineY0[lineCount] = y3d(x, 0, y);
 ;  0 "" 2
-;  309 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[278]	y -= LEVEL_HEIGHT / 2;
+;  311 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[280]	y -= LEVEL_HEIGHT / 2;
 ;  0 "" 2
-;  311 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[279]	return 3 * x + 13 * y + 8 * z;
+;  313 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[281]	return 3 * x + 13 * y + 8 * z;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	3,s	; , x
 	aslb	; 
 	addb	3,s	; , x
 	addb	#-104	; ,
-	stb	14,s	; , D.3016
+	stb	14,s	; , D.3022
 	ldb	32,s	; , y
 	aslb	; 
 	aslb	; 
 	aslb	; 
-	stb	13,s	; , D.3017
-	addb	14,s	; , D.3016
+	stb	13,s	; , D.3023
+	addb	14,s	; , D.3022
 	stb	9,s	; , ypos
 	stb	_lineY0,x	; , lineY0
 ;----- asm -----
-;  443 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[364]	lineX1[lineCount] = x3d(x + 1, 0, y + 1);
+;  445 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[366]	lineX1[lineCount] = x3d(x + 1, 0, y + 1);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	32,s	; , y
 	incb	; 
-	stb	5,s	; , D.2482
+	stb	5,s	; , D.2483
 	ldb	3,s	; , x
 	incb	; 
-	stb	6,s	; , D.2483
+	stb	6,s	; , D.2484
 ;----- asm -----
-;  300 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[271]	x -= LEVEL_WIDTH / 2 - 4;
+;  302 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[273]	x -= LEVEL_WIDTH / 2 - 4;
 ;  0 "" 2
-;  302 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[272]	return 14 * x - 6 * z+0*y;
+;  304 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[274]	return 14 * x - 6 * z+0*y;
 ;  0 "" 2
 ;--- end asm ---
 	dec	3,s	;  x
@@ -873,279 +872,279 @@ _addTarget:
 	tfr	d,y	; , tmp84
 ; ORG>	tfr	d,y	; , tmp84
 ; ORG>	tfr	y,d	;movlsbqihi: R:y -> R:b	;  tmp84,
-	stb	16,s	; , D.3023
-	ldb	5,s	; , D.2482
+	stb	16,s	; , D.3029
+	ldb	5,s	; , D.2483
 	lda	#-6	;mulqihi3	; 
 	mul
 ; Applied peep: 5-2 (tfr tfr 1=2, 2=1)
 	tfr	d,y	; , tmp85
 ; ORG>	tfr	d,y	; , tmp85
 ; ORG>	tfr	y,d	;movlsbqihi: R:y -> R:b	;  tmp85,
-	stb	15,s	; , D.3024
-	addb	16,s	; , D.3023
-	stb	,s	; , D.3022
+	stb	15,s	; , D.3030
+	addb	16,s	; , D.3029
+	stb	,s	; , D.3028
 	stb	_lineX1,x	; , lineX1
 ;----- asm -----
-;  445 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[365]	lineY1[lineCount] = y3d(x + 1, 0, y + 1);
+;  447 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[367]	lineY1[lineCount] = y3d(x + 1, 0, y + 1);
 ;  0 "" 2
-;  309 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[278]	y -= LEVEL_HEIGHT / 2;
+;  311 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[280]	y -= LEVEL_HEIGHT / 2;
 ;  0 "" 2
-;  311 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[279]	return 3 * x + 13 * y + 8 * z;
+;  313 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[281]	return 3 * x + 13 * y + 8 * z;
 ;  0 "" 2
 ;--- end asm ---
-	ldb	6,s	; , D.2483
+	ldb	6,s	; , D.2484
 	aslb	; 
-	addb	6,s	; , D.2483
+	addb	6,s	; , D.2484
 	addb	#-104	; ,
-	stb	19,s	; , D.3032
-	ldb	5,s	; , D.2482
+	stb	19,s	; , D.3038
+	ldb	5,s	; , D.2483
 	aslb	; 
 	aslb	; 
 	aslb	; 
-	stb	18,s	; , D.3033
-	addb	19,s	; , D.3032
-	stb	17,s	; , D.3029
+	stb	18,s	; , D.3039
+	addb	19,s	; , D.3038
+	stb	17,s	; , D.3035
 	stb	_lineY1,x	; , lineY1
 ;----- asm -----
-;  448 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[367]	lineScale[lineCount] = 0x80;
+;  450 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[369]	lineScale[lineCount] = 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-128	; ,
 	stb	_lineScale,x	; , lineScale
 ;----- asm -----
-;  450 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[368]	moveScale[lineCount] = 0x80;
+;  452 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[370]	moveScale[lineCount] = 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	stb	_moveScale,x	; , moveScale
 ;----- asm -----
-;  452 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[369]	int xpos = lineX0[lineCount]; 
+;  454 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[371]	int xpos = lineX0[lineCount]; 
 ;  0 "" 2
-;  454 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[370]	int ypos = lineY0[lineCount]; 
+;  456 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[372]	int ypos = lineY0[lineCount]; 
 ;  0 "" 2
-;  457 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[372]#ifdef DO_SCALE	
+;  459 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[374]#ifdef DO_SCALE	
 ;  0 "" 2
-;  460 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[374]	int difx = lineX1[lineCount] - lineX0[lineCount]; 
+;  462 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[376]	int difx = lineX1[lineCount] - lineX0[lineCount]; 
 ;  0 "" 2
 ;--- end asm ---
-	ldb	,s	; , D.3022
+	ldb	,s	; , D.3028
 	subb	8,s	; , xpos
 	stb	,s	; , difx
 ;----- asm -----
-;  462 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[375]	int dify = lineY1[lineCount] - lineY0[lineCount]; 
+;  464 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[377]	int dify = lineY1[lineCount] - lineY0[lineCount]; 
 ;  0 "" 2
 ;--- end asm ---
-	ldb	17,s	; , D.3029
+	ldb	17,s	; , D.3035
 	subb	9,s	; , ypos
 	stb	10,s	; , dify
 ;----- asm -----
-;  464 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[376]	if (difx<0) difx = -difx;
+;  466 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[378]	if (difx<0) difx = -difx;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	,s	; , difx
-	stb	2,s	; , difx.210
+	stb	2,s	; , difx.215
 	lblt	L91	; 
 L60:
 ;----- asm -----
-;  466 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[377]	if (dify<0) dify = -dify;
+;  468 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[379]	if (dify<0) dify = -dify;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	10,s	; , dify
-	stb	23,s	; , dify.211
+	stb	23,s	; , dify.216
 	lblt	L92	; 
 L61:
 ;----- asm -----
-;  468 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[378]	if ((difx<64) && (dify<64)) lineScale[lineCount] = scaleDown(lineScale[lineCount]);
+;  470 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[380]	if ((difx<64) && (dify<64)) lineScale[lineCount] = scaleDown(lineScale[lineCount]);
 ;  0 "" 2
 ;--- end asm ---
-	ldb	2,s	; , difx.210
+	ldb	2,s	; , difx.215
 	cmpb	#63	;cmpqi:	; ,
 	bgt	L62	; 
-	ldb	23,s	; , dify.211
+	ldb	23,s	; , dify.216
 	cmpb	#63	;cmpqi:	; ,
 	lble	L93	; 
 L62:
 ;----- asm -----
-;  470 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[379]	if ((difx<32) && (dify<32)) lineScale[lineCount] = scaleDown(lineScale[lineCount]);
+;  472 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[381]	if ((difx<32) && (dify<32)) lineScale[lineCount] = scaleDown(lineScale[lineCount]);
 ;  0 "" 2
 ;--- end asm ---
-	ldb	2,s	; , difx.210
+	ldb	2,s	; , difx.215
 	cmpb	#31	;cmpqi:	; ,
 	bgt	L63	; 
-	ldb	23,s	; , dify.211
+	ldb	23,s	; , dify.216
 	cmpb	#31	;cmpqi:	; ,
 	lble	L94	; 
 L63:
 ;----- asm -----
-;  474 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[382]	difx = lineX0[lineCount]; 
+;  476 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[384]	difx = lineX0[lineCount]; 
 ;  0 "" 2
-;  476 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[383]    	dify = lineY0[lineCount]; 
+;  478 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[385]    	dify = lineY0[lineCount]; 
 ;  0 "" 2
-;  478 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[384]    	if (difx<0) difx = -difx;
+;  480 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[386]    	if (difx<0) difx = -difx;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	8,s	; , xpos
-	stb	2,s	; , difx.212
+	stb	2,s	; , difx.217
 	lblt	L95	; 
 L64:
 ;----- asm -----
-;  480 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[385]    	if (dify<0) dify = -dify;
+;  482 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[387]    	if (dify<0) dify = -dify;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	9,s	; , ypos
-	stb	25,s	; , dify.215
+	stb	25,s	; , dify.220
 	lblt	L96	; 
 L65:
 ;----- asm -----
-;  483 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[387]	if ((difx<64) && (dify<64)) 
+;  485 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[389]	if ((difx<64) && (dify<64)) 
 ;  0 "" 2
 ;--- end asm ---
-	ldb	2,s	; , difx.212
+	ldb	2,s	; , difx.217
 	cmpb	#63	;cmpqi:	; ,
 	bgt	L66	; 
-	ldb	25,s	; , dify.215
+	ldb	25,s	; , dify.220
 	cmpb	#63	;cmpqi:	; ,
 	lble	L97	; 
 L66:
 ;----- asm -----
-;  493 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[393]    	if ((difx<32) && (dify<32)) 
+;  495 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[395]    	if ((difx<32) && (dify<32)) 
 ;  0 "" 2
 ;--- end asm ---
-	ldb	2,s	; , difx.212
+	ldb	2,s	; , difx.217
 	cmpb	#31	;cmpqi:	; ,
 	bgt	L67	; 
-	ldb	25,s	; , dify.215
+	ldb	25,s	; , dify.220
 	cmpb	#31	;cmpqi:	; ,
 	lble	L98	; 
 L67:
 ;----- asm -----
-;  503 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[399]	lineScale[lineCount] = correctScale(lineScale[lineCount]);
+;  505 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[401]	lineScale[lineCount] = correctScale(lineScale[lineCount]);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_lineScale,x	;  s, lineScale
 ;----- asm -----
-;  342 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[301]	if (s==0x80) return 0x80;
+;  344 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[303]	if (s==0x80) return 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	cmpb	#-128	;cmpqi:	;  s,
 	beq	L68	; 
 ;----- asm -----
-;  344 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[302]	if (s==0x40) return 0x40-1;
+;  346 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[304]	if (s==0x40) return 0x40-1;
 ;  0 "" 2
 ;--- end asm ---
 	cmpb	#64	;cmpqi:	;  s,
 	lbeq	L99	; 
 ;----- asm -----
-;  346 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[303]	if (s==0x20) return 0x20-2;
+;  348 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[305]	if (s==0x20) return 0x20-2;
 ;  0 "" 2
 ;--- end asm ---
 	cmpb	#32	;cmpqi:	;  s,
 	lbeq	L100	; 
 ;----- asm -----
-;  348 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[304]	return s;
+;  350 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[306]	return s;
 ;  0 "" 2
 ;--- end asm ---
 L68:
 	stb	_lineScale,x	;  s, lineScale
 ;----- asm -----
-;  505 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[400]	moveScale[lineCount] = correctScale(moveScale[lineCount]);
+;  507 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[402]	moveScale[lineCount] = correctScale(moveScale[lineCount]);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_moveScale,x	;  s, moveScale
 ;----- asm -----
-;  342 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[301]	if (s==0x80) return 0x80;
+;  344 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[303]	if (s==0x80) return 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	cmpb	#-128	;cmpqi:	;  s,
 	beq	L71	; 
 ;----- asm -----
-;  344 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[302]	if (s==0x40) return 0x40-1;
+;  346 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[304]	if (s==0x40) return 0x40-1;
 ;  0 "" 2
 ;--- end asm ---
 	cmpb	#64	;cmpqi:	;  s,
 	lbeq	L101	; 
 ;----- asm -----
-;  346 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[303]	if (s==0x20) return 0x20-2;
+;  348 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[305]	if (s==0x20) return 0x20-2;
 ;  0 "" 2
 ;--- end asm ---
 	cmpb	#32	;cmpqi:	;  s,
 	lbeq	L102	; 
 ;----- asm -----
-;  348 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[304]	return s;
+;  350 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[306]	return s;
 ;  0 "" 2
 ;--- end asm ---
 L71:
 	stb	_moveScale,x	;  s, moveScale
 ;----- asm -----
-;  507 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[401]#endif
+;  509 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[403]#endif
 ;  0 "" 2
-;  509 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[402]	moveTo[lineCount] =toLong(ypos, xpos);
+;  511 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[404]	moveTo[lineCount] =toLong(ypos, xpos);
 ;  0 "" 2
-;  323 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[289]	unsigned long int t = (unsigned long int)hi;
+;  325 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[291]	unsigned long int t = (unsigned long int)hi;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	9,s	; , ypos
 	sex		;extendqihi2: R:b -> R:d	; ,
 ;----- asm -----
-;  325 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[290]	t = t << 8;
+;  327 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[292]	t = t << 8;
 ;  0 "" 2
 ;--- end asm ---
 	tfr	b,a	; ,
 	clrb	; 
-	tfr	d,y	; , t.223
+	tfr	d,y	; , t.228
 ;----- asm -----
-;  327 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[291]	unsigned long int t2 = (unsigned long int)lo;
+;  329 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[293]	unsigned long int t2 = (unsigned long int)lo;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	8,s	; , xpos
 	sex		;extendqihi2: R:b -> R:d	; ,
 	std	,s	; , t2
 ;----- asm -----
-;  329 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[292]	t2 = t2 & 0xff;
+;  331 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[294]	t2 = t2 & 0xff;
 ;  0 "" 2
-;  331 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[293]	t = t & 0xff00;
+;  333 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[295]	t = t & 0xff00;
 ;  0 "" 2
-;  333 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[294]	t = t + t2;
+;  335 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[296]	t = t + t2;
 ;  0 "" 2
-;  335 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[295]	return t;
+;  337 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[297]	return t;
 ;  0 "" 2
 ;--- end asm ---
 	tfr	x,d	;  lineCount.10,
@@ -1155,316 +1154,316 @@ L71:
 	ldd	,s	;  tmp135, t2
 	clra	;andqi(ZERO)	; 
 		;andqi(-1)
-	leay	d,y	; , tmp135, t.223
+	leay	d,y	; , tmp135, t.228
 	sty	_moveTo,x	; , moveTo
 ;----- asm -----
-;  511 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[403]	lineCount++;
+;  513 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[405]	lineCount++;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	4,s	; , lineCount.10
 	incb	; 
 	stb	7,s	; , lineCount.11
 ;----- asm -----
-;  516 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[407]	lineX0[lineCount] = x3d(x + 1, 0, y);
+;  518 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[409]	lineX0[lineCount] = x3d(x + 1, 0, y);
 ;  0 "" 2
-;  300 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[271]	x -= LEVEL_WIDTH / 2 - 4;
+;  302 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[273]	x -= LEVEL_WIDTH / 2 - 4;
 ;  0 "" 2
-;  302 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[272]	return 14 * x - 6 * z+0*y;
+;  304 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[274]	return 14 * x - 6 * z+0*y;
 ;  0 "" 2
 ;--- end asm ---
-	ldb	16,s	; , D.3023
-	addb	11,s	; , D.3008
-	stb	21,s	; , xpos.208
+	ldb	16,s	; , D.3029
+	addb	11,s	; , D.3014
+	stb	21,s	; , xpos.213
 	ldb	7,s	; , lineCount.11
 	clra		;zero_extendqihi: R:b -> R:d	; ,
 	tfr	d,x	; , lineCount.11
-	ldb	21,s	; , xpos.208
+	ldb	21,s	; , xpos.213
 	stb	_lineX0,x	; , lineX0
 ;----- asm -----
-;  518 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[408]	lineY0[lineCount] = y3d(x + 1, 0, y);
+;  520 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[410]	lineY0[lineCount] = y3d(x + 1, 0, y);
 ;  0 "" 2
-;  309 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[278]	y -= LEVEL_HEIGHT / 2;
+;  311 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[280]	y -= LEVEL_HEIGHT / 2;
 ;  0 "" 2
-;  311 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[279]	return 3 * x + 13 * y + 8 * z;
+;  313 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[281]	return 3 * x + 13 * y + 8 * z;
 ;  0 "" 2
 ;--- end asm ---
-	ldb	19,s	; , D.3032
-	addb	13,s	; , D.3017
-	stb	22,s	; , ypos.209
+	ldb	19,s	; , D.3038
+	addb	13,s	; , D.3023
+	stb	22,s	; , ypos.214
 	stb	_lineY0,x	; , lineY0
 ;----- asm -----
-;  520 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[409]	lineX1[lineCount] = x3d(x, 0, y + 1);
+;  522 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[411]	lineX1[lineCount] = x3d(x, 0, y + 1);
 ;  0 "" 2
-;  300 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[271]	x -= LEVEL_WIDTH / 2 - 4;
+;  302 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[273]	x -= LEVEL_WIDTH / 2 - 4;
 ;  0 "" 2
-;  302 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[272]	return 14 * x - 6 * z+0*y;
+;  304 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[274]	return 14 * x - 6 * z+0*y;
 ;  0 "" 2
 ;--- end asm ---
-	ldb	15,s	; , D.3024
-	addb	12,s	; , D.3007
-	stb	,s	; , D.3075
+	ldb	15,s	; , D.3030
+	addb	12,s	; , D.3013
+	stb	,s	; , D.3081
 	stb	_lineX1,x	; , lineX1
 ;----- asm -----
-;  522 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[410]	lineY1[lineCount] = y3d(x, 0, y + 1);
+;  524 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[412]	lineY1[lineCount] = y3d(x, 0, y + 1);
 ;  0 "" 2
-;  309 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[278]	y -= LEVEL_HEIGHT / 2;
+;  311 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[280]	y -= LEVEL_HEIGHT / 2;
 ;  0 "" 2
-;  311 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[279]	return 3 * x + 13 * y + 8 * z;
+;  313 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[281]	return 3 * x + 13 * y + 8 * z;
 ;  0 "" 2
 ;--- end asm ---
-	ldb	18,s	; , D.3033
-	addb	14,s	; , D.3016
-	stb	20,s	; , D.3082
+	ldb	18,s	; , D.3039
+	addb	14,s	; , D.3022
+	stb	20,s	; , D.3088
 	stb	_lineY1,x	; , lineY1
 ;----- asm -----
-;  525 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[412]	lineScale[lineCount] = 0x80;
+;  527 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[414]	lineScale[lineCount] = 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-128	; ,
 	stb	_lineScale,x	; , lineScale
 ;----- asm -----
-;  527 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[413]	moveScale[lineCount] = 0x80;
+;  529 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[415]	moveScale[lineCount] = 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	stb	_moveScale,x	; , moveScale
 ;----- asm -----
-;  530 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[415]	xpos = lineX0[lineCount]; 
+;  532 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[417]	xpos = lineX0[lineCount]; 
 ;  0 "" 2
-;  532 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[416]	ypos = lineY0[lineCount]; 
+;  534 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[418]	ypos = lineY0[lineCount]; 
 ;  0 "" 2
-;  535 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[418]#ifdef DO_SCALE	
+;  537 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[420]#ifdef DO_SCALE	
 ;  0 "" 2
-;  538 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[420]	difx = lineX1[lineCount] - lineX0[lineCount]; 
+;  540 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[422]	difx = lineX1[lineCount] - lineX0[lineCount]; 
 ;  0 "" 2
 ;--- end asm ---
-	ldb	,s	; , D.3075
-	subb	21,s	; , xpos.208
-	stb	2,s	; , difx.213
+	ldb	,s	; , D.3081
+	subb	21,s	; , xpos.213
+	stb	2,s	; , difx.218
 ;----- asm -----
-;  540 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[421]	dify = lineY1[lineCount] - lineY0[lineCount]; 
+;  542 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[423]	dify = lineY1[lineCount] - lineY0[lineCount]; 
 ;  0 "" 2
 ;--- end asm ---
-	ldb	20,s	; , D.3082
-	subb	22,s	; , ypos.209
-	stb	24,s	; , dify.214
+	ldb	20,s	; , D.3088
+	subb	22,s	; , ypos.214
+	stb	24,s	; , dify.219
 ;----- asm -----
-;  542 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[422]	if (difx<0) difx = -difx;
+;  544 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[424]	if (difx<0) difx = -difx;
 ;  0 "" 2
 ;--- end asm ---
-	ldb	2,s	; , difx.213
+	ldb	2,s	; , difx.218
 	lblt	L103	; 
 L74:
 ;----- asm -----
-;  544 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[423]	if (dify<0) dify = -dify;
+;  546 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[425]	if (dify<0) dify = -dify;
 ;  0 "" 2
 ;--- end asm ---
-	ldb	24,s	; , dify.214
-	stb	26,s	; , dify.218
+	ldb	24,s	; , dify.219
+	stb	26,s	; , dify.223
 	lblt	L104	; 
 L75:
 ;----- asm -----
-;  546 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[424]	if ((difx<64) && (dify<64)) lineScale[lineCount] = scaleDown(lineScale[lineCount]);
+;  548 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[426]	if ((difx<64) && (dify<64)) lineScale[lineCount] = scaleDown(lineScale[lineCount]);
 ;  0 "" 2
 ;--- end asm ---
-	ldb	2,s	; , difx.216
+	ldb	2,s	; , difx.221
 	cmpb	#63	;cmpqi:	; ,
 	bgt	L76	; 
-	ldb	26,s	; , dify.218
+	ldb	26,s	; , dify.223
 	cmpb	#63	;cmpqi:	; ,
 	lble	L105	; 
 L76:
 ;----- asm -----
-;  548 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[425]	if ((difx<32) && (dify<32)) lineScale[lineCount] =  scaleDown(lineScale[lineCount]);
+;  550 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[427]	if ((difx<32) && (dify<32)) lineScale[lineCount] =  scaleDown(lineScale[lineCount]);
 ;  0 "" 2
 ;--- end asm ---
-	ldb	2,s	; , difx.216
+	ldb	2,s	; , difx.221
 	cmpb	#31	;cmpqi:	; ,
 	bgt	L77	; 
-	ldb	26,s	; , dify.218
+	ldb	26,s	; , dify.223
 	cmpb	#31	;cmpqi:	; ,
 	lble	L106	; 
 L77:
 ;----- asm -----
-;  552 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[428]    	difx = lineX0[lineCount]; 
+;  554 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[430]    	difx = lineX0[lineCount]; 
 ;  0 "" 2
-;  554 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[429]    	dify = lineY0[lineCount]; 
+;  556 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[431]    	dify = lineY0[lineCount]; 
 ;  0 "" 2
-;  556 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[430]    	if (difx<0) difx = -difx;
+;  558 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[432]    	if (difx<0) difx = -difx;
 ;  0 "" 2
 ;--- end asm ---
-	ldb	21,s	; , xpos.208
-	stb	2,s	; , difx.219
+	ldb	21,s	; , xpos.213
+	stb	2,s	; , difx.224
 	lblt	L107	; 
 L78:
 ;----- asm -----
-;  558 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[431]    	if (dify<0) dify = -dify;
+;  560 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[433]    	if (dify<0) dify = -dify;
 ;  0 "" 2
 ;--- end asm ---
-	ldb	22,s	; , ypos.209
-	stb	27,s	; , dify.221
+	ldb	22,s	; , ypos.214
+	stb	27,s	; , dify.226
 	lblt	L108	; 
 L79:
 ;----- asm -----
-;  561 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[433]	if ((difx<64) && (dify<64)) 
+;  563 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[435]	if ((difx<64) && (dify<64)) 
 ;  0 "" 2
 ;--- end asm ---
-	ldb	2,s	; , difx.219
+	ldb	2,s	; , difx.224
 	cmpb	#63	;cmpqi:	; ,
 	bgt	L80	; 
-	ldb	27,s	; , dify.221
+	ldb	27,s	; , dify.226
 	cmpb	#63	;cmpqi:	; ,
 	lble	L109	; 
 L80:
 ;----- asm -----
-;  571 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[439]    	if ((difx<32) && (dify<32)) 
+;  573 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[441]    	if ((difx<32) && (dify<32)) 
 ;  0 "" 2
 ;--- end asm ---
-	ldb	2,s	; , difx.219
+	ldb	2,s	; , difx.224
 	cmpb	#31	;cmpqi:	; ,
 	bgt	L81	; 
-	ldb	27,s	; , dify.221
+	ldb	27,s	; , dify.226
 	cmpb	#31	;cmpqi:	; ,
 	lble	L110	; 
 L81:
 ;----- asm -----
-;  581 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[445]	lineScale[lineCount] = correctScale(lineScale[lineCount]);
+;  583 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[447]	lineScale[lineCount] = correctScale(lineScale[lineCount]);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_lineScale,x	;  s, lineScale
 ;----- asm -----
-;  342 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[301]	if (s==0x80) return 0x80;
+;  344 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[303]	if (s==0x80) return 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	cmpb	#-128	;cmpqi:	;  s,
 	beq	L82	; 
 ;----- asm -----
-;  344 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[302]	if (s==0x40) return 0x40-1;
+;  346 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[304]	if (s==0x40) return 0x40-1;
 ;  0 "" 2
 ;--- end asm ---
 	cmpb	#64	;cmpqi:	;  s,
 	lbeq	L111	; 
 ;----- asm -----
-;  346 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[303]	if (s==0x20) return 0x20-2;
+;  348 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[305]	if (s==0x20) return 0x20-2;
 ;  0 "" 2
 ;--- end asm ---
 	cmpb	#32	;cmpqi:	;  s,
 	lbeq	L112	; 
 ;----- asm -----
-;  348 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[304]	return s;
+;  350 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[306]	return s;
 ;  0 "" 2
 ;--- end asm ---
 L82:
 	stb	_lineScale,x	;  s, lineScale
 ;----- asm -----
-;  583 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[446]	moveScale[lineCount] = correctScale(moveScale[lineCount]);
+;  585 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[448]	moveScale[lineCount] = correctScale(moveScale[lineCount]);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_moveScale,x	;  s, moveScale
 ;----- asm -----
-;  342 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[301]	if (s==0x80) return 0x80;
+;  344 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[303]	if (s==0x80) return 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	cmpb	#-128	;cmpqi:	;  s,
 	beq	L85	; 
 ;----- asm -----
-;  344 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[302]	if (s==0x40) return 0x40-1;
+;  346 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[304]	if (s==0x40) return 0x40-1;
 ;  0 "" 2
 ;--- end asm ---
 	cmpb	#64	;cmpqi:	;  s,
 	lbeq	L113	; 
 ;----- asm -----
-;  346 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[303]	if (s==0x20) return 0x20-2;
+;  348 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[305]	if (s==0x20) return 0x20-2;
 ;  0 "" 2
 ;--- end asm ---
 	cmpb	#32	;cmpqi:	;  s,
 	lbeq	L114	; 
 ;----- asm -----
-;  348 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[304]	return s;
+;  350 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[306]	return s;
 ;  0 "" 2
 ;--- end asm ---
 L85:
 	stb	_moveScale,x	;  s, moveScale
 ;----- asm -----
-;  585 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[447]#endif
+;  587 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[449]#endif
 ;  0 "" 2
-;  587 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[448]	moveTo[lineCount] =toLong(ypos, xpos);
+;  589 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[450]	moveTo[lineCount] =toLong(ypos, xpos);
 ;  0 "" 2
-;  323 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[289]	unsigned long int t = (unsigned long int)hi;
+;  325 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[291]	unsigned long int t = (unsigned long int)hi;
 ;  0 "" 2
 ;--- end asm ---
-	ldb	22,s	; , ypos.209
+	ldb	22,s	; , ypos.214
 	sex		;extendqihi2: R:b -> R:d	; ,
 ;----- asm -----
-;  325 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[290]	t = t << 8;
+;  327 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[292]	t = t << 8;
 ;  0 "" 2
 ;--- end asm ---
 	tfr	b,a	; ,
 	clrb	; 
-	tfr	d,y	; , t.226
+	tfr	d,y	; , t.231
 ;----- asm -----
-;  327 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[291]	unsigned long int t2 = (unsigned long int)lo;
+;  329 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[293]	unsigned long int t2 = (unsigned long int)lo;
 ;  0 "" 2
 ;--- end asm ---
-	ldb	21,s	; , xpos.208
+	ldb	21,s	; , xpos.213
 	sex		;extendqihi2: R:b -> R:d	; ,
 	std	,s	; , t2
 ;----- asm -----
-;  329 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[292]	t2 = t2 & 0xff;
+;  331 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[294]	t2 = t2 & 0xff;
 ;  0 "" 2
-;  331 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[293]	t = t & 0xff00;
+;  333 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[295]	t = t & 0xff00;
 ;  0 "" 2
-;  333 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[294]	t = t + t2;
+;  335 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[296]	t = t + t2;
 ;  0 "" 2
-;  335 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[295]	return t;
+;  337 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[297]	return t;
 ;  0 "" 2
 ;--- end asm ---
 	tfr	x,d	;  lineCount.11,
@@ -1474,11 +1473,11 @@ L85:
 	ldd	,s	;  tmp188, t2
 	clra	;andqi(ZERO)	; 
 		;andqi(-1)
-	leay	d,y	; , tmp188, t.226
+	leay	d,y	; , tmp188, t.231
 	sty	_moveTo,x	; , moveTo
 ;----- asm -----
-;  589 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[449]	lineCount++;
+;  591 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[451]	lineCount++;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	7,s	; , lineCount.11
@@ -1488,63 +1487,63 @@ L85:
 	puls	y,pc	; 
 L98:
 ;----- asm -----
-;  496 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[395]		moveScale[lineCount] = scaleDown(moveScale[lineCount]);
+;  498 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[397]		moveScale[lineCount] = scaleDown(moveScale[lineCount]);
 ;  0 "" 2
-;  317 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[284]	return (uint8_t)(oldScale>>1);
+;  319 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[286]	return (uint8_t)(oldScale>>1);
 ;  0 "" 2
 ;--- end asm ---
 	lsr	_moveScale,x	;  moveScale
 ;----- asm -----
-;  498 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[396]		xpos = xpos<<1;
+;  500 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[398]		xpos = xpos<<1;
 ;  0 "" 2
 ;--- end asm ---
 	asl	8,s	;  xpos
 ;----- asm -----
-;  500 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[397]		ypos = ypos<<1;
+;  502 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[399]		ypos = ypos<<1;
 ;  0 "" 2
 ;--- end asm ---
 	asl	9,s	;  ypos
 	jmp	L67	; 
 L97:
 ;----- asm -----
-;  486 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[389]		moveScale[lineCount] = scaleDown(moveScale[lineCount]);
+;  488 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[391]		moveScale[lineCount] = scaleDown(moveScale[lineCount]);
 ;  0 "" 2
-;  317 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[284]	return (uint8_t)(oldScale>>1);
+;  319 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[286]	return (uint8_t)(oldScale>>1);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#64	; ,
 	stb	_moveScale,x	; , moveScale
 ;----- asm -----
-;  488 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[390]		xpos = xpos<<1;
+;  490 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[392]		xpos = xpos<<1;
 ;  0 "" 2
 ;--- end asm ---
 	asl	8,s	;  xpos
 ;----- asm -----
-;  490 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[391]		ypos = ypos<<1;
+;  492 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[393]		ypos = ypos<<1;
 ;  0 "" 2
 ;--- end asm ---
 	asl	9,s	;  ypos
 	jmp	L66	; 
 L94:
 ;----- asm -----
-;  317 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[284]	return (uint8_t)(oldScale>>1);
+;  319 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[286]	return (uint8_t)(oldScale>>1);
 ;  0 "" 2
 ;--- end asm ---
 	lsr	_lineScale,x	;  lineScale
 	jmp	L63	; 
 L93:
 ;----- asm -----
-;  317 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[284]	return (uint8_t)(oldScale>>1);
+;  319 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[286]	return (uint8_t)(oldScale>>1);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#64	; ,
@@ -1552,63 +1551,63 @@ L93:
 	jmp	L62	; 
 L110:
 ;----- asm -----
-;  574 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[441]		moveScale[lineCount] = scaleDown(moveScale[lineCount]);
+;  576 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[443]		moveScale[lineCount] = scaleDown(moveScale[lineCount]);
 ;  0 "" 2
-;  317 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[284]	return (uint8_t)(oldScale>>1);
+;  319 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[286]	return (uint8_t)(oldScale>>1);
 ;  0 "" 2
 ;--- end asm ---
 	lsr	_moveScale,x	;  moveScale
 ;----- asm -----
-;  576 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[442]		xpos = xpos<<1;
+;  578 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[444]		xpos = xpos<<1;
 ;  0 "" 2
 ;--- end asm ---
-	asl	21,s	;  xpos.208
+	asl	21,s	;  xpos.213
 ;----- asm -----
-;  578 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[443]		ypos = ypos<<1;
+;  580 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[445]		ypos = ypos<<1;
 ;  0 "" 2
 ;--- end asm ---
-	asl	22,s	;  ypos.209
+	asl	22,s	;  ypos.214
 	jmp	L81	; 
 L109:
 ;----- asm -----
-;  564 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[435]		moveScale[lineCount] = scaleDown(moveScale[lineCount]);
+;  566 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[437]		moveScale[lineCount] = scaleDown(moveScale[lineCount]);
 ;  0 "" 2
-;  317 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[284]	return (uint8_t)(oldScale>>1);
+;  319 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[286]	return (uint8_t)(oldScale>>1);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#64	; ,
 	stb	_moveScale,x	; , moveScale
 ;----- asm -----
-;  566 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[436]		xpos = xpos<<1;
+;  568 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[438]		xpos = xpos<<1;
 ;  0 "" 2
 ;--- end asm ---
-	asl	21,s	;  xpos.208
+	asl	21,s	;  xpos.213
 ;----- asm -----
-;  568 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[437]		ypos = ypos<<1;
+;  570 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[439]		ypos = ypos<<1;
 ;  0 "" 2
 ;--- end asm ---
-	asl	22,s	;  ypos.209
+	asl	22,s	;  ypos.214
 	jmp	L80	; 
 L106:
 ;----- asm -----
-;  317 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[284]	return (uint8_t)(oldScale>>1);
+;  319 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[286]	return (uint8_t)(oldScale>>1);
 ;  0 "" 2
 ;--- end asm ---
 	lsr	_lineScale,x	;  lineScale
 	jmp	L77	; 
 L105:
 ;----- asm -----
-;  317 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[284]	return (uint8_t)(oldScale>>1);
+;  319 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[286]	return (uint8_t)(oldScale>>1);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#64	; ,
@@ -1625,31 +1624,31 @@ L101:
 	jmp	L71	; 
 L96:
 	negb	; 
-	stb	25,s	; , dify.215
+	stb	25,s	; , dify.220
 	jmp	L65	; 
 L95:
 	negb	; 
-	stb	2,s	; , difx.212
+	stb	2,s	; , difx.217
 	jmp	L64	; 
 L91:
-	neg	2,s	;  difx.210
+	neg	2,s	;  difx.215
 	jmp	L60	; 
 L103:
-	neg	2,s	;  difx.216
+	neg	2,s	;  difx.221
 	jmp	L74	; 
 L104:
-	neg	26,s	;  dify.218
+	neg	26,s	;  dify.223
 	jmp	L75	; 
 L92:
-	neg	23,s	;  dify.211
+	neg	23,s	;  dify.216
 	jmp	L61	; 
 L108:
 	negb	; 
-	stb	27,s	; , dify.221
+	stb	27,s	; , dify.226
 	jmp	L79	; 
 L107:
 	negb	; 
-	stb	2,s	; , difx.219
+	stb	2,s	; , difx.224
 	jmp	L78	; 
 L113:
 	ldb	#63	;  s,
@@ -1671,34 +1670,34 @@ _setupX:
 	pshs	y,u	; 
 	leas	-9,s	; ,,
 ;----- asm -----
-;  605 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[464]	unsigned long int index;
+;  607 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[466]	unsigned long int index;
 ;  0 "" 2
-;  607 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[465]	int8_t x = 0;
+;  609 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[467]	int8_t x = 0;
 ;  0 "" 2
-;  609 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[466]	int8_t y = 0;
+;  611 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[468]	int8_t y = 0;
 ;  0 "" 2
-;  611 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[467]	for (y = 0; y < LEVEL_HEIGHT - 1; y++) {
+;  613 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[469]	for (y = 0; y < LEVEL_HEIGHT - 1; y++) {
 ;  0 "" 2
 ;--- end asm ---
 	clr	5,s	;  y
-	ldy	#0	;  ivtmp.251,
+	ldy	#0	;  ivtmp.256,
 L124:
 ;----- asm -----
-;  613 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[468]		int8_t x0 = -1;
+;  615 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[470]		int8_t x0 = -1;
 ;  0 "" 2
-;  615 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[469]		int8_t x1 = -1;
+;  617 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[471]		int8_t x1 = -1;
 ;  0 "" 2
-;  617 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[470]		for (x = 0; x < LEVEL_WIDTH; x++) {
+;  619 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[472]		for (x = 0; x < LEVEL_WIDTH; x++) {
 ;  0 "" 2
 ;--- end asm ---
-	leau	,y	;  ivtmp.262, ivtmp.251
+	leau	,y	;  ivtmp.267, ivtmp.256
 	clr	4,s	;  x
 	ldb	#-1	; ,
 	stb	6,s	; , x0
@@ -1709,23 +1708,23 @@ L124:
 	jmp	L123	; 
 L117:
 ;----- asm -----
-;  642 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[485]			index += LEVEL_WIDTH;
+;  644 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[487]			index += LEVEL_WIDTH;
 ;  0 "" 2
-;  644 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[486]			char c1 = level[index];
+;  646 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[488]			char c1 = level[index];
 ;  0 "" 2
 ;--- end asm ---
 	ldd	,s	; ,
-	leax	d,u	;  tmp68,, ivtmp.262
+	leax	d,u	;  tmp68,, ivtmp.267
 	ldb	12,x	; ,
 	stb	2,s	; , c1
 ;----- asm -----
-;  646 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[487]			if (isField(c0) || isField(c1)) {
+;  648 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[489]			if (isField(c0) || isField(c1)) {
 ;  0 "" 2
-;  293 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[265]	return (char)(c == '.' || c == 'a' || c == 'o');
+;  295 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[267]	return (char)(c == '.' || c == 'a' || c == 'o');
 ;  0 "" 2
 ;--- end asm ---
 	ldb	8,s	; , c0
@@ -1736,8 +1735,8 @@ L117:
 	cmpb	#111	;cmpqi:	; ,
 	lbeq	L118	; 
 ;----- asm -----
-;  293 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[265]	return (char)(c == '.' || c == 'a' || c == 'o');
+;  295 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[267]	return (char)(c == '.' || c == 'a' || c == 'o');
 ;  0 "" 2
 ;--- end asm ---
 	ldb	2,s	; , c1
@@ -1748,16 +1747,16 @@ L117:
 	cmpb	#111	;cmpqi:	; ,
 	lbeq	L118	; 
 ;----- asm -----
-;  653 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[491]				if (x0 >= 0) {
+;  655 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[493]				if (x0 >= 0) {
 ;  0 "" 2
 ;--- end asm ---
 	ldb	6,s	; , x0
 	cmpb	#-1	;cmpqi:	; ,
 	beq	L122	; 
 ;----- asm -----
-;  655 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[492]					addLine(x0, y + 1, x1 + 1, y + 1);
+;  657 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[494]					addLine(x0, y + 1, x1 + 1, y + 1);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	3,s	; ,
@@ -1770,8 +1769,8 @@ L117:
 	ldb	9,s	; , x0
 	jsr	_addLine	; 
 ;----- asm -----
-;  657 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[493]					x0 = -1;
+;  659 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[495]					x0 = -1;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-1	; ,
@@ -1779,50 +1778,50 @@ L117:
 	leas	3,s	; ,,
 L122:
 	inc	4,s	;  x
-	leau	1,u	;  ivtmp.262,, ivtmp.262
+	leau	1,u	;  ivtmp.267,, ivtmp.267
 	ldb	4,s	; , x
 	cmpb	#12	;cmpqi:	; ,
 	lbeq	L133	; 
 L123:
 ;----- asm -----
-;  620 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[472]			index = (unsigned long int) y*LEVEL_WIDTH +  (unsigned long int)x;
+;  622 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[474]			index = (unsigned long int) y*LEVEL_WIDTH +  (unsigned long int)x;
 ;  0 "" 2
-;  622 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[473]			char c0 = level[index];
+;  624 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[475]			char c0 = level[index];
 ;  0 "" 2
 ;--- end asm ---
 	ldx	_level	; , level
 	stx	,s	; ,
 	tfr	x,d	; ,
-	leax	d,u	;  tmp66,, ivtmp.262
+	leax	d,u	;  tmp66,, ivtmp.267
 	ldb	,x	; ,
 	stb	8,s	; , c0
 ;----- asm -----
-;  625 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[475]			if (c0 == 'o') {
+;  627 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[477]			if (c0 == 'o') {
 ;  0 "" 2
 ;--- end asm ---
 	cmpb	#111	;cmpqi:	; ,
 	lbeq	L134	; 
 L116:
 ;----- asm -----
-;  634 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[480]			if (c0 == 'a') {
+;  636 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[482]			if (c0 == 'a') {
 ;  0 "" 2
 ;--- end asm ---
 	cmpb	#97	;cmpqi:	; ,
 	lbne	L117	; 
 ;----- asm -----
-;  636 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[481]				startX = x;
+;  638 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[483]				startX = x;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	4,s	; , x
 	stb	_startX	; , startX
 ;----- asm -----
-;  638 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[482]				startY = y;
+;  640 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[484]				startY = y;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	5,s	; , y
@@ -1830,8 +1829,8 @@ L116:
 	jmp	L117	; 
 L118:
 ;----- asm -----
-;  648 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[488]				if (x0 < 0) x0 = x;
+;  650 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[490]				if (x0 < 0) x0 = x;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	6,s	; , x0
@@ -1839,21 +1838,21 @@ L118:
 	beq	L135	; 
 L121:
 ;----- asm -----
-;  650 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[489]				x1 = x;
+;  652 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[491]				x1 = x;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	4,s	; , x
 	stb	7,s	; , x1
 	inc	4,s	;  x
-	leau	1,u	;  ivtmp.262,, ivtmp.262
+	leau	1,u	;  ivtmp.267,, ivtmp.267
 	ldb	4,s	; , x
 	cmpb	#12	;cmpqi:	; ,
 	lbne	L123	; 
 L133:
 	ldb	3,s	; ,
 	stb	5,s	; , y
-	leay	12,y	;  ivtmp.251,, ivtmp.251
+	leay	12,y	;  ivtmp.256,, ivtmp.256
 	cmpb	#16	;cmpqi:	; ,
 	lbne	L124	; 
 	leas	9,s	; ,,
@@ -1864,8 +1863,8 @@ L135:
 	bra	L121	; 
 L134:
 ;----- asm -----
-;  627 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[476]				addTarget(x, y);
+;  629 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[478]				addTarget(x, y);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	5,s	; , y
@@ -1873,15 +1872,15 @@ L134:
 	ldb	5,s	; , x
 	jsr	_addTarget	; 
 ;----- asm -----
-;  629 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[477]				endX = x;
+;  631 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[479]				endX = x;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	5,s	; , x
 	stb	_endX	; , endX
 ;----- asm -----
-;  631 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[478]				endY = y;
+;  633 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[480]				endY = y;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	6,s	; , y
@@ -1896,33 +1895,33 @@ _setupY:
 	pshs	u	; 
 	leas	-7,s	; ,,
 ;----- asm -----
-;  668 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[503]	unsigned long int index;
+;  670 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[505]	unsigned long int index;
 ;  0 "" 2
-;  670 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[504]	int8_t x = 0;
+;  672 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[506]	int8_t x = 0;
 ;  0 "" 2
-;  672 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[505]	int8_t y = 0;
+;  674 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[507]	int8_t y = 0;
 ;  0 "" 2
-;  674 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[506]	for (x = 0; x < LEVEL_WIDTH - 1; x++) {
+;  676 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[508]	for (x = 0; x < LEVEL_WIDTH - 1; x++) {
 ;  0 "" 2
 ;--- end asm ---
-	ldu	#0	;  ivtmp.287,
+	ldu	#0	;  ivtmp.292,
 L143:
 ;----- asm -----
-;  676 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[507]		int8_t y0 = -1;
+;  678 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[509]		int8_t y0 = -1;
 ;  0 "" 2
-;  678 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[508]		int8_t y1 = -1;
+;  680 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[510]		int8_t y1 = -1;
 ;  0 "" 2
-;  680 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[509]		for (y = 0; y < LEVEL_HEIGHT; y++) {
+;  682 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[511]		for (y = 0; y < LEVEL_HEIGHT; y++) {
 ;  0 "" 2
 ;--- end asm ---
-	stu	5,s	;  ivtmp.287, ivtmp.296
+	stu	5,s	;  ivtmp.292, ivtmp.301
 	clr	1,s	;  y
 	ldb	#-1	; ,
 	stb	2,s	; , y0
@@ -1934,8 +1933,8 @@ L153:
 	cmpb	#111	;cmpqi:	; ,
 	lbeq	L137	; 
 ;----- asm -----
-;  293 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[265]	return (char)(c == '.' || c == 'a' || c == 'o');
+;  295 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[267]	return (char)(c == '.' || c == 'a' || c == 'o');
 ;  0 "" 2
 ;--- end asm ---
 	ldb	4,s	; , c1
@@ -1946,33 +1945,33 @@ L153:
 	cmpb	#111	;cmpqi:	; ,
 	lbeq	L137	; 
 ;----- asm -----
-;  699 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[521]				if (y0 >= 0) {
+;  701 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[523]				if (y0 >= 0) {
 ;  0 "" 2
 ;--- end asm ---
 	ldb	2,s	; , y0
 	cmpb	#-1	;cmpqi:	; ,
 	beq	L141	; 
 ;----- asm -----
-;  701 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[522]					addLine(x + 1, y0, x + 1, y1 + 1);
+;  703 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[524]					addLine(x + 1, y0, x + 1, y1 + 1);
 ;  0 "" 2
 ;--- end asm ---
-	tfr	u,d	;movlsbqihi: R:u -> R:b	;  ivtmp.287,
+	tfr	u,d	;movlsbqihi: R:u -> R:b	;  ivtmp.292,
 	incb	; 
-	stb	,s	; , D.2566
+	stb	,s	; , D.2567
 	ldb	3,s	; , y1
 	incb	; 
 	pshs	b	; 
-	ldb	1,s	; , D.2566
+	ldb	1,s	; , D.2567
 	pshs	b	; 
 	ldb	4,s	; , y0
 	pshs	b	; 
-	ldb	3,s	; , D.2566
+	ldb	3,s	; , D.2567
 	jsr	_addLine	; 
 ;----- asm -----
-;  703 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[523]					y0 = -1;
+;  705 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[525]					y0 = -1;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-1	; ,
@@ -1980,40 +1979,40 @@ L153:
 	leas	3,s	; ,,
 L141:
 	inc	1,s	;  y
-	ldd	5,s	; , ivtmp.296
+	ldd	5,s	; , ivtmp.301
 	addd	#12	; ,
-	std	5,s	; , ivtmp.296
+	std	5,s	; , ivtmp.301
 	ldb	1,s	; , y
 	cmpb	#17	;cmpqi:	; ,
 	lbeq	L152	; 
 L142:
 ;----- asm -----
-;  686 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[514]			index = (unsigned long int) y*LEVEL_WIDTH +  (unsigned long int)x;
+;  688 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[516]			index = (unsigned long int) y*LEVEL_WIDTH +  (unsigned long int)x;
 ;  0 "" 2
-;  688 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[515]			char c0 = level[index];
+;  690 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[517]			char c0 = level[index];
 ;  0 "" 2
 ;--- end asm ---
-	ldx	5,s	;  tmp46, ivtmp.296
+	ldx	5,s	;  tmp46, ivtmp.301
 	exg	d,x	; , tmp46
 	addd	_level	; , level
 	exg	d,x	; , tmp46
 	ldb	,x+	; ,
 	stb	,s	; , c0
 ;----- asm -----
-;  690 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[516]			char c1 = level[index+1];
+;  692 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[518]			char c1 = level[index+1];
 ;  0 "" 2
 ;--- end asm ---
 	ldb	,x	; ,
 	stb	4,s	; , c1
 ;----- asm -----
-;  692 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[517]			if (isField(c0) || isField(c1)) {
+;  694 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[519]			if (isField(c0) || isField(c1)) {
 ;  0 "" 2
-;  293 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[265]	return (char)(c == '.' || c == 'a' || c == 'o');
+;  295 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[267]	return (char)(c == '.' || c == 'a' || c == 'o');
 ;  0 "" 2
 ;--- end asm ---
 	ldb	,s	; , c0
@@ -2021,8 +2020,8 @@ L142:
 	lbne	L153	; 
 L137:
 ;----- asm -----
-;  694 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[518]				if (y0 < 0) y0 = y;
+;  696 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[520]				if (y0 < 0) y0 = y;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	2,s	; , y0
@@ -2030,8 +2029,8 @@ L137:
 	beq	L154	; 
 L140:
 ;----- asm -----
-;  696 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[519]				y1 = y;
+;  698 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[521]				y1 = y;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	1,s	; , y
@@ -2042,23 +2041,23 @@ L154:
 	stb	2,s	; , y0
 	bra	L140	; 
 L152:
-	leau	1,u	;  ivtmp.287,, ivtmp.287
-	cmpu	#11	;cmphi:	;  ivtmp.287,
+	leau	1,u	;  ivtmp.292,, ivtmp.292
+	cmpu	#11	;cmphi:	;  ivtmp.292,
 	lbne	L143	; 
 	leas	7,s	; ,,
 	puls	u,pc	; 
 	.globl _changeMusic
 _changeMusic:
 ;----- asm -----
-;  713 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[532]	tstat = 1;
+;  715 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[534]	tstat = 1;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#1	; ,
 	stb	-14250	; ,
 ;----- asm -----
-;  715 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[533]	currentMusic = music;
+;  717 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[535]	currentMusic = music;
 ;  0 "" 2
 ;--- end asm ---
 	stx	_currentMusic	;  music, currentMusic
@@ -2069,34 +2068,34 @@ _drawBlock:
 	leas	-11,s	; ,,
 	stb	5,s	;  yofs, yofs
 ;----- asm -----
-;  993 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[689]	zergnd();
+;  999 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[693]	zergnd();
 ;  0 "" 2
-;  181 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  181 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	jsr ___Reset0Ref; BIOS call
 ;  0 "" 2
-;  995 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[690]	intens(0x63);
+;  1001 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[694]	intens(0x63);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#99	; ,
 	stb	9,s	; , a
 ;----- asm -----
-;  3427 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3427 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 9,s	;  a
 	jsr ___Intensity_a; BIOS call
 ;  0 "" 2
-;  997 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[691]	positd(0, yofs);
+;  1003 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[695]	positd(0, yofs);
 ;  0 "" 2
-;  52 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  52 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[51]	dp_VIA_t1_cnt_lo = 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-128	; ,
 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo
 ;----- asm -----
-;  54 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  54 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[52]	Moveto_d(y,x);
 ;  0 "" 2
 ;--- end asm ---
@@ -2104,44 +2103,44 @@ _drawBlock:
 	stb	10,s	; , a
 	clr	9,s	;  b
 ;----- asm -----
-;  3315 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3315 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 10,s	;  a
 	ldb 9,s	;  b
 	jsr ___Moveto_d; BIOS call
 ;  0 "" 2
-;  1000 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[693]	positd(x3d(blockX, 0, blockY), y3d(blockX, 0, blockY));
+;  1006 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[697]	positd(x3d(blockX, 0, blockY), y3d(blockX, 0, blockY));
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockX	; , blockX
-	stb	6,s	; , blockX.40
+	stb	6,s	; , blockX.42
 ;----- asm -----
-;  309 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[278]	y -= LEVEL_HEIGHT / 2;
+;  311 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[280]	y -= LEVEL_HEIGHT / 2;
 ;  0 "" 2
-;  311 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[279]	return 3 * x + 13 * y + 8 * z;
+;  313 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[281]	return 3 * x + 13 * y + 8 * z;
 ;  0 "" 2
-;  300 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[271]	x -= LEVEL_WIDTH / 2 - 4;
+;  302 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[273]	x -= LEVEL_WIDTH / 2 - 4;
 ;  0 "" 2
-;  302 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[272]	return 14 * x - 6 * z+0*y;
+;  304 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[274]	return 14 * x - 6 * z+0*y;
 ;  0 "" 2
-;  52 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  52 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[51]	dp_VIA_t1_cnt_lo = 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-128	; ,
 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo
 ;----- asm -----
-;  54 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  54 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[52]	Moveto_d(y,x);
 ;  0 "" 2
 ;--- end asm ---
-	ldb	6,s	; , blockX.40
+	ldb	6,s	; , blockX.42
 	aslb	; 
-	addb	6,s	; , blockX.40
+	addb	6,s	; , blockX.42
 	stb	2,s	; ,
 	ldb	_blockY	; , blockY
 	aslb	; 
@@ -2152,7 +2151,7 @@ _drawBlock:
 	addb	4,s	; ,
 	addb	#-104	; ,
 	stb	9,s	; , a
-	ldb	6,s	; , blockX.40
+	ldb	6,s	; , blockX.42
 	addb	#-2	; ,
 	lda	#14	;mulqihi3	; 
 	mul
@@ -2167,13 +2166,13 @@ _drawBlock:
 	addb	3,s	;  tmp40,
 	stb	10,s	;  tmp40, b
 ;----- asm -----
-;  3315 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3315 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 9,s	;  a
 	ldb 10,s	;  b
 	jsr ___Moveto_d; BIOS call
 ;  0 "" 2
-;  1002 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[694]	pack1x((void*)(blockAnimation[blockAnimationStep]));
+;  1008 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[698]	pack1x((void*)(blockAnimation[blockAnimationStep]));
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockAnimationStep	; , blockAnimationStep
@@ -2183,9 +2182,9 @@ _drawBlock:
 	rola	; 
 	ldu	_blockAnimation	; , blockAnimation
 	leax	d,u	;  tmp44, tmp43,
-	ldx	,x	;  D.2649,
+	ldx	,x	;  D.2652,
 ;----- asm -----
-;  59 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  59 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[56]	dp_VIA_t1_cnt_lo = 0x80;
 ;  0 "" 2
 ;--- end asm ---
@@ -2193,21 +2192,21 @@ _drawBlock:
 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo
 ; Applied peep: 2 (no load after store)
 ;----- asm -----
-;  61 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  61 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[57]	Draw_VLp(x);
 ;  0 "" 2
 ;--- end asm ---
 ;----- asm -----
-;  1610 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
-	stx	7,s	;  D.2649, x
+;  1610 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+	stx	7,s	;  D.2652, x
 ; ORG>;----- asm -----
-; ORG>;  61 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+; ORG>;  61 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 ; ORG>	; $ENR$[57]	Draw_VLp(x);
 ; ORG>;  0 "" 2
 ; ORG>;--- end asm ---
-; ORG>	stx	7,s	;  D.2649, x
+; ORG>	stx	7,s	;  D.2652, x
 ; ORG>;----- asm -----
-; ORG>;  1610 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+; ORG>;  1610 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 ; ORG>	ldx 7,s	;  x
 	jsr ___Draw_VLp; BIOS call
 ;  0 "" 2
@@ -2217,54 +2216,54 @@ _drawBlock:
 	.globl _doBlockAnimation
 _doBlockAnimation:
 ;----- asm -----
-;  1060 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[732]	if (blockAnimating) {
+;  1068 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[737]	if (blockAnimating) {
 ;  0 "" 2
 ;--- end asm ---
 	tst	_blockAnimating	;  blockAnimating
 	beq	L161	; 
 ;----- asm -----
-;  1062 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[733]		if (++blockAnimationStep == BLOCK_STEPS_COUNT) {
+;  1070 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[738]		if (++blockAnimationStep == BLOCK_STEPS_COUNT) {
 ;  0 "" 2
 ;--- end asm ---
 	inc	_blockAnimationStep	;  blockAnimationStep
-	ldb	_blockAnimationStep	;  blockAnimationStep.48, blockAnimationStep
-	cmpb	#12	;cmpqi:	;  blockAnimationStep.48,
+	ldb	_blockAnimationStep	;  blockAnimationStep.51, blockAnimationStep
+	cmpb	#12	;cmpqi:	;  blockAnimationStep.51,
 	beq	L162	; 
 L161:
 	rts
 L162:
 ;----- asm -----
-;  1064 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[734]			blockX = nextBlockX;
+;  1072 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[739]			blockX = nextBlockX;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_nextBlockX	; , nextBlockX
 	stb	_blockX	; , blockX
 ;----- asm -----
-;  1066 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[735]			blockY = nextBlockY;
+;  1074 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[740]			blockY = nextBlockY;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_nextBlockY	; , nextBlockY
 	stb	_blockY	; , blockY
 ;----- asm -----
-;  1068 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[736]			blockAnimationStep = 0;
+;  1076 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[741]			blockAnimationStep = 0;
 ;  0 "" 2
 ;--- end asm ---
 	clr	_blockAnimationStep	;  blockAnimationStep
 ;----- asm -----
-;  1070 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[737]			blockAnimation = nextBlockAnimation;
+;  1078 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[742]			blockAnimation = nextBlockAnimation;
 ;  0 "" 2
 ;--- end asm ---
 	ldx	_nextBlockAnimation	; , nextBlockAnimation
 	stx	_blockAnimation	; , blockAnimation
 ;----- asm -----
-;  1072 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[738]			blockAnimating = 0;
+;  1080 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[743]			blockAnimating = 0;
 ;  0 "" 2
 ;--- end asm ---
 	clr	_blockAnimating	;  blockAnimating
@@ -2274,40 +2273,40 @@ _showInfo2:
 	pshs	y	; 
 	leas	-4,s	; ,,
 ;----- asm -----
-;  1275 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[871]	zergnd();
+;  1285 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[877]	zergnd();
 ;  0 "" 2
-;  181 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  181 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	jsr ___Reset0Ref; BIOS call
 ;  0 "" 2
-;  1277 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[872]	intens(0x50);
+;  1287 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[878]	intens(0x50);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#80	; ,
 	stb	2,s	; , a
 ;----- asm -----
-;  3427 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3427 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 2,s	;  a
 	jsr ___Intensity_a; BIOS call
 ;  0 "" 2
-;  1280 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[874]	zergnd();
+;  1290 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[880]	zergnd();
 ;  0 "" 2
-;  181 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  181 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	jsr ___Reset0Ref; BIOS call
 ;  0 "" 2
-;  1282 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[875]	positd(-50, 100);
+;  1292 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[881]	positd(-50, 100);
 ;  0 "" 2
-;  52 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  52 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[51]	dp_VIA_t1_cnt_lo = 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-128	; ,
 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo
 ;----- asm -----
-;  54 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  54 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[52]	Moveto_d(y,x);
 ;  0 "" 2
 ;--- end asm ---
@@ -2316,49 +2315,49 @@ _showInfo2:
 	ldb	#-50	; ,
 	stb	2,s	; , b
 ;----- asm -----
-;  3315 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3315 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 3,s	;  a
 	ldb 2,s	;  b
 	jsr ___Moveto_d; BIOS call
 ;  0 "" 2
-;  1284 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[876]	pack1x((void*)led8);
+;  1294 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[882]	pack1x((void*)led8);
 ;  0 "" 2
-;  59 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  59 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[56]	dp_VIA_t1_cnt_lo = 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-128	; ,
 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo
 ;----- asm -----
-;  61 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  61 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[57]	Draw_VLp(x);
 ;  0 "" 2
 ;--- end asm ---
 	ldy	#_led8	;  tmp27,
 	sty	,s	;  tmp27, x
 ;----- asm -----
-;  1610 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  1610 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	ldx ,s	;  x
 	jsr ___Draw_VLp; BIOS call
 ;  0 "" 2
-;  1287 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[878]	zergnd();
+;  1297 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[884]	zergnd();
 ;  0 "" 2
-;  181 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  181 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	jsr ___Reset0Ref; BIOS call
 ;  0 "" 2
-;  1289 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[879]	positd(-40, 110);
+;  1299 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[885]	positd(-40, 110);
 ;  0 "" 2
-;  52 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  52 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[51]	dp_VIA_t1_cnt_lo = 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-128	; ,
 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo
 ;----- asm -----
-;  54 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  54 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[52]	Moveto_d(y,x);
 ;  0 "" 2
 ;--- end asm ---
@@ -2367,48 +2366,48 @@ _showInfo2:
 	ldb	#-40	; ,
 	stb	3,s	; , b
 ;----- asm -----
-;  3315 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3315 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 2,s	;  a
 	ldb 3,s	;  b
 	jsr ___Moveto_d; BIOS call
 ;  0 "" 2
-;  1291 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[880]	pack1x((void*)led8);
+;  1301 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[886]	pack1x((void*)led8);
 ;  0 "" 2
-;  59 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  59 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[56]	dp_VIA_t1_cnt_lo = 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-128	; ,
 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo
 ;----- asm -----
-;  61 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  61 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[57]	Draw_VLp(x);
 ;  0 "" 2
 ;--- end asm ---
 	sty	,s	;  tmp27, x
 ;----- asm -----
-;  1610 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  1610 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	ldx ,s	;  x
 	jsr ___Draw_VLp; BIOS call
 ;  0 "" 2
-;  1294 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[882]	zergnd();
+;  1304 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[888]	zergnd();
 ;  0 "" 2
-;  181 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  181 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	jsr ___Reset0Ref; BIOS call
 ;  0 "" 2
-;  1296 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[883]	positd(-30, 120);
+;  1306 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[889]	positd(-30, 120);
 ;  0 "" 2
-;  52 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  52 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[51]	dp_VIA_t1_cnt_lo = 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-128	; ,
 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo
 ;----- asm -----
-;  54 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  54 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[52]	Moveto_d(y,x);
 ;  0 "" 2
 ;--- end asm ---
@@ -2417,48 +2416,48 @@ _showInfo2:
 	ldb	#-30	; ,
 	stb	2,s	; , b
 ;----- asm -----
-;  3315 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3315 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 3,s	;  a
 	ldb 2,s	;  b
 	jsr ___Moveto_d; BIOS call
 ;  0 "" 2
-;  1298 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[884]	pack1x((void*)led8);
+;  1308 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[890]	pack1x((void*)led8);
 ;  0 "" 2
-;  59 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  59 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[56]	dp_VIA_t1_cnt_lo = 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-128	; ,
 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo
 ;----- asm -----
-;  61 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  61 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[57]	Draw_VLp(x);
 ;  0 "" 2
 ;--- end asm ---
 	sty	,s	;  tmp27, x
 ;----- asm -----
-;  1610 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  1610 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	ldx ,s	;  x
 	jsr ___Draw_VLp; BIOS call
 ;  0 "" 2
-;  1301 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[886]	zergnd();
+;  1311 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[892]	zergnd();
 ;  0 "" 2
-;  181 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  181 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	jsr ___Reset0Ref; BIOS call
 ;  0 "" 2
-;  1303 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[887]	positd(0, 120);
+;  1313 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[893]	positd(0, 120);
 ;  0 "" 2
-;  52 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  52 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[51]	dp_VIA_t1_cnt_lo = 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-128	; ,
 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo
 ;----- asm -----
-;  54 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  54 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[52]	Moveto_d(y,x);
 ;  0 "" 2
 ;--- end asm ---
@@ -2466,48 +2465,48 @@ _showInfo2:
 	stb	2,s	; , a
 	clr	3,s	;  b
 ;----- asm -----
-;  3315 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3315 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 2,s	;  a
 	ldb 3,s	;  b
 	jsr ___Moveto_d; BIOS call
 ;  0 "" 2
-;  1305 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[888]	pack1x((void*)led8);
+;  1315 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[894]	pack1x((void*)led8);
 ;  0 "" 2
-;  59 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  59 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[56]	dp_VIA_t1_cnt_lo = 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-128	; ,
 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo
 ;----- asm -----
-;  61 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  61 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[57]	Draw_VLp(x);
 ;  0 "" 2
 ;--- end asm ---
 	sty	,s	;  tmp27, x
 ;----- asm -----
-;  1610 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  1610 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	ldx ,s	;  x
 	jsr ___Draw_VLp; BIOS call
 ;  0 "" 2
-;  1308 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[890]	zergnd();
+;  1318 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[896]	zergnd();
 ;  0 "" 2
-;  181 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  181 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	jsr ___Reset0Ref; BIOS call
 ;  0 "" 2
-;  1310 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[891]	positd(10, 120);
+;  1320 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[897]	positd(10, 120);
 ;  0 "" 2
-;  52 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  52 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[51]	dp_VIA_t1_cnt_lo = 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-128	; ,
 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo
 ;----- asm -----
-;  54 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  54 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[52]	Moveto_d(y,x);
 ;  0 "" 2
 ;--- end asm ---
@@ -2516,48 +2515,48 @@ _showInfo2:
 	ldb	#10	; ,
 	stb	2,s	; , b
 ;----- asm -----
-;  3315 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3315 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 3,s	;  a
 	ldb 2,s	;  b
 	jsr ___Moveto_d; BIOS call
 ;  0 "" 2
-;  1312 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[892]	pack1x((void*)led8);
+;  1322 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[898]	pack1x((void*)led8);
 ;  0 "" 2
-;  59 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  59 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[56]	dp_VIA_t1_cnt_lo = 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-128	; ,
 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo
 ;----- asm -----
-;  61 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  61 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[57]	Draw_VLp(x);
 ;  0 "" 2
 ;--- end asm ---
 	sty	,s	;  tmp27, x
 ;----- asm -----
-;  1610 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  1610 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	ldx ,s	;  x
 	jsr ___Draw_VLp; BIOS call
 ;  0 "" 2
-;  1315 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[894]	zergnd();
+;  1325 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[900]	zergnd();
 ;  0 "" 2
-;  181 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  181 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	jsr ___Reset0Ref; BIOS call
 ;  0 "" 2
-;  1317 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[895]	positd(20, 120);
+;  1327 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[901]	positd(20, 120);
 ;  0 "" 2
-;  52 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  52 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[51]	dp_VIA_t1_cnt_lo = 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-128	; ,
 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo
 ;----- asm -----
-;  54 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  54 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[52]	Moveto_d(y,x);
 ;  0 "" 2
 ;--- end asm ---
@@ -2566,28 +2565,28 @@ _showInfo2:
 	ldb	#20	; ,
 	stb	3,s	; , b
 ;----- asm -----
-;  3315 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3315 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 2,s	;  a
 	ldb 3,s	;  b
 	jsr ___Moveto_d; BIOS call
 ;  0 "" 2
-;  1319 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[896]	pack1x((void*)led8);
+;  1329 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[902]	pack1x((void*)led8);
 ;  0 "" 2
-;  59 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  59 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[56]	dp_VIA_t1_cnt_lo = 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-128	; ,
 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo
 ;----- asm -----
-;  61 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  61 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[57]	Draw_VLp(x);
 ;  0 "" 2
 ;--- end asm ---
 	sty	,s	;  tmp27, x
 ;----- asm -----
-;  1610 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  1610 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	ldx ,s	;  x
 	jsr ___Draw_VLp; BIOS call
 ;  0 "" 2
@@ -2599,26 +2598,26 @@ _showInfo:
 	pshs	u	; 
 	leas	-4,s	; ,,
 ;----- asm -----
-;  1325 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[901]    Intensity_a(0x5f);
+;  1335 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[907]    Intensity_a(0x5f);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#95	; ,
 	stb	3,s	; , a
 ;----- asm -----
-;  3427 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3427 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 3,s	;  a
 	jsr ___Intensity_a; BIOS call
 ;  0 "" 2
-;  1327 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[902]    Vec_Text_Width = 100;
+;  1337 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[908]    Vec_Text_Width = 100;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#100	; ,
 	stb	_Vec_Text_Width	; , Vec_Text_Width
 ;----- asm -----
-;  1329 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[903]    Print_Str_d(100, -70, infoText);
+;  1339 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[909]    Print_Str_d(100, -70, infoText);
 ;  0 "" 2
 ;--- end asm ---
 	stb	3,s	; , a
@@ -2627,7 +2626,7 @@ _showInfo:
 	ldx	#_infoText	; ,
 	stx	,s	; , u
 ;----- asm -----
-;  666 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  666 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 3,s	;  a
 	ldb 2,s	;  b
 	ldu ,s	;  u
@@ -2640,19 +2639,19 @@ _showInfo:
 _drawField:
 	leas	-1,s	; ,,
 ;----- asm -----
-;  984 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[682]	intens(0x55);
+;  990 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[686]	intens(0x55);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#85	; ,
 	stb	,s	; , a
 ;----- asm -----
-;  3427 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3427 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda ,s	;  a
 	jsr ___Intensity_a; BIOS call
 ;  0 "" 2
-;  986 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[683]	drawFieldAsmScale();
+;  992 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[687]	drawFieldAsmScale();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_drawFieldAsmScale	; 
@@ -2663,45 +2662,45 @@ _sendCommand:
 	leas	-2,s	; ,,
 	stb	,s	;  cmd, cmd
 ;----- asm -----
-;  220 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[215]	uint8_t result;
+;  222 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[217]	uint8_t result;
 ;  0 "" 2
-;  222 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[216]	picWrite('V');
+;  224 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[218]	picWrite('V');
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#86	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  224 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[217]	picWrite(cmd);
+;  226 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[219]	picWrite(cmd);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	,s	; , cmd
 	jsr	_picWrite	; 
 ;----- asm -----
-;  226 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[218]	picWrite(arg);
+;  228 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[220]	picWrite(arg);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	4,s	; , arg
 	jsr	_picWrite	; 
 ;----- asm -----
-;  228 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[219]	result = picRead();
+;  230 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[221]	result = picRead();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_picRead	; 
 	stb	1,s	; , result
 ;----- asm -----
-;  230 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[220]	delay10ms();
+;  232 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[222]	delay10ms();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_delay10ms	; 
 ;----- asm -----
-;  232 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[221]	return result;
+;  234 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[223]	return result;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	1,s	; , result
@@ -2712,14 +2711,14 @@ _updateInfoText:
 	pshs	y,u	; 
 	leas	-24,s	; ,,
 ;----- asm -----
-;  285 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[259]	itoa(moveCount, &infoText[0]);
+;  287 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[261]	itoa(moveCount, &infoText[0]);
 ;  0 "" 2
 ;--- end asm ---
 	ldu	_moveCount	;  number, moveCount
 ;----- asm -----
-;  263 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[245]	uint16_t muls[] = { 100, 10, 1 };
+;  265 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[247]	uint16_t muls[] = { 100, 10, 1 };
 ;  0 "" 2
 ;--- end asm ---
 	ldd	#100	; ,
@@ -2729,102 +2728,102 @@ _updateInfoText:
 	ldd	#1	; ,
 	std	22,s	; , muls
 ;----- asm -----
-;  265 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[246]	if (number > 999) number = 999;
+;  267 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[248]	if (number > 999) number = 999;
 ;  0 "" 2
 ;--- end asm ---
-	stu	,s	;  number, number.434
+	stu	,s	;  number, number.439
 	cmpu	#999	;cmphi:	;  number,
 	bls	L172	; 
 	ldx	#999	; ,
-	stx	,s	; , number.434
+	stx	,s	; , number.439
 L172:
 ;----- asm -----
-;  267 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[247]	for (uint8_t i = 0; i < 3; i++) {
+;  269 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[249]	for (uint8_t i = 0; i < 3; i++) {
 ;  0 "" 2
 ;--- end asm ---
 	leax	18,s	; ,,
-	stx	13,s	; , ivtmp.426
+	stx	13,s	; , ivtmp.431
 	ldx	#_infoText	; ,
-	stx	15,s	; , ivtmp.428
-	ldx	13,s	; , ivtmp.426
+	stx	15,s	; , ivtmp.433
+	ldx	13,s	; , ivtmp.431
 L176:
 ;----- asm -----
-;  269 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[248]		uint8_t d = 0;
+;  271 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[250]		uint8_t d = 0;
 ;  0 "" 2
-;  271 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[249]		while (number >= muls[i]) {
+;  273 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[251]		while (number >= muls[i]) {
 ;  0 "" 2
 ;--- end asm ---
-	ldu	,x	;  D.3656, muls
+	ldu	,x	;  D.3662, muls
 	ldb	#48	; ,
-	stb	17,s	; , prephitmp.432
-	cmpu	,s	;cmphi:	;  D.3656, number.434
+	stb	17,s	; , prephitmp.437
+	cmpu	,s	;cmphi:	;  D.3662, number.439
 	bhi	L174	; 
-	tfr	u,d	;  D.3656,
+	tfr	u,d	;  D.3662,
 	nega
 	negb
 	sbca	#0
-	std	11,s	; , ivtmp.417
-	ldd	,s	; , number.434
-	pshs	u	;subhi: R:d -= R:u	;  D.3656,
+	std	11,s	; , ivtmp.422
+	ldd	,s	; , number.439
+	pshs	u	;subhi: R:d -= R:u	;  D.3662,
 	subd	,s++	; 
-	std	,s	; , number.434
+	std	,s	; , number.439
 	clr	2,s	;  d
 L175:
 ;----- asm -----
-;  273 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[250]			d++;
+;  275 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[252]			d++;
 ;  0 "" 2
 ;--- end asm ---
 	inc	2,s	;  d
 ;----- asm -----
-;  275 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[251]			number -= muls[i];
+;  277 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[253]			number -= muls[i];
 ;  0 "" 2
 ;--- end asm ---
-	ldy	,s	;  number.436, number.434
+	ldy	,s	;  number.441, number.439
 	tfr	y,d	; ,
-	addd	11,s	; , ivtmp.417
-	std	,s	; , number.434
-	leax	d,u	;  tmp75,, D.3656
-	pshs	u	;cmphi: R:u with R:x	;  D.3656, tmp75
+	addd	11,s	; , ivtmp.422
+	std	,s	; , number.439
+	leax	d,u	;  tmp75,, D.3662
+	pshs	u	;cmphi: R:u with R:x	;  D.3662, tmp75
 	cmpx	,s++	;cmphi:	;  tmp75
 	bhs	L175	; 
-	sty	,s	;  number.436, number.434
+	sty	,s	;  number.441, number.439
 	ldb	2,s	; , d
 	addb	#48	; ,
-	stb	17,s	; , prephitmp.432
+	stb	17,s	; , prephitmp.437
 L174:
 ;----- asm -----
-;  278 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[253]		text[i] = d + '0';
+;  280 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[255]		text[i] = d + '0';
 ;  0 "" 2
 ;--- end asm ---
-	ldx	15,s	; , ivtmp.428
+	ldx	15,s	; , ivtmp.433
 	leax	1,x	; ,,
-	stx	15,s	; , ivtmp.428
+	stx	15,s	; , ivtmp.433
 	leax	-1,x	; ,,
 	stb	,x+	; ,
-	ldx	13,s	; , ivtmp.426
+	ldx	13,s	; , ivtmp.431
 	leax	2,x	; ,,
-	stx	13,s	; , ivtmp.426
+	stx	13,s	; , ivtmp.431
 	tfr	s,d	; ,
 	addd	#24	; ,
 	pshs	d	;cmphi: R:d with R:x	; ,
 	cmpx	,s++	;cmphi:	; 
 	lbne	L176	; 
 ;----- asm -----
-;  287 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[260]	itoa(levelHighscore, &infoText[6]);
+;  289 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[262]	itoa(levelHighscore, &infoText[6]);
 ;  0 "" 2
 ;--- end asm ---
 	ldu	_levelHighscore	;  number, levelHighscore
 ;----- asm -----
-;  263 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[245]	uint16_t muls[] = { 100, 10, 1 };
+;  265 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[247]	uint16_t muls[] = { 100, 10, 1 };
 ;  0 "" 2
 ;--- end asm ---
 	ldd	#100	; ,
@@ -2834,88 +2833,88 @@ L174:
 	ldd	#1	; ,
 	std	22,s	; , muls
 ;----- asm -----
-;  265 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[246]	if (number > 999) number = 999;
+;  267 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[248]	if (number > 999) number = 999;
 ;  0 "" 2
 ;--- end asm ---
-	stu	,s	;  number, number.430
+	stu	,s	;  number, number.435
 	cmpu	#999	;cmphi:	;  number,
 	bls	L177	; 
 	ldx	#999	; ,
-	stx	,s	; , number.430
+	stx	,s	; , number.435
 L177:
 ;----- asm -----
-;  267 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[247]	for (uint8_t i = 0; i < 3; i++) {
+;  269 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[249]	for (uint8_t i = 0; i < 3; i++) {
 ;  0 "" 2
 ;--- end asm ---
 	leax	18,s	; ,,
-	stx	7,s	; , ivtmp.410
+	stx	7,s	; , ivtmp.415
 	ldx	#_infoText+6	; ,
-	stx	9,s	; , ivtmp.412
-	ldx	7,s	; , ivtmp.410
+	stx	9,s	; , ivtmp.417
+	ldx	7,s	; , ivtmp.415
 L181:
 ;----- asm -----
-;  269 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[248]		uint8_t d = 0;
+;  271 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[250]		uint8_t d = 0;
 ;  0 "" 2
-;  271 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[249]		while (number >= muls[i]) {
+;  273 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[251]		while (number >= muls[i]) {
 ;  0 "" 2
 ;--- end asm ---
-	ldu	,x	;  D.3665, muls
+	ldu	,x	;  D.3671, muls
 	ldb	#48	; ,
-	stb	4,s	; , prephitmp.389
-	cmpu	,s	;cmphi:	;  D.3665, number.430
+	stb	4,s	; , prephitmp.394
+	cmpu	,s	;cmphi:	;  D.3671, number.435
 	bhi	L179	; 
-	tfr	u,d	;  D.3665,
+	tfr	u,d	;  D.3671,
 	nega
 	negb
 	sbca	#0
-	std	5,s	; , ivtmp.401
-	ldd	,s	; , number.430
-	pshs	u	;subhi: R:d -= R:u	;  D.3665,
+	std	5,s	; , ivtmp.406
+	ldd	,s	; , number.435
+	pshs	u	;subhi: R:d -= R:u	;  D.3671,
 	subd	,s++	; 
-	std	,s	; , number.430
+	std	,s	; , number.435
 	clr	3,s	;  d
 L180:
 ;----- asm -----
-;  273 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[250]			d++;
+;  275 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[252]			d++;
 ;  0 "" 2
 ;--- end asm ---
 	inc	3,s	;  d
 ;----- asm -----
-;  275 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[251]			number -= muls[i];
+;  277 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[253]			number -= muls[i];
 ;  0 "" 2
 ;--- end asm ---
-	ldy	,s	;  number.437, number.430
+	ldy	,s	;  number.442, number.435
 	tfr	y,d	; ,
-	addd	5,s	; , ivtmp.401
-	std	,s	; , number.430
-	leax	d,u	;  tmp81,, D.3665
-	pshs	u	;cmphi: R:u with R:x	;  D.3665, tmp81
+	addd	5,s	; , ivtmp.406
+	std	,s	; , number.435
+	leax	d,u	;  tmp81,, D.3671
+	pshs	u	;cmphi: R:u with R:x	;  D.3671, tmp81
 	cmpx	,s++	;cmphi:	;  tmp81
 	bhs	L180	; 
-	sty	,s	;  number.437, number.430
+	sty	,s	;  number.442, number.435
 	ldb	3,s	; , d
 	addb	#48	; ,
-	stb	4,s	; , prephitmp.389
+	stb	4,s	; , prephitmp.394
 L179:
 ;----- asm -----
-;  278 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[253]		text[i] = d + '0';
+;  280 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[255]		text[i] = d + '0';
 ;  0 "" 2
 ;--- end asm ---
-	ldx	9,s	; , ivtmp.412
+	ldx	9,s	; , ivtmp.417
 	leax	1,x	; ,,
-	stx	9,s	; , ivtmp.412
+	stx	9,s	; , ivtmp.417
 	leax	-1,x	; ,,
 	stb	,x+	; ,
-	ldx	7,s	; , ivtmp.410
+	ldx	7,s	; , ivtmp.415
 	leax	2,x	; ,,
-	stx	7,s	; , ivtmp.410
+	stx	7,s	; , ivtmp.415
 	tfr	s,d	; ,
 	addd	#24	; ,
 	pshs	d	;cmphi: R:d with R:x	; ,
@@ -2929,22 +2928,22 @@ _moveBlock:
 	leas	-25,s	; ,,
 	stb	2,s	;  move, move
 ;----- asm -----
-;  721 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[538]	blockAnimating = 1;
+;  723 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[540]	blockAnimating = 1;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#1	; ,
 	stb	_blockAnimating	; , blockAnimating
 ;----- asm -----
-;  723 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[539]	lastBlockDirection = move;
+;  725 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[541]	lastBlockDirection = move;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	2,s	; , move
 	stb	_lastBlockDirection	; , lastBlockDirection
 ;----- asm -----
-;  725 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[540]	switch (blockOrientation) {
+;  727 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[542]	switch (blockOrientation) {
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockOrientation	;  blockOrientation, blockOrientation
@@ -2955,8 +2954,8 @@ _moveBlock:
 	lbeq	L223	; 
 L188:
 ;----- asm -----
-;  909 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[634]	if (moveCount < 999) moveCount++;
+;  911 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[636]	if (moveCount < 999) moveCount++;
 ;  0 "" 2
 ;--- end asm ---
 	ldu	_moveCount	;  number, moveCount
@@ -2966,14 +2965,14 @@ L188:
 	stu	_moveCount	;  number, moveCount
 L207:
 ;----- asm -----
-;  911 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[635]	updateInfoText();
+;  913 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[637]	updateInfoText();
 ;  0 "" 2
-;  285 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[259]	itoa(moveCount, &infoText[0]);
+;  287 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[261]	itoa(moveCount, &infoText[0]);
 ;  0 "" 2
-;  263 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[245]	uint16_t muls[] = { 100, 10, 1 };
+;  265 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[247]	uint16_t muls[] = { 100, 10, 1 };
 ;  0 "" 2
 ;--- end asm ---
 	ldd	#100	; ,
@@ -2983,102 +2982,102 @@ L207:
 	ldd	#1	; ,
 	std	23,s	; , muls
 ;----- asm -----
-;  265 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[246]	if (number > 999) number = 999;
+;  267 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[248]	if (number > 999) number = 999;
 ;  0 "" 2
 ;--- end asm ---
-	stu	,s	;  number, number.521
+	stu	,s	;  number, number.526
 	cmpu	#999	;cmphi:	;  number,
 	bls	L208	; 
 	ldx	#999	; ,
-	stx	,s	; , number.521
+	stx	,s	; , number.526
 L208:
 ;----- asm -----
-;  267 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[247]	for (uint8_t i = 0; i < 3; i++) {
+;  269 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[249]	for (uint8_t i = 0; i < 3; i++) {
 ;  0 "" 2
 ;--- end asm ---
 	leax	19,s	; ,,
-	stx	14,s	; , ivtmp.488
+	stx	14,s	; , ivtmp.493
 	ldx	#_infoText	; ,
-	stx	16,s	; , ivtmp.490
-	ldx	14,s	; , ivtmp.488
+	stx	16,s	; , ivtmp.495
+	ldx	14,s	; , ivtmp.493
 L212:
 ;----- asm -----
-;  269 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[248]		uint8_t d = 0;
+;  271 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[250]		uint8_t d = 0;
 ;  0 "" 2
-;  271 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[249]		while (number >= muls[i]) {
+;  273 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[251]		while (number >= muls[i]) {
 ;  0 "" 2
 ;--- end asm ---
-	ldu	,x	;  D.3740, muls
+	ldu	,x	;  D.3746, muls
 	ldb	#48	; ,
-	stb	18,s	; , prephitmp.519
-	cmpu	,s	;cmphi:(R)	;  D.3740, number.521
+	stb	18,s	; , prephitmp.524
+	cmpu	,s	;cmphi:(R)	;  D.3746, number.526
 	bhi	L210	; 
-	tfr	u,d	;  D.3740,
+	tfr	u,d	;  D.3746,
 	nega
 	negb
 	sbca	#0
-	std	12,s	; , ivtmp.481
-	ldd	,s	; , number.521
-	pshs	u	;subhi: R:d -= R:u	;  D.3740,
+	std	12,s	; , ivtmp.486
+	ldd	,s	; , number.526
+	pshs	u	;subhi: R:d -= R:u	;  D.3746,
 	subd	,s++	; 
-	std	,s	; , number.521
+	std	,s	; , number.526
 	clr	3,s	;  d
 L211:
 ;----- asm -----
-;  273 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[250]			d++;
+;  275 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[252]			d++;
 ;  0 "" 2
 ;--- end asm ---
 	inc	3,s	;  d
 ;----- asm -----
-;  275 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[251]			number -= muls[i];
+;  277 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[253]			number -= muls[i];
 ;  0 "" 2
 ;--- end asm ---
-	ldy	,s	;  number.524, number.521
+	ldy	,s	;  number.529, number.526
 	tfr	y,d	; ,
-	addd	12,s	; , ivtmp.481
-	std	,s	; , number.521
-	leax	d,u	;  tmp102,, D.3740
-	pshs	u	;cmphi: R:u with R:x	;  D.3740, tmp102
+	addd	12,s	; , ivtmp.486
+	std	,s	; , number.526
+	leax	d,u	;  tmp102,, D.3746
+	pshs	u	;cmphi: R:u with R:x	;  D.3746, tmp102
 	cmpx	,s++	;cmphi:	;  tmp102
 	bhs	L211	; 
-	sty	,s	;  number.524, number.521
+	sty	,s	;  number.529, number.526
 	ldb	3,s	; , d
 	addb	#48	; ,
-	stb	18,s	; , prephitmp.519
+	stb	18,s	; , prephitmp.524
 L210:
 ;----- asm -----
-;  278 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[253]		text[i] = d + '0';
+;  280 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[255]		text[i] = d + '0';
 ;  0 "" 2
 ;--- end asm ---
-	ldx	16,s	; , ivtmp.490
+	ldx	16,s	; , ivtmp.495
 	leax	1,x	; ,,
-	stx	16,s	; , ivtmp.490
+	stx	16,s	; , ivtmp.495
 	leax	-1,x	; ,,
 	stb	,x+	; ,
-	ldx	14,s	; , ivtmp.488
+	ldx	14,s	; , ivtmp.493
 	leax	2,x	; ,,
-	stx	14,s	; , ivtmp.488
+	stx	14,s	; , ivtmp.493
 	tfr	s,d	; ,
 	addd	#25	; ,
 	pshs	d	;cmphi: R:d with R:x	; ,
 	cmpx	,s++	;cmphi:	; 
 	lbne	L212	; 
 ;----- asm -----
-;  287 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[260]	itoa(levelHighscore, &infoText[6]);
+;  289 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[262]	itoa(levelHighscore, &infoText[6]);
 ;  0 "" 2
 ;--- end asm ---
 	ldu	_levelHighscore	;  number, levelHighscore
 ;----- asm -----
-;  263 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[245]	uint16_t muls[] = { 100, 10, 1 };
+;  265 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[247]	uint16_t muls[] = { 100, 10, 1 };
 ;  0 "" 2
 ;--- end asm ---
 	ldd	#100	; ,
@@ -3088,88 +3087,88 @@ L210:
 	ldd	#1	; ,
 	std	23,s	; , muls
 ;----- asm -----
-;  265 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[246]	if (number > 999) number = 999;
+;  267 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[248]	if (number > 999) number = 999;
 ;  0 "" 2
 ;--- end asm ---
-	stu	,s	;  number, number.518
+	stu	,s	;  number, number.523
 	cmpu	#999	;cmphi:	;  number,
 	bls	L213	; 
 	ldx	#999	; ,
-	stx	,s	; , number.518
+	stx	,s	; , number.523
 L213:
 ;----- asm -----
-;  267 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[247]	for (uint8_t i = 0; i < 3; i++) {
+;  269 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[249]	for (uint8_t i = 0; i < 3; i++) {
 ;  0 "" 2
 ;--- end asm ---
 	leax	19,s	; ,,
-	stx	8,s	; , ivtmp.472
+	stx	8,s	; , ivtmp.477
 	ldx	#_infoText+6	; ,
-	stx	10,s	; , ivtmp.474
-	ldx	8,s	; , ivtmp.472
+	stx	10,s	; , ivtmp.479
+	ldx	8,s	; , ivtmp.477
 L217:
 ;----- asm -----
-;  269 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[248]		uint8_t d = 0;
+;  271 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[250]		uint8_t d = 0;
 ;  0 "" 2
-;  271 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[249]		while (number >= muls[i]) {
+;  273 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[251]		while (number >= muls[i]) {
 ;  0 "" 2
 ;--- end asm ---
-	ldu	,x	;  D.3749, muls
+	ldu	,x	;  D.3755, muls
 	ldb	#48	; ,
-	stb	5,s	; , prephitmp.451
-	cmpu	,s	;cmphi:	;  D.3749, number.518
+	stb	5,s	; , prephitmp.456
+	cmpu	,s	;cmphi:	;  D.3755, number.523
 	bhi	L215	; 
-	tfr	u,d	;  D.3749,
+	tfr	u,d	;  D.3755,
 	nega
 	negb
 	sbca	#0
-	std	6,s	; , ivtmp.463
-	ldd	,s	; , number.518
-	pshs	u	;subhi: R:d -= R:u	;  D.3749,
+	std	6,s	; , ivtmp.468
+	ldd	,s	; , number.523
+	pshs	u	;subhi: R:d -= R:u	;  D.3755,
 	subd	,s++	; 
-	std	,s	; , number.518
+	std	,s	; , number.523
 	clr	4,s	;  d
 L216:
 ;----- asm -----
-;  273 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[250]			d++;
+;  275 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[252]			d++;
 ;  0 "" 2
 ;--- end asm ---
 	inc	4,s	;  d
 ;----- asm -----
-;  275 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[251]			number -= muls[i];
+;  277 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[253]			number -= muls[i];
 ;  0 "" 2
 ;--- end asm ---
-	ldy	,s	;  number.525, number.518
+	ldy	,s	;  number.530, number.523
 	tfr	y,d	; ,
-	addd	6,s	; , ivtmp.463
-	std	,s	; , number.518
-	leax	d,u	;  tmp108,, D.3749
-	pshs	x	;cmphi: R:x with R:u	;  tmp108, D.3749
-	cmpu	,s++	;cmphi:	;  D.3749
+	addd	6,s	; , ivtmp.468
+	std	,s	; , number.523
+	leax	d,u	;  tmp108,, D.3755
+	pshs	x	;cmphi: R:x with R:u	;  tmp108, D.3755
+	cmpu	,s++	;cmphi:	;  D.3755
 	bls	L216	; 
-	sty	,s	;  number.525, number.518
+	sty	,s	;  number.530, number.523
 	ldb	4,s	; , d
 	addb	#48	; ,
-	stb	5,s	; , prephitmp.451
+	stb	5,s	; , prephitmp.456
 L215:
 ;----- asm -----
-;  278 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[253]		text[i] = d + '0';
+;  280 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[255]		text[i] = d + '0';
 ;  0 "" 2
 ;--- end asm ---
-	ldx	10,s	; , ivtmp.474
+	ldx	10,s	; , ivtmp.479
 	leax	1,x	; ,,
-	stx	10,s	; , ivtmp.474
+	stx	10,s	; , ivtmp.479
 	leax	-1,x	; ,,
 	stb	,x+	; ,
-	ldx	8,s	; , ivtmp.472
+	ldx	8,s	; , ivtmp.477
 	leax	2,x	; ,,
-	stx	8,s	; , ivtmp.472
+	stx	8,s	; , ivtmp.477
 	tfr	s,d	; ,
 	addd	#25	; ,
 	pshs	d	;cmphi: R:d with R:x	; ,
@@ -3179,8 +3178,8 @@ L215:
 	puls	y,u,pc	; 
 L189:
 ;----- asm -----
-;  729 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[542]        		switch (move) {
+;  731 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[544]        		switch (move) {
 ;  0 "" 2
 ;--- end asm ---
 	ldb	2,s	; , move
@@ -3188,57 +3187,57 @@ L189:
 	lbeq	L194	; 
 	lbhs	L224	; 
 ;----- asm -----
-;  733 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[544]            			blockAnimation = height2FallingLeft;
+;  735 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[546]            			blockAnimation = height2FallingLeft;
 ;  0 "" 2
 ;--- end asm ---
 	ldx	#_height2FallingLeft	; ,
 	stx	_blockAnimation	; , blockAnimation
 ;----- asm -----
-;  735 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[545]             			nextBlockAnimation = width2RollingFront;
+;  737 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[547]             			nextBlockAnimation = width2RollingFront;
 ;  0 "" 2
 ;--- end asm ---
 	ldx	#_width2RollingFront	; ,
 	stx	_nextBlockAnimation	; , nextBlockAnimation
 ;----- asm -----
-;  737 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[546]             			nextBlockX = blockX - 2;
+;  739 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[548]             			nextBlockX = blockX - 2;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockX	; , blockX
 	addb	#-2	; ,
 	stb	_nextBlockX	; , nextBlockX
 ;----- asm -----
-;  739 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[547]             			nextBlockY = blockY;
+;  741 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[549]             			nextBlockY = blockY;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockY	; , blockY
 	stb	_nextBlockY	; , nextBlockY
 ;----- asm -----
-;  741 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[548]             			blockOrientation = Horizontal;
+;  743 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[550]             			blockOrientation = Horizontal;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#2	; ,
 	stb	_blockOrientation	; , blockOrientation
 ;----- asm -----
-;  743 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[549]             			break;
+;  745 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[551]             			break;
 ;  0 "" 2
 ;--- end asm ---
 L192:
 ;----- asm -----
-;  788 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[572]        		break;
+;  790 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[574]        		break;
 ;  0 "" 2
 ;--- end asm ---
 	jmp	L188	; 
 L223:
 ;----- asm -----
-;  851 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[604]        		switch (move) {
+;  853 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[606]        		switch (move) {
 ;  0 "" 2
 ;--- end asm ---
 	ldb	2,s	; , move
@@ -3246,56 +3245,56 @@ L223:
 	lbeq	L204	; 
 	lbhs	L225	; 
 ;----- asm -----
-;  855 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[606]            			blockAnimation = height2RisingLeft;
+;  857 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[608]            			blockAnimation = height2RisingLeft;
 ;  0 "" 2
 ;--- end asm ---
 	ldx	#_height2RisingLeft	; ,
 	stx	_blockAnimation	; , blockAnimation
 ;----- asm -----
-;  857 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[607]            			nextBlockAnimation = height2FallingRight;
+;  859 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[609]            			nextBlockAnimation = height2FallingRight;
 ;  0 "" 2
 ;--- end asm ---
 	ldx	#_height2FallingRight	; ,
 	stx	_nextBlockAnimation	; , nextBlockAnimation
 ;----- asm -----
-;  859 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[608]            			nextBlockX = blockX - 1;
+;  861 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[610]            			nextBlockX = blockX - 1;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockX	; , blockX
 	decb	; 
 	stb	_nextBlockX	; , nextBlockX
 ;----- asm -----
-;  861 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[609]            			nextBlockY = blockY;
+;  863 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[611]            			nextBlockY = blockY;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockY	; , blockY
 	stb	_nextBlockY	; , nextBlockY
 ;----- asm -----
-;  863 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[610]            			blockOrientation = Standing;
+;  865 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[612]            			blockOrientation = Standing;
 ;  0 "" 2
 ;--- end asm ---
 	clr	_blockOrientation	;  blockOrientation
 ;----- asm -----
-;  865 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[611]            			break;
+;  867 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[613]            			break;
 ;  0 "" 2
 ;--- end asm ---
 L202:
 ;----- asm -----
-;  906 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[632]        		break;
+;  908 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[634]        		break;
 ;  0 "" 2
 ;--- end asm ---
 	jmp	L188	; 
 L190:
 ;----- asm -----
-;  792 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[574]        		switch (move) {
+;  794 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[576]        		switch (move) {
 ;  0 "" 2
 ;--- end asm ---
 	ldb	2,s	; , move
@@ -3303,162 +3302,162 @@ L190:
 	beq	L199	; 
 	lbhs	L226	; 
 ;----- asm -----
-;  796 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[576]            			blockAnimation = depth2RollingLeft;
+;  798 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[578]            			blockAnimation = depth2RollingLeft;
 ;  0 "" 2
 ;--- end asm ---
 	ldx	#_depth2RollingLeft	; ,
 	stx	_blockAnimation	; , blockAnimation
 ;----- asm -----
-;  798 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[577]            			nextBlockAnimation = depth2RollingLeft;
+;  800 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[579]            			nextBlockAnimation = depth2RollingLeft;
 ;  0 "" 2
 ;--- end asm ---
 	stx	_nextBlockAnimation	; , nextBlockAnimation
 ;----- asm -----
-;  800 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[578]            			nextBlockX = blockX - 1;
+;  802 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[580]            			nextBlockX = blockX - 1;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockX	; , blockX
 	decb	; 
 	stb	_nextBlockX	; , nextBlockX
 ;----- asm -----
-;  802 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[579]            			nextBlockY = blockY;
+;  804 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[581]            			nextBlockY = blockY;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockY	; , blockY
 	stb	_nextBlockY	; , nextBlockY
 ;----- asm -----
-;  804 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[580]            			break;
+;  806 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[582]            			break;
 ;  0 "" 2
 ;--- end asm ---
 L197:
 ;----- asm -----
-;  847 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[602]        		break;
+;  849 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[604]        		break;
 ;  0 "" 2
 ;--- end asm ---
 	jmp	L188	; 
 L199:
 ;----- asm -----
-;  820 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[588]            			blockAnimation = height2RisingBack;
+;  822 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[590]            			blockAnimation = height2RisingBack;
 ;  0 "" 2
 ;--- end asm ---
 	ldx	#_height2RisingBack	; ,
 	stx	_blockAnimation	; , blockAnimation
 ;----- asm -----
-;  822 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[589]            			nextBlockAnimation = height2FallingFront;
+;  824 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[591]            			nextBlockAnimation = height2FallingFront;
 ;  0 "" 2
 ;--- end asm ---
 	ldx	#_height2FallingFront	; ,
 	stx	_nextBlockAnimation	; , nextBlockAnimation
 ;----- asm -----
-;  824 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[590]            			nextBlockX = blockX;
+;  826 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[592]            			nextBlockX = blockX;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockX	; , blockX
 	stb	_nextBlockX	; , nextBlockX
 ;----- asm -----
-;  826 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[591]            			nextBlockY = blockY + 2;
+;  828 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[593]            			nextBlockY = blockY + 2;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockY	; , blockY
 	addb	#2	; ,
 	stb	_nextBlockY	; , nextBlockY
 ;----- asm -----
-;  828 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[592]            			blockOrientation = Standing;
+;  830 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[594]            			blockOrientation = Standing;
 ;  0 "" 2
 ;--- end asm ---
 	clr	_blockOrientation	;  blockOrientation
 ;----- asm -----
-;  830 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[593]            			break;
+;  832 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[595]            			break;
 ;  0 "" 2
 ;--- end asm ---
 	bra	L197	; 
 L204:
 ;----- asm -----
-;  883 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[620]            			blockAnimation = width2RollingBack;
+;  885 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[622]            			blockAnimation = width2RollingBack;
 ;  0 "" 2
 ;--- end asm ---
 	ldx	#_width2RollingBack	; ,
 	stx	_blockAnimation	; , blockAnimation
 ;----- asm -----
-;  885 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[621]            			nextBlockAnimation = width2RollingBack;
+;  887 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[623]            			nextBlockAnimation = width2RollingBack;
 ;  0 "" 2
 ;--- end asm ---
 	stx	_nextBlockAnimation	; , nextBlockAnimation
 ;----- asm -----
-;  887 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[622]            			nextBlockX = blockX;
+;  889 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[624]            			nextBlockX = blockX;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockX	; , blockX
 	stb	_nextBlockX	; , nextBlockX
 ;----- asm -----
-;  889 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[623]            			nextBlockY = blockY + 1;
+;  891 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[625]            			nextBlockY = blockY + 1;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockY	; , blockY
 	incb	; 
 	stb	_nextBlockY	; , nextBlockY
 ;----- asm -----
-;  891 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[624]            			break;
+;  893 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[626]            			break;
 ;  0 "" 2
 ;--- end asm ---
 	jmp	L202	; 
 L194:
 ;----- asm -----
-;  761 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[558]             			blockAnimation = height2FallingBack;
+;  763 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[560]             			blockAnimation = height2FallingBack;
 ;  0 "" 2
 ;--- end asm ---
 	ldx	#_height2FallingBack	; ,
 	stx	_blockAnimation	; , blockAnimation
 ;----- asm -----
-;  763 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[559]             			nextBlockAnimation = depth2RollingLeft;
+;  765 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[561]             			nextBlockAnimation = depth2RollingLeft;
 ;  0 "" 2
 ;--- end asm ---
 	ldx	#_depth2RollingLeft	; ,
 	stx	_nextBlockAnimation	; , nextBlockAnimation
 ;----- asm -----
-;  765 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[560]             			nextBlockX = blockX;
+;  767 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[562]             			nextBlockX = blockX;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockX	; , blockX
 	stb	_nextBlockX	; , nextBlockX
 ;----- asm -----
-;  767 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[561]             			nextBlockY = blockY + 1;
+;  769 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[563]             			nextBlockY = blockY + 1;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockY	; , blockY
 	incb	; 
 	stb	_nextBlockY	; , nextBlockY
 ;----- asm -----
-;  769 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[562]             			blockOrientation = Vertical;
+;  771 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[564]             			blockOrientation = Vertical;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	2,s	; , move
 	stb	_blockOrientation	; , blockOrientation
 ;----- asm -----
-;  771 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[563]             			break;
+;  773 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[565]             			break;
 ;  0 "" 2
 ;--- end asm ---
 	jmp	L192	; 
@@ -3468,37 +3467,37 @@ L225:
 	cmpb	#3	;cmpqi:	; ,
 	lbne	L202	; 
 ;----- asm -----
-;  895 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[626]            			blockAnimation = width2RollingFront;
+;  897 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[628]            			blockAnimation = width2RollingFront;
 ;  0 "" 2
 ;--- end asm ---
 	ldx	#_width2RollingFront	; ,
 	stx	_blockAnimation	; , blockAnimation
 ;----- asm -----
-;  897 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[627]            			nextBlockAnimation = width2RollingBack;
+;  899 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[629]            			nextBlockAnimation = width2RollingBack;
 ;  0 "" 2
 ;--- end asm ---
 	ldx	#_width2RollingBack	; ,
 	stx	_nextBlockAnimation	; , nextBlockAnimation
 ;----- asm -----
-;  899 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[628]            			nextBlockX = blockX;
+;  901 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[630]            			nextBlockX = blockX;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockX	; , blockX
 	stb	_nextBlockX	; , nextBlockX
 ;----- asm -----
-;  901 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[629]            			nextBlockY = blockY - 1;
+;  903 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[631]            			nextBlockY = blockY - 1;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockY	; , blockY
 	decb	; 
 	stb	_nextBlockY	; , nextBlockY
 ;----- asm -----
-;  903 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[630]            			break;
+;  905 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[632]            			break;
 ;  0 "" 2
 ;--- end asm ---
 	jmp	L202	; 
@@ -3508,44 +3507,44 @@ L224:
 	cmpb	#3	;cmpqi:	; ,
 	lbne	L192	; 
 ;----- asm -----
-;  775 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[565]             			blockAnimation = height2FallingFront;
+;  777 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[567]             			blockAnimation = height2FallingFront;
 ;  0 "" 2
 ;--- end asm ---
 	ldx	#_height2FallingFront	; ,
 	stx	_blockAnimation	; , blockAnimation
 ;----- asm -----
-;  777 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[566]             			nextBlockAnimation = depth2RollingLeft;
+;  779 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[568]             			nextBlockAnimation = depth2RollingLeft;
 ;  0 "" 2
 ;--- end asm ---
 	ldx	#_depth2RollingLeft	; ,
 	stx	_nextBlockAnimation	; , nextBlockAnimation
 ;----- asm -----
-;  779 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[567]             			nextBlockX = blockX;
+;  781 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[569]             			nextBlockX = blockX;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockX	; , blockX
 	stb	_nextBlockX	; , nextBlockX
 ;----- asm -----
-;  781 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[568]             			nextBlockY = blockY - 2;
+;  783 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[570]             			nextBlockY = blockY - 2;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockY	; , blockY
 	addb	#-2	; ,
 	stb	_nextBlockY	; , nextBlockY
 ;----- asm -----
-;  783 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[569]             			blockOrientation = Vertical;
+;  785 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[571]             			blockOrientation = Vertical;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#1	; ,
 	stb	_blockOrientation	; , blockOrientation
 ;----- asm -----
-;  785 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[570]             			break;
+;  787 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[572]             			break;
 ;  0 "" 2
 ;--- end asm ---
 	jmp	L192	; 
@@ -3555,298 +3554,304 @@ L226:
 	cmpb	#3	;cmpqi:	; ,
 	lbne	L197	; 
 ;----- asm -----
-;  834 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[595]            			blockAnimation = height2RisingFront;
+;  836 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[597]            			blockAnimation = height2RisingFront;
 ;  0 "" 2
 ;--- end asm ---
 	ldx	#_height2RisingFront	; ,
 	stx	_blockAnimation	; , blockAnimation
 ;----- asm -----
-;  836 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[596]            			nextBlockAnimation = height2FallingFront;
+;  838 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[598]            			nextBlockAnimation = height2FallingFront;
 ;  0 "" 2
 ;--- end asm ---
 	ldx	#_height2FallingFront	; ,
 	stx	_nextBlockAnimation	; , nextBlockAnimation
 ;----- asm -----
-;  838 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[597]            			nextBlockX = blockX;
+;  840 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[599]            			nextBlockX = blockX;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockX	; , blockX
 	stb	_nextBlockX	; , nextBlockX
 ;----- asm -----
-;  840 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[598]            			nextBlockY = blockY - 1;
+;  842 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[600]            			nextBlockY = blockY - 1;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockY	; , blockY
 	decb	; 
 	stb	_nextBlockY	; , nextBlockY
 ;----- asm -----
-;  842 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[599]            			blockOrientation = Standing;
+;  844 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[601]            			blockOrientation = Standing;
 ;  0 "" 2
 ;--- end asm ---
 	clr	_blockOrientation	;  blockOrientation
 ;----- asm -----
-;  844 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[600]            			break;
+;  846 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[602]            			break;
 ;  0 "" 2
 ;--- end asm ---
 	jmp	L197	; 
 L200:
 ;----- asm -----
-;  808 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[582]            			blockAnimation = depth2RollingRight;
+;  810 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[584]            			blockAnimation = depth2RollingRight;
 ;  0 "" 2
 ;--- end asm ---
 	ldx	#_depth2RollingRight	; ,
 	stx	_blockAnimation	; , blockAnimation
 ;----- asm -----
-;  810 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[583]            			nextBlockAnimation = depth2RollingLeft;
+;  812 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[585]            			nextBlockAnimation = depth2RollingLeft;
 ;  0 "" 2
 ;--- end asm ---
 	ldx	#_depth2RollingLeft	; ,
 	stx	_nextBlockAnimation	; , nextBlockAnimation
 ;----- asm -----
-;  812 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[584]            			nextBlockX = blockX + 1;
+;  814 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[586]            			nextBlockX = blockX + 1;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockX	; , blockX
 	incb	; 
 	stb	_nextBlockX	; , nextBlockX
 ;----- asm -----
-;  814 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[585]            			nextBlockY = blockY;
+;  816 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[587]            			nextBlockY = blockY;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockY	; , blockY
 	stb	_nextBlockY	; , nextBlockY
 ;----- asm -----
-;  816 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[586]            			break;
+;  818 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[588]            			break;
 ;  0 "" 2
 ;--- end asm ---
 	jmp	L197	; 
 L195:
 ;----- asm -----
-;  747 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[551]             			blockAnimation = height2FallingRight;
+;  749 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[553]             			blockAnimation = height2FallingRight;
 ;  0 "" 2
 ;--- end asm ---
 	ldx	#_height2FallingRight	; ,
 	stx	_blockAnimation	; , blockAnimation
 ;----- asm -----
-;  749 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[552]             			nextBlockAnimation = width2RollingFront;
+;  751 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[554]             			nextBlockAnimation = width2RollingFront;
 ;  0 "" 2
 ;--- end asm ---
 	ldx	#_width2RollingFront	; ,
 	stx	_nextBlockAnimation	; , nextBlockAnimation
 ;----- asm -----
-;  751 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[553]             			nextBlockX = blockX + 1;
+;  753 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[555]             			nextBlockX = blockX + 1;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockX	; , blockX
 	incb	; 
 	stb	_nextBlockX	; , nextBlockX
 ;----- asm -----
-;  753 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[554]             			nextBlockY = blockY;
+;  755 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[556]             			nextBlockY = blockY;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockY	; , blockY
 	stb	_nextBlockY	; , nextBlockY
 ;----- asm -----
-;  755 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[555]             			blockOrientation = Horizontal;
+;  757 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[557]             			blockOrientation = Horizontal;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	2,s	; , move
 	stb	_blockOrientation	; , blockOrientation
 ;----- asm -----
-;  757 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[556]             			break;
+;  759 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[558]             			break;
 ;  0 "" 2
 ;--- end asm ---
 	jmp	L192	; 
 L205:
 ;----- asm -----
-;  869 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[613]            			blockAnimation = height2RisingRight;
+;  871 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[615]            			blockAnimation = height2RisingRight;
 ;  0 "" 2
 ;--- end asm ---
 	ldx	#_height2RisingRight	; ,
 	stx	_blockAnimation	; , blockAnimation
 ;----- asm -----
-;  871 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[614]            			nextBlockAnimation = height2FallingLeft;
+;  873 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[616]            			nextBlockAnimation = height2FallingLeft;
 ;  0 "" 2
 ;--- end asm ---
 	ldx	#_height2FallingLeft	; ,
 	stx	_nextBlockAnimation	; , nextBlockAnimation
 ;----- asm -----
-;  873 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[615]            			nextBlockX = blockX + 2;
+;  875 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[617]            			nextBlockX = blockX + 2;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockX	; , blockX
 	addb	#2	; ,
 	stb	_nextBlockX	; , nextBlockX
 ;----- asm -----
-;  875 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[616]            			nextBlockY = blockY;
+;  877 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[618]            			nextBlockY = blockY;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockY	; , blockY
 	stb	_nextBlockY	; , nextBlockY
 ;----- asm -----
-;  877 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[617]            			blockOrientation = Standing;
+;  879 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[619]            			blockOrientation = Standing;
 ;  0 "" 2
 ;--- end asm ---
 	clr	_blockOrientation	;  blockOrientation
 ;----- asm -----
-;  879 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[618]            			break;
+;  881 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[620]            			break;
 ;  0 "" 2
 ;--- end asm ---
 	jmp	L202	; 
 	.globl _startBlockFalling
 _startBlockFalling:
 ;----- asm -----
-;  917 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[640]	gameState = BlockFalling;
+;  919 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[642]	gameState = BlockFalling;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#5	; ,
 	stb	_gameState	; , gameState
 ;----- asm -----
-;  919 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[641]	blockYOfs = 0;
+;  921 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[643]	blockYOfs = 0;
 ;  0 "" 2
 ;--- end asm ---
 	clr	_blockYOfs	;  blockYOfs
 ;----- asm -----
-;  921 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[642]	moveBlock(lastBlockDirection);
+;  923 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[644]	moveBlock(lastBlockDirection);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_lastBlockDirection	; , lastBlockDirection
 	jsr	_moveBlock	; 
 ;----- asm -----
-;  923 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[643]	changeMusic(fallingMusic);
+;  925 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[645]	changeMusic(fallingMusic);
 ;  0 "" 2
-;  713 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[532]	tstat = 1;
+;  715 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[534]	tstat = 1;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#1	; ,
 	stb	-14250	; ,
 ;----- asm -----
-;  715 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[533]	currentMusic = music;
+;  717 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[535]	currentMusic = music;
 ;  0 "" 2
 ;--- end asm ---
 	ldx	#_fallingMusic	; ,
 	stx	_currentMusic	; , currentMusic
+;----- asm -----
+;  927 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[646]	*vecx = 0;
+;  0 "" 2
+;--- end asm ---
+	clr	[_vecx]	; * vecx
 	rts
 	.globl _blockMovingToStart
 _blockMovingToStart:
 	pshs	u	; 
 	leas	-11,s	; ,,
 ;----- asm -----
-;  1008 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[699]	drawField();
+;  1014 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[703]	drawField();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_drawField	; 
 ;----- asm -----
-;  1010 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[700]	drawBlock(blockYOfs);
+;  1016 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[704]	drawBlock(blockYOfs);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockYOfs	; , blockYOfs
-	stb	5,s	; , blockYOfs.43
+	stb	5,s	; , blockYOfs.45
 ;----- asm -----
-;  993 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[689]	zergnd();
+;  999 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[693]	zergnd();
 ;  0 "" 2
-;  181 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  181 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	jsr ___Reset0Ref; BIOS call
 ;  0 "" 2
-;  995 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[690]	intens(0x63);
+;  1001 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[694]	intens(0x63);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#99	; ,
 	stb	9,s	; , a
 ;----- asm -----
-;  3427 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3427 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 9,s	;  a
 	jsr ___Intensity_a; BIOS call
 ;  0 "" 2
-;  997 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[691]	positd(0, yofs);
+;  1003 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[695]	positd(0, yofs);
 ;  0 "" 2
-;  52 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  52 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[51]	dp_VIA_t1_cnt_lo = 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-128	; ,
 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo
 ;----- asm -----
-;  54 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  54 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[52]	Moveto_d(y,x);
 ;  0 "" 2
 ;--- end asm ---
-	ldb	5,s	; , blockYOfs.43
+	ldb	5,s	; , blockYOfs.45
 	stb	10,s	; , a
 	clr	9,s	;  b
 ;----- asm -----
-;  3315 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3315 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 10,s	;  a
 	ldb 9,s	;  b
 	jsr ___Moveto_d; BIOS call
 ;  0 "" 2
-;  1000 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[693]	positd(x3d(blockX, 0, blockY), y3d(blockX, 0, blockY));
+;  1006 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[697]	positd(x3d(blockX, 0, blockY), y3d(blockX, 0, blockY));
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockX	; , blockX
-	stb	6,s	; , blockX.40
+	stb	6,s	; , blockX.42
 ;----- asm -----
-;  309 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[278]	y -= LEVEL_HEIGHT / 2;
+;  311 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[280]	y -= LEVEL_HEIGHT / 2;
 ;  0 "" 2
-;  311 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[279]	return 3 * x + 13 * y + 8 * z;
+;  313 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[281]	return 3 * x + 13 * y + 8 * z;
 ;  0 "" 2
-;  300 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[271]	x -= LEVEL_WIDTH / 2 - 4;
+;  302 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[273]	x -= LEVEL_WIDTH / 2 - 4;
 ;  0 "" 2
-;  302 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[272]	return 14 * x - 6 * z+0*y;
+;  304 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[274]	return 14 * x - 6 * z+0*y;
 ;  0 "" 2
-;  52 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  52 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[51]	dp_VIA_t1_cnt_lo = 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-128	; ,
 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo
 ;----- asm -----
-;  54 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  54 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[52]	Moveto_d(y,x);
 ;  0 "" 2
 ;--- end asm ---
-	ldb	6,s	; , blockX.40
+	ldb	6,s	; , blockX.42
 	aslb	; 
-	addb	6,s	; , blockX.40
+	addb	6,s	; , blockX.42
 	stb	2,s	; ,
 	ldb	_blockY	; , blockY
 	aslb	; 
@@ -3857,7 +3862,7 @@ _blockMovingToStart:
 	addb	4,s	; ,
 	addb	#-104	; ,
 	stb	9,s	; , a
-	ldb	6,s	; , blockX.40
+	ldb	6,s	; , blockX.42
 	addb	#-2	; ,
 	lda	#14	;mulqihi3	; 
 	mul
@@ -3872,13 +3877,13 @@ _blockMovingToStart:
 	addb	3,s	;  tmp41,
 	stb	10,s	;  tmp41, b
 ;----- asm -----
-;  3315 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3315 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 9,s	;  a
 	ldb 10,s	;  b
 	jsr ___Moveto_d; BIOS call
 ;  0 "" 2
-;  1002 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[694]	pack1x((void*)(blockAnimation[blockAnimationStep]));
+;  1008 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[698]	pack1x((void*)(blockAnimation[blockAnimationStep]));
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockAnimationStep	; , blockAnimationStep
@@ -3888,9 +3893,9 @@ _blockMovingToStart:
 	rola	; 
 	ldu	_blockAnimation	; , blockAnimation
 	leax	d,u	;  tmp45, tmp44,
-	ldx	,x	;  D.3896,
+	ldx	,x	;  D.3905,
 ;----- asm -----
-;  59 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  59 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[56]	dp_VIA_t1_cnt_lo = 0x80;
 ;  0 "" 2
 ;--- end asm ---
@@ -3898,40 +3903,40 @@ _blockMovingToStart:
 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo
 ; Applied peep: 2 (no load after store)
 ;----- asm -----
-;  61 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  61 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[57]	Draw_VLp(x);
 ;  0 "" 2
 ;--- end asm ---
 ;----- asm -----
-;  1610 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
-	stx	7,s	;  D.3896, x
+;  1610 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+	stx	7,s	;  D.3905, x
 ; ORG>;----- asm -----
-; ORG>;  61 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+; ORG>;  61 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 ; ORG>	; $ENR$[57]	Draw_VLp(x);
 ; ORG>;  0 "" 2
 ; ORG>;--- end asm ---
-; ORG>	stx	7,s	;  D.3896, x
+; ORG>	stx	7,s	;  D.3905, x
 ; ORG>;----- asm -----
-; ORG>;  1610 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+; ORG>;  1610 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 ; ORG>	ldx 7,s	;  x
 	jsr ___Draw_VLp; BIOS call
 ;  0 "" 2
-;  1012 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[701]	blockYOfs++;
+;  1018 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[705]	blockYOfs++;
 ;  0 "" 2
 ;--- end asm ---
 	inc	_blockYOfs	;  blockYOfs
-	ldb	_blockYOfs	;  blockYOfs.44, blockYOfs
+	ldb	_blockYOfs	;  blockYOfs.46, blockYOfs
 ;----- asm -----
-;  1014 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[702]	if (blockYOfs == 0) {
+;  1020 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[706]	if (blockYOfs == 0) {
 ;  0 "" 2
 ;--- end asm ---
-	tstb	;  blockYOfs.44
+	tstb	;  blockYOfs.46
 	bne	L231	; 
 ;----- asm -----
-;  1016 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[703]		gameState = BlockWaiting;
+;  1022 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[707]		gameState = BlockWaiting;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#3	; ,
@@ -3944,87 +3949,87 @@ _blockMoving:
 	pshs	u	; 
 	leas	-16,s	; ,,
 ;----- asm -----
-;  1080 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[745]	drawField();
+;  1088 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[750]	drawField();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_drawField	; 
 ;----- asm -----
-;  1082 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[746]	drawBlock(0);
+;  1090 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[751]	drawBlock(0);
 ;  0 "" 2
-;  993 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[689]	zergnd();
+;  999 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[693]	zergnd();
 ;  0 "" 2
-;  181 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  181 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	jsr ___Reset0Ref; BIOS call
 ;  0 "" 2
-;  995 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[690]	intens(0x63);
+;  1001 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[694]	intens(0x63);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#99	; ,
 	stb	14,s	; , a
 ;----- asm -----
-;  3427 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3427 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 14,s	;  a
 	jsr ___Intensity_a; BIOS call
 ;  0 "" 2
-;  997 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[691]	positd(0, yofs);
+;  1003 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[695]	positd(0, yofs);
 ;  0 "" 2
-;  52 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  52 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[51]	dp_VIA_t1_cnt_lo = 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-128	; ,
 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo
 ;----- asm -----
-;  54 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  54 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[52]	Moveto_d(y,x);
 ;  0 "" 2
 ;--- end asm ---
 	clr	15,s	;  a
 	clr	14,s	;  b
 ;----- asm -----
-;  3315 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3315 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 15,s	;  a
 	ldb 14,s	;  b
 	jsr ___Moveto_d; BIOS call
 ;  0 "" 2
-;  1000 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[693]	positd(x3d(blockX, 0, blockY), y3d(blockX, 0, blockY));
+;  1006 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[697]	positd(x3d(blockX, 0, blockY), y3d(blockX, 0, blockY));
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockX	; , blockX
-	stb	9,s	; , blockX.40
+	stb	9,s	; , blockX.42
 ;----- asm -----
-;  309 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[278]	y -= LEVEL_HEIGHT / 2;
+;  311 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[280]	y -= LEVEL_HEIGHT / 2;
 ;  0 "" 2
-;  311 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[279]	return 3 * x + 13 * y + 8 * z;
+;  313 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[281]	return 3 * x + 13 * y + 8 * z;
 ;  0 "" 2
-;  300 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[271]	x -= LEVEL_WIDTH / 2 - 4;
+;  302 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[273]	x -= LEVEL_WIDTH / 2 - 4;
 ;  0 "" 2
-;  302 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[272]	return 14 * x - 6 * z+0*y;
+;  304 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[274]	return 14 * x - 6 * z+0*y;
 ;  0 "" 2
-;  52 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  52 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[51]	dp_VIA_t1_cnt_lo = 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-128	; ,
 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo
 ;----- asm -----
-;  54 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  54 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[52]	Moveto_d(y,x);
 ;  0 "" 2
 ;--- end asm ---
-	ldb	9,s	; , blockX.40
+	ldb	9,s	; , blockX.42
 	aslb	; 
-	addb	9,s	; , blockX.40
+	addb	9,s	; , blockX.42
 	stb	2,s	; ,
 	ldb	_blockY	; , blockY
 	aslb	; 
@@ -4035,7 +4040,7 @@ _blockMoving:
 	addb	4,s	; ,
 	addb	#-104	; ,
 	stb	14,s	; , a
-	ldb	9,s	; , blockX.40
+	ldb	9,s	; , blockX.42
 	addb	#-2	; ,
 	lda	#14	;mulqihi3	; 
 	mul
@@ -4050,13 +4055,13 @@ _blockMoving:
 	addb	3,s	;  tmp48,
 	stb	15,s	;  tmp48, b
 ;----- asm -----
-;  3315 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3315 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 14,s	;  a
 	ldb 15,s	;  b
 	jsr ___Moveto_d; BIOS call
 ;  0 "" 2
-;  1002 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[694]	pack1x((void*)(blockAnimation[blockAnimationStep]));
+;  1008 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[698]	pack1x((void*)(blockAnimation[blockAnimationStep]));
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockAnimationStep	; , blockAnimationStep
@@ -4066,9 +4071,9 @@ _blockMoving:
 	rola	; 
 	ldu	_blockAnimation	; , blockAnimation
 	leax	d,u	;  tmp52, tmp51,
-	ldx	,x	;  D.3944,
+	ldx	,x	;  D.3953,
 ;----- asm -----
-;  59 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  59 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[56]	dp_VIA_t1_cnt_lo = 0x80;
 ;  0 "" 2
 ;--- end asm ---
@@ -4076,53 +4081,53 @@ _blockMoving:
 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo
 ; Applied peep: 2 (no load after store)
 ;----- asm -----
-;  61 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  61 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[57]	Draw_VLp(x);
 ;  0 "" 2
 ;--- end asm ---
 ;----- asm -----
-;  1610 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
-	stx	12,s	;  D.3944, x
+;  1610 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+	stx	12,s	;  D.3953, x
 ; ORG>;----- asm -----
-; ORG>;  61 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+; ORG>;  61 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 ; ORG>	; $ENR$[57]	Draw_VLp(x);
 ; ORG>;  0 "" 2
 ; ORG>;--- end asm ---
-; ORG>	stx	12,s	;  D.3944, x
+; ORG>	stx	12,s	;  D.3953, x
 ; ORG>;----- asm -----
-; ORG>;  1610 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+; ORG>;  1610 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 ; ORG>	ldx 12,s	;  x
 	jsr ___Draw_VLp; BIOS call
 ;  0 "" 2
-;  1084 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[747]	doBlockAnimation();
+;  1092 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[752]	doBlockAnimation();
 ;  0 "" 2
-;  1060 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[732]	if (blockAnimating) {
+;  1068 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[737]	if (blockAnimating) {
 ;  0 "" 2
 ;--- end asm ---
 	tst	_blockAnimating	;  blockAnimating
 	beq	L233	; 
 ;----- asm -----
-;  1062 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[733]		if (++blockAnimationStep == BLOCK_STEPS_COUNT) {
+;  1070 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[738]		if (++blockAnimationStep == BLOCK_STEPS_COUNT) {
 ;  0 "" 2
 ;--- end asm ---
 	inc	_blockAnimationStep	;  blockAnimationStep
-	ldb	_blockAnimationStep	;  blockAnimationStep.48, blockAnimationStep
-	cmpb	#12	;cmpqi:	;  blockAnimationStep.48,
+	ldb	_blockAnimationStep	;  blockAnimationStep.51, blockAnimationStep
+	cmpb	#12	;cmpqi:	;  blockAnimationStep.51,
 	lbeq	L255	; 
 L233:
 ;----- asm -----
-;  1086 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[748]	if (!blockAnimating) {
+;  1094 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[753]	if (!blockAnimating) {
 ;  0 "" 2
 ;--- end asm ---
 	tst	_blockAnimating	;  blockAnimating
 	lbne	L254	; 
 ;----- asm -----
-;  1092 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[753]		unsigned long int index = (unsigned long int )blockY * LEVEL_WIDTH + (unsigned long int)blockX;
+;  1100 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[758]		unsigned long int index = (unsigned long int )blockY * LEVEL_WIDTH + (unsigned long int)blockX;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockY	; , blockY
@@ -4136,51 +4141,51 @@ L233:
 	leax	d,x	; ,, blockX
 	stx	,s	; , index
 ;----- asm -----
-;  1094 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[754]		char c0 = isField(level[index]);
+;  1102 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[759]		char c0 = isField(level[index]);
 ;  0 "" 2
 ;--- end asm ---
-	exg	d,x	; , tmp64
+	exg	d,x	; , tmp65
 	addd	_level	; , level
-	exg	d,x	; , tmp64
-	ldb	,x	;  D.2689,
+	exg	d,x	; , tmp65
+	ldb	,x	;  D.2693,
 ;----- asm -----
-;  293 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[265]	return (char)(c == '.' || c == 'a' || c == 'o');
+;  295 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[267]	return (char)(c == '.' || c == 'a' || c == 'o');
 ;  0 "" 2
 ;--- end asm ---
-	cmpb	#46	;cmpqi:	;  D.2689,
+	cmpb	#46	;cmpqi:	;  D.2693,
 	lbeq	L235	; 
-	cmpb	#97	;cmpqi:	;  D.2689,
+	cmpb	#97	;cmpqi:	;  D.2693,
 	lbeq	L235	; 
-	eorb	#111	;  D.2689,
-	clra		;zero_extendqihi: R:b -> R:d	;  D.2689, tmp66
-	addd	#-1	;  tmp67,
+	eorb	#111	;  D.2693,
+	clra		;zero_extendqihi: R:b -> R:d	;  D.2693, tmp67
+	addd	#-1	;  tmp68,
 	tfr	a,b	; ,
 	clra		;zero_extendqihi: R:b -> R:d	; ,
 	rolb	; 
 	rolb	; 
 	andb	#1	; ,
-	stb	11,s	; , prephitmp.566
+	stb	11,s	; , prephitmp.575
 L237:
 ;----- asm -----
-;  1096 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[755]		char c1 = isField(level[index+1]);
+;  1104 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[760]		char c1 = isField(level[index+1]);
 ;  0 "" 2
 ;--- end asm ---
-	ldb	1,x	;  D.2693,
+	ldb	1,x	;  D.2697,
 ;----- asm -----
-;  293 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[265]	return (char)(c == '.' || c == 'a' || c == 'o');
+;  295 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[267]	return (char)(c == '.' || c == 'a' || c == 'o');
 ;  0 "" 2
 ;--- end asm ---
-	cmpb	#46	;cmpqi:	;  D.2693,
+	cmpb	#46	;cmpqi:	;  D.2697,
 	lbeq	L238	; 
-	cmpb	#97	;cmpqi:	;  D.2693,
+	cmpb	#97	;cmpqi:	;  D.2697,
 	lbeq	L238	; 
-	eorb	#111	;  D.2693,
-	clra		;zero_extendqihi: R:b -> R:d	;  D.2693, tmp70
-	addd	#-1	;  tmp71,
+	eorb	#111	;  D.2697,
+	clra		;zero_extendqihi: R:b -> R:d	;  D.2697, tmp71
+	addd	#-1	;  tmp72,
 	tfr	a,b	; ,
 	clra		;zero_extendqihi: R:b -> R:d	; ,
 	rolb	; 
@@ -4189,23 +4194,23 @@ L237:
 	stb	6,s	; , iftmp.7
 L240:
 ;----- asm -----
-;  1098 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[756]		char c2 = isField(level[index + LEVEL_WIDTH]);
+;  1106 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[761]		char c2 = isField(level[index + LEVEL_WIDTH]);
 ;  0 "" 2
 ;--- end asm ---
-	ldb	12,x	;  D.2697,
+	ldb	12,x	;  D.2701,
 ;----- asm -----
-;  293 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[265]	return (char)(c == '.' || c == 'a' || c == 'o');
+;  295 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[267]	return (char)(c == '.' || c == 'a' || c == 'o');
 ;  0 "" 2
 ;--- end asm ---
-	cmpb	#46	;cmpqi:	;  D.2697,
+	cmpb	#46	;cmpqi:	;  D.2701,
 	beq	L241	; 
-	cmpb	#97	;cmpqi:	;  D.2697,
+	cmpb	#97	;cmpqi:	;  D.2701,
 	beq	L241	; 
-	eorb	#111	;  D.2697,
-	clra		;zero_extendqihi: R:b -> R:d	;  D.2697, tmp74
-	addd	#-1	;  tmp75,
+	eorb	#111	;  D.2701,
+	clra		;zero_extendqihi: R:b -> R:d	;  D.2701, tmp75
+	addd	#-1	;  tmp76,
 	tfr	a,b	; ,
 	clra		;zero_extendqihi: R:b -> R:d	; ,
 	rolb	; 
@@ -4213,8 +4218,8 @@ L240:
 	andb	#1	; ,
 	stb	8,s	; , iftmp.7
 ;----- asm -----
-;  1100 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[757]		switch (blockOrientation) {
+;  1108 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[762]		switch (blockOrientation) {
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockOrientation	;  blockOrientation, blockOrientation
@@ -4227,8 +4232,8 @@ L258:
 	lbeq	L256	; 
 L244:
 ;----- asm -----
-;  1132 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[776]		if (blockOrientation == Standing && blockX == endX && blockY == endY) {
+;  1140 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[781]		if (blockOrientation == Standing && blockX == endX && blockY == endY) {
 ;  0 "" 2
 ;--- end asm ---
 	tst	_blockOrientation	;  blockOrientation
@@ -4238,16 +4243,16 @@ L244:
 	lbeq	L257	; 
 L253:
 ;----- asm -----
-;  1142 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[782]			if (gameState != BlockFalling) {
+;  1152 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[788]			if (gameState != BlockFalling) {
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_gameState	; , gameState
 	cmpb	#5	;cmpqi:	; ,
 	beq	L254	; 
 ;----- asm -----
-;  1144 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[783]				gameState = BlockWaiting;
+;  1154 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[789]				gameState = BlockWaiting;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#3	; ,
@@ -4257,14 +4262,14 @@ L254:
 	puls	u,pc	; 
 L235:
 	ldb	#1	; ,
-	stb	11,s	; , prephitmp.566
+	stb	11,s	; , prephitmp.575
 	jmp	L237	; 
 L241:
 	ldb	#1	; ,
 	stb	8,s	; , iftmp.7
 ;----- asm -----
-;  1100 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[757]		switch (blockOrientation) {
+;  1108 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[762]		switch (blockOrientation) {
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockOrientation	;  blockOrientation, blockOrientation
@@ -4272,25 +4277,25 @@ L241:
 	bne	L258	; 
 L246:
 ;----- asm -----
-;  1113 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[764]			if (!c0 || !c2) {
+;  1121 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[769]			if (!c0 || !c2) {
 ;  0 "" 2
 ;--- end asm ---
-	tst	11,s	;  prephitmp.566
+	tst	11,s	;  prephitmp.575
 	beq	L249	; 
 	tst	8,s	;  iftmp.7
 	bne	L250	; 
 L249:
 ;----- asm -----
-;  1115 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[765]				startBlockFalling();
+;  1123 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[770]				startBlockFalling();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_startBlockFalling	; 
 L250:
 ;----- asm -----
-;  1118 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[767]			break;
+;  1126 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[772]			break;
 ;  0 "" 2
 ;--- end asm ---
 	jmp	L244	; 
@@ -4300,75 +4305,75 @@ L238:
 	jmp	L240	; 
 L245:
 ;----- asm -----
-;  1104 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[759]			if (!c0) {
+;  1112 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[764]			if (!c0) {
 ;  0 "" 2
 ;--- end asm ---
-	tst	11,s	;  prephitmp.566
+	tst	11,s	;  prephitmp.575
 	lbeq	L259	; 
 L248:
 ;----- asm -----
-;  1109 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[762]			break;
+;  1117 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[767]			break;
 ;  0 "" 2
 ;--- end asm ---
 	jmp	L244	; 
 L255:
 ;----- asm -----
-;  1064 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[734]			blockX = nextBlockX;
+;  1072 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[739]			blockX = nextBlockX;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_nextBlockX	; , nextBlockX
 	stb	_blockX	; , blockX
 ;----- asm -----
-;  1066 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[735]			blockY = nextBlockY;
+;  1074 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[740]			blockY = nextBlockY;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_nextBlockY	; , nextBlockY
 	stb	_blockY	; , blockY
 ;----- asm -----
-;  1068 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[736]			blockAnimationStep = 0;
+;  1076 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[741]			blockAnimationStep = 0;
 ;  0 "" 2
 ;--- end asm ---
 	clr	_blockAnimationStep	;  blockAnimationStep
 ;----- asm -----
-;  1070 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[737]			blockAnimation = nextBlockAnimation;
+;  1078 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[742]			blockAnimation = nextBlockAnimation;
 ;  0 "" 2
 ;--- end asm ---
 	ldx	_nextBlockAnimation	; , nextBlockAnimation
 	stx	_blockAnimation	; , blockAnimation
 ;----- asm -----
-;  1072 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[738]			blockAnimating = 0;
+;  1080 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[743]			blockAnimating = 0;
 ;  0 "" 2
 ;--- end asm ---
 	clr	_blockAnimating	;  blockAnimating
 	jmp	L233	; 
 L256:
 ;----- asm -----
-;  1122 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[769]			if (!c0 || ! c1) {
+;  1130 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[774]			if (!c0 || ! c1) {
 ;  0 "" 2
 ;--- end asm ---
-	tst	11,s	;  prephitmp.566
+	tst	11,s	;  prephitmp.575
 	beq	L251	; 
 	tst	6,s	;  iftmp.7
 	bne	L252	; 
 L251:
 ;----- asm -----
-;  1124 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[770]				startBlockFalling();
+;  1132 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[775]				startBlockFalling();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_startBlockFalling	; 
 L252:
 ;----- asm -----
-;  1127 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[772]			break;
+;  1135 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[777]			break;
 ;  0 "" 2
 ;--- end asm ---
 	jmp	L244	; 
@@ -4377,40 +4382,46 @@ L257:
 	cmpb	_endY	;cmpqi:	; , endY
 	lbne	L253	; 
 ;----- asm -----
-;  1134 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[777]			blockYOfs = 0;
+;  1142 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[782]			blockYOfs = 0;
 ;  0 "" 2
 ;--- end asm ---
 	clr	_blockYOfs	;  blockYOfs
 ;----- asm -----
-;  1136 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[778]			gameState = BlockMovingAtEnd;
+;  1144 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[783]			gameState = BlockMovingAtEnd;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#6	; ,
 	stb	_gameState	; , gameState
 ;----- asm -----
-;  1138 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[779]			changeMusic(levelEndMusic);
+;  1146 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[784]			changeMusic(levelEndMusic);
 ;  0 "" 2
-;  713 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[532]	tstat = 1;
+;  715 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[534]	tstat = 1;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#1	; ,
 	stb	-14250	; ,
 ;----- asm -----
-;  715 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[533]	currentMusic = music;
+;  717 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[535]	currentMusic = music;
 ;  0 "" 2
 ;--- end asm ---
 	ldx	#_levelEndMusic	; ,
 	stx	_currentMusic	; , currentMusic
+;----- asm -----
+;  1148 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[785]			*vecx = 1;
+;  0 "" 2
+;--- end asm ---
+	stb	[_vecx]	; ,* vecx
 	jmp	L254	; 
 L259:
 ;----- asm -----
-;  1106 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[760]				startBlockFalling();
+;  1114 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[765]				startBlockFalling();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_startBlockFalling	; 
@@ -4420,87 +4431,87 @@ _blockWaiting:
 	pshs	u	; 
 	leas	-10,s	; ,,
 ;----- asm -----
-;  1023 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[709]	drawField();
+;  1029 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[713]	drawField();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_drawField	; 
 ;----- asm -----
-;  1025 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[710]	drawBlock(0);
+;  1031 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[714]	drawBlock(0);
 ;  0 "" 2
-;  993 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[689]	zergnd();
+;  999 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[693]	zergnd();
 ;  0 "" 2
-;  181 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  181 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	jsr ___Reset0Ref; BIOS call
 ;  0 "" 2
-;  995 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[690]	intens(0x63);
+;  1001 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[694]	intens(0x63);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#99	; ,
 	stb	8,s	; , a
 ;----- asm -----
-;  3427 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3427 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 8,s	;  a
 	jsr ___Intensity_a; BIOS call
 ;  0 "" 2
-;  997 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[691]	positd(0, yofs);
+;  1003 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[695]	positd(0, yofs);
 ;  0 "" 2
-;  52 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  52 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[51]	dp_VIA_t1_cnt_lo = 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-128	; ,
 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo
 ;----- asm -----
-;  54 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  54 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[52]	Moveto_d(y,x);
 ;  0 "" 2
 ;--- end asm ---
 	clr	9,s	;  a
 	clr	8,s	;  b
 ;----- asm -----
-;  3315 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3315 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 9,s	;  a
 	ldb 8,s	;  b
 	jsr ___Moveto_d; BIOS call
 ;  0 "" 2
-;  1000 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[693]	positd(x3d(blockX, 0, blockY), y3d(blockX, 0, blockY));
+;  1006 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[697]	positd(x3d(blockX, 0, blockY), y3d(blockX, 0, blockY));
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockX	; , blockX
-	stb	5,s	; , blockX.40
+	stb	5,s	; , blockX.42
 ;----- asm -----
-;  309 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[278]	y -= LEVEL_HEIGHT / 2;
+;  311 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[280]	y -= LEVEL_HEIGHT / 2;
 ;  0 "" 2
-;  311 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[279]	return 3 * x + 13 * y + 8 * z;
+;  313 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[281]	return 3 * x + 13 * y + 8 * z;
 ;  0 "" 2
-;  300 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[271]	x -= LEVEL_WIDTH / 2 - 4;
+;  302 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[273]	x -= LEVEL_WIDTH / 2 - 4;
 ;  0 "" 2
-;  302 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[272]	return 14 * x - 6 * z+0*y;
+;  304 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[274]	return 14 * x - 6 * z+0*y;
 ;  0 "" 2
-;  52 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  52 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[51]	dp_VIA_t1_cnt_lo = 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-128	; ,
 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo
 ;----- asm -----
-;  54 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  54 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[52]	Moveto_d(y,x);
 ;  0 "" 2
 ;--- end asm ---
-	ldb	5,s	; , blockX.40
+	ldb	5,s	; , blockX.42
 	aslb	; 
-	addb	5,s	; , blockX.40
+	addb	5,s	; , blockX.42
 	stb	2,s	; ,
 	ldb	_blockY	; , blockY
 	aslb	; 
@@ -4511,7 +4522,7 @@ _blockWaiting:
 	addb	4,s	; ,
 	addb	#-104	; ,
 	stb	8,s	; , a
-	ldb	5,s	; , blockX.40
+	ldb	5,s	; , blockX.42
 	addb	#-2	; ,
 	lda	#14	;mulqihi3	; 
 	mul
@@ -4526,13 +4537,13 @@ _blockWaiting:
 	addb	3,s	;  tmp43,
 	stb	9,s	;  tmp43, b
 ;----- asm -----
-;  3315 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3315 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 8,s	;  a
 	ldb 9,s	;  b
 	jsr ___Moveto_d; BIOS call
 ;  0 "" 2
-;  1002 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[694]	pack1x((void*)(blockAnimation[blockAnimationStep]));
+;  1008 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[698]	pack1x((void*)(blockAnimation[blockAnimationStep]));
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockAnimationStep	; , blockAnimationStep
@@ -4542,9 +4553,9 @@ _blockWaiting:
 	rola	; 
 	ldu	_blockAnimation	; , blockAnimation
 	leax	d,u	;  tmp47, tmp46,
-	ldx	,x	;  D.4009,
+	ldx	,x	;  D.4019,
 ;----- asm -----
-;  59 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  59 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[56]	dp_VIA_t1_cnt_lo = 0x80;
 ;  0 "" 2
 ;--- end asm ---
@@ -4552,102 +4563,109 @@ _blockWaiting:
 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo
 ; Applied peep: 2 (no load after store)
 ;----- asm -----
-;  61 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  61 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[57]	Draw_VLp(x);
 ;  0 "" 2
 ;--- end asm ---
 ;----- asm -----
-;  1610 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
-	stx	6,s	;  D.4009, x
+;  1610 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+	stx	6,s	;  D.4019, x
 ; ORG>;----- asm -----
-; ORG>;  61 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+; ORG>;  61 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 ; ORG>	; $ENR$[57]	Draw_VLp(x);
 ; ORG>;  0 "" 2
 ; ORG>;--- end asm ---
-; ORG>	stx	6,s	;  D.4009, x
+; ORG>	stx	6,s	;  D.4019, x
 ; ORG>;----- asm -----
-; ORG>;  1610 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+; ORG>;  1610 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 ; ORG>	ldx 6,s	;  x
 	jsr ___Draw_VLp; BIOS call
 ;  0 "" 2
-;  1027 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[711]	joybit();
+;  1033 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[715]	joybit();
 ;  0 "" 2
-;  2354 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  2354 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	jsr ___Joy_Digital; BIOS call
 ;  0 "" 2
-;  1029 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[712]	if (pot0 < -10) {
+;  1035 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[716]	if (pot0 < -10) {
 ;  0 "" 2
 ;--- end asm ---
-	ldb	-14309	;  D.2657,
-	cmpb	#-10	;cmpqi:	;  D.2657,
-	lblt	L267	; 
-	ldb	-14309	;  D.2658,
-	cmpb	#10	;cmpqi:	;  D.2658,
-	bgt	L268	; 
-	ldb	-14308	;  D.2660,
+	ldb	-14309	;  D.2660,
 	cmpb	#-10	;cmpqi:	;  D.2660,
-	lblt	L269	; 
-	ldb	-14308	;  D.2661,
+	lblt	L267	; 
+	ldb	-14309	;  D.2661,
 	cmpb	#10	;cmpqi:	;  D.2661,
+	bgt	L268	; 
+	ldb	-14308	;  D.2663,
+	cmpb	#-10	;cmpqi:	;  D.2663,
+	lblt	L269	; 
+	ldb	-14308	;  D.2664,
+	cmpb	#10	;cmpqi:	;  D.2664,
 	lbgt	L270	; 
 L262:
 ;----- asm -----
-;  1051 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[725]	if (gameState == BlockMoving) {
+;  1057 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[729]	if (gameState == BlockMoving) {
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_gameState	; , gameState
 	cmpb	#4	;cmpqi:	; ,
 	bne	L266	; 
 ;----- asm -----
-;  1053 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[726]		changeMusic(movingMusic);
+;  1059 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[730]		changeMusic(movingMusic);
 ;  0 "" 2
-;  713 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[532]	tstat = 1;
+;  715 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[534]	tstat = 1;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#1	; ,
 	stb	-14250	; ,
 ;----- asm -----
-;  715 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[533]	currentMusic = music;
+;  717 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[535]	currentMusic = music;
 ;  0 "" 2
 ;--- end asm ---
 	ldx	#_movingMusic	; ,
 	stx	_currentMusic	; , currentMusic
+;----- asm -----
+;  1061 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[731]		*vecx = 3;
+;  0 "" 2
+;--- end asm ---
+	ldb	#3	; ,
+	stb	[_vecx]	; ,* vecx
 L266:
 	leas	10,s	; ,,
 	puls	u,pc	; 
 L268:
 ;----- asm -----
-;  1036 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[716]		moveBlock(Right);
+;  1042 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[720]		moveBlock(Right);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#2	; ,
 	jsr	_moveBlock	; 
 ;----- asm -----
-;  1038 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[717]		gameState = BlockMoving;
+;  1044 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[721]		gameState = BlockMoving;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#4	; ,
 	stb	_gameState	; , gameState
-	bra	L262	; 
+	jmp	L262	; 
 L267:
 ;----- asm -----
-;  1031 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[713]		moveBlock(Left);
+;  1037 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[717]		moveBlock(Left);
 ;  0 "" 2
 ;--- end asm ---
 	clrb	; 
 	jsr	_moveBlock	; 
 ;----- asm -----
-;  1033 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[714]		gameState = BlockMoving;
+;  1039 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[718]		gameState = BlockMoving;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#4	; ,
@@ -4655,15 +4673,15 @@ L267:
 	jmp	L262	; 
 L269:
 ;----- asm -----
-;  1041 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[719]		moveBlock(Down);
+;  1047 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[723]		moveBlock(Down);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#3	; ,
 	jsr	_moveBlock	; 
 ;----- asm -----
-;  1043 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[720]		gameState = BlockMoving;
+;  1049 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[724]		gameState = BlockMoving;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#4	; ,
@@ -4671,15 +4689,15 @@ L269:
 	jmp	L262	; 
 L270:
 ;----- asm -----
-;  1046 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[722]		moveBlock(Up);
+;  1052 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[726]		moveBlock(Up);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#1	; ,
 	jsr	_moveBlock	; 
 ;----- asm -----
-;  1048 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[723]		gameState = BlockMoving;
+;  1054 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[727]		gameState = BlockMoving;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#4	; ,
@@ -4720,32 +4738,32 @@ _clearMenu:
 	pshs	u	; 
 	leas	-5,s	; ,,
 ;----- asm -----
-;  1233 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[841]	Read_Btns();
+;  1243 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[847]	Read_Btns();
 ;  0 "" 2
-;  2286 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  2286 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	jsr ___Read_Btns; BIOS call
 ;  0 "" 2
-;  1235 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[842]    Intensity_a(0x5f);
+;  1245 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[848]    Intensity_a(0x5f);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#95	; ,
 	stb	4,s	; , a
 ;----- asm -----
-;  3427 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3427 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 4,s	;  a
 	jsr ___Intensity_a; BIOS call
 ;  0 "" 2
-;  1237 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[843]    Vec_Text_Width = 90;
+;  1247 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[849]    Vec_Text_Width = 90;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#90	; ,
 	stb	_Vec_Text_Width	; , Vec_Text_Width
 ;----- asm -----
-;  1239 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[844]    Print_Str_d(100, -80, "CLEAR SCORE?�");
+;  1249 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[850]    Print_Str_d(100, -80, "CLEAR SCORE?�");
 ;  0 "" 2
 ;--- end asm ---
 	addb	#10	; ,
@@ -4755,14 +4773,14 @@ _clearMenu:
 	ldx	#LC0	; ,
 	stx	1,s	; , u
 ;----- asm -----
-;  666 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  666 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 4,s	;  a
 	ldb 3,s	;  b
 	ldu 1,s	;  u
 	jsr ___Print_Str_d; BIOS call
 ;  0 "" 2
-;  1241 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[845]    Print_Str_d(50, -110, "3 YES�");
+;  1251 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[851]    Print_Str_d(50, -110, "3 YES�");
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#50	; ,
@@ -4772,14 +4790,14 @@ _clearMenu:
 	ldx	#LC1	; ,
 	stx	1,s	; , u
 ;----- asm -----
-;  666 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  666 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 3,s	;  a
 	ldb 4,s	;  b
 	ldu 1,s	;  u
 	jsr ___Print_Str_d; BIOS call
 ;  0 "" 2
-;  1243 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[846]    Print_Str_d(20, -110, "4 NO�");
+;  1253 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[852]    Print_Str_d(20, -110, "4 NO�");
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#20	; ,
@@ -4789,14 +4807,14 @@ _clearMenu:
 	ldx	#LC2	; ,
 	stx	1,s	; , u
 ;----- asm -----
-;  666 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  666 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 4,s	;  a
 	ldb 3,s	;  b
 	ldu 1,s	;  u
 	jsr ___Print_Str_d; BIOS call
 ;  0 "" 2
-;  1245 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[847]	if (Vec_Buttons & 4) {
+;  1255 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[853]	if (Vec_Buttons & 4) {
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_Vec_Buttons	; , Vec_Buttons
@@ -4804,77 +4822,77 @@ _clearMenu:
 	bitb	#4	; ,
 	lbeq	L272	; 
 ;----- asm -----
-;  1247 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[848]		for (uint8_t i = 0; i < 6; i++) {
+;  1257 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[854]		for (uint8_t i = 0; i < 6; i++) {
 ;  0 "" 2
-;  1249 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[849]			writeEeprom(i, 0xff);
+;  1259 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[855]			writeEeprom(i, 0xff);
 ;  0 "" 2
-;  238 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[226]	if (picAvailable) {
+;  240 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[228]	if (picAvailable) {
 ;  0 "" 2
 ;--- end asm ---
 	tst	_picAvailable	;  picAvailable
 	lbne	L281	; 
 L273:
 ;----- asm -----
-;  1249 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[849]			writeEeprom(i, 0xff);
+;  1259 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[855]			writeEeprom(i, 0xff);
 ;  0 "" 2
-;  238 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[226]	if (picAvailable) {
+;  240 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[228]	if (picAvailable) {
 ;  0 "" 2
 ;--- end asm ---
 	tst	_picAvailable	;  picAvailable
 	lbne	L282	; 
 L274:
 ;----- asm -----
-;  1249 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[849]			writeEeprom(i, 0xff);
+;  1259 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[855]			writeEeprom(i, 0xff);
 ;  0 "" 2
-;  238 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[226]	if (picAvailable) {
+;  240 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[228]	if (picAvailable) {
 ;  0 "" 2
 ;--- end asm ---
 	tst	_picAvailable	;  picAvailable
 	lbne	L283	; 
 L275:
 ;----- asm -----
-;  1249 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[849]			writeEeprom(i, 0xff);
+;  1259 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[855]			writeEeprom(i, 0xff);
 ;  0 "" 2
-;  238 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[226]	if (picAvailable) {
+;  240 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[228]	if (picAvailable) {
 ;  0 "" 2
 ;--- end asm ---
 	tst	_picAvailable	;  picAvailable
 	lbne	L284	; 
 L276:
 ;----- asm -----
-;  1249 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[849]			writeEeprom(i, 0xff);
+;  1259 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[855]			writeEeprom(i, 0xff);
 ;  0 "" 2
-;  238 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[226]	if (picAvailable) {
+;  240 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[228]	if (picAvailable) {
 ;  0 "" 2
 ;--- end asm ---
 	tst	_picAvailable	;  picAvailable
 	lbne	L285	; 
 L277:
 ;----- asm -----
-;  1249 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[849]			writeEeprom(i, 0xff);
+;  1259 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[855]			writeEeprom(i, 0xff);
 ;  0 "" 2
-;  238 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[226]	if (picAvailable) {
+;  240 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[228]	if (picAvailable) {
 ;  0 "" 2
 ;--- end asm ---
 	tst	_picAvailable	;  picAvailable
 	bne	L286	; 
 L278:
 ;----- asm -----
-;  1252 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[851]		gameState = MainMenu;
+;  1262 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[857]		gameState = MainMenu;
 ;  0 "" 2
 ;--- end asm ---
 	clr	_gameState	;  gameState
@@ -4882,16 +4900,16 @@ L278:
 	stb	,s	; ,
 L272:
 ;----- asm -----
-;  1255 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[853]	if (Vec_Buttons & 8) {
+;  1265 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[859]	if (Vec_Buttons & 8) {
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#8	; ,
 	andb	,s	; ,
 	beq	L280	; 
 ;----- asm -----
-;  1257 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[854]		gameState = MainMenu;
+;  1267 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[860]		gameState = MainMenu;
 ;  0 "" 2
 ;--- end asm ---
 	clr	_gameState	;  gameState
@@ -4900,529 +4918,529 @@ L280:
 	puls	u,pc	; 
 L286:
 ;----- asm -----
-;  240 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[227]	    	sendCommand(CMD_SET_EEPROM_ADR, address);
+;  242 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[229]	    	sendCommand(CMD_SET_EEPROM_ADR, address);
 ;  0 "" 2
-;  220 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[215]	uint8_t result;
+;  222 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[217]	uint8_t result;
 ;  0 "" 2
-;  222 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[216]	picWrite('V');
+;  224 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[218]	picWrite('V');
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#86	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  224 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[217]	picWrite(cmd);
+;  226 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[219]	picWrite(cmd);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#2	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  226 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[218]	picWrite(arg);
+;  228 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[220]	picWrite(arg);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#5	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  228 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[219]	result = picRead();
+;  230 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[221]	result = picRead();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_picRead	; 
 ;----- asm -----
-;  230 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[220]	delay10ms();
+;  232 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[222]	delay10ms();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_delay10ms	; 
 ;----- asm -----
-;  232 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[221]	return result;
+;  234 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[223]	return result;
 ;  0 "" 2
-;  242 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[228]	    	sendCommand(CMD_EEPROM_WRITE, data);
+;  244 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[230]	    	sendCommand(CMD_EEPROM_WRITE, data);
 ;  0 "" 2
-;  220 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[215]	uint8_t result;
+;  222 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[217]	uint8_t result;
 ;  0 "" 2
-;  222 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[216]	picWrite('V');
+;  224 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[218]	picWrite('V');
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#86	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  224 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[217]	picWrite(cmd);
+;  226 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[219]	picWrite(cmd);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#3	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  226 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[218]	picWrite(arg);
+;  228 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[220]	picWrite(arg);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-1	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  228 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[219]	result = picRead();
+;  230 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[221]	result = picRead();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_picRead	; 
 ;----- asm -----
-;  230 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[220]	delay10ms();
+;  232 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[222]	delay10ms();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_delay10ms	; 
 ;----- asm -----
-;  232 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[221]	return result;
+;  234 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[223]	return result;
 ;  0 "" 2
 ;--- end asm ---
 	jmp	L278	; 
 L282:
 ;----- asm -----
-;  240 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[227]	    	sendCommand(CMD_SET_EEPROM_ADR, address);
+;  242 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[229]	    	sendCommand(CMD_SET_EEPROM_ADR, address);
 ;  0 "" 2
-;  220 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[215]	uint8_t result;
+;  222 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[217]	uint8_t result;
 ;  0 "" 2
-;  222 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[216]	picWrite('V');
+;  224 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[218]	picWrite('V');
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#86	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  224 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[217]	picWrite(cmd);
+;  226 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[219]	picWrite(cmd);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#2	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  226 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[218]	picWrite(arg);
+;  228 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[220]	picWrite(arg);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#1	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  228 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[219]	result = picRead();
+;  230 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[221]	result = picRead();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_picRead	; 
 ;----- asm -----
-;  230 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[220]	delay10ms();
+;  232 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[222]	delay10ms();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_delay10ms	; 
 ;----- asm -----
-;  232 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[221]	return result;
+;  234 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[223]	return result;
 ;  0 "" 2
-;  242 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[228]	    	sendCommand(CMD_EEPROM_WRITE, data);
+;  244 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[230]	    	sendCommand(CMD_EEPROM_WRITE, data);
 ;  0 "" 2
-;  220 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[215]	uint8_t result;
+;  222 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[217]	uint8_t result;
 ;  0 "" 2
-;  222 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[216]	picWrite('V');
+;  224 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[218]	picWrite('V');
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#86	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  224 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[217]	picWrite(cmd);
+;  226 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[219]	picWrite(cmd);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#3	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  226 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[218]	picWrite(arg);
+;  228 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[220]	picWrite(arg);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-1	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  228 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[219]	result = picRead();
+;  230 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[221]	result = picRead();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_picRead	; 
 ;----- asm -----
-;  230 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[220]	delay10ms();
+;  232 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[222]	delay10ms();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_delay10ms	; 
 ;----- asm -----
-;  232 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[221]	return result;
+;  234 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[223]	return result;
 ;  0 "" 2
 ;--- end asm ---
 	jmp	L274	; 
 L283:
 ;----- asm -----
-;  240 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[227]	    	sendCommand(CMD_SET_EEPROM_ADR, address);
+;  242 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[229]	    	sendCommand(CMD_SET_EEPROM_ADR, address);
 ;  0 "" 2
-;  220 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[215]	uint8_t result;
+;  222 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[217]	uint8_t result;
 ;  0 "" 2
-;  222 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[216]	picWrite('V');
+;  224 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[218]	picWrite('V');
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#86	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  224 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[217]	picWrite(cmd);
+;  226 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[219]	picWrite(cmd);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#2	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  226 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[218]	picWrite(arg);
+;  228 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[220]	picWrite(arg);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#2	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  228 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[219]	result = picRead();
+;  230 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[221]	result = picRead();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_picRead	; 
 ;----- asm -----
-;  230 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[220]	delay10ms();
+;  232 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[222]	delay10ms();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_delay10ms	; 
 ;----- asm -----
-;  232 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[221]	return result;
+;  234 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[223]	return result;
 ;  0 "" 2
-;  242 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[228]	    	sendCommand(CMD_EEPROM_WRITE, data);
+;  244 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[230]	    	sendCommand(CMD_EEPROM_WRITE, data);
 ;  0 "" 2
-;  220 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[215]	uint8_t result;
+;  222 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[217]	uint8_t result;
 ;  0 "" 2
-;  222 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[216]	picWrite('V');
+;  224 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[218]	picWrite('V');
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#86	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  224 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[217]	picWrite(cmd);
+;  226 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[219]	picWrite(cmd);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#3	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  226 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[218]	picWrite(arg);
+;  228 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[220]	picWrite(arg);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-1	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  228 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[219]	result = picRead();
+;  230 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[221]	result = picRead();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_picRead	; 
 ;----- asm -----
-;  230 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[220]	delay10ms();
+;  232 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[222]	delay10ms();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_delay10ms	; 
 ;----- asm -----
-;  232 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[221]	return result;
+;  234 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[223]	return result;
 ;  0 "" 2
 ;--- end asm ---
 	jmp	L275	; 
 L284:
 ;----- asm -----
-;  240 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[227]	    	sendCommand(CMD_SET_EEPROM_ADR, address);
+;  242 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[229]	    	sendCommand(CMD_SET_EEPROM_ADR, address);
 ;  0 "" 2
-;  220 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[215]	uint8_t result;
+;  222 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[217]	uint8_t result;
 ;  0 "" 2
-;  222 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[216]	picWrite('V');
+;  224 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[218]	picWrite('V');
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#86	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  224 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[217]	picWrite(cmd);
+;  226 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[219]	picWrite(cmd);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#2	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  226 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[218]	picWrite(arg);
+;  228 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[220]	picWrite(arg);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#3	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  228 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[219]	result = picRead();
+;  230 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[221]	result = picRead();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_picRead	; 
 ;----- asm -----
-;  230 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[220]	delay10ms();
+;  232 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[222]	delay10ms();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_delay10ms	; 
 ;----- asm -----
-;  232 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[221]	return result;
+;  234 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[223]	return result;
 ;  0 "" 2
-;  242 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[228]	    	sendCommand(CMD_EEPROM_WRITE, data);
+;  244 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[230]	    	sendCommand(CMD_EEPROM_WRITE, data);
 ;  0 "" 2
-;  220 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[215]	uint8_t result;
+;  222 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[217]	uint8_t result;
 ;  0 "" 2
-;  222 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[216]	picWrite('V');
+;  224 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[218]	picWrite('V');
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#86	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  224 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[217]	picWrite(cmd);
+;  226 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[219]	picWrite(cmd);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#3	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  226 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[218]	picWrite(arg);
+;  228 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[220]	picWrite(arg);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-1	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  228 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[219]	result = picRead();
+;  230 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[221]	result = picRead();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_picRead	; 
 ;----- asm -----
-;  230 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[220]	delay10ms();
+;  232 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[222]	delay10ms();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_delay10ms	; 
 ;----- asm -----
-;  232 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[221]	return result;
+;  234 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[223]	return result;
 ;  0 "" 2
 ;--- end asm ---
 	jmp	L276	; 
 L285:
 ;----- asm -----
-;  240 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[227]	    	sendCommand(CMD_SET_EEPROM_ADR, address);
+;  242 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[229]	    	sendCommand(CMD_SET_EEPROM_ADR, address);
 ;  0 "" 2
-;  220 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[215]	uint8_t result;
+;  222 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[217]	uint8_t result;
 ;  0 "" 2
-;  222 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[216]	picWrite('V');
+;  224 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[218]	picWrite('V');
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#86	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  224 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[217]	picWrite(cmd);
+;  226 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[219]	picWrite(cmd);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#2	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  226 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[218]	picWrite(arg);
+;  228 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[220]	picWrite(arg);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#4	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  228 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[219]	result = picRead();
+;  230 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[221]	result = picRead();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_picRead	; 
 ;----- asm -----
-;  230 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[220]	delay10ms();
+;  232 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[222]	delay10ms();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_delay10ms	; 
 ;----- asm -----
-;  232 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[221]	return result;
+;  234 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[223]	return result;
 ;  0 "" 2
-;  242 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[228]	    	sendCommand(CMD_EEPROM_WRITE, data);
+;  244 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[230]	    	sendCommand(CMD_EEPROM_WRITE, data);
 ;  0 "" 2
-;  220 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[215]	uint8_t result;
+;  222 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[217]	uint8_t result;
 ;  0 "" 2
-;  222 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[216]	picWrite('V');
+;  224 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[218]	picWrite('V');
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#86	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  224 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[217]	picWrite(cmd);
+;  226 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[219]	picWrite(cmd);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#3	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  226 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[218]	picWrite(arg);
+;  228 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[220]	picWrite(arg);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-1	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  228 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[219]	result = picRead();
+;  230 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[221]	result = picRead();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_picRead	; 
 ;----- asm -----
-;  230 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[220]	delay10ms();
+;  232 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[222]	delay10ms();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_delay10ms	; 
 ;----- asm -----
-;  232 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[221]	return result;
+;  234 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[223]	return result;
 ;  0 "" 2
 ;--- end asm ---
 	jmp	L277	; 
 L281:
 ;----- asm -----
-;  240 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[227]	    	sendCommand(CMD_SET_EEPROM_ADR, address);
+;  242 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[229]	    	sendCommand(CMD_SET_EEPROM_ADR, address);
 ;  0 "" 2
-;  220 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[215]	uint8_t result;
+;  222 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[217]	uint8_t result;
 ;  0 "" 2
-;  222 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[216]	picWrite('V');
+;  224 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[218]	picWrite('V');
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#86	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  224 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[217]	picWrite(cmd);
+;  226 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[219]	picWrite(cmd);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#2	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  226 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[218]	picWrite(arg);
+;  228 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[220]	picWrite(arg);
 ;  0 "" 2
 ;--- end asm ---
 	clrb	; 
 	jsr	_picWrite	; 
 ;----- asm -----
-;  228 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[219]	result = picRead();
+;  230 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[221]	result = picRead();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_picRead	; 
 ;----- asm -----
-;  230 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[220]	delay10ms();
+;  232 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[222]	delay10ms();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_delay10ms	; 
 ;----- asm -----
-;  232 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[221]	return result;
+;  234 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[223]	return result;
 ;  0 "" 2
-;  242 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[228]	    	sendCommand(CMD_EEPROM_WRITE, data);
+;  244 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[230]	    	sendCommand(CMD_EEPROM_WRITE, data);
 ;  0 "" 2
-;  220 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[215]	uint8_t result;
+;  222 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[217]	uint8_t result;
 ;  0 "" 2
-;  222 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[216]	picWrite('V');
+;  224 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[218]	picWrite('V');
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#86	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  224 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[217]	picWrite(cmd);
+;  226 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[219]	picWrite(cmd);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#3	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  226 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[218]	picWrite(arg);
+;  228 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[220]	picWrite(arg);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-1	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  228 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[219]	result = picRead();
+;  230 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[221]	result = picRead();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_picRead	; 
 ;----- asm -----
-;  230 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[220]	delay10ms();
+;  232 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[222]	delay10ms();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_delay10ms	; 
 ;----- asm -----
-;  232 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[221]	return result;
+;  234 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[223]	return result;
 ;  0 "" 2
 ;--- end asm ---
 	jmp	L273	; 
@@ -5430,96 +5448,96 @@ L281:
 _writeEeprom:
 	pshs	b	; 
 ;----- asm -----
-;  238 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[226]	if (picAvailable) {
+;  240 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[228]	if (picAvailable) {
 ;  0 "" 2
 ;--- end asm ---
 	tst	_picAvailable	;  picAvailable
 	lbeq	L289	; 
 ;----- asm -----
-;  240 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[227]	    	sendCommand(CMD_SET_EEPROM_ADR, address);
+;  242 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[229]	    	sendCommand(CMD_SET_EEPROM_ADR, address);
 ;  0 "" 2
-;  220 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[215]	uint8_t result;
+;  222 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[217]	uint8_t result;
 ;  0 "" 2
-;  222 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[216]	picWrite('V');
+;  224 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[218]	picWrite('V');
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#86	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  224 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[217]	picWrite(cmd);
+;  226 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[219]	picWrite(cmd);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#2	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  226 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[218]	picWrite(arg);
+;  228 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[220]	picWrite(arg);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	,s	; , address
 	jsr	_picWrite	; 
 ;----- asm -----
-;  228 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[219]	result = picRead();
+;  230 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[221]	result = picRead();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_picRead	; 
 ;----- asm -----
-;  230 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[220]	delay10ms();
+;  232 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[222]	delay10ms();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_delay10ms	; 
 ;----- asm -----
-;  232 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[221]	return result;
+;  234 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[223]	return result;
 ;  0 "" 2
-;  242 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[228]	    	sendCommand(CMD_EEPROM_WRITE, data);
+;  244 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[230]	    	sendCommand(CMD_EEPROM_WRITE, data);
 ;  0 "" 2
-;  220 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[215]	uint8_t result;
+;  222 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[217]	uint8_t result;
 ;  0 "" 2
-;  222 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[216]	picWrite('V');
+;  224 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[218]	picWrite('V');
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#86	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  224 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[217]	picWrite(cmd);
+;  226 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[219]	picWrite(cmd);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#3	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  226 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[218]	picWrite(arg);
+;  228 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[220]	picWrite(arg);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	3,s	; , data
 	jsr	_picWrite	; 
 ;----- asm -----
-;  228 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[219]	result = picRead();
+;  230 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[221]	result = picRead();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_picRead	; 
 ;----- asm -----
-;  230 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[220]	delay10ms();
+;  232 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[222]	delay10ms();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_delay10ms	; 
 ;----- asm -----
-;  232 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[221]	return result;
+;  234 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[223]	return result;
 ;  0 "" 2
 ;--- end asm ---
 L289:
@@ -5530,15 +5548,15 @@ _readEeprom:
 	leas	-2,s	; ,,
 	stb	,s	;  address, address
 ;----- asm -----
-;  249 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[234]	if (picAvailable) {
+;  251 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[236]	if (picAvailable) {
 ;  0 "" 2
 ;--- end asm ---
 	tst	_picAvailable	;  picAvailable
 	bne	L294	; 
 ;----- asm -----
-;  254 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[237]		return 0xff;
+;  256 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[239]		return 0xff;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-1	; ,
@@ -5547,48 +5565,48 @@ _readEeprom:
 	rts
 L294:
 ;----- asm -----
-;  251 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[235]		return sendCommand(CMD_EEPROM_READ, address);
+;  253 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[237]		return sendCommand(CMD_EEPROM_READ, address);
 ;  0 "" 2
-;  220 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[215]	uint8_t result;
+;  222 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[217]	uint8_t result;
 ;  0 "" 2
-;  222 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[216]	picWrite('V');
+;  224 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[218]	picWrite('V');
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#86	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  224 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[217]	picWrite(cmd);
+;  226 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[219]	picWrite(cmd);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#4	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  226 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[218]	picWrite(arg);
+;  228 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[220]	picWrite(arg);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	,s	; , address
 	jsr	_picWrite	; 
 ;----- asm -----
-;  228 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[219]	result = picRead();
+;  230 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[221]	result = picRead();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_picRead	; 
 	stb	1,s	; , result
 ;----- asm -----
-;  230 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[220]	delay10ms();
+;  232 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[222]	delay10ms();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_delay10ms	; 
 ;----- asm -----
-;  232 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[221]	return result;
+;  234 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[223]	return result;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	1,s	; , result
@@ -5599,116 +5617,116 @@ _startLevel:
 	pshs	y,u	; 
 	leas	-34,s	; ,,
 ;----- asm -----
-;  929 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[648]	if (levelNumber == 0) {
+;  933 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[651]	if (levelNumber == 0) {
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_levelNumber	; , levelNumber
 	stb	2,s	; ,
 	lbne	L296	; 
 ;----- asm -----
-;  931 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[649]		level = level0;
+;  935 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[652]		level = level0;
 ;  0 "" 2
 ;--- end asm ---
 	ldx	_level0	; , level0
 	stx	_level	; , level
 L297:
 ;----- asm -----
-;  941 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[656]	levelHighscore = readEeprom((uint8_t) (levelNumber * 2));
+;  945 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[659]	levelHighscore = readEeprom((uint8_t) (levelNumber * 2));
 ;  0 "" 2
-;  249 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[234]	if (picAvailable) {
+;  251 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[236]	if (picAvailable) {
 ;  0 "" 2
 ;--- end asm ---
 	tst	_picAvailable	;  picAvailable
 	lbne	L332	; 
 ;----- asm -----
-;  254 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[237]		return 0xff;
+;  256 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[239]		return 0xff;
 ;  0 "" 2
 ;--- end asm ---
-	ldx	#255	;  prephitmp.640,
+	ldx	#255	;  prephitmp.653,
 L300:
-	stx	_levelHighscore	;  prephitmp.640, levelHighscore
+	stx	_levelHighscore	;  prephitmp.653, levelHighscore
 ;----- asm -----
-;  943 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[657]	levelHighscore |= ((uint16_t) readEeprom((uint8_t) (levelNumber * 2 + 1))) << 8;
+;  947 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[660]	levelHighscore |= ((uint16_t) readEeprom((uint8_t) (levelNumber * 2 + 1))) << 8;
 ;  0 "" 2
-;  249 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[234]	if (picAvailable) {
+;  251 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[236]	if (picAvailable) {
 ;  0 "" 2
 ;--- end asm ---
 	tst	_picAvailable	;  picAvailable
 	lbne	L333	; 
 ;----- asm -----
-;  254 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[237]		return 0xff;
+;  256 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[239]		return 0xff;
 ;  0 "" 2
 ;--- end asm ---
-	ldd	#-256	;  prephitmp.642,
+	ldd	#-256	;  prephitmp.655,
 L302:
 	ora	_levelHighscore	; , levelHighscore
 	orb	_levelHighscore+1	; , levelHighscore
-	std	_levelHighscore	;  levelHighscore.36, levelHighscore
+	std	_levelHighscore	;  levelHighscore.37, levelHighscore
 ;----- asm -----
-;  945 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[658]	if (levelHighscore == 0) levelHighscore = 999;
+;  949 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[661]	if (levelHighscore == 0) levelHighscore = 999;
 ;  0 "" 2
 ;--- end asm ---
-	cmpd	#0	;  levelHighscore.36
+	cmpd	#0	;  levelHighscore.37
 	bne	L303	; 
 	ldx	#999	; ,
 	stx	_levelHighscore	; , levelHighscore
 L303:
 ;----- asm -----
-;  947 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[659]	lineCount = 0;
+;  951 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[662]	lineCount = 0;
 ;  0 "" 2
 ;--- end asm ---
 	clr	_lineCount	;  lineCount
 ;----- asm -----
-;  949 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[660]	setupX();
+;  953 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[663]	setupX();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_setupX	; 
 ;----- asm -----
-;  951 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[661]	setupY();
+;  955 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[664]	setupY();
 ;  0 "" 2
-;  668 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[503]	unsigned long int index;
+;  670 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[505]	unsigned long int index;
 ;  0 "" 2
-;  670 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[504]	int8_t x = 0;
+;  672 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[506]	int8_t x = 0;
 ;  0 "" 2
-;  672 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[505]	int8_t y = 0;
+;  674 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[507]	int8_t y = 0;
 ;  0 "" 2
-;  674 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[506]	for (x = 0; x < LEVEL_WIDTH - 1; x++) {
+;  676 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[508]	for (x = 0; x < LEVEL_WIDTH - 1; x++) {
 ;  0 "" 2
 ;--- end asm ---
-	ldu	#0	;  ivtmp.712,
+	ldu	#0	;  ivtmp.727,
 L310:
 ;----- asm -----
-;  676 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[507]		int8_t y0 = -1;
+;  678 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[509]		int8_t y0 = -1;
 ;  0 "" 2
-;  678 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[508]		int8_t y1 = -1;
+;  680 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[510]		int8_t y1 = -1;
 ;  0 "" 2
-;  680 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[509]		for (y = 0; y < LEVEL_HEIGHT; y++) {
+;  682 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[511]		for (y = 0; y < LEVEL_HEIGHT; y++) {
 ;  0 "" 2
 ;--- end asm ---
-	stu	23,s	;  ivtmp.712, ivtmp.696
+	stu	23,s	;  ivtmp.727, ivtmp.709
 	clr	6,s	;  y0
 	ldb	#-1	; ,
-	stb	25,s	; , y0.707
-	stb	26,s	; , y0.708
+	stb	25,s	; , y0.720
+	stb	26,s	; , y0.721
 	jmp	L309	; 
 L335:
 	cmpb	#97	;cmpqi:	; ,
@@ -5716,8 +5734,8 @@ L335:
 	cmpb	#111	;cmpqi:	; ,
 	lbeq	L304	; 
 ;----- asm -----
-;  293 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[265]	return (char)(c == '.' || c == 'a' || c == 'o');
+;  295 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[267]	return (char)(c == '.' || c == 'a' || c == 'o');
 ;  0 "" 2
 ;--- end asm ---
 	ldb	7,s	; , c1
@@ -5728,74 +5746,74 @@ L335:
 	cmpb	#111	;cmpqi:	; ,
 	lbeq	L304	; 
 ;----- asm -----
-;  699 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[521]				if (y0 >= 0) {
+;  701 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[523]				if (y0 >= 0) {
 ;  0 "" 2
 ;--- end asm ---
-	ldb	25,s	; , y0.707
+	ldb	25,s	; , y0.720
 	cmpb	#-1	;cmpqi:	; ,
 	beq	L308	; 
 ;----- asm -----
-;  701 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[522]					addLine(x + 1, y0, x + 1, y1 + 1);
+;  703 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[524]					addLine(x + 1, y0, x + 1, y1 + 1);
 ;  0 "" 2
 ;--- end asm ---
-	tfr	u,d	;movlsbqihi: R:u -> R:b	;  ivtmp.712,
+	tfr	u,d	;movlsbqihi: R:u -> R:b	;  ivtmp.727,
 	incb	; 
-	stb	,s	; , D.4149
-	ldb	26,s	; , y0.708
+	stb	,s	; , D.4162
+	ldb	26,s	; , y0.721
 	incb	; 
 	pshs	b	; 
-	ldb	1,s	; , D.4149
+	ldb	1,s	; , D.4162
 	pshs	b	; 
-	ldb	27,s	; , y0.707
+	ldb	27,s	; , y0.720
 	pshs	b	; 
-	ldb	3,s	; , D.4149
+	ldb	3,s	; , D.4162
 	jsr	_addLine	; 
 ;----- asm -----
-;  703 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[523]					y0 = -1;
+;  705 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[525]					y0 = -1;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-1	; ,
-	stb	28,s	; , y0.707
+	stb	28,s	; , y0.720
 	leas	3,s	; ,,
 L308:
 	inc	6,s	;  y0
-	ldd	23,s	; , ivtmp.696
+	ldd	23,s	; , ivtmp.709
 	addd	#12	; ,
-	std	23,s	; , ivtmp.696
+	std	23,s	; , ivtmp.709
 	ldb	6,s	; , y0
 	cmpb	#17	;cmpqi:	; ,
 	lbeq	L334	; 
 L309:
 ;----- asm -----
-;  686 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[514]			index = (unsigned long int) y*LEVEL_WIDTH +  (unsigned long int)x;
+;  688 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[516]			index = (unsigned long int) y*LEVEL_WIDTH +  (unsigned long int)x;
 ;  0 "" 2
-;  688 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[515]			char c0 = level[index];
+;  690 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[517]			char c0 = level[index];
 ;  0 "" 2
 ;--- end asm ---
-	ldx	23,s	;  tmp105, ivtmp.696
+	ldx	23,s	;  tmp105, ivtmp.709
 	exg	d,x	; , tmp105
 	addd	_level	; , level
 	exg	d,x	; , tmp105
 	ldb	,x+	; ,
 	stb	,s	; , c0
 ;----- asm -----
-;  690 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[516]			char c1 = level[index+1];
+;  692 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[518]			char c1 = level[index+1];
 ;  0 "" 2
 ;--- end asm ---
 	ldb	,x	; ,
 	stb	7,s	; , c1
 ;----- asm -----
-;  692 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[517]			if (isField(c0) || isField(c1)) {
+;  694 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[519]			if (isField(c0) || isField(c1)) {
 ;  0 "" 2
-;  293 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[265]	return (char)(c == '.' || c == 'a' || c == 'o');
+;  295 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[267]	return (char)(c == '.' || c == 'a' || c == 'o');
 ;  0 "" 2
 ;--- end asm ---
 	ldb	,s	; , c0
@@ -5803,116 +5821,123 @@ L309:
 	lbne	L335	; 
 L304:
 ;----- asm -----
-;  694 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[518]				if (y0 < 0) y0 = y;
+;  696 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[520]				if (y0 < 0) y0 = y;
 ;  0 "" 2
 ;--- end asm ---
-	ldb	25,s	; , y0.707
+	ldb	25,s	; , y0.720
 	cmpb	#-1	;cmpqi:	; ,
 	beq	L336	; 
 L307:
 ;----- asm -----
-;  696 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[519]				y1 = y;
+;  698 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[521]				y1 = y;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	6,s	; , y0
-	stb	26,s	; , y0.708
+	stb	26,s	; , y0.721
 	jmp	L308	; 
 L336:
 	ldb	6,s	; , y0
-	stb	25,s	; , y0.707
+	stb	25,s	; , y0.720
 	bra	L307	; 
 L334:
-	leau	1,u	;  ivtmp.712,, ivtmp.712
-	cmpu	#11	;cmphi:	;  ivtmp.712,
+	leau	1,u	;  ivtmp.727,, ivtmp.727
+	cmpu	#11	;cmphi:	;  ivtmp.727,
 	lbne	L310	; 
 ;----- asm -----
-;  953 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[662]	blockX = startX;
+;  957 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[665]	blockX = startX;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_startX	; , startX
 	stb	_blockX	; , blockX
 ;----- asm -----
-;  955 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[663]	blockY = startY;
+;  959 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[666]	blockY = startY;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_startY	; , startY
 	stb	_blockY	; , blockY
 ;----- asm -----
-;  957 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[664]	blockAnimation = height2FallingLeft;
+;  961 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[667]	blockAnimation = height2FallingLeft;
 ;  0 "" 2
 ;--- end asm ---
 	ldx	#_height2FallingLeft	; ,
 	stx	_blockAnimation	; , blockAnimation
 ;----- asm -----
-;  959 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[665]	blockAnimationStep = 0;
+;  963 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[668]	blockAnimationStep = 0;
 ;  0 "" 2
 ;--- end asm ---
 	clr	_blockAnimationStep	;  blockAnimationStep
 ;----- asm -----
-;  961 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[666]	blockAnimating = 0;
+;  965 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[669]	blockAnimating = 0;
 ;  0 "" 2
 ;--- end asm ---
 	clr	_blockAnimating	;  blockAnimating
 ;----- asm -----
-;  963 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[667]	blockOrientation = Standing;
+;  967 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[670]	blockOrientation = Standing;
 ;  0 "" 2
 ;--- end asm ---
 	clr	_blockOrientation	;  blockOrientation
 ;----- asm -----
-;  965 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[668]	blockYOfs = -30;
+;  969 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[671]	blockYOfs = -30;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-30	; ,
 	stb	_blockYOfs	; , blockYOfs
 ;----- asm -----
-;  967 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[669]	gameState = BlockMovingToStart;
+;  971 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[672]	gameState = BlockMovingToStart;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#2	; ,
 	stb	_gameState	; , gameState
 ;----- asm -----
-;  969 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[670]	changeMusic(startMusic);
+;  973 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[673]	changeMusic(startMusic);
 ;  0 "" 2
-;  713 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[532]	tstat = 1;
+;  715 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[534]	tstat = 1;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#1	; ,
 	stb	-14250	; ,
 ;----- asm -----
-;  715 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[533]	currentMusic = music;
+;  717 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[535]	currentMusic = music;
 ;  0 "" 2
 ;--- end asm ---
 	ldx	#_startMusic	; ,
 	stx	_currentMusic	; , currentMusic
 ;----- asm -----
-;  971 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[671]	moveCount = 0;
+;  975 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[674]	*vecx = 2;
+;  0 "" 2
+;--- end asm ---
+	ldb	#2	; ,
+	stb	[_vecx]	; ,* vecx
+;----- asm -----
+;  977 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[675]	moveCount = 0;
 ;  0 "" 2
 ;--- end asm ---
 	ldd	#0	; ,
 	std	_moveCount	; , moveCount
 ;----- asm -----
-;  973 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[672]	updateInfoText();
+;  979 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[676]	updateInfoText();
 ;  0 "" 2
-;  285 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[259]	itoa(moveCount, &infoText[0]);
+;  287 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[261]	itoa(moveCount, &infoText[0]);
 ;  0 "" 2
-;  263 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[245]	uint16_t muls[] = { 100, 10, 1 };
+;  265 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[247]	uint16_t muls[] = { 100, 10, 1 };
 ;  0 "" 2
 ;--- end asm ---
 	ldd	#100	; ,
@@ -5922,96 +5947,96 @@ L334:
 	ldd	#1	; ,
 	std	32,s	; , muls
 ;----- asm -----
-;  265 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[246]	if (number > 999) number = 999;
+;  267 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[248]	if (number > 999) number = 999;
 ;  0 "" 2
-;  267 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[247]	for (uint8_t i = 0; i < 3; i++) {
+;  269 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[249]	for (uint8_t i = 0; i < 3; i++) {
 ;  0 "" 2
 ;--- end asm ---
 	leax	28,s	; ,,
-	stx	19,s	; , ivtmp.687
+	stx	19,s	; , ivtmp.700
 	ldx	#_infoText	; ,
-	stx	21,s	; , ivtmp.689
+	stx	21,s	; , ivtmp.702
 	ldd	#0	; ,
-	std	,s	; , number.710
-	ldx	19,s	; , ivtmp.687
+	std	,s	; , number.723
+	ldx	19,s	; , ivtmp.700
 L314:
 ;----- asm -----
-;  269 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[248]		uint8_t d = 0;
+;  271 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[250]		uint8_t d = 0;
 ;  0 "" 2
-;  271 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[249]		while (number >= muls[i]) {
+;  273 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[251]		while (number >= muls[i]) {
 ;  0 "" 2
 ;--- end asm ---
-	ldu	,x	;  D.4157, muls
+	ldu	,x	;  D.4170, muls
 	ldb	#48	; ,
-	stb	10,s	; , prephitmp.648
-	cmpu	,s	;cmphi:	;  D.4157, number.710
+	stb	10,s	; , prephitmp.661
+	cmpu	,s	;cmphi:	;  D.4170, number.723
 	bhi	L312	; 
-	tfr	u,d	;  D.4157,
+	tfr	u,d	;  D.4170,
 	nega
 	negb
 	sbca	#0
-	std	17,s	; , ivtmp.678
-	ldd	,s	; , number.710
-	pshs	u	;subhi: R:d -= R:u	;  D.4157,
+	std	17,s	; , ivtmp.691
+	ldd	,s	; , number.723
+	pshs	u	;subhi: R:d -= R:u	;  D.4170,
 	subd	,s++	; 
-	std	,s	; , number.710
+	std	,s	; , number.723
 	clr	8,s	;  d
 L313:
 ;----- asm -----
-;  273 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[250]			d++;
+;  275 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[252]			d++;
 ;  0 "" 2
 ;--- end asm ---
 	inc	8,s	;  d
 ;----- asm -----
-;  275 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[251]			number -= muls[i];
+;  277 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[253]			number -= muls[i];
 ;  0 "" 2
 ;--- end asm ---
-	ldy	,s	;  number.716, number.710
+	ldy	,s	;  number.729, number.723
 	tfr	y,d	; ,
-	addd	17,s	; , ivtmp.678
-	std	,s	; , number.710
-	leax	d,u	;  tmp115,, D.4157
-	pshs	u	;cmphi: R:u with R:x	;  D.4157, tmp115
-	cmpx	,s++	;cmphi:	;  tmp115
+	addd	17,s	; , ivtmp.691
+	std	,s	; , number.723
+	leax	d,u	;  tmp116,, D.4170
+	pshs	u	;cmphi: R:u with R:x	;  D.4170, tmp116
+	cmpx	,s++	;cmphi:	;  tmp116
 	bhs	L313	; 
-	sty	,s	;  number.716, number.710
+	sty	,s	;  number.729, number.723
 	ldb	8,s	; , d
 	addb	#48	; ,
-	stb	10,s	; , prephitmp.648
+	stb	10,s	; , prephitmp.661
 L312:
 ;----- asm -----
-;  278 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[253]		text[i] = d + '0';
+;  280 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[255]		text[i] = d + '0';
 ;  0 "" 2
 ;--- end asm ---
-	ldx	21,s	; , ivtmp.689
+	ldx	21,s	; , ivtmp.702
 	leax	1,x	; ,,
-	stx	21,s	; , ivtmp.689
+	stx	21,s	; , ivtmp.702
 	leax	-1,x	; ,,
 	stb	,x+	; ,
-	ldx	19,s	; , ivtmp.687
+	ldx	19,s	; , ivtmp.700
 	leax	2,x	; ,,
-	stx	19,s	; , ivtmp.687
+	stx	19,s	; , ivtmp.700
 	tfr	s,d	; ,
 	addd	#34	; ,
 	pshs	d	;cmphi: R:d with R:x	; ,
 	cmpx	,s++	;cmphi:	; 
 	lbne	L314	; 
 ;----- asm -----
-;  287 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[260]	itoa(levelHighscore, &infoText[6]);
+;  289 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[262]	itoa(levelHighscore, &infoText[6]);
 ;  0 "" 2
 ;--- end asm ---
-	ldu	_levelHighscore	;  number.709, levelHighscore
+	ldu	_levelHighscore	;  number.722, levelHighscore
 ;----- asm -----
-;  263 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[245]	uint16_t muls[] = { 100, 10, 1 };
+;  265 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[247]	uint16_t muls[] = { 100, 10, 1 };
 ;  0 "" 2
 ;--- end asm ---
 	ldd	#100	; ,
@@ -6021,88 +6046,88 @@ L312:
 	ldd	#1	; ,
 	std	32,s	; , muls
 ;----- asm -----
-;  265 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[246]	if (number > 999) number = 999;
+;  267 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[248]	if (number > 999) number = 999;
 ;  0 "" 2
 ;--- end asm ---
-	stu	,s	;  number.709, number
-	cmpu	#999	;cmphi:	;  number.709,
+	stu	,s	;  number.722, number
+	cmpu	#999	;cmphi:	;  number.722,
 	bls	L315	; 
 	ldx	#999	; ,
 	stx	,s	; , number
 L315:
 ;----- asm -----
-;  267 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[247]	for (uint8_t i = 0; i < 3; i++) {
+;  269 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[249]	for (uint8_t i = 0; i < 3; i++) {
 ;  0 "" 2
 ;--- end asm ---
 	leax	28,s	; ,,
-	stx	13,s	; , ivtmp.671
+	stx	13,s	; , ivtmp.684
 	ldx	#_infoText+6	; ,
-	stx	15,s	; , ivtmp.673
-	ldx	13,s	; , ivtmp.671
+	stx	15,s	; , ivtmp.686
+	ldx	13,s	; , ivtmp.684
 L319:
 ;----- asm -----
-;  269 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[248]		uint8_t d = 0;
+;  271 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[250]		uint8_t d = 0;
 ;  0 "" 2
-;  271 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[249]		while (number >= muls[i]) {
+;  273 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[251]		while (number >= muls[i]) {
 ;  0 "" 2
 ;--- end asm ---
-	ldu	,x	;  D.4166, muls
+	ldu	,x	;  D.4179, muls
 	ldb	#48	; ,
-	stb	27,s	; , prephitmp.715
-	cmpu	,s	;cmphi:	;  D.4166, number
+	stb	27,s	; , prephitmp.728
+	cmpu	,s	;cmphi:	;  D.4179, number
 	bhi	L317	; 
-	tfr	u,d	;  D.4166,
+	tfr	u,d	;  D.4179,
 	nega
 	negb
 	sbca	#0
-	std	11,s	; , ivtmp.662
+	std	11,s	; , ivtmp.675
 	ldd	,s	; , number
-	pshs	u	;subhi: R:d -= R:u	;  D.4166,
+	pshs	u	;subhi: R:d -= R:u	;  D.4179,
 	subd	,s++	; 
 	std	,s	; , number
 	clr	9,s	;  d
 L318:
 ;----- asm -----
-;  273 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[250]			d++;
+;  275 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[252]			d++;
 ;  0 "" 2
 ;--- end asm ---
 	inc	9,s	;  d
 ;----- asm -----
-;  275 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[251]			number -= muls[i];
+;  277 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[253]			number -= muls[i];
 ;  0 "" 2
 ;--- end asm ---
-	ldy	,s	;  number.717, number
+	ldy	,s	;  number.730, number
 	tfr	y,d	; ,
-	addd	11,s	; , ivtmp.662
+	addd	11,s	; , ivtmp.675
 	std	,s	; , number
-	leax	d,u	;  tmp121,, D.4166
-	pshs	u	;cmphi: R:u with R:x	;  D.4166, tmp121
-	cmpx	,s++	;cmphi:	;  tmp121
+	leax	d,u	;  tmp122,, D.4179
+	pshs	u	;cmphi: R:u with R:x	;  D.4179, tmp122
+	cmpx	,s++	;cmphi:	;  tmp122
 	bhs	L318	; 
-	sty	,s	;  number.717, number
+	sty	,s	;  number.730, number
 	ldb	9,s	; , d
 	addb	#48	; ,
-	stb	27,s	; , prephitmp.715
+	stb	27,s	; , prephitmp.728
 L317:
 ;----- asm -----
-;  278 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[253]		text[i] = d + '0';
+;  280 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[255]		text[i] = d + '0';
 ;  0 "" 2
 ;--- end asm ---
-	ldx	15,s	; , ivtmp.673
+	ldx	15,s	; , ivtmp.686
 	leax	1,x	; ,,
-	stx	15,s	; , ivtmp.673
+	stx	15,s	; , ivtmp.686
 	leax	-1,x	; ,,
 	stb	,x+	; ,
-	ldx	13,s	; , ivtmp.671
+	ldx	13,s	; , ivtmp.684
 	leax	2,x	; ,,
-	stx	13,s	; , ivtmp.671
+	stx	13,s	; , ivtmp.684
 	tfr	s,d	; ,
 	addd	#34	; ,
 	pshs	d	;cmphi: R:d with R:x	; ,
@@ -6114,8 +6139,8 @@ L296:
 	cmpb	#1	;cmpqi:	; ,
 	beq	L337	; 
 ;----- asm -----
-;  937 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[653]		level = level2;
+;  941 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[656]		level = level2;
 ;  0 "" 2
 ;--- end asm ---
 	ldd	_level2	; , level2
@@ -6123,8 +6148,8 @@ L296:
 	jmp	L297	; 
 L337:
 ;----- asm -----
-;  934 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[651]		level = level1;
+;  938 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[654]		level = level1;
 ;  0 "" 2
 ;--- end asm ---
 	ldx	_level1	; , level1
@@ -6132,81 +6157,81 @@ L337:
 	jmp	L297	; 
 L332:
 ;----- asm -----
-;  251 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[235]		return sendCommand(CMD_EEPROM_READ, address);
+;  253 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[237]		return sendCommand(CMD_EEPROM_READ, address);
 ;  0 "" 2
-;  220 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[215]	uint8_t result;
+;  222 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[217]	uint8_t result;
 ;  0 "" 2
-;  222 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[216]	picWrite('V');
+;  224 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[218]	picWrite('V');
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#86	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  224 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[217]	picWrite(cmd);
+;  226 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[219]	picWrite(cmd);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#4	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  226 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[218]	picWrite(arg);
+;  228 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[220]	picWrite(arg);
 ;  0 "" 2
 ;--- end asm ---
 	asl	2,s	; 
 	ldb	2,s	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  228 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[219]	result = picRead();
+;  230 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[221]	result = picRead();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_picRead	; 
 	stb	3,s	; , result
 ;----- asm -----
-;  230 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[220]	delay10ms();
+;  232 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[222]	delay10ms();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_delay10ms	; 
 ;----- asm -----
-;  232 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[221]	return result;
+;  234 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[223]	return result;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	3,s	; , result
 	clra		;zero_extendqihi: R:b -> R:d	; ,
-	tfr	d,x	; , prephitmp.640
+	tfr	d,x	; , prephitmp.653
 	ldb	_levelNumber	; , levelNumber
 	stb	2,s	; ,
 	jmp	L300	; 
 L333:
 ;----- asm -----
-;  251 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[235]		return sendCommand(CMD_EEPROM_READ, address);
+;  253 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[237]		return sendCommand(CMD_EEPROM_READ, address);
 ;  0 "" 2
-;  220 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[215]	uint8_t result;
+;  222 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[217]	uint8_t result;
 ;  0 "" 2
-;  222 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[216]	picWrite('V');
+;  224 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[218]	picWrite('V');
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#86	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  224 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[217]	picWrite(cmd);
+;  226 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[219]	picWrite(cmd);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#4	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  226 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[218]	picWrite(arg);
+;  228 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[220]	picWrite(arg);
 ;  0 "" 2
 ;--- end asm ---
 	asl	2,s	; 
@@ -6214,21 +6239,21 @@ L333:
 	ldb	2,s	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  228 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[219]	result = picRead();
+;  230 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[221]	result = picRead();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_picRead	; 
 	stb	5,s	; , result
 ;----- asm -----
-;  230 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[220]	delay10ms();
+;  232 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[222]	delay10ms();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_delay10ms	; 
 ;----- asm -----
-;  232 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[221]	return result;
+;  234 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[223]	return result;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	5,s	; , result
@@ -6304,32 +6329,32 @@ _mainMenu:
 	pshs	u	; 
 	leas	-5,s	; ,,
 ;----- asm -----
-;  1199 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[820]	Read_Btns();
+;  1209 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[826]	Read_Btns();
 ;  0 "" 2
-;  2286 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  2286 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	jsr ___Read_Btns; BIOS call
 ;  0 "" 2
-;  1201 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[821]    Intensity_a(0x5f);
+;  1211 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[827]    Intensity_a(0x5f);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#95	; ,
 	stb	3,s	; , a
 ;----- asm -----
-;  3427 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3427 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 3,s	;  a
 	jsr ___Intensity_a; BIOS call
 ;  0 "" 2
-;  1203 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[822]    Vec_Text_Width = 90;
+;  1213 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[828]    Vec_Text_Width = 90;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#90	; ,
 	stb	_Vec_Text_Width	; , Vec_Text_Width
 ;----- asm -----
-;  1205 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[823]    Print_Str_d(100, -70, "MAIN MENU�");
+;  1215 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[829]    Print_Str_d(100, -70, "MAIN MENU�");
 ;  0 "" 2
 ;--- end asm ---
 	addb	#10	; ,
@@ -6339,14 +6364,14 @@ _mainMenu:
 	ldx	#LC3	; ,
 	stx	1,s	; , u
 ;----- asm -----
-;  666 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  666 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 3,s	;  a
 	ldb 4,s	;  b
 	ldu 1,s	;  u
 	jsr ___Print_Str_d; BIOS call
 ;  0 "" 2
-;  1207 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[824]    Print_Str_d(50, -110, "1 START GAME�");
+;  1217 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[830]    Print_Str_d(50, -110, "1 START GAME�");
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#50	; ,
@@ -6356,14 +6381,14 @@ _mainMenu:
 	ldx	#LC4	; ,
 	stx	1,s	; , u
 ;----- asm -----
-;  666 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  666 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 4,s	;  a
 	ldb 3,s	;  b
 	ldu 1,s	;  u
 	jsr ___Print_Str_d; BIOS call
 ;  0 "" 2
-;  1209 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[825]    Print_Str_d(20, -110, "2 CLEAR HIGHSCORE�");
+;  1219 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[831]    Print_Str_d(20, -110, "2 CLEAR HIGHSCORE�");
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#20	; ,
@@ -6373,14 +6398,14 @@ _mainMenu:
 	ldx	#LC5	; ,
 	stx	1,s	; , u
 ;----- asm -----
-;  666 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  666 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 3,s	;  a
 	ldb 4,s	;  b
 	ldu 1,s	;  u
 	jsr ___Print_Str_d; BIOS call
 ;  0 "" 2
-;  1211 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[826]    Print_Str_d(-10, -110, "3 BANKING TEST�");
+;  1221 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[832]    Print_Str_d(-10, -110, "3 BANKING TEST�");
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-10	; ,
@@ -6390,14 +6415,14 @@ _mainMenu:
 	ldx	#LC6	; ,
 	stx	1,s	; , u
 ;----- asm -----
-;  666 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  666 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 4,s	;  a
 	ldb 3,s	;  b
 	ldu 1,s	;  u
 	jsr ___Print_Str_d; BIOS call
 ;  0 "" 2
-;  1213 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[827]	if (Vec_Buttons & 1) {
+;  1223 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[833]	if (Vec_Buttons & 1) {
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_Vec_Buttons	; , Vec_Buttons
@@ -6406,73 +6431,73 @@ _mainMenu:
 	lbne	L343	; 
 L339:
 ;----- asm -----
-;  1218 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[830]	if (Vec_Buttons & 2) {
+;  1228 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[836]	if (Vec_Buttons & 2) {
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#2	;  tmp34,
 	andb	,s	;  tmp34,
 	beq	L340	; 
 ;----- asm -----
-;  1220 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[831]		gameState = ClearMenu;
+;  1230 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[837]		gameState = ClearMenu;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#1	; ,
 	stb	_gameState	; , gameState
 L340:
 ;----- asm -----
-;  1223 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[833]	if (Vec_Buttons & 4) {
+;  1233 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[839]	if (Vec_Buttons & 4) {
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#4	; ,
 	andb	,s	; ,
 	beq	L342	; 
 ;----- asm -----
-;  1225 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[834]		sendCommand(CMD_SET_BANK, 1);
+;  1235 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[840]		sendCommand(CMD_SET_BANK, 1);
 ;  0 "" 2
-;  220 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[215]	uint8_t result;
+;  222 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[217]	uint8_t result;
 ;  0 "" 2
-;  222 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[216]	picWrite('V');
+;  224 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[218]	picWrite('V');
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#86	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  224 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[217]	picWrite(cmd);
+;  226 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[219]	picWrite(cmd);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#5	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  226 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[218]	picWrite(arg);
+;  228 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[220]	picWrite(arg);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#1	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  228 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[219]	result = picRead();
+;  230 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[221]	result = picRead();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_picRead	; 
 ;----- asm -----
-;  230 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[220]	delay10ms();
+;  232 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[222]	delay10ms();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_delay10ms	; 
 ;----- asm -----
-;  232 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[221]	return result;
+;  234 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[223]	return result;
 ;  0 "" 2
-;  1227 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  1237 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 		jmp 0xf000
 ;  0 "" 2
 ;--- end asm ---
@@ -6481,8 +6506,8 @@ L342:
 	puls	u,pc	; 
 L343:
 ;----- asm -----
-;  1215 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[828]		startLevel();
+;  1225 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[834]		startLevel();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_startLevel	; 
@@ -6494,31 +6519,31 @@ _blockFalling:
 	pshs	u	; 
 	leas	-11,s	; ,,
 ;----- asm -----
-;  1153 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[791]	drawField();
+;  1163 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[797]	drawField();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_drawField	; 
 ;----- asm -----
-;  1155 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[792]	blockYOfs++;
+;  1165 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[798]	blockYOfs++;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockYOfs	; , blockYOfs
 	incb	; 
-	stb	5,s	; , blockYOfs.64
+	stb	5,s	; , blockYOfs.68
 	stb	_blockYOfs	; , blockYOfs
 ;----- asm -----
-;  1157 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[793]	if (blockYOfs < 12) {
+;  1167 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[799]	if (blockYOfs < 12) {
 ;  0 "" 2
 ;--- end asm ---
 	cmpb	#11	;cmpqi:	; ,
 	ble	L348	; 
 L345:
 ;----- asm -----
-;  1164 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[797]	if (blockYOfs == 50) {
+;  1174 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[803]	if (blockYOfs == 50) {
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockYOfs	; , blockYOfs
@@ -6528,85 +6553,85 @@ L345:
 	puls	u,pc	; 
 L348:
 ;----- asm -----
-;  1159 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[794]		drawBlock(-blockYOfs*blockYOfs);
+;  1169 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[800]		drawBlock(-blockYOfs*blockYOfs);
 ;  0 "" 2
-;  993 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[689]	zergnd();
+;  999 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[693]	zergnd();
 ;  0 "" 2
-;  181 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  181 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	jsr ___Reset0Ref; BIOS call
 ;  0 "" 2
-;  995 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[690]	intens(0x63);
+;  1001 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[694]	intens(0x63);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#99	; ,
 	stb	9,s	; , a
 ;----- asm -----
-;  3427 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3427 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 9,s	;  a
 	jsr ___Intensity_a; BIOS call
 ;  0 "" 2
-;  997 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[691]	positd(0, yofs);
+;  1003 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[695]	positd(0, yofs);
 ;  0 "" 2
-;  52 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  52 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[51]	dp_VIA_t1_cnt_lo = 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-128	; ,
 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo
 ;----- asm -----
-;  54 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  54 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[52]	Moveto_d(y,x);
 ;  0 "" 2
 ;--- end asm ---
-	ldb	5,s	;  tmp32, blockYOfs.64
+	ldb	5,s	;  tmp32, blockYOfs.68
 	negb	;  tmp32
-	lda	5,s	;mulqihi3	;  blockYOfs.64
+	lda	5,s	;mulqihi3	;  blockYOfs.68
 	mul
 	stb	10,s	;movlsbqihi: R:d -> 10,s	;  a, tmp33
 	clr	9,s	;  b
 ;----- asm -----
-;  3315 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3315 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 10,s	;  a
 	ldb 9,s	;  b
 	jsr ___Moveto_d; BIOS call
 ;  0 "" 2
-;  1000 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[693]	positd(x3d(blockX, 0, blockY), y3d(blockX, 0, blockY));
+;  1006 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[697]	positd(x3d(blockX, 0, blockY), y3d(blockX, 0, blockY));
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockX	; , blockX
-	stb	6,s	; , blockX.40
+	stb	6,s	; , blockX.42
 ;----- asm -----
-;  309 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[278]	y -= LEVEL_HEIGHT / 2;
+;  311 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[280]	y -= LEVEL_HEIGHT / 2;
 ;  0 "" 2
-;  311 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[279]	return 3 * x + 13 * y + 8 * z;
+;  313 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[281]	return 3 * x + 13 * y + 8 * z;
 ;  0 "" 2
-;  300 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[271]	x -= LEVEL_WIDTH / 2 - 4;
+;  302 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[273]	x -= LEVEL_WIDTH / 2 - 4;
 ;  0 "" 2
-;  302 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[272]	return 14 * x - 6 * z+0*y;
+;  304 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[274]	return 14 * x - 6 * z+0*y;
 ;  0 "" 2
-;  52 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  52 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[51]	dp_VIA_t1_cnt_lo = 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-128	; ,
 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo
 ;----- asm -----
-;  54 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  54 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[52]	Moveto_d(y,x);
 ;  0 "" 2
 ;--- end asm ---
-	ldb	6,s	; , blockX.40
+	ldb	6,s	; , blockX.42
 	aslb	; 
-	addb	6,s	; , blockX.40
+	addb	6,s	; , blockX.42
 	stb	2,s	; ,
 	ldb	_blockY	; , blockY
 	aslb	; 
@@ -6617,7 +6642,7 @@ L348:
 	addb	4,s	; ,
 	addb	#-104	; ,
 	stb	9,s	; , a
-	ldb	6,s	; , blockX.40
+	ldb	6,s	; , blockX.42
 	addb	#-2	; ,
 	lda	#14	;mulqihi3	; 
 	mul
@@ -6632,13 +6657,13 @@ L348:
 	addb	3,s	;  tmp43,
 	stb	10,s	;  tmp43, b
 ;----- asm -----
-;  3315 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3315 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 9,s	;  a
 	ldb 10,s	;  b
 	jsr ___Moveto_d; BIOS call
 ;  0 "" 2
-;  1002 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[694]	pack1x((void*)(blockAnimation[blockAnimationStep]));
+;  1008 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[698]	pack1x((void*)(blockAnimation[blockAnimationStep]));
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockAnimationStep	; , blockAnimationStep
@@ -6648,9 +6673,9 @@ L348:
 	rola	; 
 	ldu	_blockAnimation	; , blockAnimation
 	leax	d,u	;  tmp47, tmp46,
-	ldx	,x	;  D.4341,
+	ldx	,x	;  D.4355,
 ;----- asm -----
-;  59 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  59 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[56]	dp_VIA_t1_cnt_lo = 0x80;
 ;  0 "" 2
 ;--- end asm ---
@@ -6658,80 +6683,80 @@ L348:
 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo
 ; Applied peep: 2 (no load after store)
 ;----- asm -----
-;  61 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  61 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[57]	Draw_VLp(x);
 ;  0 "" 2
 ;--- end asm ---
 ;----- asm -----
-;  1610 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
-	stx	7,s	;  D.4341, x
+;  1610 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+	stx	7,s	;  D.4355, x
 ; ORG>;----- asm -----
-; ORG>;  61 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+; ORG>;  61 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 ; ORG>	; $ENR$[57]	Draw_VLp(x);
 ; ORG>;  0 "" 2
 ; ORG>;--- end asm ---
-; ORG>	stx	7,s	;  D.4341, x
+; ORG>	stx	7,s	;  D.4355, x
 ; ORG>;----- asm -----
-; ORG>;  1610 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+; ORG>;  1610 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 ; ORG>	ldx 7,s	;  x
 	jsr ___Draw_VLp; BIOS call
 ;  0 "" 2
-;  1161 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[795]		doBlockAnimation();
+;  1171 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[801]		doBlockAnimation();
 ;  0 "" 2
-;  1060 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[732]	if (blockAnimating) {
+;  1068 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[737]	if (blockAnimating) {
 ;  0 "" 2
 ;--- end asm ---
 	tst	_blockAnimating	;  blockAnimating
 	lbeq	L345	; 
 ;----- asm -----
-;  1062 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[733]		if (++blockAnimationStep == BLOCK_STEPS_COUNT) {
+;  1070 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[738]		if (++blockAnimationStep == BLOCK_STEPS_COUNT) {
 ;  0 "" 2
 ;--- end asm ---
 	inc	_blockAnimationStep	;  blockAnimationStep
-	ldb	_blockAnimationStep	;  blockAnimationStep.48, blockAnimationStep
-	cmpb	#12	;cmpqi:	;  blockAnimationStep.48,
+	ldb	_blockAnimationStep	;  blockAnimationStep.51, blockAnimationStep
+	cmpb	#12	;cmpqi:	;  blockAnimationStep.51,
 	lbne	L345	; 
 ;----- asm -----
-;  1064 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[734]			blockX = nextBlockX;
+;  1072 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[739]			blockX = nextBlockX;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_nextBlockX	; , nextBlockX
 	stb	_blockX	; , blockX
 ;----- asm -----
-;  1066 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[735]			blockY = nextBlockY;
+;  1074 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[740]			blockY = nextBlockY;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_nextBlockY	; , nextBlockY
 	stb	_blockY	; , blockY
 ;----- asm -----
-;  1068 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[736]			blockAnimationStep = 0;
+;  1076 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[741]			blockAnimationStep = 0;
 ;  0 "" 2
 ;--- end asm ---
 	clr	_blockAnimationStep	;  blockAnimationStep
 ;----- asm -----
-;  1070 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[737]			blockAnimation = nextBlockAnimation;
+;  1078 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[742]			blockAnimation = nextBlockAnimation;
 ;  0 "" 2
 ;--- end asm ---
 	ldx	_nextBlockAnimation	; , nextBlockAnimation
 	stx	_blockAnimation	; , blockAnimation
 ;----- asm -----
-;  1072 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[738]			blockAnimating = 0;
+;  1080 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[743]			blockAnimating = 0;
 ;  0 "" 2
 ;--- end asm ---
 	clr	_blockAnimating	;  blockAnimating
 	jmp	L345	; 
 L349:
 ;----- asm -----
-;  1166 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[798]		startLevel();
+;  1176 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[804]		startLevel();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_startLevel	; 
@@ -6742,92 +6767,92 @@ _blockMovingAtEnd:
 	pshs	u	; 
 	leas	-11,s	; ,,
 ;----- asm -----
-;  1173 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[804]	drawField();
+;  1183 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[810]	drawField();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_drawField	; 
 ;----- asm -----
-;  1175 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[805]	drawBlock(blockYOfs);
+;  1185 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[811]	drawBlock(blockYOfs);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockYOfs	; , blockYOfs
-	stb	5,s	; , blockYOfs.65
+	stb	5,s	; , blockYOfs.69
 ;----- asm -----
-;  993 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[689]	zergnd();
+;  999 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[693]	zergnd();
 ;  0 "" 2
-;  181 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  181 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	jsr ___Reset0Ref; BIOS call
 ;  0 "" 2
-;  995 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[690]	intens(0x63);
+;  1001 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[694]	intens(0x63);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#99	; ,
 	stb	9,s	; , a
 ;----- asm -----
-;  3427 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3427 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 9,s	;  a
 	jsr ___Intensity_a; BIOS call
 ;  0 "" 2
-;  997 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[691]	positd(0, yofs);
+;  1003 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[695]	positd(0, yofs);
 ;  0 "" 2
-;  52 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  52 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[51]	dp_VIA_t1_cnt_lo = 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-128	; ,
 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo
 ;----- asm -----
-;  54 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  54 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[52]	Moveto_d(y,x);
 ;  0 "" 2
 ;--- end asm ---
-	ldb	5,s	; , blockYOfs.65
+	ldb	5,s	; , blockYOfs.69
 	stb	10,s	; , a
 	clr	9,s	;  b
 ;----- asm -----
-;  3315 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3315 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 10,s	;  a
 	ldb 9,s	;  b
 	jsr ___Moveto_d; BIOS call
 ;  0 "" 2
-;  1000 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[693]	positd(x3d(blockX, 0, blockY), y3d(blockX, 0, blockY));
+;  1006 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[697]	positd(x3d(blockX, 0, blockY), y3d(blockX, 0, blockY));
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockX	; , blockX
-	stb	6,s	; , blockX.40
+	stb	6,s	; , blockX.42
 ;----- asm -----
-;  309 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[278]	y -= LEVEL_HEIGHT / 2;
+;  311 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[280]	y -= LEVEL_HEIGHT / 2;
 ;  0 "" 2
-;  311 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[279]	return 3 * x + 13 * y + 8 * z;
+;  313 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[281]	return 3 * x + 13 * y + 8 * z;
 ;  0 "" 2
-;  300 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[271]	x -= LEVEL_WIDTH / 2 - 4;
+;  302 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[273]	x -= LEVEL_WIDTH / 2 - 4;
 ;  0 "" 2
-;  302 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[272]	return 14 * x - 6 * z+0*y;
+;  304 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[274]	return 14 * x - 6 * z+0*y;
 ;  0 "" 2
-;  52 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  52 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[51]	dp_VIA_t1_cnt_lo = 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-128	; ,
 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo
 ;----- asm -----
-;  54 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  54 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[52]	Moveto_d(y,x);
 ;  0 "" 2
 ;--- end asm ---
-	ldb	6,s	; , blockX.40
+	ldb	6,s	; , blockX.42
 	aslb	; 
-	addb	6,s	; , blockX.40
+	addb	6,s	; , blockX.42
 	stb	2,s	; ,
 	ldb	_blockY	; , blockY
 	aslb	; 
@@ -6838,7 +6863,7 @@ _blockMovingAtEnd:
 	addb	4,s	; ,
 	addb	#-104	; ,
 	stb	9,s	; , a
-	ldb	6,s	; , blockX.40
+	ldb	6,s	; , blockX.42
 	addb	#-2	; ,
 	lda	#14	;mulqihi3	; 
 	mul
@@ -6853,13 +6878,13 @@ _blockMovingAtEnd:
 	addb	3,s	;  tmp46,
 	stb	10,s	;  tmp46, b
 ;----- asm -----
-;  3315 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3315 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 9,s	;  a
 	ldb 10,s	;  b
 	jsr ___Moveto_d; BIOS call
 ;  0 "" 2
-;  1002 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[694]	pack1x((void*)(blockAnimation[blockAnimationStep]));
+;  1008 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[698]	pack1x((void*)(blockAnimation[blockAnimationStep]));
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockAnimationStep	; , blockAnimationStep
@@ -6869,9 +6894,9 @@ _blockMovingAtEnd:
 	rola	; 
 	ldu	_blockAnimation	; , blockAnimation
 	leax	d,u	;  tmp50, tmp49,
-	ldx	,x	;  D.4395,
+	ldx	,x	;  D.4409,
 ;----- asm -----
-;  59 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  59 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[56]	dp_VIA_t1_cnt_lo = 0x80;
 ;  0 "" 2
 ;--- end asm ---
@@ -6879,68 +6904,68 @@ _blockMovingAtEnd:
 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo
 ; Applied peep: 2 (no load after store)
 ;----- asm -----
-;  61 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  61 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[57]	Draw_VLp(x);
 ;  0 "" 2
 ;--- end asm ---
 ;----- asm -----
-;  1610 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
-	stx	7,s	;  D.4395, x
+;  1610 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+	stx	7,s	;  D.4409, x
 ; ORG>;----- asm -----
-; ORG>;  61 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+; ORG>;  61 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 ; ORG>	; $ENR$[57]	Draw_VLp(x);
 ; ORG>;  0 "" 2
 ; ORG>;--- end asm ---
-; ORG>	stx	7,s	;  D.4395, x
+; ORG>	stx	7,s	;  D.4409, x
 ; ORG>;----- asm -----
-; ORG>;  1610 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+; ORG>;  1610 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 ; ORG>	ldx 7,s	;  x
 	jsr ___Draw_VLp; BIOS call
 ;  0 "" 2
-;  1177 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[806]	blockYOfs++;
+;  1187 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[812]	blockYOfs++;
 ;  0 "" 2
 ;--- end asm ---
 	inc	_blockYOfs	;  blockYOfs
-	ldb	_blockYOfs	;  blockYOfs.66, blockYOfs
+	ldb	_blockYOfs	;  blockYOfs.70, blockYOfs
 ;----- asm -----
-;  1179 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[807]	if (blockYOfs == 30) {
+;  1189 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[813]	if (blockYOfs == 30) {
 ;  0 "" 2
 ;--- end asm ---
-	cmpb	#30	;cmpqi:	;  blockYOfs.66,
+	cmpb	#30	;cmpqi:	;  blockYOfs.70,
 	beq	L356	; 
 	leas	11,s	; ,,
 	puls	u,pc	; 
 L356:
 ;----- asm -----
-;  1181 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[808]		if (moveCount < levelHighscore) {
+;  1191 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[814]		if (moveCount < levelHighscore) {
 ;  0 "" 2
 ;--- end asm ---
-	ldu	_moveCount	;  moveCount.760, moveCount
-	cmpu	_levelHighscore	;cmphi:	;  moveCount.760, levelHighscore
+	ldu	_moveCount	;  moveCount.773, moveCount
+	cmpu	_levelHighscore	;cmphi:	;  moveCount.773, levelHighscore
 	blo	L357	; 
 L352:
 ;----- asm -----
-;  1188 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[812]		levelNumber++;
+;  1198 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[818]		levelNumber++;
 ;  0 "" 2
 ;--- end asm ---
 	inc	_levelNumber	;  levelNumber
-	ldb	_levelNumber	;  levelNumber.70, levelNumber
+	ldb	_levelNumber	;  levelNumber.74, levelNumber
 ;----- asm -----
-;  1190 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[813]		if (levelNumber > 2) levelNumber = 0;
+;  1200 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[819]		if (levelNumber > 2) levelNumber = 0;
 ;  0 "" 2
 ;--- end asm ---
-	cmpb	#2	;cmpqi:	;  levelNumber.70,
+	cmpb	#2	;cmpqi:	;  levelNumber.74,
 	ble	L354	; 
 	clr	_levelNumber	;  levelNumber
 L354:
 ;----- asm -----
-;  1192 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[814]		startLevel();
+;  1202 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[820]		startLevel();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_startLevel	; 
@@ -6948,66 +6973,66 @@ L354:
 	puls	u,pc	; 
 L357:
 ;----- asm -----
-;  1183 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[809]			writeEeprom((uint8_t) (2 * levelNumber), (uint8_t) (moveCount & 0xff));
+;  1193 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[815]			writeEeprom((uint8_t) (2 * levelNumber), (uint8_t) (moveCount & 0xff));
 ;  0 "" 2
 ;--- end asm ---
-	ldb	_levelNumber	;  levelNumber.761, levelNumber
+	ldb	_levelNumber	;  levelNumber.774, levelNumber
 ;----- asm -----
-;  238 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[226]	if (picAvailable) {
+;  240 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[228]	if (picAvailable) {
 ;  0 "" 2
 ;--- end asm ---
 	tst	_picAvailable	;  picAvailable
 	beq	L353	; 
 ;----- asm -----
-;  240 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[227]	    	sendCommand(CMD_SET_EEPROM_ADR, address);
+;  242 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[229]	    	sendCommand(CMD_SET_EEPROM_ADR, address);
 ;  0 "" 2
 ;--- end asm ---
-	aslb	;  levelNumber.761
-	pshs	b	;  levelNumber.761
+	aslb	;  levelNumber.774
+	pshs	b	;  levelNumber.774
 	ldb	#2	; ,
 	jsr	_sendCommand	; 
 ;----- asm -----
-;  242 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[228]	    	sendCommand(CMD_EEPROM_WRITE, data);
+;  244 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[230]	    	sendCommand(CMD_EEPROM_WRITE, data);
 ;  0 "" 2
 ;--- end asm ---
-	tfr	u,d	;  moveCount.760,
+	tfr	u,d	;  moveCount.773,
 	pshs	b	; 
 	ldb	#3	; ,
 	jsr	_sendCommand	; 
 	leas	2,s	; ,,
-	ldu	_moveCount	;  moveCount.760, moveCount
-	ldb	_levelNumber	;  levelNumber.761, levelNumber
+	ldu	_moveCount	;  moveCount.773, moveCount
+	ldb	_levelNumber	;  levelNumber.774, levelNumber
 L353:
 ;----- asm -----
-;  1185 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[810]			writeEeprom((uint8_t) (2 * levelNumber + 1), (uint8_t) (moveCount >> 8));
+;  1195 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[816]			writeEeprom((uint8_t) (2 * levelNumber + 1), (uint8_t) (moveCount >> 8));
 ;  0 "" 2
-;  238 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[226]	if (picAvailable) {
+;  240 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[228]	if (picAvailable) {
 ;  0 "" 2
 ;--- end asm ---
 	tst	_picAvailable	;  picAvailable
 	lbeq	L352	; 
 ;----- asm -----
-;  240 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[227]	    	sendCommand(CMD_SET_EEPROM_ADR, address);
+;  242 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[229]	    	sendCommand(CMD_SET_EEPROM_ADR, address);
 ;  0 "" 2
 ;--- end asm ---
-	aslb	;  levelNumber.761
-	incb	;  levelNumber.761
-	pshs	b	;  levelNumber.761
+	aslb	;  levelNumber.774
+	incb	;  levelNumber.774
+	pshs	b	;  levelNumber.774
 	ldb	#2	; ,
 	jsr	_sendCommand	; 
 ;----- asm -----
-;  242 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[228]	    	sendCommand(CMD_EEPROM_WRITE, data);
+;  244 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[230]	    	sendCommand(CMD_EEPROM_WRITE, data);
 ;  0 "" 2
 ;--- end asm ---
-	tfr	u,d	;  moveCount.760, tmp54
+	tfr	u,d	;  moveCount.773, tmp54
 	tfr	a,b	; ,
 	clra		;zero_extendqihi: R:b -> R:d	; ,
 	pshs	b	;  tmp54
@@ -7020,49 +7045,56 @@ _main:
 	pshs	y,u	; 
 	leas	-15,s	; ,,
 ;----- asm -----
-;  1336 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[909]	picAvailable = 0;
+;  1345 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[914]	*vecx = 4;
+;  0 "" 2
+;--- end asm ---
+	ldb	#4	; ,
+	stb	[_vecx]	; ,* vecx
+;----- asm -----
+;  1349 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[917]	picAvailable = 0;
 ;  0 "" 2
 ;--- end asm ---
 	clr	_picAvailable	;  picAvailable
 ;----- asm -----
-;  1338 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[910]	sendCommand(CMD_VERSION, 0);
+;  1351 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[918]	sendCommand(CMD_VERSION, 0);
 ;  0 "" 2
 ;--- end asm ---
 	clr	,-s	; 
 	ldb	#1	; ,
 	jsr	_sendCommand	; 
 ;----- asm -----
-;  1340 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[911]	sendCommand(CMD_VERSION, 0);
+;  1353 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[919]	sendCommand(CMD_VERSION, 0);
 ;  0 "" 2
 ;--- end asm ---
 	clr	,-s	; 
 	ldb	#1	; ,
 	jsr	_sendCommand	; 
 ;----- asm -----
-;  1342 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[912]	if (sendCommand(CMD_VERSION, 0) == 4) {
+;  1355 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[920]	if (sendCommand(CMD_VERSION, 0) == 4) {
 ;  0 "" 2
 ;--- end asm ---
 	clr	,-s	; 
 	ldb	#1	; ,
 	jsr	_sendCommand	; 
 	leas	3,s	; ,,
-	cmpb	#4	;cmpqi:	;  D.2764,
+	cmpb	#4	;cmpqi:	;  D.2770,
 	bne	L359	; 
 ;----- asm -----
-;  1344 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[913]		picAvailable = 1;
+;  1357 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[921]		picAvailable = 1;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#1	; ,
 	stb	_picAvailable	; , picAvailable
 L359:
 ;----- asm -----
-;  1349 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[917]	memcpy(infoText, "001 / 999�", 10);
+;  1362 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[925]	memcpy(infoText, "001 / 999�", 10);
 ;  0 "" 2
 ;--- end asm ---
 	ldx	#12336	; ,
@@ -7076,58 +7108,58 @@ L359:
 	ldx	#14720	; ,
 	stx	_infoText+8	; , infoText
 ;----- asm -----
-;  1353 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[920]	epot0 = 1;
+;  1366 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[928]	epot0 = 1;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#1	; ,
 	stb	-14305	; ,
 ;----- asm -----
-;  1355 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[921]	epot1 = 3;
+;  1368 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[929]	epot1 = 3;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#3	; ,
 	stb	-14304	; ,
 ;----- asm -----
-;  1357 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[922]	epot2 = 0;
+;  1370 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[930]	epot2 = 0;
 ;  0 "" 2
 ;--- end asm ---
 	clr	-14303	; 
 ;----- asm -----
-;  1359 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[923]	epot3 = 0;
+;  1372 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[931]	epot3 = 0;
 ;  0 "" 2
 ;--- end asm ---
 	clr	-14302	; 
 ;----- asm -----
-;  1362 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[925]	gameState = MainMenu;
+;  1375 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[933]	gameState = MainMenu;
 ;  0 "" 2
 ;--- end asm ---
 	clr	_gameState	;  gameState
 ;----- asm -----
-;  1364 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[926]	musicInit();
+;  1377 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[934]	musicInit();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_musicInit	; 
 ;----- asm -----
-;  1367 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[928]	while (1) {
+;  1380 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[936]	while (1) {
 ;  0 "" 2
 ;--- end asm ---
 L387:
 ;----- asm -----
-;  1370 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[930]		frwait();
+;  1383 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[938]		frwait();
 ;  0 "" 2
-;  97 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  97 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	jsr ___Wait_Recal; BIOS call
 ;  0 "" 2
-;  1373 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[932]		switch (gameState) {
+;  1386 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[940]		switch (gameState) {
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_gameState	; , gameState
@@ -7137,8 +7169,8 @@ L387:
 	std	,s	; ,
 	aslb	; 
 	rola	; 
-	tfr	d,x	; , tmp52
-	jmp	[L368,x]	; , tmp52
+	tfr	d,x	; , tmp53
+	jmp	[L368,x]	; , tmp53
 L368:
 	.word L361
 	.word L362
@@ -7149,29 +7181,29 @@ L368:
 	.word L367
 L367:
 ;----- asm -----
-;  1425 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[958]				showInfo();
+;  1438 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[966]				showInfo();
 ;  0 "" 2
-;  1325 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[901]    Intensity_a(0x5f);
+;  1335 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[907]    Intensity_a(0x5f);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#95	; ,
 	stb	13,s	; , a
 ;----- asm -----
-;  3427 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3427 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 13,s	;  a
 	jsr ___Intensity_a; BIOS call
 ;  0 "" 2
-;  1327 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[902]    Vec_Text_Width = 100;
+;  1337 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[908]    Vec_Text_Width = 100;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#100	; ,
 	stb	_Vec_Text_Width	; , Vec_Text_Width
 ;----- asm -----
-;  1329 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[903]    Print_Str_d(100, -70, infoText);
+;  1339 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[909]    Print_Str_d(100, -70, infoText);
 ;  0 "" 2
 ;--- end asm ---
 	stb	14,s	; , a
@@ -7180,88 +7212,88 @@ L367:
 	ldx	#_infoText	; ,
 	stx	11,s	; , u
 ;----- asm -----
-;  666 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  666 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 14,s	;  a
 	ldb 13,s	;  b
 	ldu 11,s	;  u
 	jsr ___Print_Str_d; BIOS call
 ;  0 "" 2
-;  1427 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[959]        			blockMovingAtEnd();
+;  1440 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[967]        			blockMovingAtEnd();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_blockMovingAtEnd	; 
 ;----- asm -----
-;  1429 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[960]        			break;
+;  1442 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[968]        			break;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_gameState	; , gameState
 L360:
 ;----- asm -----
-;  1434 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[964]		if (gameState > ClearMenu) {
+;  1447 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[972]		if (gameState > ClearMenu) {
 ;  0 "" 2
 ;--- end asm ---
 	cmpb	#1	;cmpqi:	; ,
 	lbls	L387	; 
 ;----- asm -----
-;  1436 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[965]    			DP_to_C8();
+;  1449 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[973]    			DP_to_C8();
 ;  0 "" 2
-;  316 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  316 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	jsr ___DP_to_C8; BIOS call
 ;  0 "" 2
-;  1438 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[966]    			replay(currentMusic);
+;  1451 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[974]    			replay(currentMusic);
 ;  0 "" 2
 ;--- end asm ---
 	ldx	_currentMusic	; , currentMusic
 	stx	11,s	; , u
 ;----- asm -----
-;  2917 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  2917 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	ldu 11,s	;  u
 	jsr ___Init_Music_chk; BIOS call
 ;  0 "" 2
-;  1440 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[967]    			DP_to_D0();
+;  1453 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[975]    			DP_to_D0();
 ;  0 "" 2
-;  300 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  300 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	jsr ___DP_to_D0; BIOS call
 ;  0 "" 2
-;  1442 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[968]    			reqout();
+;  1455 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[976]    			reqout();
 ;  0 "" 2
-;  2880 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  2880 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	jsr ___Do_Sound; BIOS call
 ;  0 "" 2
 ;--- end asm ---
 	jmp	L387	; 
 L366:
 ;----- asm -----
-;  1417 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[954]				showInfo();
+;  1430 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[962]				showInfo();
 ;  0 "" 2
-;  1325 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[901]    Intensity_a(0x5f);
+;  1335 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[907]    Intensity_a(0x5f);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#95	; ,
 	stb	14,s	; , a
 ;----- asm -----
-;  3427 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3427 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 14,s	;  a
 	jsr ___Intensity_a; BIOS call
 ;  0 "" 2
-;  1327 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[902]    Vec_Text_Width = 100;
+;  1337 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[908]    Vec_Text_Width = 100;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#100	; ,
 	stb	_Vec_Text_Width	; , Vec_Text_Width
 ;----- asm -----
-;  1329 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[903]    Print_Str_d(100, -70, infoText);
+;  1339 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[909]    Print_Str_d(100, -70, infoText);
 ;  0 "" 2
 ;--- end asm ---
 	stb	13,s	; , a
@@ -7270,40 +7302,40 @@ L366:
 	ldx	#_infoText	; ,
 	stx	11,s	; , u
 ;----- asm -----
-;  666 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  666 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 13,s	;  a
 	ldb 14,s	;  b
 	ldu 11,s	;  u
 	jsr ___Print_Str_d; BIOS call
 ;  0 "" 2
-;  1419 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[955]        			blockFalling();
+;  1432 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[963]        			blockFalling();
 ;  0 "" 2
-;  1153 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[791]	drawField();
+;  1163 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[797]	drawField();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_drawField	; 
 ;----- asm -----
-;  1155 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[792]	blockYOfs++;
+;  1165 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[798]	blockYOfs++;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockYOfs	; , blockYOfs
 	incb	; 
-	stb	9,s	; , blockYOfs.64
+	stb	9,s	; , blockYOfs.68
 	stb	_blockYOfs	; , blockYOfs
 ;----- asm -----
-;  1157 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[793]	if (blockYOfs < 12) {
+;  1167 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[799]	if (blockYOfs < 12) {
 ;  0 "" 2
 ;--- end asm ---
 	cmpb	#11	;cmpqi:	; ,
 	lble	L388	; 
 L381:
 ;----- asm -----
-;  1164 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[797]	if (blockYOfs == 50) {
+;  1174 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[803]	if (blockYOfs == 50) {
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockYOfs	; , blockYOfs
@@ -7311,37 +7343,37 @@ L381:
 	lbeq	L389	; 
 L382:
 ;----- asm -----
-;  1421 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[956]        			break;
+;  1434 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[964]        			break;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_gameState	; , gameState
 	jmp	L360	; 
 L365:
 ;----- asm -----
-;  1409 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[950]				showInfo();
+;  1422 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[958]				showInfo();
 ;  0 "" 2
-;  1325 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[901]    Intensity_a(0x5f);
+;  1335 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[907]    Intensity_a(0x5f);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#95	; ,
 	stb	13,s	; , a
 ;----- asm -----
-;  3427 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3427 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 13,s	;  a
 	jsr ___Intensity_a; BIOS call
 ;  0 "" 2
-;  1327 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[902]    Vec_Text_Width = 100;
+;  1337 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[908]    Vec_Text_Width = 100;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#100	; ,
 	stb	_Vec_Text_Width	; , Vec_Text_Width
 ;----- asm -----
-;  1329 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[903]    Print_Str_d(100, -70, infoText);
+;  1339 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[909]    Print_Str_d(100, -70, infoText);
 ;  0 "" 2
 ;--- end asm ---
 	stb	14,s	; , a
@@ -7350,49 +7382,49 @@ L365:
 	ldx	#_infoText	; ,
 	stx	11,s	; , u
 ;----- asm -----
-;  666 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  666 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 14,s	;  a
 	ldb 13,s	;  b
 	ldu 11,s	;  u
 	jsr ___Print_Str_d; BIOS call
 ;  0 "" 2
-;  1411 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[951]        			blockMoving();
+;  1424 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[959]        			blockMoving();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_blockMoving	; 
 ;----- asm -----
-;  1413 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[952]        			break;
+;  1426 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[960]        			break;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_gameState	; , gameState
 	jmp	L360	; 
 L364:
 ;----- asm -----
-;  1401 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[946]				showInfo();
+;  1414 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[954]				showInfo();
 ;  0 "" 2
-;  1325 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[901]    Intensity_a(0x5f);
+;  1335 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[907]    Intensity_a(0x5f);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#95	; ,
 	stb	14,s	; , a
 ;----- asm -----
-;  3427 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3427 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 14,s	;  a
 	jsr ___Intensity_a; BIOS call
 ;  0 "" 2
-;  1327 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[902]    Vec_Text_Width = 100;
+;  1337 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[908]    Vec_Text_Width = 100;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#100	; ,
 	stb	_Vec_Text_Width	; , Vec_Text_Width
 ;----- asm -----
-;  1329 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[903]    Print_Str_d(100, -70, infoText);
+;  1339 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[909]    Print_Str_d(100, -70, infoText);
 ;  0 "" 2
 ;--- end asm ---
 	stb	13,s	; , a
@@ -7401,49 +7433,49 @@ L364:
 	ldx	#_infoText	; ,
 	stx	11,s	; , u
 ;----- asm -----
-;  666 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  666 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 13,s	;  a
 	ldb 14,s	;  b
 	ldu 11,s	;  u
 	jsr ___Print_Str_d; BIOS call
 ;  0 "" 2
-;  1403 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[947]        			blockWaiting();
+;  1416 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[955]        			blockWaiting();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_blockWaiting	; 
 ;----- asm -----
-;  1405 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[948]        			break;
+;  1418 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[956]        			break;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_gameState	; , gameState
 	jmp	L360	; 
 L363:
 ;----- asm -----
-;  1393 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[942]				showInfo();
+;  1406 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[950]				showInfo();
 ;  0 "" 2
-;  1325 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[901]    Intensity_a(0x5f);
+;  1335 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[907]    Intensity_a(0x5f);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#95	; ,
 	stb	13,s	; , a
 ;----- asm -----
-;  3427 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3427 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 13,s	;  a
 	jsr ___Intensity_a; BIOS call
 ;  0 "" 2
-;  1327 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[902]    Vec_Text_Width = 100;
+;  1337 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[908]    Vec_Text_Width = 100;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#100	; ,
 	stb	_Vec_Text_Width	; , Vec_Text_Width
 ;----- asm -----
-;  1329 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[903]    Print_Str_d(100, -70, infoText);
+;  1339 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[909]    Print_Str_d(100, -70, infoText);
 ;  0 "" 2
 ;--- end asm ---
 	stb	14,s	; , a
@@ -7452,101 +7484,101 @@ L363:
 	ldx	#_infoText	; ,
 	stx	11,s	; , u
 ;----- asm -----
-;  666 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  666 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 14,s	;  a
 	ldb 13,s	;  b
 	ldu 11,s	;  u
 	jsr ___Print_Str_d; BIOS call
 ;  0 "" 2
-;  1395 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[943]        			blockMovingToStart();
+;  1408 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[951]        			blockMovingToStart();
 ;  0 "" 2
-;  1008 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[699]	drawField();
+;  1014 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[703]	drawField();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_drawField	; 
 ;----- asm -----
-;  1010 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[700]	drawBlock(blockYOfs);
+;  1016 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[704]	drawBlock(blockYOfs);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockYOfs	; , blockYOfs
-	stb	7,s	; , blockYOfs.43
+	stb	7,s	; , blockYOfs.45
 ;----- asm -----
-;  993 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[689]	zergnd();
+;  999 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[693]	zergnd();
 ;  0 "" 2
-;  181 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  181 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	jsr ___Reset0Ref; BIOS call
 ;  0 "" 2
-;  995 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[690]	intens(0x63);
+;  1001 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[694]	intens(0x63);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#99	; ,
 	stb	13,s	; , a
 ;----- asm -----
-;  3427 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3427 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 13,s	;  a
 	jsr ___Intensity_a; BIOS call
 ;  0 "" 2
-;  997 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[691]	positd(0, yofs);
+;  1003 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[695]	positd(0, yofs);
 ;  0 "" 2
-;  52 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  52 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[51]	dp_VIA_t1_cnt_lo = 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-128	; ,
 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo
 ;----- asm -----
-;  54 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  54 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[52]	Moveto_d(y,x);
 ;  0 "" 2
 ;--- end asm ---
-	ldb	7,s	; , blockYOfs.43
+	ldb	7,s	; , blockYOfs.45
 	stb	14,s	; , a
 	clr	13,s	;  b
 ;----- asm -----
-;  3315 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3315 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 14,s	;  a
 	ldb 13,s	;  b
 	jsr ___Moveto_d; BIOS call
 ;  0 "" 2
-;  1000 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[693]	positd(x3d(blockX, 0, blockY), y3d(blockX, 0, blockY));
+;  1006 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[697]	positd(x3d(blockX, 0, blockY), y3d(blockX, 0, blockY));
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockX	; , blockX
-	stb	8,s	; , blockX.40
+	stb	8,s	; , blockX.42
 ;----- asm -----
-;  309 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[278]	y -= LEVEL_HEIGHT / 2;
+;  311 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[280]	y -= LEVEL_HEIGHT / 2;
 ;  0 "" 2
-;  311 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[279]	return 3 * x + 13 * y + 8 * z;
+;  313 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[281]	return 3 * x + 13 * y + 8 * z;
 ;  0 "" 2
-;  300 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[271]	x -= LEVEL_WIDTH / 2 - 4;
+;  302 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[273]	x -= LEVEL_WIDTH / 2 - 4;
 ;  0 "" 2
-;  302 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[272]	return 14 * x - 6 * z+0*y;
+;  304 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[274]	return 14 * x - 6 * z+0*y;
 ;  0 "" 2
-;  52 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  52 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[51]	dp_VIA_t1_cnt_lo = 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-128	; ,
 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo
 ;----- asm -----
-;  54 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  54 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[52]	Moveto_d(y,x);
 ;  0 "" 2
 ;--- end asm ---
-	ldb	8,s	; , blockX.40
+	ldb	8,s	; , blockX.42
 	aslb	; 
-	addb	8,s	; , blockX.40
+	addb	8,s	; , blockX.42
 	stb	,s	; ,
 	ldb	_blockY	; , blockY
 	aslb	; 
@@ -7557,28 +7589,28 @@ L363:
 	addb	6,s	; ,
 	addb	#-104	; ,
 	stb	13,s	; , a
-	ldb	8,s	; , blockX.40
+	ldb	8,s	; , blockX.42
 	addb	#-2	; ,
 	lda	#14	;mulqihi3	; 
 	mul
-	tfr	d,y	; , tmp79
+	tfr	d,y	; , tmp80
 	ldb	_blockY	; , blockY
 	lda	#-6	;mulqihi3	; 
 	mul
-	tfr	d,x	; , tmp80
-	tfr	y,d	;movlsbqihi: R:y -> R:b	;  tmp79,
+	tfr	d,x	; , tmp81
+	tfr	y,d	;movlsbqihi: R:y -> R:b	;  tmp80,
 	stb	5,s	; ,
-	tfr	x,d	;movlsbqihi: R:x -> R:b	;  tmp80, tmp82
-	addb	5,s	;  tmp82,
-	stb	14,s	;  tmp82, b
+	tfr	x,d	;movlsbqihi: R:x -> R:b	;  tmp81, tmp83
+	addb	5,s	;  tmp83,
+	stb	14,s	;  tmp83, b
 ;----- asm -----
-;  3315 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3315 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 13,s	;  a
 	ldb 14,s	;  b
 	jsr ___Moveto_d; BIOS call
 ;  0 "" 2
-;  1002 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[694]	pack1x((void*)(blockAnimation[blockAnimationStep]));
+;  1008 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[698]	pack1x((void*)(blockAnimation[blockAnimationStep]));
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockAnimationStep	; , blockAnimationStep
@@ -7587,10 +7619,10 @@ L363:
 	aslb	; 
 	rola	; 
 	ldu	_blockAnimation	; , blockAnimation
-	leax	d,u	;  tmp86, tmp85,
-	ldx	,x	;  D.4504,
+	leax	d,u	;  tmp87, tmp86,
+	ldx	,x	;  D.4518,
 ;----- asm -----
-;  59 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  59 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[56]	dp_VIA_t1_cnt_lo = 0x80;
 ;  0 "" 2
 ;--- end asm ---
@@ -7598,83 +7630,83 @@ L363:
 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo
 ; Applied peep: 2 (no load after store)
 ;----- asm -----
-;  61 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  61 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[57]	Draw_VLp(x);
 ;  0 "" 2
 ;--- end asm ---
 ;----- asm -----
-;  1610 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
-	stx	11,s	;  D.4504, x
+;  1610 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+	stx	11,s	;  D.4518, x
 ; ORG>;----- asm -----
-; ORG>;  61 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+; ORG>;  61 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 ; ORG>	; $ENR$[57]	Draw_VLp(x);
 ; ORG>;  0 "" 2
 ; ORG>;--- end asm ---
-; ORG>	stx	11,s	;  D.4504, x
+; ORG>	stx	11,s	;  D.4518, x
 ; ORG>;----- asm -----
-; ORG>;  1610 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+; ORG>;  1610 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 ; ORG>	ldx 11,s	;  x
 	jsr ___Draw_VLp; BIOS call
 ;  0 "" 2
-;  1012 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[701]	blockYOfs++;
+;  1018 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[705]	blockYOfs++;
 ;  0 "" 2
 ;--- end asm ---
 	inc	_blockYOfs	;  blockYOfs
-	ldb	_blockYOfs	;  blockYOfs.44, blockYOfs
+	ldb	_blockYOfs	;  blockYOfs.46, blockYOfs
 ;----- asm -----
-;  1014 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[702]	if (blockYOfs == 0) {
+;  1020 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[706]	if (blockYOfs == 0) {
 ;  0 "" 2
 ;--- end asm ---
-	tstb	;  blockYOfs.44
+	tstb	;  blockYOfs.46
 	bne	L380	; 
 ;----- asm -----
-;  1016 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[703]		gameState = BlockWaiting;
+;  1022 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[707]		gameState = BlockWaiting;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#3	; ,
 	stb	_gameState	; , gameState
 L380:
 ;----- asm -----
-;  1397 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[944]        			break;
+;  1410 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[952]        			break;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_gameState	; , gameState
 	jmp	L360	; 
 L361:
 ;----- asm -----
-;  1377 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[934]        			mainMenu();
+;  1390 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[942]        			mainMenu();
 ;  0 "" 2
-;  1199 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[820]	Read_Btns();
+;  1209 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[826]	Read_Btns();
 ;  0 "" 2
-;  2286 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  2286 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	jsr ___Read_Btns; BIOS call
 ;  0 "" 2
-;  1201 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[821]    Intensity_a(0x5f);
+;  1211 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[827]    Intensity_a(0x5f);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#95	; ,
 	stb	14,s	; , a
 ;----- asm -----
-;  3427 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3427 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 14,s	;  a
 	jsr ___Intensity_a; BIOS call
 ;  0 "" 2
-;  1203 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[822]    Vec_Text_Width = 90;
+;  1213 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[828]    Vec_Text_Width = 90;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#90	; ,
 	stb	_Vec_Text_Width	; , Vec_Text_Width
 ;----- asm -----
-;  1205 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[823]    Print_Str_d(100, -70, "MAIN MENU�");
+;  1215 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[829]    Print_Str_d(100, -70, "MAIN MENU�");
 ;  0 "" 2
 ;--- end asm ---
 	addb	#10	; ,
@@ -7684,14 +7716,14 @@ L361:
 	ldx	#LC3	; ,
 	stx	11,s	; , u
 ;----- asm -----
-;  666 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  666 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 13,s	;  a
 	ldb 14,s	;  b
 	ldu 11,s	;  u
 	jsr ___Print_Str_d; BIOS call
 ;  0 "" 2
-;  1207 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[824]    Print_Str_d(50, -110, "1 START GAME�");
+;  1217 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[830]    Print_Str_d(50, -110, "1 START GAME�");
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#50	; ,
@@ -7701,14 +7733,14 @@ L361:
 	ldx	#LC4	; ,
 	stx	11,s	; , u
 ;----- asm -----
-;  666 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  666 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 14,s	;  a
 	ldb 13,s	;  b
 	ldu 11,s	;  u
 	jsr ___Print_Str_d; BIOS call
 ;  0 "" 2
-;  1209 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[825]    Print_Str_d(20, -110, "2 CLEAR HIGHSCORE�");
+;  1219 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[831]    Print_Str_d(20, -110, "2 CLEAR HIGHSCORE�");
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#20	; ,
@@ -7718,14 +7750,14 @@ L361:
 	ldx	#LC5	; ,
 	stx	11,s	; , u
 ;----- asm -----
-;  666 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  666 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 13,s	;  a
 	ldb 14,s	;  b
 	ldu 11,s	;  u
 	jsr ___Print_Str_d; BIOS call
 ;  0 "" 2
-;  1211 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[826]    Print_Str_d(-10, -110, "3 BANKING TEST�");
+;  1221 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[832]    Print_Str_d(-10, -110, "3 BANKING TEST�");
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-10	; ,
@@ -7735,14 +7767,14 @@ L361:
 	ldx	#LC6	; ,
 	stx	11,s	; , u
 ;----- asm -----
-;  666 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  666 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 14,s	;  a
 	ldb 13,s	;  b
 	ldu 11,s	;  u
 	jsr ___Print_Str_d; BIOS call
 ;  0 "" 2
-;  1213 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[827]	if (Vec_Buttons & 1) {
+;  1223 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[833]	if (Vec_Buttons & 1) {
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_Vec_Buttons	; , Vec_Buttons
@@ -7751,121 +7783,121 @@ L361:
 	lbne	L390	; 
 L369:
 ;----- asm -----
-;  1218 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[830]	if (Vec_Buttons & 2) {
+;  1228 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[836]	if (Vec_Buttons & 2) {
 ;  0 "" 2
 ;--- end asm ---
-	ldb	#2	;  tmp61,
-	andb	2,s	;  tmp61,
+	ldb	#2	;  tmp62,
+	andb	2,s	;  tmp62,
 	beq	L370	; 
 ;----- asm -----
-;  1220 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[831]		gameState = ClearMenu;
+;  1230 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[837]		gameState = ClearMenu;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#1	; ,
 	stb	_gameState	; , gameState
 L370:
 ;----- asm -----
-;  1223 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[833]	if (Vec_Buttons & 4) {
+;  1233 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[839]	if (Vec_Buttons & 4) {
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#4	; ,
 	andb	2,s	; ,
 	beq	L371	; 
 ;----- asm -----
-;  1225 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[834]		sendCommand(CMD_SET_BANK, 1);
+;  1235 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[840]		sendCommand(CMD_SET_BANK, 1);
 ;  0 "" 2
-;  220 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[215]	uint8_t result;
+;  222 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[217]	uint8_t result;
 ;  0 "" 2
-;  222 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[216]	picWrite('V');
+;  224 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[218]	picWrite('V');
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#86	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  224 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[217]	picWrite(cmd);
+;  226 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[219]	picWrite(cmd);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#5	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  226 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[218]	picWrite(arg);
+;  228 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[220]	picWrite(arg);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#1	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  228 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[219]	result = picRead();
+;  230 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[221]	result = picRead();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_picRead	; 
 ;----- asm -----
-;  230 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[220]	delay10ms();
+;  232 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[222]	delay10ms();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_delay10ms	; 
 ;----- asm -----
-;  232 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[221]	return result;
+;  234 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[223]	return result;
 ;  0 "" 2
-;  1227 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  1237 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 		jmp 0xf000
 ;  0 "" 2
 ;--- end asm ---
 L371:
 ;----- asm -----
-;  1379 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[935]				musicPlay();
+;  1392 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[943]				musicPlay();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_musicPlay	; 
 ;----- asm -----
-;  1381 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[936]        			break;
+;  1394 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[944]        			break;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_gameState	; , gameState
 	jmp	L360	; 
 L362:
 ;----- asm -----
-;  1385 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[938]				clearMenu();
+;  1398 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[946]				clearMenu();
 ;  0 "" 2
-;  1233 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[841]	Read_Btns();
+;  1243 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[847]	Read_Btns();
 ;  0 "" 2
-;  2286 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  2286 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	jsr ___Read_Btns; BIOS call
 ;  0 "" 2
-;  1235 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[842]    Intensity_a(0x5f);
+;  1245 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[848]    Intensity_a(0x5f);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#95	; ,
 	stb	14,s	; , a
 ;----- asm -----
-;  3427 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3427 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 14,s	;  a
 	jsr ___Intensity_a; BIOS call
 ;  0 "" 2
-;  1237 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[843]    Vec_Text_Width = 90;
+;  1247 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[849]    Vec_Text_Width = 90;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#90	; ,
 	stb	_Vec_Text_Width	; , Vec_Text_Width
 ;----- asm -----
-;  1239 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[844]    Print_Str_d(100, -80, "CLEAR SCORE?�");
+;  1249 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[850]    Print_Str_d(100, -80, "CLEAR SCORE?�");
 ;  0 "" 2
 ;--- end asm ---
 	addb	#10	; ,
@@ -7875,14 +7907,14 @@ L362:
 	ldx	#LC0	; ,
 	stx	11,s	; , u
 ;----- asm -----
-;  666 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  666 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 13,s	;  a
 	ldb 14,s	;  b
 	ldu 11,s	;  u
 	jsr ___Print_Str_d; BIOS call
 ;  0 "" 2
-;  1241 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[845]    Print_Str_d(50, -110, "3 YES�");
+;  1251 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[851]    Print_Str_d(50, -110, "3 YES�");
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#50	; ,
@@ -7892,14 +7924,14 @@ L362:
 	ldx	#LC1	; ,
 	stx	11,s	; , u
 ;----- asm -----
-;  666 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  666 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 14,s	;  a
 	ldb 13,s	;  b
 	ldu 11,s	;  u
 	jsr ___Print_Str_d; BIOS call
 ;  0 "" 2
-;  1243 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[846]    Print_Str_d(20, -110, "4 NO�");
+;  1253 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[852]    Print_Str_d(20, -110, "4 NO�");
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#20	; ,
@@ -7909,14 +7941,14 @@ L362:
 	ldx	#LC2	; ,
 	stx	11,s	; , u
 ;----- asm -----
-;  666 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  666 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 13,s	;  a
 	ldb 14,s	;  b
 	ldu 11,s	;  u
 	jsr ___Print_Str_d; BIOS call
 ;  0 "" 2
-;  1245 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[847]	if (Vec_Buttons & 4) {
+;  1255 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[853]	if (Vec_Buttons & 4) {
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_Vec_Buttons	; , Vec_Buttons
@@ -7924,593 +7956,593 @@ L362:
 	bitb	#4	; ,
 	lbeq	L372	; 
 ;----- asm -----
-;  1247 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[848]		for (uint8_t i = 0; i < 6; i++) {
+;  1257 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[854]		for (uint8_t i = 0; i < 6; i++) {
 ;  0 "" 2
-;  1249 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[849]			writeEeprom(i, 0xff);
+;  1259 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[855]			writeEeprom(i, 0xff);
 ;  0 "" 2
-;  238 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[226]	if (picAvailable) {
+;  240 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[228]	if (picAvailable) {
 ;  0 "" 2
 ;--- end asm ---
 	tst	_picAvailable	;  picAvailable
 	lbeq	L373	; 
 ;----- asm -----
-;  240 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[227]	    	sendCommand(CMD_SET_EEPROM_ADR, address);
+;  242 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[229]	    	sendCommand(CMD_SET_EEPROM_ADR, address);
 ;  0 "" 2
-;  220 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[215]	uint8_t result;
+;  222 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[217]	uint8_t result;
 ;  0 "" 2
-;  222 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[216]	picWrite('V');
+;  224 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[218]	picWrite('V');
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#86	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  224 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[217]	picWrite(cmd);
+;  226 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[219]	picWrite(cmd);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#2	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  226 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[218]	picWrite(arg);
+;  228 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[220]	picWrite(arg);
 ;  0 "" 2
 ;--- end asm ---
 	clrb	; 
 	jsr	_picWrite	; 
 ;----- asm -----
-;  228 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[219]	result = picRead();
+;  230 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[221]	result = picRead();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_picRead	; 
 ;----- asm -----
-;  230 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[220]	delay10ms();
+;  232 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[222]	delay10ms();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_delay10ms	; 
 ;----- asm -----
-;  232 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[221]	return result;
+;  234 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[223]	return result;
 ;  0 "" 2
-;  242 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[228]	    	sendCommand(CMD_EEPROM_WRITE, data);
+;  244 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[230]	    	sendCommand(CMD_EEPROM_WRITE, data);
 ;  0 "" 2
-;  220 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[215]	uint8_t result;
+;  222 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[217]	uint8_t result;
 ;  0 "" 2
-;  222 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[216]	picWrite('V');
+;  224 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[218]	picWrite('V');
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#86	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  224 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[217]	picWrite(cmd);
+;  226 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[219]	picWrite(cmd);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#3	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  226 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[218]	picWrite(arg);
+;  228 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[220]	picWrite(arg);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-1	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  228 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[219]	result = picRead();
+;  230 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[221]	result = picRead();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_picRead	; 
 ;----- asm -----
-;  230 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[220]	delay10ms();
+;  232 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[222]	delay10ms();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_delay10ms	; 
 ;----- asm -----
-;  232 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[221]	return result;
+;  234 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[223]	return result;
 ;  0 "" 2
 ;--- end asm ---
 L373:
 ;----- asm -----
-;  1249 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[849]			writeEeprom(i, 0xff);
+;  1259 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[855]			writeEeprom(i, 0xff);
 ;  0 "" 2
-;  238 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[226]	if (picAvailable) {
+;  240 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[228]	if (picAvailable) {
 ;  0 "" 2
 ;--- end asm ---
 	tst	_picAvailable	;  picAvailable
 	lbeq	L374	; 
 ;----- asm -----
-;  240 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[227]	    	sendCommand(CMD_SET_EEPROM_ADR, address);
+;  242 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[229]	    	sendCommand(CMD_SET_EEPROM_ADR, address);
 ;  0 "" 2
-;  220 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[215]	uint8_t result;
+;  222 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[217]	uint8_t result;
 ;  0 "" 2
-;  222 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[216]	picWrite('V');
+;  224 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[218]	picWrite('V');
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#86	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  224 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[217]	picWrite(cmd);
+;  226 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[219]	picWrite(cmd);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#2	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  226 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[218]	picWrite(arg);
+;  228 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[220]	picWrite(arg);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#1	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  228 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[219]	result = picRead();
+;  230 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[221]	result = picRead();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_picRead	; 
 ;----- asm -----
-;  230 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[220]	delay10ms();
+;  232 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[222]	delay10ms();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_delay10ms	; 
 ;----- asm -----
-;  232 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[221]	return result;
+;  234 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[223]	return result;
 ;  0 "" 2
-;  242 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[228]	    	sendCommand(CMD_EEPROM_WRITE, data);
+;  244 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[230]	    	sendCommand(CMD_EEPROM_WRITE, data);
 ;  0 "" 2
-;  220 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[215]	uint8_t result;
+;  222 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[217]	uint8_t result;
 ;  0 "" 2
-;  222 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[216]	picWrite('V');
+;  224 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[218]	picWrite('V');
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#86	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  224 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[217]	picWrite(cmd);
+;  226 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[219]	picWrite(cmd);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#3	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  226 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[218]	picWrite(arg);
+;  228 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[220]	picWrite(arg);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-1	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  228 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[219]	result = picRead();
+;  230 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[221]	result = picRead();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_picRead	; 
 ;----- asm -----
-;  230 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[220]	delay10ms();
+;  232 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[222]	delay10ms();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_delay10ms	; 
 ;----- asm -----
-;  232 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[221]	return result;
+;  234 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[223]	return result;
 ;  0 "" 2
 ;--- end asm ---
 L374:
 ;----- asm -----
-;  1249 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[849]			writeEeprom(i, 0xff);
+;  1259 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[855]			writeEeprom(i, 0xff);
 ;  0 "" 2
-;  238 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[226]	if (picAvailable) {
+;  240 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[228]	if (picAvailable) {
 ;  0 "" 2
 ;--- end asm ---
 	tst	_picAvailable	;  picAvailable
 	lbeq	L375	; 
 ;----- asm -----
-;  240 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[227]	    	sendCommand(CMD_SET_EEPROM_ADR, address);
+;  242 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[229]	    	sendCommand(CMD_SET_EEPROM_ADR, address);
 ;  0 "" 2
-;  220 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[215]	uint8_t result;
+;  222 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[217]	uint8_t result;
 ;  0 "" 2
-;  222 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[216]	picWrite('V');
+;  224 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[218]	picWrite('V');
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#86	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  224 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[217]	picWrite(cmd);
+;  226 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[219]	picWrite(cmd);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#2	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  226 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[218]	picWrite(arg);
+;  228 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[220]	picWrite(arg);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#2	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  228 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[219]	result = picRead();
+;  230 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[221]	result = picRead();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_picRead	; 
 ;----- asm -----
-;  230 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[220]	delay10ms();
+;  232 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[222]	delay10ms();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_delay10ms	; 
 ;----- asm -----
-;  232 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[221]	return result;
+;  234 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[223]	return result;
 ;  0 "" 2
-;  242 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[228]	    	sendCommand(CMD_EEPROM_WRITE, data);
+;  244 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[230]	    	sendCommand(CMD_EEPROM_WRITE, data);
 ;  0 "" 2
-;  220 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[215]	uint8_t result;
+;  222 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[217]	uint8_t result;
 ;  0 "" 2
-;  222 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[216]	picWrite('V');
+;  224 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[218]	picWrite('V');
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#86	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  224 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[217]	picWrite(cmd);
+;  226 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[219]	picWrite(cmd);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#3	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  226 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[218]	picWrite(arg);
+;  228 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[220]	picWrite(arg);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-1	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  228 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[219]	result = picRead();
+;  230 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[221]	result = picRead();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_picRead	; 
 ;----- asm -----
-;  230 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[220]	delay10ms();
+;  232 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[222]	delay10ms();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_delay10ms	; 
 ;----- asm -----
-;  232 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[221]	return result;
+;  234 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[223]	return result;
 ;  0 "" 2
 ;--- end asm ---
 L375:
 ;----- asm -----
-;  1249 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[849]			writeEeprom(i, 0xff);
+;  1259 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[855]			writeEeprom(i, 0xff);
 ;  0 "" 2
-;  238 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[226]	if (picAvailable) {
+;  240 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[228]	if (picAvailable) {
 ;  0 "" 2
 ;--- end asm ---
 	tst	_picAvailable	;  picAvailable
 	lbeq	L376	; 
 ;----- asm -----
-;  240 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[227]	    	sendCommand(CMD_SET_EEPROM_ADR, address);
+;  242 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[229]	    	sendCommand(CMD_SET_EEPROM_ADR, address);
 ;  0 "" 2
-;  220 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[215]	uint8_t result;
+;  222 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[217]	uint8_t result;
 ;  0 "" 2
-;  222 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[216]	picWrite('V');
+;  224 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[218]	picWrite('V');
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#86	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  224 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[217]	picWrite(cmd);
+;  226 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[219]	picWrite(cmd);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#2	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  226 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[218]	picWrite(arg);
+;  228 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[220]	picWrite(arg);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#3	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  228 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[219]	result = picRead();
+;  230 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[221]	result = picRead();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_picRead	; 
 ;----- asm -----
-;  230 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[220]	delay10ms();
+;  232 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[222]	delay10ms();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_delay10ms	; 
 ;----- asm -----
-;  232 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[221]	return result;
+;  234 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[223]	return result;
 ;  0 "" 2
-;  242 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[228]	    	sendCommand(CMD_EEPROM_WRITE, data);
+;  244 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[230]	    	sendCommand(CMD_EEPROM_WRITE, data);
 ;  0 "" 2
-;  220 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[215]	uint8_t result;
+;  222 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[217]	uint8_t result;
 ;  0 "" 2
-;  222 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[216]	picWrite('V');
+;  224 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[218]	picWrite('V');
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#86	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  224 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[217]	picWrite(cmd);
+;  226 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[219]	picWrite(cmd);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#3	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  226 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[218]	picWrite(arg);
+;  228 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[220]	picWrite(arg);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-1	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  228 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[219]	result = picRead();
+;  230 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[221]	result = picRead();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_picRead	; 
 ;----- asm -----
-;  230 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[220]	delay10ms();
+;  232 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[222]	delay10ms();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_delay10ms	; 
 ;----- asm -----
-;  232 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[221]	return result;
+;  234 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[223]	return result;
 ;  0 "" 2
 ;--- end asm ---
 L376:
 ;----- asm -----
-;  1249 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[849]			writeEeprom(i, 0xff);
+;  1259 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[855]			writeEeprom(i, 0xff);
 ;  0 "" 2
-;  238 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[226]	if (picAvailable) {
+;  240 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[228]	if (picAvailable) {
 ;  0 "" 2
 ;--- end asm ---
 	tst	_picAvailable	;  picAvailable
 	lbeq	L377	; 
 ;----- asm -----
-;  240 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[227]	    	sendCommand(CMD_SET_EEPROM_ADR, address);
+;  242 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[229]	    	sendCommand(CMD_SET_EEPROM_ADR, address);
 ;  0 "" 2
-;  220 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[215]	uint8_t result;
+;  222 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[217]	uint8_t result;
 ;  0 "" 2
-;  222 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[216]	picWrite('V');
+;  224 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[218]	picWrite('V');
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#86	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  224 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[217]	picWrite(cmd);
+;  226 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[219]	picWrite(cmd);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#2	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  226 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[218]	picWrite(arg);
+;  228 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[220]	picWrite(arg);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#4	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  228 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[219]	result = picRead();
+;  230 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[221]	result = picRead();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_picRead	; 
 ;----- asm -----
-;  230 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[220]	delay10ms();
+;  232 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[222]	delay10ms();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_delay10ms	; 
 ;----- asm -----
-;  232 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[221]	return result;
+;  234 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[223]	return result;
 ;  0 "" 2
-;  242 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[228]	    	sendCommand(CMD_EEPROM_WRITE, data);
+;  244 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[230]	    	sendCommand(CMD_EEPROM_WRITE, data);
 ;  0 "" 2
-;  220 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[215]	uint8_t result;
+;  222 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[217]	uint8_t result;
 ;  0 "" 2
-;  222 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[216]	picWrite('V');
+;  224 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[218]	picWrite('V');
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#86	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  224 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[217]	picWrite(cmd);
+;  226 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[219]	picWrite(cmd);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#3	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  226 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[218]	picWrite(arg);
+;  228 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[220]	picWrite(arg);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-1	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  228 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[219]	result = picRead();
+;  230 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[221]	result = picRead();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_picRead	; 
 ;----- asm -----
-;  230 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[220]	delay10ms();
+;  232 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[222]	delay10ms();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_delay10ms	; 
 ;----- asm -----
-;  232 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[221]	return result;
+;  234 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[223]	return result;
 ;  0 "" 2
 ;--- end asm ---
 L377:
 ;----- asm -----
-;  1249 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[849]			writeEeprom(i, 0xff);
+;  1259 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[855]			writeEeprom(i, 0xff);
 ;  0 "" 2
-;  238 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[226]	if (picAvailable) {
+;  240 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[228]	if (picAvailable) {
 ;  0 "" 2
 ;--- end asm ---
 	tst	_picAvailable	;  picAvailable
 	lbeq	L378	; 
 ;----- asm -----
-;  240 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[227]	    	sendCommand(CMD_SET_EEPROM_ADR, address);
+;  242 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[229]	    	sendCommand(CMD_SET_EEPROM_ADR, address);
 ;  0 "" 2
-;  220 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[215]	uint8_t result;
+;  222 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[217]	uint8_t result;
 ;  0 "" 2
-;  222 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[216]	picWrite('V');
+;  224 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[218]	picWrite('V');
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#86	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  224 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[217]	picWrite(cmd);
+;  226 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[219]	picWrite(cmd);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#2	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  226 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[218]	picWrite(arg);
+;  228 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[220]	picWrite(arg);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#5	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  228 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[219]	result = picRead();
+;  230 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[221]	result = picRead();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_picRead	; 
 ;----- asm -----
-;  230 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[220]	delay10ms();
+;  232 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[222]	delay10ms();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_delay10ms	; 
 ;----- asm -----
-;  232 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[221]	return result;
+;  234 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[223]	return result;
 ;  0 "" 2
-;  242 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[228]	    	sendCommand(CMD_EEPROM_WRITE, data);
+;  244 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[230]	    	sendCommand(CMD_EEPROM_WRITE, data);
 ;  0 "" 2
-;  220 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[215]	uint8_t result;
+;  222 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[217]	uint8_t result;
 ;  0 "" 2
-;  222 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[216]	picWrite('V');
+;  224 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[218]	picWrite('V');
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#86	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  224 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[217]	picWrite(cmd);
+;  226 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[219]	picWrite(cmd);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#3	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  226 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[218]	picWrite(arg);
+;  228 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[220]	picWrite(arg);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-1	; ,
 	jsr	_picWrite	; 
 ;----- asm -----
-;  228 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[219]	result = picRead();
+;  230 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[221]	result = picRead();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_picRead	; 
 ;----- asm -----
-;  230 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[220]	delay10ms();
+;  232 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[222]	delay10ms();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_delay10ms	; 
 ;----- asm -----
-;  232 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[221]	return result;
+;  234 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[223]	return result;
 ;  0 "" 2
 ;--- end asm ---
 L378:
 ;----- asm -----
-;  1252 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[851]		gameState = MainMenu;
+;  1262 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[857]		gameState = MainMenu;
 ;  0 "" 2
 ;--- end asm ---
 	clr	_gameState	;  gameState
@@ -8518,37 +8550,37 @@ L378:
 	stb	2,s	; ,
 L372:
 ;----- asm -----
-;  1255 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[853]	if (Vec_Buttons & 8) {
+;  1265 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[859]	if (Vec_Buttons & 8) {
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#8	; ,
 	andb	2,s	; ,
 	beq	L379	; 
 ;----- asm -----
-;  1257 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[854]		gameState = MainMenu;
+;  1267 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[860]		gameState = MainMenu;
 ;  0 "" 2
 ;--- end asm ---
 	clr	_gameState	;  gameState
 L379:
 ;----- asm -----
-;  1387 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[939]				musicPlay();
+;  1400 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[947]				musicPlay();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_musicPlay	; 
 ;----- asm -----
-;  1389 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[940]				break;
+;  1402 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[948]				break;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_gameState	; , gameState
 	jmp	L360	; 
 L390:
 ;----- asm -----
-;  1215 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[828]		startLevel();
+;  1225 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[834]		startLevel();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_startLevel	; 
@@ -8557,85 +8589,85 @@ L390:
 	jmp	L369	; 
 L388:
 ;----- asm -----
-;  1159 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[794]		drawBlock(-blockYOfs*blockYOfs);
+;  1169 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[800]		drawBlock(-blockYOfs*blockYOfs);
 ;  0 "" 2
-;  993 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[689]	zergnd();
+;  999 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[693]	zergnd();
 ;  0 "" 2
-;  181 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  181 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	jsr ___Reset0Ref; BIOS call
 ;  0 "" 2
-;  995 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[690]	intens(0x63);
+;  1001 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[694]	intens(0x63);
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#99	; ,
 	stb	13,s	; , a
 ;----- asm -----
-;  3427 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3427 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 13,s	;  a
 	jsr ___Intensity_a; BIOS call
 ;  0 "" 2
-;  997 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[691]	positd(0, yofs);
+;  1003 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[695]	positd(0, yofs);
 ;  0 "" 2
-;  52 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  52 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[51]	dp_VIA_t1_cnt_lo = 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-128	; ,
 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo
 ;----- asm -----
-;  54 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  54 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[52]	Moveto_d(y,x);
 ;  0 "" 2
 ;--- end asm ---
-	ldb	9,s	;  tmp90, blockYOfs.64
-	negb	;  tmp90
-	lda	9,s	;mulqihi3	;  blockYOfs.64
+	ldb	9,s	;  tmp91, blockYOfs.68
+	negb	;  tmp91
+	lda	9,s	;mulqihi3	;  blockYOfs.68
 	mul
-	stb	14,s	;movlsbqihi: R:d -> 14,s	;  a, tmp91
+	stb	14,s	;movlsbqihi: R:d -> 14,s	;  a, tmp92
 	clr	13,s	;  b
 ;----- asm -----
-;  3315 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3315 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 14,s	;  a
 	ldb 13,s	;  b
 	jsr ___Moveto_d; BIOS call
 ;  0 "" 2
-;  1000 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[693]	positd(x3d(blockX, 0, blockY), y3d(blockX, 0, blockY));
+;  1006 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[697]	positd(x3d(blockX, 0, blockY), y3d(blockX, 0, blockY));
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockX	; , blockX
-	stb	10,s	; , blockX.40
+	stb	10,s	; , blockX.42
 ;----- asm -----
-;  309 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[278]	y -= LEVEL_HEIGHT / 2;
+;  311 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[280]	y -= LEVEL_HEIGHT / 2;
 ;  0 "" 2
-;  311 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[279]	return 3 * x + 13 * y + 8 * z;
+;  313 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[281]	return 3 * x + 13 * y + 8 * z;
 ;  0 "" 2
-;  300 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[271]	x -= LEVEL_WIDTH / 2 - 4;
+;  302 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[273]	x -= LEVEL_WIDTH / 2 - 4;
 ;  0 "" 2
-;  302 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[272]	return 14 * x - 6 * z+0*y;
+;  304 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[274]	return 14 * x - 6 * z+0*y;
 ;  0 "" 2
-;  52 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  52 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[51]	dp_VIA_t1_cnt_lo = 0x80;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	#-128	; ,
 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo
 ;----- asm -----
-;  54 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  54 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[52]	Moveto_d(y,x);
 ;  0 "" 2
 ;--- end asm ---
-	ldb	10,s	; , blockX.40
+	ldb	10,s	; , blockX.42
 	aslb	; 
-	addb	10,s	; , blockX.40
+	addb	10,s	; , blockX.42
 	stb	,s	; ,
 	ldb	_blockY	; , blockY
 	aslb	; 
@@ -8646,28 +8678,28 @@ L388:
 	addb	4,s	; ,
 	addb	#-104	; ,
 	stb	13,s	; , a
-	ldb	10,s	; , blockX.40
+	ldb	10,s	; , blockX.42
 	addb	#-2	; ,
 	lda	#14	;mulqihi3	; 
 	mul
-	tfr	d,y	; , tmp98
+	tfr	d,y	; , tmp99
 	ldb	_blockY	; , blockY
 	lda	#-6	;mulqihi3	; 
 	mul
-	tfr	d,x	; , tmp99
-	tfr	y,d	;movlsbqihi: R:y -> R:b	;  tmp98,
+	tfr	d,x	; , tmp100
+	tfr	y,d	;movlsbqihi: R:y -> R:b	;  tmp99,
 	stb	3,s	; ,
-	tfr	x,d	;movlsbqihi: R:x -> R:b	;  tmp99, tmp101
-	addb	3,s	;  tmp101,
-	stb	14,s	;  tmp101, b
+	tfr	x,d	;movlsbqihi: R:x -> R:b	;  tmp100, tmp102
+	addb	3,s	;  tmp102,
+	stb	14,s	;  tmp102, b
 ;----- asm -----
-;  3315 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+;  3315 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 13,s	;  a
 	ldb 14,s	;  b
 	jsr ___Moveto_d; BIOS call
 ;  0 "" 2
-;  1002 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[694]	pack1x((void*)(blockAnimation[blockAnimationStep]));
+;  1008 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[698]	pack1x((void*)(blockAnimation[blockAnimationStep]));
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockAnimationStep	; , blockAnimationStep
@@ -8676,10 +8708,10 @@ L388:
 	aslb	; 
 	rola	; 
 	ldu	_blockAnimation	; , blockAnimation
-	leax	d,u	;  tmp105, tmp104,
-	ldx	,x	;  D.4541,
+	leax	d,u	;  tmp106, tmp105,
+	ldx	,x	;  D.4555,
 ;----- asm -----
-;  59 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  59 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[56]	dp_VIA_t1_cnt_lo = 0x80;
 ;  0 "" 2
 ;--- end asm ---
@@ -8687,78 +8719,78 @@ L388:
 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo
 ; Applied peep: 2 (no load after store)
 ;----- asm -----
-;  61 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+;  61 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 	; #ENR#[57]	Draw_VLp(x);
 ;  0 "" 2
 ;--- end asm ---
 ;----- asm -----
-;  1610 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
-	stx	11,s	;  D.4541, x
+;  1610 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+	stx	11,s	;  D.4555, x
 ; ORG>;----- asm -----
-; ORG>;  61 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+; ORG>;  61 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
 ; ORG>	; $ENR$[57]	Draw_VLp(x);
 ; ORG>;  0 "" 2
 ; ORG>;--- end asm ---
-; ORG>	stx	11,s	;  D.4541, x
+; ORG>	stx	11,s	;  D.4555, x
 ; ORG>;----- asm -----
-; ORG>;  1610 "/home/frank/Downloads/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+; ORG>;  1610 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 ; ORG>	ldx 11,s	;  x
 	jsr ___Draw_VLp; BIOS call
 ;  0 "" 2
-;  1161 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[795]		doBlockAnimation();
+;  1171 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[801]		doBlockAnimation();
 ;  0 "" 2
-;  1060 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[732]	if (blockAnimating) {
+;  1068 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[737]	if (blockAnimating) {
 ;  0 "" 2
 ;--- end asm ---
 	tst	_blockAnimating	;  blockAnimating
 	lbeq	L381	; 
 ;----- asm -----
-;  1062 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[733]		if (++blockAnimationStep == BLOCK_STEPS_COUNT) {
+;  1070 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[738]		if (++blockAnimationStep == BLOCK_STEPS_COUNT) {
 ;  0 "" 2
 ;--- end asm ---
 	inc	_blockAnimationStep	;  blockAnimationStep
-	ldb	_blockAnimationStep	;  blockAnimationStep.48, blockAnimationStep
-	cmpb	#12	;cmpqi:	;  blockAnimationStep.48,
+	ldb	_blockAnimationStep	;  blockAnimationStep.51, blockAnimationStep
+	cmpb	#12	;cmpqi:	;  blockAnimationStep.51,
 	lbne	L381	; 
 ;----- asm -----
-;  1064 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[734]			blockX = nextBlockX;
+;  1072 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[739]			blockX = nextBlockX;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_nextBlockX	; , nextBlockX
 	stb	_blockX	; , blockX
 ;----- asm -----
-;  1066 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[735]			blockY = nextBlockY;
+;  1074 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[740]			blockY = nextBlockY;
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_nextBlockY	; , nextBlockY
 	stb	_blockY	; , blockY
 ;----- asm -----
-;  1068 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[736]			blockAnimationStep = 0;
+;  1076 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[741]			blockAnimationStep = 0;
 ;  0 "" 2
 ;--- end asm ---
 	clr	_blockAnimationStep	;  blockAnimationStep
 ;----- asm -----
-;  1070 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[737]			blockAnimation = nextBlockAnimation;
+;  1078 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[742]			blockAnimation = nextBlockAnimation;
 ;  0 "" 2
 ;--- end asm ---
 	ldx	_nextBlockAnimation	; , nextBlockAnimation
 	stx	_blockAnimation	; , blockAnimation
 ;----- asm -----
-;  1072 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[738]			blockAnimating = 0;
+;  1080 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[743]			blockAnimating = 0;
 ;  0 "" 2
 ;--- end asm ---
 	clr	_blockAnimating	;  blockAnimating
 ;----- asm -----
-;  1164 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[797]	if (blockYOfs == 50) {
+;  1174 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[803]	if (blockYOfs == 50) {
 ;  0 "" 2
 ;--- end asm ---
 	ldb	_blockYOfs	; , blockYOfs
@@ -8766,8 +8798,8 @@ L388:
 	lbne	L382	; 
 L389:
 ;----- asm -----
-;  1166 "/home/frank/Downloads/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
-	; #ENR#[798]		startLevel();
+;  1176 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+	; #ENR#[804]		startLevel();
 ;  0 "" 2
 ;--- end asm ---
 	jsr	_startLevel	; 
@@ -17360,6 +17392,9 @@ _endY:
 	.globl _levelNumber
 _levelNumber:
 	.byte	0	;skip space
+	.globl _vecx
+_vecx:
+	.word	-32768
 	.globl _led8
 	.area .text
 _led8:

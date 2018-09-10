@@ -2,16 +2,16 @@
                      D002     2 DCNTRL = 0hd002	; DDRB      - Data Direction Register B
                               3 
                               4 	.area .bss
-   C88E                       5 data: .blkb   1
-   C88F                       6 counter: .blkb   1
-   C890                       7 bit_counter: .blkb   1
+   C890                       5 data: .blkb   1
+   C891                       6 counter: .blkb   1
+   C892                       7 bit_counter: .blkb   1
                               8  
                               9 	.area .text
                              10 
                              11 	.globl  _picWrite
    2204                      12 _picWrite:
    2204 34 1E         [ 9]   13 	pshs    d,dp,x
-   2206 F7 C8 8E      [ 5]   14 	stb data
+   2206 F7 C8 90      [ 5]   14 	stb data
                              15 
    2209 86 D0         [ 2]   16 	lda #0hd0		; setup direct page to 0xd000
    220B 1F 8B         [ 6]   17 	tfr a, dp
@@ -33,7 +33,7 @@
                              33 	; bit 1 = 9.3 us high
    221E C6 08         [ 2]   34 	ldb #8
    2220                      35 loop:
-   2220 B6 C8 8E      [ 5]   36 	lda data
+   2220 B6 C8 90      [ 5]   36 	lda data
    2223 85 80         [ 2]   37 	bita #0x80
    2225 27 0E         [ 3]   38 	beq loop2
    2227 86 9F         [ 2]   39 	lda #0x9f
@@ -56,7 +56,7 @@
    2240 12            [ 2]   56 	nop
    2241 20 00         [ 3]   57 	bra loop3
    2243                      58 loop3:
-   2243 78 C8 8E      [ 7]   59 	lsl data
+   2243 78 C8 90      [ 7]   59 	lsl data
    2246 5A            [ 2]   60 	decb
    2247 26 D7         [ 3]   61 	bne loop
                              62 
@@ -89,11 +89,11 @@
    225D 26 FD         [ 3]   89 	bne wh
                              90 
    225F 86 08         [ 2]   91 	lda #8
-   2261 B7 C8 90      [ 5]   92 	sta bit_counter
+   2261 B7 C8 92      [ 5]   92 	sta bit_counter
                              93 
                              94 ; wait until PB6 is set to low from the PIC
    2264 86 00         [ 2]   95 	lda #0
-   2266 B7 C8 8E      [ 5]   96 	sta data
+   2266 B7 C8 90      [ 5]   96 	sta data
    2269 C6 40         [ 2]   97 	ldb #0h40
    226B                      98 wait_start:
    226B 4C            [ 2]   99 	inca
@@ -105,7 +105,7 @@
                             105 ; measure high time
    2274                     106 next_bit:
    2274 86 00         [ 2]  107 	lda #0
-   2276 B7 C8 8F      [ 5]  108 	sta counter
+   2276 B7 C8 91      [ 5]  108 	sta counter
    2279 C6 40         [ 2]  109 	ldb #0h40
    227B                     110 wait_start2:
    227B 4C            [ 2]  111 	inca
@@ -118,28 +118,28 @@
    2286 4C            [ 2]  118 	inca
    2287 81 FF         [ 2]  119 	cmpa #255
    2289 27 1C         [ 3]  120 	beq timeout
-   228B 7C C8 8F      [ 7]  121 	inc counter
+   228B 7C C8 91      [ 7]  121 	inc counter
    228E D5 00         [ 4]  122 	bitb *CNTRL
    2290 26 F4         [ 3]  123 	bne wait_start3
                             124 
                             125 ; test if it was a 0 or 1 bit
-   2292 F6 C8 8F      [ 5]  126 	ldb counter
-   2295 B6 C8 8E      [ 5]  127 	lda data
+   2292 F6 C8 91      [ 5]  126 	ldb counter
+   2295 B6 C8 90      [ 5]  127 	lda data
    2298 48            [ 2]  128 	asla
    2299 C1 09         [ 2]  129 	cmpb #9
    229B 2D 02         [ 3]  130 	blt less
    229D 8A 01         [ 2]  131 	ora #1
    229F                     132 less:
-   229F B7 C8 8E      [ 5]  133 	sta data
+   229F B7 C8 90      [ 5]  133 	sta data
                             134 
-   22A2 7A C8 90      [ 7]  135 	dec bit_counter
+   22A2 7A C8 92      [ 7]  135 	dec bit_counter
    22A5 26 CD         [ 3]  136 	bne next_bit
                             137 
    22A7                     138 timeout:
                             139 
                             140 ; return high time
    22A7 35 1E         [ 9]  141 	puls d,dp,x       ; restore registers from stack
-   22A9 F6 C8 8E      [ 5]  142 	ldb data
+   22A9 F6 C8 90      [ 5]  142 	ldb data
    22AC 39            [ 5]  143 	rts
                             144 
                             145 

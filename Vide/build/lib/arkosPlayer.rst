@@ -18,21 +18,21 @@
                              18 
                              19 ; below RAM usuage is 74 byte (without psh shadow/work registers, which are set to
                              20 ; vectrex default RAM locations)
-   C891                      21 tmp_track_param: .blkb   1
+   C893                      21 tmp_track_param: .blkb   1
                      0000    22 arkosPlayerMemStart  = tmp_track_param
-   C892                      23 tmp_track_instrument: .blkb   1
-   C893                      24 tmp_instrument_second_byte: .blkb   1
+   C894                      23 tmp_track_instrument: .blkb   1
+   C895                      24 tmp_instrument_second_byte: .blkb   1
                              25 ; following are player vars which are channel independend
-   C894                      26 PLY_HEIGHT: .blkb   1                            ; height of pattern 
-   C895                      27 PLY_SPEED: .blkb   1                            ; speed of pattern 
-   C896                      28 PLY_SPEEDCPT: .blkb   1                            ; current speed position (count down to 0) 
-   C897                      29 PLY_HEIGHTCPT: .blkb   1                            ; current height position (count down to 0) 
-   C898                      30 PLY_TRACK_INSTRUMENTSTABLEPT: .blkb   2                       ; address of instrument table 
-   C89A                      31 PLY_LINKER_PT: .blkb   2                            ; current linker position 
-   C89C                      32 PLY_PSGREG13_RETRIG: .blkb   1                            ; retrigger "flag" - if same as PLY_PSGREG13, than not retriggered, otherewise - yes 
-   C89D                      33 PLY_SAVESPECIALTRACK: .blkb   2                            ; start position of current special track 
-   C89F                      34 PLY_SPECIALTRACK_PT: .blkb   2                            ; current position in special track 
-   C8A1                      35 PLY_SPECIALTRACK_WAITCOUNTER: .blkb   1                       ; wait counter for special track (count down to 0) 
+   C896                      26 PLY_HEIGHT: .blkb   1                            ; height of pattern 
+   C897                      27 PLY_SPEED: .blkb   1                            ; speed of pattern 
+   C898                      28 PLY_SPEEDCPT: .blkb   1                            ; current speed position (count down to 0) 
+   C899                      29 PLY_HEIGHTCPT: .blkb   1                            ; current height position (count down to 0) 
+   C89A                      30 PLY_TRACK_INSTRUMENTSTABLEPT: .blkb   2                       ; address of instrument table 
+   C89C                      31 PLY_LINKER_PT: .blkb   2                            ; current linker position 
+   C89E                      32 PLY_PSGREG13_RETRIG: .blkb   1                            ; retrigger "flag" - if same as PLY_PSGREG13, than not retriggered, otherewise - yes 
+   C89F                      33 PLY_SAVESPECIALTRACK: .blkb   2                            ; start position of current special track 
+   C8A1                      34 PLY_SPECIALTRACK_PT: .blkb   2                            ; current position in special track 
+   C8A3                      35 PLY_SPECIALTRACK_WAITCOUNTER: .blkb   1                       ; wait counter for special track (count down to 0) 
                              36 ;
                              37 ; in general in belo player, y reg points to the start of
                              38 ; following structure (one for each channel)
@@ -53,30 +53,30 @@
                      0011    53 ArkosChannel = 17
                              54 
                              55 ;
-   C8A2                      56 Channel1Data:        .blkb   17 ;ds       ArkosChannel 
-   C8B3                      57 Channel2Data:        .blkb   17 ;ds       ArkosChannel 
-   C8C4                      58 Channel3Data:        .blkb   17 ;ds       ArkosChannel 
+   C8A4                      56 Channel1Data:        .blkb   17 ;ds       ArkosChannel 
+   C8B5                      57 Channel2Data:        .blkb   17 ;ds       ArkosChannel 
+   C8C6                      58 Channel3Data:        .blkb   17 ;ds       ArkosChannel 
                      0044    59 ChannelDataEnd      = Channel3Data + 17
                              60 ;
-   C8D5                      61 PLY_PSGREG13:        .blkb   1 ; ds       1                            ; special - this is used for retrigger activities 
-   C8D6                      62 PLY_VOL_REG:         .blkb   2 ; ds       2                            ; these two are used to stay "channel" independend 
-   C8D8                      63 PLY_FREQ_REG:        .blkb   2 ; ds       2                            ; they are loaded befor the "work" routines with the corresponding regs of the current channel 
+   C8D7                      61 PLY_PSGREG13:        .blkb   1 ; ds       1                            ; special - this is used for retrigger activities 
+   C8D8                      62 PLY_VOL_REG:         .blkb   2 ; ds       2                            ; these two are used to stay "channel" independend 
+   C8DA                      63 PLY_FREQ_REG:        .blkb   2 ; ds       2                            ; they are loaded befor the "work" routines with the corresponding regs of the current channel 
                              64 
                              65 ;	org      Vec_Music_Work 
                              66 ; simple redefines for source compatability (TODO: Vec_Music_Work is 0hc83f, so can't be redefines)
                              67 	.globl PLY_PSGREG0
-   C8DA                      68 PLY_PSGREG0:         .blkb   1
-   C8DB                      69 PLY_PSGREG1:         .blkb   1
-   C8DC                      70 PLY_PSGREG2:         .blkb   1
-   C8DD                      71 PLY_PSGREG3:         .blkb   1
-   C8DE                      72 PLY_PSGREG4:         .blkb   1
-   C8DF                      73 PLY_PSGREG5:         .blkb   1
-   C8E0                      74 PLY_PSGREG6:         .blkb   2
-   C8E2                      75 PLY_PSGREG8:         .blkb   1
-   C8E3                      76 PLY_PSGREG9:         .blkb   1
-   C8E4                      77 PLY_PSGREG10:        .blkb   1
-   C8E5                      78 PLY_PSGREG11:        .blkb   1
-   C8E6                      79 PLY_PSGREG12:        .blkb   2
+   C8DC                      68 PLY_PSGREG0:         .blkb   1
+   C8DD                      69 PLY_PSGREG1:         .blkb   1
+   C8DE                      70 PLY_PSGREG2:         .blkb   1
+   C8DF                      71 PLY_PSGREG3:         .blkb   1
+   C8E0                      72 PLY_PSGREG4:         .blkb   1
+   C8E1                      73 PLY_PSGREG5:         .blkb   1
+   C8E2                      74 PLY_PSGREG6:         .blkb   2
+   C8E4                      75 PLY_PSGREG8:         .blkb   1
+   C8E5                      76 PLY_PSGREG9:         .blkb   1
+   C8E6                      77 PLY_PSGREG10:        .blkb   1
+   C8E7                      78 PLY_PSGREG11:        .blkb   1
+   C8E8                      79 PLY_PSGREG12:        .blkb   2
                      0049    80 PLY_PSGREGISTERSARRAY = PLY_PSGREG0
                      0057    81 PLY_PSGREGISTERSARRAY_END = PLY_PSGREG12 + 2
                              82 
@@ -90,14 +90,14 @@
                              90 	.globl PLY_PLAY
    22BB                      91 PLY_PLAY: 
                              92 ;Manage Speed. If Speed counter is over, we have to read the Pattern further.
-   22BB 7A C8 96      [ 7]   93                     dec      PLY_SPEEDCPT 
+   22BB 7A C8 98      [ 7]   93                     dec      PLY_SPEEDCPT 
    22BE 10 26 01 29   [ 6]   94                     lbne     PLY_SPEEDEND 
                              95 ;Moving forward in the Pattern. Test if it is not over.
-   22C2 7A C8 97      [ 7]   96                     dec      PLY_HEIGHTCPT 
+   22C2 7A C8 99      [ 7]   96                     dec      PLY_HEIGHTCPT 
    22C5 26 61         [ 3]   97                     BNE      PLY_HEIGHTEND 
                              98 ;Pattern Over. We have to read the Linker.
                              99 ;Get the Transpositions, if they have changed, or detect the Song Ending !
-   22C7 BE C8 9A      [ 6]  100                     LDX      PLY_LINKER_PT 
+   22C7 BE C8 9C      [ 6]  100                     LDX      PLY_LINKER_PT 
    22CA A6 80         [ 6]  101                     LDA      ,X+ 
                             102 ; A = 
                             103 ;{DB PatternState :
@@ -136,49 +136,49 @@
    22D4 46            [ 2]  136                     RORA                                  ; if b1 = 1 
    22D5 24 05         [ 3]  137                     BCC      PLY_NONEWTRANSPOSITION1 
    22D7 E6 80         [ 6]  138                     LDB      ,X+ 
-   22D9 F7 C8 A2      [ 5]  139                     STB      Channel1Data + PLY_TRANSPOSITION 
+   22D9 F7 C8 A4      [ 5]  139                     STB      Channel1Data + PLY_TRANSPOSITION 
    22DC                     140 PLY_NONEWTRANSPOSITION1: 
    22DC 46            [ 2]  141                     RORA                                  ; if b2 = 1 
    22DD 24 05         [ 3]  142                     BCC      PLY_NONEWTRANSPOSITION2 
    22DF E6 80         [ 6]  143                     LDB      ,X+ 
-   22E1 F7 C8 B3      [ 5]  144                     STB      Channel2Data + PLY_TRANSPOSITION 
+   22E1 F7 C8 B5      [ 5]  144                     STB      Channel2Data + PLY_TRANSPOSITION 
    22E4                     145 PLY_NONEWTRANSPOSITION2: 
    22E4 46            [ 2]  146                     RORA                                  ; if b3 = 1 
    22E5 24 05         [ 3]  147                     BCC      PLY_NONEWTRANSPOSITION3 
    22E7 E6 80         [ 6]  148                     LDB      ,X+ 
-   22E9 F7 C8 C4      [ 5]  149                     STB      Channel3Data + PLY_TRANSPOSITION 
+   22E9 F7 C8 C6      [ 5]  149                     STB      Channel3Data + PLY_TRANSPOSITION 
    22EC                     150 PLY_NONEWTRANSPOSITION3: 
    22EC EE 81         [ 8]  151                     LDu      ,X++ 
-   22EE FF C8 A9      [ 6]  152                     STu      Channel1Data + PLY_TRACK_PT 
+   22EE FF C8 AB      [ 6]  152                     STu      Channel1Data + PLY_TRACK_PT 
    22F1 EE 81         [ 8]  153                     LDu      ,X++ 
-   22F3 FF C8 BA      [ 6]  154                     STu      Channel2Data + PLY_TRACK_PT 
+   22F3 FF C8 BC      [ 6]  154                     STu      Channel2Data + PLY_TRACK_PT 
    22F6 EE 81         [ 8]  155                     LDu      ,X++ 
-   22F8 FF C8 CB      [ 6]  156                     STu      Channel3Data + PLY_TRACK_PT 
+   22F8 FF C8 CD      [ 6]  156                     STu      Channel3Data + PLY_TRACK_PT 
    22FB 46            [ 2]  157                     RORA                                  ; if b4 = 1 
    22FC 24 05         [ 3]  158                     BCC      PLY_NONEWHEIGHT 
    22FE E6 80         [ 6]  159                     LDB      ,X+ 
-   2300 F7 C8 94      [ 5]  160                     STB      PLY_HEIGHT 
+   2300 F7 C8 96      [ 5]  160                     STB      PLY_HEIGHT 
    2303                     161 PLY_NONEWHEIGHT: 
    2303 46            [ 2]  162                     RORA                                  ; if b5 = 1 
    2304 24 05         [ 3]  163                     BCC      PLY_NONEWSPECIALTRACK 
    2306                     164 PLY_NEWSPECIALTRACK: 
    2306 EE 81         [ 8]  165                     ldu      , x++ 
-   2308 FF C8 9D      [ 6]  166                     STu      PLY_SAVESPECIALTRACK 
+   2308 FF C8 9F      [ 6]  166                     STu      PLY_SAVESPECIALTRACK 
    230B                     167 PLY_NONEWSPECIALTRACK: 
-   230B BF C8 9A      [ 6]  168                     STX      PLY_LINKER_PT                ; this pattern was read, whenever the tracks are playered - the next pattern will start here 
+   230B BF C8 9C      [ 6]  168                     STX      PLY_LINKER_PT                ; this pattern was read, whenever the tracks are playered - the next pattern will start here 
                             169 ; a new pattern allways resets the special track - whether an old one - or a just gotten one
-   230E BE C8 9D      [ 6]  170                     LDX      PLY_SAVESPECIALTRACK 
-   2311 BF C8 9F      [ 6]  171                     STX      PLY_SPECIALTRACK_PT 
+   230E BE C8 9F      [ 6]  170                     LDX      PLY_SAVESPECIALTRACK 
+   2311 BF C8 A1      [ 6]  171                     STX      PLY_SPECIALTRACK_PT 
                             172 ;Reset the SpecialTrack/Tracks line counter.
                             173 ;We can't rely on the song data, because the Pattern Height is not related to the Tracks Height.
                             174 ; countdowns allways test for dec->beq - so placing a one is a garantied "reset"
    2314 86 01         [ 2]  175                     LDA      #0h1 
-   2316 B7 C8 A1      [ 5]  176                     sta      PLY_SPECIALTRACK_WAITCOUNTER 
-   2319 B7 C8 AB      [ 5]  177                     sta      Channel1Data + PLY_TRACK_WAITCOUNTER 
-   231C B7 C8 BC      [ 5]  178                     sta      Channel2Data + PLY_TRACK_WAITCOUNTER 
-   231F B7 C8 CD      [ 5]  179                     sta      Channel3Data + PLY_TRACK_WAITCOUNTER 
-   2322 B6 C8 94      [ 5]  180                     LDA      PLY_HEIGHT 
-   2325 B7 C8 97      [ 5]  181                     STA      PLY_HEIGHTCPT 
+   2316 B7 C8 A3      [ 5]  176                     sta      PLY_SPECIALTRACK_WAITCOUNTER 
+   2319 B7 C8 AD      [ 5]  177                     sta      Channel1Data + PLY_TRACK_WAITCOUNTER 
+   231C B7 C8 BE      [ 5]  178                     sta      Channel2Data + PLY_TRACK_WAITCOUNTER 
+   231F B7 C8 CF      [ 5]  179                     sta      Channel3Data + PLY_TRACK_WAITCOUNTER 
+   2322 B6 C8 96      [ 5]  180                     LDA      PLY_HEIGHT 
+   2325 B7 C8 99      [ 5]  181                     STA      PLY_HEIGHTCPT 
    2328                     182 PLY_HEIGHTEND: 
                             183 ;Read the Special Track/Tracks.
                             184 ;------------------------------
@@ -202,9 +202,9 @@
                             202 ;}
    2328                     203 _read_special_track: 
                             204 ;Read the Special Track.
-   2328 7A C8 A1      [ 7]  205                     dec      PLY_SPECIALTRACK_WAITCOUNTER 
+   2328 7A C8 A3      [ 7]  205                     dec      PLY_SPECIALTRACK_WAITCOUNTER 
    232B 26 1A         [ 3]  206                     BNE      PLY_SPECIALTRACK_DONE 
-   232D BE C8 9F      [ 6]  207                     LDX      PLY_SPECIALTRACK_PT 
+   232D BE C8 A1      [ 6]  207                     LDX      PLY_SPECIALTRACK_PT 
    2330 A6 80         [ 6]  208                     LDA      ,X+ 
    2332 44            [ 2]  209                     LSRA                                  ; if b0=0 -> carry will be clear -> jump to WAIT 
    2333 24 0C         [ 3]  210                     BCC      PLY_SPECIALTRACK_NEWWAIT 
@@ -217,14 +217,14 @@
                             217 ; we just ignore it and jump to the end
    233A 25 03         [ 3]  218                     bcs      PLY_PT_SPECIALTRACK_ENDDATA 
    233C                     219 PLY_SPECIALTRACK_SPEED: 
-   233C B7 C8 95      [ 5]  220                     STA      PLY_SPEED                    ; the data we got was the speed - store it 
+   233C B7 C8 97      [ 5]  220                     STA      PLY_SPEED                    ; the data we got was the speed - store it 
    233F                     221 PLY_PT_SPECIALTRACK_ENDDATA: 
    233F 86 01         [ 2]  222                     LDA      #0h1                          ; reset wait counter, next round might be more waiting :-) 
    2341                     223 PLY_SPECIALTRACK_NEWWAIT: 
-   2341 BF C8 9F      [ 6]  224                     STX      PLY_SPECIALTRACK_PT          ; is this used anywhere? 
-   2344 B7 C8 A1      [ 5]  225                     STA      PLY_SPECIALTRACK_WAITCOUNTER 
+   2341 BF C8 A1      [ 6]  224                     STX      PLY_SPECIALTRACK_PT          ; is this used anywhere? 
+   2344 B7 C8 A3      [ 5]  225                     STA      PLY_SPECIALTRACK_WAITCOUNTER 
    2347                     226 PLY_SPECIALTRACK_DONE: 
-   2347 10 8E C8 A2   [ 4]  227                     ldy      #Channel1Data 
+   2347 10 8E C8 A4   [ 4]  227                     ldy      #Channel1Data 
    234B                     228 readnextchannel: 
    234B                     229 _read_track: 
                             230 ;Read the Track 1.
@@ -245,7 +245,7 @@
                             245 ;Read Parameters
    235F                     246 PLY_READTRACK_READPARAMETERS: 
    235F A6 80         [ 6]  247                     LDA      ,X+ 
-   2361 B7 C8 91      [ 5]  248                     sta      tmp_track_param              ;Save Parameters. 
+   2361 B7 C8 93      [ 5]  248                     sta      tmp_track_param              ;Save Parameters. 
    2364 85 80         [ 2]  249                     bita     #0h80                         ; is pitch following? -> load it 
    2366 27 04         [ 3]  250                     beq      PLY_READTRACK_PITCH_END 
    2368 EE 81         [ 8]  251                     ldu      ,x++ 
@@ -262,7 +262,7 @@
    2375 A7 2B         [ 5]  262                     STA      PLY_TRACK_VOLUME , y 
    2377                     263 PLY_TRACK_SAMEVOLUME_2: 
    2377 A6 80         [ 6]  264                     LDA      ,X+ 
-   2379 B7 C8 92      [ 5]  265                     sta      tmp_track_instrument 
+   2379 B7 C8 94      [ 5]  265                     sta      tmp_track_instrument 
    237C 20 1E         [ 3]  266                     bra      do_continue_p_vol_done 
                             267 
    237E                     268 PLY_READTRACK_NOOPTIMISATION_ESCAPECODE: 
@@ -311,7 +311,7 @@
                             311 ;v = Inverted Volume if Volume?=1. %0000 if Volume? is off.
                             312 ;o = Volume ?
                             313 ;No Wait command. Can be a Note and/or Effects.
-   239C B6 C8 91      [ 5]  314                     lda      tmp_track_param 
+   239C B6 C8 93      [ 5]  314                     lda      tmp_track_param 
    239F AF 27         [ 6]  315                     STX      PLY_TRACK_PT, y 
    23A1 85 40         [ 2]  316                     bita     #0h40                         ;Note ? If no Note, we don't have to test if a new Instrument is here. 
    23A3 27 31         [ 3]  317                     beq      PLY_TRACK_NONOTEGIVEN 
@@ -329,10 +329,10 @@
                             329 
    23BA                     330 PLY_TRACK_NEWINSTRUMENT:                                   ;New  Instrument. We have to get its new address, and Speed. 
    23BA 4F            [ 2]  331                     clra     
-   23BB F6 C8 92      [ 5]  332                     ldb      tmp_track_instrument 
+   23BB F6 C8 94      [ 5]  332                     ldb      tmp_track_instrument 
    23BE 58            [ 2]  333                     LSLB     
    23BF 49            [ 2]  334                     ROLA     
-   23C0 BE C8 98      [ 6]  335                     LDX      PLY_TRACK_INSTRUMENTSTABLEPT 
+   23C0 BE C8 9A      [ 6]  335                     LDX      PLY_TRACK_INSTRUMENTSTABLEPT 
    23C3 AE 8B         [ 9]  336                     ldx      d,x 
    23C5 A6 80         [ 6]  337                     lda      ,x+ 
    23C7 A7 25         [ 5]  338                     STA      PLY_TRACK_INSTRUMENTSPEED , y 
@@ -341,7 +341,7 @@
    23CD                     341 PLY_TRACK_INSTRUMENTRESETPT: 
    23CD A6 80         [ 6]  342                     LDA      ,X+ 
    23CF 27 03         [ 3]  343                     BEQ      noIntrumentRetrigger 
-   23D1 B7 C8 9C      [ 5]  344                     STA      PLY_PSGREG13_RETRIG 
+   23D1 B7 C8 9E      [ 5]  344                     STA      PLY_PSGREG13_RETRIG 
    23D4                     345 noIntrumentRetrigger: 
    23D4 AF 23         [ 6]  346                     STX      PLY_TRACK_INSTRUMENT, y 
    23D6                     347 PLY_TRACK_NONOTEGIVEN: 
@@ -350,20 +350,20 @@
    23D8 E7 29         [ 5]  350                     STb      PLY_TRACK_WAITCOUNTER , y   
    23DA                     351 PLY_TRACK_NEWINSTRUMENT_WAIT_CONT: 
    23DA 31 A8 11      [ 5]  352                     leay     ArkosChannel, y 
-   23DD 10 8C C8 D5   [ 5]  353                     cmpy     #ChannelDataEnd 
+   23DD 10 8C C8 D7   [ 5]  353                     cmpy     #ChannelDataEnd 
    23E1 10 26 FF 66   [ 6]  354                     lbne     readnextchannel 
-   23E5 B6 C8 95      [ 5]  355                     LDA      PLY_SPEED 
-   23E8 B7 C8 96      [ 5]  356                     STA      PLY_SPEEDCPT 
+   23E5 B6 C8 97      [ 5]  355                     LDA      PLY_SPEED 
+   23E8 B7 C8 98      [ 5]  356                     STA      PLY_SPEEDCPT 
                             357 
                             358 
                             359 
                             360 
    23EB                     361 PLY_SPEEDEND: 
-   23EB CC C8 DE      [ 3]  362                     LDD      #PLY_PSGREGISTERSARRAY + 4 
-   23EE FD C8 D8      [ 6]  363                     std      PLY_FREQ_REG 
-   23F1 CC C8 E4      [ 3]  364                     ldd      #PLY_PSGREGISTERSARRAY + 10 
-   23F4 FD C8 D6      [ 6]  365                     std      PLY_VOL_REG 
-   23F7 10 8E C8 C4   [ 4]  366                     LDY      #Channel3Data 
+   23EB CC C8 E0      [ 3]  362                     LDD      #PLY_PSGREGISTERSARRAY + 4 
+   23EE FD C8 DA      [ 6]  363                     std      PLY_FREQ_REG 
+   23F1 CC C8 E6      [ 3]  364                     ldd      #PLY_PSGREGISTERSARRAY + 10 
+   23F4 FD C8 D8      [ 6]  365                     std      PLY_VOL_REG 
+   23F7 10 8E C8 C6   [ 4]  366                     LDY      #Channel3Data 
    23FB                     367 playnextchannel: 
    23FB                     368 _play_sound_track:
                             369 ;Play the Sound on Track 
@@ -415,7 +415,7 @@
    2413 84 0F         [ 2]  415                     ANDA     #15
    2415 26 0C         [ 3]  416                     BNE      PLY_PS_S_SOUNDON             ; if is 0 than no sound at all 
                             417                                                           ;Null Volume. It means no Sound. We stop the Sound, the Noise, and it's over. 
-   2417 A7 9F C8 D6   [ 9]  418                     STA      [PLY_VOL_REG]                ;We have to make the volume to 0, because if a bass Hard was activated before, we have to stop it. 
+   2417 A7 9F C8 D8   [ 9]  418                     STA      [PLY_VOL_REG]                ;We have to make the volume to 0, because if a bass Hard was activated before, we have to stop it. 
    241B 86 09         [ 2]  419                     lda      #9                           ; these are the register mask bits for this sound (or this no sound) 
    241D A7 A8 10      [ 5]  420                     sta      PLY_TRACK_REG_7,y 
    2420 7E 25 83      [ 4]  421                     jmp      out_sound 
@@ -428,13 +428,13 @@
    2425 24 01         [ 3]  428                     BCC      vol_not_null_1 
    2427 4F            [ 2]  429                     CLRA     
    2428                     430 vol_not_null_1: 
-   2428 A7 9F C8 D6   [ 9]  431                     STA      [PLY_VOL_REG] 
+   2428 A7 9F C8 D8   [ 9]  431                     STA      [PLY_VOL_REG] 
    242C 86 08         [ 2]  432                     LDA      #8
    242E A7 A8 10      [ 5]  433                     sta      PLY_TRACK_REG_7,y 
    2431 56            [ 2]  434                     RORB                                  ;Needed for the subroutine to get the good flags. 
    2432 17 01 A3      [ 9]  435                     LBSR     PLY_PS_CALCULATEFREQUENCY 
                             436 ; in u frequency + pitch, in little endian order, ready to be written to psg
-   2435 EF 9F C8 D8   [10]  437                     stu      [PLY_FREQ_REG] 
+   2435 EF 9F C8 DA   [10]  437                     stu      [PLY_FREQ_REG] 
    2439 7E 25 83      [ 4]  438                     jmp      out_sound 
                             439 
    243C                     440 PLY_PS_S_SECONDBYTENEEDED: 
@@ -444,7 +444,7 @@
    2441 A6 80         [ 6]  444                     LDA      ,X+ 
    2443 84 0F         [ 2]  445                     ANDA     #15
    2445 27 06         [ 3]  446                     BEQ      PLY_PS_S_SBN_NONOISE 
-   2447 B7 C8 E0      [ 5]  447                     STA      PLY_PSGREG6 
+   2447 B7 C8 E2      [ 5]  447                     STA      PLY_PSGREG6 
    244A 6F A8 10      [ 7]  448                     clr      PLY_TRACK_REG_7,y 
    244D                     449 PLY_PS_S_SBN_NONOISE: 
    244D 1F 98         [ 6]  450                     TFR      B,A 
@@ -454,7 +454,7 @@
    2453 24 01         [ 3]  454                     BCC      no_vol_underflow_1 
    2455 4F            [ 2]  455                     CLRA     
    2456                     456 no_vol_underflow_1: 
-   2456 A7 9F C8 D6   [ 9]  457                     STA      [PLY_VOL_REG] 
+   2456 A7 9F C8 D8   [ 9]  457                     STA      [PLY_VOL_REG] 
    245A A6 1F         [ 5]  458                     lda      -1,x 
    245C 85 20         [ 2]  459                     bita     #32
    245E 26 06         [ 3]  460                     BNE      PLY_PS_S_SBN_SOUND 
@@ -465,7 +465,7 @@
    2466 56            [ 2]  465                     RORB                                  ;Needed for the subroutine to get the good flags. 
    2467 85 40         [ 2]  466                     bita     #64
    2469 17 01 61      [ 9]  467                     LBSR     PLY_PS_CALCULATEFREQUENCY_TESTMANUALFREQUENCY 
-   246C EF 9F C8 D8   [10]  468                     stu      [PLY_FREQ_REG]               ; set frequency - u gotton from above jsr 
+   246C EF 9F C8 DA   [10]  468                     stu      [PLY_FREQ_REG]               ; set frequency - u gotton from above jsr 
    2470 7E 25 83      [ 4]  469                     jmp      out_sound 
                             470 
                             471 ; u current track pitch
@@ -479,17 +479,17 @@
    2473 56            [ 2]  479                     RORB                                  ;Test Retrig here, it is common to every Hard sounds. 
    2474 24 0D         [ 3]  480                     BCC      PLY_PS_HARD_NORETRIG 
                             481 ;Retrig only if it is the first step in this line of Instrument !
-   2476 B6 C8 A7      [ 5]  482                     LDA      Channel1Data + PLY_TRACK_INSTRUMENTSPEED ; forced first channel pointer 
-   2479 B1 C8 A8      [ 5]  483                     CMPA     Channel1Data + PLY_TRACK_INSTRUMENTSPEEDCPT ; forced first channel pointer 
+   2476 B6 C8 A9      [ 5]  482                     LDA      Channel1Data + PLY_TRACK_INSTRUMENTSPEED ; forced first channel pointer 
+   2479 B1 C8 AA      [ 5]  483                     CMPA     Channel1Data + PLY_TRACK_INSTRUMENTSPEEDCPT ; forced first channel pointer 
    247C 26 05         [ 3]  484                     BNE      PLY_PS_HARD_NORETRIG 
    247E 86 FE         [ 2]  485                     lda      #PLY_RETRIGVALUE 
-   2480 B7 C8 9C      [ 5]  486                     STA      PLY_PSGREG13_RETRIG 
+   2480 B7 C8 9E      [ 5]  486                     STA      PLY_PSGREG13_RETRIG 
    2483                     487 PLY_PS_HARD_NORETRIG: 
                             488                                                           ; Test bit 1 of B Use BITB 
    2483 C5 02         [ 2]  489                     bitb     #2                          ;WE DON'T SHIFT THE BITS, SO THAT WE CAN USE THE SAME CODE (FREQUENCY CALCULATION) SEVERAL TIMES. 
    2485 10 26 00 A2   [ 6]  490                     LBNE     PLY_PS_HARD_LOOPORINDEPENDENT 
    2489 86 10         [ 2]  491                     lda      #0h10 
-   248B A7 9F C8 D6   [ 9]  492                     STA      [PLY_VOL_REG] 
+   248B A7 9F C8 D8   [ 9]  492                     STA      [PLY_VOL_REG] 
    248F 86 08         [ 2]  493                     lda      #8
    2491 A7 A8 10      [ 5]  494                     sta      PLY_TRACK_REG_7,y 
    2494 A6 80         [ 6]  495                     lda      ,x+ 
@@ -500,9 +500,9 @@
                             500 ;n = Noise ?
                             501 ;s = Inverted Shift (7 - Editor Shift)
                             502 ;c = Hardware Enveloppe
-   2496 B7 C8 93      [ 5]  503                     sta      tmp_instrument_second_byte   ;Get the Hardware Envelope waveform. 
+   2496 B7 C8 95      [ 5]  503                     sta      tmp_instrument_second_byte   ;Get the Hardware Envelope waveform. 
    2499 84 0F         [ 2]  504                     ANDA     #15
-   249B B7 C8 D5      [ 5]  505                     STA      PLY_PSGREG13 
+   249B B7 C8 D7      [ 5]  505                     STA      PLY_PSGREG13 
                             506                                                           ; Test bit 0 of B Use BITA or BITB 
    249E C5 01         [ 2]  507                     bitb     #1
    24A0 27 4F         [ 3]  508                     BEQ      PLY_PS_HARDWAREDEPENDENT 
@@ -519,11 +519,11 @@
    24A2 C5 04         [ 2]  519                     bitb     #4
    24A4 BD 25 CD      [ 8]  520                     JSR      PLY_PS_CALCULATEFREQUENCY_TESTMANUALFREQUENCY 
                             521                                                           ; in u current frequency in little endian format, ready to be written to PSG 
-   24A7 EF 9F C8 D8   [10]  522                     stu      [PLY_FREQ_REG] 
+   24A7 EF 9F C8 DA   [10]  522                     stu      [PLY_FREQ_REG] 
                             523                                                           ; check for HW pitch and remember 
    24AB C5 20         [ 2]  524                     BITB     #32
    24AD 34 01         [ 6]  525                     pshs     cc 
-   24AF F6 C8 93      [ 5]  526                     LDb      tmp_instrument_second_byte   ;0 reload second byte of current instrument data 
+   24AF F6 C8 95      [ 5]  526                     LDb      tmp_instrument_second_byte   ;0 reload second byte of current instrument data 
                             527 ; encoded in bit 4 - 6 shift 3 times -> *2
                             528 ; shift is stored in inverse, 7 - shift
    24B2 54            [ 2]  529                     LSRb     
@@ -562,13 +562,13 @@
    24D8 E3 81         [ 9]  562                     addd     ,x++ 
    24DA                     563 PLY_PS_SD_NOHARDWAREPITCH: 
    24DA 1E 89         [ 8]  564                     exg      a,b                          ; correct endianness of calculated frequency to little endian for PSG poke 
-   24DC FD C8 E5      [ 6]  565                     STD      PLY_PSGREG11 
+   24DC FD C8 E7      [ 6]  565                     STD      PLY_PSGREG11 
    24DF                     566 PLY_PS_SD_NOISE: 
-   24DF B6 C8 93      [ 5]  567                     lda      tmp_instrument_second_byte   ; second byte of instrument reloaded 
+   24DF B6 C8 95      [ 5]  567                     lda      tmp_instrument_second_byte   ; second byte of instrument reloaded 
    24E2 85 80         [ 2]  568                     BITA     #128                         ; any noise? 
    24E4 27 08         [ 3]  569                     BEQ      ret_nla_here 
    24E6 A6 80         [ 6]  570                     LDA      ,X+ 
-   24E8 B7 C8 E0      [ 5]  571                     STA      PLY_PSGREG6 
+   24E8 B7 C8 E2      [ 5]  571                     STA      PLY_PSGREG6 
    24EB 6F A8 10      [ 7]  572                     clr      PLY_TRACK_REG_7,y 
    24EE                     573 ret_nla_here: 
                             574 ; NOTE:
@@ -591,11 +591,11 @@
    24F1 C5 04         [ 2]  591                     bitb     #4
    24F3 BD 25 CD      [ 8]  592                     jsr      PLY_PS_CALCULATEFREQUENCY_TESTMANUALFREQUENCY 
                             593                                                           ; in u current frequency in little endian format, ready to be written to PSG 
-   24F6 FF C8 E5      [ 6]  594                     STU      PLY_PSGREG11                 ;CODE HARDWARE FREQUENCY. 
+   24F6 FF C8 E7      [ 6]  594                     STU      PLY_PSGREG11                 ;CODE HARDWARE FREQUENCY. 
                             595 ; test for softwarepitch and remember result (we lose b below, an save a reload - save? puls push???)
    24F9 C5 20         [ 2]  596                     BITB     #32
    24FB 34 01         [ 6]  597                     pshs     cc 
-   24FD F6 C8 93      [ 5]  598                     ldb      tmp_instrument_second_byte   ;0 reload second byte of current instrument data 
+   24FD F6 C8 95      [ 5]  598                     ldb      tmp_instrument_second_byte   ;0 reload second byte of current instrument data 
                             599 ;Second Byte :
                             600 ;76543210
                             601 ;nssscccc
@@ -638,7 +638,7 @@
    2521 E3 81         [ 9]  638                     addd     ,x++ 
    2523                     639 PLY_PS_HD_NOSOFTWAREPITCH: 
    2523 1E 89         [ 8]  640                     exg      a,b                          ; correct endianness of calculated frequency to little endian for PSG poke 
-   2525 ED 9F C8 D8   [10]  641                     std      [PLY_FREQ_REG] 
+   2525 ED 9F C8 DA   [10]  641                     std      [PLY_FREQ_REG] 
    2529 20 B4         [ 3]  642                     bra      PLY_PS_SD_NOISE 
                             643 
    252B                     644 PLY_PS_HARD_LOOPORINDEPENDENT: 
@@ -671,7 +671,7 @@
                             671 ;r = Retrig?
    2534                     672 PLY_PS_INDEPENDENT: 
    2534 86 10         [ 2]  673                     lda      #0h10 
-   2536 A7 9F C8 D6   [ 9]  674                     STA      [PLY_VOL_REG] 
+   2536 A7 9F C8 D8   [ 9]  674                     STA      [PLY_VOL_REG] 
                             675 ;        Test bit 7-2 of B  
    253A C5 20         [ 2]  676                     BITB     #32
    253C 26 07         [ 3]  677                     BNE      PLY_PS_I_SOUNDON 
@@ -691,7 +691,7 @@
    2552 C5 04         [ 2]  691                     BITB     #4
    2554 8D 77         [ 7]  692                     bsr      PLY_PS_CALCULATEFREQUENCY_TESTMANUALFREQUENCY 
                             693                                                           ; in u current frequency in little endian format, ready to be written to PSG 
-   2556 EF 9F C8 D8   [10]  694                     stu      [PLY_FREQ_REG]               ; write software note with its frequency to PSG 
+   2556 EF 9F C8 DA   [10]  694                     stu      [PLY_FREQ_REG]               ; write software note with its frequency to PSG 
    255A                     695 PLY_PS_I_SKIPSOFTWAREFREQUENCYCALCULATION: 
                             696 ; load second byte of independend instrument data
                             697 ; B after load = :
@@ -706,7 +706,7 @@
    255A E6 80         [ 6]  706                     LDB      ,X+ 
    255C 1F 98         [ 6]  707                     TFR      B,A 
    255E 84 0F         [ 2]  708                     ANDA     #15
-   2560 B7 C8 D5      [ 5]  709                     STA      PLY_PSGREG13 
+   2560 B7 C8 D7      [ 5]  709                     STA      PLY_PSGREG13 
    2563 56            [ 2]  710                     RORB     
    2564 56            [ 2]  711                     RORB     
    2565 1E 03         [ 8]  712                     exg      d,u 
@@ -717,11 +717,11 @@
    256D 8D 5E         [ 7]  717                     bsr      PLY_PS_CALCULATEFREQUENCY_TESTMANUALFREQUENCY 
                             718                                                           ; b stays the same during frequency test 
                             719                                                           ; in u current frequency in little endian format, ready to be written to PSG 
-   256F FF C8 E5      [ 6]  720                     STu      PLY_PSGREG11                 ;CODE HARDWARE FREQUENCY. 
+   256F FF C8 E7      [ 6]  720                     STu      PLY_PSGREG11                 ;CODE HARDWARE FREQUENCY. 
    2572 C5 20         [ 2]  721                     BITB     #32
    2574 27 0D         [ 3]  722                     BEQ      outahere_1 
    2576 A6 80         [ 6]  723                     LDA      ,X+ 
-   2578 B7 C8 E0      [ 5]  724                     STA      PLY_PSGREG6 
+   2578 B7 C8 E2      [ 5]  724                     STA      PLY_PSGREG6 
    257B A6 A8 10      [ 5]  725                     lda      PLY_TRACK_REG_7,y 
    257E 84 F7         [ 2]  726                     anda     #247 ; %11110111 
    2580 A7 A8 10      [ 5]  727                     sta      PLY_TRACK_REG_7,y 
@@ -735,31 +735,31 @@
    258B A7 26         [ 5]  735                     STA      PLY_TRACK_INSTRUMENTSPEEDCPT , y 
    258D                     736 PLY_TRACK_PLAYNOFORWARD: 
    258D 31 A8 EF      [ 5]  737                     leay     -ArkosChannel, y 
-   2590 10 8C C8 91   [ 5]  738                     cmpy     #Channel1Data-ArkosChannel 
+   2590 10 8C C8 93   [ 5]  738                     cmpy     #Channel1Data-ArkosChannel 
    2594 27 15         [ 3]  739                     beq      doneplaying 
-   2596 FC C8 D8      [ 6]  740                     ldd      PLY_FREQ_REG 
+   2596 FC C8 DA      [ 6]  740                     ldd      PLY_FREQ_REG 
    2599 83 00 02      [ 4]  741                     subd     #2 
-   259C FD C8 D8      [ 6]  742                     std      PLY_FREQ_REG 
-   259F FC C8 D6      [ 6]  743                     ldd      PLY_VOL_REG 
+   259C FD C8 DA      [ 6]  742                     std      PLY_FREQ_REG 
+   259F FC C8 D8      [ 6]  743                     ldd      PLY_VOL_REG 
    25A2 83 00 01      [ 4]  744                     subd     #1 
-   25A5 FD C8 D6      [ 6]  745                     std      PLY_VOL_REG 
+   25A5 FD C8 D8      [ 6]  745                     std      PLY_VOL_REG 
    25A8 7E 23 FB      [ 4]  746                     jmp      playnextchannel 
                             747 
    25AB                     748 doneplaying: 
-   25AB B6 C8 D4      [ 5]  749                     lda      PLY_TRACK_REG_7 +Channel3Data 
+   25AB B6 C8 D6      [ 5]  749                     lda      PLY_TRACK_REG_7 +Channel3Data 
    25AE 48            [ 2]  750                     ASLA     
-   25AF BA C8 C3      [ 5]  751                     ORA      PLY_TRACK_REG_7 +Channel2Data 
+   25AF BA C8 C5      [ 5]  751                     ORA      PLY_TRACK_REG_7 +Channel2Data 
    25B2 49            [ 2]  752                     ROLA     
-   25B3 BA C8 B2      [ 5]  753                     ORA      PLY_TRACK_REG_7 +Channel1Data 
+   25B3 BA C8 B4      [ 5]  753                     ORA      PLY_TRACK_REG_7 +Channel1Data 
                             754 ;SEND THE REGISTERS TO PSG.
    25B6                     755 PLY_SENDREGISTERS: 
                             756 ;A=REGISTER 7       
-   25B6 B7 C8 E1      [ 5]  757 					sta      PLY_PSGREG0 + 7
-   25B9 B6 C8 D5      [ 5]  758                     lda      PLY_PSGREG13 
-   25BC B1 C8 9C      [ 5]  759                     CMPA     PLY_PSGREG13_RETRIG          ;IF ISRETRIG?, FORCE THE R13 TO BE TRIGGERED. 
+   25B6 B7 C8 E3      [ 5]  757 					sta      PLY_PSGREG0 + 7
+   25B9 B6 C8 D7      [ 5]  758                     lda      PLY_PSGREG13 
+   25BC B1 C8 9E      [ 5]  759                     CMPA     PLY_PSGREG13_RETRIG          ;IF ISRETRIG?, FORCE THE R13 TO BE TRIGGERED. 
    25BF 27 0B         [ 3]  760                     BEQ      backFromPlayer 
-   25C1 B7 C8 9C      [ 5]  761                     STA      PLY_PSGREG13_RETRIG 
-   25C4 B7 C8 E7      [ 5]  762 					sta      PLY_PSGREG0 + 13
+   25C1 B7 C8 9E      [ 5]  761                     STA      PLY_PSGREG13_RETRIG 
+   25C4 B7 C8 E9      [ 5]  762 					sta      PLY_PSGREG0 + 13
                             763 ; destroy shadow - otherwise 13 on same is not retriggered
    25C7 86 FF         [ 2]  764                     lda      #0hff 
    25C9 B7 C8 0D      [ 5]  765                     sta      Vec_Snd_Shadow+13 
@@ -926,26 +926,26 @@
                             890 ; these inits are by the original player "inherent"
                             891 ; since it uses selfmodifying code and the
                             892 ; init values are present in the code itself
-   2723 8E C8 91      [ 3]  893                     ldx      #arkosPlayerMemStart 
+   2723 8E C8 93      [ 3]  893                     ldx      #arkosPlayerMemStart 
    2726 CC 00 58      [ 3]  894                     ldd      #(arkosPlayerMemEnd-arkosPlayerMemStart+1) 
    2729 BD F5 48      [ 8]  895                     jsr      Clear_x_d 
    272C CC 01 01      [ 3]  896                     ldd      #0h0101 
-   272F FD C8 96      [ 6]  897                     std      PLY_SPEEDCPT 
-   2732 FD C8 94      [ 6]  898                     std      PLY_HEIGHT 
-   2735 B7 C8 A8      [ 5]  899                     sta      Channel1Data+PLY_TRACK_INSTRUMENTSPEEDCPT 
-   2738 B7 C8 B9      [ 5]  900                     sta      Channel2Data+PLY_TRACK_INSTRUMENTSPEEDCPT 
-   273B B7 C8 CA      [ 5]  901                     sta      Channel3Data+PLY_TRACK_INSTRUMENTSPEEDCPT 
+   272F FD C8 98      [ 6]  897                     std      PLY_SPEEDCPT 
+   2732 FD C8 96      [ 6]  898                     std      PLY_HEIGHT 
+   2735 B7 C8 AA      [ 5]  899                     sta      Channel1Data+PLY_TRACK_INSTRUMENTSPEEDCPT 
+   2738 B7 C8 BB      [ 5]  900                     sta      Channel2Data+PLY_TRACK_INSTRUMENTSPEEDCPT 
+   273B B7 C8 CC      [ 5]  901                     sta      Channel3Data+PLY_TRACK_INSTRUMENTSPEEDCPT 
    273E 86 06         [ 2]  902                     lda      #6 
-   2740 B7 C8 A7      [ 5]  903                     sta      Channel1Data+PLY_TRACK_INSTRUMENTSPEED 
-   2743 B7 C8 B8      [ 5]  904                     sta      Channel2Data+PLY_TRACK_INSTRUMENTSPEED 
-   2746 B7 C8 C9      [ 5]  905                     sta      Channel3Data+PLY_TRACK_INSTRUMENTSPEED 
+   2740 B7 C8 A9      [ 5]  903                     sta      Channel1Data+PLY_TRACK_INSTRUMENTSPEED 
+   2743 B7 C8 BA      [ 5]  904                     sta      Channel2Data+PLY_TRACK_INSTRUMENTSPEED 
+   2746 B7 C8 CB      [ 5]  905                     sta      Channel3Data+PLY_TRACK_INSTRUMENTSPEED 
    2749 86 FE         [ 2]  906                     lda      #PLY_RETRIGVALUE 
-   274B B7 C8 9C      [ 5]  907                     sta      PLY_PSGREG13_RETRIG 
+   274B B7 C8 9E      [ 5]  907                     sta      PLY_PSGREG13_RETRIG 
                             908 ; no the player init
    274E A6 C0         [ 6]  909                     lda      ,u+ 
-   2750 B7 C8 95      [ 5]  910                     sta      PLY_SPEED                    ;Copy Speed. 
+   2750 B7 C8 97      [ 5]  910                     sta      PLY_SPEED                    ;Copy Speed. 
    2753 EC C1         [ 8]  911                     ldd      ,u++                         ;Get Instruments chunk size. 
-   2755 FF C8 98      [ 6]  912                     stu      PLY_TRACK_INSTRUMENTSTABLEPT 
+   2755 FF C8 9A      [ 6]  912                     stu      PLY_TRACK_INSTRUMENTSTABLEPT 
    2758 33 CB         [ 8]  913                     leau     d,u                          ;Skip Instruments to go to the Linker address. 
                             914                                                           ;Get the pre-Linker information of the first pattern. 
                             915 ;Pre-Linker
@@ -959,32 +959,32 @@
                             923 ;DW Special Track
                             924 ;after that the first pattern starts...
    275A EC C1         [ 8]  925                     ldd     ,u++
-   275C B7 C8 94      [ 5]  926                     sta      PLY_HEIGHT 
-   275F F7 C8 A2      [ 5]  927                     stb      Channel1Data + PLY_TRANSPOSITION 
+   275C B7 C8 96      [ 5]  926                     sta      PLY_HEIGHT 
+   275F F7 C8 A4      [ 5]  927                     stb      Channel1Data + PLY_TRANSPOSITION 
    2762 EC C1         [ 8]  928                     ldd      ,u++
-   2764 B7 C8 B3      [ 5]  929                     sta      Channel2Data + PLY_TRANSPOSITION 
-   2767 F7 C8 C4      [ 5]  930                     stb      Channel3Data + PLY_TRANSPOSITION 
+   2764 B7 C8 B5      [ 5]  929                     sta      Channel2Data + PLY_TRANSPOSITION 
+   2767 F7 C8 C6      [ 5]  930                     stb      Channel3Data + PLY_TRANSPOSITION 
    276A EC C1         [ 8]  931                     ldd      ,u++ 
-   276C FD C8 9D      [ 6]  932                     std      PLY_SAVESPECIALTRACK 
+   276C FD C8 9F      [ 6]  932                     std      PLY_SAVESPECIALTRACK 
                             933 ;Store the Linker address.
-   276F FF C8 9A      [ 6]  934                     STu      PLY_LINKER_PT 
+   276F FF C8 9C      [ 6]  934                     STu      PLY_LINKER_PT 
    2772 86 FF         [ 2]  935                     lda      #0hff                         ; make sure the hardware envelope is in an "unkown" state 
-   2774 B7 C8 D5      [ 5]  936                     STA      PLY_PSGREG13 
+   2774 B7 C8 D7      [ 5]  936                     STA      PLY_PSGREG13 
                             937 ;Set the Instruments pointers to Instrument 0 data (Header has to be skipped).
-   2777 BE C8 98      [ 6]  938                     LDX      PLY_TRACK_INSTRUMENTSTABLEPT 
+   2777 BE C8 9A      [ 6]  938                     LDX      PLY_TRACK_INSTRUMENTSTABLEPT 
    277A AE 84         [ 5]  939                     ldx      ,x 
                             940                                                           ;Skip Instrument 0 Header. 
    277C 30 02         [ 5]  941                     leax     2,x 
-   277E BF C8 A5      [ 6]  942                     STX      Channel1Data + PLY_TRACK_INSTRUMENT 
-   2781 BF C8 B6      [ 6]  943                     STX      Channel2Data + PLY_TRACK_INSTRUMENT 
-   2784 BF C8 C7      [ 6]  944                     STX      Channel3Data + PLY_TRACK_INSTRUMENT 
+   277E BF C8 A7      [ 6]  942                     STX      Channel1Data + PLY_TRACK_INSTRUMENT 
+   2781 BF C8 B8      [ 6]  943                     STX      Channel2Data + PLY_TRACK_INSTRUMENT 
+   2784 BF C8 C9      [ 6]  944                     STX      Channel3Data + PLY_TRACK_INSTRUMENT 
    2787 39            [ 5]  945                     RTS      
                             946 
    2788                     947 PLY_STOP: 
    2788 CC 00 00      [ 3]  948                     ldd      #00 
-   278B FD C8 E2      [ 6]  949                     std      PLY_PSGREG8 
-   278E FD C8 E3      [ 6]  950                     std      PLY_PSGREG9 
-   2791 FD C8 E4      [ 6]  951                     std      PLY_PSGREG10 
+   278B FD C8 E4      [ 6]  949                     std      PLY_PSGREG8 
+   278E FD C8 E5      [ 6]  950                     std      PLY_PSGREG9 
+   2791 FD C8 E6      [ 6]  951                     std      PLY_PSGREG10 
    2794 86 3F         [ 2]  952                     lda      #63  ; %00111111 
    2796 7E 25 B6      [ 4]  953                     jmp      PLY_SENDREGISTERS 
 ASxxxx Assembler V05.00  (Motorola 6809), page 1.

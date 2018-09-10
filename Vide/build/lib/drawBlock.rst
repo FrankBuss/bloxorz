@@ -8,9 +8,9 @@
    2157 C6 CC         [ 2]    8                     LDB      #0xCC                        ; do zero 
    2159 D7 0C         [ 4]    9                     STB      *0xD00c                      ;/BLANK low and /ZERO low 
    215B 8E 00 00      [ 3]   10                     ldx      #0                           ; init offset 
-   215E B6 C8 F5      [ 5]   11                     lda      _moveScale                   ; load first known scale 
+   215E B6 C8 F7      [ 5]   11                     lda      _moveScale                   ; load first known scale 
    2161 97 04         [ 4]   12                     STA      *0xD004                      ; to T1 - next round this will be done "in draw" 
-   2163 FC C9 1D      [ 6]   13                     ldd      _moveTo                      ; load first move 
+   2163 FC C9 1F      [ 6]   13                     ldd      _moveTo                      ; load first move 
    2166 20 04         [ 3]   14                     bra      startLoop                    ; and jump into the loop 
                              15 
    2168                      16 SdrawFieldLoop: 
@@ -30,11 +30,11 @@
                              30 ; now we are moving - prepare stuff...
                              31 ;
                              32 ; first set t1 latch to next scale
-   217B A6 89 C9 6D   [ 8]   33                     lda      _lineScale,x 
+   217B A6 89 C9 6F   [ 8]   33                     lda      _lineScale,x 
    217F 97 04         [ 4]   34                     STA      *0xD004                      ; t1 latch 
                              35 ; we prepare u, so all we need is to store "u" to Via_b (as y)
-   2181 E6 89 CA 0D   [ 8]   36                     ldb      _lineY1,x 
-   2185 E0 89 C9 BD   [ 8]   37                     subb     _lineY0,x                    ; this is our "y" delta for next vector 
+   2181 E6 89 CA 0F   [ 8]   36                     ldb      _lineY1,x 
+   2185 E0 89 C9 BF   [ 8]   37                     subb     _lineY0,x                    ; this is our "y" delta for next vector 
    2189 81 7F         [ 2]   38                     cmpa     #0x7f                        ; see if we are at maximum scale 
    218B 24 06         [ 3]   39                     bhs      noDouble1                    ; if yes - leave it 
    218D 58            [ 2]   40                     aslb                                  ; otherwise smaller scale means we can double the strength 
@@ -46,9 +46,9 @@
    2194 1F 03         [ 6]   46                     tfr      d,u                          ; y value + portb = 0 
                              47 ; y part of next vector is prepared - now we prepare the y part
                              48 ; we prepare y, so all we need is to store "y" to Via_b (as x)
-   2196 E6 89 C9 E5   [ 8]   49                     ldb      _lineX1,x 
-   219A E0 89 C9 95   [ 8]   50                     subb     _lineX0,x                    ; this is our "x" delta for next vector 
-   219E A6 89 C9 6D   [ 8]   51                     lda      _lineScale,x                 ; fetch the current scale to compare again 
+   2196 E6 89 C9 E7   [ 8]   49                     ldb      _lineX1,x 
+   219A E0 89 C9 97   [ 8]   50                     subb     _lineX0,x                    ; this is our "x" delta for next vector 
+   219E A6 89 C9 6F   [ 8]   51                     lda      _lineScale,x                 ; fetch the current scale to compare again 
    21A2 81 7F         [ 2]   52                     cmpa     #0x7f                        ; see if we are at maximum scale 
    21A4 24 06         [ 3]   53                     bhs      noDouble2                    ; if yes - leave it 
    21A6 58            [ 2]   54                     aslb                                  ; otherwise smaller scale means we can double the strength 
@@ -88,12 +88,12 @@
                              88 ; will "flicker" at the end!
                              89 ;
                              90 ; prepare movement scale of next line
-   21CA A6 89 C8 F5   [ 8]   91                     lda      _moveScale,x                 ; timer for next move (scale) 
+   21CA A6 89 C8 F7   [ 8]   91                     lda      _moveScale,x                 ; timer for next move (scale) 
    21CE 97 04         [ 4]   92                     STa      *0xD004                      ; set t1 latch for next move 
                              93 ; prepare next moveTo's
    21D0 1F 10         [ 6]   94                     tfr      x,d                          ; get line counter 
    21D2 58            [ 2]   95                     aslb                                  ; times two (moveTos ate words, not bytes) 
-   21D3 CE C9 1D      [ 3]   96                     ldu      #_moveTo                     ; get base address 
+   21D3 CE C9 1F      [ 3]   96                     ldu      #_moveTo                     ; get base address 
    21D6 EE C5         [ 6]   97                     ldu      b,u                          ; and load value at offset to u (u will be transfered to d) 
    21D8 C6 40         [ 2]   98                     LDB      #0x40                        ; wait for line tofinish 
    21DA D5 0D         [ 4]   99 SWaitDrawEnd:       BITB     *0xD00D                      ; check timer 1 flag 
