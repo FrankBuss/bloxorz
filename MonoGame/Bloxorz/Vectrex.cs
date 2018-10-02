@@ -91,7 +91,9 @@ namespace Bloxorz
 		public long fcycles;
 
 		public E6809 cpu;
-		//public E8910 psg;
+        //public E8910 psg;
+
+        private bool alternate = true;
 
         public Vectrex()
 		{
@@ -352,6 +354,7 @@ namespace Bloxorz
                             data = (byte) (via_t2c >> 8);
                             break;
                         case 0xa:
+                            alternate = true;
                             data = (byte) via_sr;
                             via_ifr &= 0xfb; /* remove shift register interrupt flag */
                             via_srb = 0;
@@ -540,6 +543,7 @@ namespace Bloxorz
 
                             break;
                         case 0xa:
+                            alternate = true;
                             via_sr = data;
                             via_ifr &= 0xfb; /* remove shift register interrupt flag */
                             via_srb = 0;
@@ -839,15 +843,20 @@ namespace Bloxorz
 
                         break;
                     case 0x18:
-                        /* shift out under system clock control */
-
-                        via_cb2s = (via_sr >> 7) & 1;
-
-                        via_sr <<= 1;
-                        via_sr |= via_cb2s;
-                        via_srb++;
-
+                        // shift out under system clock control 
+                        // 
+                        // System Time -> look at hardware manual 
+                        // only every SECOND cycle! 
+                        alternate = !alternate;
+                        if (alternate)
+                        {
+                            via_cb2s = (via_sr >> 7) & 1;
+                            via_sr <<= 1;
+                            via_sr |= via_cb2s;
+                            via_srb++;
+                        }
                         break;
+
                     case 0x1c:
                         /* shift out under cb1 control */
                         break;
