@@ -2,160 +2,160 @@
                      D002     2 DCNTRL = 0hd002	; DDRB      - Data Direction Register B
                               3 
                               4 	.area .bss
-   C890                       5 data: .blkb   1
-   C891                       6 counter: .blkb   1
-   C892                       7 bit_counter: .blkb   1
+   C888                       5 data: .blkb   1
+   C889                       6 counter: .blkb   1
+   C88A                       7 bit_counter: .blkb   1
                               8  
                               9 	.area .text
                              10 
                              11 	.globl  _picWrite
-   2204                      12 _picWrite:
-   2204 34 1E         [ 9]   13 	pshs    d,dp,x
-   2206 F7 C8 90      [ 5]   14 	stb data
+   2155                      12 _picWrite:
+   2155 34 1E         [ 9]   13 	pshs    d,dp,x
+   2157 F7 C8 88      [ 5]   14 	stb data
                              15 
-   2209 86 D0         [ 2]   16 	lda #0hd0		; setup direct page to 0xd000
-   220B 1F 8B         [ 6]   17 	tfr a, dp
+   215A 86 D0         [ 2]   16 	lda #0hd0		; setup direct page to 0xd000
+   215C 1F 8B         [ 6]   17 	tfr a, dp
                              18 
-   220D 8E 00 DF      [ 3]   19 	ldx #0xdf
-   2210 10 8E 00 9F   [ 4]   20 	ldy #0x9f
+   215E 8E 00 DF      [ 3]   19 	ldx #0xdf
+   2161 10 8E 00 9F   [ 4]   20 	ldy #0x9f
                              21 
                              22 	; start with low signal
-   2214 86 DF         [ 2]   23 	lda #0xdf
-   2216 97 02         [ 4]   24 	sta *DCNTRL	; PB6 direction = output
+   2165 86 DF         [ 2]   23 	lda #0xdf
+   2167 97 02         [ 4]   24 	sta *DCNTRL	; PB6 direction = output
                              25 
-   2218 96 00         [ 4]   26 	lda *CNTRL
-   221A 84 BF         [ 2]   27 	anda #0xbf
-   221C 97 00         [ 4]   28 	sta *CNTRL
+   2169 96 00         [ 4]   26 	lda *CNTRL
+   216B 84 BF         [ 2]   27 	anda #0xbf
+   216D 97 00         [ 4]   28 	sta *CNTRL
                              29 	
                              30 	; byte transfer starts with high signal
                              31 	; 1 bit needs 45 cycles (= 30 us)
                              32 	; bit 0 = 4 us high
                              33 	; bit 1 = 9.3 us high
-   221E C6 08         [ 2]   34 	ldb #8
-   2220                      35 loop:
-   2220 B6 C8 90      [ 5]   36 	lda data
-   2223 85 80         [ 2]   37 	bita #0x80
-   2225 27 0E         [ 3]   38 	beq loop2
-   2227 86 9F         [ 2]   39 	lda #0x9f
-   2229 97 02         [ 4]   40 	sta *DCNTRL	; PB6 direction = input
-   222B 12            [ 2]   41 	nop
-   222C 12            [ 2]   42 	nop
-   222D 12            [ 2]   43 	nop
-   222E 12            [ 2]   44 	nop
-   222F 86 DF         [ 2]   45 	lda #0xdf
-   2231 97 02         [ 4]   46 	sta *DCNTRL	; PB6 direction = output
-   2233 20 0E         [ 3]   47 	bra loop3
-   2235                      48 loop2:
-   2235 86 9F         [ 2]   49 	lda #0x9f
-   2237 97 02         [ 4]   50 	sta *DCNTRL	; PB6 direction = input
-   2239 86 DF         [ 2]   51 	lda #0xdf
-   223B 97 02         [ 4]   52 	sta *DCNTRL	; PB6 direction = output
-   223D 12            [ 2]   53 	nop
-   223E 12            [ 2]   54 	nop
-   223F 12            [ 2]   55 	nop
-   2240 12            [ 2]   56 	nop
-   2241 20 00         [ 3]   57 	bra loop3
-   2243                      58 loop3:
-   2243 78 C8 90      [ 7]   59 	lsl data
-   2246 5A            [ 2]   60 	decb
-   2247 26 D7         [ 3]   61 	bne loop
+   216F C6 08         [ 2]   34 	ldb #8
+   2171                      35 loop:
+   2171 B6 C8 88      [ 5]   36 	lda data
+   2174 85 80         [ 2]   37 	bita #0x80
+   2176 27 0E         [ 3]   38 	beq loop2
+   2178 86 9F         [ 2]   39 	lda #0x9f
+   217A 97 02         [ 4]   40 	sta *DCNTRL	; PB6 direction = input
+   217C 12            [ 2]   41 	nop
+   217D 12            [ 2]   42 	nop
+   217E 12            [ 2]   43 	nop
+   217F 12            [ 2]   44 	nop
+   2180 86 DF         [ 2]   45 	lda #0xdf
+   2182 97 02         [ 4]   46 	sta *DCNTRL	; PB6 direction = output
+   2184 20 0E         [ 3]   47 	bra loop3
+   2186                      48 loop2:
+   2186 86 9F         [ 2]   49 	lda #0x9f
+   2188 97 02         [ 4]   50 	sta *DCNTRL	; PB6 direction = input
+   218A 86 DF         [ 2]   51 	lda #0xdf
+   218C 97 02         [ 4]   52 	sta *DCNTRL	; PB6 direction = output
+   218E 12            [ 2]   53 	nop
+   218F 12            [ 2]   54 	nop
+   2190 12            [ 2]   55 	nop
+   2191 12            [ 2]   56 	nop
+   2192 20 00         [ 3]   57 	bra loop3
+   2194                      58 loop3:
+   2194 78 C8 88      [ 7]   59 	lsl data
+   2197 5A            [ 2]   60 	decb
+   2198 26 D7         [ 3]   61 	bne loop
                              62 
                              63 ; wait a bit at the end of the transfer
-   2249 C6 0A         [ 2]   64 	ldb #10
-   224B                      65 loop4:
-   224B 5A            [ 2]   66 	decb
-   224C 26 FD         [ 3]   67 	bne loop4
+   219A C6 0A         [ 2]   64 	ldb #10
+   219C                      65 loop4:
+   219C 5A            [ 2]   66 	decb
+   219D 26 FD         [ 3]   67 	bne loop4
                              68 
-   224E 35 9E         [10]   69 	puls d,dp,x,pc       ; restore registers from stack and return
+   219F 35 9E         [10]   69 	puls d,dp,x,pc       ; restore registers from stack and return
                              70 
                              71 
                              72 
                              73 
                              74 	.globl  _picRead
-   2250                      75 _picRead:
-   2250 34 1E         [ 9]   76 	pshs    d,dp,x
+   21A1                      75 _picRead:
+   21A1 34 1E         [ 9]   76 	pshs    d,dp,x
                              77 
-   2252 86 D0         [ 2]   78 	lda #0hd0		; setup direct page to 0xd000
-   2254 1F 8B         [ 6]   79 	tfr a, dp
+   21A3 86 D0         [ 2]   78 	lda #0hd0		; setup direct page to 0xd000
+   21A5 1F 8B         [ 6]   79 	tfr a, dp
                              80 
                              81 ; set PB6 to high
-   2256 86 9F         [ 2]   82 	lda #0x9f
-   2258 97 02         [ 4]   83 	sta *DCNTRL	; PB6 direction = input
+   21A7 86 9F         [ 2]   82 	lda #0x9f
+   21A9 97 02         [ 4]   83 	sta *DCNTRL	; PB6 direction = input
                              84 
                              85 ; wait a bit until the signal settles
-   225A C6 0A         [ 2]   86 	ldb #10
-   225C                      87 wh:
-   225C 5A            [ 2]   88 	decb
-   225D 26 FD         [ 3]   89 	bne wh
+   21AB C6 0A         [ 2]   86 	ldb #10
+   21AD                      87 wh:
+   21AD 5A            [ 2]   88 	decb
+   21AE 26 FD         [ 3]   89 	bne wh
                              90 
-   225F 86 08         [ 2]   91 	lda #8
-   2261 B7 C8 92      [ 5]   92 	sta bit_counter
+   21B0 86 08         [ 2]   91 	lda #8
+   21B2 B7 C8 8A      [ 5]   92 	sta bit_counter
                              93 
                              94 ; wait until PB6 is set to low from the PIC
-   2264 86 00         [ 2]   95 	lda #0
-   2266 B7 C8 90      [ 5]   96 	sta data
-   2269 C6 40         [ 2]   97 	ldb #0h40
-   226B                      98 wait_start:
-   226B 4C            [ 2]   99 	inca
-   226C 81 FF         [ 2]  100 	cmpa #255
-   226E 27 37         [ 3]  101 	beq timeout
-   2270 D5 00         [ 4]  102 	bitb *CNTRL
-   2272 26 F7         [ 3]  103 	bne wait_start
+   21B5 86 00         [ 2]   95 	lda #0
+   21B7 B7 C8 88      [ 5]   96 	sta data
+   21BA C6 40         [ 2]   97 	ldb #0h40
+   21BC                      98 wait_start:
+   21BC 4C            [ 2]   99 	inca
+   21BD 81 FF         [ 2]  100 	cmpa #255
+   21BF 27 37         [ 3]  101 	beq timeout
+   21C1 D5 00         [ 4]  102 	bitb *CNTRL
+   21C3 26 F7         [ 3]  103 	bne wait_start
                             104 
                             105 ; measure high time
-   2274                     106 next_bit:
-   2274 86 00         [ 2]  107 	lda #0
-   2276 B7 C8 91      [ 5]  108 	sta counter
-   2279 C6 40         [ 2]  109 	ldb #0h40
-   227B                     110 wait_start2:
-   227B 4C            [ 2]  111 	inca
-   227C 81 FF         [ 2]  112 	cmpa #255
-   227E 27 27         [ 3]  113 	beq timeout
-   2280 D5 00         [ 4]  114 	bitb *CNTRL
-   2282 27 F7         [ 3]  115 	beq wait_start2
-   2284 86 00         [ 2]  116 	lda #0
-   2286                     117 wait_start3:
-   2286 4C            [ 2]  118 	inca
-   2287 81 FF         [ 2]  119 	cmpa #255
-   2289 27 1C         [ 3]  120 	beq timeout
-   228B 7C C8 91      [ 7]  121 	inc counter
-   228E D5 00         [ 4]  122 	bitb *CNTRL
-   2290 26 F4         [ 3]  123 	bne wait_start3
+   21C5                     106 next_bit:
+   21C5 86 00         [ 2]  107 	lda #0
+   21C7 B7 C8 89      [ 5]  108 	sta counter
+   21CA C6 40         [ 2]  109 	ldb #0h40
+   21CC                     110 wait_start2:
+   21CC 4C            [ 2]  111 	inca
+   21CD 81 FF         [ 2]  112 	cmpa #255
+   21CF 27 27         [ 3]  113 	beq timeout
+   21D1 D5 00         [ 4]  114 	bitb *CNTRL
+   21D3 27 F7         [ 3]  115 	beq wait_start2
+   21D5 86 00         [ 2]  116 	lda #0
+   21D7                     117 wait_start3:
+   21D7 4C            [ 2]  118 	inca
+   21D8 81 FF         [ 2]  119 	cmpa #255
+   21DA 27 1C         [ 3]  120 	beq timeout
+   21DC 7C C8 89      [ 7]  121 	inc counter
+   21DF D5 00         [ 4]  122 	bitb *CNTRL
+   21E1 26 F4         [ 3]  123 	bne wait_start3
                             124 
                             125 ; test if it was a 0 or 1 bit
-   2292 F6 C8 91      [ 5]  126 	ldb counter
-   2295 B6 C8 90      [ 5]  127 	lda data
-   2298 48            [ 2]  128 	asla
-   2299 C1 09         [ 2]  129 	cmpb #9
-   229B 2D 02         [ 3]  130 	blt less
-   229D 8A 01         [ 2]  131 	ora #1
-   229F                     132 less:
-   229F B7 C8 90      [ 5]  133 	sta data
+   21E3 F6 C8 89      [ 5]  126 	ldb counter
+   21E6 B6 C8 88      [ 5]  127 	lda data
+   21E9 48            [ 2]  128 	asla
+   21EA C1 09         [ 2]  129 	cmpb #9
+   21EC 2D 02         [ 3]  130 	blt less
+   21EE 8A 01         [ 2]  131 	ora #1
+   21F0                     132 less:
+   21F0 B7 C8 88      [ 5]  133 	sta data
                             134 
-   22A2 7A C8 92      [ 7]  135 	dec bit_counter
-   22A5 26 CD         [ 3]  136 	bne next_bit
+   21F3 7A C8 8A      [ 7]  135 	dec bit_counter
+   21F6 26 CD         [ 3]  136 	bne next_bit
                             137 
-   22A7                     138 timeout:
+   21F8                     138 timeout:
                             139 
                             140 ; return high time
-   22A7 35 1E         [ 9]  141 	puls d,dp,x       ; restore registers from stack
-   22A9 F6 C8 90      [ 5]  142 	ldb data
-   22AC 39            [ 5]  143 	rts
+   21F8 35 1E         [ 9]  141 	puls d,dp,x       ; restore registers from stack
+   21FA F6 C8 88      [ 5]  142 	ldb data
+   21FD 39            [ 5]  143 	rts
                             144 
                             145 
                             146 ; wait about 10 ms
                             147 	.globl  _delay10ms
-   22AD                     148 _delay10ms:
-   22AD 34 1E         [ 9]  149 	pshs    d,dp,x
+   21FE                     148 _delay10ms:
+   21FE 34 1E         [ 9]  149 	pshs    d,dp,x
                             150 
-   22AF 86 0C         [ 2]  151     lda #12
-   22B1 C6 00         [ 2]  152 d1:    ldb #0
-   22B3 5A            [ 2]  153 d2:    decb
-   22B4 26 FD         [ 3]  154     bne d2
-   22B6 4A            [ 2]  155     deca
-   22B7 26 F8         [ 3]  156     bne d1
+   2200 86 0C         [ 2]  151     lda #12
+   2202 C6 00         [ 2]  152 d1:    ldb #0
+   2204 5A            [ 2]  153 d2:    decb
+   2205 26 FD         [ 3]  154     bne d2
+   2207 4A            [ 2]  155     deca
+   2208 26 F8         [ 3]  156     bne d1
                             157 
-   22B9 35 9E         [10]  158 	puls d,dp,x,pc       ; restore registers from stack and return
+   220A 35 9E         [10]  158 	puls d,dp,x,pc       ; restore registers from stack and return
 ASxxxx Assembler V05.00  (Motorola 6809), page 1.
 Hexidecimal [16-Bits]
 

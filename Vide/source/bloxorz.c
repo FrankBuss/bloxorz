@@ -23,7 +23,10 @@
 
 */
 
+#include "stdint.h"
 #include <vectrex.h>
+#include "level.h"
+#include "block.i"
 
 // PIC commands
 #define CMD_VERSION 1
@@ -33,11 +36,6 @@
 #define CMD_SET_BANK 5
 
 extern void* memcpy (void* dest, const void* src, long unsigned int len);
-
-typedef unsigned long uint16_t;
-
-typedef signed char int8_t;
-typedef unsigned char uint8_t;
 
 #define zergnd Reset0Ref
 #define frwait Wait_Recal
@@ -94,6 +92,8 @@ extern void musicPlay();
 char infoText[10];
 
 uint16_t moveCount;
+
+uint16_t levelHighscore;
 
 uint8_t picAvailable;
 
@@ -156,25 +156,6 @@ const uint8_t movingMusic[] = {
 
 const uint8_t* currentMusic = startMusic;
 
-#include "level.i"
-#include "block.i"
-
-
-#define MAX_LINES 40
-uint8_t moveScale[MAX_LINES];
-unsigned long int moveTo[MAX_LINES];
-
-uint8_t lineScale[MAX_LINES];
-int8_t lineX0[MAX_LINES];
-int8_t lineY0[MAX_LINES];
-int8_t lineX1[MAX_LINES];
-int8_t lineY1[MAX_LINES];
-uint8_t lineCount = 0;
-int8_t startX = 0;
-int8_t startY = 0;
-int8_t endX = 0;
-int8_t endY = 0;
-
 enum BlockOrientation_t {
 	Standing,
 	Vertical,
@@ -193,9 +174,6 @@ int8_t nextBlockX;
 int8_t nextBlockY;
 int8_t lastBlockDirection;
 int8_t blockYOfs;
-const char* level;
-int8_t levelNumber = 0;
-uint16_t levelHighscore;
 
 uint8_t* vecx = (uint8_t*) 0x8000;
 
@@ -212,6 +190,16 @@ enum GameState_t {
 enum BlockDirection_t {
 	Left, Up, Right, Down
 };
+
+void runtimeError(char* msg)
+{
+	while (1) {
+		frwait();
+         Intensity_a(0x5f);
+         Vec_Text_Width = 90;
+         Print_Str_d(-10, -110, msg);
+	}
+}
 
 uint8_t sendCommand(uint8_t cmd, uint8_t arg)
 {
@@ -260,274 +248,8 @@ void itoa(uint16_t number, char* text)
 void updateInfoText()
 {
 	itoa(moveCount, &infoText[0]);
-	itoa(levelHighscore, &infoText[6]);
-}
-
-char isField(char c)
-{
-	return (char)(c == '.' || c == 'a' || c == 'o');
-}
-
-int8_t x3d(int8_t x, int8_t y, int8_t z)
-{
-	// c * x - d * z
-	x -= LEVEL_WIDTH / 2 - 4;
-	return 14 * x - 6 * z+0*y;
-}
-
-int8_t y3d(int8_t x, int8_t y, int8_t z)
-{
-	// b * d * x + a * y + b * c * z
-	y -= LEVEL_HEIGHT / 2;
-	return 3 * x + 13 * y + 8 * z;
-}
-
-uint8_t scaleDown(uint8_t oldScale)
-{
-	return (uint8_t)(oldScale>>1);
-}
-
-unsigned long int toLong(int hi, int lo)
-{
-	unsigned long int t = (unsigned long int)hi;
-	t = t << 8;
-	unsigned long int t2 = (unsigned long int)lo;
-	t2 = t2 & 0xff;
-	t = t & 0xff00;
-	t = t + t2;
-	return t;
-}
-
-
-uint8_t correctScale(uint8_t s)
-{
-	if (s==0x80) return 0x80;
-	if (s==0x40) return 0x40-1;
-	if (s==0x20) return 0x20-2;
-	return s;
-}
-#define DO_SCALE 1
-void addLine(int8_t x0, int8_t y0, int8_t x1, int8_t y1)
-{
-
-	lineX0[lineCount] = x3d(x0, 0, y0);
-	lineY0[lineCount] = y3d(x0, 0, y0);
-	lineX1[lineCount] = x3d(x1, 0, y1);
-	lineY1[lineCount] = y3d(x1, 0, y1);
-
-	lineScale[lineCount] = 0x80;
-	moveScale[lineCount] = 0x80;
-
-	int xpos = lineX0[lineCount]; 
-	int ypos = lineY0[lineCount]; 
-#ifdef DO_SCALE	
-
-	// Line	
-	int difx = (lineX1[lineCount]-lineX0[lineCount]); 
-	int dify = (lineY1[lineCount]-lineY0[lineCount]); 
-	if (difx<0) difx = -difx;
-	if (dify<0) dify = -dify;
-	if ((difx<64) && (dify<64)) lineScale[lineCount] = scaleDown(lineScale[lineCount]);
-	if ((difx<32) && (dify<32)) lineScale[lineCount] = scaleDown(lineScale[lineCount]);
-
-	// Move	
-  	difx = lineX0[lineCount]; 
-    	dify = lineY0[lineCount]; 
-    	if (difx<0) difx = -difx;
-    	if (dify<0) dify = -dify;
-    	if ((difx<64) && (dify<64)) 
-	{
-		moveScale[lineCount] = scaleDown(moveScale[lineCount]);
-		xpos = xpos<<1;
-		ypos = ypos<<1;
-	}
-    	if ((difx<32) && (dify<32)) 
-	{
-		moveScale[lineCount] = scaleDown(moveScale[lineCount]);
-		xpos = xpos<<1;
-		ypos = ypos<<1;
-	}
-
-	
-	lineScale[lineCount] = correctScale(lineScale[lineCount]);
-	moveScale[lineCount] = correctScale(moveScale[lineCount]);
-	
-	
-#endif
-	
-	moveTo[lineCount] =toLong(ypos, xpos);
-	lineCount++;
-}
-
-
-void addTarget(int8_t x, int8_t y)
-{
-	lineX0[lineCount] = x3d(x, 0, y);
-	lineY0[lineCount] = y3d(x, 0, y);
-	lineX1[lineCount] = x3d(x + 1, 0, y + 1);
-	lineY1[lineCount] = y3d(x + 1, 0, y + 1);
-
-	lineScale[lineCount] = 0x80;
-	moveScale[lineCount] = 0x80;
-	int xpos = lineX0[lineCount]; 
-	int ypos = lineY0[lineCount]; 
-
-#ifdef DO_SCALE	
-	// Line
-	int difx = lineX1[lineCount] - lineX0[lineCount]; 
-	int dify = lineY1[lineCount] - lineY0[lineCount]; 
-	if (difx<0) difx = -difx;
-	if (dify<0) dify = -dify;
-	if ((difx<64) && (dify<64)) lineScale[lineCount] = scaleDown(lineScale[lineCount]);
-	if ((difx<32) && (dify<32)) lineScale[lineCount] = scaleDown(lineScale[lineCount]);
-
-	// Move
-	difx = lineX0[lineCount]; 
-    	dify = lineY0[lineCount]; 
-    	if (difx<0) difx = -difx;
-    	if (dify<0) dify = -dify;
-
-	if ((difx<64) && (dify<64)) 
-	{
-		moveScale[lineCount] = scaleDown(moveScale[lineCount]);
-		xpos = xpos<<1;
-		ypos = ypos<<1;
-	}
-    	if ((difx<32) && (dify<32)) 
-	{
-		moveScale[lineCount] = scaleDown(moveScale[lineCount]);
-		xpos = xpos<<1;
-		ypos = ypos<<1;
-	}
-	lineScale[lineCount] = correctScale(lineScale[lineCount]);
-	moveScale[lineCount] = correctScale(moveScale[lineCount]);
-#endif
-	moveTo[lineCount] =toLong(ypos, xpos);
-	lineCount++;
-
-
-
-	lineX0[lineCount] = x3d(x + 1, 0, y);
-	lineY0[lineCount] = y3d(x + 1, 0, y);
-	lineX1[lineCount] = x3d(x, 0, y + 1);
-	lineY1[lineCount] = y3d(x, 0, y + 1);
-	
-	lineScale[lineCount] = 0x80;
-	moveScale[lineCount] = 0x80;
-
-	xpos = lineX0[lineCount]; 
-	ypos = lineY0[lineCount]; 
-	
-#ifdef DO_SCALE	
-// Line	
-	difx = lineX1[lineCount] - lineX0[lineCount]; 
-	dify = lineY1[lineCount] - lineY0[lineCount]; 
-	if (difx<0) difx = -difx;
-	if (dify<0) dify = -dify;
-	if ((difx<64) && (dify<64)) lineScale[lineCount] = scaleDown(lineScale[lineCount]);
-	if ((difx<32) && (dify<32)) lineScale[lineCount] =  scaleDown(lineScale[lineCount]);
-
-// Move
-    	difx = lineX0[lineCount]; 
-    	dify = lineY0[lineCount]; 
-    	if (difx<0) difx = -difx;
-    	if (dify<0) dify = -dify;
-
-	if ((difx<64) && (dify<64)) 
-	{
-		moveScale[lineCount] = scaleDown(moveScale[lineCount]);
-		xpos = xpos<<1;
-		ypos = ypos<<1;
-	}
-    	if ((difx<32) && (dify<32)) 
-	{
-		moveScale[lineCount] = scaleDown(moveScale[lineCount]);
-		xpos = xpos<<1;
-		ypos = ypos<<1;
-	}
-	lineScale[lineCount] = correctScale(lineScale[lineCount]);
-	moveScale[lineCount] = correctScale(moveScale[lineCount]);
-#endif
-	moveTo[lineCount] =toLong(ypos, xpos);
-	lineCount++;
-}
-
-/*
-  since gcc DEFAULT is int_8
-  calculations for large array index with "just numbers" and Muls
-  is dangerous, one has to watch out, that the array (with large numbers)
-  is accessed right.
-  The new variable "index" takes this into account!
-*/
-
-
-void setupX()
-{
-	//	int8_t c = 0;
-	unsigned long int index;
-	int8_t x = 0;
-	int8_t y = 0;
-	for (y = 0; y < LEVEL_HEIGHT - 1; y++) {
-		int8_t x0 = -1;
-		int8_t x1 = -1;
-		for (x = 0; x < LEVEL_WIDTH; x++) {
-//			char c0 = level[x + y * LEVEL_WIDTH];
-			index = (unsigned long int) y*LEVEL_WIDTH +  (unsigned long int)x;
-			char c0 = level[index];
-			
-			if (c0 == 'o') {
-				addTarget(x, y);
-				endX = x;
-				endY = y;
-			}
-			if (c0 == 'a') {
-				startX = x;
-				startY = y;
-			}
-//			char c1 = level[x + (y + 1) * LEVEL_WIDTH];
-			index += LEVEL_WIDTH;
-			char c1 = level[index];
-			if (isField(c0) || isField(c1)) {
-				if (x0 < 0) x0 = x;
-				x1 = x;
-			} else {
-				if (x0 >= 0) {
-					addLine(x0, y + 1, x1 + 1, y + 1);
-					x0 = -1;
-				}
-			}
-		}
-	}
-}
-
-void setupY()
-{
-	//	int8_t c = 0;
-	unsigned long int index;
-	int8_t x = 0;
-	int8_t y = 0;
-	for (x = 0; x < LEVEL_WIDTH - 1; x++) {
-		int8_t y0 = -1;
-		int8_t y1 = -1;
-		for (y = 0; y < LEVEL_HEIGHT; y++) {
-
-//			char c0 = level[x + y * LEVEL_WIDTH];
-//			char c1 = level[x + 1 + y * LEVEL_WIDTH];
-
-			index = (unsigned long int) y*LEVEL_WIDTH +  (unsigned long int)x;
-			char c0 = level[index];
-			char c1 = level[index+1];
-			if (isField(c0) || isField(c1)) {
-				if (y0 < 0) y0 = y;
-				y1 = y;
-			} else {
-				if (y0 >= 0) {
-					addLine(x + 1, y0, x + 1, y1 + 1);
-					y0 = -1;
-				}
-			}
-		}
-	}
+//	itoa(levelHighscore, &infoText[6]);
+	itoa(levelNumber + 1, &infoText[6]);
 }
 
 void changeMusic(const uint8_t* music)
@@ -649,22 +371,14 @@ void startBlockFalling()
 
 void startLevel()
 {
-	if (levelNumber == 0) {
-		level = level0;
-	} else if (levelNumber == 1) {
-		level = level1;
-	} else {
-		level = level2;
-	}
-//		level = level2;
 	levelHighscore = readEeprom((uint8_t) (levelNumber * 2));
 	levelHighscore |= ((uint16_t) readEeprom((uint8_t) (levelNumber * 2 + 1))) << 8;
 	if (levelHighscore == 0) levelHighscore = 999;
-	lineCount = 0;
-	setupX();
-	setupY();
-	blockX = startX;
-	blockY = startY;
+    level = levels[levelNumber];
+	initSwatches();
+	initLevel();
+	blockX = level->start.x;
+	blockY = level->start.y;
 	blockAnimation = height2FallingLeft;
 	blockAnimationStep = 0;
 	blockAnimating = 0;
@@ -677,17 +391,53 @@ void startLevel()
 	updateInfoText();
 }
 
-
-
-extern void drawFieldAsmScale();
 void __attribute__((noinline)) drawField()
 {
 	
 	// set high intensity and beam position
-	intens(0x55);
-	drawFieldAsmScale();
-}
+	intens(0x35);
+	
+	// draw field lines
+	/*
+	for (int i = 0; i < lineCount; i++) {
+		zergnd();
+		positd(lineX0[i], lineY0[i]);
+		int8_t dx = lineX1[i] - lineX0[i];
+		int8_t dy = lineY1[i] - lineY0[i];
+		diffab( dy, dx);
+	}
+	*/
+	
+	// hand optimized assembler of the previous C code
+	asm("	pshs a, b, dp, x, u");
+	asm("	lda #0xd0");
+	asm("	tfr a, dp");
+	asm("	ldx #0");
+	asm("	ldb _lineCount");
+	asm("drawFieldLoop:");
+	asm("	pshs b");
+	asm("	pshs x");
+	asm("	jsr 0xf354");  // _zergnd
+	asm("	puls x");
+	asm("	lda _lineY0,x");
+	asm("	ldb _lineX0,x");
+	asm("	pshs x");
+	asm("	jsr 0xf2fc");  // positd
+	asm("	puls x");
+	asm("	lda _lineY1,x");
+	asm("	ldb _lineX1,x");
+	asm("	suba _lineY0,x");
+	asm("	subb _lineX0,x");
+	asm("	pshs x");
+	asm("	jsr 0xf3df");  // diffab
+	asm("	puls x");
+	asm("	lda ,x+");
+	asm("	puls b");
+	asm("	decb");
+	asm("	bne drawFieldLoop");
+	asm("	puls a, b, dp, x, u");
 
+}
 
 void drawBlock(int8_t yofs)
 {
@@ -695,7 +445,7 @@ void drawBlock(int8_t yofs)
 	intens(0x63);
 	positd(0, yofs);
 	
-	positd(x3d(blockX, 0, blockY), y3d(blockX, 0, blockY));
+	positd(x3d(blockX, blockY), y3d(blockX, 0, blockY));
 	pack1x((void*)(blockAnimation[blockAnimationStep]));
 }
 
@@ -731,6 +481,13 @@ void blockWaiting()
 		changeMusic(movingMusic);
 		*vecx = 3;
 	}
+
+    	Read_Btns();
+    	if (Vec_Buttons & 1) {
+		levelNumber++;
+		if (levelNumber >= levelCount) levelNumber = 0;
+    		startLevel();
+    	}
 }
 
 void doBlockAnimation()
@@ -753,16 +510,15 @@ void blockMoving()
 	doBlockAnimation();
 	if (!blockAnimating) {
 		// check for out of field
-		// char c0 = isField(level[blockX + blockY * LEVEL_WIDTH]);
-		// char c1 = isField(level[blockX + 1 + blockY * LEVEL_WIDTH]);
-		// char c2 = isField(level[blockX + (blockY + 1) * LEVEL_WIDTH]);
-		unsigned long int index = (unsigned long int )blockY * LEVEL_WIDTH + (unsigned long int)blockX;
-		char c0 = isField(level[index]);
-		char c1 = isField(level[index+1]);
-		char c2 = isField(level[index + LEVEL_WIDTH]);
+		uint8_t c0 = isField(blockX, blockY);
+		uint8_t c1 = isField(blockX + 1, blockY);
+		uint8_t c2 = isField(blockX, blockY + 1);
+		char f0 = getField(blockX, blockY);
+		char f1 = getField(blockX + 1, blockY);
+		char f2 = getField(blockX, blockY + 1);
 		switch (blockOrientation) {
 			case Standing:
-			if (!c0) {
+			if (!c0 || f0 == 'f') {
 				startBlockFalling();
 			}
 			break;
@@ -790,6 +546,32 @@ void blockMoving()
 				gameState = BlockWaiting;
 			}
 		}
+
+		// check for swatch
+		switch (blockOrientation) {
+			case Standing:
+			if (f0 == 's' || f0 == 'h') {
+				swatchSwitch(blockX, blockY);
+			}
+			break;
+			case Vertical:
+			if (f0 == 's') {
+				swatchSwitch(blockX, blockY);
+			}
+			if (f2 == 's') {
+				swatchSwitch(blockX, blockY + 1);
+			}
+			break;
+			case Horizontal:
+			if (f0 == 's') {
+				swatchSwitch(blockX, blockY);
+			}
+			if (f1 == 's') {
+				swatchSwitch(blockX + 1, blockY);
+			}
+			break;
+		}
+		
 	}
 }
 
@@ -817,7 +599,7 @@ void blockMovingAtEnd()
 			writeEeprom((uint8_t) (2 * levelNumber + 1), (uint8_t) (moveCount >> 8));
 		}
 		levelNumber++;
-		if (levelNumber > 2) levelNumber = 0;
+		if (levelNumber >= levelCount) levelNumber = 0;
 		startLevel();
 	}
 }
@@ -923,7 +705,7 @@ int main()
 	}
 
 	// initial info text for current and best move count
-	memcpy(infoText, "001 / 999\x80", 10);
+	memcpy(infoText, "001 - 999\x80", 10);
 	
 	// setup joystick read function to read only joystick 1
 	epot0 = 1;
@@ -932,7 +714,8 @@ int main()
 	epot3 = 0;
 	
 	gameState = MainMenu;
-	musicInit();
+	startLevel();
+	//musicInit();
 
 	while (1) {
 		// wait for frame boundary (one frame = 30,000 cyles = 50 Hz)
@@ -941,11 +724,11 @@ int main()
 		switch (gameState) {
 			case MainMenu:
         			mainMenu();
-				musicPlay();
+				//musicPlay();
         			break;
 			case ClearMenu:
 				clearMenu();
-				musicPlay();
+				//musicPlay();
 				break;
 			case BlockMovingToStart:
 				showInfo();

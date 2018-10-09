@@ -246,7 +246,8 @@ namespace Bloxorz
             game.GraphicsDevice.BlendState = BlendState.Additive;
             game.GraphicsDevice.Clear(Color.Black);
             
-			Queue<VectorT> lines = vectrex.vecx_lines(vectrex.VECTREX_MHZ / 40);
+            // TODO: 1 vsync = 40
+			Queue<VectorT> lines = vectrex.vecx_lines(vectrex.VECTREX_MHZ / 10);
 			//Console.WriteLine("lines.Count = " + lines.Count);
 			List<VectorT> drawnlines = new List<VectorT>();
             while (lines.Count > 0)

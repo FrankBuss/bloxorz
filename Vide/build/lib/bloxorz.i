@@ -3,6 +3,15 @@
 # 1 "<command-line>"
 # 1 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.c"
 # 26 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.c"
+# 1 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/stdint.h" 1
+
+
+
+typedef unsigned long uint16_t;
+typedef signed char int8_t;
+typedef long int16_t;
+typedef unsigned char uint8_t;
+# 27 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.c" 2
 # 1 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vectrex.h" 1
 # 37 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vectrex.h"
        
@@ -1927,162 +1936,68 @@ static inline __attribute__((always_inline)) void Wait_Bound(void)
 }
 # 49 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum.h" 2
 # 44 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vectrex.h" 2
-# 27 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.c" 2
-# 35 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.c"
-extern void* memcpy (void* dest, const void* src, long unsigned int len);
-
-typedef unsigned long uint16_t;
-
-typedef signed char int8_t;
-typedef unsigned char uint8_t;
-# 50 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.c"
-static inline __attribute__((always_inline)) void positd (int8_t x, int8_t y)
-{
- dp_VIA_t1_cnt_lo = 0x80;
- Moveto_d(y,x);
-}
-static inline __attribute__((always_inline)) void Draw_VLp_80(void* const x)
-{
- dp_VIA_t1_cnt_lo = 0x80;
- Draw_VLp(x);
-}
-# 87 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.c"
-extern void picWrite(uint8_t b);
-extern uint8_t picRead();
-extern void delay10ms();
-
-extern void musicInit();
-extern void musicPlay();
-
-char infoText[10];
-
-uint16_t moveCount;
-
-uint8_t picAvailable;
-
-const uint8_t startMusic[] = {
- 0xFE,0xE8, 0xFE,0xB6,
- 1,1,
- 2,1,
- 3,1,
- 4,1,
- 5,1,
- 6,1,
- 7,1,
- 8,1,
- 9,1,
- 10,1,
- 11,1,
- 12,1,
- 13,1,
- 0, 0x80,
+# 28 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.c" 2
+# 1 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/level.h" 1
+# 13 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/level.h"
+enum SwatchType {
+    SWATCH_TYPE_S,
+    SWATCH_TYPE_H,
 };
 
-const uint8_t levelEndMusic[] = {
- 0xFE,0xE8, 0xFE,0xB6,
- 13,1,
- 14,1,
- 15,1,
- 16,1,
- 17,1,
- 18,1,
- 19,1,
- 20,1,
- 21,1,
- 22,1,
- 0, 0x80,
+enum SwatchFieldAction {
+    SWATCH_FIELD_ACTION_ONOFF,
+    SWATCH_FIELD_ACTION_ON,
+    SWATCH_FIELD_ACTION_OFF,
 };
 
-const uint8_t fallingMusic[] = {
- 0xFE,0xE8, 0xFE,0xB6,
- 13,2,
- 12,2,
- 11,2,
- 10,2,
- 9,2,
- 8,2,
- 7,2,
- 6,2,
- 5,2,
- 4,2,
- 3,2,
- 2,2,
- 1,2,
- 0, 0x80,
+struct Point {
+    const int8_t const x;
+    const int8_t const y;
 };
 
-const uint8_t movingMusic[] = {
- 0xfd,0xc3, 0xFE,0xB6,
- 0x01,5,
- 0, 0x80,
+struct SwatchField {
+    const enum SwatchFieldAction const action;
+    const struct Point const position;
 };
 
-const uint8_t* currentMusic = startMusic;
+struct Swatch {
+    const enum SwatchType type;
+    const struct Point const position;
+    const uint8_t fields_count;
+    const struct SwatchField const* const fields[];
+};
 
-# 1 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/level.i" 1
+struct Level {
+    const char* geometry;
+    const struct Point const start;
+    const uint8_t swatches_count;
+    const struct Swatch const* const swatches[];
+};
+
+extern const struct Level* level;
+extern uint8_t levelNumber;
+extern int8_t startX;
+extern int8_t startY;
+extern int8_t endX;
+extern int8_t endY;
+extern const struct Level* const levels[];
+extern const uint8_t levelCount;
 
 
+uint8_t isField(int8_t x, int8_t y);
 
-const char* level0 =
- "            "
- "            "
- "            "
- "      ...   "
- "     ..a.   "
- "     ....   "
- "     ...    "
- "     ...    "
- "    ....    "
- "   ....     "
- "   .o..     "
- "   ....     "
- "    ..      "
- "            "
- "            "
- "            "
- "            "
-;
 
-const char* level1 =
- "            "
- "    ....    "
- "    .a..    "
- "    ....    "
- "    ....    "
- "      .     "
- "      .     "
- "      ...   "
- "      ...   "
- "      ...   "
- "        .   "
- "        .   "
- "    .....   "
- "   ......   "
- "   ..o.     "
- "   ....     "
- "            "
-;
+char getField(int8_t x, int8_t y);
 
-const char* level2 =
- "            "
- "    a       "
- "    .       "
- "    .       "
- "    .       "
- "    ...     "
- " ......     "
- " .   .....  "
- " .      ... "
- " ...    ... "
- " ...   .... "
- " ...   ...  "
- "   ...      "
- "   ....     "
- "    .o.     "
- "    ...     "
- "            "
-;
-# 160 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.c" 2
+void initSwatches();
+void swatchSwitch(int8_t x, int8_t y);
+
+void initLevel();
+
+int8_t x3d(int8_t x, int8_t z);
+
+int8_t y3d(int8_t x, int8_t y, int8_t z);
+# 29 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.c" 2
 # 1 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/block.i" 1
 
 const int8_t height2FallingLeft0[] = {
@@ -5329,23 +5244,94 @@ const int8_t* width2RollingBack[] __attribute__ ((section(".text"))) = {
  width2RollingBack10,
  width2RollingBack11,
 };
-# 161 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.c" 2
+# 30 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.c" 2
+# 38 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.c"
+extern void* memcpy (void* dest, const void* src, long unsigned int len);
+# 48 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.c"
+static inline __attribute__((always_inline)) void positd (int8_t x, int8_t y)
+{
+ dp_VIA_t1_cnt_lo = 0x80;
+ Moveto_d(y,x);
+}
+static inline __attribute__((always_inline)) void Draw_VLp_80(void* const x)
+{
+ dp_VIA_t1_cnt_lo = 0x80;
+ Draw_VLp(x);
+}
+# 85 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.c"
+extern void picWrite(uint8_t b);
+extern uint8_t picRead();
+extern void delay10ms();
 
+extern void musicInit();
+extern void musicPlay();
 
+char infoText[10];
 
-uint8_t moveScale[40];
-unsigned long int moveTo[40];
+uint16_t moveCount;
 
-uint8_t lineScale[40];
-int8_t lineX0[40];
-int8_t lineY0[40];
-int8_t lineX1[40];
-int8_t lineY1[40];
-uint8_t lineCount = 0;
-int8_t startX = 0;
-int8_t startY = 0;
-int8_t endX = 0;
-int8_t endY = 0;
+uint16_t levelHighscore;
+
+uint8_t picAvailable;
+
+const uint8_t startMusic[] = {
+ 0xFE,0xE8, 0xFE,0xB6,
+ 1,1,
+ 2,1,
+ 3,1,
+ 4,1,
+ 5,1,
+ 6,1,
+ 7,1,
+ 8,1,
+ 9,1,
+ 10,1,
+ 11,1,
+ 12,1,
+ 13,1,
+ 0, 0x80,
+};
+
+const uint8_t levelEndMusic[] = {
+ 0xFE,0xE8, 0xFE,0xB6,
+ 13,1,
+ 14,1,
+ 15,1,
+ 16,1,
+ 17,1,
+ 18,1,
+ 19,1,
+ 20,1,
+ 21,1,
+ 22,1,
+ 0, 0x80,
+};
+
+const uint8_t fallingMusic[] = {
+ 0xFE,0xE8, 0xFE,0xB6,
+ 13,2,
+ 12,2,
+ 11,2,
+ 10,2,
+ 9,2,
+ 8,2,
+ 7,2,
+ 6,2,
+ 5,2,
+ 4,2,
+ 3,2,
+ 2,2,
+ 1,2,
+ 0, 0x80,
+};
+
+const uint8_t movingMusic[] = {
+ 0xfd,0xc3, 0xFE,0xB6,
+ 0x01,5,
+ 0, 0x80,
+};
+
+const uint8_t* currentMusic = startMusic;
 
 enum BlockOrientation_t {
  Standing,
@@ -5365,9 +5351,6 @@ int8_t nextBlockX;
 int8_t nextBlockY;
 int8_t lastBlockDirection;
 int8_t blockYOfs;
-const char* level;
-int8_t levelNumber = 0;
-uint16_t levelHighscore;
 
 uint8_t* vecx = (uint8_t*) 0x8000;
 
@@ -5384,6 +5367,16 @@ enum GameState_t {
 enum BlockDirection_t {
  Left, Up, Right, Down
 };
+
+void runtimeError(char* msg)
+{
+ while (1) {
+  Wait_Recal();
+         Intensity_a(0x5f);
+         Vec_Text_Width = 90;
+         Print_Str_d(-10, -110, msg);
+ }
+}
 
 uint8_t sendCommand(uint8_t cmd, uint8_t arg)
 {
@@ -5432,265 +5425,8 @@ void itoa(uint16_t number, char* text)
 void updateInfoText()
 {
  itoa(moveCount, &infoText[0]);
- itoa(levelHighscore, &infoText[6]);
-}
 
-char isField(char c)
-{
- return (char)(c == '.' || c == 'a' || c == 'o');
-}
-
-int8_t x3d(int8_t x, int8_t y, int8_t z)
-{
-
- x -= 12 / 2 - 4;
- return 14 * x - 6 * z+0*y;
-}
-
-int8_t y3d(int8_t x, int8_t y, int8_t z)
-{
-
- y -= 17 / 2;
- return 3 * x + 13 * y + 8 * z;
-}
-
-uint8_t scaleDown(uint8_t oldScale)
-{
- return (uint8_t)(oldScale>>1);
-}
-
-unsigned long int toLong(int hi, int lo)
-{
- unsigned long int t = (unsigned long int)hi;
- t = t << 8;
- unsigned long int t2 = (unsigned long int)lo;
- t2 = t2 & 0xff;
- t = t & 0xff00;
- t = t + t2;
- return t;
-}
-
-
-uint8_t correctScale(uint8_t s)
-{
- if (s==0x80) return 0x80;
- if (s==0x40) return 0x40-1;
- if (s==0x20) return 0x20-2;
- return s;
-}
-
-void addLine(int8_t x0, int8_t y0, int8_t x1, int8_t y1)
-{
-
- lineX0[lineCount] = x3d(x0, 0, y0);
- lineY0[lineCount] = y3d(x0, 0, y0);
- lineX1[lineCount] = x3d(x1, 0, y1);
- lineY1[lineCount] = y3d(x1, 0, y1);
-
- lineScale[lineCount] = 0x80;
- moveScale[lineCount] = 0x80;
-
- int xpos = lineX0[lineCount];
- int ypos = lineY0[lineCount];
-
-
-
- int difx = (lineX1[lineCount]-lineX0[lineCount]);
- int dify = (lineY1[lineCount]-lineY0[lineCount]);
- if (difx<0) difx = -difx;
- if (dify<0) dify = -dify;
- if ((difx<64) && (dify<64)) lineScale[lineCount] = scaleDown(lineScale[lineCount]);
- if ((difx<32) && (dify<32)) lineScale[lineCount] = scaleDown(lineScale[lineCount]);
-
-
-   difx = lineX0[lineCount];
-     dify = lineY0[lineCount];
-     if (difx<0) difx = -difx;
-     if (dify<0) dify = -dify;
-     if ((difx<64) && (dify<64))
- {
-  moveScale[lineCount] = scaleDown(moveScale[lineCount]);
-  xpos = xpos<<1;
-  ypos = ypos<<1;
- }
-     if ((difx<32) && (dify<32))
- {
-  moveScale[lineCount] = scaleDown(moveScale[lineCount]);
-  xpos = xpos<<1;
-  ypos = ypos<<1;
- }
-
-
- lineScale[lineCount] = correctScale(lineScale[lineCount]);
- moveScale[lineCount] = correctScale(moveScale[lineCount]);
-
-
-
-
- moveTo[lineCount] =toLong(ypos, xpos);
- lineCount++;
-}
-
-
-void addTarget(int8_t x, int8_t y)
-{
- lineX0[lineCount] = x3d(x, 0, y);
- lineY0[lineCount] = y3d(x, 0, y);
- lineX1[lineCount] = x3d(x + 1, 0, y + 1);
- lineY1[lineCount] = y3d(x + 1, 0, y + 1);
-
- lineScale[lineCount] = 0x80;
- moveScale[lineCount] = 0x80;
- int xpos = lineX0[lineCount];
- int ypos = lineY0[lineCount];
-
-
-
- int difx = lineX1[lineCount] - lineX0[lineCount];
- int dify = lineY1[lineCount] - lineY0[lineCount];
- if (difx<0) difx = -difx;
- if (dify<0) dify = -dify;
- if ((difx<64) && (dify<64)) lineScale[lineCount] = scaleDown(lineScale[lineCount]);
- if ((difx<32) && (dify<32)) lineScale[lineCount] = scaleDown(lineScale[lineCount]);
-
-
- difx = lineX0[lineCount];
-     dify = lineY0[lineCount];
-     if (difx<0) difx = -difx;
-     if (dify<0) dify = -dify;
-
- if ((difx<64) && (dify<64))
- {
-  moveScale[lineCount] = scaleDown(moveScale[lineCount]);
-  xpos = xpos<<1;
-  ypos = ypos<<1;
- }
-     if ((difx<32) && (dify<32))
- {
-  moveScale[lineCount] = scaleDown(moveScale[lineCount]);
-  xpos = xpos<<1;
-  ypos = ypos<<1;
- }
- lineScale[lineCount] = correctScale(lineScale[lineCount]);
- moveScale[lineCount] = correctScale(moveScale[lineCount]);
-
- moveTo[lineCount] =toLong(ypos, xpos);
- lineCount++;
-
-
-
- lineX0[lineCount] = x3d(x + 1, 0, y);
- lineY0[lineCount] = y3d(x + 1, 0, y);
- lineX1[lineCount] = x3d(x, 0, y + 1);
- lineY1[lineCount] = y3d(x, 0, y + 1);
-
- lineScale[lineCount] = 0x80;
- moveScale[lineCount] = 0x80;
-
- xpos = lineX0[lineCount];
- ypos = lineY0[lineCount];
-
-
-
- difx = lineX1[lineCount] - lineX0[lineCount];
- dify = lineY1[lineCount] - lineY0[lineCount];
- if (difx<0) difx = -difx;
- if (dify<0) dify = -dify;
- if ((difx<64) && (dify<64)) lineScale[lineCount] = scaleDown(lineScale[lineCount]);
- if ((difx<32) && (dify<32)) lineScale[lineCount] = scaleDown(lineScale[lineCount]);
-
-
-     difx = lineX0[lineCount];
-     dify = lineY0[lineCount];
-     if (difx<0) difx = -difx;
-     if (dify<0) dify = -dify;
-
- if ((difx<64) && (dify<64))
- {
-  moveScale[lineCount] = scaleDown(moveScale[lineCount]);
-  xpos = xpos<<1;
-  ypos = ypos<<1;
- }
-     if ((difx<32) && (dify<32))
- {
-  moveScale[lineCount] = scaleDown(moveScale[lineCount]);
-  xpos = xpos<<1;
-  ypos = ypos<<1;
- }
- lineScale[lineCount] = correctScale(lineScale[lineCount]);
- moveScale[lineCount] = correctScale(moveScale[lineCount]);
-
- moveTo[lineCount] =toLong(ypos, xpos);
- lineCount++;
-}
-# 464 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.c"
-void setupX()
-{
-
- unsigned long int index;
- int8_t x = 0;
- int8_t y = 0;
- for (y = 0; y < 17 - 1; y++) {
-  int8_t x0 = -1;
-  int8_t x1 = -1;
-  for (x = 0; x < 12; x++) {
-
-   index = (unsigned long int) y*12 + (unsigned long int)x;
-   char c0 = level[index];
-
-   if (c0 == 'o') {
-    addTarget(x, y);
-    endX = x;
-    endY = y;
-   }
-   if (c0 == 'a') {
-    startX = x;
-    startY = y;
-   }
-
-   index += 12;
-   char c1 = level[index];
-   if (isField(c0) || isField(c1)) {
-    if (x0 < 0) x0 = x;
-    x1 = x;
-   } else {
-    if (x0 >= 0) {
-     addLine(x0, y + 1, x1 + 1, y + 1);
-     x0 = -1;
-    }
-   }
-  }
- }
-}
-
-void setupY()
-{
-
- unsigned long int index;
- int8_t x = 0;
- int8_t y = 0;
- for (x = 0; x < 12 - 1; x++) {
-  int8_t y0 = -1;
-  int8_t y1 = -1;
-  for (y = 0; y < 17; y++) {
-
-
-
-
-   index = (unsigned long int) y*12 + (unsigned long int)x;
-   char c0 = level[index];
-   char c1 = level[index+1];
-   if (isField(c0) || isField(c1)) {
-    if (y0 < 0) y0 = y;
-    y1 = y;
-   } else {
-    if (y0 >= 0) {
-     addLine(x + 1, y0, x + 1, y1 + 1);
-     y0 = -1;
-    }
-   }
-  }
- }
+ itoa(levelNumber + 1, &infoText[6]);
 }
 
 void changeMusic(const uint8_t* music)
@@ -5812,22 +5548,14 @@ void startBlockFalling()
 
 void startLevel()
 {
- if (levelNumber == 0) {
-  level = level0;
- } else if (levelNumber == 1) {
-  level = level1;
- } else {
-  level = level2;
- }
-
  levelHighscore = readEeprom((uint8_t) (levelNumber * 2));
  levelHighscore |= ((uint16_t) readEeprom((uint8_t) (levelNumber * 2 + 1))) << 8;
  if (levelHighscore == 0) levelHighscore = 999;
- lineCount = 0;
- setupX();
- setupY();
- blockX = startX;
- blockY = startY;
+    level = levels[levelNumber];
+ initSwatches();
+ initLevel();
+ blockX = level->start.x;
+ blockY = level->start.y;
  blockAnimation = height2FallingLeft;
  blockAnimationStep = 0;
  blockAnimating = 0;
@@ -5840,17 +5568,41 @@ void startLevel()
  updateInfoText();
 }
 
-
-
-extern void drawFieldAsmScale();
 void __attribute__((noinline)) drawField()
 {
 
 
- Intensity_a(0x55);
- drawFieldAsmScale();
-}
+ Intensity_a(0x35);
+# 412 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.c"
+ asm("	pshs a, b, dp, x, u");
+ asm("	lda #0xd0");
+ asm("	tfr a, dp");
+ asm("	ldx #0");
+ asm("	ldb _lineCount");
+ asm("drawFieldLoop:");
+ asm("	pshs b");
+ asm("	pshs x");
+ asm("	jsr 0xf354");
+ asm("	puls x");
+ asm("	lda _lineY0,x");
+ asm("	ldb _lineX0,x");
+ asm("	pshs x");
+ asm("	jsr 0xf2fc");
+ asm("	puls x");
+ asm("	lda _lineY1,x");
+ asm("	ldb _lineX1,x");
+ asm("	suba _lineY0,x");
+ asm("	subb _lineX0,x");
+ asm("	pshs x");
+ asm("	jsr 0xf3df");
+ asm("	puls x");
+ asm("	lda ,x+");
+ asm("	puls b");
+ asm("	decb");
+ asm("	bne drawFieldLoop");
+ asm("	puls a, b, dp, x, u");
 
+}
 
 void drawBlock(int8_t yofs)
 {
@@ -5858,7 +5610,7 @@ void drawBlock(int8_t yofs)
  Intensity_a(0x63);
  positd(0, yofs);
 
- positd(x3d(blockX, 0, blockY), y3d(blockX, 0, blockY));
+ positd(x3d(blockX, blockY), y3d(blockX, 0, blockY));
  Draw_VLp_80((void*)(blockAnimation[blockAnimationStep]));
 }
 
@@ -5894,6 +5646,13 @@ void blockWaiting()
   changeMusic(movingMusic);
   *vecx = 3;
  }
+
+     Read_Btns();
+     if (Vec_Buttons & 1) {
+  levelNumber++;
+  if (levelNumber >= levelCount) levelNumber = 0;
+      startLevel();
+     }
 }
 
 void doBlockAnimation()
@@ -5916,16 +5675,15 @@ void blockMoving()
  doBlockAnimation();
  if (!blockAnimating) {
 
-
-
-
-  unsigned long int index = (unsigned long int )blockY * 12 + (unsigned long int)blockX;
-  char c0 = isField(level[index]);
-  char c1 = isField(level[index+1]);
-  char c2 = isField(level[index + 12]);
+  uint8_t c0 = isField(blockX, blockY);
+  uint8_t c1 = isField(blockX + 1, blockY);
+  uint8_t c2 = isField(blockX, blockY + 1);
+  char f0 = getField(blockX, blockY);
+  char f1 = getField(blockX + 1, blockY);
+  char f2 = getField(blockX, blockY + 1);
   switch (blockOrientation) {
    case Standing:
-   if (!c0) {
+   if (!c0 || f0 == 'f') {
     startBlockFalling();
    }
    break;
@@ -5953,6 +5711,32 @@ void blockMoving()
     gameState = BlockWaiting;
    }
   }
+
+
+  switch (blockOrientation) {
+   case Standing:
+   if (f0 == 's' || f0 == 'h') {
+    swatchSwitch(blockX, blockY);
+   }
+   break;
+   case Vertical:
+   if (f0 == 's') {
+    swatchSwitch(blockX, blockY);
+   }
+   if (f2 == 's') {
+    swatchSwitch(blockX, blockY + 1);
+   }
+   break;
+   case Horizontal:
+   if (f0 == 's') {
+    swatchSwitch(blockX, blockY);
+   }
+   if (f1 == 's') {
+    swatchSwitch(blockX + 1, blockY);
+   }
+   break;
+  }
+
  }
 }
 
@@ -5980,7 +5764,7 @@ void blockMovingAtEnd()
    writeEeprom((uint8_t) (2 * levelNumber + 1), (uint8_t) (moveCount >> 8));
   }
   levelNumber++;
-  if (levelNumber > 2) levelNumber = 0;
+  if (levelNumber >= levelCount) levelNumber = 0;
   startLevel();
  }
 }
@@ -6086,7 +5870,7 @@ int main()
  }
 
 
- memcpy(infoText, "001 / 999\x80", 10);
+ memcpy(infoText, "001 - 999\x80", 10);
 
 
  (*((volatile uint8_t *) 0xc81f)) = 1;
@@ -6095,7 +5879,8 @@ int main()
  (*((volatile uint8_t *) 0xc822)) = 0;
 
  gameState = MainMenu;
- musicInit();
+ startLevel();
+
 
  while (1) {
 
@@ -6104,11 +5889,11 @@ int main()
   switch (gameState) {
    case MainMenu:
            mainMenu();
-    musicPlay();
+
            break;
    case ClearMenu:
     clearMenu();
-    musicPlay();
+
     break;
    case BlockMovingToStart:
     showInfo();
