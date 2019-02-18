@@ -15,7 +15,7 @@ namespace Bloxorz
         public SoundEffectInstance music;
 
         public byte[] rom = new byte[8192];
-		public byte[] cart = new byte[32768];
+		public byte[] cart = new byte[49152];
 		public byte[] ram = new byte[1024];      
 
         /* the sound chip registers */

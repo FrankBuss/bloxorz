@@ -1,6 +1,6 @@
 #include "level.h"
 
-const uint8_t levelCount = 23;
+const uint8_t levelCount = 33;
 
 const struct Swatch const swatch_1_0 = {
     .type = SWATCH_TYPE_H,
@@ -105,6 +105,87 @@ const struct Swatch const swatch_6_0 = {
 };
 
 const struct Swatch const swatch_7_0 = {
+    .type = SWATCH_TYPE_V,
+    .position = { .x = 5, .y = 4 },
+    .fields_count = 2,
+    .fields =
+        {
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_SPLIT1, .position = { .x = 8, .y = 10 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_SPLIT2, .position = { .x = 2, .y = 10 },
+            },
+        }
+};
+
+const struct Swatch const swatch_8_0 = {
+    .type = SWATCH_TYPE_V,
+    .position = { .x = 5, .y = 13 },
+    .fields_count = 2,
+    .fields =
+        {
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_SPLIT1, .position = { .x = 5, .y = 12 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_SPLIT2, .position = { .x = 5, .y = 2 },
+            },
+        }
+};
+
+const struct Swatch const swatch_9_0 = {
+    .type = SWATCH_TYPE_V,
+    .position = { .x = 8, .y = 13 },
+    .fields_count = 2,
+    .fields =
+        {
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_SPLIT1, .position = { .x = 8, .y = 13 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_SPLIT2, .position = { .x = 8, .y = 10 },
+            },
+        }
+};
+
+const struct Swatch const swatch_9_1 = {
+    .type = SWATCH_TYPE_S,
+    .position = { .x = 0, .y = 6 },
+    .fields_count = 2,
+    .fields =
+        {
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_ONOFF, .position = { .x = 8, .y = 4 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_ONOFF, .position = { .x = 8, .y = 5 },
+            },
+        }
+};
+
+const struct Swatch const swatch_9_2 = {
+    .type = SWATCH_TYPE_H,
+    .position = { .x = 0, .y = 12 },
+    .fields_count = 4,
+    .fields =
+        {
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_ONOFF, .position = { .x = 8, .y = 7 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_ONOFF, .position = { .x = 8, .y = 8 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_ONOFF, .position = { .x = 7, .y = 13 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_ONOFF, .position = { .x = 6, .y = 13 },
+            },
+        }
+};
+
+const struct Swatch const swatch_10_0 = {
     .type = SWATCH_TYPE_S,
     .position = { .x = 3, .y = 8 },
     .fields_count = 2,
@@ -119,7 +200,7 @@ const struct Swatch const swatch_7_0 = {
         }
 };
 
-const struct Swatch const swatch_8_0 = {
+const struct Swatch const swatch_11_0 = {
     .type = SWATCH_TYPE_H,
     .position = { .x = 9, .y = 13 },
     .fields_count = 1,
@@ -131,7 +212,7 @@ const struct Swatch const swatch_8_0 = {
         }
 };
 
-const struct Swatch const swatch_8_1 = {
+const struct Swatch const swatch_11_1 = {
     .type = SWATCH_TYPE_H,
     .position = { .x = 7, .y = 7 },
     .fields_count = 1,
@@ -143,7 +224,7 @@ const struct Swatch const swatch_8_1 = {
         }
 };
 
-const struct Swatch const swatch_10_0 = {
+const struct Swatch const swatch_13_0 = {
     .type = SWATCH_TYPE_H,
     .position = { .x = 6, .y = 12 },
     .fields_count = 2,
@@ -158,7 +239,7 @@ const struct Swatch const swatch_10_0 = {
         }
 };
 
-const struct Swatch const swatch_10_1 = {
+const struct Swatch const swatch_13_1 = {
     .type = SWATCH_TYPE_H,
     .position = { .x = 0, .y = 13 },
     .fields_count = 2,
@@ -173,7 +254,199 @@ const struct Swatch const swatch_10_1 = {
         }
 };
 
-const struct Swatch const swatch_11_0 = {
+const struct Swatch const swatch_14_0 = {
+    .type = SWATCH_TYPE_H,
+    .position = { .x = 8, .y = 12 },
+    .fields_count = 4,
+    .fields =
+        {
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_ONOFF, .position = { .x = 7, .y = 2 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_ONOFF, .position = { .x = 7, .y = 3 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_ONOFF, .position = { .x = 8, .y = 5 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_ONOFF, .position = { .x = 8, .y = 6 },
+            },
+        }
+};
+
+const struct Swatch const swatch_14_1 = {
+    .type = SWATCH_TYPE_S,
+    .position = { .x = 6, .y = 8 },
+    .fields_count = 4,
+    .fields =
+        {
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_ONOFF, .position = { .x = 8, .y = 5 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_ONOFF, .position = { .x = 8, .y = 6 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_ONOFF, .position = { .x = 8, .y = 10 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_ONOFF, .position = { .x = 8, .y = 11 },
+            },
+        }
+};
+
+const struct Swatch const swatch_14_2 = {
+    .type = SWATCH_TYPE_V,
+    .position = { .x = 4, .y = 7 },
+    .fields_count = 2,
+    .fields =
+        {
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_SPLIT1, .position = { .x = 8, .y = 13 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_SPLIT2, .position = { .x = 1, .y = 1 },
+            },
+        }
+};
+
+const struct Swatch const swatch_14_3 = {
+    .type = SWATCH_TYPE_S,
+    .position = { .x = 2, .y = 11 },
+    .fields_count = 2,
+    .fields =
+        {
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_OFF, .position = { .x = 1, .y = 9 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_OFF, .position = { .x = 1, .y = 10 },
+            },
+        }
+};
+
+const struct Swatch const swatch_14_4 = {
+    .type = SWATCH_TYPE_S,
+    .position = { .x = 0, .y = 11 },
+    .fields_count = 2,
+    .fields =
+        {
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_OFF, .position = { .x = 1, .y = 9 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_OFF, .position = { .x = 1, .y = 10 },
+            },
+        }
+};
+
+const struct Swatch const swatch_15_0 = {
+    .type = SWATCH_TYPE_V,
+    .position = { .x = 7, .y = 1 },
+    .fields_count = 2,
+    .fields =
+        {
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_SPLIT1, .position = { .x = 6, .y = 7 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_SPLIT2, .position = { .x = 6, .y = 5 },
+            },
+        }
+};
+
+const struct Swatch const swatch_15_1 = {
+    .type = SWATCH_TYPE_V,
+    .position = { .x = 6, .y = 0 },
+    .fields_count = 2,
+    .fields =
+        {
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_SPLIT1, .position = { .x = 6, .y = 2 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_SPLIT2, .position = { .x = 7, .y = 1 },
+            },
+        }
+};
+
+const struct Swatch const swatch_15_2 = {
+    .type = SWATCH_TYPE_V,
+    .position = { .x = 6, .y = 2 },
+    .fields_count = 2,
+    .fields =
+        {
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_SPLIT1, .position = { .x = 6, .y = 0 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_SPLIT2, .position = { .x = 6, .y = 2 },
+            },
+        }
+};
+
+const struct Swatch const swatch_15_3 = {
+    .type = SWATCH_TYPE_H,
+    .position = { .x = 6, .y = 5 },
+    .fields_count = 2,
+    .fields =
+        {
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_ON, .position = { .x = 6, .y = 3 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_ON, .position = { .x = 6, .y = 4 },
+            },
+        }
+};
+
+const struct Swatch const swatch_15_4 = {
+    .type = SWATCH_TYPE_H,
+    .position = { .x = 6, .y = 6 },
+    .fields_count = 2,
+    .fields =
+        {
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_ON, .position = { .x = 6, .y = 8 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_ON, .position = { .x = 6, .y = 9 },
+            },
+        }
+};
+
+const struct Swatch const swatch_15_5 = {
+    .type = SWATCH_TYPE_V,
+    .position = { .x = 5, .y = 1 },
+    .fields_count = 2,
+    .fields =
+        {
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_SPLIT1, .position = { .x = 5, .y = 1 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_SPLIT2, .position = { .x = 6, .y = 0 },
+            },
+        }
+};
+
+const struct Swatch const swatch_15_6 = {
+    .type = SWATCH_TYPE_V,
+    .position = { .x = 1, .y = 9 },
+    .fields_count = 2,
+    .fields =
+        {
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_SPLIT1, .position = { .x = 7, .y = 1 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_SPLIT2, .position = { .x = 6, .y = 0 },
+            },
+        }
+};
+
+const struct Swatch const swatch_16_0 = {
     .type = SWATCH_TYPE_H,
     .position = { .x = 6, .y = 12 },
     .fields_count = 1,
@@ -185,7 +458,7 @@ const struct Swatch const swatch_11_0 = {
         }
 };
 
-const struct Swatch const swatch_11_1 = {
+const struct Swatch const swatch_16_1 = {
     .type = SWATCH_TYPE_H,
     .position = { .x = 6, .y = 13 },
     .fields_count = 1,
@@ -197,7 +470,7 @@ const struct Swatch const swatch_11_1 = {
         }
 };
 
-const struct Swatch const swatch_11_2 = {
+const struct Swatch const swatch_16_2 = {
     .type = SWATCH_TYPE_H,
     .position = { .x = 3, .y = 12 },
     .fields_count = 1,
@@ -209,7 +482,7 @@ const struct Swatch const swatch_11_2 = {
         }
 };
 
-const struct Swatch const swatch_11_3 = {
+const struct Swatch const swatch_16_3 = {
     .type = SWATCH_TYPE_S,
     .position = { .x = 1, .y = 1 },
     .fields_count = 1,
@@ -221,7 +494,7 @@ const struct Swatch const swatch_11_3 = {
         }
 };
 
-const struct Swatch const swatch_11_4 = {
+const struct Swatch const swatch_16_4 = {
     .type = SWATCH_TYPE_H,
     .position = { .x = 0, .y = 12 },
     .fields_count = 2,
@@ -236,7 +509,7 @@ const struct Swatch const swatch_11_4 = {
         }
 };
 
-const struct Swatch const swatch_12_0 = {
+const struct Swatch const swatch_17_0 = {
     .type = SWATCH_TYPE_S,
     .position = { .x = 8, .y = 7 },
     .fields_count = 2,
@@ -251,7 +524,7 @@ const struct Swatch const swatch_12_0 = {
         }
 };
 
-const struct Swatch const swatch_12_1 = {
+const struct Swatch const swatch_17_1 = {
     .type = SWATCH_TYPE_S,
     .position = { .x = 7, .y = 2 },
     .fields_count = 4,
@@ -272,7 +545,7 @@ const struct Swatch const swatch_12_1 = {
         }
 };
 
-const struct Swatch const swatch_12_2 = {
+const struct Swatch const swatch_17_2 = {
     .type = SWATCH_TYPE_S,
     .position = { .x = 5, .y = 1 },
     .fields_count = 2,
@@ -287,7 +560,7 @@ const struct Swatch const swatch_12_2 = {
         }
 };
 
-const struct Swatch const swatch_12_3 = {
+const struct Swatch const swatch_17_3 = {
     .type = SWATCH_TYPE_S,
     .position = { .x = 3, .y = 2 },
     .fields_count = 4,
@@ -308,7 +581,7 @@ const struct Swatch const swatch_12_3 = {
         }
 };
 
-const struct Swatch const swatch_12_4 = {
+const struct Swatch const swatch_17_4 = {
     .type = SWATCH_TYPE_S,
     .position = { .x = 2, .y = 8 },
     .fields_count = 4,
@@ -329,7 +602,7 @@ const struct Swatch const swatch_12_4 = {
         }
 };
 
-const struct Swatch const swatch_12_5 = {
+const struct Swatch const swatch_17_5 = {
     .type = SWATCH_TYPE_H,
     .position = { .x = 0, .y = 3 },
     .fields_count = 1,
@@ -341,7 +614,7 @@ const struct Swatch const swatch_12_5 = {
         }
 };
 
-const struct Swatch const swatch_13_0 = {
+const struct Swatch const swatch_18_0 = {
     .type = SWATCH_TYPE_S,
     .position = { .x = 9, .y = 10 },
     .fields_count = 2,
@@ -356,7 +629,7 @@ const struct Swatch const swatch_13_0 = {
         }
 };
 
-const struct Swatch const swatch_13_1 = {
+const struct Swatch const swatch_18_1 = {
     .type = SWATCH_TYPE_S,
     .position = { .x = 4, .y = 10 },
     .fields_count = 2,
@@ -371,7 +644,7 @@ const struct Swatch const swatch_13_1 = {
         }
 };
 
-const struct Swatch const swatch_13_2 = {
+const struct Swatch const swatch_18_2 = {
     .type = SWATCH_TYPE_S,
     .position = { .x = 0, .y = 10 },
     .fields_count = 2,
@@ -386,7 +659,97 @@ const struct Swatch const swatch_13_2 = {
         }
 };
 
-const struct Swatch const swatch_14_0 = {
+const struct Swatch const swatch_19_0 = {
+    .type = SWATCH_TYPE_S,
+    .position = { .x = 7, .y = 7 },
+    .fields_count = 2,
+    .fields =
+        {
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_OFF, .position = { .x = 8, .y = 5 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_OFF, .position = { .x = 8, .y = 6 },
+            },
+        }
+};
+
+const struct Swatch const swatch_19_1 = {
+    .type = SWATCH_TYPE_S,
+    .position = { .x = 5, .y = 3 },
+    .fields_count = 2,
+    .fields =
+        {
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_OFF, .position = { .x = 8, .y = 5 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_OFF, .position = { .x = 8, .y = 6 },
+            },
+        }
+};
+
+const struct Swatch const swatch_19_2 = {
+    .type = SWATCH_TYPE_V,
+    .position = { .x = 5, .y = 7 },
+    .fields_count = 2,
+    .fields =
+        {
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_SPLIT1, .position = { .x = 8, .y = 13 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_SPLIT2, .position = { .x = 2, .y = 13 },
+            },
+        }
+};
+
+const struct Swatch const swatch_19_3 = {
+    .type = SWATCH_TYPE_S,
+    .position = { .x = 5, .y = 9 },
+    .fields_count = 2,
+    .fields =
+        {
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_OFF, .position = { .x = 8, .y = 5 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_OFF, .position = { .x = 8, .y = 6 },
+            },
+        }
+};
+
+const struct Swatch const swatch_19_4 = {
+    .type = SWATCH_TYPE_S,
+    .position = { .x = 3, .y = 12 },
+    .fields_count = 2,
+    .fields =
+        {
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_ONOFF, .position = { .x = 3, .y = 10 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_ONOFF, .position = { .x = 3, .y = 11 },
+            },
+        }
+};
+
+const struct Swatch const swatch_19_5 = {
+    .type = SWATCH_TYPE_S,
+    .position = { .x = 2, .y = 1 },
+    .fields_count = 2,
+    .fields =
+        {
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_ONOFF, .position = { .x = 8, .y = 10 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_ONOFF, .position = { .x = 8, .y = 11 },
+            },
+        }
+};
+
+const struct Swatch const swatch_20_0 = {
     .type = SWATCH_TYPE_H,
     .position = { .x = 4, .y = 8 },
     .fields_count = 1,
@@ -398,7 +761,7 @@ const struct Swatch const swatch_14_0 = {
         }
 };
 
-const struct Swatch const swatch_14_1 = {
+const struct Swatch const swatch_20_1 = {
     .type = SWATCH_TYPE_H,
     .position = { .x = 3, .y = 8 },
     .fields_count = 1,
@@ -410,7 +773,7 @@ const struct Swatch const swatch_14_1 = {
         }
 };
 
-const struct Swatch const swatch_15_0 = {
+const struct Swatch const swatch_21_0 = {
     .type = SWATCH_TYPE_S,
     .position = { .x = 7, .y = 7 },
     .fields_count = 2,
@@ -425,7 +788,7 @@ const struct Swatch const swatch_15_0 = {
         }
 };
 
-const struct Swatch const swatch_15_1 = {
+const struct Swatch const swatch_21_1 = {
     .type = SWATCH_TYPE_S,
     .position = { .x = 6, .y = 5 },
     .fields_count = 2,
@@ -440,7 +803,7 @@ const struct Swatch const swatch_15_1 = {
         }
 };
 
-const struct Swatch const swatch_15_2 = {
+const struct Swatch const swatch_21_2 = {
     .type = SWATCH_TYPE_H,
     .position = { .x = 0, .y = 3 },
     .fields_count = 1,
@@ -452,7 +815,7 @@ const struct Swatch const swatch_15_2 = {
         }
 };
 
-const struct Swatch const swatch_15_3 = {
+const struct Swatch const swatch_21_3 = {
     .type = SWATCH_TYPE_H,
     .position = { .x = 0, .y = 10 },
     .fields_count = 1,
@@ -464,7 +827,157 @@ const struct Swatch const swatch_15_3 = {
         }
 };
 
-const struct Swatch const swatch_16_0 = {
+const struct Swatch const swatch_22_0 = {
+    .type = SWATCH_TYPE_H,
+    .position = { .x = 8, .y = 2 },
+    .fields_count = 1,
+    .fields =
+        {
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_ON, .position = { .x = 6, .y = 4 },
+            },
+        }
+};
+
+const struct Swatch const swatch_22_1 = {
+    .type = SWATCH_TYPE_S,
+    .position = { .x = 8, .y = 13 },
+    .fields_count = 3,
+    .fields =
+        {
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_ONOFF, .position = { .x = 0, .y = 8 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_ON, .position = { .x = 3, .y = 1 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_ON, .position = { .x = 3, .y = 2 },
+            },
+        }
+};
+
+const struct Swatch const swatch_22_2 = {
+    .type = SWATCH_TYPE_S,
+    .position = { .x = 6, .y = 14 },
+    .fields_count = 3,
+    .fields =
+        {
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_OFF, .position = { .x = 3, .y = 14 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_OFF, .position = { .x = 7, .y = 10 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_OFF, .position = { .x = 7, .y = 11 },
+            },
+        }
+};
+
+const struct Swatch const swatch_22_3 = {
+    .type = SWATCH_TYPE_S,
+    .position = { .x = 4, .y = 0 },
+    .fields_count = 3,
+    .fields =
+        {
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_ON, .position = { .x = 6, .y = 0 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_OFF, .position = { .x = 3, .y = 1 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_OFF, .position = { .x = 3, .y = 2 },
+            },
+        }
+};
+
+const struct Swatch const swatch_22_4 = {
+    .type = SWATCH_TYPE_V,
+    .position = { .x = 2, .y = 12 },
+    .fields_count = 2,
+    .fields =
+        {
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_SPLIT1, .position = { .x = 2, .y = 12 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_SPLIT2, .position = { .x = 7, .y = 2 },
+            },
+        }
+};
+
+const struct Swatch const swatch_23_0 = {
+    .type = SWATCH_TYPE_H,
+    .position = { .x = 7, .y = 12 },
+    .fields_count = 2,
+    .fields =
+        {
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_ON, .position = { .x = 6, .y = 4 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_ON, .position = { .x = 6, .y = 3 },
+            },
+        }
+};
+
+const struct Swatch const swatch_23_1 = {
+    .type = SWATCH_TYPE_V,
+    .position = { .x = 7, .y = 14 },
+    .fields_count = 2,
+    .fields =
+        {
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_SPLIT1, .position = { .x = 2, .y = 6 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_SPLIT2, .position = { .x = 2, .y = 8 },
+            },
+        }
+};
+
+const struct Swatch const swatch_23_2 = {
+    .type = SWATCH_TYPE_H,
+    .position = { .x = 6, .y = 6 },
+    .fields_count = 1,
+    .fields =
+        {
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_ON, .position = { .x = 1, .y = 8 },
+            },
+        }
+};
+
+const struct Swatch const swatch_23_3 = {
+    .type = SWATCH_TYPE_H,
+    .position = { .x = 5, .y = 1 },
+    .fields_count = 1,
+    .fields =
+        {
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_ON, .position = { .x = 7, .y = 4 },
+            },
+        }
+};
+
+const struct Swatch const swatch_23_4 = {
+    .type = SWATCH_TYPE_H,
+    .position = { .x = 1, .y = 6 },
+    .fields_count = 2,
+    .fields =
+        {
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_ON, .position = { .x = 2, .y = 9 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_ON, .position = { .x = 2, .y = 10 },
+            },
+        }
+};
+
+const struct Swatch const swatch_24_0 = {
     .type = SWATCH_TYPE_S,
     .position = { .x = 7, .y = 4 },
     .fields_count = 4,
@@ -485,7 +998,7 @@ const struct Swatch const swatch_16_0 = {
         }
 };
 
-const struct Swatch const swatch_16_1 = {
+const struct Swatch const swatch_24_1 = {
     .type = SWATCH_TYPE_H,
     .position = { .x = 3, .y = 2 },
     .fields_count = 2,
@@ -500,7 +1013,7 @@ const struct Swatch const swatch_16_1 = {
         }
 };
 
-const struct Swatch const swatch_16_2 = {
+const struct Swatch const swatch_24_2 = {
     .type = SWATCH_TYPE_S,
     .position = { .x = 1, .y = 8 },
     .fields_count = 3,
@@ -518,7 +1031,52 @@ const struct Swatch const swatch_16_2 = {
         }
 };
 
-const struct Swatch const swatch_17_0 = {
+const struct Swatch const swatch_25_0 = {
+    .type = SWATCH_TYPE_V,
+    .position = { .x = 9, .y = 13 },
+    .fields_count = 2,
+    .fields =
+        {
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_SPLIT1, .position = { .x = 6, .y = 12 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_SPLIT2, .position = { .x = 4, .y = 10 },
+            },
+        }
+};
+
+const struct Swatch const swatch_25_1 = {
+    .type = SWATCH_TYPE_S,
+    .position = { .x = 8, .y = 7 },
+    .fields_count = 2,
+    .fields =
+        {
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_OFF, .position = { .x = 6, .y = 2 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_OFF, .position = { .x = 6, .y = 3 },
+            },
+        }
+};
+
+const struct Swatch const swatch_25_2 = {
+    .type = SWATCH_TYPE_H,
+    .position = { .x = 2, .y = 1 },
+    .fields_count = 2,
+    .fields =
+        {
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_ON, .position = { .x = 2, .y = 9 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_ON, .position = { .x = 5, .y = 3 },
+            },
+        }
+};
+
+const struct Swatch const swatch_26_0 = {
     .type = SWATCH_TYPE_H,
     .position = { .x = 6, .y = 13 },
     .fields_count = 2,
@@ -533,7 +1091,7 @@ const struct Swatch const swatch_17_0 = {
         }
 };
 
-const struct Swatch const swatch_17_1 = {
+const struct Swatch const swatch_26_1 = {
     .type = SWATCH_TYPE_S,
     .position = { .x = 4, .y = 12 },
     .fields_count = 1,
@@ -545,7 +1103,7 @@ const struct Swatch const swatch_17_1 = {
         }
 };
 
-const struct Swatch const swatch_17_2 = {
+const struct Swatch const swatch_26_2 = {
     .type = SWATCH_TYPE_S,
     .position = { .x = 4, .y = 13 },
     .fields_count = 1,
@@ -557,7 +1115,43 @@ const struct Swatch const swatch_17_2 = {
         }
 };
 
-const struct Swatch const swatch_18_0 = {
+const struct Swatch const swatch_27_0 = {
+    .type = SWATCH_TYPE_V,
+    .position = { .x = 4, .y = 11 },
+    .fields_count = 2,
+    .fields =
+        {
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_SPLIT1, .position = { .x = 3, .y = 14 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_SPLIT2, .position = { .x = 0, .y = 12 },
+            },
+        }
+};
+
+const struct Swatch const swatch_27_1 = {
+    .type = SWATCH_TYPE_S,
+    .position = { .x = 2, .y = 11 },
+    .fields_count = 4,
+    .fields =
+        {
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_OFF, .position = { .x = 9, .y = 4 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_OFF, .position = { .x = 9, .y = 3 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_OFF, .position = { .x = 0, .y = 8 },
+            },
+            &(const struct SwatchField) {
+                .action = SWATCH_FIELD_ACTION_OFF, .position = { .x = 0, .y = 9 },
+            },
+        }
+};
+
+const struct Swatch const swatch_28_0 = {
     .type = SWATCH_TYPE_S,
     .position = { .x = 9, .y = 2 },
     .fields_count = 4,
@@ -578,7 +1172,7 @@ const struct Swatch const swatch_18_0 = {
         }
 };
 
-const struct Swatch const swatch_18_1 = {
+const struct Swatch const swatch_28_1 = {
     .type = SWATCH_TYPE_H,
     .position = { .x = 9, .y = 12 },
     .fields_count = 2,
@@ -593,7 +1187,7 @@ const struct Swatch const swatch_18_1 = {
         }
 };
 
-const struct Swatch const swatch_18_2 = {
+const struct Swatch const swatch_28_2 = {
     .type = SWATCH_TYPE_H,
     .position = { .x = 6, .y = 0 },
     .fields_count = 4,
@@ -614,7 +1208,7 @@ const struct Swatch const swatch_18_2 = {
         }
 };
 
-const struct Swatch const swatch_18_3 = {
+const struct Swatch const swatch_28_3 = {
     .type = SWATCH_TYPE_H,
     .position = { .x = 6, .y = 14 },
     .fields_count = 1,
@@ -626,7 +1220,7 @@ const struct Swatch const swatch_18_3 = {
         }
 };
 
-const struct Swatch const swatch_18_4 = {
+const struct Swatch const swatch_28_4 = {
     .type = SWATCH_TYPE_S,
     .position = { .x = 3, .y = 12 },
     .fields_count = 2,
@@ -641,7 +1235,7 @@ const struct Swatch const swatch_18_4 = {
         }
 };
 
-const struct Swatch const swatch_18_5 = {
+const struct Swatch const swatch_28_5 = {
     .type = SWATCH_TYPE_S,
     .position = { .x = 0, .y = 12 },
     .fields_count = 8,
@@ -674,7 +1268,7 @@ const struct Swatch const swatch_18_5 = {
         }
 };
 
-const struct Swatch const swatch_19_0 = {
+const struct Swatch const swatch_29_0 = {
     .type = SWATCH_TYPE_H,
     .position = { .x = 7, .y = 14 },
     .fields_count = 4,
@@ -695,7 +1289,7 @@ const struct Swatch const swatch_19_0 = {
         }
 };
 
-const struct Swatch const swatch_19_1 = {
+const struct Swatch const swatch_29_1 = {
     .type = SWATCH_TYPE_H,
     .position = { .x = 4, .y = 1 },
     .fields_count = 2,
@@ -710,7 +1304,7 @@ const struct Swatch const swatch_19_1 = {
         }
 };
 
-const struct Swatch const swatch_19_2 = {
+const struct Swatch const swatch_29_2 = {
     .type = SWATCH_TYPE_H,
     .position = { .x = 2, .y = 12 },
     .fields_count = 1,
@@ -722,7 +1316,7 @@ const struct Swatch const swatch_19_2 = {
         }
 };
 
-const struct Swatch const swatch_20_0 = {
+const struct Swatch const swatch_30_0 = {
     .type = SWATCH_TYPE_H,
     .position = { .x = 8, .y = 8 },
     .fields_count = 2,
@@ -737,7 +1331,7 @@ const struct Swatch const swatch_20_0 = {
         }
 };
 
-const struct Swatch const swatch_20_1 = {
+const struct Swatch const swatch_30_1 = {
     .type = SWATCH_TYPE_S,
     .position = { .x = 5, .y = 6 },
     .fields_count = 8,
@@ -770,7 +1364,7 @@ const struct Swatch const swatch_20_1 = {
         }
 };
 
-const struct Swatch const swatch_20_2 = {
+const struct Swatch const swatch_30_2 = {
     .type = SWATCH_TYPE_S,
     .position = { .x = 2, .y = 7 },
     .fields_count = 8,
@@ -803,7 +1397,7 @@ const struct Swatch const swatch_20_2 = {
         }
 };
 
-const struct Swatch const swatch_20_3 = {
+const struct Swatch const swatch_30_3 = {
     .type = SWATCH_TYPE_H,
     .position = { .x = 1, .y = 2 },
     .fields_count = 5,
@@ -827,7 +1421,7 @@ const struct Swatch const swatch_20_3 = {
         }
 };
 
-const struct Swatch const swatch_20_4 = {
+const struct Swatch const swatch_30_4 = {
     .type = SWATCH_TYPE_H,
     .position = { .x = 1, .y = 6 },
     .fields_count = 2,
@@ -842,7 +1436,7 @@ const struct Swatch const swatch_20_4 = {
         }
 };
 
-const struct Swatch const swatch_21_0 = {
+const struct Swatch const swatch_31_0 = {
     .type = SWATCH_TYPE_H,
     .position = { .x = 9, .y = 14 },
     .fields_count = 4,
@@ -863,7 +1457,7 @@ const struct Swatch const swatch_21_0 = {
         }
 };
 
-const struct Swatch const swatch_21_1 = {
+const struct Swatch const swatch_31_1 = {
     .type = SWATCH_TYPE_H,
     .position = { .x = 7, .y = 12 },
     .fields_count = 2,
@@ -878,7 +1472,7 @@ const struct Swatch const swatch_21_1 = {
         }
 };
 
-const struct Swatch const swatch_21_2 = {
+const struct Swatch const swatch_31_2 = {
     .type = SWATCH_TYPE_H,
     .position = { .x = 2, .y = 6 },
     .fields_count = 2,
@@ -893,7 +1487,7 @@ const struct Swatch const swatch_21_2 = {
         }
 };
 
-const struct Swatch const swatch_22_0 = {
+const struct Swatch const swatch_32_0 = {
     .type = SWATCH_TYPE_S,
     .position = { .x = 9, .y = 7 },
     .fields_count = 2,
@@ -908,7 +1502,7 @@ const struct Swatch const swatch_22_0 = {
         }
 };
 
-const struct Swatch const swatch_22_1 = {
+const struct Swatch const swatch_32_1 = {
     .type = SWATCH_TYPE_S,
     .position = { .x = 7, .y = 5 },
     .fields_count = 2,
@@ -923,7 +1517,7 @@ const struct Swatch const swatch_22_1 = {
         }
 };
 
-const struct Swatch const swatch_22_2 = {
+const struct Swatch const swatch_32_2 = {
     .type = SWATCH_TYPE_S,
     .position = { .x = 7, .y = 8 },
     .fields_count = 2,
@@ -938,7 +1532,7 @@ const struct Swatch const swatch_22_2 = {
         }
 };
 
-const struct Swatch const swatch_22_3 = {
+const struct Swatch const swatch_32_3 = {
     .type = SWATCH_TYPE_S,
     .position = { .x = 6, .y = 9 },
     .fields_count = 2,
@@ -953,7 +1547,7 @@ const struct Swatch const swatch_22_3 = {
         }
 };
 
-const struct Swatch const swatch_22_4 = {
+const struct Swatch const swatch_32_4 = {
     .type = SWATCH_TYPE_S,
     .position = { .x = 6, .y = 10 },
     .fields_count = 2,
@@ -968,7 +1562,7 @@ const struct Swatch const swatch_22_4 = {
         }
 };
 
-const struct Swatch const swatch_22_5 = {
+const struct Swatch const swatch_32_5 = {
     .type = SWATCH_TYPE_S,
     .position = { .x = 6, .y = 13 },
     .fields_count = 2,
@@ -983,7 +1577,7 @@ const struct Swatch const swatch_22_5 = {
         }
 };
 
-const struct Swatch const swatch_22_6 = {
+const struct Swatch const swatch_32_6 = {
     .type = SWATCH_TYPE_S,
     .position = { .x = 5, .y = 7 },
     .fields_count = 2,
@@ -998,7 +1592,7 @@ const struct Swatch const swatch_22_6 = {
         }
 };
 
-const struct Swatch const swatch_22_7 = {
+const struct Swatch const swatch_32_7 = {
     .type = SWATCH_TYPE_S,
     .position = { .x = 5, .y = 10 },
     .fields_count = 2,
@@ -1013,7 +1607,7 @@ const struct Swatch const swatch_22_7 = {
         }
 };
 
-const struct Swatch const swatch_22_8 = {
+const struct Swatch const swatch_32_8 = {
     .type = SWATCH_TYPE_S,
     .position = { .x = 4, .y = 11 },
     .fields_count = 2,
@@ -1028,7 +1622,7 @@ const struct Swatch const swatch_22_8 = {
         }
 };
 
-const struct Swatch const swatch_22_9 = {
+const struct Swatch const swatch_32_9 = {
     .type = SWATCH_TYPE_S,
     .position = { .x = 3, .y = 11 },
     .fields_count = 2,
@@ -1043,7 +1637,7 @@ const struct Swatch const swatch_22_9 = {
         }
 };
 
-const struct Swatch const swatch_22_10 = {
+const struct Swatch const swatch_32_10 = {
     .type = SWATCH_TYPE_S,
     .position = { .x = 2, .y = 6 },
     .fields_count = 2,
@@ -1058,7 +1652,7 @@ const struct Swatch const swatch_22_10 = {
         }
 };
 
-const struct Swatch const swatch_22_11 = {
+const struct Swatch const swatch_32_11 = {
     .type = SWATCH_TYPE_S,
     .position = { .x = 2, .y = 13 },
     .fields_count = 2,
@@ -1073,7 +1667,7 @@ const struct Swatch const swatch_22_11 = {
         }
 };
 
-const struct Swatch const swatch_22_12 = {
+const struct Swatch const swatch_32_12 = {
     .type = SWATCH_TYPE_H,
     .position = { .x = 2, .y = 14 },
     .fields_count = 1,
@@ -1251,6 +1845,83 @@ const struct Level const level6 =
 const struct Level const level7 =
 {
     .geometry = 
+        "    bbb   "
+        "    bbb   "
+        "    bbb   "
+        "    bbb   "
+        "    bvb   "
+        "    bbb   "
+        "          "
+        "          "
+        "          "
+        " bbbbbbbbb"
+        " bbbbbbbbb"
+        " bbbbbbbbb"
+        "    bbb   "
+        "    beb   "
+        "    bbb   "
+    , .start = { .x = 5, .y = 1 }
+    , .swatches_count = 1
+    , .swatches =
+    {
+        &swatch_7_0,
+    },
+};
+const struct Level const level8 =
+{
+    .geometry = 
+        "    bbb   "
+        "    bbb   "
+        "    bbb   "
+        "    bbb   "
+        "    b     "
+        "    b     "
+        "  bbb     "
+        "  bebbb   "
+        "  bbb     "
+        "    b     "
+        "    b     "
+        "    bbb   "
+        "    bbb   "
+        "    bvb   "
+        "    bbb   "
+    , .start = { .x = 5, .y = 1 }
+    , .swatches_count = 1
+    , .swatches =
+    {
+        &swatch_8_0,
+    },
+};
+const struct Level const level9 =
+{
+    .geometry = 
+        "          "
+        "       bbb"
+        "       beb"
+        "       bbb"
+        "        l "
+        "bb      r "
+        "sb      b "
+        " b      l "
+        " b      r "
+        "bb     bbb"
+        "b     bbbb"
+        "b     bbbb"
+        "hbb  bbbbb"
+        "bbbbbbllvb"
+        "        bb"
+    , .start = { .x = 8, .y = 10 }
+    , .swatches_count = 3
+    , .swatches =
+    {
+        &swatch_9_0,
+        &swatch_9_1,
+        &swatch_9_2,
+    },
+};
+const struct Level const level10 =
+{
+    .geometry = 
         "          "
         "          "
         "    b     "
@@ -1270,10 +1941,10 @@ const struct Level const level7 =
     , .swatches_count = 1
     , .swatches =
     {
-        &swatch_7_0,
+        &swatch_10_0,
     },
 };
-const struct Level const level8 =
+const struct Level const level11 =
 {
     .geometry = 
         "          "
@@ -1295,11 +1966,11 @@ const struct Level const level8 =
     , .swatches_count = 2
     , .swatches =
     {
-        &swatch_8_0,
-        &swatch_8_1,
+        &swatch_11_0,
+        &swatch_11_1,
     },
 };
-const struct Level const level9 =
+const struct Level const level12 =
 {
     .geometry = 
         "          "
@@ -1320,7 +1991,7 @@ const struct Level const level9 =
     , .start = { .x = 6, .y = 13 }
     , .swatches_count = 0
 };
-const struct Level const level10 =
+const struct Level const level13 =
 {
     .geometry = 
         "  bbbbbb  "
@@ -1342,11 +2013,71 @@ const struct Level const level10 =
     , .swatches_count = 2
     , .swatches =
     {
-        &swatch_10_0,
-        &swatch_10_1,
+        &swatch_13_0,
+        &swatch_13_1,
     },
 };
-const struct Level const level11 =
+const struct Level const level14 =
+{
+    .geometry = 
+        "bbb  bbb  "
+        "bbbbbbbb  "
+        "bbb   bl  "
+        " b    br  "
+        " b    bbb "
+        " b      k "
+        "bbb     q "
+        "bbbbv  bbb"
+        "bbb   sbbb"
+        " k     bbb"
+        " q      l "
+        "sbs     r "
+        "beb    bhb"
+        "bbb    bbb"
+        "       bbb"
+    , .start = { .x = 1, .y = 1 }
+    , .swatches_count = 5
+    , .swatches =
+    {
+        &swatch_14_0,
+        &swatch_14_1,
+        &swatch_14_2,
+        &swatch_14_3,
+        &swatch_14_4,
+    },
+};
+const struct Level const level15 =
+{
+    .geometry = 
+        "      v   "
+        "     vbv  "
+        "bbb   v   "
+        "bbb   l   "
+        "bbb   r   "
+        " b    h   "
+        " b    h   "
+        " b    b   "
+        "bbb   l   "
+        "bvb   r   "
+        "bbb  bbb  "
+        "     beb  "
+        "     bbb  "
+        "          "
+        "          "
+    , .start = { .x = 1, .y = 3 }
+    , .swatches_count = 7
+    , .swatches =
+    {
+        &swatch_15_0,
+        &swatch_15_1,
+        &swatch_15_2,
+        &swatch_15_3,
+        &swatch_15_4,
+        &swatch_15_5,
+        &swatch_15_6,
+    },
+};
+const struct Level const level16 =
 {
     .geometry = 
         "bbbbbbbbbb"
@@ -1368,14 +2099,14 @@ const struct Level const level11 =
     , .swatches_count = 5
     , .swatches =
     {
-        &swatch_11_0,
-        &swatch_11_1,
-        &swatch_11_2,
-        &swatch_11_3,
-        &swatch_11_4,
+        &swatch_16_0,
+        &swatch_16_1,
+        &swatch_16_2,
+        &swatch_16_3,
+        &swatch_16_4,
     },
 };
-const struct Level const level12 =
+const struct Level const level17 =
 {
     .geometry = 
         "bbbbbbbb  "
@@ -1397,15 +2128,15 @@ const struct Level const level12 =
     , .swatches_count = 6
     , .swatches =
     {
-        &swatch_12_0,
-        &swatch_12_1,
-        &swatch_12_2,
-        &swatch_12_3,
-        &swatch_12_4,
-        &swatch_12_5,
+        &swatch_17_0,
+        &swatch_17_1,
+        &swatch_17_2,
+        &swatch_17_3,
+        &swatch_17_4,
+        &swatch_17_5,
     },
 };
-const struct Level const level13 =
+const struct Level const level18 =
 {
     .geometry = 
         "  bbb     "
@@ -1427,12 +2158,42 @@ const struct Level const level13 =
     , .swatches_count = 3
     , .swatches =
     {
-        &swatch_13_0,
-        &swatch_13_1,
-        &swatch_13_2,
+        &swatch_18_0,
+        &swatch_18_1,
+        &swatch_18_2,
     },
 };
-const struct Level const level14 =
+const struct Level const level19 =
+{
+    .geometry = 
+        "  bb      "
+        "  sb      "
+        "   bbbbbb "
+        "   bbsbbb "
+        "    bbbbb "
+        "        k "
+        "        q "
+        "   bbvbsb "
+        "   bbbbbb "
+        "   bbsbbb "
+        "   l    l "
+        "   r    r "
+        "bbbs   bbb"
+        "bebb   bbb"
+        "bbbb   bbb"
+    , .start = { .x = 7, .y = 8 }
+    , .swatches_count = 6
+    , .swatches =
+    {
+        &swatch_19_0,
+        &swatch_19_1,
+        &swatch_19_2,
+        &swatch_19_3,
+        &swatch_19_4,
+        &swatch_19_5,
+    },
+};
+const struct Level const level20 =
 {
     .geometry = 
         "     bbb  "
@@ -1454,11 +2215,11 @@ const struct Level const level14 =
     , .swatches_count = 2
     , .swatches =
     {
-        &swatch_14_0,
-        &swatch_14_1,
+        &swatch_20_0,
+        &swatch_20_1,
     },
 };
-const struct Level const level15 =
+const struct Level const level21 =
 {
     .geometry = 
         "          "
@@ -1480,13 +2241,71 @@ const struct Level const level15 =
     , .swatches_count = 4
     , .swatches =
     {
-        &swatch_15_0,
-        &swatch_15_1,
-        &swatch_15_2,
-        &swatch_15_3,
+        &swatch_21_0,
+        &swatch_21_1,
+        &swatch_21_2,
+        &swatch_21_3,
     },
 };
-const struct Level const level16 =
+const struct Level const level22 =
+{
+    .geometry = 
+        "   bsbr   "
+        "   l  bbbb"
+        "   r  bbhb"
+        "bbbb  bbbb"
+        "bbbbbbl   "
+        "bbbb      "
+        "bfff      "
+        "bffffbbb  "
+        "lffffbeb  "
+        " ffffbbb  "
+        " fff   k  "
+        " bbb   q  "
+        " bvb  bbbb"
+        " bbb  bbsb"
+        "   kbbsbbb"
+    , .start = { .x = 2, .y = 4 }
+    , .swatches_count = 5
+    , .swatches =
+    {
+        &swatch_22_0,
+        &swatch_22_1,
+        &swatch_22_2,
+        &swatch_22_3,
+        &swatch_22_4,
+    },
+};
+const struct Level const level23 =
+{
+    .geometry = 
+        "          "
+        "  bbbh    "
+        "  bbbbb   "
+        "  bb  l   "
+        "   b  rr  "
+        "   bbbbb  "
+        " hb  bhb  "
+        " bb   bb  "
+        " lb    b  "
+        "  l    b  "
+        "  r    b  "
+        " bbb  bbb "
+        " beb  bhb "
+        " bbbbbbbb "
+        "      bvb "
+    , .start = { .x = 6, .y = 2 }
+    , .swatches_count = 5
+    , .swatches =
+    {
+        &swatch_23_0,
+        &swatch_23_1,
+        &swatch_23_2,
+        &swatch_23_3,
+        &swatch_23_4,
+    },
+};
+const struct Level const level24 =
 {
     .geometry = 
         " bbb      "
@@ -1508,12 +2327,39 @@ const struct Level const level16 =
     , .swatches_count = 3
     , .swatches =
     {
-        &swatch_16_0,
-        &swatch_16_1,
-        &swatch_16_2,
+        &swatch_24_0,
+        &swatch_24_1,
+        &swatch_24_2,
     },
 };
-const struct Level const level17 =
+const struct Level const level25 =
+{
+    .geometry = 
+        "    bbb   "
+        "  hbbbb   "
+        "    bbk   "
+        "     lq   "
+        "      bb  "
+        "      bbbb"
+        " bbbbbbbbb"
+        " beb  bbsb"
+        " bbb   bbb"
+        "  l    bb "
+        "    bbbbb "
+        "     bb   "
+        "      b   "
+        "      bbbv"
+        "          "
+    , .start = { .x = 4, .y = 10 }
+    , .swatches_count = 3
+    , .swatches =
+    {
+        &swatch_25_0,
+        &swatch_25_1,
+        &swatch_25_2,
+    },
+};
+const struct Level const level26 =
 {
     .geometry = 
         "  bbb  bbb"
@@ -1535,12 +2381,38 @@ const struct Level const level17 =
     , .swatches_count = 3
     , .swatches =
     {
-        &swatch_17_0,
-        &swatch_17_1,
-        &swatch_17_2,
+        &swatch_26_0,
+        &swatch_26_1,
+        &swatch_26_2,
     },
 };
-const struct Level const level18 =
+const struct Level const level27 =
+{
+    .geometry = 
+        "    ffff  "
+        "  bbbfffbb"
+        "bbbeb  bbb"
+        "  bbb    k"
+        "  b      q"
+        "bbb    bbb"
+        "bbb    bbb"
+        "b     bbb "
+        "k    bbb  "
+        "q   bbb   "
+        "bbbbbb    "
+        "bbsbv     "
+        "bbbb      "
+        "  bb      "
+        "  bb      "
+    , .start = { .x = 7, .y = 2 }
+    , .swatches_count = 2
+    , .swatches =
+    {
+        &swatch_27_0,
+        &swatch_27_1,
+    },
+};
+const struct Level const level28 =
 {
     .geometry = 
         "bbb   h   "
@@ -1562,15 +2434,15 @@ const struct Level const level18 =
     , .swatches_count = 6
     , .swatches =
     {
-        &swatch_18_0,
-        &swatch_18_1,
-        &swatch_18_2,
-        &swatch_18_3,
-        &swatch_18_4,
-        &swatch_18_5,
+        &swatch_28_0,
+        &swatch_28_1,
+        &swatch_28_2,
+        &swatch_28_3,
+        &swatch_28_4,
+        &swatch_28_5,
     },
 };
-const struct Level const level19 =
+const struct Level const level29 =
 {
     .geometry = 
         " bff      "
@@ -1592,12 +2464,12 @@ const struct Level const level19 =
     , .swatches_count = 3
     , .swatches =
     {
-        &swatch_19_0,
-        &swatch_19_1,
-        &swatch_19_2,
+        &swatch_29_0,
+        &swatch_29_1,
+        &swatch_29_2,
     },
 };
-const struct Level const level20 =
+const struct Level const level30 =
 {
     .geometry = 
         "qqq       "
@@ -1619,14 +2491,14 @@ const struct Level const level20 =
     , .swatches_count = 5
     , .swatches =
     {
-        &swatch_20_0,
-        &swatch_20_1,
-        &swatch_20_2,
-        &swatch_20_3,
-        &swatch_20_4,
+        &swatch_30_0,
+        &swatch_30_1,
+        &swatch_30_2,
+        &swatch_30_3,
+        &swatch_30_4,
     },
 };
-const struct Level const level21 =
+const struct Level const level31 =
 {
     .geometry = 
         "          "
@@ -1648,12 +2520,12 @@ const struct Level const level21 =
     , .swatches_count = 3
     , .swatches =
     {
-        &swatch_21_0,
-        &swatch_21_1,
-        &swatch_21_2,
+        &swatch_31_0,
+        &swatch_31_1,
+        &swatch_31_2,
     },
 };
-const struct Level const level22 =
+const struct Level const level32 =
 {
     .geometry = 
         "bbbb  bb  "
@@ -1675,19 +2547,19 @@ const struct Level const level22 =
     , .swatches_count = 13
     , .swatches =
     {
-        &swatch_22_0,
-        &swatch_22_1,
-        &swatch_22_2,
-        &swatch_22_3,
-        &swatch_22_4,
-        &swatch_22_5,
-        &swatch_22_6,
-        &swatch_22_7,
-        &swatch_22_8,
-        &swatch_22_9,
-        &swatch_22_10,
-        &swatch_22_11,
-        &swatch_22_12,
+        &swatch_32_0,
+        &swatch_32_1,
+        &swatch_32_2,
+        &swatch_32_3,
+        &swatch_32_4,
+        &swatch_32_5,
+        &swatch_32_6,
+        &swatch_32_7,
+        &swatch_32_8,
+        &swatch_32_9,
+        &swatch_32_10,
+        &swatch_32_11,
+        &swatch_32_12,
     },
 };
 const struct Level* const levels[] = {
@@ -1714,4 +2586,14 @@ const struct Level* const levels[] = {
     &level20,
     &level21,
     &level22,
+    &level23,
+    &level24,
+    &level25,
+    &level26,
+    &level27,
+    &level28,
+    &level29,
+    &level30,
+    &level31,
+    &level32,
 };

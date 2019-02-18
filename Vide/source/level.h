@@ -13,12 +13,15 @@ extern "C" {
 enum SwatchType {
     SWATCH_TYPE_S,
     SWATCH_TYPE_H,
+    SWATCH_TYPE_V,
 };
 
 enum SwatchFieldAction {
     SWATCH_FIELD_ACTION_ONOFF,
     SWATCH_FIELD_ACTION_ON,
     SWATCH_FIELD_ACTION_OFF,
+    SWATCH_FIELD_ACTION_SPLIT1,
+    SWATCH_FIELD_ACTION_SPLIT2,
 };
 
 struct Point {

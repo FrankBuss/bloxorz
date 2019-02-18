@@ -4,11 +4,11 @@
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
             <name>cartridge</name>
-            <creation-uuid>2f96735d-367b-4e59-bd5d-5579fa947b02</creation-uuid>
+            <creation-uuid>4e0328c9-c309-4e92-8de7-283b4aef2d4a</creation-uuid>
             <make-project-type>0</make-project-type>
             <c-extensions>c</c-extensions>
             <cpp-extensions/>
-            <header-extensions>h</header-extensions>
+            <header-extensions/>
             <asminc-extensions/>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects/>

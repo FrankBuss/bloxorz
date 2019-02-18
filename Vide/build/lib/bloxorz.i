@@ -1,9 +1,9 @@
-# 1 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.c"
+# 1 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.c"
-# 26 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.c"
-# 1 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/stdint.h" 1
+# 1 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c"
+# 26 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c"
+# 1 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/stdint.h" 1
 
 
 
@@ -11,21 +11,26 @@ typedef unsigned long uint16_t;
 typedef signed char int8_t;
 typedef long int16_t;
 typedef unsigned char uint8_t;
-# 27 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.c" 2
-# 1 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vectrex.h" 1
-# 37 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vectrex.h"
+# 27 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c" 2
+# 1 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/hardware.h" 1
+
+
+
+
+# 1 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vectrex.h" 1
+# 37 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vectrex.h"
        
 
 
 
-# 1 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_ram.h" 1
-# 38 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_ram.h"
+# 1 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_ram.h" 1
+# 38 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_ram.h"
        
 
-# 1 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_ram_0x.h" 1
-# 38 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_ram_0x.h"
+# 1 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_ram_0x.h" 1
+# 38 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_ram_0x.h"
        
-# 48 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_ram_0x.h"
+# 48 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_ram_0x.h"
 extern int Vec_Snd_Shadow __attribute__((section(".dpc8")));
 extern int Vec_Snd_shadow[15] __attribute__((section(".dpc8")));
 extern unsigned int Vec_Btn_State __attribute__((section(".dpc8")));
@@ -167,7 +172,7 @@ extern long unsigned int Vec_Cold_Flag __attribute__((section(".dpcb")));
 
 extern volatile int VIA_port_b __attribute__((section(".dpd0")));
 extern volatile int VIA_port_a __attribute__((section(".dpd0")));
-# 197 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_ram_0x.h"
+# 197 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_ram_0x.h"
 extern volatile unsigned int VIA_DDR_b __attribute__((section(".dpd0")));
 extern volatile unsigned int VIA_DDR_a __attribute__((section(".dpd0")));
 extern volatile unsigned long int VIA_t1_cnt __attribute__((section(".dpd0")));
@@ -181,19 +186,19 @@ extern volatile unsigned int VIA_t2_lo __attribute__((section(".dpd0")));
 extern volatile unsigned int VIA_t2_hi __attribute__((section(".dpd0")));
 extern volatile unsigned int VIA_shift_reg __attribute__((section(".dpd0")));
 extern volatile unsigned int VIA_aux_cntl __attribute__((section(".dpd0")));
-# 218 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_ram_0x.h"
+# 218 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_ram_0x.h"
 extern volatile unsigned int VIA_cntl __attribute__((section(".dpd0")));
-# 227 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_ram_0x.h"
+# 227 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_ram_0x.h"
 extern volatile unsigned int VIA_int_flags __attribute__((section(".dpd0")));
-# 237 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_ram_0x.h"
+# 237 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_ram_0x.h"
 extern volatile unsigned int VIA_int_enable __attribute__((section(".dpd0")));
-# 246 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_ram_0x.h"
+# 246 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_ram_0x.h"
 extern volatile unsigned int VIA_port_a_nohs __attribute__((section(".dpd0")));
-# 41 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_ram.h" 2
-# 1 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_ram_dp.h" 1
-# 38 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_ram_dp.h"
+# 41 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_ram.h" 2
+# 1 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_ram_dp.h" 1
+# 38 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_ram_dp.h"
        
-# 48 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_ram_dp.h"
+# 48 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_ram_dp.h"
 extern int dp_Vec_Snd_Shadow __attribute__((section("direct")));
 extern int dp_Vec_Snd_shadow[15] __attribute__((section("direct")));
 extern unsigned int dp_Vec_Btn_State __attribute__((section("direct")));
@@ -352,14 +357,14 @@ extern volatile unsigned int dp_VIA_cntl __attribute__((section("direct")));
 extern volatile unsigned int dp_VIA_int_flags __attribute__((section("direct")));
 extern volatile unsigned int dp_VIA_int_enable __attribute__((section("direct")));
 extern volatile unsigned int dp_VIA_port_a_nohs __attribute__((section("direct")));
-# 42 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_ram.h" 2
-# 42 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vectrex.h" 2
-# 1 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rom.h" 1
-# 38 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rom.h"
+# 42 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_ram.h" 2
+# 42 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vectrex.h" 2
+# 1 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rom.h" 1
+# 38 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rom.h"
        
 
-# 1 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rom_0x.h" 1
-# 38 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rom_0x.h"
+# 1 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rom_0x.h" 1
+# 38 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rom_0x.h"
        
 
 
@@ -405,9 +410,9 @@ extern const unsigned int Vec_ADSR_FADE12 __attribute__((section(".dpfd")));
 extern const unsigned int Vec_TWANG_VIBE0 __attribute__((section(".dpfd")));
 extern const unsigned int Vec_TWANG_VIBEHL __attribute__((section(".dpfe")));
 extern const unsigned int Vec_TWANG_VIBENL __attribute__((section(".dpfe")));
-# 41 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rom.h" 2
-# 1 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rom_dp.h" 1
-# 38 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rom_dp.h"
+# 41 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rom.h" 2
+# 1 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rom_dp.h" 1
+# 38 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rom_dp.h"
        
 
 
@@ -453,21 +458,21 @@ extern const unsigned int dp_Vec_ADSR_FADE12 __attribute__((section("direct")));
 extern const unsigned int dp_Vec_TWANG_VIBE0 __attribute__((section("direct")));
 extern const unsigned int dp_Vec_TWANG_VIBEHL __attribute__((section("direct")));
 extern const unsigned int dp_Vec_TWANG_VIBENL __attribute__((section("direct")));
-# 42 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rom.h" 2
-# 43 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vectrex.h" 2
-# 1 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum.h" 1
-# 38 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum.h"
+# 42 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rom.h" 2
+# 43 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vectrex.h" 2
+# 1 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum.h" 1
+# 38 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum.h"
        
-# 48 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum.h"
-# 1 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
-# 38 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 48 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum.h"
+# 1 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+# 38 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
        
 
-# 1 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/macro.h" 1
-# 38 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/macro.h"
+# 1 "/home/frank/bin/Vide/C/PeerC/vectrex/include/macro.h" 1
+# 38 "/home/frank/bin/Vide/C/PeerC/vectrex/include/macro.h"
        
-# 41 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 2
-# 95 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 41 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 2
+# 95 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Wait_Recal(void)
 {
  asm volatile(
@@ -475,7 +480,7 @@ static inline __attribute__((always_inline)) void Wait_Recal(void)
   ::
   : "memory", "cc", "dp", "d", "x");
 }
-# 126 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 126 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Recalibrate(void)
 {
  asm volatile(
@@ -483,7 +488,7 @@ static inline __attribute__((always_inline)) void Recalibrate(void)
   ::
   : "memory", "cc", "dp", "d", "x");
 }
-# 144 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 144 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Reset0Ref_D0(void)
 {
  asm volatile(
@@ -491,7 +496,7 @@ static inline __attribute__((always_inline)) void Reset0Ref_D0(void)
   ::
   : "memory", "cc", "dp", "d");
 }
-# 163 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 163 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Check0Ref(void)
 {
  asm volatile(
@@ -499,7 +504,7 @@ static inline __attribute__((always_inline)) void Check0Ref(void)
   ::
   : "memory", "cc", "d");
 }
-# 179 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 179 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Reset0Ref(void)
 {
  asm volatile(
@@ -507,7 +512,7 @@ static inline __attribute__((always_inline)) void Reset0Ref(void)
   ::
   : "memory", "cc", "d");
 }
-# 198 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 198 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Reset_Pen(void)
 {
  asm volatile(
@@ -515,7 +520,7 @@ static inline __attribute__((always_inline)) void Reset_Pen(void)
   ::
   : "memory", "cc", "d");
 }
-# 214 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 214 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Reset0Int(void)
 {
  asm volatile(
@@ -523,7 +528,7 @@ static inline __attribute__((always_inline)) void Reset0Int(void)
   ::
   : "memory", "cc", "d");
 }
-# 239 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 239 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Dec_3_Counters(void)
 {
  asm volatile(
@@ -531,7 +536,7 @@ static inline __attribute__((always_inline)) void Dec_3_Counters(void)
   ::
   : "memory", "cc", "b", "x");
 }
-# 257 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 257 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Dec_6_Counters(void)
 {
  asm volatile(
@@ -539,7 +544,7 @@ static inline __attribute__((always_inline)) void Dec_6_Counters(void)
   ::
   : "memory", "cc", "b", "x");
 }
-# 274 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 274 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Dec_Counters(const unsigned int b, void* const x)
 {
  asm volatile(
@@ -549,7 +554,7 @@ static inline __attribute__((always_inline)) void Dec_Counters(const unsigned in
   :: [B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "b", "x");
 }
-# 298 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 298 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void DP_to_D0(void)
 {
  asm volatile(
@@ -557,7 +562,7 @@ static inline __attribute__((always_inline)) void DP_to_D0(void)
   ::
   : "memory", "cc", "dp", "a");
 }
-# 314 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 314 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void DP_to_C8(void)
 {
  asm volatile(
@@ -565,7 +570,7 @@ static inline __attribute__((always_inline)) void DP_to_C8(void)
   ::
   : "memory", "cc", "dp", "a");
 }
-# 339 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 339 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Delay_3(void)
 {
  asm volatile(
@@ -573,7 +578,7 @@ static inline __attribute__((always_inline)) void Delay_3(void)
   ::
   : "memory", "cc", "b");
 }
-# 354 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 354 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Delay_2(void)
 {
  asm volatile(
@@ -581,7 +586,7 @@ static inline __attribute__((always_inline)) void Delay_2(void)
   ::
   : "memory", "cc", "b");
 }
-# 369 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 369 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Delay_1(void)
 {
  asm volatile(
@@ -589,7 +594,7 @@ static inline __attribute__((always_inline)) void Delay_1(void)
   ::
   : "memory", "cc", "b");
 }
-# 384 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 384 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Delay_0(void)
 {
  asm volatile(
@@ -597,7 +602,7 @@ static inline __attribute__((always_inline)) void Delay_0(void)
   ::
   : "memory", "cc", "b");
 }
-# 399 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 399 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Delay_b(const unsigned int b)
 {
  asm volatile(
@@ -619,7 +624,7 @@ static inline __attribute__((always_inline)) void Delay_RTS(void)
   ::
   : "memory", "cc");
 }
-# 447 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 447 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Dot_ix_b(const unsigned int b, void* const x)
 {
  asm volatile(
@@ -629,7 +634,7 @@ static inline __attribute__((always_inline)) void Dot_ix_b(const unsigned int b,
   :: [B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 471 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 471 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Dot_ix(void* const x)
 {
  asm volatile(
@@ -638,7 +643,7 @@ static inline __attribute__((always_inline)) void Dot_ix(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 492 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 492 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Dot_d(const int a, const int b)
 {
  asm volatile(
@@ -657,7 +662,7 @@ static inline __attribute__((always_inline)) void Dot_dd(const long int d)
   :: [D] "mi" (d)
   : "memory", "cc", "d");
 }
-# 520 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 520 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Dot_here(void)
 {
  asm volatile(
@@ -665,7 +670,7 @@ static inline __attribute__((always_inline)) void Dot_here(void)
   ::
   : "memory", "cc", "d");
 }
-# 546 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 546 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Dot_List(void* const x)
 {
  asm volatile(
@@ -674,7 +679,7 @@ static inline __attribute__((always_inline)) void Dot_List(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 574 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 574 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Dot_List_Reset(void* const x)
 {
  asm volatile(
@@ -683,7 +688,7 @@ static inline __attribute__((always_inline)) void Dot_List_Reset(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 613 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 613 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Print_Str_hwyx(void* const u)
 {
  asm volatile(
@@ -692,7 +697,7 @@ static inline __attribute__((always_inline)) void Print_Str_hwyx(void* const u)
   :: [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 638 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 638 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Print_Str_yx(volatile const void* const u)
 {
  asm volatile(
@@ -701,7 +706,7 @@ static inline __attribute__((always_inline)) void Print_Str_yx(volatile const vo
   :: [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 664 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 664 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Print_Str_d(const int a, const int b, void* const u)
 {
  asm volatile(
@@ -722,7 +727,7 @@ static inline __attribute__((always_inline)) void Print_Str_dd(const long int d,
   :: [D] "mi" (d), [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 703 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 703 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Print_List_hw(void* const u)
 {
  asm volatile(
@@ -731,7 +736,7 @@ static inline __attribute__((always_inline)) void Print_List_hw(void* const u)
   :: [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 731 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 731 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Print_List(void* const u)
 {
  asm volatile(
@@ -740,7 +745,7 @@ static inline __attribute__((always_inline)) void Print_List(void* const u)
   :: [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 758 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 758 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Print_List_chk(void* const u)
 {
  asm volatile(
@@ -749,7 +754,7 @@ static inline __attribute__((always_inline)) void Print_List_chk(void* const u)
   :: [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 783 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 783 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Print_Ships_x(const unsigned int a, const unsigned int b, void* const x)
 {
  asm volatile(
@@ -760,7 +765,7 @@ static inline __attribute__((always_inline)) void Print_Ships_x(const unsigned i
   :: [A] "mi" (a), [B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "d", "x", "u");
 }
-# 810 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 810 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Print_Ships(const unsigned int a, const unsigned int b, const unsigned long int x)
 {
  asm volatile(
@@ -771,7 +776,7 @@ static inline __attribute__((always_inline)) void Print_Ships(const unsigned int
   :: [A] "mi" (a), [B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "d", "x", "u");
 }
-# 836 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 836 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Print_Str(void* const u)
 {
  asm volatile(
@@ -780,7 +785,7 @@ static inline __attribute__((always_inline)) void Print_Str(void* const u)
   :: [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 860 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 860 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Print_MRast(void)
 {
  asm volatile(
@@ -788,7 +793,7 @@ static inline __attribute__((always_inline)) void Print_MRast(void)
   ::
   : "memory", "cc", "d", "x", "u");
 }
-# 925 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 925 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_Pat_VL_a(const unsigned int a, void* const x)
 {
  asm volatile(
@@ -798,7 +803,7 @@ static inline __attribute__((always_inline)) void Draw_Pat_VL_a(const unsigned i
   :: [A] "mi" (a), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 992 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 992 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_Pat_VL(void* const x)
 {
  asm volatile(
@@ -807,7 +812,7 @@ static inline __attribute__((always_inline)) void Draw_Pat_VL(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1037 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1037 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_Line_d(const int a, const int b)
 {
  asm volatile(
@@ -817,7 +822,7 @@ static inline __attribute__((always_inline)) void Draw_Line_d(const int a, const
   :: [A] "mi" (a), [B] "mi" (b)
   : "memory", "cc", "d", "x");
 }
-# 1066 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1066 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_VLc(void* const x)
 {
  asm volatile(
@@ -826,7 +831,7 @@ static inline __attribute__((always_inline)) void Draw_VLc(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1094 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1094 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_VL_ab(const unsigned int a, const unsigned int b, void* const x)
 {
  asm volatile(
@@ -837,7 +842,7 @@ static inline __attribute__((always_inline)) void Draw_VL_ab(const unsigned int 
   :: [A] "mi" (a), [B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1124 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1124 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_VL(void* const x)
 {
  asm volatile(
@@ -846,7 +851,7 @@ static inline __attribute__((always_inline)) void Draw_VL(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1152 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1152 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_VLcs(void* const x)
 {
  asm volatile(
@@ -855,7 +860,7 @@ static inline __attribute__((always_inline)) void Draw_VLcs(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1180 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1180 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_VL_b(const unsigned int b, void* const x)
 {
  asm volatile(
@@ -865,7 +870,7 @@ static inline __attribute__((always_inline)) void Draw_VL_b(const unsigned int b
   :: [B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1209 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1209 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_VL_a(const unsigned int a, void* const x)
 {
  asm volatile(
@@ -875,7 +880,7 @@ static inline __attribute__((always_inline)) void Draw_VL_a(const unsigned int a
   :: [A] "mi" (a), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1254 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1254 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Mov_Draw_VLc_a(void* const x)
 {
  asm volatile(
@@ -884,7 +889,7 @@ static inline __attribute__((always_inline)) void Mov_Draw_VLc_a(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1281 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1281 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Mov_Draw_VL_b(const unsigned int b, void* const x)
 {
  asm volatile(
@@ -894,7 +899,7 @@ static inline __attribute__((always_inline)) void Mov_Draw_VL_b(const unsigned i
   :: [B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1310 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1310 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Mov_Draw_VLcs(void* const x)
 {
  asm volatile(
@@ -903,7 +908,7 @@ static inline __attribute__((always_inline)) void Mov_Draw_VLcs(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1338 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1338 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Mov_Draw_VL_ab(const unsigned int a, const unsigned int b, void* const x)
 {
  asm volatile(
@@ -914,7 +919,7 @@ static inline __attribute__((always_inline)) void Mov_Draw_VL_ab(const unsigned 
   :: [A] "mi" (a), [B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1368 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1368 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Mov_Draw_VL_a(const unsigned int a, void* const x)
 {
  asm volatile(
@@ -924,7 +929,7 @@ static inline __attribute__((always_inline)) void Mov_Draw_VL_a(const unsigned i
   :: [A] "mi" (a), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1397 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1397 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Mov_Draw_VL(void* const x)
 {
  asm volatile(
@@ -933,7 +938,7 @@ static inline __attribute__((always_inline)) void Mov_Draw_VL(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1422 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1422 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Mov_Draw_VL_d(const int a, const int b)
 {
  asm volatile(
@@ -943,7 +948,7 @@ static inline __attribute__((always_inline)) void Mov_Draw_VL_d(const int a, con
   :: [A] "mi" (a), [B] "mi" (b)
   : "memory", "cc", "d", "x");
 }
-# 1484 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1484 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_VL_mode(void* const x)
 {
  asm volatile(
@@ -952,7 +957,7 @@ static inline __attribute__((always_inline)) void Draw_VL_mode(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1515 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1515 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_VLp_7F(void* const x)
 {
  asm volatile(
@@ -961,7 +966,7 @@ static inline __attribute__((always_inline)) void Draw_VLp_7F(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1547 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1547 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_VLp_FF(void* const x)
 {
  asm volatile(
@@ -970,7 +975,7 @@ static inline __attribute__((always_inline)) void Draw_VLp_FF(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1577 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1577 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_VLp_b(const unsigned int b, void* const x)
 {
  asm volatile(
@@ -980,7 +985,7 @@ static inline __attribute__((always_inline)) void Draw_VLp_b(const unsigned int 
   ::[B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1608 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1608 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_VLp(void (* const x))
 {
  asm volatile(
@@ -989,7 +994,7 @@ static inline __attribute__((always_inline)) void Draw_VLp(void (* const x))
   :: [X] "im" (x)
   : "memory", "cc", "d", "x");
 }
-# 1638 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1638 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_VLp_scale(void* const x)
 {
  asm volatile(
@@ -998,7 +1003,7 @@ static inline __attribute__((always_inline)) void Draw_VLp_scale(void* const x)
   :: [X] "im" (x)
   : "memory", "cc", "d", "x");
 }
-# 1665 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1665 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Rot_VL_Mode(const unsigned int a, void* const x, volatile void* volatile const u)
 {
  asm volatile(
@@ -1009,7 +1014,7 @@ static inline __attribute__((always_inline)) void Rot_VL_Mode(const unsigned int
   :: [A] "mi" (a), [X] "mi" (x), [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 1694 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1694 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Rot_VL_Pack(void* const x, void* const u)
 {
  asm volatile(
@@ -1019,7 +1024,7 @@ static inline __attribute__((always_inline)) void Rot_VL_Pack(void* const x, voi
   :: [X] "mi" (x), [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 1722 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1722 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Rot_VL_M_dft(void* const x, void* const u)
 {
  asm volatile(
@@ -1029,7 +1034,7 @@ static inline __attribute__((always_inline)) void Rot_VL_M_dft(void* const x, vo
   :: [X] "mi" (x), [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 1778 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1778 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) unsigned int Random_3(void)
 {
  unsigned int rnd;
@@ -1041,7 +1046,7 @@ static inline __attribute__((always_inline)) unsigned int Random_3(void)
   : "memory", "cc", "a");
  return rnd;
 }
-# 1798 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1798 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) unsigned int Random(void)
 {
  unsigned int rnd;
@@ -1053,7 +1058,7 @@ static inline __attribute__((always_inline)) unsigned int Random(void)
   : "memory", "cc", "a");
  return rnd;
 }
-# 1827 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1827 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) unsigned int Bitmask_a(const unsigned int a)
 {
  unsigned int r;
@@ -1066,7 +1071,7 @@ static inline __attribute__((always_inline)) unsigned int Bitmask_a(const unsign
   : "memory", "cc", "a", "x");
  return r;
 }
-# 1851 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1851 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) long unsigned int Abs_a_b(const int a, const int b)
 {
  long unsigned int r;
@@ -1080,7 +1085,7 @@ static inline __attribute__((always_inline)) long unsigned int Abs_a_b(const int
   : "memory", "cc", "d");
  return r;
 }
-# 1874 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1874 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) int Abs_b(const int b)
 {
  int r;
@@ -1093,7 +1098,7 @@ static inline __attribute__((always_inline)) int Abs_b(const int b)
   : "memory", "cc", "b");
  return r;
 }
-# 1898 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1898 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) long unsigned int Rise_Run_Angle(const int a, const int b)
 {
  long unsigned int r;
@@ -1107,7 +1112,7 @@ static inline __attribute__((always_inline)) long unsigned int Rise_Run_Angle(co
   : "memory", "cc", "d");
  return r;
 }
-# 1921 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1921 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) long unsigned int Get_Rise_Idx(const int a)
 {
  long unsigned int r;
@@ -1120,7 +1125,7 @@ static inline __attribute__((always_inline)) long unsigned int Get_Rise_Idx(cons
   : "memory", "cc", "d", "x");
  return r;
 }
-# 1943 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1943 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) int Xform_Sin(const int a)
 {
  int r;
@@ -1133,7 +1138,7 @@ static inline __attribute__((always_inline)) int Xform_Sin(const int a)
   : "memory", "cc", "d", "x");
  return r;
 }
-# 1966 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1966 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) long unsigned int Get_Rise_Run(void)
 {
  long unsigned int r;
@@ -1145,7 +1150,7 @@ static inline __attribute__((always_inline)) long unsigned int Get_Rise_Run(void
   : "memory", "cc", "d");
  return r;
 }
-# 1989 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1989 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) long unsigned int Xform_Run_a(const int a)
 {
  long unsigned int r;
@@ -1158,7 +1163,7 @@ static inline __attribute__((always_inline)) long unsigned int Xform_Run_a(const
   : "memory", "cc", "d");
  return r;
 }
-# 2012 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2012 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) long unsigned int Xform_Run(void)
 {
  unsigned int r;
@@ -1170,7 +1175,7 @@ static inline __attribute__((always_inline)) long unsigned int Xform_Run(void)
   : "memory", "cc", "d");
  return r;
 }
-# 2035 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2035 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) long unsigned int Xform_Rise_a(const int a)
 {
  long unsigned int r;
@@ -1183,7 +1188,7 @@ static inline __attribute__((always_inline)) long unsigned int Xform_Rise_a(cons
   : "memory", "cc", "d");
  return r;
 }
-# 2058 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2058 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) long unsigned int Xform_Rise(void)
 {
  long unsigned int r;
@@ -1195,7 +1200,7 @@ static inline __attribute__((always_inline)) long unsigned int Xform_Rise(void)
   : "memory", "cc", "d");
  return r;
 }
-# 2087 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2087 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Clear_x_b(const unsigned int b, void* const x)
 {
  asm volatile(
@@ -1206,7 +1211,7 @@ static inline __attribute__((always_inline)) void Clear_x_b(const unsigned int b
   : [B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 2106 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2106 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Clear_C8_RAM(void)
 {
  asm volatile(
@@ -1215,7 +1220,7 @@ static inline __attribute__((always_inline)) void Clear_C8_RAM(void)
   :
   : "memory", "cc", "d", "x");
 }
-# 2122 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2122 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Clear_x_256(void* const x)
 {
  asm volatile(
@@ -1225,7 +1230,7 @@ static inline __attribute__((always_inline)) void Clear_x_256(void* const x)
   : [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 2140 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2140 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Clear_x_d(const long unsigned int d, void* const x)
 {
  asm volatile(
@@ -1236,7 +1241,7 @@ static inline __attribute__((always_inline)) void Clear_x_d(const long unsigned 
   : [D] "mi" (d), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 2167 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2167 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Move_Mem_a_1(const unsigned int a, void* const x, void* const u)
 {
  asm volatile(
@@ -1248,7 +1253,7 @@ static inline __attribute__((always_inline)) void Move_Mem_a_1(const unsigned in
   : [A] "mi" (a), [X] "mi" (x), [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 2189 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2189 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Move_Mem_a(const unsigned int a, void* const x, void* const u)
 {
  asm volatile(
@@ -1260,7 +1265,7 @@ static inline __attribute__((always_inline)) void Move_Mem_a(const unsigned int 
   : [A] "mi" (a), [X] "mi" (x), [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 2216 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2216 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Clear_x_b_80(const int b, void* const x)
 {
  asm volatile(
@@ -1271,7 +1276,7 @@ static inline __attribute__((always_inline)) void Clear_x_b_80(const int b, void
   : [B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 2235 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2235 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Clear_x_b_a(const unsigned int a, const unsigned int b, void* const x)
 {
  asm volatile(
@@ -1283,7 +1288,7 @@ static inline __attribute__((always_inline)) void Clear_x_b_a(const unsigned int
   : [A] "mi" (a), [B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 2265 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2265 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Read_Btns_Mask(const unsigned int a)
 {
  asm volatile(
@@ -1293,7 +1298,7 @@ static inline __attribute__((always_inline)) void Read_Btns_Mask(const unsigned 
   : [A] "mi" (a)
   : "memory", "cc", "d", "x");
 }
-# 2284 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2284 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Read_Btns(void)
 {
  asm volatile(
@@ -1301,7 +1306,7 @@ static inline __attribute__((always_inline)) void Read_Btns(void)
   ::
   : "memory", "cc", "d", "x");
 }
-# 2320 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2320 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Joy_Analog(void)
 {
  asm volatile(
@@ -1309,7 +1314,7 @@ static inline __attribute__((always_inline)) void Joy_Analog(void)
   ::
   : "memory", "cc", "d", "x");
 }
-# 2352 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2352 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Joy_Digital(void)
 {
  asm volatile(
@@ -1317,7 +1322,7 @@ static inline __attribute__((always_inline)) void Joy_Digital(void)
   ::
   : "memory", "cc", "d", "x");
 }
-# 2418 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2418 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Select_Game(const unsigned int a, const unsigned int b)
 {
  asm volatile(
@@ -1327,7 +1332,7 @@ static inline __attribute__((always_inline)) void Select_Game(const unsigned int
   :: [A] "mi" (a), [B] "mi" (b)
   : "memory", "cc", "d", "x", "y", "u");
 }
-# 2440 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2440 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Display_Option(const unsigned int a, const void* const y)
 {
  asm volatile(
@@ -1337,7 +1342,7 @@ static inline __attribute__((always_inline)) void Display_Option(const unsigned 
   :: [A] "mi" (a), [Y] "mi" (y)
   : "memory", "cc", "d", "x", "y", "u");
 }
-# 2460 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2460 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Reset(void)
 {
  asm volatile(
@@ -1345,7 +1350,7 @@ static inline __attribute__((always_inline)) void Reset(void)
   ::
   : "memory", "cc");
 }
-# 2481 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2481 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Init_VIA(void)
 {
  asm volatile(
@@ -1353,7 +1358,7 @@ static inline __attribute__((always_inline)) void Init_VIA(void)
   ::
   : "memory", "cc", "d", "x");
 }
-# 2508 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2508 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Init_OS_RAM(void)
 {
  asm volatile(
@@ -1361,7 +1366,7 @@ static inline __attribute__((always_inline)) void Init_OS_RAM(void)
   ::
   : "memory", "cc", "d", "x");
 }
-# 2537 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2537 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Init_OS(void)
 {
  asm volatile(
@@ -1369,7 +1374,7 @@ static inline __attribute__((always_inline)) void Init_OS(void)
   ::
   : "memory", "cc", "d", "x");
 }
-# 2556 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2556 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Init_Music_Buf(void)
 {
  asm volatile(
@@ -1377,7 +1382,7 @@ static inline __attribute__((always_inline)) void Init_Music_Buf(void)
   ::
   : "memory", "cc", "d", "x");
 }
-# 2602 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2602 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Clear_Score(void* const x)
 {
  asm volatile(
@@ -1386,7 +1391,7 @@ static inline __attribute__((always_inline)) void Clear_Score(void* const x)
   :: [X] "mins" (x)
   : "memory", "cc", "d", "x");
 }
-# 2630 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2630 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Add_Score_a(const unsigned int a, void* const x)
 {
  asm volatile(
@@ -1396,7 +1401,7 @@ static inline __attribute__((always_inline)) void Add_Score_a(const unsigned int
   :: [A] "mins" (a), [X] "mins" (x)
   : "memory", "cc", "d", "x", "u");
 }
-# 2658 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2658 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Add_Score_d(const long unsigned int d, void* const x)
 {
  asm volatile(
@@ -1406,7 +1411,7 @@ static inline __attribute__((always_inline)) void Add_Score_d(const long unsigne
   :: [D] "mi" (d), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 2710 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2710 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) unsigned int Compare_Score(void* const x, void* const u)
 {
  unsigned int r;
@@ -1420,7 +1425,7 @@ static inline __attribute__((always_inline)) unsigned int Compare_Score(void* co
   : "memory", "cc", "d", "x", "u");
  return r;
 }
-# 2743 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2743 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void New_High_Score(void* const x, void* const u)
 {
  asm volatile(
@@ -1430,7 +1435,7 @@ static inline __attribute__((always_inline)) void New_High_Score(void* const x, 
   :: [X] "mi" (x), [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 2780 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2780 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Sound_Byte(const unsigned int a, const unsigned int b)
 {
  asm volatile(
@@ -1440,7 +1445,7 @@ static inline __attribute__((always_inline)) void Sound_Byte(const unsigned int 
   :: [A] "mi" (a), [B] "mi" (b)
   : "memory", "cc", "d", "x");
 }
-# 2800 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2800 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Sound_Byte_x(const unsigned int a, const unsigned int b, void* const x)
 {
  asm volatile(
@@ -1451,7 +1456,7 @@ static inline __attribute__((always_inline)) void Sound_Byte_x(const unsigned in
   :: [A] "mi" (a), [B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 2820 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2820 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Clear_Sound(void)
 {
  asm volatile(
@@ -1459,7 +1464,7 @@ static inline __attribute__((always_inline)) void Clear_Sound(void)
   ::
   : "memory", "cc", "d", "x");
 }
-# 2838 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2838 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Sound_Bytes(void* const u)
 {
  asm volatile(
@@ -1468,7 +1473,7 @@ static inline __attribute__((always_inline)) void Sound_Bytes(void* const u)
   :: [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 2857 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2857 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Sound_Bytes_x(void* const x, void* const u)
 {
  asm volatile(
@@ -1478,7 +1483,7 @@ static inline __attribute__((always_inline)) void Sound_Bytes_x(void* const x, v
   :: [X] "mi" (x), [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 2878 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2878 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Do_Sound(void)
 {
  asm volatile(
@@ -1486,7 +1491,7 @@ static inline __attribute__((always_inline)) void Do_Sound(void)
   ::
   : "memory", "cc", "d", "x", "u");
 }
-# 2915 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2915 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Init_Music_chk(const void* const u)
 {
  asm volatile(
@@ -1495,7 +1500,7 @@ static inline __attribute__((always_inline)) void Init_Music_chk(const void* con
   :: [U] "mi" (u)
   : "memory", "cc", "d", "x", "y", "u");
 }
-# 2964 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2964 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Init_Music(void* const u)
 {
  asm volatile(
@@ -1504,7 +1509,7 @@ static inline __attribute__((always_inline)) void Init_Music(void* const u)
   :: [U] "mi" (u)
   : "memory", "cc", "d", "x", "y", "u");
 }
-# 2997 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2997 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Init_Music_a(void* const x, void* const u)
 {
  asm volatile(
@@ -1514,7 +1519,7 @@ static inline __attribute__((always_inline)) void Init_Music_a(void* const x, vo
   :: [X] "mi" (x), [U] "mi" (u)
   : "memory", "cc", "d", "x", "y", "u");
 }
-# 3031 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3031 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Init_Music_x(void* const u)
 {
  asm volatile(
@@ -1523,7 +1528,7 @@ static inline __attribute__((always_inline)) void Init_Music_x(void* const u)
   :: [U] "mi" (u)
   : "memory", "cc", "d", "x", "y", "u");
 }
-# 3050 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3050 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Stop_Sound(void)
 {
  asm volatile(
@@ -1531,7 +1536,7 @@ static inline __attribute__((always_inline)) void Stop_Sound(void)
   ::
   : "memory", "cc", "d", "x");
 }
-# 3088 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3088 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Explosion_Snd(const void* const u)
 {
  asm volatile(
@@ -1540,7 +1545,7 @@ static inline __attribute__((always_inline)) void Explosion_Snd(const void* cons
   :: [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 3107 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3107 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Set_Amp(const unsigned int b)
 {
  asm volatile(
@@ -1549,7 +1554,7 @@ static inline __attribute__((always_inline)) void Set_Amp(const unsigned int b)
   :: [B] "mi" (b)
   : "memory", "cc", "d", "x");
 }
-# 3169 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3169 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Moveto_x_7F(void* const x)
 {
  asm volatile(
@@ -1558,7 +1563,7 @@ static inline __attribute__((always_inline)) void Moveto_x_7F(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 3188 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3188 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Moveto_d_7F(const int a, const int b)
 {
  asm volatile(
@@ -1577,7 +1582,7 @@ static inline __attribute__((always_inline)) void Moveto_dd_7F(const long int d)
   :: [D] "mi" (d)
   : "memory", "cc", "d");
 }
-# 3221 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3221 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Moveto_ix_FF(void* const x)
 {
  asm volatile(
@@ -1586,7 +1591,7 @@ static inline __attribute__((always_inline)) void Moveto_ix_FF(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 3244 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3244 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Moveto_ix_7F(void* const x)
 {
  asm volatile(
@@ -1595,7 +1600,7 @@ static inline __attribute__((always_inline)) void Moveto_ix_7F(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 3268 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3268 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Moveto_ix_b(const unsigned int b, void* const x)
 {
  asm volatile(
@@ -1605,7 +1610,7 @@ static inline __attribute__((always_inline)) void Moveto_ix_b(const unsigned int
   :: [B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 3291 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3291 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Moveto_ix(void* const x)
 {
  asm volatile(
@@ -1614,7 +1619,7 @@ static inline __attribute__((always_inline)) void Moveto_ix(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 3313 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3313 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Moveto_d(const int a, const int b)
 {
  asm volatile(
@@ -1633,7 +1638,7 @@ static inline __attribute__((always_inline)) void Moveto_dd(const long int d)
   :: [D] "mi" (d)
   : "memory", "cc", "d");
 }
-# 3351 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3351 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Intensity_1F(void)
 {
  asm volatile(
@@ -1641,7 +1646,7 @@ static inline __attribute__((always_inline)) void Intensity_1F(void)
   ::
   : "memory", "cc", "d");
 }
-# 3369 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3369 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Intensity_3F(void)
 {
  asm volatile(
@@ -1649,7 +1654,7 @@ static inline __attribute__((always_inline)) void Intensity_3F(void)
   ::
   : "memory", "cc", "d");
 }
-# 3387 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3387 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Intensity_5F(void)
 {
  asm volatile(
@@ -1657,7 +1662,7 @@ static inline __attribute__((always_inline)) void Intensity_5F(void)
   ::
   : "memory", "cc", "d");
 }
-# 3405 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3405 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Intensity_7F(void)
 {
  asm volatile(
@@ -1665,7 +1670,7 @@ static inline __attribute__((always_inline)) void Intensity_7F(void)
   ::
   : "memory", "cc", "d");
 }
-# 3425 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3425 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Intensity_a(const unsigned int a)
 {
  asm volatile(
@@ -1674,7 +1679,7 @@ static inline __attribute__((always_inline)) void Intensity_a(const unsigned int
   :: [A] "mi" (a)
   : "memory", "cc", "d");
 }
-# 3452 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3452 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) unsigned int Obj_Will_Hit_u(const int a, const int b, const long int x, const long int y, const long int u)
 {
  unsigned int hit;
@@ -1693,7 +1698,7 @@ static inline __attribute__((always_inline)) unsigned int Obj_Will_Hit_u(const i
   : "memory", "cc", "d", "x", "y", "u");
  return hit;
 }
-# 3482 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3482 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) unsigned int Obj_Will_Hit(const int a, const int b, const long int x, const long int y, const long int* u)
 {
  unsigned int hit;
@@ -1712,7 +1717,7 @@ static inline __attribute__((always_inline)) unsigned int Obj_Will_Hit(const int
   : "memory", "cc", "d", "x", "y", "u");
  return hit;
 }
-# 3511 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3511 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) unsigned int Obj_Hit(const int a, const int b, const long int x, const long int y)
 {
  unsigned int hit;
@@ -1730,7 +1735,7 @@ static inline __attribute__((always_inline)) unsigned int Obj_Hit(const int a, c
   : "memory", "cc", "d", "x", "y");
  return hit;
 }
-# 3551 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3551 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) long unsigned int Rise_Run_X(const int a, const int b)
 {
  unsigned long int d;
@@ -1744,7 +1749,7 @@ static inline __attribute__((always_inline)) long unsigned int Rise_Run_X(const 
   : "memory", "cc", "d");
  return d;
 }
-# 3575 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3575 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) long unsigned int Rise_Run_Y(const int a, const int b)
 {
  unsigned long int d;
@@ -1758,7 +1763,7 @@ static inline __attribute__((always_inline)) long unsigned int Rise_Run_Y(const 
   : "memory", "cc", "d");
  return d;
 }
-# 3599 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3599 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) unsigned long int Rise_Run_Len(const int a)
 {
  unsigned long int d;
@@ -1771,7 +1776,7 @@ static inline __attribute__((always_inline)) unsigned long int Rise_Run_Len(cons
   : "memory", "cc", "d");
  return d;
 }
-# 3630 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3630 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Rot_VL_ab(const unsigned int a, const unsigned int b, void* const x, void* const u)
 {
  asm volatile(
@@ -1783,7 +1788,7 @@ static inline __attribute__((always_inline)) void Rot_VL_ab(const unsigned int a
   :: [A] "mi" (a), [B] "mi" (b), [X] "mi" (x), [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 3659 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3659 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Rot_VL_Diff(const unsigned int b, void* const x, void* const u)
 {
  asm volatile(
@@ -1794,7 +1799,7 @@ static inline __attribute__((always_inline)) void Rot_VL_Diff(const unsigned int
   :: [B] "mi" (b), [X] "mi" (x), [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 3688 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3688 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Rot_VL(void* const x, void* const u)
 {
  asm volatile(
@@ -1804,7 +1809,7 @@ static inline __attribute__((always_inline)) void Rot_VL(void* const x, void* co
   :: [X] "mi" (x), [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 3748 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3748 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Dot_y(const long int y)
 {
  asm volatile(
@@ -1813,7 +1818,7 @@ static inline __attribute__((always_inline)) void Dot_y(const long int y)
   :: [Y] "mi" (y)
   : "memory", "cc", "y");
 }
-# 3766 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3766 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Dot_py(void* const y)
 {
  asm volatile(
@@ -1822,7 +1827,7 @@ static inline __attribute__((always_inline)) void Dot_py(void* const y)
   :: [Y] "mi" (y)
   : "memory", "cc", "y");
 }
-# 3795 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3795 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_Pack(const unsigned int b, void* const x, const long int y)
 {
  asm volatile(
@@ -1833,7 +1838,7 @@ static inline __attribute__((always_inline)) void Draw_Pack(const unsigned int b
   :: [B] "mi" (b), [X] "mi" (x), [Y] "mi" (y)
   : "memory", "cc", "b", "x", "y");
 }
-# 3824 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3824 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_Pack_py(const unsigned int b, void* const x, void* const y)
 {
  asm volatile(
@@ -1844,7 +1849,7 @@ static inline __attribute__((always_inline)) void Draw_Pack_py(const unsigned in
   :: [B] "mi" (b), [X] "mi" (x), [Y] "mi" (y)
   : "memory", "cc", "b", "x", "y");
 }
-# 3848 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3848 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Print_Msg(void* const y, void* const u)
 {
  asm volatile(
@@ -1854,7 +1859,7 @@ static inline __attribute__((always_inline)) void Print_Msg(void* const y, void*
   :: [Y] "mi" (y), [U] "mi" (u)
   : "memory", "cc", "y", "u");
 }
-# 3865 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3865 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) unsigned int Rnd_Cone(void)
 {
  unsigned int b;
@@ -1866,7 +1871,7 @@ static inline __attribute__((always_inline)) unsigned int Rnd_Cone(void)
   : "memory", "cc", "b");
  return b;
 }
-# 3887 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3887 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) long unsigned int Displ8_xy(const unsigned int a, const unsigned int b)
 {
  unsigned long int x;
@@ -1882,7 +1887,7 @@ static inline __attribute__((always_inline)) long unsigned int Displ8_xy(const u
   : "memory", "cc", "d", "x", "y");
  return x;
 }
-# 3913 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3913 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) long unsigned int Displ16_xy(const unsigned int a, const unsigned int b)
 {
  unsigned long int x;
@@ -1898,7 +1903,7 @@ static inline __attribute__((always_inline)) long unsigned int Displ16_xy(const 
   : "memory", "cc", "d", "x", "y");
  return x;
 }
-# 3938 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3938 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) long unsigned int Ranpos(void)
 {
  unsigned long int d;
@@ -1910,7 +1915,7 @@ static inline __attribute__((always_inline)) long unsigned int Ranpos(void)
   : "memory", "cc", "d");
  return d;
 }
-# 3971 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3971 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_Scores(void)
 {
  asm volatile(
@@ -1918,7 +1923,7 @@ static inline __attribute__((always_inline)) void Draw_Scores(void)
   ::
   : "memory", "cc", "d", "y", "u");
 }
-# 4000 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 4000 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_Score(void)
 {
  asm volatile(
@@ -1926,7 +1931,7 @@ static inline __attribute__((always_inline)) void Draw_Score(void)
   ::
   : "memory", "cc", "d", "y", "u");
 }
-# 4027 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 4027 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Wait_Bound(void)
 {
  asm volatile(
@@ -1934,20 +1939,35 @@ static inline __attribute__((always_inline)) void Wait_Bound(void)
   ::
   : "memory", "cc", "d", "x", "y", "u");
 }
-# 49 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vec_rum.h" 2
-# 44 "/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include/vectrex.h" 2
-# 28 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.c" 2
-# 1 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/level.h" 1
-# 13 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/level.h"
+# 49 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum.h" 2
+# 44 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vectrex.h" 2
+# 6 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/hardware.h" 2
+# 15 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/hardware.h"
+static inline __attribute__((always_inline)) void positd (int8_t x, int8_t y)
+{
+ dp_VIA_t1_cnt_lo = 0x80;
+ Moveto_d(y,x);
+}
+static inline __attribute__((always_inline)) void Draw_VLp_80(void* const x)
+{
+ dp_VIA_t1_cnt_lo = 0x80;
+ Draw_VLp(x);
+}
+# 28 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c" 2
+# 1 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/level.h" 1
+# 13 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/level.h"
 enum SwatchType {
     SWATCH_TYPE_S,
     SWATCH_TYPE_H,
+    SWATCH_TYPE_V,
 };
 
 enum SwatchFieldAction {
     SWATCH_FIELD_ACTION_ONOFF,
     SWATCH_FIELD_ACTION_ON,
     SWATCH_FIELD_ACTION_OFF,
+    SWATCH_FIELD_ACTION_SPLIT1,
+    SWATCH_FIELD_ACTION_SPLIT2,
 };
 
 struct Point {
@@ -1997,3268 +2017,59 @@ void initLevel();
 int8_t x3d(int8_t x, int8_t z);
 
 int8_t y3d(int8_t x, int8_t y, int8_t z);
-# 29 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.c" 2
-# 1 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/block.i" 1
+# 29 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c" 2
+# 1 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/block.h" 1
 
-const int8_t height2FallingLeft0[] = {
- (int8_t) 255, 3, 14,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -8, 5,
- (int8_t) 255, 26, 0,
- 0, -23, 14,
- (int8_t) 255, 26, 0,
- 0, -18, -6,
- (int8_t) 255, 26, 0,
- 0, -29, -13,
- (int8_t) 255, 26, 0,
- 0, -8, 5,
- (int8_t) 255, 3, 14,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -8, 5,
- 1
-};
-const int8_t height2RisingRight0[] = {
- 0, 6, 28,
- (int8_t) 255, 13, 2,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -13, -2,
- (int8_t) 255, -8, 6,
- (int8_t) 255, -3, -28,
- 0, 16, 30,
- (int8_t) 255, -2, -28,
- 0, 10, 22,
- (int8_t) 255, -2, -27,
- 0, -11, 25,
- (int8_t) 255, -3, -27,
- 0, -8, 5,
- (int8_t) 255, 14, 2,
- (int8_t) 255, 8, -5,
- (int8_t) 255, -14, -2,
- (int8_t) 255, -8, 5,
- 1
-};
-const int8_t height2FallingRight0[] = {
- (int8_t) 255, 3, 14,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -8, 5,
- (int8_t) 255, 26, 0,
- 0, -23, 14,
- (int8_t) 255, 26, 0,
- 0, -18, -6,
- (int8_t) 255, 26, 0,
- 0, -29, -13,
- (int8_t) 255, 26, 0,
- 0, -8, 5,
- (int8_t) 255, 3, 14,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -8, 5,
- 1
-};
-const int8_t height2RisingLeft0[] = {
- 0, 12, -1,
- (int8_t) 255, -12, 1,
- (int8_t) 255, 8, -5,
- (int8_t) 255, 12, -2,
- (int8_t) 255, -8, 6,
- (int8_t) 255, 10, 27,
- 0, -22, -26,
- (int8_t) 255, 9, 28,
- 0, -1, -33,
- (int8_t) 255, 9, 27,
- 0, 3, -29,
- (int8_t) 255, 10, 27,
- 0, -8, 6,
- (int8_t) 255, -13, 2,
- (int8_t) 255, 8, -6,
- (int8_t) 255, 13, -2,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2FallingBack0[] = {
- (int8_t) 255, 3, 14,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -8, 5,
- (int8_t) 255, 26, 0,
- 0, -23, 14,
- (int8_t) 255, 26, 0,
- 0, -18, -6,
- (int8_t) 255, 26, 0,
- 0, -29, -13,
- (int8_t) 255, 26, 0,
- 0, -8, 5,
- (int8_t) 255, 3, 14,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -8, 5,
- 1
-};
-const int8_t height2RisingFront0[] = {
- 0, 12, 1,
- (int8_t) 255, 3, 14,
- (int8_t) 255, -12, -1,
- (int8_t) 255, -3, -14,
- (int8_t) 255, 12, 1,
- (int8_t) 255, 19, -11,
- 0, -16, 25,
- (int8_t) 255, 19, -12,
- 0, -31, 11,
- (int8_t) 255, 19, -12,
- 0, -22, -2,
- (int8_t) 255, 19, -11,
- 0, 12, 1,
- (int8_t) 255, 3, 13,
- (int8_t) 255, -12, -1,
- (int8_t) 255, -3, -13,
- (int8_t) 255, 12, 1,
- 1
-};
-const int8_t height2FallingFront0[] = {
- (int8_t) 255, 3, 14,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -8, 5,
- (int8_t) 255, 26, 0,
- 0, -23, 14,
- (int8_t) 255, 26, 0,
- 0, -18, -6,
- (int8_t) 255, 26, 0,
- 0, -29, -13,
- (int8_t) 255, 26, 0,
- 0, -8, 5,
- (int8_t) 255, 3, 14,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -8, 5,
- 1
-};
-const int8_t height2RisingBack0[] = {
- 0, 16, -11,
- (int8_t) 255, 3, 13,
- (int8_t) 255, 14, -1,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -14, 1,
- (int8_t) 255, -12, 11,
- 0, 15, 2,
- (int8_t) 255, -12, 12,
- 0, 26, -13,
- (int8_t) 255, -13, 12,
- 0, 10, -25,
- (int8_t) 255, -13, 12,
- 0, -13, 0,
- (int8_t) 255, 3, 14,
- (int8_t) 255, 13, -1,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -13, 0,
- 1
-};
-const int8_t depth2RollingLeft0[] = {
- (int8_t) 255, 3, 14,
- (int8_t) 255, 16, -12,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -16, 11,
- (int8_t) 255, 13, 0,
- 0, -10, 14,
- (int8_t) 255, 13, 0,
- 0, 3, -12,
- (int8_t) 255, 13, 0,
- 0, -16, -13,
- (int8_t) 255, 13, 0,
- 0, -16, 11,
- (int8_t) 255, 3, 14,
- (int8_t) 255, 16, -12,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -16, 11,
- 1
-};
-const int8_t depth2RollingRight0[] = {
- (int8_t) 255, 3, 14,
- (int8_t) 255, 16, -12,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -16, 11,
- (int8_t) 255, 13, 0,
- 0, -10, 14,
- (int8_t) 255, 13, 0,
- 0, 3, -12,
- (int8_t) 255, 13, 0,
- 0, -16, -13,
- (int8_t) 255, 13, 0,
- 0, -16, 11,
- (int8_t) 255, 3, 14,
- (int8_t) 255, 16, -12,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -16, 11,
- 1
-};
-const int8_t width2RollingFront0[] = {
- (int8_t) 255, 6, 28,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -6, -27,
- (int8_t) 255, -8, 5,
- (int8_t) 255, 13, 0,
- 0, -7, 28,
- (int8_t) 255, 13, 0,
- 0, -5, -6,
- (int8_t) 255, 13, 0,
- 0, -19, -27,
- (int8_t) 255, 13, 0,
- 0, -8, 5,
- (int8_t) 255, 6, 28,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -6, -27,
- (int8_t) 255, -8, 5,
- 1
-};
-const int8_t width2RollingBack0[] = {
- (int8_t) 255, 6, 28,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -6, -27,
- (int8_t) 255, -8, 5,
- (int8_t) 255, 13, 0,
- 0, -7, 28,
- (int8_t) 255, 13, 0,
- 0, -5, -6,
- (int8_t) 255, 13, 0,
- 0, -19, -27,
- (int8_t) 255, 13, 0,
- 0, -8, 5,
- (int8_t) 255, 6, 28,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -6, -27,
- (int8_t) 255, -8, 5,
- 1
+
+
+
+
+enum BlockOrientation_t {
+ Standing,
+ Vertical,
+ Horizontal
 };
 
-const int8_t height2FallingLeft1[] = {
- (int8_t) 255, 5, 14,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -5, -13,
- (int8_t) 255, -8, 5,
- (int8_t) 255, 25, -3,
- 0, -20, 17,
- (int8_t) 255, 25, -4,
- 0, -17, -2,
- (int8_t) 255, 25, -4,
- 0, -30, -9,
- (int8_t) 255, 25, -4,
- 0, -8, 6,
- (int8_t) 255, 5, 13,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -5, -13,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2RisingRight1[] = {
- 0, 6, 28,
- (int8_t) 255, 13, 4,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -13, -4,
- (int8_t) 255, -8, 6,
- (int8_t) 255, 1, -27,
- 0, 12, 31,
- (int8_t) 255, 1, -27,
- 0, 7, 21,
- (int8_t) 255, 1, -26,
- 0, -14, 22,
- (int8_t) 255, 1, -26,
- 0, -8, 5,
- (int8_t) 255, 13, 4,
- (int8_t) 255, 8, -5,
- (int8_t) 255, -13, -4,
- (int8_t) 255, -8, 5,
- 1
-};
-const int8_t height2FallingRight1[] = {
- 0, 2, 0,
- (int8_t) 255, 1, 14,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -1, -13,
- (int8_t) 255, -8, 5,
- (int8_t) 255, 26, 4,
- 0, -25, 10,
- (int8_t) 255, 27, 4,
- 0, -19, -10,
- (int8_t) 255, 27, 4,
- 0, -28, -17,
- (int8_t) 255, 26, 4,
- 0, -8, 5,
- (int8_t) 255, 2, 14,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -2, -13,
- (int8_t) 255, -8, 5,
- 1
-};
-const int8_t height2RisingLeft1[] = {
- 0, 12, -3,
- (int8_t) 255, -12, 3,
- (int8_t) 255, 8, -5,
- (int8_t) 255, 12, -4,
- (int8_t) 255, -8, 6,
- (int8_t) 255, 12, 26,
- 0, -24, -23,
- (int8_t) 255, 13, 27,
- 0, -5, -32,
- (int8_t) 255, 13, 26,
- 0, -1, -30,
- (int8_t) 255, 12, 26,
- 0, -8, 6,
- (int8_t) 255, -11, 4,
- (int8_t) 255, 8, -6,
- (int8_t) 255, 11, -4,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2FallingBack1[] = {
- 0, 2, 0,
- (int8_t) 255, 3, 14,
- (int8_t) 255, 6, -6,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -6, 5,
- (int8_t) 255, 28, -1,
- 0, -25, 15,
- (int8_t) 255, 28, -2,
- 0, -22, -4,
- (int8_t) 255, 28, -2,
- 0, -31, -11,
- (int8_t) 255, 28, -2,
- 0, -6, 6,
- (int8_t) 255, 3, 13,
- (int8_t) 255, 6, -6,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -6, 6,
- 1
-};
-const int8_t height2RisingFront1[] = {
- 0, 10, 2,
- (int8_t) 255, 3, 14,
- (int8_t) 255, -10, -2,
- (int8_t) 255, -3, -14,
- (int8_t) 255, 10, 2,
- (int8_t) 255, 23, -11,
- 0, -20, 25,
- (int8_t) 255, 23, -12,
- 0, -33, 10,
- (int8_t) 255, 22, -12,
- 0, -25, -2,
- (int8_t) 255, 22, -11,
- 0, 11, 2,
- (int8_t) 255, 3, 13,
- (int8_t) 255, -11, -2,
- (int8_t) 255, -3, -13,
- (int8_t) 255, 11, 2,
- 1
-};
-const int8_t height2FallingFront1[] = {
- (int8_t) 255, 3, 14,
- (int8_t) 255, 10, -6,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -10, 5,
- (int8_t) 255, 24, 2,
- 0, -21, 12,
- (int8_t) 255, 24, 2,
- 0, -14, -8,
- (int8_t) 255, 23, 2,
- 0, -26, -15,
- (int8_t) 255, 23, 2,
- 0, -9, 5,
- (int8_t) 255, 3, 14,
- (int8_t) 255, 9, -6,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -9, 5,
- 1
-};
-const int8_t height2RisingBack1[] = {
- 0, 16, -11,
- (int8_t) 255, 3, 13,
- (int8_t) 255, 15, -2,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -15, 2,
- (int8_t) 255, -9, 11,
- 0, 12, 2,
- (int8_t) 255, -9, 12,
- 0, 24, -14,
- (int8_t) 255, -9, 12,
- 0, 6, -25,
- (int8_t) 255, -9, 12,
- 0, -15, 1,
- (int8_t) 255, 3, 14,
- (int8_t) 255, 15, -2,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -15, 1,
- 1
-};
-const int8_t depth2RollingLeft1[] = {
- (int8_t) 255, 5, 14,
- (int8_t) 255, 16, -12,
- (int8_t) 255, -5, -13,
- (int8_t) 255, -16, 11,
- (int8_t) 255, 12, -1,
- 0, -7, 15,
- (int8_t) 255, 12, -2,
- 0, 4, -10,
- (int8_t) 255, 12, -2,
- 0, -17, -11,
- (int8_t) 255, 12, -2,
- 0, -16, 12,
- (int8_t) 255, 5, 13,
- (int8_t) 255, 16, -12,
- (int8_t) 255, -5, -13,
- (int8_t) 255, -16, 12,
- 1
-};
-const int8_t depth2RollingRight1[] = {
- 0, 2, 0,
- (int8_t) 255, 1, 14,
- (int8_t) 255, 16, -12,
- (int8_t) 255, -1, -13,
- (int8_t) 255, -16, 11,
- (int8_t) 255, 13, 2,
- 0, -12, 12,
- (int8_t) 255, 13, 2,
- 0, 3, -14,
- (int8_t) 255, 13, 2,
- 0, -14, -15,
- (int8_t) 255, 13, 2,
- 0, -16, 11,
- (int8_t) 255, 1, 14,
- (int8_t) 255, 16, -12,
- (int8_t) 255, -1, -13,
- (int8_t) 255, -16, 11,
- 1
-};
-const int8_t width2RollingFront1[] = {
- (int8_t) 255, 6, 28,
- (int8_t) 255, 10, -6,
- (int8_t) 255, -6, -27,
- (int8_t) 255, -10, 5,
- (int8_t) 255, 12, 1,
- 0, -6, 27,
- (int8_t) 255, 12, 1,
- 0, -2, -7,
- (int8_t) 255, 11, 1,
- 0, -17, -28,
- (int8_t) 255, 11, 1,
- 0, -9, 5,
- (int8_t) 255, 6, 28,
- (int8_t) 255, 9, -6,
- (int8_t) 255, -6, -27,
- (int8_t) 255, -9, 5,
- 1
-};
-const int8_t width2RollingBack1[] = {
- 0, 2, 0,
- (int8_t) 255, 6, 28,
- (int8_t) 255, 6, -6,
- (int8_t) 255, -6, -27,
- (int8_t) 255, -6, 5,
- (int8_t) 255, 14, 0,
- 0, -8, 28,
- (int8_t) 255, 14, -1,
- 0, -8, -5,
- (int8_t) 255, 14, -1,
- 0, -20, -26,
- (int8_t) 255, 14, -1,
- 0, -6, 6,
- (int8_t) 255, 6, 27,
- (int8_t) 255, 6, -6,
- (int8_t) 255, -6, -27,
- (int8_t) 255, -6, 6,
- 1
+extern enum BlockOrientation_t blockOrientation;
+
+extern int8_t blockYOfs;
+extern int8_t lastBlockDirection;
+extern int8_t blockAnimating;
+
+
+extern uint8_t splitMode;
+
+
+extern int8_t blockX;
+extern int8_t blockY;
+
+
+extern int8_t blockX2;
+extern int8_t blockY2;
+
+enum BlockDirection_t {
+ Left, Up, Right, Down
 };
 
-const int8_t height2FallingLeft2[] = {
- (int8_t) 255, 6, 14,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -6, -13,
- (int8_t) 255, -8, 5,
- (int8_t) 255, 24, -6,
- 0, -18, 20,
- (int8_t) 255, 24, -8,
- 0, -16, 2,
- (int8_t) 255, 24, -8,
- 0, -30, -5,
- (int8_t) 255, 24, -7,
- 0, -8, 6,
- (int8_t) 255, 6, 12,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -6, -12,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2RisingRight2[] = {
- 0, 6, 28,
- (int8_t) 255, 13, 5,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -13, -5,
- (int8_t) 255, -8, 6,
- (int8_t) 255, 4, -26,
- 0, 9, 31,
- (int8_t) 255, 5, -26,
- 0, 3, 20,
- (int8_t) 255, 5, -26,
- 0, -18, 21,
- (int8_t) 255, 4, -25,
- 0, -8, 5,
- (int8_t) 255, 14, 5,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -14, -4,
- (int8_t) 255, -8, 5,
- 1
-};
-const int8_t height2FallingRight2[] = {
- 0, 3, 0,
- (int8_t) 255, 0, 14,
- (int8_t) 255, 8, -6,
- (int8_t) 255, 0, -13,
- (int8_t) 255, -8, 5,
- (int8_t) 255, 27, 8,
- 0, -27, 6,
- (int8_t) 255, 27, 7,
- 0, -19, -13,
- (int8_t) 255, 27, 7,
- 0, -27, -20,
- (int8_t) 255, 27, 7,
- 0, -8, 6,
- (int8_t) 255, 0, 13,
- (int8_t) 255, 8, -6,
- (int8_t) 255, 0, -13,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2RisingLeft2[] = {
- 0, 11, -4,
- (int8_t) 255, -11, 4,
- (int8_t) 255, 8, -5,
- (int8_t) 255, 11, -5,
- (int8_t) 255, -8, 6,
- (int8_t) 255, 15, 25,
- 0, -26, -21,
- (int8_t) 255, 15, 26,
- 0, -7, -31,
- (int8_t) 255, 15, 25,
- 0, -4, -30,
- (int8_t) 255, 15, 25,
- 0, -8, 6,
- (int8_t) 255, -11, 5,
- (int8_t) 255, 8, -6,
- (int8_t) 255, 11, -5,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2FallingBack2[] = {
- 0, 4, 0,
- (int8_t) 255, 3, 14,
- (int8_t) 255, 4, -6,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -4, 5,
- (int8_t) 255, 29, -2,
- 0, -26, 16,
- (int8_t) 255, 29, -3,
- 0, -25, -3,
- (int8_t) 255, 29, -3,
- 0, -32, -10,
- (int8_t) 255, 29, -3,
- 0, -4, 6,
- (int8_t) 255, 3, 13,
- (int8_t) 255, 4, -6,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -4, 6,
- 1
-};
-const int8_t height2RisingFront2[] = {
- 0, 9, 2,
- (int8_t) 255, 3, 14,
- (int8_t) 255, -9, -2,
- (int8_t) 255, -3, -14,
- (int8_t) 255, 9, 2,
- (int8_t) 255, 25, -10,
- 0, -22, 24,
- (int8_t) 255, 25, -11,
- 0, -34, 9,
- (int8_t) 255, 25, -11,
- 0, -28, -3,
- (int8_t) 255, 25, -10,
- 0, 9, 2,
- (int8_t) 255, 3, 13,
- (int8_t) 255, -9, -2,
- (int8_t) 255, -3, -13,
- (int8_t) 255, 9, 2,
- 1
-};
-const int8_t height2FallingFront2[] = {
- (int8_t) 255, 3, 14,
- (int8_t) 255, 11, -6,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -11, 5,
- (int8_t) 255, 21, 3,
- 0, -18, 11,
- (int8_t) 255, 21, 3,
- 0, -10, -9,
- (int8_t) 255, 21, 3,
- 0, -24, -16,
- (int8_t) 255, 21, 3,
- 0, -11, 5,
- (int8_t) 255, 3, 14,
- (int8_t) 255, 11, -6,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -11, 5,
- 1
-};
-const int8_t height2RisingBack2[] = {
- 0, 16, -11,
- (int8_t) 255, 3, 13,
- (int8_t) 255, 15, -2,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -15, 2,
- (int8_t) 255, -5, 11,
- 0, 8, 2,
- (int8_t) 255, -5, 11,
- 0, 20, -13,
- (int8_t) 255, -5, 11,
- 0, 2, -24,
- (int8_t) 255, -5, 11,
- 0, -15, 2,
- (int8_t) 255, 3, 13,
- (int8_t) 255, 15, -2,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -15, 2,
- 1
-};
-const int8_t depth2RollingLeft2[] = {
- (int8_t) 255, 6, 14,
- (int8_t) 255, 16, -12,
- (int8_t) 255, -6, -13,
- (int8_t) 255, -16, 11,
- (int8_t) 255, 12, -3,
- 0, -6, 17,
- (int8_t) 255, 12, -4,
- 0, 4, -8,
- (int8_t) 255, 12, -3,
- 0, -18, -10,
- (int8_t) 255, 12, -4,
- 0, -16, 12,
- (int8_t) 255, 6, 13,
- (int8_t) 255, 16, -11,
- (int8_t) 255, -6, -14,
- (int8_t) 255, -16, 12,
- 1
-};
-const int8_t depth2RollingRight2[] = {
- 0, 3, 0,
- (int8_t) 255, 0, 14,
- (int8_t) 255, 16, -12,
- (int8_t) 255, 0, -13,
- (int8_t) 255, -16, 11,
- (int8_t) 255, 14, 4,
- 0, -14, 10,
- (int8_t) 255, 13, 4,
- 0, 3, -16,
- (int8_t) 255, 13, 4,
- 0, -13, -17,
- (int8_t) 255, 14, 4,
- 0, -16, 11,
- (int8_t) 255, -1, 14,
- (int8_t) 255, 16, -12,
- (int8_t) 255, 1, -13,
- (int8_t) 255, -16, 11,
- 1
-};
-const int8_t width2RollingFront2[] = {
- (int8_t) 255, 6, 28,
- (int8_t) 255, 11, -6,
- (int8_t) 255, -6, -27,
- (int8_t) 255, -11, 5,
- (int8_t) 255, 10, 2,
- 0, -4, 26,
- (int8_t) 255, 10, 2,
- 0, 1, -8,
- (int8_t) 255, 11, 2,
- 0, -17, -29,
- (int8_t) 255, 11, 2,
- 0, -12, 5,
- (int8_t) 255, 6, 28,
- (int8_t) 255, 12, -6,
- (int8_t) 255, -6, -27,
- (int8_t) 255, -12, 5,
- 1
-};
-const int8_t width2RollingBack2[] = {
- 0, 4, 0,
- (int8_t) 255, 6, 28,
- (int8_t) 255, 4, -6,
- (int8_t) 255, -6, -27,
- (int8_t) 255, -4, 5,
- (int8_t) 255, 14, -1,
- 0, -8, 29,
- (int8_t) 255, 14, -2,
- 0, -10, -4,
- (int8_t) 255, 15, -2,
- 0, -21, -25,
- (int8_t) 255, 15, -2,
- 0, -5, 6,
- (int8_t) 255, 6, 27,
- (int8_t) 255, 5, -6,
- (int8_t) 255, -6, -27,
- (int8_t) 255, -5, 6,
- 1
-};
+void moveBlockImpl(enum BlockDirection_t move);
 
-const int8_t height2FallingLeft3[] = {
- (int8_t) 255, 8, 13,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -8, -12,
- (int8_t) 255, -8, 5,
- (int8_t) 255, 22, -10,
- 0, -14, 23,
- (int8_t) 255, 21, -11,
- 0, -13, 5,
- (int8_t) 255, 21, -10,
- 0, -29, -2,
- (int8_t) 255, 22, -11,
- 0, -8, 6,
- (int8_t) 255, 7, 12,
- (int8_t) 255, 8, -5,
- (int8_t) 255, -7, -13,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2RisingRight3[] = {
- 0, 6, 28,
- (int8_t) 255, 13, 7,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -13, -7,
- (int8_t) 255, -8, 6,
- (int8_t) 255, 8, -24,
- 0, 5, 31,
- (int8_t) 255, 8, -24,
- 0, 0, 18,
- (int8_t) 255, 8, -24,
- 0, -21, 17,
- (int8_t) 255, 8, -23,
- 0, -8, 5,
- (int8_t) 255, 13, 7,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -13, -6,
- (int8_t) 255, -8, 5,
- 1
-};
-const int8_t height2FallingRight3[] = {
- 0, 5, 1,
- (int8_t) 255, -2, 13,
- (int8_t) 255, 8, -6,
- (int8_t) 255, 2, -12,
- (int8_t) 255, -8, 5,
- (int8_t) 255, 27, 11,
- 0, -29, 2,
- (int8_t) 255, 26, 11,
- 0, -18, -17,
- (int8_t) 255, 26, 11,
- 0, -24, -23,
- (int8_t) 255, 27, 10,
- 0, -8, 6,
- (int8_t) 255, -3, 13,
- (int8_t) 255, 8, -6,
- (int8_t) 255, 3, -13,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2RisingLeft3[] = {
- 0, 10, -6,
- (int8_t) 255, -10, 6,
- (int8_t) 255, 8, -5,
- (int8_t) 255, 10, -7,
- (int8_t) 255, -8, 6,
- (int8_t) 255, 18, 23,
- 0, -28, -17,
- (int8_t) 255, 18, 24,
- 0, -10, -29,
- (int8_t) 255, 18, 23,
- 0, -8, -30,
- (int8_t) 255, 18, 23,
- 0, -8, 6,
- (int8_t) 255, -10, 7,
- (int8_t) 255, 8, -6,
- (int8_t) 255, 10, -7,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2FallingBack3[] = {
- 0, 6, 0,
- (int8_t) 255, 3, 14,
- (int8_t) 255, 2, -6,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -2, 5,
- (int8_t) 255, 30, -4,
- 0, -27, 18,
- (int8_t) 255, 30, -5,
- 0, -28, -1,
- (int8_t) 255, 30, -5,
- 0, -33, -8,
- (int8_t) 255, 30, -5,
- 0, -2, 6,
- (int8_t) 255, 3, 13,
- (int8_t) 255, 2, -6,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -2, 6,
- 1
-};
-const int8_t height2RisingFront3[] = {
- 0, 7, 3,
- (int8_t) 255, 3, 14,
- (int8_t) 255, -7, -3,
- (int8_t) 255, -3, -14,
- (int8_t) 255, 7, 3,
- (int8_t) 255, 27, -9,
- 0, -24, 23,
- (int8_t) 255, 27, -10,
- 0, -34, 7,
- (int8_t) 255, 27, -10,
- 0, -30, -4,
- (int8_t) 255, 27, -9,
- 0, 7, 3,
- (int8_t) 255, 3, 13,
- (int8_t) 255, -7, -3,
- (int8_t) 255, -3, -13,
- (int8_t) 255, 7, 3,
- 1
-};
-const int8_t height2FallingFront3[] = {
- (int8_t) 255, 3, 14,
- (int8_t) 255, 12, -6,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -12, 5,
- (int8_t) 255, 18, 5,
- 0, -15, 9,
- (int8_t) 255, 18, 5,
- 0, -6, -11,
- (int8_t) 255, 18, 5,
- 0, -21, -18,
- (int8_t) 255, 18, 5,
- 0, -12, 5,
- (int8_t) 255, 3, 14,
- (int8_t) 255, 12, -6,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -12, 5,
- 1
-};
-const int8_t height2RisingBack3[] = {
- 0, 16, -11,
- (int8_t) 255, 3, 13,
- (int8_t) 255, 15, -2,
- (int8_t) 255, -3, -14,
- (int8_t) 255, -15, 3,
- (int8_t) 255, -1, 10,
- 0, 4, 3,
- (int8_t) 255, -1, 10,
- 0, 16, -12,
- (int8_t) 255, -1, 9,
- 0, -2, -23,
- (int8_t) 255, -1, 10,
- 0, -15, 3,
- (int8_t) 255, 3, 13,
- (int8_t) 255, 15, -3,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -15, 3,
- 1
-};
-const int8_t depth2RollingLeft3[] = {
- (int8_t) 255, 8, 13,
- (int8_t) 255, 16, -12,
- (int8_t) 255, -8, -12,
- (int8_t) 255, -16, 11,
- (int8_t) 255, 11, -4,
- 0, -3, 17,
- (int8_t) 255, 11, -5,
- 0, 5, -7,
- (int8_t) 255, 11, -4,
- 0, -19, -8,
- (int8_t) 255, 11, -5,
- 0, -16, 12,
- (int8_t) 255, 8, 12,
- (int8_t) 255, 16, -11,
- (int8_t) 255, -8, -13,
- (int8_t) 255, -16, 12,
- 1
-};
-const int8_t depth2RollingRight3[] = {
- 0, 5, 1,
- (int8_t) 255, -2, 13,
- (int8_t) 255, 16, -12,
- (int8_t) 255, 2, -12,
- (int8_t) 255, -16, 11,
- (int8_t) 255, 13, 5,
- 0, -15, 8,
- (int8_t) 255, 13, 5,
- 0, 3, -17,
- (int8_t) 255, 13, 5,
- 0, -11, -17,
- (int8_t) 255, 13, 5,
- 0, -16, 11,
- (int8_t) 255, -2, 13,
- (int8_t) 255, 16, -12,
- (int8_t) 255, 2, -12,
- (int8_t) 255, -16, 11,
- 1
-};
-const int8_t width2RollingFront3[] = {
- (int8_t) 255, 6, 28,
- (int8_t) 255, 12, -6,
- (int8_t) 255, -6, -27,
- (int8_t) 255, -12, 5,
- (int8_t) 255, 9, 2,
- 0, -3, 26,
- (int8_t) 255, 9, 2,
- 0, 3, -8,
- (int8_t) 255, 9, 3,
- 0, -15, -30,
- (int8_t) 255, 9, 3,
- 0, -12, 4,
- (int8_t) 255, 6, 28,
- (int8_t) 255, 12, -5,
- (int8_t) 255, -6, -27,
- (int8_t) 255, -12, 4,
- 1
-};
-const int8_t width2RollingBack3[] = {
- 0, 6, 0,
- (int8_t) 255, 6, 28,
- (int8_t) 255, 2, -6,
- (int8_t) 255, -6, -27,
- (int8_t) 255, -2, 5,
- (int8_t) 255, 15, -2,
- 0, -9, 30,
- (int8_t) 255, 15, -3,
- 0, -13, -3,
- (int8_t) 255, 15, -2,
- 0, -21, -25,
- (int8_t) 255, 15, -2,
- 0, -2, 5,
- (int8_t) 255, 6, 27,
- (int8_t) 255, 2, -5,
- (int8_t) 255, -6, -27,
- (int8_t) 255, -2, 5,
- 1
-};
+void startBlockFalling();
 
-const int8_t height2FallingLeft4[] = {
- (int8_t) 255, 9, 12,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -9, -11,
- (int8_t) 255, -8, 5,
- (int8_t) 255, 20, -13,
- 0, -11, 25,
- (int8_t) 255, 20, -13,
- 0, -12, 7,
- (int8_t) 255, 20, -13,
- 0, -29, 2,
- (int8_t) 255, 20, -14,
- 0, -8, 6,
- (int8_t) 255, 9, 12,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -9, -12,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2RisingRight4[] = {
- 0, 6, 28,
- (int8_t) 255, 12, 9,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -12, -9,
- (int8_t) 255, -8, 6,
- (int8_t) 255, 11, -22,
- 0, 1, 31,
- (int8_t) 255, 11, -23,
- 0, -3, 17,
- (int8_t) 255, 11, -23,
- 0, -23, 14,
- (int8_t) 255, 11, -22,
- 0, -8, 6,
- (int8_t) 255, 12, 8,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -12, -8,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2FallingRight4[] = {
- 0, 7, 2,
- (int8_t) 255, -4, 12,
- (int8_t) 255, 8, -6,
- (int8_t) 255, 4, -11,
- (int8_t) 255, -8, 5,
- (int8_t) 255, 25, 14,
- 0, -29, -2,
- (int8_t) 255, 26, 14,
- 0, -18, -20,
- (int8_t) 255, 26, 14,
- 0, -22, -25,
- (int8_t) 255, 25, 13,
- 0, -8, 6,
- (int8_t) 255, -3, 12,
- (int8_t) 255, 8, -6,
- (int8_t) 255, 3, -12,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2RisingLeft4[] = {
- 0, 8, -8,
- (int8_t) 255, -8, 8,
- (int8_t) 255, 8, -5,
- (int8_t) 255, 8, -9,
- (int8_t) 255, -8, 6,
- (int8_t) 255, 21, 22,
- 0, -29, -14,
- (int8_t) 255, 21, 22,
- 0, -13, -27,
- (int8_t) 255, 21, 21,
- 0, -13, -30,
- (int8_t) 255, 21, 22,
- 0, -8, 6,
- (int8_t) 255, -8, 8,
- (int8_t) 255, 8, -6,
- (int8_t) 255, 8, -8,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2FallingBack4[] = {
- 0, 8, 0,
- (int8_t) 255, 3, 13,
- (int8_t) 255, 0, -5,
- (int8_t) 255, -3, -13,
- (int8_t) 255, 0, 5,
- (int8_t) 255, 30, -6,
- 0, -27, 19,
- (int8_t) 255, 30, -6,
- 0, -30, 1,
- (int8_t) 255, 31, -6,
- 0, -34, -7,
- (int8_t) 255, 31, -6,
- 0, -1, 5,
- (int8_t) 255, 3, 13,
- (int8_t) 255, 1, -5,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -1, 5,
- 1
-};
-const int8_t height2RisingFront4[] = {
- 0, 5, 4,
- (int8_t) 255, 3, 14,
- (int8_t) 255, -5, -4,
- (int8_t) 255, -3, -14,
- (int8_t) 255, 5, 4,
- (int8_t) 255, 29, -9,
- 0, -26, 23,
- (int8_t) 255, 29, -10,
- 0, -34, 6,
- (int8_t) 255, 29, -10,
- 0, -32, -4,
- (int8_t) 255, 29, -9,
- 0, 5, 4,
- (int8_t) 255, 3, 13,
- (int8_t) 255, -5, -4,
- (int8_t) 255, -3, -13,
- (int8_t) 255, 5, 4,
- 1
-};
-const int8_t height2FallingFront4[] = {
- (int8_t) 255, 3, 14,
- (int8_t) 255, 13, -5,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -13, 4,
- (int8_t) 255, 15, 6,
- 0, -12, 8,
- (int8_t) 255, 15, 6,
- 0, -2, -11,
- (int8_t) 255, 15, 6,
- 0, -18, -19,
- (int8_t) 255, 15, 5,
- 0, -13, 5,
- (int8_t) 255, 3, 14,
- (int8_t) 255, 13, -5,
- (int8_t) 255, -3, -14,
- (int8_t) 255, -13, 5,
- 1
-};
-const int8_t height2RisingBack4[] = {
- 0, 16, -11,
- (int8_t) 255, 3, 13,
- (int8_t) 255, 15, -3,
- (int8_t) 255, -3, -14,
- (int8_t) 255, -15, 4,
- (int8_t) 255, 3, 10,
- 0, 0, 3,
- (int8_t) 255, 3, 10,
- 0, 12, -13,
- (int8_t) 255, 3, 9,
- 0, -6, -23,
- (int8_t) 255, 3, 10,
- 0, -15, 4,
- (int8_t) 255, 3, 13,
- (int8_t) 255, 15, -4,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -15, 4,
- 1
-};
-const int8_t depth2RollingLeft4[] = {
- (int8_t) 255, 9, 12,
- (int8_t) 255, 16, -12,
- (int8_t) 255, -9, -11,
- (int8_t) 255, -16, 11,
- (int8_t) 255, 10, -6,
- 0, -1, 18,
- (int8_t) 255, 10, -7,
- 0, 6, -5,
- (int8_t) 255, 10, -6,
- 0, -19, -5,
- (int8_t) 255, 10, -7,
- 0, -16, 12,
- (int8_t) 255, 9, 11,
- (int8_t) 255, 16, -11,
- (int8_t) 255, -9, -12,
- (int8_t) 255, -16, 12,
- 1
-};
-const int8_t depth2RollingRight4[] = {
- 0, 7, 2,
- (int8_t) 255, -4, 12,
- (int8_t) 255, 16, -12,
- (int8_t) 255, 4, -11,
- (int8_t) 255, -16, 11,
- (int8_t) 255, 13, 7,
- 0, -17, 5,
- (int8_t) 255, 13, 7,
- 0, 3, -19,
- (int8_t) 255, 13, 7,
- 0, -9, -18,
- (int8_t) 255, 13, 7,
- 0, -16, 11,
- (int8_t) 255, -4, 12,
- (int8_t) 255, 16, -12,
- (int8_t) 255, 4, -11,
- (int8_t) 255, -16, 11,
- 1
-};
-const int8_t width2RollingFront4[] = {
- (int8_t) 255, 6, 28,
- (int8_t) 255, 13, -5,
- (int8_t) 255, -6, -27,
- (int8_t) 255, -13, 4,
- (int8_t) 255, 7, 3,
- 0, -1, 25,
- (int8_t) 255, 7, 3,
- 0, 6, -8,
- (int8_t) 255, 8, 3,
- 0, -14, -30,
- (int8_t) 255, 8, 3,
- 0, -14, 4,
- (int8_t) 255, 6, 28,
- (int8_t) 255, 14, -5,
- (int8_t) 255, -6, -27,
- (int8_t) 255, -14, 4,
- 1
-};
-const int8_t width2RollingBack4[] = {
- 0, 8, 0,
- (int8_t) 255, 6, 27,
- (int8_t) 255, 0, -5,
- (int8_t) 255, -6, -27,
- (int8_t) 255, 0, 5,
- (int8_t) 255, 15, -3,
- 0, -9, 30,
- (int8_t) 255, 15, -3,
- 0, -15, -2,
- (int8_t) 255, 15, -3,
- 0, -21, -24,
- (int8_t) 255, 15, -3,
- 0, 0, 5,
- (int8_t) 255, 6, 27,
- (int8_t) 255, 0, -5,
- (int8_t) 255, -6, -27,
- (int8_t) 255, 0, 5,
- 1
-};
+void drawBlock(int8_t yofs);
 
-const int8_t height2FallingLeft5[] = {
- (int8_t) 255, 10, 11,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -10, -10,
- (int8_t) 255, -8, 5,
- (int8_t) 255, 17, -16,
- 0, -7, 27,
- (int8_t) 255, 17, -16,
- 0, -9, 10,
- (int8_t) 255, 17, -16,
- 0, -27, 6,
- (int8_t) 255, 17, -17,
- 0, -8, 6,
- (int8_t) 255, 10, 11,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -10, -11,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2RisingRight5[] = {
- 0, 6, 28,
- (int8_t) 255, 11, 10,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -11, -10,
- (int8_t) 255, -8, 6,
- (int8_t) 255, 14, -20,
- 0, -3, 30,
- (int8_t) 255, 14, -20,
- 0, -6, 14,
- (int8_t) 255, 14, -20,
- 0, -25, 10,
- (int8_t) 255, 14, -20,
- 0, -8, 6,
- (int8_t) 255, 11, 10,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -11, -10,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2FallingRight5[] = {
- 0, 9, 3,
- (int8_t) 255, -6, 11,
- (int8_t) 255, 8, -6,
- (int8_t) 255, 6, -10,
- (int8_t) 255, -8, 5,
- (int8_t) 255, 24, 17,
- 0, -30, -6,
- (int8_t) 255, 24, 17,
- 0, -16, -23,
- (int8_t) 255, 24, 17,
- 0, -18, -27,
- (int8_t) 255, 24, 16,
- 0, -8, 6,
- (int8_t) 255, -6, 11,
- (int8_t) 255, 8, -6,
- (int8_t) 255, 6, -11,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2RisingLeft5[] = {
- 0, 7, -9,
- (int8_t) 255, -7, 9,
- (int8_t) 255, 8, -5,
- (int8_t) 255, 7, -10,
- (int8_t) 255, -8, 6,
- (int8_t) 255, 23, 19,
- 0, -30, -10,
- (int8_t) 255, 23, 20,
- 0, -15, -25,
- (int8_t) 255, 23, 19,
- 0, -16, -29,
- (int8_t) 255, 23, 19,
- 0, -8, 6,
- (int8_t) 255, -7, 10,
- (int8_t) 255, 8, -6,
- (int8_t) 255, 7, -10,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2FallingBack5[] = {
- 0, 10, 0,
- (int8_t) 255, 3, 13,
- (int8_t) 255, -2, -5,
- (int8_t) 255, -3, -13,
- (int8_t) 255, 2, 5,
- (int8_t) 255, 30, -8,
- 0, -27, 21,
- (int8_t) 255, 30, -8,
- 0, -32, 3,
- (int8_t) 255, 30, -7,
- 0, -33, -6,
- (int8_t) 255, 30, -7,
- 0, 2, 4,
- (int8_t) 255, 3, 13,
- (int8_t) 255, -2, -4,
- (int8_t) 255, -3, -13,
- (int8_t) 255, 2, 4,
- 1
-};
-const int8_t height2RisingFront5[] = {
- 0, 4, 4,
- (int8_t) 255, 3, 14,
- (int8_t) 255, -4, -4,
- (int8_t) 255, -3, -14,
- (int8_t) 255, 4, 4,
- (int8_t) 255, 29, -7,
- 0, -26, 21,
- (int8_t) 255, 29, -8,
- 0, -33, 4,
- (int8_t) 255, 30, -8,
- 0, -33, -6,
- (int8_t) 255, 30, -7,
- 0, 3, 4,
- (int8_t) 255, 3, 13,
- (int8_t) 255, -3, -4,
- (int8_t) 255, -3, -13,
- (int8_t) 255, 3, 4,
- 1
-};
-const int8_t height2FallingFront5[] = {
- (int8_t) 255, 3, 14,
- (int8_t) 255, 14, -5,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -14, 4,
- (int8_t) 255, 11, 7,
- 0, -8, 7,
- (int8_t) 255, 11, 7,
- 0, 3, -12,
- (int8_t) 255, 11, 8,
- 0, -14, -21,
- (int8_t) 255, 11, 7,
- 0, -14, 4,
- (int8_t) 255, 3, 14,
- (int8_t) 255, 14, -4,
- (int8_t) 255, -3, -14,
- (int8_t) 255, -14, 4,
- 1
-};
-const int8_t height2RisingBack5[] = {
- 0, 16, -11,
- (int8_t) 255, 3, 13,
- (int8_t) 255, 15, -3,
- (int8_t) 255, -3, -14,
- (int8_t) 255, -15, 4,
- (int8_t) 255, 7, 8,
- 0, -4, 5,
- (int8_t) 255, 7, 8,
- 0, 8, -11,
- (int8_t) 255, 7, 7,
- 0, -10, -21,
- (int8_t) 255, 7, 8,
- 0, -15, 4,
- (int8_t) 255, 3, 13,
- (int8_t) 255, 15, -4,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -15, 4,
- 1
-};
-const int8_t depth2RollingLeft5[] = {
- (int8_t) 255, 10, 11,
- (int8_t) 255, 16, -11,
- (int8_t) 255, -10, -11,
- (int8_t) 255, -16, 11,
- (int8_t) 255, 8, -8,
- 0, 2, 19,
- (int8_t) 255, 9, -8,
- 0, 7, -3,
- (int8_t) 255, 9, -8,
- 0, -19, -3,
- (int8_t) 255, 8, -9,
- 0, -16, 12,
- (int8_t) 255, 11, 11,
- (int8_t) 255, 16, -11,
- (int8_t) 255, -11, -12,
- (int8_t) 255, -16, 12,
- 1
-};
-const int8_t depth2RollingRight5[] = {
- 0, 9, 3,
- (int8_t) 255, -6, 11,
- (int8_t) 255, 16, -12,
- (int8_t) 255, 6, -10,
- (int8_t) 255, -16, 11,
- (int8_t) 255, 12, 8,
- 0, -18, 3,
- (int8_t) 255, 12, 9,
- 0, 4, -21,
- (int8_t) 255, 12, 9,
- 0, -6, -19,
- (int8_t) 255, 12, 8,
- 0, -16, 11,
- (int8_t) 255, -6, 12,
- (int8_t) 255, 16, -12,
- (int8_t) 255, 6, -11,
- (int8_t) 255, -16, 11,
- 1
-};
-const int8_t width2RollingFront5[] = {
- (int8_t) 255, 6, 28,
- (int8_t) 255, 14, -5,
- (int8_t) 255, -6, -27,
- (int8_t) 255, -14, 4,
- (int8_t) 255, 5, 4,
- 0, 1, 24,
- (int8_t) 255, 5, 4,
- 0, 9, -9,
- (int8_t) 255, 6, 4,
- 0, -12, -31,
- (int8_t) 255, 6, 4,
- 0, -15, 4,
- (int8_t) 255, 6, 28,
- (int8_t) 255, 15, -5,
- (int8_t) 255, -6, -27,
- (int8_t) 255, -15, 4,
- 1
-};
-const int8_t width2RollingBack5[] = {
- 0, 10, 0,
- (int8_t) 255, 6, 27,
- (int8_t) 255, -2, -5,
- (int8_t) 255, -6, -27,
- (int8_t) 255, 2, 5,
- (int8_t) 255, 15, -4,
- 0, -9, 31,
- (int8_t) 255, 15, -4,
- 0, -17, -1,
- (int8_t) 255, 15, -4,
- 0, -21, -23,
- (int8_t) 255, 15, -4,
- 0, 2, 5,
- (int8_t) 255, 6, 27,
- (int8_t) 255, -2, -5,
- (int8_t) 255, -6, -27,
- (int8_t) 255, 2, 5,
- 1
-};
+void doBlockAnimation();
 
-const int8_t height2FallingLeft6[] = {
- (int8_t) 255, 11, 10,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -11, -9,
- (int8_t) 255, -8, 5,
- (int8_t) 255, 14, -19,
- 0, -3, 29,
- (int8_t) 255, 14, -19,
- 0, -6, 13,
- (int8_t) 255, 14, -19,
- 0, -25, 10,
- (int8_t) 255, 14, -20,
- 0, -8, 6,
- (int8_t) 255, 11, 10,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -11, -10,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2RisingRight6[] = {
- 0, 6, 28,
- (int8_t) 255, 10, 11,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -10, -11,
- (int8_t) 255, -8, 6,
- (int8_t) 255, 17, -17,
- 0, -7, 28,
- (int8_t) 255, 17, -17,
- 0, -9, 11,
- (int8_t) 255, 17, -17,
- 0, -27, 6,
- (int8_t) 255, 17, -17,
- 0, -8, 6,
- (int8_t) 255, 10, 11,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -10, -11,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2FallingRight6[] = {
- 0, 10, 4,
- (int8_t) 255, -7, 10,
- (int8_t) 255, 8, -6,
- (int8_t) 255, 7, -9,
- (int8_t) 255, -8, 5,
- (int8_t) 255, 23, 20,
- 0, -30, -10,
- (int8_t) 255, 23, 20,
- 0, -15, -26,
- (int8_t) 255, 23, 20,
- 0, -16, -29,
- (int8_t) 255, 23, 19,
- 0, -8, 6,
- (int8_t) 255, -7, 10,
- (int8_t) 255, 8, -6,
- (int8_t) 255, 7, -10,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2RisingLeft6[] = {
- 0, 6, -10,
- (int8_t) 255, -6, 10,
- (int8_t) 255, 8, -5,
- (int8_t) 255, 6, -11,
- (int8_t) 255, -8, 6,
- (int8_t) 255, 24, 16,
- 0, -30, -6,
- (int8_t) 255, 24, 17,
- 0, -16, -22,
- (int8_t) 255, 24, 16,
- 0, -18, -27,
- (int8_t) 255, 24, 16,
- 0, -8, 6,
- (int8_t) 255, -6, 11,
- (int8_t) 255, 8, -6,
- (int8_t) 255, 6, -11,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2FallingBack6[] = {
- 0, 12, -1,
- (int8_t) 255, 3, 13,
- (int8_t) 255, -4, -4,
- (int8_t) 255, -3, -13,
- (int8_t) 255, 4, 4,
- (int8_t) 255, 29, -8,
- 0, -26, 21,
- (int8_t) 255, 29, -8,
- 0, -33, 4,
- (int8_t) 255, 30, -8,
- 0, -33, -5,
- (int8_t) 255, 30, -8,
- 0, 3, 4,
- (int8_t) 255, 3, 13,
- (int8_t) 255, -3, -4,
- (int8_t) 255, -3, -13,
- (int8_t) 255, 3, 4,
- 1
-};
-const int8_t height2RisingFront6[] = {
- 0, 2, 5,
- (int8_t) 255, 3, 14,
- (int8_t) 255, -2, -5,
- (int8_t) 255, -3, -14,
- (int8_t) 255, 2, 5,
- (int8_t) 255, 30, -7,
- 0, -27, 21,
- (int8_t) 255, 30, -8,
- 0, -32, 3,
- (int8_t) 255, 30, -7,
- 0, -33, -7,
- (int8_t) 255, 30, -6,
- 0, 2, 4,
- (int8_t) 255, 3, 13,
- (int8_t) 255, -2, -4,
- (int8_t) 255, -3, -13,
- (int8_t) 255, 2, 4,
- 1
-};
-const int8_t height2FallingFront6[] = {
- (int8_t) 255, 3, 14,
- (int8_t) 255, 15, -4,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -15, 3,
- (int8_t) 255, 7, 8,
- 0, -4, 6,
- (int8_t) 255, 7, 8,
- 0, 8, -12,
- (int8_t) 255, 7, 8,
- 0, -10, -21,
- (int8_t) 255, 7, 7,
- 0, -15, 4,
- (int8_t) 255, 3, 14,
- (int8_t) 255, 15, -4,
- (int8_t) 255, -3, -14,
- (int8_t) 255, -15, 4,
- 1
-};
-const int8_t height2RisingBack6[] = {
- 0, 16, -11,
- (int8_t) 255, 3, 13,
- (int8_t) 255, 14, -4,
- (int8_t) 255, -3, -14,
- (int8_t) 255, -14, 5,
- (int8_t) 255, 11, 7,
- 0, -8, 6,
- (int8_t) 255, 11, 7,
- 0, 3, -11,
- (int8_t) 255, 11, 7,
- 0, -14, -21,
- (int8_t) 255, 11, 8,
- 0, -14, 4,
- (int8_t) 255, 3, 13,
- (int8_t) 255, 14, -4,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -14, 4,
- 1
-};
-const int8_t depth2RollingLeft6[] = {
- (int8_t) 255, 11, 10,
- (int8_t) 255, 16, -11,
- (int8_t) 255, -11, -10,
- (int8_t) 255, -16, 11,
- (int8_t) 255, 7, -9,
- 0, 4, 19,
- (int8_t) 255, 7, -10,
- 0, 9, -1,
- (int8_t) 255, 7, -10,
- 0, -18, 0,
- (int8_t) 255, 7, -10,
- 0, -16, 12,
- (int8_t) 255, 11, 9,
- (int8_t) 255, 16, -11,
- (int8_t) 255, -11, -10,
- (int8_t) 255, -16, 12,
- 1
-};
-const int8_t depth2RollingRight6[] = {
- 0, 10, 4,
- (int8_t) 255, -7, 10,
- (int8_t) 255, 16, -12,
- (int8_t) 255, 7, -9,
- (int8_t) 255, -16, 11,
- (int8_t) 255, 11, 10,
- 0, -18, 0,
- (int8_t) 255, 11, 10,
- 0, 5, -22,
- (int8_t) 255, 11, 10,
- 0, -4, -19,
- (int8_t) 255, 11, 9,
- 0, -16, 12,
- (int8_t) 255, -7, 10,
- (int8_t) 255, 16, -12,
- (int8_t) 255, 7, -10,
- (int8_t) 255, -16, 12,
- 1
-};
-const int8_t width2RollingFront6[] = {
- (int8_t) 255, 6, 28,
- (int8_t) 255, 15, -4,
- (int8_t) 255, -6, -27,
- (int8_t) 255, -15, 3,
- (int8_t) 255, 4, 4,
- 0, 2, 24,
- (int8_t) 255, 4, 4,
- 0, 11, -8,
- (int8_t) 255, 3, 4,
- 0, -9, -31,
- (int8_t) 255, 3, 3,
- 0, -14, 4,
- (int8_t) 255, 6, 28,
- (int8_t) 255, 14, -4,
- (int8_t) 255, -6, -28,
- (int8_t) 255, -14, 4,
- 1
-};
-const int8_t width2RollingBack6[] = {
- 0, 12, -1,
- (int8_t) 255, 6, 27,
- (int8_t) 255, -4, -4,
- (int8_t) 255, -6, -27,
- (int8_t) 255, 4, 4,
- (int8_t) 255, 14, -4,
- 0, -8, 31,
- (int8_t) 255, 14, -4,
- 0, -18, 0,
- (int8_t) 255, 15, -4,
- 0, -21, -23,
- (int8_t) 255, 15, -4,
- 0, 3, 4,
- (int8_t) 255, 6, 27,
- (int8_t) 255, -3, -4,
- (int8_t) 255, -6, -27,
- (int8_t) 255, 3, 4,
- 1
-};
+void blockStartLevel();
 
-const int8_t height2FallingLeft7[] = {
- (int8_t) 255, 12, 9,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -12, -8,
- (int8_t) 255, -8, 5,
- (int8_t) 255, 11, -21,
- 0, 1, 30,
- (int8_t) 255, 11, -22,
- 0, -3, 16,
- (int8_t) 255, 11, -22,
- 0, -23, 14,
- (int8_t) 255, 11, -22,
- 0, -8, 6,
- (int8_t) 255, 12, 8,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -12, -8,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2RisingRight7[] = {
- 0, 6, 28,
- (int8_t) 255, 9, 12,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -9, -12,
- (int8_t) 255, -8, 6,
- (int8_t) 255, 20, -14,
- 0, -11, 26,
- (int8_t) 255, 20, -14,
- 0, -12, 8,
- (int8_t) 255, 20, -14,
- 0, -29, 2,
- (int8_t) 255, 20, -14,
- 0, -8, 6,
- (int8_t) 255, 9, 12,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -9, -12,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2FallingRight7[] = {
- 0, 11, 5,
- (int8_t) 255, -8, 9,
- (int8_t) 255, 8, -6,
- (int8_t) 255, 8, -8,
- (int8_t) 255, -8, 5,
- (int8_t) 255, 21, 23,
- 0, -29, -14,
- (int8_t) 255, 21, 22,
- 0, -13, -28,
- (int8_t) 255, 21, 22,
- 0, -13, -30,
- (int8_t) 255, 21, 22,
- 0, -8, 6,
- (int8_t) 255, -8, 8,
- (int8_t) 255, 8, -6,
- (int8_t) 255, 8, -8,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2RisingLeft7[] = {
- 0, 4, -11,
- (int8_t) 255, -4, 11,
- (int8_t) 255, 8, -5,
- (int8_t) 255, 4, -12,
- (int8_t) 255, -8, 6,
- (int8_t) 255, 25, 13,
- 0, -29, -2,
- (int8_t) 255, 26, 14,
- 0, -18, -19,
- (int8_t) 255, 26, 13,
- 0, -22, -25,
- (int8_t) 255, 25, 14,
- 0, -8, 5,
- (int8_t) 255, -3, 12,
- (int8_t) 255, 8, -6,
- (int8_t) 255, 3, -11,
- (int8_t) 255, -8, 5,
- 1
-};
-const int8_t height2FallingBack7[] = {
- 0, 13, -1,
- (int8_t) 255, 3, 13,
- (int8_t) 255, -5, -4,
- (int8_t) 255, -3, -13,
- (int8_t) 255, 5, 4,
- (int8_t) 255, 29, -10,
- 0, -26, 23,
- (int8_t) 255, 29, -10,
- 0, -34, 6,
- (int8_t) 255, 29, -9,
- 0, -32, -4,
- (int8_t) 255, 29, -10,
- 0, 5, 4,
- (int8_t) 255, 3, 13,
- (int8_t) 255, -5, -3,
- (int8_t) 255, -3, -14,
- (int8_t) 255, 5, 4,
- 1
-};
-const int8_t height2RisingFront7[] = {
- 0, 0, 5,
- (int8_t) 255, 3, 14,
- (int8_t) 255, 0, -5,
- (int8_t) 255, -3, -14,
- (int8_t) 255, 0, 5,
- (int8_t) 255, 30, -5,
- 0, -27, 19,
- (int8_t) 255, 30, -6,
- 0, -30, 1,
- (int8_t) 255, 31, -6,
- 0, -34, -8,
- (int8_t) 255, 31, -5,
- 0, -1, 5,
- (int8_t) 255, 3, 13,
- (int8_t) 255, 1, -5,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -1, 5,
- 1
-};
-const int8_t height2FallingFront7[] = {
- (int8_t) 255, 3, 14,
- (int8_t) 255, 15, -4,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -15, 3,
- (int8_t) 255, 3, 10,
- 0, 0, 4,
- (int8_t) 255, 3, 10,
- 0, 12, -14,
- (int8_t) 255, 3, 10,
- 0, -6, -23,
- (int8_t) 255, 3, 9,
- 0, -15, 4,
- (int8_t) 255, 3, 14,
- (int8_t) 255, 15, -4,
- (int8_t) 255, -3, -14,
- (int8_t) 255, -15, 4,
- 1
-};
-const int8_t height2RisingBack7[] = {
- 0, 16, -11,
- (int8_t) 255, 3, 13,
- (int8_t) 255, 13, -4,
- (int8_t) 255, -3, -14,
- (int8_t) 255, -13, 5,
- (int8_t) 255, 15, 6,
- 0, -12, 7,
- (int8_t) 255, 15, 6,
- 0, -2, -10,
- (int8_t) 255, 15, 5,
- 0, -18, -19,
- (int8_t) 255, 15, 6,
- 0, -13, 5,
- (int8_t) 255, 3, 13,
- (int8_t) 255, 13, -5,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -13, 5,
- 1
-};
-const int8_t depth2RollingLeft7[] = {
- (int8_t) 255, 12, 9,
- (int8_t) 255, 16, -11,
- (int8_t) 255, -12, -9,
- (int8_t) 255, -16, 11,
- (int8_t) 255, 6, -10,
- 0, 6, 19,
- (int8_t) 255, 6, -11,
- 0, 10, 0,
- (int8_t) 255, 6, -12,
- 0, -18, 3,
- (int8_t) 255, 6, -11,
- 0, -16, 12,
- (int8_t) 255, 12, 8,
- (int8_t) 255, 16, -12,
- (int8_t) 255, -12, -8,
- (int8_t) 255, -16, 12,
- 1
-};
-const int8_t depth2RollingRight7[] = {
- 0, 11, 5,
- (int8_t) 255, -8, 9,
- (int8_t) 255, 16, -12,
- (int8_t) 255, 8, -8,
- (int8_t) 255, -16, 11,
- (int8_t) 255, 11, 12,
- 0, -19, -3,
- (int8_t) 255, 10, 11,
- 0, 6, -23,
- (int8_t) 255, 10, 11,
- 0, -2, -19,
- (int8_t) 255, 11, 11,
- 0, -16, 12,
- (int8_t) 255, -9, 8,
- (int8_t) 255, 16, -12,
- (int8_t) 255, 9, -8,
- (int8_t) 255, -16, 12,
- 1
-};
-const int8_t width2RollingFront7[] = {
- (int8_t) 255, 6, 28,
- (int8_t) 255, 15, -4,
- (int8_t) 255, -6, -27,
- (int8_t) 255, -15, 3,
- (int8_t) 255, 2, 5,
- 0, 4, 23,
- (int8_t) 255, 2, 5,
- 0, 13, -9,
- (int8_t) 255, 2, 5,
- 0, -8, -32,
- (int8_t) 255, 2, 4,
- 0, -15, 4,
- (int8_t) 255, 6, 28,
- (int8_t) 255, 15, -4,
- (int8_t) 255, -6, -28,
- (int8_t) 255, -15, 4,
- 1
-};
-const int8_t width2RollingBack7[] = {
- 0, 13, -1,
- (int8_t) 255, 6, 27,
- (int8_t) 255, -5, -4,
- (int8_t) 255, -6, -27,
- (int8_t) 255, 5, 4,
- (int8_t) 255, 15, -5,
- 0, -9, 32,
- (int8_t) 255, 15, -5,
- 0, -20, 1,
- (int8_t) 255, 14, -5,
- 0, -20, -22,
- (int8_t) 255, 14, -5,
- 0, 6, 4,
- (int8_t) 255, 6, 27,
- (int8_t) 255, -6, -4,
- (int8_t) 255, -6, -27,
- (int8_t) 255, 6, 4,
- 1
-};
+void setSplitMode();
 
-const int8_t height2FallingLeft8[] = {
- (int8_t) 255, 13, 7,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -13, -6,
- (int8_t) 255, -8, 5,
- (int8_t) 255, 8, -23,
- 0, 5, 30,
- (int8_t) 255, 8, -23,
- 0, 0, 17,
- (int8_t) 255, 8, -23,
- 0, -21, 17,
- (int8_t) 255, 8, -24,
- 0, -8, 6,
- (int8_t) 255, 13, 7,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -13, -7,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2RisingRight8[] = {
- 0, 6, 28,
- (int8_t) 255, 8, 13,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -8, -13,
- (int8_t) 255, -8, 6,
- (int8_t) 255, 22, -11,
- 0, -14, 24,
- (int8_t) 255, 21, -11,
- 0, -13, 5,
- (int8_t) 255, 21, -11,
- 0, -29, -2,
- (int8_t) 255, 22, -11,
- 0, -8, 6,
- (int8_t) 255, 7, 13,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -7, -13,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2FallingRight8[] = {
- 0, 13, 7,
- (int8_t) 255, -10, 7,
- (int8_t) 255, 8, -6,
- (int8_t) 255, 10, -7,
- (int8_t) 255, -8, 6,
- (int8_t) 255, 18, 24,
- 0, -28, -17,
- (int8_t) 255, 18, 24,
- 0, -10, -30,
- (int8_t) 255, 18, 24,
- 0, -8, -31,
- (int8_t) 255, 18, 24,
- 0, -8, 6,
- (int8_t) 255, -10, 7,
- (int8_t) 255, 8, -6,
- (int8_t) 255, 10, -7,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2RisingLeft8[] = {
- 0, 2, -12,
- (int8_t) 255, -2, 12,
- (int8_t) 255, 8, -5,
- (int8_t) 255, 2, -13,
- (int8_t) 255, -8, 6,
- (int8_t) 255, 27, 11,
- 0, -29, 1,
- (int8_t) 255, 26, 11,
- 0, -18, -16,
- (int8_t) 255, 26, 10,
- 0, -24, -23,
- (int8_t) 255, 27, 11,
- 0, -8, 6,
- (int8_t) 255, -3, 12,
- (int8_t) 255, 8, -6,
- (int8_t) 255, 3, -12,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2FallingBack8[] = {
- 0, 15, -2,
- (int8_t) 255, 3, 13,
- (int8_t) 255, -7, -3,
- (int8_t) 255, -3, -13,
- (int8_t) 255, 7, 3,
- (int8_t) 255, 27, -10,
- 0, -24, 23,
- (int8_t) 255, 27, -10,
- 0, -34, 7,
- (int8_t) 255, 27, -9,
- 0, -30, -4,
- (int8_t) 255, 27, -10,
- 0, 7, 3,
- (int8_t) 255, 3, 13,
- (int8_t) 255, -7, -2,
- (int8_t) 255, -3, -14,
- (int8_t) 255, 7, 3,
- 1
-};
-const int8_t height2RisingFront8[] = {
- 0, -1, 6,
- (int8_t) 255, 2, 14,
- (int8_t) 255, 2, -6,
- (int8_t) 255, -3, -14,
- (int8_t) 255, -1, 6,
- (int8_t) 255, 29, -5,
- 0, -27, 19,
- (int8_t) 255, 30, -5,
- 0, -28, -1,
- (int8_t) 255, 30, -5,
- 0, -33, -9,
- (int8_t) 255, 30, -4,
- 0, -2, 5,
- (int8_t) 255, 3, 14,
- (int8_t) 255, 2, -6,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -2, 5,
- 1
-};
-const int8_t height2FallingFront8[] = {
- (int8_t) 255, 3, 14,
- (int8_t) 255, 15, -3,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -15, 2,
- (int8_t) 255, 0, 10,
- 0, 3, 4,
- (int8_t) 255, -1, 10,
- 0, 16, -13,
- (int8_t) 255, -1, 10,
- 0, -2, -23,
- (int8_t) 255, -1, 9,
- 0, -14, 3,
- (int8_t) 255, 2, 14,
- (int8_t) 255, 15, -3,
- (int8_t) 255, -3, -14,
- (int8_t) 255, -14, 3,
- 1
-};
-const int8_t height2RisingBack8[] = {
- 0, 16, -11,
- (int8_t) 255, 3, 13,
- (int8_t) 255, 12, -5,
- (int8_t) 255, -3, -14,
- (int8_t) 255, -12, 6,
- (int8_t) 255, 18, 5,
- 0, -15, 8,
- (int8_t) 255, 18, 5,
- 0, -6, -10,
- (int8_t) 255, 18, 4,
- 0, -21, -18,
- (int8_t) 255, 18, 5,
- 0, -12, 6,
- (int8_t) 255, 3, 13,
- (int8_t) 255, 12, -6,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -12, 6,
- 1
-};
-const int8_t depth2RollingLeft8[] = {
- (int8_t) 255, 13, 7,
- (int8_t) 255, 16, -11,
- (int8_t) 255, -13, -7,
- (int8_t) 255, -16, 11,
- (int8_t) 255, 4, -11,
- 0, 9, 18,
- (int8_t) 255, 4, -11,
- 0, 12, 0,
- (int8_t) 255, 4, -12,
- 0, -17, 5,
- (int8_t) 255, 4, -12,
- 0, -16, 12,
- (int8_t) 255, 13, 7,
- (int8_t) 255, 16, -12,
- (int8_t) 255, -13, -7,
- (int8_t) 255, -16, 12,
- 1
-};
-const int8_t depth2RollingRight8[] = {
- 0, 13, 7,
- (int8_t) 255, -10, 7,
- (int8_t) 255, 16, -12,
- (int8_t) 255, 10, -6,
- (int8_t) 255, -16, 11,
- (int8_t) 255, 9, 12,
- 0, -19, -5,
- (int8_t) 255, 9, 12,
- 0, 7, -24,
- (int8_t) 255, 9, 12,
- 0, 1, -18,
- (int8_t) 255, 9, 11,
- 0, -16, 12,
- (int8_t) 255, -10, 7,
- (int8_t) 255, 16, -12,
- (int8_t) 255, 10, -7,
- (int8_t) 255, -16, 12,
- 1
-};
-const int8_t width2RollingFront8[] = {
- (int8_t) 255, 6, 28,
- (int8_t) 255, 15, -3,
- (int8_t) 255, -6, -27,
- (int8_t) 255, -15, 2,
- (int8_t) 255, 0, 5,
- 0, 6, 23,
- (int8_t) 255, 0, 5,
- 0, 15, -8,
- (int8_t) 255, 0, 5,
- 0, -6, -32,
- (int8_t) 255, 0, 4,
- 0, -15, 3,
- (int8_t) 255, 6, 28,
- (int8_t) 255, 15, -3,
- (int8_t) 255, -6, -28,
- (int8_t) 255, -15, 3,
- 1
-};
-const int8_t width2RollingBack8[] = {
- 0, 15, -2,
- (int8_t) 255, 6, 27,
- (int8_t) 255, -7, -3,
- (int8_t) 255, -6, -27,
- (int8_t) 255, 7, 3,
- (int8_t) 255, 14, -5,
- 0, -8, 32,
- (int8_t) 255, 14, -5,
- 0, -21, 2,
- (int8_t) 255, 13, -5,
- 0, -19, -22,
- (int8_t) 255, 13, -5,
- 0, 8, 3,
- (int8_t) 255, 6, 27,
- (int8_t) 255, -8, -3,
- (int8_t) 255, -6, -27,
- (int8_t) 255, 8, 3,
- 1
-};
+void testMerge();
 
-const int8_t height2FallingLeft9[] = {
- (int8_t) 255, 13, 5,
- (int8_t) 255, 8, -5,
- (int8_t) 255, -13, -5,
- (int8_t) 255, -8, 5,
- (int8_t) 255, 4, -25,
- 0, 9, 30,
- (int8_t) 255, 5, -25,
- 0, 3, 20,
- (int8_t) 255, 5, -26,
- 0, -18, 21,
- (int8_t) 255, 4, -26,
- 0, -8, 6,
- (int8_t) 255, 14, 5,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -14, -5,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2RisingRight9[] = {
- 0, 6, 28,
- (int8_t) 255, 6, 14,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -6, -14,
- (int8_t) 255, -8, 6,
- (int8_t) 255, 24, -7,
- 0, -18, 21,
- (int8_t) 255, 24, -8,
- 0, -16, 2,
- (int8_t) 255, 24, -8,
- 0, -30, -6,
- (int8_t) 255, 24, -7,
- 0, -8, 6,
- (int8_t) 255, 6, 13,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -6, -13,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2FallingRight9[] = {
- 0, 14, 9,
- (int8_t) 255, -11, 5,
- (int8_t) 255, 8, -6,
- (int8_t) 255, 11, -5,
- (int8_t) 255, -8, 6,
- (int8_t) 255, 15, 26,
- 0, -26, -21,
- (int8_t) 255, 15, 26,
- 0, -7, -32,
- (int8_t) 255, 15, 26,
- 0, -4, -31,
- (int8_t) 255, 15, 26,
- 0, -8, 6,
- (int8_t) 255, -11, 5,
- (int8_t) 255, 8, -6,
- (int8_t) 255, 11, -5,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2RisingLeft9[] = {
- 0, 0, -13,
- (int8_t) 255, 0, 13,
- (int8_t) 255, 8, -5,
- (int8_t) 255, 0, -14,
- (int8_t) 255, -8, 6,
- (int8_t) 255, 27, 8,
- 0, -27, 5,
- (int8_t) 255, 27, 7,
- 0, -19, -12,
- (int8_t) 255, 27, 6,
- 0, -27, -20,
- (int8_t) 255, 27, 8,
- 0, -8, 6,
- (int8_t) 255, 0, 12,
- (int8_t) 255, 8, -6,
- (int8_t) 255, 0, -12,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2FallingBack9[] = {
- 0, 17, -3,
- (int8_t) 255, 3, 13,
- (int8_t) 255, -9, -2,
- (int8_t) 255, -3, -13,
- (int8_t) 255, 9, 2,
- (int8_t) 255, 25, -11,
- 0, -22, 24,
- (int8_t) 255, 25, -10,
- 0, -34, 8,
- (int8_t) 255, 25, -10,
- 0, -28, -3,
- (int8_t) 255, 25, -11,
- 0, 9, 2,
- (int8_t) 255, 3, 14,
- (int8_t) 255, -9, -2,
- (int8_t) 255, -3, -14,
- (int8_t) 255, 9, 2,
- 1
-};
-const int8_t height2RisingFront9[] = {
- 0, -3, 6,
- (int8_t) 255, 3, 14,
- (int8_t) 255, 3, -6,
- (int8_t) 255, -3, -14,
- (int8_t) 255, -3, 6,
- (int8_t) 255, 28, -3,
- 0, -25, 17,
- (int8_t) 255, 28, -3,
- 0, -25, -3,
- (int8_t) 255, 29, -3,
- 0, -32, -11,
- (int8_t) 255, 29, -2,
- 0, -4, 5,
- (int8_t) 255, 3, 14,
- (int8_t) 255, 4, -6,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -4, 5,
- 1
-};
-const int8_t height2FallingFront9[] = {
- (int8_t) 255, 3, 14,
- (int8_t) 255, 15, -2,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -15, 1,
- (int8_t) 255, -4, 11,
- 0, 7, 3,
- (int8_t) 255, -4, 11,
- 0, 19, -13,
- (int8_t) 255, -5, 11,
- 0, 2, -24,
- (int8_t) 255, -5, 10,
- 0, -14, 2,
- (int8_t) 255, 3, 14,
- (int8_t) 255, 14, -2,
- (int8_t) 255, -3, -14,
- (int8_t) 255, -14, 2,
- 1
-};
-const int8_t height2RisingBack9[] = {
- 0, 16, -11,
- (int8_t) 255, 3, 13,
- (int8_t) 255, 11, -5,
- (int8_t) 255, -3, -14,
- (int8_t) 255, -11, 6,
- (int8_t) 255, 21, 3,
- 0, -18, 10,
- (int8_t) 255, 21, 3,
- 0, -10, -8,
- (int8_t) 255, 21, 3,
- 0, -24, -17,
- (int8_t) 255, 21, 3,
- 0, -11, 6,
- (int8_t) 255, 3, 13,
- (int8_t) 255, 11, -5,
- (int8_t) 255, -3, -14,
- (int8_t) 255, -11, 6,
- 1
-};
-const int8_t depth2RollingLeft9[] = {
- (int8_t) 255, 13, 5,
- (int8_t) 255, 16, -11,
- (int8_t) 255, -13, -5,
- (int8_t) 255, -16, 11,
- (int8_t) 255, 2, -12,
- 0, 11, 17,
- (int8_t) 255, 2, -12,
- 0, 14, 1,
- (int8_t) 255, 2, -13,
- 0, -15, 8,
- (int8_t) 255, 2, -13,
- 0, -16, 12,
- (int8_t) 255, 13, 5,
- (int8_t) 255, 16, -12,
- (int8_t) 255, -13, -5,
- (int8_t) 255, -16, 12,
- 1
-};
-const int8_t depth2RollingRight9[] = {
- 0, 14, 9,
- (int8_t) 255, -11, 5,
- (int8_t) 255, 16, -12,
- (int8_t) 255, 11, -4,
- (int8_t) 255, -16, 11,
- (int8_t) 255, 8, 13,
- 0, -19, -8,
- (int8_t) 255, 8, 13,
- 0, 8, -25,
- (int8_t) 255, 8, 13,
- 0, 3, -17,
- (int8_t) 255, 8, 12,
- 0, -16, 12,
- (int8_t) 255, -11, 5,
- (int8_t) 255, 16, -12,
- (int8_t) 255, 11, -5,
- (int8_t) 255, -16, 12,
- 1
-};
-const int8_t width2RollingFront9[] = {
- (int8_t) 255, 6, 28,
- (int8_t) 255, 15, -2,
- (int8_t) 255, -6, -27,
- (int8_t) 255, -15, 1,
- (int8_t) 255, -1, 6,
- 0, 7, 22,
- (int8_t) 255, -2, 6,
- 0, 17, -8,
- (int8_t) 255, -2, 5,
- 0, -4, -32,
- (int8_t) 255, -2, 4,
- 0, -14, 3,
- (int8_t) 255, 5, 28,
- (int8_t) 255, 15, -3,
- (int8_t) 255, -6, -28,
- (int8_t) 255, -14, 3,
- 1
-};
-const int8_t width2RollingBack9[] = {
- 0, 17, -3,
- (int8_t) 255, 6, 27,
- (int8_t) 255, -9, -2,
- (int8_t) 255, -6, -27,
- (int8_t) 255, 9, 2,
- (int8_t) 255, 12, -5,
- 0, -6, 32,
- (int8_t) 255, 12, -5,
- 0, -21, 3,
- (int8_t) 255, 12, -6,
- 0, -18, -21,
- (int8_t) 255, 12, -6,
- 0, 9, 3,
- (int8_t) 255, 6, 27,
- (int8_t) 255, -9, -3,
- (int8_t) 255, -6, -27,
- (int8_t) 255, 9, 3,
- 1
-};
-
-const int8_t height2FallingLeft10[] = {
- (int8_t) 255, 13, 4,
- (int8_t) 255, 8, -5,
- (int8_t) 255, -13, -4,
- (int8_t) 255, -8, 5,
- (int8_t) 255, 1, -26,
- 0, 12, 30,
- (int8_t) 255, 1, -26,
- 0, 7, 21,
- (int8_t) 255, 1, -27,
- 0, -14, 23,
- (int8_t) 255, 1, -27,
- 0, -8, 6,
- (int8_t) 255, 13, 4,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -13, -4,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2RisingRight10[] = {
- 0, 6, 28,
- (int8_t) 255, 5, 14,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -5, -14,
- (int8_t) 255, -8, 6,
- (int8_t) 255, 25, -4,
- 0, -20, 18,
- (int8_t) 255, 25, -4,
- 0, -17, -2,
- (int8_t) 255, 25, -4,
- 0, -30, -10,
- (int8_t) 255, 25, -4,
- 0, -8, 6,
- (int8_t) 255, 5, 14,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -5, -14,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2FallingRight10[] = {
- 0, 15, 10,
- (int8_t) 255, -12, 4,
- (int8_t) 255, 8, -6,
- (int8_t) 255, 12, -4,
- (int8_t) 255, -8, 6,
- (int8_t) 255, 12, 27,
- 0, -24, -23,
- (int8_t) 255, 13, 27,
- 0, -5, -33,
- (int8_t) 255, 13, 27,
- 0, -1, -31,
- (int8_t) 255, 12, 27,
- 0, -8, 6,
- (int8_t) 255, -11, 4,
- (int8_t) 255, 8, -6,
- (int8_t) 255, 11, -4,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2RisingLeft10[] = {
- 0, 0, -13,
- (int8_t) 255, 0, 13,
- (int8_t) 255, 8, -5,
- (int8_t) 255, -1, -14,
- (int8_t) 255, -7, 6,
- (int8_t) 255, 25, 4,
- 0, -25, 9,
- (int8_t) 255, 27, 4,
- 0, -19, -9,
- (int8_t) 255, 27, 4,
- 0, -28, -18,
- (int8_t) 255, 26, 4,
- 0, -8, 6,
- (int8_t) 255, 2, 13,
- (int8_t) 255, 8, -5,
- (int8_t) 255, -2, -14,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2FallingBack10[] = {
- 0, 18, -3,
- (int8_t) 255, 3, 13,
- (int8_t) 255, -10, -2,
- (int8_t) 255, -3, -13,
- (int8_t) 255, 10, 2,
- (int8_t) 255, 23, -12,
- 0, -20, 25,
- (int8_t) 255, 23, -11,
- 0, -33, 9,
- (int8_t) 255, 22, -11,
- 0, -25, -2,
- (int8_t) 255, 22, -12,
- 0, 11, 2,
- (int8_t) 255, 3, 14,
- (int8_t) 255, -11, -2,
- (int8_t) 255, -3, -14,
- (int8_t) 255, 11, 2,
- 1
-};
-const int8_t height2RisingFront10[] = {
- 0, -5, 6,
- (int8_t) 255, 3, 14,
- (int8_t) 255, 5, -6,
- (int8_t) 255, -3, -14,
- (int8_t) 255, -5, 6,
- (int8_t) 255, 27, -2,
- 0, -24, 16,
- (int8_t) 255, 27, -2,
- 0, -22, -4,
- (int8_t) 255, 28, -2,
- 0, -31, -12,
- (int8_t) 255, 28, -1,
- 0, -6, 5,
- (int8_t) 255, 3, 14,
- (int8_t) 255, 6, -6,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -6, 5,
- 1
-};
-const int8_t height2FallingFront10[] = {
- (int8_t) 255, 3, 14,
- (int8_t) 255, 15, -2,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -15, 1,
- (int8_t) 255, -8, 12,
- 0, 11, 2,
- (int8_t) 255, -8, 12,
- 0, 23, -14,
- (int8_t) 255, -9, 12,
- 0, 6, -25,
- (int8_t) 255, -9, 11,
- 0, -14, 2,
- (int8_t) 255, 3, 14,
- (int8_t) 255, 14, -2,
- (int8_t) 255, -3, -14,
- (int8_t) 255, -14, 2,
- 1
-};
-const int8_t height2RisingBack10[] = {
- 0, 16, -11,
- (int8_t) 255, 3, 13,
- (int8_t) 255, 10, -5,
- (int8_t) 255, -3, -14,
- (int8_t) 255, -10, 6,
- (int8_t) 255, 24, 2,
- 0, -21, 11,
- (int8_t) 255, 24, 2,
- 0, -14, -7,
- (int8_t) 255, 23, 2,
- 0, -26, -16,
- (int8_t) 255, 23, 2,
- 0, -9, 6,
- (int8_t) 255, 3, 13,
- (int8_t) 255, 9, -5,
- (int8_t) 255, -3, -14,
- (int8_t) 255, -9, 6,
- 1
-};
-const int8_t depth2RollingLeft10[] = {
- (int8_t) 255, 13, 4,
- (int8_t) 255, 16, -11,
- (int8_t) 255, -13, -4,
- (int8_t) 255, -16, 11,
- (int8_t) 255, 0, -13,
- 0, 13, 17,
- (int8_t) 255, 1, -13,
- 0, 15, 2,
- (int8_t) 255, 1, -14,
- 0, -14, 10,
- (int8_t) 255, 0, -14,
- 0, -16, 12,
- (int8_t) 255, 14, 4,
- (int8_t) 255, 16, -12,
- (int8_t) 255, -14, -4,
- (int8_t) 255, -16, 12,
- 1
-};
-const int8_t depth2RollingRight10[] = {
- 0, 15, 10,
- (int8_t) 255, -12, 4,
- (int8_t) 255, 16, -12,
- (int8_t) 255, 12, -3,
- (int8_t) 255, -16, 11,
- (int8_t) 255, 6, 14,
- 0, -18, -10,
- (int8_t) 255, 6, 14,
- 0, 10, -26,
- (int8_t) 255, 6, 14,
- 0, 6, -17,
- (int8_t) 255, 6, 13,
- 0, -16, 12,
- (int8_t) 255, -12, 4,
- (int8_t) 255, 16, -12,
- (int8_t) 255, 12, -4,
- (int8_t) 255, -16, 12,
- 1
-};
-const int8_t width2RollingFront10[] = {
- (int8_t) 255, 6, 28,
- (int8_t) 255, 15, -2,
- (int8_t) 255, -6, -27,
- (int8_t) 255, -15, 1,
- (int8_t) 255, -3, 6,
- 0, 9, 22,
- (int8_t) 255, -4, 6,
- 0, 19, -8,
- (int8_t) 255, -5, 6,
- 0, -1, -33,
- (int8_t) 255, -5, 5,
- 0, -13, 2,
- (int8_t) 255, 5, 28,
- (int8_t) 255, 14, -2,
- (int8_t) 255, -6, -28,
- (int8_t) 255, -13, 2,
- 1
-};
-const int8_t width2RollingBack10[] = {
- 0, 18, -3,
- (int8_t) 255, 6, 27,
- (int8_t) 255, -10, -2,
- (int8_t) 255, -6, -27,
- (int8_t) 255, 10, 2,
- (int8_t) 255, 12, -6,
- 0, -6, 33,
- (int8_t) 255, 12, -6,
- 0, -22, 4,
- (int8_t) 255, 11, -6,
- 0, -17, -21,
- (int8_t) 255, 11, -6,
- 0, 11, 2,
- (int8_t) 255, 6, 27,
- (int8_t) 255, -11, -2,
- (int8_t) 255, -6, -27,
- (int8_t) 255, 11, 2,
- 1
-};
-
-const int8_t height2FallingLeft11[] = {
- (int8_t) 255, 13, 2,
- (int8_t) 255, 8, -5,
- (int8_t) 255, -13, -2,
- (int8_t) 255, -8, 5,
- (int8_t) 255, -2, -27,
- 0, 15, 29,
- (int8_t) 255, -2, -27,
- 0, 10, 22,
- (int8_t) 255, -2, -28,
- 0, -11, 26,
- (int8_t) 255, -3, -28,
- 0, -7, 6,
- (int8_t) 255, 13, 2,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -14, -2,
- (int8_t) 255, -7, 6,
- 1
-};
-const int8_t height2RisingRight11[] = {
- 0, 6, 28,
- (int8_t) 255, 3, 14,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -3, -14,
- (int8_t) 255, -8, 6,
- (int8_t) 255, 26, 0,
- 0, -23, 14,
- (int8_t) 255, 26, 0,
- 0, -18, -6,
- (int8_t) 255, 26, 0,
- 0, -29, -14,
- (int8_t) 255, 26, 0,
- 0, -8, 6,
- (int8_t) 255, 3, 14,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -3, -14,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2FallingRight11[] = {
- 0, 15, 12,
- (int8_t) 255, -12, 2,
- (int8_t) 255, 8, -6,
- (int8_t) 255, 12, -2,
- (int8_t) 255, -8, 6,
- (int8_t) 255, 10, 28,
- 0, -22, -26,
- (int8_t) 255, 9, 28,
- 0, -1, -34,
- (int8_t) 255, 9, 28,
- 0, 3, -30,
- (int8_t) 255, 10, 28,
- 0, -8, 6,
- (int8_t) 255, -13, 2,
- (int8_t) 255, 8, -6,
- (int8_t) 255, 13, -2,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2RisingLeft11[] = {
- 0, -2, -13,
- (int8_t) 255, 2, 13,
- (int8_t) 255, 8, -5,
- (int8_t) 255, -3, -14,
- (int8_t) 255, -7, 6,
- (int8_t) 255, 25, 0,
- 0, -23, 13,
- (int8_t) 255, 26, 0,
- 0, -18, -5,
- (int8_t) 255, 26, 0,
- 0, -29, -14,
- (int8_t) 255, 26, 0,
- 0, -8, 6,
- (int8_t) 255, 3, 13,
- (int8_t) 255, 8, -5,
- (int8_t) 255, -3, -14,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2FallingBack11[] = {
- 0, 20, -4,
- (int8_t) 255, 3, 13,
- (int8_t) 255, -12, -1,
- (int8_t) 255, -3, -13,
- (int8_t) 255, 12, 1,
- (int8_t) 255, 19, -12,
- 0, -16, 25,
- (int8_t) 255, 19, -11,
- 0, -31, 10,
- (int8_t) 255, 19, -11,
- 0, -22, -2,
- (int8_t) 255, 19, -12,
- 0, 12, 1,
- (int8_t) 255, 3, 14,
- (int8_t) 255, -12, -1,
- (int8_t) 255, -3, -14,
- (int8_t) 255, 12, 1,
- 1
-};
-const int8_t height2RisingFront11[] = {
- 0, -7, 6,
- (int8_t) 255, 3, 14,
- (int8_t) 255, 7, -6,
- (int8_t) 255, -3, -14,
- (int8_t) 255, -7, 6,
- (int8_t) 255, 25, 0,
- 0, -22, 14,
- (int8_t) 255, 25, 0,
- 0, -18, -6,
- (int8_t) 255, 26, 0,
- 0, -29, -14,
- (int8_t) 255, 26, 0,
- 0, -8, 6,
- (int8_t) 255, 3, 14,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -3, -14,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2FallingFront11[] = {
- (int8_t) 255, 3, 14,
- (int8_t) 255, 14, -1,
- (int8_t) 255, -3, -13,
- (int8_t) 255, -14, 0,
- (int8_t) 255, -11, 12,
- 0, 14, 2,
- (int8_t) 255, -11, 12,
- 0, 25, -13,
- (int8_t) 255, -13, 12,
- 0, 10, -25,
- (int8_t) 255, -13, 11,
- 0, -12, 1,
- (int8_t) 255, 3, 14,
- (int8_t) 255, 12, -1,
- (int8_t) 255, -3, -14,
- (int8_t) 255, -12, 1,
- 1
-};
-const int8_t height2RisingBack11[] = {
- 0, 16, -11,
- (int8_t) 255, 3, 13,
- (int8_t) 255, 8, -5,
- (int8_t) 255, -3, -14,
- (int8_t) 255, -8, 6,
- (int8_t) 255, 26, 0,
- 0, -23, 13,
- (int8_t) 255, 26, 0,
- 0, -18, -5,
- (int8_t) 255, 26, 0,
- 0, -29, -14,
- (int8_t) 255, 26, 0,
- 0, -8, 6,
- (int8_t) 255, 3, 13,
- (int8_t) 255, 8, -5,
- (int8_t) 255, -3, -14,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t depth2RollingLeft11[] = {
- (int8_t) 255, 13, 2,
- (int8_t) 255, 16, -11,
- (int8_t) 255, -13, -2,
- (int8_t) 255, -16, 11,
- (int8_t) 255, 0, -13,
- 0, 13, 15,
- (int8_t) 255, -1, -13,
- 0, 17, 2,
- (int8_t) 255, -1, -14,
- 0, -12, 12,
- (int8_t) 255, -1, -14,
- 0, -15, 12,
- (int8_t) 255, 12, 2,
- (int8_t) 255, 16, -12,
- (int8_t) 255, -13, -2,
- (int8_t) 255, -15, 12,
- 1
-};
-const int8_t depth2RollingRight11[] = {
- 0, 15, 12,
- (int8_t) 255, -12, 2,
- (int8_t) 255, 16, -12,
- (int8_t) 255, 12, -2,
- (int8_t) 255, -16, 12,
- (int8_t) 255, 5, 14,
- 0, -17, -12,
- (int8_t) 255, 5, 14,
- 0, 11, -26,
- (int8_t) 255, 5, 14,
- 0, 7, -16,
- (int8_t) 255, 5, 14,
- 0, -16, 12,
- (int8_t) 255, -12, 2,
- (int8_t) 255, 16, -12,
- (int8_t) 255, 12, -2,
- (int8_t) 255, -16, 12,
- 1
-};
-const int8_t width2RollingFront11[] = {
- (int8_t) 255, 6, 28,
- (int8_t) 255, 14, -1,
- (int8_t) 255, -6, -27,
- (int8_t) 255, -14, 0,
- (int8_t) 255, -5, 6,
- 0, 11, 22,
- (int8_t) 255, -6, 6,
- 0, 20, -7,
- (int8_t) 255, -6, 6,
- 0, 0, -33,
- (int8_t) 255, -6, 5,
- 0, -13, 1,
- (int8_t) 255, 5, 28,
- (int8_t) 255, 14, -1,
- (int8_t) 255, -6, -28,
- (int8_t) 255, -13, 1,
- 1
-};
-const int8_t width2RollingBack11[] = {
- 0, 20, -4,
- (int8_t) 255, 6, 27,
- (int8_t) 255, -12, -1,
- (int8_t) 255, -6, -27,
- (int8_t) 255, 12, 1,
- (int8_t) 255, 9, -6,
- 0, -3, 33,
- (int8_t) 255, 9, -6,
- 0, -21, 5,
- (int8_t) 255, 10, -6,
- 0, -16, -21,
- (int8_t) 255, 10, -6,
- 0, 11, 1,
- (int8_t) 255, 6, 27,
- (int8_t) 255, -11, -1,
- (int8_t) 255, -6, -27,
- (int8_t) 255, 11, 1,
- 1
-};
-
-const int8_t height2FallingLeft12[] = {
- (int8_t) 255, 13, 0,
- (int8_t) 255, 8, -5,
- (int8_t) 255, -13, 0,
- (int8_t) 255, -8, 5,
- (int8_t) 255, -5, -27,
- 0, 18, 27,
- (int8_t) 255, -6, -27,
- 0, 14, 22,
- (int8_t) 255, -6, -28,
- 0, -7, 28,
- (int8_t) 255, -6, -28,
- 0, -7, 6,
- (int8_t) 255, 12, 0,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -13, 0,
- (int8_t) 255, -7, 6,
- 1
-};
-const int8_t height2RisingRight12[] = {
- 0, 6, 28,
- (int8_t) 255, 1, 14,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -1, -14,
- (int8_t) 255, -8, 6,
- (int8_t) 255, 27, 4,
- 0, -26, 10,
- (int8_t) 255, 27, 4,
- 0, -19, -10,
- (int8_t) 255, 27, 4,
- 0, -28, -18,
- (int8_t) 255, 27, 4,
- 0, -8, 6,
- (int8_t) 255, 1, 14,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -1, -14,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2FallingRight12[] = {
- 0, 16, 14,
- (int8_t) 255, -13, 0,
- (int8_t) 255, 8, -6,
- (int8_t) 255, 13, 0,
- (int8_t) 255, -8, 6,
- (int8_t) 255, 6, 28,
- 0, -19, -28,
- (int8_t) 255, 6, 28,
- 0, 2, -34,
- (int8_t) 255, 6, 28,
- 0, 7, -28,
- (int8_t) 255, 6, 28,
- 0, -8, 6,
- (int8_t) 255, -13, 0,
- (int8_t) 255, 8, -6,
- (int8_t) 255, 13, 0,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2RisingLeft12[] = {
- 0, -4, -13,
- (int8_t) 255, 4, 13,
- (int8_t) 255, 8, -5,
- (int8_t) 255, -5, -14,
- (int8_t) 255, -7, 6,
- (int8_t) 255, 24, -4,
- 0, -20, 17,
- (int8_t) 255, 25, -3,
- 0, -17, -2,
- (int8_t) 255, 25, -4,
- 0, -30, -10,
- (int8_t) 255, 25, -4,
- 0, -8, 6,
- (int8_t) 255, 5, 14,
- (int8_t) 255, 8, -6,
- (int8_t) 255, -5, -14,
- (int8_t) 255, -8, 6,
- 1
-};
-const int8_t height2FallingBack12[] = {
- 0, 21, -5,
- (int8_t) 255, 3, 13,
- (int8_t) 255, -13, 0,
- (int8_t) 255, -3, -13,
- (int8_t) 255, 13, 0,
- (int8_t) 255, 16, -12,
- 0, -13, 25,
- (int8_t) 255, 16, -11,
- 0, -29, 11,
- (int8_t) 255, 16, -11,
- 0, -19, -2,
- (int8_t) 255, 16, -12,
- 0, 13, 0,
- (int8_t) 255, 3, 14,
- (int8_t) 255, -13, 0,
- (int8_t) 255, -3, -14,
- (int8_t) 255, 13, 0,
- 1
-};
-const int8_t height2RisingFront12[] = {
- 0, -9, 6,
- (int8_t) 255, 3, 14,
- (int8_t) 255, 9, -6,
- (int8_t) 255, -3, -14,
- (int8_t) 255, -9, 6,
- (int8_t) 255, 23, 2,
- 0, -20, 12,
- (int8_t) 255, 23, 2,
- 0, -14, -8,
- (int8_t) 255, 24, 2,
- 0, -27, -16,
- (int8_t) 255, 24, 2,
- 0, -10, 6,
- (int8_t) 255, 3, 14,
- (int8_t) 255, 10, -6,
- (int8_t) 255, -3, -14,
- (int8_t) 255, -10, 6,
- 1
-};
-const int8_t height2FallingFront12[] = {
- (int8_t) 255, 3, 14,
- (int8_t) 255, 13, 0,
- (int8_t) 255, -3, -14,
- (int8_t) 255, -13, 0,
- (int8_t) 255, -15, 12,
- 0, 18, 2,
- (int8_t) 255, -15, 12,
- 0, 28, -12,
- (int8_t) 255, -16, 12,
- 0, 13, -26,
- (int8_t) 255, -15, 12,
- 0, -13, 0,
- (int8_t) 255, 3, 14,
- (int8_t) 255, 12, 0,
- (int8_t) 255, -2, -14,
- (int8_t) 255, -13, 0,
- 1
-};
-const int8_t height2RisingBack12[] = {
- 0, 16, -11,
- (int8_t) 255, 3, 13,
- (int8_t) 255, 6, -5,
- (int8_t) 255, -3, -14,
- (int8_t) 255, -6, 6,
- (int8_t) 255, 28, -2,
- 0, -25, 15,
- (int8_t) 255, 28, -2,
- 0, -22, -3,
- (int8_t) 255, 28, -2,
- 0, -31, -12,
- (int8_t) 255, 28, -2,
- 0, -6, 6,
- (int8_t) 255, 3, 13,
- (int8_t) 255, 6, -5,
- (int8_t) 255, -3, -14,
- (int8_t) 255, -6, 6,
- 1
-};
-const int8_t depth2RollingLeft12[] = {
- (int8_t) 255, 13, 0,
- (int8_t) 255, 16, -11,
- (int8_t) 255, -13, 0,
- (int8_t) 255, -16, 11,
- (int8_t) 255, -2, -13,
- 0, 15, 13,
- (int8_t) 255, -3, -13,
- 0, 19, 2,
- (int8_t) 255, -3, -14,
- 0, -10, 14,
- (int8_t) 255, -3, -14,
- 0, -15, 12,
- (int8_t) 255, 12, 0,
- (int8_t) 255, 16, -12,
- (int8_t) 255, -13, 0,
- (int8_t) 255, -15, 12,
- 1
-};
-const int8_t depth2RollingRight12[] = {
- 0, 16, 14,
- (int8_t) 255, -13, 0,
- (int8_t) 255, 16, -12,
- (int8_t) 255, 13, 0,
- (int8_t) 255, -16, 12,
- (int8_t) 255, 3, 14,
- 0, -16, -14,
- (int8_t) 255, 3, 14,
- 0, 13, -26,
- (int8_t) 255, 3, 14,
- 0, 10, -14,
- (int8_t) 255, 3, 14,
- 0, -16, 12,
- (int8_t) 255, -13, 0,
- (int8_t) 255, 16, -12,
- (int8_t) 255, 13, 0,
- (int8_t) 255, -16, 12,
- 1
-};
-const int8_t width2RollingFront12[] = {
- (int8_t) 255, 6, 28,
- (int8_t) 255, 13, 0,
- (int8_t) 255, -6, -28,
- (int8_t) 255, -13, 0,
- (int8_t) 255, -7, 6,
- 0, 13, 22,
- (int8_t) 255, -7, 6,
- 0, 20, -6,
- (int8_t) 255, -8, 6,
- 0, 2, -34,
- (int8_t) 255, -8, 6,
- 0, -12, 0,
- (int8_t) 255, 6, 28,
- (int8_t) 255, 12, 0,
- (int8_t) 255, -6, -28,
- (int8_t) 255, -12, 0,
- 1
-};
-const int8_t width2RollingBack12[] = {
- 0, 21, -5,
- (int8_t) 255, 6, 27,
- (int8_t) 255, -13, 0,
- (int8_t) 255, -6, -27,
- (int8_t) 255, 13, 0,
- (int8_t) 255, 8, -6,
- 0, -2, 33,
- (int8_t) 255, 8, -6,
- 0, -21, 6,
- (int8_t) 255, 8, -6,
- 0, -14, -21,
- (int8_t) 255, 8, -6,
- 0, 13, 0,
- (int8_t) 255, 6, 27,
- (int8_t) 255, -13, 0,
- (int8_t) 255, -6, -27,
- (int8_t) 255, 13, 0,
- 1
-};
-const int8_t* height2FallingLeft[] __attribute__ ((section(".text"))) = {
- height2FallingLeft0,
- height2FallingLeft1,
- height2FallingLeft2,
- height2FallingLeft3,
- height2FallingLeft4,
- height2FallingLeft5,
- height2FallingLeft6,
- height2FallingLeft7,
- height2FallingLeft8,
- height2FallingLeft9,
- height2FallingLeft10,
- height2FallingLeft11,
-};
-const int8_t* height2RisingRight[] __attribute__ ((section(".text"))) = {
- height2RisingRight0,
- height2RisingRight1,
- height2RisingRight2,
- height2RisingRight3,
- height2RisingRight4,
- height2RisingRight5,
- height2RisingRight6,
- height2RisingRight7,
- height2RisingRight8,
- height2RisingRight9,
- height2RisingRight10,
- height2RisingRight11,
-};
-const int8_t* height2FallingRight[] __attribute__ ((section(".text"))) = {
- height2FallingRight0,
- height2FallingRight1,
- height2FallingRight2,
- height2FallingRight3,
- height2FallingRight4,
- height2FallingRight5,
- height2FallingRight6,
- height2FallingRight7,
- height2FallingRight8,
- height2FallingRight9,
- height2FallingRight10,
- height2FallingRight11,
-};
-const int8_t* height2RisingLeft[] __attribute__ ((section(".text"))) = {
- height2RisingLeft0,
- height2RisingLeft1,
- height2RisingLeft2,
- height2RisingLeft3,
- height2RisingLeft4,
- height2RisingLeft5,
- height2RisingLeft6,
- height2RisingLeft7,
- height2RisingLeft8,
- height2RisingLeft9,
- height2RisingLeft10,
- height2RisingLeft11,
-};
-const int8_t* height2FallingBack[] __attribute__ ((section(".text"))) = {
- height2FallingBack0,
- height2FallingBack1,
- height2FallingBack2,
- height2FallingBack3,
- height2FallingBack4,
- height2FallingBack5,
- height2FallingBack6,
- height2FallingBack7,
- height2FallingBack8,
- height2FallingBack9,
- height2FallingBack10,
- height2FallingBack11,
-};
-const int8_t* height2RisingFront[] __attribute__ ((section(".text"))) = {
- height2RisingFront0,
- height2RisingFront1,
- height2RisingFront2,
- height2RisingFront3,
- height2RisingFront4,
- height2RisingFront5,
- height2RisingFront6,
- height2RisingFront7,
- height2RisingFront8,
- height2RisingFront9,
- height2RisingFront10,
- height2RisingFront11,
-};
-const int8_t* height2FallingFront[] __attribute__ ((section(".text"))) = {
- height2FallingFront0,
- height2FallingFront1,
- height2FallingFront2,
- height2FallingFront3,
- height2FallingFront4,
- height2FallingFront5,
- height2FallingFront6,
- height2FallingFront7,
- height2FallingFront8,
- height2FallingFront9,
- height2FallingFront10,
- height2FallingFront11,
-};
-const int8_t* height2RisingBack[] __attribute__ ((section(".text"))) = {
- height2RisingBack0,
- height2RisingBack1,
- height2RisingBack2,
- height2RisingBack3,
- height2RisingBack4,
- height2RisingBack5,
- height2RisingBack6,
- height2RisingBack7,
- height2RisingBack8,
- height2RisingBack9,
- height2RisingBack10,
- height2RisingBack11,
-};
-const int8_t* depth2RollingLeft[] __attribute__ ((section(".text"))) = {
- depth2RollingLeft0,
- depth2RollingLeft1,
- depth2RollingLeft2,
- depth2RollingLeft3,
- depth2RollingLeft4,
- depth2RollingLeft5,
- depth2RollingLeft6,
- depth2RollingLeft7,
- depth2RollingLeft8,
- depth2RollingLeft9,
- depth2RollingLeft10,
- depth2RollingLeft11,
-};
-const int8_t* depth2RollingRight[] __attribute__ ((section(".text"))) = {
- depth2RollingRight0,
- depth2RollingRight1,
- depth2RollingRight2,
- depth2RollingRight3,
- depth2RollingRight4,
- depth2RollingRight5,
- depth2RollingRight6,
- depth2RollingRight7,
- depth2RollingRight8,
- depth2RollingRight9,
- depth2RollingRight10,
- depth2RollingRight11,
-};
-const int8_t* width2RollingFront[] __attribute__ ((section(".text"))) = {
- width2RollingFront0,
- width2RollingFront1,
- width2RollingFront2,
- width2RollingFront3,
- width2RollingFront4,
- width2RollingFront5,
- width2RollingFront6,
- width2RollingFront7,
- width2RollingFront8,
- width2RollingFront9,
- width2RollingFront10,
- width2RollingFront11,
-};
-const int8_t* width2RollingBack[] __attribute__ ((section(".text"))) = {
- width2RollingBack0,
- width2RollingBack1,
- width2RollingBack2,
- width2RollingBack3,
- width2RollingBack4,
- width2RollingBack5,
- width2RollingBack6,
- width2RollingBack7,
- width2RollingBack8,
- width2RollingBack9,
- width2RollingBack10,
- width2RollingBack11,
-};
-# 30 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.c" 2
-# 38 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.c"
+void swapSplit();
+# 30 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c" 2
+# 38 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c"
 extern void* memcpy (void* dest, const void* src, long unsigned int len);
-# 48 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.c"
-static inline __attribute__((always_inline)) void positd (int8_t x, int8_t y)
-{
- dp_VIA_t1_cnt_lo = 0x80;
- Moveto_d(y,x);
-}
-static inline __attribute__((always_inline)) void Draw_VLp_80(void* const x)
-{
- dp_VIA_t1_cnt_lo = 0x80;
- Draw_VLp(x);
-}
-# 85 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.c"
+# 66 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c"
 extern void picWrite(uint8_t b);
 extern uint8_t picRead();
 extern void delay10ms();
@@ -5333,25 +2144,6 @@ const uint8_t movingMusic[] = {
 
 const uint8_t* currentMusic = startMusic;
 
-enum BlockOrientation_t {
- Standing,
- Vertical,
- Horizontal
-};
-
-enum BlockOrientation_t blockOrientation;
-int8_t blockX;
-int8_t blockY;
-
-const int8_t** blockAnimation;
-const int8_t** nextBlockAnimation;
-int8_t blockAnimationStep;
-int8_t blockAnimating;
-int8_t nextBlockX;
-int8_t nextBlockY;
-int8_t lastBlockDirection;
-int8_t blockYOfs;
-
 uint8_t* vecx = (uint8_t*) 0x8000;
 
 enum GameState_t {
@@ -5363,10 +2155,6 @@ enum GameState_t {
  BlockFalling,
  BlockMovingAtEnd,
 } gameState;
-
-enum BlockDirection_t {
- Left, Up, Right, Down
-};
 
 void runtimeError(char* msg)
 {
@@ -5380,6 +2168,7 @@ void runtimeError(char* msg)
 
 uint8_t sendCommand(uint8_t cmd, uint8_t arg)
 {
+return 0;
  uint8_t result;
  picWrite('V');
  picWrite(cmd);
@@ -5437,102 +2226,7 @@ void changeMusic(const uint8_t* music)
 
 void moveBlock(enum BlockDirection_t move)
 {
- blockAnimating = 1;
- lastBlockDirection = move;
- switch (blockOrientation) {
-  case Standing:
-          switch (move) {
-           case Left:
-               blockAnimation = height2FallingLeft;
-                nextBlockAnimation = width2RollingFront;
-                nextBlockX = blockX - 2;
-                nextBlockY = blockY;
-                blockOrientation = Horizontal;
-                break;
-           case Right:
-                blockAnimation = height2FallingRight;
-                nextBlockAnimation = width2RollingFront;
-                nextBlockX = blockX + 1;
-                nextBlockY = blockY;
-                blockOrientation = Horizontal;
-                break;
-           case Up:
-                blockAnimation = height2FallingBack;
-                nextBlockAnimation = depth2RollingLeft;
-                nextBlockX = blockX;
-                nextBlockY = blockY + 1;
-                blockOrientation = Vertical;
-                break;
-           case Down:
-                blockAnimation = height2FallingFront;
-                nextBlockAnimation = depth2RollingLeft;
-                nextBlockX = blockX;
-                nextBlockY = blockY - 2;
-                blockOrientation = Vertical;
-                break;
-          }
-          break;
-  case Vertical:
-          switch (move) {
-           case Left:
-               blockAnimation = depth2RollingLeft;
-               nextBlockAnimation = depth2RollingLeft;
-               nextBlockX = blockX - 1;
-               nextBlockY = blockY;
-               break;
-           case Right:
-               blockAnimation = depth2RollingRight;
-               nextBlockAnimation = depth2RollingLeft;
-               nextBlockX = blockX + 1;
-               nextBlockY = blockY;
-               break;
-           case Up:
-               blockAnimation = height2RisingBack;
-               nextBlockAnimation = height2FallingFront;
-               nextBlockX = blockX;
-               nextBlockY = blockY + 2;
-               blockOrientation = Standing;
-               break;
-           case Down:
-               blockAnimation = height2RisingFront;
-               nextBlockAnimation = height2FallingFront;
-               nextBlockX = blockX;
-               nextBlockY = blockY - 1;
-               blockOrientation = Standing;
-               break;
-          }
-          break;
-  case Horizontal:
-          switch (move) {
-           case Left:
-               blockAnimation = height2RisingLeft;
-               nextBlockAnimation = height2FallingRight;
-               nextBlockX = blockX - 1;
-               nextBlockY = blockY;
-               blockOrientation = Standing;
-               break;
-           case Right:
-               blockAnimation = height2RisingRight;
-               nextBlockAnimation = height2FallingLeft;
-               nextBlockX = blockX + 2;
-               nextBlockY = blockY;
-               blockOrientation = Standing;
-               break;
-           case Up:
-               blockAnimation = width2RollingBack;
-               nextBlockAnimation = width2RollingBack;
-               nextBlockX = blockX;
-               nextBlockY = blockY + 1;
-               break;
-           case Down:
-               blockAnimation = width2RollingFront;
-               nextBlockAnimation = width2RollingBack;
-               nextBlockX = blockX;
-               nextBlockY = blockY - 1;
-               break;
-          }
-          break;
- }
+ moveBlockImpl(move);
  if (moveCount < 999) moveCount++;
  updateInfoText();
 }
@@ -5543,7 +2237,7 @@ void startBlockFalling()
  blockYOfs = 0;
  moveBlock(lastBlockDirection);
  changeMusic(fallingMusic);
- *vecx = 0;
+
 }
 
 void startLevel()
@@ -5556,14 +2250,11 @@ void startLevel()
  initLevel();
  blockX = level->start.x;
  blockY = level->start.y;
- blockAnimation = height2FallingLeft;
- blockAnimationStep = 0;
- blockAnimating = 0;
- blockOrientation = Standing;
+ blockStartLevel();
  blockYOfs = -30;
  gameState = BlockMovingToStart;
  changeMusic(startMusic);
- *vecx = 2;
+
  moveCount = 0;
  updateInfoText();
 }
@@ -5573,7 +2264,7 @@ void __attribute__((noinline)) drawField()
 
 
  Intensity_a(0x35);
-# 412 "/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/bloxorz.c"
+# 273 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c"
  asm("	pshs a, b, dp, x, u");
  asm("	lda #0xd0");
  asm("	tfr a, dp");
@@ -5602,16 +2293,6 @@ void __attribute__((noinline)) drawField()
  asm("	bne drawFieldLoop");
  asm("	puls a, b, dp, x, u");
 
-}
-
-void drawBlock(int8_t yofs)
-{
- Reset0Ref();
- Intensity_a(0x63);
- positd(0, yofs);
-
- positd(x3d(blockX, blockY), y3d(blockX, 0, blockY));
- Draw_VLp_80((void*)(blockAnimation[blockAnimationStep]));
 }
 
 void blockMovingToStart()
@@ -5644,7 +2325,7 @@ void blockWaiting()
  }
  if (gameState == BlockMoving) {
   changeMusic(movingMusic);
-  *vecx = 3;
+
  }
 
      Read_Btns();
@@ -5653,19 +2334,11 @@ void blockWaiting()
   if (levelNumber >= levelCount) levelNumber = 0;
       startLevel();
      }
-}
-
-void doBlockAnimation()
-{
- if (blockAnimating) {
-  if (++blockAnimationStep == 12) {
-   blockX = nextBlockX;
-   blockY = nextBlockY;
-   blockAnimationStep = 0;
-   blockAnimation = nextBlockAnimation;
-   blockAnimating = 0;
+     if (Vec_Buttons & 2) {
+  if (splitMode) {
+   swapSplit();
   }
- }
+     }
 }
 
 void blockMoving()
@@ -5700,11 +2373,11 @@ void blockMoving()
   }
 
 
-  if (blockOrientation == Standing && blockX == endX && blockY == endY) {
+  if (blockOrientation == Standing && blockX == endX && blockY == endY && !splitMode) {
    blockYOfs = 0;
    gameState = BlockMovingAtEnd;
    changeMusic(levelEndMusic);
-   *vecx = 1;
+
   } else {
 
    if (gameState != BlockFalling) {
@@ -5715,7 +2388,7 @@ void blockMoving()
 
   switch (blockOrientation) {
    case Standing:
-   if (f0 == 's' || f0 == 'h') {
+   if (f0 == 's' || f0 == 'h' || f0 == 'v') {
     swatchSwitch(blockX, blockY);
    }
    break;
@@ -5737,6 +2410,10 @@ void blockMoving()
    break;
   }
 
+
+  if (splitMode) {
+   testMerge();
+  }
  }
 }
 
@@ -5859,7 +2536,7 @@ void showInfo()
 
 int main()
 {
- *vecx = 4;
+
 
 
  picAvailable = 0;

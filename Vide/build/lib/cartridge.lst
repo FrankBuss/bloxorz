@@ -8,10 +8,10 @@
                               8 ;  GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
                               9 ;  options passed:  -O1 -fverbose-asm -W -Wall -Wextra -Wconversion -Werror
                              10 ;  -fomit-frame-pointer -mint8 -msoft-reg-count=0 -std=gnu99
-                             11 ;  -fno-time-report -I/home/frank/bin/Vide2.02/Vide/C/PeerC/vectrex/include
+                             11 ;  -fno-time-report -I/home/frank/bin/Vide/C/PeerC/vectrex/include
                              12 ;  -D__RUM_INLINE=1 -DOMMIT_FRAMEPOINTER=1
-                             13 ;  -I/home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/include
-                             14 ;  /home/frank/bin/Vide2.02/Vide/../../../data/projects/bloxorz/Vide/source/cartridge.enr.c
+                             13 ;  -I/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/include
+                             14 ;  /home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/cartridge.enr.c
                              15 ;  options enabled:  -falign-loops -fargument-alias -fauto-inc-dec
                              16 ;  -fbranch-count-reg -fcommon -fcprop-registers -fdefer-pop
                              17 ;  -fearly-inlining -feliminate-unused-debug-types -ffunction-cse -fgcse-lm
@@ -42,7 +42,7 @@
    0006 32                   42 	.byte	0x32
    0007 30                   43 	.byte	0x30
    0008 31                   44 	.byte	0x31
-   0009 38                   45 	.byte	0x38
+   0009 39                   45 	.byte	0x39
    000A 80                   46 	.byte	0x80
                              47 ;  music:
    000B 00 00                48 	.word	_Vec_Music_1

@@ -1,6 +1,5 @@
 #include "level.h"
-
-// TODO: v, split block
+#include "block.h"
 
 #define MAX_LINES 120
 uint8_t swatchesOn[19];
@@ -13,7 +12,7 @@ int8_t endX = 0;
 int8_t endY = 0;
 
 const struct Level* level;
-uint8_t levelNumber = 0;
+uint8_t levelNumber = 7;
 
 extern void runtimeError(char* msg);
 
@@ -68,12 +67,13 @@ uint8_t isField(int8_t x, int8_t y)
         }
     }
 
-    // normal field test
-    return (uint8_t) (c == 'b' || c == 'e' || c == 's' || c == 'h' || c == 'f');
+    // normal and split field test
+    return (uint8_t) (c == 'b' || c == 'e' || c == 's' || c == 'h' || c == 'f' || c == 'v');
 }
 
 void swatchSwitch(int8_t x, int8_t y)
 {
+	if (splitMode) return;
     for (uint8_t i = 0; i < level->swatches_count; i++) {
         const struct Swatch* swatch = level->swatches[i];
 		if (swatch->position.x == x && swatch->position.y == y) {
@@ -90,6 +90,15 @@ void swatchSwitch(int8_t x, int8_t y)
 					break;
 				case SWATCH_FIELD_ACTION_OFF:
 					setSwatchField(xf, yf, 0);
+					break;
+				case SWATCH_FIELD_ACTION_SPLIT1:
+					blockX = xf;
+					blockY = yf;
+					setSplitMode();
+					break;
+				case SWATCH_FIELD_ACTION_SPLIT2:
+					blockX2 = xf;
+					blockY2 = yf;
 					break;
                 }
             }
@@ -131,6 +140,19 @@ void addLineImpl(int8_t x0, int8_t y0, int8_t x1, int8_t y1, uint8_t half)
     }
 }
 
+void addSplit(int8_t x0, int8_t y0)
+{
+    lineX0[lineCount] = x3d(x0, y0) + 6;
+    lineY0[lineCount] = y3d(x0, 0, y0) + 3;
+    lineX1[lineCount] = x3d(x0, y0 + 1) + 8;
+    lineY1[lineCount] = y3d(x0, 0, y0 + 1) + 0;
+
+    lineCount++;
+    if (lineCount >= MAX_LINES) {
+        runtimeError("TOO MANY LINES\x80");
+    }
+}
+
 void addLine(int8_t x0, int8_t y0, int8_t x1, int8_t y1, uint8_t half)
 {
 	int test = 5;
@@ -151,13 +173,13 @@ void addTarget(int8_t x, int8_t y)
     lineY0[lineCount] = y3d(x, 0, y);
     lineX1[lineCount] = x3d(x + 1, y + 1);
     lineY1[lineCount] = y3d(x + 1, 0, y + 1);
-	lineCount++;
+    lineCount++;
 
     lineX0[lineCount] = x3d(x + 1, y);
     lineY0[lineCount] = y3d(x + 1, 0, y);
     lineX1[lineCount] = x3d(x, y + 1);
     lineY1[lineCount] = y3d(x, 0, y + 1);
-	lineCount++;
+    lineCount++;
 }
 
 /*
@@ -186,6 +208,8 @@ void setupX()
 				addTarget(x, y);
 				endX = x;
 				endY = y;
+			} else if (c0 == 'v') {
+				addSplit(x, y);
 			} else if (c0 == 's') {
 				addLine(x, y, x + 1, y + 1, 0);
 			} else if (c0 == 'h') {

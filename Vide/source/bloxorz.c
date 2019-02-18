@@ -24,9 +24,9 @@
 */
 
 #include "stdint.h"
-#include <vectrex.h>
+#include "hardware.h"
 #include "level.h"
-#include "block.i"
+#include "block.h"
 
 // PIC commands
 #define CMD_VERSION 1
@@ -36,25 +36,6 @@
 #define CMD_SET_BANK 5
 
 extern void* memcpy (void* dest, const void* src, long unsigned int len);
-
-#define zergnd Reset0Ref
-#define frwait Wait_Recal
-#define intens Intensity_a
-#define diffab Draw_Line_d
-#define pack1x Draw_VLp_80
-#define joybit Joy_Digital
-#define replay Init_Music_chk
-#define reqout Do_Sound
-__INLINE void positd (int8_t x, int8_t y)
-{
-	dp_VIA_t1_cnt_lo = 0x80;
-	Moveto_d(y,x);
-}
-__INLINE void Draw_VLp_80(void* const x)
-{
-	dp_VIA_t1_cnt_lo = 0x80;
-	Draw_VLp(x);
-}
 
 /*
 void zergnd();
@@ -156,25 +137,6 @@ const uint8_t movingMusic[] = {
 
 const uint8_t* currentMusic = startMusic;
 
-enum BlockOrientation_t {
-	Standing,
-	Vertical,
-	Horizontal
-};
-
-enum BlockOrientation_t blockOrientation;
-int8_t blockX;
-int8_t blockY;
-
-const int8_t** blockAnimation;
-const int8_t** nextBlockAnimation;
-int8_t blockAnimationStep;
-int8_t blockAnimating;
-int8_t nextBlockX;
-int8_t nextBlockY;
-int8_t lastBlockDirection;
-int8_t blockYOfs;
-
 uint8_t* vecx = (uint8_t*) 0x8000;
 
 enum GameState_t {
@@ -186,10 +148,6 @@ enum GameState_t {
 	BlockFalling,
 	BlockMovingAtEnd,
 } gameState;
-
-enum BlockDirection_t {
-	Left, Up, Right, Down
-};
 
 void runtimeError(char* msg)
 {
@@ -203,6 +161,7 @@ void runtimeError(char* msg)
 
 uint8_t sendCommand(uint8_t cmd, uint8_t arg)
 {
+return 0;
 	uint8_t result;
 	picWrite('V');
 	picWrite(cmd);
@@ -260,102 +219,7 @@ void changeMusic(const uint8_t* music)
 
 void moveBlock(enum BlockDirection_t move)
 {
-	blockAnimating = 1;
-	lastBlockDirection = move;
-	switch (blockOrientation) {
-		case Standing:
-        		switch (move) {
-        			case Left:
-            			blockAnimation = height2FallingLeft;
-             			nextBlockAnimation = width2RollingFront;
-             			nextBlockX = blockX - 2;
-             			nextBlockY = blockY;
-             			blockOrientation = Horizontal;
-             			break;
-        			case Right:
-             			blockAnimation = height2FallingRight;
-             			nextBlockAnimation = width2RollingFront;
-             			nextBlockX = blockX + 1;
-             			nextBlockY = blockY;
-             			blockOrientation = Horizontal;
-             			break;
-        			case Up:
-             			blockAnimation = height2FallingBack;
-             			nextBlockAnimation = depth2RollingLeft;
-             			nextBlockX = blockX;
-             			nextBlockY = blockY + 1;
-             			blockOrientation = Vertical;
-             			break;
-        			case Down:
-             			blockAnimation = height2FallingFront;
-             			nextBlockAnimation = depth2RollingLeft;
-             			nextBlockX = blockX;
-             			nextBlockY = blockY - 2;
-             			blockOrientation = Vertical;
-             			break;
-        		}
-        		break;
-		case Vertical:
-        		switch (move) {
-        			case Left:
-            			blockAnimation = depth2RollingLeft;
-            			nextBlockAnimation = depth2RollingLeft;
-            			nextBlockX = blockX - 1;
-            			nextBlockY = blockY;
-            			break;
-        			case Right:
-            			blockAnimation = depth2RollingRight;
-            			nextBlockAnimation = depth2RollingLeft;
-            			nextBlockX = blockX + 1;
-            			nextBlockY = blockY;
-            			break;
-        			case Up:
-            			blockAnimation = height2RisingBack;
-            			nextBlockAnimation = height2FallingFront;
-            			nextBlockX = blockX;
-            			nextBlockY = blockY + 2;
-            			blockOrientation = Standing;
-            			break;
-        			case Down:
-            			blockAnimation = height2RisingFront;
-            			nextBlockAnimation = height2FallingFront;
-            			nextBlockX = blockX;
-            			nextBlockY = blockY - 1;
-            			blockOrientation = Standing;
-            			break;
-        		}
-        		break;
-		case Horizontal:
-        		switch (move) {
-        			case Left:
-            			blockAnimation = height2RisingLeft;
-            			nextBlockAnimation = height2FallingRight;
-            			nextBlockX = blockX - 1;
-            			nextBlockY = blockY;
-            			blockOrientation = Standing;
-            			break;
-        			case Right:
-            			blockAnimation = height2RisingRight;
-            			nextBlockAnimation = height2FallingLeft;
-            			nextBlockX = blockX + 2;
-            			nextBlockY = blockY;
-            			blockOrientation = Standing;
-            			break;
-        			case Up:
-            			blockAnimation = width2RollingBack;
-            			nextBlockAnimation = width2RollingBack;
-            			nextBlockX = blockX;
-            			nextBlockY = blockY + 1;
-            			break;
-        			case Down:
-            			blockAnimation = width2RollingFront;
-            			nextBlockAnimation = width2RollingBack;
-            			nextBlockX = blockX;
-            			nextBlockY = blockY - 1;
-            			break;
-        		}
-        		break;
-	}
+	moveBlockImpl(move);
 	if (moveCount < 999) moveCount++;
 	updateInfoText();
 }
@@ -366,7 +230,7 @@ void startBlockFalling()
 	blockYOfs = 0;
 	moveBlock(lastBlockDirection);
 	changeMusic(fallingMusic);
-	*vecx = 0;
+//	*vecx = 0;
 }
 
 void startLevel()
@@ -379,14 +243,11 @@ void startLevel()
 	initLevel();
 	blockX = level->start.x;
 	blockY = level->start.y;
-	blockAnimation = height2FallingLeft;
-	blockAnimationStep = 0;
-	blockAnimating = 0;
-	blockOrientation = Standing;
+	blockStartLevel();
 	blockYOfs = -30;
 	gameState = BlockMovingToStart;
 	changeMusic(startMusic);
-	*vecx = 2;
+//	*vecx = 2;
 	moveCount = 0;
 	updateInfoText();
 }
@@ -439,16 +300,6 @@ void __attribute__((noinline)) drawField()
 
 }
 
-void drawBlock(int8_t yofs)
-{
-	zergnd();
-	intens(0x63);
-	positd(0, yofs);
-	
-	positd(x3d(blockX, blockY), y3d(blockX, 0, blockY));
-	pack1x((void*)(blockAnimation[blockAnimationStep]));
-}
-
 void blockMovingToStart()
 {
 	drawField();
@@ -479,7 +330,7 @@ void blockWaiting()
 	}
 	if (gameState == BlockMoving) {
 		changeMusic(movingMusic);
-		*vecx = 3;
+//		*vecx = 3;
 	}
 
     	Read_Btns();
@@ -488,19 +339,11 @@ void blockWaiting()
 		if (levelNumber >= levelCount) levelNumber = 0;
     		startLevel();
     	}
-}
-
-void doBlockAnimation()
-{
-	if (blockAnimating) {
-		if (++blockAnimationStep == BLOCK_STEPS_COUNT) {
-			blockX = nextBlockX;
-			blockY = nextBlockY;
-			blockAnimationStep = 0;
-			blockAnimation = nextBlockAnimation;
-			blockAnimating = 0;
+    	if (Vec_Buttons & 2) {
+		if (splitMode) {
+			swapSplit();
 		}
-	}
+    	}
 }
 
 void blockMoving()
@@ -535,11 +378,11 @@ void blockMoving()
 		}
 		
 		// check for block at target
-		if (blockOrientation == Standing && blockX == endX && blockY == endY) {
+		if (blockOrientation == Standing && blockX == endX && blockY == endY && !splitMode) {
 			blockYOfs = 0;
 			gameState = BlockMovingAtEnd;
 			changeMusic(levelEndMusic);
-			*vecx = 1;
+//			*vecx = 1;
 		} else {
 			// if not falling, wait for next joystick movement
 			if (gameState != BlockFalling) {
@@ -550,7 +393,7 @@ void blockMoving()
 		// check for swatch
 		switch (blockOrientation) {
 			case Standing:
-			if (f0 == 's' || f0 == 'h') {
+			if (f0 == 's' || f0 == 'h' || f0 == 'v') {
 				swatchSwitch(blockX, blockY);
 			}
 			break;
@@ -572,6 +415,10 @@ void blockMoving()
 			break;
 		}
 		
+		// check for block merge in split mode
+		if (splitMode) {
+			testMerge();
+		}
 	}
 }
 
@@ -694,7 +541,7 @@ void showInfo()
 
 int main()
 {
-	*vecx = 4;
+//	*vecx = 4;
 
 	// check if PIC is available
 	picAvailable = 0;

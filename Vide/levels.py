@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 
+# save the output to the C file:
+# ./levels.py > source/leveldata.c
+
 # TODO: v, split block
 #code 499707, level: 8, unknown char: v
 #         bbb   
@@ -532,30 +535,30 @@ for level in levels:
             for line in level:
                 if type(line) is list:
                     x0, y0 = line
-#levelpq.append({"swatch23": [[4,5,"onoff"],[5,5,"onoff"]],"swatch82": [[10,5,"onoff"],[11,5,"onoff"]]});
 
             # convert level and get swatches
             swatches = []
             geometry = []
             y = 0
+            dictline = False
             for line in level:
                 if type(line) is str:
                     line2 = ""
                     x = 0
                     for c in line:
                         # known field types
-                        if c in [' ', 'b', 'e', 's', 'l', 'r', 'h', 'f', 'k', 'q']:
+                        if c in [' ', 'b', 'e', 's', 'l', 'r', 'h', 'f', 'k', 'q', 'v']:
                             line2 += c
                         else:
-                            if c == 'v':
-                                raise GetOutOfLoop
+                            # if c == 'v':
+                            #    raise GetOutOfLoop
                                 
                             # show level, if unknown field type
                             print("code %s, level: %s, unknown char: %s" % (levelcodes[i], i, c))
                             for line in level:
                                 print(line)
                             sys.exit(1)
-                        if c in ['s', 'h']:
+                        if c in ['s', 'h', 'v']:
                             (x2, y2) = rotate(x, y)
                             swatch = { 'type': c, 'position': { 'x': x2, 'y': y2 } }
                             swatches.append(swatch)
@@ -564,22 +567,46 @@ for level in levels:
                     y += 1
                 if type(line) is dict:
                     for s in swatches:
+                        # split swatches are in the second line
+                        if s['type'] == 'v':
+                            if not dictline:
+                                continue
+                        else:
+                            if dictline:
+                                continue
+
+                        # get swatch source position
                         x2 = s['position']['x']
                         y2 = s['position']['y']
+                        
+                        # rotate back -90° to get swatch name
                         (x2, y2) = rotate(x2, y2)
                         (x2, y2) = rotate(x2, y2)
                         (x2, y2) = rotate(x2, y2)
                         name = 'swatch' + str(x2) + str(y2)
+                        
+                        # add swatch targets
                         if name in line:
                             fields = line[name]
                             f2 = []
-                            for (xf, yf, action) in fields:
+                            if s['type'] == 'v':
+                                # split swatch
+                                (xf, yf, xf2, yf2) = fields
                                 (x2, y2) = rotate(xf, yf)
-                                f2.append({ 'position': { 'x': x2, 'y': y2 }, 'action': action })
+                                (x3, y3) = rotate(xf2, yf2)
+                                f2.append({ 'position': { 'x': x2, 'y': y2 }, 'action': 'split1' })
+                                f2.append({ 'position': { 'x': x3, 'y': y3 }, 'action': 'split2' })
+                            else:
+                                # normal swatch
+                                for (xf, yf, action) in fields:
+                                    (x2, y2) = rotate(xf, yf)
+                                    f2.append({ 'position': { 'x': x2, 'y': y2 }, 'action': action })
                             s['fields'] = f2
                         else:
                             print("error: %s missing" % name)
+                            print("code %s, level: %s" % (levelcodes[i], i))
                             sys.exit(1)
+                    dictline = True
 
             (x2, y2) = rotate(x0, y0)
             level2 = { 'geometry': geometry, 'start':  { 'x': x2, 'y': y2 }, 'swatches': swatches }
