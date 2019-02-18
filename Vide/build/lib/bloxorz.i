@@ -2237,7 +2237,7 @@ void startBlockFalling()
  blockYOfs = 0;
  moveBlock(lastBlockDirection);
  changeMusic(fallingMusic);
-
+ *vecx = 0;
 }
 
 void startLevel()
@@ -2254,7 +2254,7 @@ void startLevel()
  blockYOfs = -30;
  gameState = BlockMovingToStart;
  changeMusic(startMusic);
-
+ *vecx = 2;
  moveCount = 0;
  updateInfoText();
 }
@@ -2325,7 +2325,7 @@ void blockWaiting()
  }
  if (gameState == BlockMoving) {
   changeMusic(movingMusic);
-
+  *vecx = 3;
  }
 
      Read_Btns();
@@ -2377,7 +2377,7 @@ void blockMoving()
    blockYOfs = 0;
    gameState = BlockMovingAtEnd;
    changeMusic(levelEndMusic);
-
+   *vecx = 1;
   } else {
 
    if (gameState != BlockFalling) {
@@ -2536,7 +2536,7 @@ void showInfo()
 
 int main()
 {
-
+ *vecx = 4;
 
 
  picAvailable = 0;

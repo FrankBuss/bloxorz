@@ -382,7 +382,7 @@ namespace Bloxorz
                     }
                 }
             }
-            else if (address < 0x8000)
+            else if (address < 0xc000)
             {
                 /* cartridge */
 
