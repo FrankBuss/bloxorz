@@ -56,6 +56,8 @@ extern int8_t endX;
 extern int8_t endY;
 extern const struct Level* const levels[];
 extern const uint8_t levelCount;
+extern const uint8_t levelOffset;
+extern const uint8_t nextBank;
 
 // returns true, if this is a field where the block can stand on
 uint8_t isField(int8_t x, int8_t y);

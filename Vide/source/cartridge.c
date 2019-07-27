@@ -27,7 +27,6 @@ struct cartridge_t
 	int title_y;				// signed 8 bit value, y coordinate of game title
 	int title_x;				// signed 8 bit value, x coordinate of game title
 	char title[9]; 				// game title string, must end with "\x80\x00"
-	char unused[8192];
 };
 
 // ---------------------------------------------------------------------------

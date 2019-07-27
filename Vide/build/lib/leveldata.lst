@@ -1,0 +1,1418 @@
+                              1 ;;; gcc for m6809 : Mar 17 2019 12:45:32
+                              2 ;;; 4.3.6 (gcc6809)
+                              3 ;;; ABI version 1
+                              4 ;;; -mabi=bx -mint8 -fomit-frame-pointer -O1
+                              5 	.module	leveldata.enr.c
+                              6 ; GNU C (GCC) version 4.3.6 (gcc6809) (m6809-unknown-none)
+                              7 ;	compiled by GNU C version 7.4.0, GMP version 4.3.2, MPFR version 2.4.2.
+                              8 ; GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+                              9 ; options passed:  -O1 -fverbose-asm -W -Wall -Wextra -Wconversion -Werror
+                             10 ; -fomit-frame-pointer -mint8 -msoft-reg-count=0 -std=gnu99
+                             11 ; -fno-time-report
+                             12 ; -IC:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include
+                             13 ; -D__INLINE_RUM=1 -DOMMIT_FRAMEPOINTER=1
+                             14 ; C:\data\bloxorz\Vide\source\leveldata.enr.c
+                             15 ; options enabled:  -falign-loops -fargument-alias -fauto-inc-dec
+                             16 ; -fbranch-count-reg -fcommon -fcprop-registers -fdefer-pop
+                             17 ; -fearly-inlining -feliminate-unused-debug-types -ffunction-cse -fgcse-lm
+                             18 ; -fguess-branch-probability -fident -fif-conversion -fif-conversion2
+                             19 ; -finline-functions-called-once -fipa-pure-const -fipa-reference -fivopts
+                             20 ; -fkeep-static-consts -fleading-underscore -fmath-errno -fmerge-constants
+                             21 ; -fmerge-debug-strings -fmove-loop-invariants -fomit-frame-pointer
+                             22 ; -fpcc-struct-return -fpeephole -fsched-interblock -fsched-spec
+                             23 ; -fsched-stalled-insns-dep -fsigned-zeros -fsplit-ivs-in-unroller
+                             24 ; -fsplit-wide-types -ftoplevel-reorder -ftrapping-math -ftree-ccp
+                             25 ; -ftree-ch -ftree-copy-prop -ftree-copyrename -ftree-dce
+                             26 ; -ftree-dominator-opts -ftree-dse -ftree-fre -ftree-loop-im
+                             27 ; -ftree-loop-ivcanon -ftree-loop-optimize -ftree-parallelize-loops=
+                             28 ; -ftree-reassoc -ftree-salias -ftree-scev-cprop -ftree-sink -ftree-sra
+                             29 ; -ftree-ter -ftree-vect-loop-version -funit-at-a-time -fverbose-asm
+                             30 ; -fzero-initialized-in-bss
+                             31 ; Compiler executable checksum: 8f282e2d9663ae6148257c524e608c63
+                             32 	.globl	_levelCount
+                             33 	.area	.text
+   0000                      34 _levelCount:
+   0000 0F                   35 	.byte	15
+                             36 	.globl	_levelOffset
+   0001                      37 _levelOffset:
+   0001 01                   38 	.byte	1
+                             39 	.globl	_nextBank
+   0002                      40 _nextBank:
+   0002 01                   41 	.byte	1
+                             42 	.globl	_swatch_1_0
+   0003                      43 _swatch_1_0:
+                             44 ; type:
+   0003 01                   45 	.byte	1
+                             46 ; position:
+                             47 ; x:
+   0004 07                   48 	.byte	7
+                             49 ; y:
+   0005 08                   50 	.byte	8
+                             51 ; fields_count:
+   0006 02                   52 	.byte	2
+                             53 ; fields:
+   0007 0A 27                54 	.word	___compound_literal.0
+   0009 0A 2A                55 	.word	___compound_literal.1
+                             56 	.globl	_swatch_1_1
+   000B                      57 _swatch_1_1:
+                             58 ; type:
+   000B 00                   59 	.byte	0
+                             60 ; position:
+                             61 ; x:
+   000C 06                   62 	.byte	6
+                             63 ; y:
+   000D 02                   64 	.byte	2
+                             65 ; fields_count:
+   000E 02                   66 	.byte	2
+                             67 ; fields:
+   000F 0A 2D                68 	.word	___compound_literal.2
+   0011 0A 30                69 	.word	___compound_literal.3
+                             70 	.globl	_swatch_4_0
+   0013                      71 _swatch_4_0:
+                             72 ; type:
+   0013 00                   73 	.byte	0
+                             74 ; position:
+                             75 ; x:
+   0014 08                   76 	.byte	8
+                             77 ; y:
+   0015 08                   78 	.byte	8
+                             79 ; fields_count:
+   0016 02                   80 	.byte	2
+                             81 ; fields:
+   0017 0A 33                82 	.word	___compound_literal.4
+   0019 0A 36                83 	.word	___compound_literal.5
+                             84 	.globl	_swatch_4_1
+   001B                      85 _swatch_4_1:
+                             86 ; type:
+   001B 00                   87 	.byte	0
+                             88 ; position:
+                             89 ; x:
+   001C 06                   90 	.byte	6
+                             91 ; y:
+   001D 03                   92 	.byte	3
+                             93 ; fields_count:
+   001E 02                   94 	.byte	2
+                             95 ; fields:
+   001F 0A 39                96 	.word	___compound_literal.6
+   0021 0A 3C                97 	.word	___compound_literal.7
+                             98 	.globl	_swatch_4_2
+   0023                      99 _swatch_4_2:
+                            100 ; type:
+   0023 00                  101 	.byte	0
+                            102 ; position:
+                            103 ; x:
+   0024 04                  104 	.byte	4
+                            105 ; y:
+   0025 06                  106 	.byte	6
+                            107 ; fields_count:
+   0026 02                  108 	.byte	2
+                            109 ; fields:
+   0027 0A 3F               110 	.word	___compound_literal.8
+   0029 0A 42               111 	.word	___compound_literal.9
+                            112 	.globl	_swatch_4_3
+   002B                     113 _swatch_4_3:
+                            114 ; type:
+   002B 00                  115 	.byte	0
+                            116 ; position:
+                            117 ; x:
+   002C 03                  118 	.byte	3
+                            119 ; y:
+   002D 0E                  120 	.byte	14
+                            121 ; fields_count:
+   002E 02                  122 	.byte	2
+                            123 ; fields:
+   002F 0A 45               124 	.word	___compound_literal.10
+   0031 0A 48               125 	.word	___compound_literal.11
+                            126 	.globl	_swatch_6_0
+   0033                     127 _swatch_6_0:
+                            128 ; type:
+   0033 01                  129 	.byte	1
+                            130 ; position:
+                            131 ; x:
+   0034 04                  132 	.byte	4
+                            133 ; y:
+   0035 09                  134 	.byte	9
+                            135 ; fields_count:
+   0036 01                  136 	.byte	1
+                            137 ; fields:
+   0037 0A 4B               138 	.word	___compound_literal.12
+                            139 	.globl	_swatch_7_0
+   0039                     140 _swatch_7_0:
+                            141 ; type:
+   0039 02                  142 	.byte	2
+                            143 ; position:
+                            144 ; x:
+   003A 05                  145 	.byte	5
+                            146 ; y:
+   003B 04                  147 	.byte	4
+                            148 ; fields_count:
+   003C 02                  149 	.byte	2
+                            150 ; fields:
+   003D 0A 4E               151 	.word	___compound_literal.13
+   003F 0A 51               152 	.word	___compound_literal.14
+                            153 	.globl	_swatch_8_0
+   0041                     154 _swatch_8_0:
+                            155 ; type:
+   0041 02                  156 	.byte	2
+                            157 ; position:
+                            158 ; x:
+   0042 05                  159 	.byte	5
+                            160 ; y:
+   0043 0D                  161 	.byte	13
+                            162 ; fields_count:
+   0044 02                  163 	.byte	2
+                            164 ; fields:
+   0045 0A 54               165 	.word	___compound_literal.15
+   0047 0A 57               166 	.word	___compound_literal.16
+                            167 	.globl	_swatch_9_0
+   0049                     168 _swatch_9_0:
+                            169 ; type:
+   0049 02                  170 	.byte	2
+                            171 ; position:
+                            172 ; x:
+   004A 08                  173 	.byte	8
+                            174 ; y:
+   004B 0D                  175 	.byte	13
+                            176 ; fields_count:
+   004C 02                  177 	.byte	2
+                            178 ; fields:
+   004D 0A 5A               179 	.word	___compound_literal.17
+   004F 0A 5D               180 	.word	___compound_literal.18
+                            181 	.globl	_swatch_9_1
+   0051                     182 _swatch_9_1:
+                            183 ; type:
+   0051 00                  184 	.byte	0
+                            185 ; position:
+                            186 ; x:
+   0052 00                  187 	.byte	0
+                            188 ; y:
+   0053 06                  189 	.byte	6
+                            190 ; fields_count:
+   0054 02                  191 	.byte	2
+                            192 ; fields:
+   0055 0A 60               193 	.word	___compound_literal.19
+   0057 0A 63               194 	.word	___compound_literal.20
+                            195 	.globl	_swatch_9_2
+   0059                     196 _swatch_9_2:
+                            197 ; type:
+   0059 01                  198 	.byte	1
+                            199 ; position:
+                            200 ; x:
+   005A 00                  201 	.byte	0
+                            202 ; y:
+   005B 0C                  203 	.byte	12
+                            204 ; fields_count:
+   005C 04                  205 	.byte	4
+                            206 ; fields:
+   005D 0A 66               207 	.word	___compound_literal.21
+   005F 0A 69               208 	.word	___compound_literal.22
+   0061 0A 6C               209 	.word	___compound_literal.23
+   0063 0A 6F               210 	.word	___compound_literal.24
+                            211 	.globl	_swatch_10_0
+   0065                     212 _swatch_10_0:
+                            213 ; type:
+   0065 00                  214 	.byte	0
+                            215 ; position:
+                            216 ; x:
+   0066 03                  217 	.byte	3
+                            218 ; y:
+   0067 08                  219 	.byte	8
+                            220 ; fields_count:
+   0068 02                  221 	.byte	2
+                            222 ; fields:
+   0069 0A 72               223 	.word	___compound_literal.25
+   006B 0A 75               224 	.word	___compound_literal.26
+                            225 	.globl	_swatch_11_0
+   006D                     226 _swatch_11_0:
+                            227 ; type:
+   006D 01                  228 	.byte	1
+                            229 ; position:
+                            230 ; x:
+   006E 09                  231 	.byte	9
+                            232 ; y:
+   006F 0D                  233 	.byte	13
+                            234 ; fields_count:
+   0070 01                  235 	.byte	1
+                            236 ; fields:
+   0071 0A 78               237 	.word	___compound_literal.27
+                            238 	.globl	_swatch_11_1
+   0073                     239 _swatch_11_1:
+                            240 ; type:
+   0073 01                  241 	.byte	1
+                            242 ; position:
+                            243 ; x:
+   0074 07                  244 	.byte	7
+                            245 ; y:
+   0075 07                  246 	.byte	7
+                            247 ; fields_count:
+   0076 01                  248 	.byte	1
+                            249 ; fields:
+   0077 0A 7B               250 	.word	___compound_literal.28
+                            251 	.globl	_swatch_13_0
+   0079                     252 _swatch_13_0:
+                            253 ; type:
+   0079 01                  254 	.byte	1
+                            255 ; position:
+                            256 ; x:
+   007A 06                  257 	.byte	6
+                            258 ; y:
+   007B 0C                  259 	.byte	12
+                            260 ; fields_count:
+   007C 02                  261 	.byte	2
+                            262 ; fields:
+   007D 0A 7E               263 	.word	___compound_literal.29
+   007F 0A 81               264 	.word	___compound_literal.30
+                            265 	.globl	_swatch_13_1
+   0081                     266 _swatch_13_1:
+                            267 ; type:
+   0081 01                  268 	.byte	1
+                            269 ; position:
+                            270 ; x:
+   0082 00                  271 	.byte	0
+                            272 ; y:
+   0083 0D                  273 	.byte	13
+                            274 ; fields_count:
+   0084 02                  275 	.byte	2
+                            276 ; fields:
+   0085 0A 84               277 	.word	___compound_literal.31
+   0087 0A 87               278 	.word	___compound_literal.32
+                            279 	.globl	_swatch_14_0
+   0089                     280 _swatch_14_0:
+                            281 ; type:
+   0089 01                  282 	.byte	1
+                            283 ; position:
+                            284 ; x:
+   008A 08                  285 	.byte	8
+                            286 ; y:
+   008B 0C                  287 	.byte	12
+                            288 ; fields_count:
+   008C 04                  289 	.byte	4
+                            290 ; fields:
+   008D 0A 8A               291 	.word	___compound_literal.33
+   008F 0A 8D               292 	.word	___compound_literal.34
+   0091 0A 90               293 	.word	___compound_literal.35
+   0093 0A 93               294 	.word	___compound_literal.36
+                            295 	.globl	_swatch_14_1
+   0095                     296 _swatch_14_1:
+                            297 ; type:
+   0095 00                  298 	.byte	0
+                            299 ; position:
+                            300 ; x:
+   0096 06                  301 	.byte	6
+                            302 ; y:
+   0097 08                  303 	.byte	8
+                            304 ; fields_count:
+   0098 04                  305 	.byte	4
+                            306 ; fields:
+   0099 0A 96               307 	.word	___compound_literal.37
+   009B 0A 99               308 	.word	___compound_literal.38
+   009D 0A 9C               309 	.word	___compound_literal.39
+   009F 0A 9F               310 	.word	___compound_literal.40
+                            311 	.globl	_swatch_14_2
+   00A1                     312 _swatch_14_2:
+                            313 ; type:
+   00A1 02                  314 	.byte	2
+                            315 ; position:
+                            316 ; x:
+   00A2 04                  317 	.byte	4
+                            318 ; y:
+   00A3 07                  319 	.byte	7
+                            320 ; fields_count:
+   00A4 02                  321 	.byte	2
+                            322 ; fields:
+   00A5 0A A2               323 	.word	___compound_literal.41
+   00A7 0A A5               324 	.word	___compound_literal.42
+                            325 	.globl	_swatch_14_3
+   00A9                     326 _swatch_14_3:
+                            327 ; type:
+   00A9 00                  328 	.byte	0
+                            329 ; position:
+                            330 ; x:
+   00AA 02                  331 	.byte	2
+                            332 ; y:
+   00AB 0B                  333 	.byte	11
+                            334 ; fields_count:
+   00AC 02                  335 	.byte	2
+                            336 ; fields:
+   00AD 0A A8               337 	.word	___compound_literal.43
+   00AF 0A AB               338 	.word	___compound_literal.44
+                            339 	.globl	_swatch_14_4
+   00B1                     340 _swatch_14_4:
+                            341 ; type:
+   00B1 00                  342 	.byte	0
+                            343 ; position:
+                            344 ; x:
+   00B2 00                  345 	.byte	0
+                            346 ; y:
+   00B3 0B                  347 	.byte	11
+                            348 ; fields_count:
+   00B4 02                  349 	.byte	2
+                            350 ; fields:
+   00B5 0A AE               351 	.word	___compound_literal.45
+   00B7 0A B1               352 	.word	___compound_literal.46
+                            353 	.globl	_level0
+   00B9                     354 LC0:
+   00B9 20 20 20 20 20 20   355 	.ascii	"                         bbb      bbbb      bbbb"
+        20 20 20 20 20 20
+        20 20 20 20 20 20
+        20 20 20 20 20 20
+        20 62 62 62 20 20
+        20 20 20 20 62 62
+        62 62 20 20 20 20
+        20 20 62 62 62 62
+   00E9 20 20 20 20 20 20   356 	.ascii	"      bbb       bbb      bbbb     bbbb      bebb"
+        62 62 62 20 20 20
+        20 20 20 20 62 62
+        62 20 20 20 20 20
+        20 62 62 62 62 20
+        20 20 20 20 62 62
+        62 62 20 20 20 20
+        20 20 62 65 62 62
+   0119 20 20 20 20 20 20   357 	.ascii	"      bbbb       bb                             "
+        62 62 62 62 20 20
+        20 20 20 20 20 62
+        62 20 20 20 20 20
+        20 20 20 20 20 20
+        20 20 20 20 20 20
+        20 20 20 20 20 20
+        20 20 20 20 20 20
+   0149 20 20 20 20 20 20   358 	.ascii	"      \0"
+        00
+   0150                     359 _level0:
+                            360 ; geometry:
+   0150 00 B9               361 	.word	LC0
+                            362 ; start:
+                            363 ; x:
+   0152 06                  364 	.byte	6
+                            365 ; y:
+   0153 03                  366 	.byte	3
+                            367 ; swatches_count:
+   0154 00                  368 	.byte	0
+                            369 	.globl	_level1
+   0155                     370 LC1:
+   0155 20 20 20 62 62 62   371 	.ascii	"   bbbbb     bbbbb     bbbsb     bbbbb      l   "
+        62 62 20 20 20 20
+        20 62 62 62 62 62
+        20 20 20 20 20 62
+        62 62 73 62 20 20
+        20 20 20 62 62 62
+        62 62 20 20 20 20
+        20 20 6C 20 20 20
+   0185 20 20 20 20 20 20   372 	.ascii	"      r        bbbbbb    bbbbbb    bbbbhb    bbb"
+        72 20 20 20 20 20
+        20 20 20 62 62 62
+        62 62 62 20 20 20
+        20 62 62 62 62 62
+        62 20 20 20 20 62
+        62 62 62 68 62 20
+        20 20 20 62 62 62
+   01B5 62 62 62 20 20 20   373 	.ascii	"bbb     l         r         bbbbb     bbbeb     "
+        20 20 6C 20 20 20
+        20 20 20 20 20 20
+        72 20 20 20 20 20
+        20 20 20 20 62 62
+        62 62 62 20 20 20
+        20 20 62 62 62 65
+        62 20 20 20 20 20
+   01E5 62 62 62 62 62 20   374 	.ascii	"bbbbb \0"
+        00
+   01EC                     375 _level1:
+                            376 ; geometry:
+   01EC 01 55               377 	.word	LC1
+                            378 ; start:
+                            379 ; x:
+   01EE 04                  380 	.byte	4
+                            381 ; y:
+   01EF 01                  382 	.byte	1
+                            383 ; swatches_count:
+   01F0 02                  384 	.byte	2
+                            385 ; swatches:
+   01F1 00 03               386 	.word	_swatch_1_0
+   01F3 00 0B               387 	.word	_swatch_1_1
+                            388 	.globl	_level2
+   01F5                     389 LC2:
+   01F5 20 20 20 62 62 62   390 	.ascii	"   bbbb      bbbb      bbbb      bbbb        b  "
+        62 20 20 20 20 20
+        20 62 62 62 62 20
+        20 20 20 20 20 62
+        62 62 62 20 20 20
+        20 20 20 62 62 62
+        62 20 20 20 20 20
+        20 20 20 62 20 20
+   0225 20 20 20 20 20 20   391 	.ascii	"       b         bbb       bbb       bbb        "
+        20 62 20 20 20 20
+        20 20 20 20 20 62
+        62 62 20 20 20 20
+        20 20 20 62 62 62
+        20 20 20 20 20 20
+        20 62 62 62 20 20
+        20 20 20 20 20 20
+   0255 20 62 20 20 20 20   392 	.ascii	" b         b     bbbbb    bbbbbb    bbeb      bb"
+        20 20 20 20 20 62
+        20 20 20 20 20 62
+        62 62 62 62 20 20
+        20 20 62 62 62 62
+        62 62 20 20 20 20
+        62 62 65 62 20 20
+        20 20 20 20 62 62
+   0285 62 62 20 20 20 20   393 	.ascii	"bb    \0"
+        00
+   028C                     394 _level2:
+                            395 ; geometry:
+   028C 01 F5               396 	.word	LC2
+                            397 ; start:
+                            398 ; x:
+   028E 04                  399 	.byte	4
+                            400 ; y:
+   028F 01                  401 	.byte	1
+                            402 ; swatches_count:
+   0290 00                  403 	.byte	0
+                            404 	.globl	_level3
+   0291                     405 LC3:
+   0291 20 20 62 62 62 62   406 	.ascii	"  bbbbb     bbbbb     bbbbb         bff        f"
+        62 20 20 20 20 20
+        62 62 62 62 62 20
+        20 20 20 20 62 62
+        62 62 62 20 20 20
+        20 20 20 20 20 20
+        62 66 66 20 20 20
+        20 20 20 20 20 66
+   02C1 66 20 62 62 62 62   407 	.ascii	"f bbbb   ff bebb   ff bbbb   ff   bb   ff   ff  "
+        20 20 20 66 66 20
+        62 65 62 62 20 20
+        20 66 66 20 62 62
+        62 62 20 20 20 66
+        66 20 20 20 62 62
+        20 20 20 66 66 20
+        20 20 66 66 20 20
+   02F1 62 66 66 20 66 66   408 	.ascii	"bff ffffbbb   ffffbbb   fbff      ffff          "
+        66 66 62 62 62 20
+        20 20 66 66 66 66
+        62 62 62 20 20 20
+        66 62 66 66 20 20
+        20 20 20 20 66 66
+        66 66 20 20 20 20
+        20 20 20 20 20 20
+   0321 20 20 20 20 20 20   409 	.ascii	"      \0"
+        00
+   0328                     410 _level3:
+                            411 ; geometry:
+   0328 02 91               412 	.word	LC3
+                            413 ; start:
+                            414 ; x:
+   032A 03                  415 	.byte	3
+                            416 ; y:
+   032B 01                  417 	.byte	1
+                            418 ; swatches_count:
+   032C 00                  419 	.byte	0
+                            420 	.globl	_level4
+   032D                     421 LC4:
+   032D 62 62 62 20 20 20   422 	.ascii	"bbb       beb  bbbb bbb  bbbb bb  bbsbb  b  bbbb"
+        20 20 20 20 62 65
+        62 20 20 62 62 62
+        62 20 62 62 62 20
+        20 62 62 62 62 20
+        62 62 20 20 62 62
+        73 62 62 20 20 62
+        20 20 62 62 62 62
+   035D 62 20 20 6B 20 20   423 	.ascii	"b  k  b   k  q  s   q  b  b   b  b  k   s  b  q "
+        62 20 20 20 6B 20
+        20 71 20 20 73 20
+        20 20 71 20 20 62
+        20 20 62 20 20 20
+        62 20 20 62 20 20
+        6B 20 20 20 73 20
+        20 62 20 20 71 20
+   038D 20 20 62 20 20 62   424 	.ascii	"  b  bbbb   b  bbbb   bb bbbb  bbb  bb   bbb  bs"
+        62 62 62 20 20 20
+        62 20 20 62 62 62
+        62 20 20 20 62 62
+        20 62 62 62 62 20
+        20 62 62 62 20 20
+        62 62 20 20 20 62
+        62 62 20 20 62 73
+   03BD 20 20 20 62 62 62   425 	.ascii	"   bbb\0"
+        00
+   03C4                     426 _level4:
+                            427 ; geometry:
+   03C4 03 2D               428 	.word	LC4
+                            429 ; start:
+                            430 ; x:
+   03C6 08                  431 	.byte	8
+                            432 ; y:
+   03C7 0D                  433 	.byte	13
+                            434 ; swatches_count:
+   03C8 04                  435 	.byte	4
+                            436 ; swatches:
+   03C9 00 13               437 	.word	_swatch_4_0
+   03CB 00 1B               438 	.word	_swatch_4_1
+   03CD 00 23               439 	.word	_swatch_4_2
+   03CF 00 2B               440 	.word	_swatch_4_3
+                            441 	.globl	_level5
+   03D1                     442 LC5:
+   03D1 20 20 20 20 20 20   443 	.ascii	"      b         b         b         b       bbb "
+        62 20 20 20 20 20
+        20 20 20 20 62 20
+        20 20 20 20 20 20
+        20 20 62 20 20 20
+        20 20 20 20 20 20
+        62 20 20 20 20 20
+        20 20 62 62 62 20
+   0401 20 20 20 20 20 20   444 	.ascii	"      bbbbbb bbbbb   bbbb      bbbb    bbbbbbb  "
+        62 62 62 62 62 62
+        20 62 62 62 62 62
+        20 20 20 62 62 62
+        62 20 20 20 20 20
+        20 62 62 62 62 20
+        20 20 20 62 62 62
+        62 62 62 62 20 20
+   0431 20 62 62 62 20 62   445 	.ascii	" bbb bbb   bbb     bbb      bbbb      beb       "
+        62 62 20 20 20 62
+        62 62 20 20 20 20
+        20 62 62 62 20 20
+        20 20 20 20 62 62
+        62 62 20 20 20 20
+        20 20 62 65 62 20
+        20 20 20 20 20 20
+   0461 62 62 62 20 20 20   446 	.ascii	"bbb   \0"
+        00
+   0468                     447 _level5:
+                            448 ; geometry:
+   0468 03 D1               449 	.word	LC5
+                            450 ; start:
+                            451 ; x:
+   046A 06                  452 	.byte	6
+                            453 ; y:
+   046B 00                  454 	.byte	0
+                            455 ; swatches_count:
+   046C 00                  456 	.byte	0
+                            457 	.globl	_level6
+   046D                     458 LC6:
+   046D 20 20 20 62 62 62   459 	.ascii	"   bbbb     bbbbb    bbbbbb    bl  b     b   b  "
+        62 20 20 20 20 20
+        62 62 62 62 62 20
+        20 20 20 62 62 62
+        62 62 62 20 20 20
+        20 62 6C 20 20 62
+        20 20 20 20 20 62
+        20 20 20 62 20 20
+   049D 20 20 20 62 20 20   460 	.ascii	"   b   b     b   b     bbbbb       bbbbbb    bh "
+        20 62 20 20 20 20
+        20 62 20 20 20 62
+        20 20 20 20 20 62
+        62 62 62 62 20 20
+        20 20 20 20 20 62
+        62 62 62 62 62 20
+        20 20 20 62 68 20
+   04CD 20 62 62 20 20 20   461 	.ascii	" bb        bb       bbb    bbbb      bbeb      b"
+        20 20 20 20 20 62
+        62 20 20 20 20 20
+        20 20 62 62 62 20
+        20 20 20 62 62 62
+        62 20 20 20 20 20
+        20 62 62 65 62 20
+        20 20 20 20 20 62
+   04FD 62 62 62 20 20 20   462 	.ascii	"bbb   \0"
+        00
+   0504                     463 _level6:
+                            464 ; geometry:
+   0504 04 6D               465 	.word	LC6
+                            466 ; start:
+                            467 ; x:
+   0506 05                  468 	.byte	5
+                            469 ; y:
+   0507 01                  470 	.byte	1
+                            471 ; swatches_count:
+   0508 01                  472 	.byte	1
+                            473 ; swatches:
+   0509 00 33               474 	.word	_swatch_6_0
+                            475 	.globl	_level7
+   050B                     476 LC7:
+   050B 20 20 20 20 62 62   477 	.ascii	"    bbb       bbb       bbb       bbb       bvb "
+        62 20 20 20 20 20
+        20 20 62 62 62 20
+        20 20 20 20 20 20
+        62 62 62 20 20 20
+        20 20 20 20 62 62
+        62 20 20 20 20 20
+        20 20 62 76 62 20
+   053B 20 20 20 20 20 20   478 	.ascii	"      bbb                                  bbbbb"
+        62 62 62 20 20 20
+        20 20 20 20 20 20
+        20 20 20 20 20 20
+        20 20 20 20 20 20
+        20 20 20 20 20 20
+        20 20 20 20 20 20
+        20 62 62 62 62 62
+   056B 62 62 62 62 20 62   479 	.ascii	"bbbb bbbbbbbbb bbbbbbbbb    bbb       beb       "
+        62 62 62 62 62 62
+        62 62 20 62 62 62
+        62 62 62 62 62 62
+        20 20 20 20 62 62
+        62 20 20 20 20 20
+        20 20 62 65 62 20
+        20 20 20 20 20 20
+   059B 62 62 62 20 20 20   480 	.ascii	"bbb   \0"
+        00
+   05A2                     481 _level7:
+                            482 ; geometry:
+   05A2 05 0B               483 	.word	LC7
+                            484 ; start:
+                            485 ; x:
+   05A4 05                  486 	.byte	5
+                            487 ; y:
+   05A5 01                  488 	.byte	1
+                            489 ; swatches_count:
+   05A6 01                  490 	.byte	1
+                            491 ; swatches:
+   05A7 00 39               492 	.word	_swatch_7_0
+                            493 	.globl	_level8
+   05A9                     494 LC8:
+   05A9 20 20 20 20 62 62   495 	.ascii	"    bbb       bbb       bbb       bbb       b   "
+        62 20 20 20 20 20
+        20 20 62 62 62 20
+        20 20 20 20 20 20
+        62 62 62 20 20 20
+        20 20 20 20 62 62
+        62 20 20 20 20 20
+        20 20 62 20 20 20
+   05D9 20 20 20 20 20 20   496 	.ascii	"      b       bbb       bebbb     bbb         b "
+        62 20 20 20 20 20
+        20 20 62 62 62 20
+        20 20 20 20 20 20
+        62 65 62 62 62 20
+        20 20 20 20 62 62
+        62 20 20 20 20 20
+        20 20 20 20 62 20
+   0609 20 20 20 20 20 20   497 	.ascii	"        b         bbb       bbb       bvb       "
+        20 20 62 20 20 20
+        20 20 20 20 20 20
+        62 62 62 20 20 20
+        20 20 20 20 62 62
+        62 20 20 20 20 20
+        20 20 62 76 62 20
+        20 20 20 20 20 20
+   0639 62 62 62 20 20 20   498 	.ascii	"bbb   \0"
+        00
+   0640                     499 _level8:
+                            500 ; geometry:
+   0640 05 A9               501 	.word	LC8
+                            502 ; start:
+                            503 ; x:
+   0642 05                  504 	.byte	5
+                            505 ; y:
+   0643 01                  506 	.byte	1
+                            507 ; swatches_count:
+   0644 01                  508 	.byte	1
+                            509 ; swatches:
+   0645 00 41               510 	.word	_swatch_8_0
+                            511 	.globl	_level9
+   0647                     512 LC9:
+   0647 20 20 20 20 20 20   513 	.ascii	"                 bbb       beb       bbb        "
+        20 20 20 20 20 20
+        20 20 20 20 20 62
+        62 62 20 20 20 20
+        20 20 20 62 65 62
+        20 20 20 20 20 20
+        20 62 62 62 20 20
+        20 20 20 20 20 20
+   0677 6C 20 62 62 20 20   514 	.ascii	"l bb      r sb      b  b      l  b      r bb    "
+        20 20 20 20 72 20
+        73 62 20 20 20 20
+        20 20 62 20 20 62
+        20 20 20 20 20 20
+        6C 20 20 62 20 20
+        20 20 20 20 72 20
+        62 62 20 20 20 20
+   06A7 20 62 62 62 62 20   515 	.ascii	" bbbb     bbbbb     bbbbhbb  bbbbbbbbbbbllvb    "
+        20 20 20 20 62 62
+        62 62 62 20 20 20
+        20 20 62 62 62 62
+        68 62 62 20 20 62
+        62 62 62 62 62 62
+        62 62 62 62 6C 6C
+        76 62 20 20 20 20
+   06D7 20 20 20 20 62 62   516 	.ascii	"    bb\0"
+        00
+   06DE                     517 _level9:
+                            518 ; geometry:
+   06DE 06 47               519 	.word	LC9
+                            520 ; start:
+                            521 ; x:
+   06E0 08                  522 	.byte	8
+                            523 ; y:
+   06E1 0A                  524 	.byte	10
+                            525 ; swatches_count:
+   06E2 03                  526 	.byte	3
+                            527 ; swatches:
+   06E3 00 49               528 	.word	_swatch_9_0
+   06E5 00 51               529 	.word	_swatch_9_1
+   06E7 00 59               530 	.word	_swatch_9_2
+                            531 	.globl	_level10
+   06E9                     532 LC10:
+   06E9 20 20 20 20 20 20   533 	.ascii	"                        b         bbbbbb    b  b"
+        20 20 20 20 20 20
+        20 20 20 20 20 20
+        20 20 20 20 20 20
+        62 20 20 20 20 20
+        20 20 20 20 62 62
+        62 62 62 62 20 20
+        20 20 62 20 20 62
+   0719 65 62 20 20 20 20   534 	.ascii	"eb    b  bbb    b   kk bbbbbb    bbsbbb    bb   "
+        62 20 20 62 62 62
+        20 20 20 20 62 20
+        20 20 6B 6B 20 62
+        62 62 62 62 62 20
+        20 20 20 62 62 73
+        62 62 62 20 20 20
+        20 62 62 20 20 20
+   0749 62 20 20 20 62 62   535 	.ascii	"b   bbb   b   bb  bbb   bb  bbb    bbbb         "
+        62 20 20 20 62 20
+        20 20 62 62 20 20
+        62 62 62 20 20 20
+        62 62 20 20 62 62
+        62 20 20 20 20 62
+        62 62 62 20 20 20
+        20 20 20 20 20 20
+   0779 20 20 20 20 20 20   536 	.ascii	"      \0"
+        00
+   0780                     537 _level10:
+                            538 ; geometry:
+   0780 06 E9               539 	.word	LC10
+                            540 ; start:
+                            541 ; x:
+   0782 04                  542 	.byte	4
+                            543 ; y:
+   0783 02                  544 	.byte	2
+                            545 ; swatches_count:
+   0784 01                  546 	.byte	1
+                            547 ; swatches:
+   0785 00 65               548 	.word	_swatch_10_0
+                            549 	.globl	_level11
+   0787                     550 LC11:
+   0787 20 20 20 20 20 20   551 	.ascii	"            bb        bbb       bbb       bbbbb "
+        20 20 20 20 20 20
+        62 62 20 20 20 20
+        20 20 20 20 62 62
+        62 20 20 20 20 20
+        20 20 62 62 62 20
+        20 20 20 20 20 20
+        62 62 62 62 62 20
+   07B7 20 20 20 20 20 20   552 	.ascii	"      beb   bb  bbbbb bbb  lbhb bbb   bbb   b   "
+        62 65 62 20 20 20
+        62 62 20 20 62 62
+        62 62 62 20 62 62
+        62 20 20 6C 62 68
+        62 20 62 62 62 20
+        20 20 62 62 62 20
+        20 20 62 20 20 20
+   07E7 20 62 20 20 20 20   553 	.ascii	" b    bbb  b    bbbbbbb    bbbbbb    bb  lbh    "
+        62 62 62 20 20 62
+        20 20 20 20 62 62
+        62 62 62 62 62 20
+        20 20 20 62 62 62
+        62 62 62 20 20 20
+        20 62 62 20 20 6C
+        62 68 20 20 20 20
+   0817 20 20 20 20 20 20   554 	.ascii	"      \0"
+        00
+   081E                     555 _level11:
+                            556 ; geometry:
+   081E 07 87               557 	.word	LC11
+                            558 ; start:
+                            559 ; x:
+   0820 03                  560 	.byte	3
+                            561 ; y:
+   0821 03                  562 	.byte	3
+                            563 ; swatches_count:
+   0822 02                  564 	.byte	2
+                            565 ; swatches:
+   0823 00 6D               566 	.word	_swatch_11_0
+   0825 00 73               567 	.word	_swatch_11_1
+                            568 	.globl	_level12
+   0827                     569 LC12:
+   0827 20 20 20 20 20 20   570 	.ascii	"              bbbbbb    bbbbbb  bbbbb  bbbb  f  "
+        20 20 20 20 20 20
+        20 20 62 62 62 62
+        62 62 20 20 20 20
+        62 62 62 62 62 62
+        20 20 62 62 62 62
+        62 20 20 62 62 62
+        62 20 20 66 20 20
+   0857 20 66 62 62 62 20   571 	.ascii	" fbbb  f   bbfffff   b fffbbb  b fbfbeb  bbfffbb"
+        20 66 20 20 20 62
+        62 66 66 66 66 66
+        20 20 20 62 20 66
+        66 66 62 62 62 20
+        20 62 20 66 62 66
+        62 65 62 20 20 62
+        62 66 66 66 62 62
+   0887 62 20 20 66 62 66   572 	.ascii	"b  fbfff     b ffb    bb   bbbbbbb     bbbbb    "
+        66 66 20 20 20 20
+        20 62 20 66 66 62
+        20 20 20 20 62 62
+        20 20 20 62 62 62
+        62 62 62 62 20 20
+        20 20 20 62 62 62
+        62 62 20 20 20 20
+   08B7 20 62 62 62 20 20   573 	.ascii	" bbb  \0"
+        00
+   08BE                     574 _level12:
+                            575 ; geometry:
+   08BE 08 27               576 	.word	LC12
+                            577 ; start:
+                            578 ; x:
+   08C0 06                  579 	.byte	6
+                            580 ; y:
+   08C1 0D                  581 	.byte	13
+                            582 ; swatches_count:
+   08C2 00                  583 	.byte	0
+                            584 	.globl	_level13
+   08C3                     585 LC13:
+   08C3 20 20 62 62 62 62   586 	.ascii	"  bbbbbb   bb   ll  bbb   rr  beb   bbb bbb   bb"
+        62 62 20 20 20 62
+        62 20 20 20 6C 6C
+        20 20 62 62 62 20
+        20 20 72 72 20 20
+        62 65 62 20 20 20
+        62 62 62 20 62 62
+        62 20 20 20 62 62
+   08F3 62 20 20 20 20 20   587 	.ascii	"b       bbb        b         b  bbbb   bbbbbbb  "
+        20 20 62 62 62 20
+        20 20 20 20 20 20
+        20 62 20 20 20 20
+        20 20 20 20 20 62
+        20 20 62 62 62 62
+        20 20 20 62 62 62
+        62 62 62 62 20 20
+   0923 20 62 62 62 62 62   588 	.ascii	" bbbbbbb   bbbb  b   b  b  bbbhb  h  bbbbb      "
+        62 62 20 20 20 62
+        62 62 62 20 20 62
+        20 20 20 62 20 20
+        62 20 20 62 62 62
+        68 62 20 20 68 20
+        20 62 62 62 62 62
+        20 20 20 20 20 20
+   0953 20 20 20 20 20 20   589 	.ascii	"      \0"
+        00
+   095A                     590 _level13:
+                            591 ; geometry:
+   095A 08 C3               592 	.word	LC13
+                            593 ; start:
+                            594 ; x:
+   095C 07                  595 	.byte	7
+                            596 ; y:
+   095D 04                  597 	.byte	4
+                            598 ; swatches_count:
+   095E 02                  599 	.byte	2
+                            600 ; swatches:
+   095F 00 79               601 	.word	_swatch_13_0
+   0961 00 81               602 	.word	_swatch_13_1
+                            603 	.globl	_level14
+   0963                     604 LC14:
+   0963 62 62 62 20 20 62   605 	.ascii	"bbb  bbb  bbbbbbbb  bbb   bl   b    br   b    bb"
+        62 62 20 20 62 62
+        62 62 62 62 62 62
+        20 20 62 62 62 20
+        20 20 62 6C 20 20
+        20 62 20 20 20 20
+        62 72 20 20 20 62
+        20 20 20 20 62 62
+   0993 62 20 20 62 20 20   606 	.ascii	"b  b      k bbb     q bbbbv  bbbbbb   sbbb k    "
+        20 20 20 20 6B 20
+        62 62 62 20 20 20
+        20 20 71 20 62 62
+        62 62 76 20 20 62
+        62 62 62 62 62 20
+        20 20 73 62 62 62
+        20 6B 20 20 20 20
+   09C3 20 62 62 62 20 71   607 	.ascii	" bbb q      l sbs     r beb    bhbbbb    bbb    "
+        20 20 20 20 20 20
+        6C 20 73 62 73 20
+        20 20 20 20 72 20
+        62 65 62 20 20 20
+        20 62 68 62 62 62
+        62 20 20 20 20 62
+        62 62 20 20 20 20
+   09F3 20 20 20 62 62 62   608 	.ascii	"   bbb\0"
+        00
+   09FA                     609 _level14:
+                            610 ; geometry:
+   09FA 09 63               611 	.word	LC14
+                            612 ; start:
+                            613 ; x:
+   09FC 01                  614 	.byte	1
+                            615 ; y:
+   09FD 01                  616 	.byte	1
+                            617 ; swatches_count:
+   09FE 05                  618 	.byte	5
+                            619 ; swatches:
+   09FF 00 89               620 	.word	_swatch_14_0
+   0A01 00 95               621 	.word	_swatch_14_1
+   0A03 00 A1               622 	.word	_swatch_14_2
+   0A05 00 A9               623 	.word	_swatch_14_3
+   0A07 00 B1               624 	.word	_swatch_14_4
+                            625 	.globl	_levels
+   0A09                     626 _levels:
+   0A09 01 50               627 	.word	_level0
+   0A0B 01 EC               628 	.word	_level1
+   0A0D 02 8C               629 	.word	_level2
+   0A0F 03 28               630 	.word	_level3
+   0A11 03 C4               631 	.word	_level4
+   0A13 04 68               632 	.word	_level5
+   0A15 05 04               633 	.word	_level6
+   0A17 05 A2               634 	.word	_level7
+   0A19 06 40               635 	.word	_level8
+   0A1B 06 DE               636 	.word	_level9
+   0A1D 07 80               637 	.word	_level10
+   0A1F 08 1E               638 	.word	_level11
+   0A21 08 BE               639 	.word	_level12
+   0A23 09 5A               640 	.word	_level13
+   0A25 09 FA               641 	.word	_level14
+   0A27                     642 ___compound_literal.0:
+                            643 ; action:
+   0A27 00                  644 	.byte	0
+                            645 ; position:
+                            646 ; x:
+   0A28 04                  647 	.byte	4
+                            648 ; y:
+   0A29 0A                  649 	.byte	10
+   0A2A                     650 ___compound_literal.1:
+                            651 ; action:
+   0A2A 00                  652 	.byte	0
+                            653 ; position:
+                            654 ; x:
+   0A2B 04                  655 	.byte	4
+                            656 ; y:
+   0A2C 0B                  657 	.byte	11
+   0A2D                     658 ___compound_literal.2:
+                            659 ; action:
+   0A2D 00                  660 	.byte	0
+                            661 ; position:
+                            662 ; x:
+   0A2E 04                  663 	.byte	4
+                            664 ; y:
+   0A2F 04                  665 	.byte	4
+   0A30                     666 ___compound_literal.3:
+                            667 ; action:
+   0A30 00                  668 	.byte	0
+                            669 ; position:
+                            670 ; x:
+   0A31 04                  671 	.byte	4
+                            672 ; y:
+   0A32 05                  673 	.byte	5
+   0A33                     674 ___compound_literal.4:
+                            675 ; action:
+   0A33 00                  676 	.byte	0
+                            677 ; position:
+                            678 ; x:
+   0A34 08                  679 	.byte	8
+                            680 ; y:
+   0A35 06                  681 	.byte	6
+   0A36                     682 ___compound_literal.5:
+                            683 ; action:
+   0A36 00                  684 	.byte	0
+                            685 ; position:
+                            686 ; x:
+   0A37 08                  687 	.byte	8
+                            688 ; y:
+   0A38 05                  689 	.byte	5
+   0A39                     690 ___compound_literal.6:
+                            691 ; action:
+   0A39 01                  692 	.byte	1
+                            693 ; position:
+                            694 ; x:
+   0A3A 01                  695 	.byte	1
+                            696 ; y:
+   0A3B 05                  697 	.byte	5
+   0A3C                     698 ___compound_literal.7:
+                            699 ; action:
+   0A3C 01                  700 	.byte	1
+                            701 ; position:
+                            702 ; x:
+   0A3D 01                  703 	.byte	1
+                            704 ; y:
+   0A3E 06                  705 	.byte	6
+   0A3F                     706 ___compound_literal.8:
+                            707 ; action:
+   0A3F 02                  708 	.byte	2
+                            709 ; position:
+                            710 ; x:
+   0A40 01                  711 	.byte	1
+                            712 ; y:
+   0A41 05                  713 	.byte	5
+   0A42                     714 ___compound_literal.9:
+                            715 ; action:
+   0A42 02                  716 	.byte	2
+                            717 ; position:
+                            718 ; x:
+   0A43 01                  719 	.byte	1
+                            720 ; y:
+   0A44 06                  721 	.byte	6
+   0A45                     722 ___compound_literal.10:
+                            723 ; action:
+   0A45 00                  724 	.byte	0
+                            725 ; position:
+                            726 ; x:
+   0A46 01                  727 	.byte	1
+                            728 ; y:
+   0A47 05                  729 	.byte	5
+   0A48                     730 ___compound_literal.11:
+                            731 ; action:
+   0A48 00                  732 	.byte	0
+                            733 ; position:
+                            734 ; x:
+   0A49 01                  735 	.byte	1
+                            736 ; y:
+   0A4A 06                  737 	.byte	6
+   0A4B                     738 ___compound_literal.12:
+                            739 ; action:
+   0A4B 00                  740 	.byte	0
+                            741 ; position:
+                            742 ; x:
+   0A4C 02                  743 	.byte	2
+                            744 ; y:
+   0A4D 03                  745 	.byte	3
+   0A4E                     746 ___compound_literal.13:
+                            747 ; action:
+   0A4E 03                  748 	.byte	3
+                            749 ; position:
+                            750 ; x:
+   0A4F 08                  751 	.byte	8
+                            752 ; y:
+   0A50 0A                  753 	.byte	10
+   0A51                     754 ___compound_literal.14:
+                            755 ; action:
+   0A51 04                  756 	.byte	4
+                            757 ; position:
+                            758 ; x:
+   0A52 02                  759 	.byte	2
+                            760 ; y:
+   0A53 0A                  761 	.byte	10
+   0A54                     762 ___compound_literal.15:
+                            763 ; action:
+   0A54 03                  764 	.byte	3
+                            765 ; position:
+                            766 ; x:
+   0A55 05                  767 	.byte	5
+                            768 ; y:
+   0A56 0C                  769 	.byte	12
+   0A57                     770 ___compound_literal.16:
+                            771 ; action:
+   0A57 04                  772 	.byte	4
+                            773 ; position:
+                            774 ; x:
+   0A58 05                  775 	.byte	5
+                            776 ; y:
+   0A59 02                  777 	.byte	2
+   0A5A                     778 ___compound_literal.17:
+                            779 ; action:
+   0A5A 03                  780 	.byte	3
+                            781 ; position:
+                            782 ; x:
+   0A5B 08                  783 	.byte	8
+                            784 ; y:
+   0A5C 0D                  785 	.byte	13
+   0A5D                     786 ___compound_literal.18:
+                            787 ; action:
+   0A5D 04                  788 	.byte	4
+                            789 ; position:
+                            790 ; x:
+   0A5E 08                  791 	.byte	8
+                            792 ; y:
+   0A5F 0A                  793 	.byte	10
+   0A60                     794 ___compound_literal.19:
+                            795 ; action:
+   0A60 00                  796 	.byte	0
+                            797 ; position:
+                            798 ; x:
+   0A61 08                  799 	.byte	8
+                            800 ; y:
+   0A62 04                  801 	.byte	4
+   0A63                     802 ___compound_literal.20:
+                            803 ; action:
+   0A63 00                  804 	.byte	0
+                            805 ; position:
+                            806 ; x:
+   0A64 08                  807 	.byte	8
+                            808 ; y:
+   0A65 05                  809 	.byte	5
+   0A66                     810 ___compound_literal.21:
+                            811 ; action:
+   0A66 00                  812 	.byte	0
+                            813 ; position:
+                            814 ; x:
+   0A67 08                  815 	.byte	8
+                            816 ; y:
+   0A68 07                  817 	.byte	7
+   0A69                     818 ___compound_literal.22:
+                            819 ; action:
+   0A69 00                  820 	.byte	0
+                            821 ; position:
+                            822 ; x:
+   0A6A 08                  823 	.byte	8
+                            824 ; y:
+   0A6B 08                  825 	.byte	8
+   0A6C                     826 ___compound_literal.23:
+                            827 ; action:
+   0A6C 00                  828 	.byte	0
+                            829 ; position:
+                            830 ; x:
+   0A6D 07                  831 	.byte	7
+                            832 ; y:
+   0A6E 0D                  833 	.byte	13
+   0A6F                     834 ___compound_literal.24:
+                            835 ; action:
+   0A6F 00                  836 	.byte	0
+                            837 ; position:
+                            838 ; x:
+   0A70 06                  839 	.byte	6
+                            840 ; y:
+   0A71 0D                  841 	.byte	13
+   0A72                     842 ___compound_literal.25:
+                            843 ; action:
+   0A72 02                  844 	.byte	2
+                            845 ; position:
+                            846 ; x:
+   0A73 09                  847 	.byte	9
+                            848 ; y:
+   0A74 06                  849 	.byte	6
+   0A75                     850 ___compound_literal.26:
+                            851 ; action:
+   0A75 02                  852 	.byte	2
+                            853 ; position:
+                            854 ; x:
+   0A76 08                  855 	.byte	8
+                            856 ; y:
+   0A77 06                  857 	.byte	6
+   0A78                     858 ___compound_literal.27:
+                            859 ; action:
+   0A78 00                  860 	.byte	0
+                            861 ; position:
+                            862 ; x:
+   0A79 05                  863 	.byte	5
+                            864 ; y:
+   0A7A 07                  865 	.byte	7
+   0A7B                     866 ___compound_literal.28:
+                            867 ; action:
+   0A7B 00                  868 	.byte	0
+                            869 ; position:
+                            870 ; x:
+   0A7C 07                  871 	.byte	7
+                            872 ; y:
+   0A7D 0D                  873 	.byte	13
+   0A7E                     874 ___compound_literal.29:
+                            875 ; action:
+   0A7E 00                  876 	.byte	0
+                            877 ; position:
+                            878 ; x:
+   0A7F 07                  879 	.byte	7
+                            880 ; y:
+   0A80 01                  881 	.byte	1
+   0A81                     882 ___compound_literal.30:
+                            883 ; action:
+   0A81 00                  884 	.byte	0
+                            885 ; position:
+                            886 ; x:
+   0A82 07                  887 	.byte	7
+                            888 ; y:
+   0A83 02                  889 	.byte	2
+   0A84                     890 ___compound_literal.31:
+                            891 ; action:
+   0A84 00                  892 	.byte	0
+                            893 ; position:
+                            894 ; x:
+   0A85 06                  895 	.byte	6
+                            896 ; y:
+   0A86 01                  897 	.byte	1
+   0A87                     898 ___compound_literal.32:
+                            899 ; action:
+   0A87 00                  900 	.byte	0
+                            901 ; position:
+                            902 ; x:
+   0A88 06                  903 	.byte	6
+                            904 ; y:
+   0A89 02                  905 	.byte	2
+   0A8A                     906 ___compound_literal.33:
+                            907 ; action:
+   0A8A 00                  908 	.byte	0
+                            909 ; position:
+                            910 ; x:
+   0A8B 07                  911 	.byte	7
+                            912 ; y:
+   0A8C 02                  913 	.byte	2
+   0A8D                     914 ___compound_literal.34:
+                            915 ; action:
+   0A8D 00                  916 	.byte	0
+                            917 ; position:
+                            918 ; x:
+   0A8E 07                  919 	.byte	7
+                            920 ; y:
+   0A8F 03                  921 	.byte	3
+   0A90                     922 ___compound_literal.35:
+                            923 ; action:
+   0A90 00                  924 	.byte	0
+                            925 ; position:
+                            926 ; x:
+   0A91 08                  927 	.byte	8
+                            928 ; y:
+   0A92 05                  929 	.byte	5
+   0A93                     930 ___compound_literal.36:
+                            931 ; action:
+   0A93 00                  932 	.byte	0
+                            933 ; position:
+                            934 ; x:
+   0A94 08                  935 	.byte	8
+                            936 ; y:
+   0A95 06                  937 	.byte	6
+   0A96                     938 ___compound_literal.37:
+                            939 ; action:
+   0A96 00                  940 	.byte	0
+                            941 ; position:
+                            942 ; x:
+   0A97 08                  943 	.byte	8
+                            944 ; y:
+   0A98 05                  945 	.byte	5
+   0A99                     946 ___compound_literal.38:
+                            947 ; action:
+   0A99 00                  948 	.byte	0
+                            949 ; position:
+                            950 ; x:
+   0A9A 08                  951 	.byte	8
+                            952 ; y:
+   0A9B 06                  953 	.byte	6
+   0A9C                     954 ___compound_literal.39:
+                            955 ; action:
+   0A9C 00                  956 	.byte	0
+                            957 ; position:
+                            958 ; x:
+   0A9D 08                  959 	.byte	8
+                            960 ; y:
+   0A9E 0A                  961 	.byte	10
+   0A9F                     962 ___compound_literal.40:
+                            963 ; action:
+   0A9F 00                  964 	.byte	0
+                            965 ; position:
+                            966 ; x:
+   0AA0 08                  967 	.byte	8
+                            968 ; y:
+   0AA1 0B                  969 	.byte	11
+   0AA2                     970 ___compound_literal.41:
+                            971 ; action:
+   0AA2 03                  972 	.byte	3
+                            973 ; position:
+                            974 ; x:
+   0AA3 08                  975 	.byte	8
+                            976 ; y:
+   0AA4 0D                  977 	.byte	13
+   0AA5                     978 ___compound_literal.42:
+                            979 ; action:
+   0AA5 04                  980 	.byte	4
+                            981 ; position:
+                            982 ; x:
+   0AA6 01                  983 	.byte	1
+                            984 ; y:
+   0AA7 01                  985 	.byte	1
+   0AA8                     986 ___compound_literal.43:
+                            987 ; action:
+   0AA8 02                  988 	.byte	2
+                            989 ; position:
+                            990 ; x:
+   0AA9 01                  991 	.byte	1
+                            992 ; y:
+   0AAA 09                  993 	.byte	9
+   0AAB                     994 ___compound_literal.44:
+                            995 ; action:
+   0AAB 02                  996 	.byte	2
+                            997 ; position:
+                            998 ; x:
+   0AAC 01                  999 	.byte	1
+                           1000 ; y:
+   0AAD 0A                 1001 	.byte	10
+   0AAE                    1002 ___compound_literal.45:
+                           1003 ; action:
+   0AAE 02                 1004 	.byte	2
+                           1005 ; position:
+                           1006 ; x:
+   0AAF 01                 1007 	.byte	1
+                           1008 ; y:
+   0AB0 09                 1009 	.byte	9
+   0AB1                    1010 ___compound_literal.46:
+                           1011 ; action:
+   0AB1 02                 1012 	.byte	2
+                           1013 ; position:
+                           1014 ; x:
+   0AB2 01                 1015 	.byte	1
+                           1016 ; y:
+   0AB3 0A                 1017 	.byte	10
+ASxxxx Assembler V05.00  (Motorola 6809), page 1.
+Hexidecimal [16-Bits]
+
+Symbol Table
+
+    .__.$$$.       =   2710 L   |     .__.ABS.       =   0000 G
+    .__.CPU.       =   0000 L   |     .__.H$L.       =   0001 L
+  2 LC0                00B9 R   |   2 LC1                0155 R
+  2 LC10               06E9 R   |   2 LC11               0787 R
+  2 LC12               0827 R   |   2 LC13               08C3 R
+  2 LC14               0963 R   |   2 LC2                01F5 R
+  2 LC3                0291 R   |   2 LC4                032D R
+  2 LC5                03D1 R   |   2 LC6                046D R
+  2 LC7                050B R   |   2 LC8                05A9 R
+  2 LC9                0647 R   |   2 ___compound_li     0A27 R
+  2 ___compound_li     0A2A R   |   2 ___compound_li     0A45 R
+  2 ___compound_li     0A48 R   |   2 ___compound_li     0A4B R
+  2 ___compound_li     0A4E R   |   2 ___compound_li     0A51 R
+  2 ___compound_li     0A54 R   |   2 ___compound_li     0A57 R
+  2 ___compound_li     0A5A R   |   2 ___compound_li     0A5D R
+  2 ___compound_li     0A60 R   |   2 ___compound_li     0A2D R
+  2 ___compound_li     0A63 R   |   2 ___compound_li     0A66 R
+  2 ___compound_li     0A69 R   |   2 ___compound_li     0A6C R
+  2 ___compound_li     0A6F R   |   2 ___compound_li     0A72 R
+  2 ___compound_li     0A75 R   |   2 ___compound_li     0A78 R
+  2 ___compound_li     0A7B R   |   2 ___compound_li     0A7E R
+  2 ___compound_li     0A30 R   |   2 ___compound_li     0A81 R
+  2 ___compound_li     0A84 R   |   2 ___compound_li     0A87 R
+  2 ___compound_li     0A8A R   |   2 ___compound_li     0A8D R
+  2 ___compound_li     0A90 R   |   2 ___compound_li     0A93 R
+  2 ___compound_li     0A96 R   |   2 ___compound_li     0A99 R
+  2 ___compound_li     0A9C R   |   2 ___compound_li     0A33 R
+  2 ___compound_li     0A9F R   |   2 ___compound_li     0AA2 R
+  2 ___compound_li     0AA5 R   |   2 ___compound_li     0AA8 R
+  2 ___compound_li     0AAB R   |   2 ___compound_li     0AAE R
+  2 ___compound_li     0AB1 R   |   2 ___compound_li     0A36 R
+  2 ___compound_li     0A39 R   |   2 ___compound_li     0A3C R
+  2 ___compound_li     0A3F R   |   2 ___compound_li     0A42 R
+  2 _level0            0150 GR  |   2 _level1            01EC GR
+  2 _level10           0780 GR  |   2 _level11           081E GR
+  2 _level12           08BE GR  |   2 _level13           095A GR
+  2 _level14           09FA GR  |   2 _level2            028C GR
+  2 _level3            0328 GR  |   2 _level4            03C4 GR
+  2 _level5            0468 GR  |   2 _level6            0504 GR
+  2 _level7            05A2 GR  |   2 _level8            0640 GR
+  2 _level9            06DE GR  |   2 _levelCount        0000 GR
+  2 _levelOffset       0001 GR  |   2 _levels            0A09 GR
+  2 _nextBank          0002 GR  |   2 _swatch_10_0       0065 GR
+  2 _swatch_11_0       006D GR  |   2 _swatch_11_1       0073 GR
+  2 _swatch_13_0       0079 GR  |   2 _swatch_13_1       0081 GR
+  2 _swatch_14_0       0089 GR  |   2 _swatch_14_1       0095 GR
+  2 _swatch_14_2       00A1 GR  |   2 _swatch_14_3       00A9 GR
+  2 _swatch_14_4       00B1 GR  |   2 _swatch_1_0        0003 GR
+  2 _swatch_1_1        000B GR  |   2 _swatch_4_0        0013 GR
+  2 _swatch_4_1        001B GR  |   2 _swatch_4_2        0023 GR
+  2 _swatch_4_3        002B GR  |   2 _swatch_6_0        0033 GR
+  2 _swatch_7_0        0039 GR  |   2 _swatch_8_0        0041 GR
+  2 _swatch_9_0        0049 GR  |   2 _swatch_9_1        0051 GR
+  2 _swatch_9_2        0059 GR
+
+ASxxxx Assembler V05.00  (Motorola 6809), page 2.
+Hexidecimal [16-Bits]
+
+Area Table
+
+[_CSEG]
+   0 _CODE            size    0   flags C080
+   2 .text            size  AB4   flags  100
+[_DSEG]
+   1 _DATA            size    0   flags C0C0
+

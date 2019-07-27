@@ -1,29 +1,9 @@
 #!/usr/bin/python3
 
-# save the output to the C file:
-# ./levels.py > source/leveldata.c
-
-# TODO: v, split block
-#code 499707, level: 8, unknown char: v
-#         bbb   
-#         bbb   
-#         bbb   
-#bbbbbb   bbbbbb
-#bbbbvb   bbbbeb
-#bbbbbb   bbbbbb
-#         bbb   
-#         bbb   
-#         bbb   
-#               
-#[1, 4]
-#{}
-#{'swatch44': [10, 1, 10, 7]}
-
-
 import sys
-import pprint
+#import pprint
 
-pp = pprint.PrettyPrinter(indent=4)
+#pp = pprint.PrettyPrinter(indent=4)
 
 
 # original Flash level data
@@ -648,67 +628,78 @@ for level2 in levels2:
         y += 1
     level2['geometry'] = geometry
 
-# generate C code
-print('#include "level.h"')
-print("")
-print("const uint8_t levelCount = %d;" % len(levels2))
-print("")
+def saveFile(levels2, levelOffset, nextBank, filename):
+    
+    with open(filename, "w") as file:
+    
+        # generate C code
+        file.write('#include "source/level.h"\n')
+        file.write("\n")
+        file.write("const uint8_t levelCount = %d;\n" % len(levels2))
+        file.write("const uint8_t levelOffset = %d;\n" % levelOffset)
+        file.write("const uint8_t nextBank = %d;\n" % nextBank)
+        file.write("\n")
+        
+        i = 0
+        for level in levels2:
+            # print level
+            swatches = level['swatches']
+            if len(swatches) > 0:
+                s = 0
+                for swatch in swatches:
+                    sx = swatch['position']['x']
+                    sy = swatch['position']['y']
+                    file.write("const struct Swatch const swatch_%d_%d = {\n" % (i, s));
+                    file.write("    .type = SWATCH_TYPE_%s,\n" % swatch['type'].upper());
+                    file.write("    .position = { .x = %d, .y = %d },\n" % (sx, sy));
+                    fields = swatch['fields']
+                    file.write("    .fields_count = %d,\n" % len(fields));
+                    file.write("    .fields =\n");
+                    file.write("        {\n");
+                    for field in fields:
+                        file.write("            &(const struct SwatchField) {\n");
+                        action = field['action']
+                        fx = field['position']['x']
+                        fy = field['position']['y']
+                        file.write("                .action = SWATCH_FIELD_ACTION_%s, .position = { .x = %d, .y = %d },\n" % (action.upper(), fx, fy));
+                        file.write("            },\n");
+                    file.write("        }\n");
+                    file.write("};\n")
+                    file.write("\n")
+                    s += 1
+            i += 1
+        
+        i = 0
+        for level in levels2:
+            # print level
+            file.write("const struct Level const level%d =\n" % i)
+            file.write("{\n")
+            file.write("    .geometry = \n")
+            for line in level['geometry']:
+                file.write('        "' + line + '"\n')
+            file.write("    , .start = { .x = %d, .y = %d }\n" % (level['start']['x'], level['start']['y']))
+            swatches = level['swatches']
+            file.write("    , .swatches_count = %d\n" % len(swatches));
+            if len(swatches) > 0:
+                file.write("    , .swatches =\n");
+                file.write("    {\n");
+                s = 0
+                for swatch in swatches:
+                    file.write("        &swatch_%d_%d,\n" % (i, s));
+                    s += 1
+                file.write("    },\n");
+            file.write("};\n")
+            i += 1
+        
+        file.write("const struct Level* const levels[] = {\n")
+        i = 0
+        for level in levels2:
+            # print level
+            file.write("    &level%d,\n" % i)
+            i += 1
+        file.write("};\n")
 
-i = 0
-for level in levels2:
-    # print level
-    swatches = level['swatches']
-    if len(swatches) > 0:
-        s = 0
-        for swatch in swatches:
-            sx = swatch['position']['x']
-            sy = swatch['position']['y']
-            print("const struct Swatch const swatch_%d_%d = {" % (i, s));
-            print("    .type = SWATCH_TYPE_%s," % swatch['type'].upper());
-            print("    .position = { .x = %d, .y = %d }," % (sx, sy));
-            fields = swatch['fields']
-            print("    .fields_count = %d," % len(fields));
-            print("    .fields =");
-            print("        {");
-            for field in fields:
-                print("            &(const struct SwatchField) {");
-                action = field['action']
-                fx = field['position']['x']
-                fy = field['position']['y']
-                print("                .action = SWATCH_FIELD_ACTION_%s, .position = { .x = %d, .y = %d }," % (action.upper(), fx, fy));
-                print("            },");
-            print("        }");
-            print("};")
-            print("")
-            s += 1
-    i += 1
+saveFile(levels2[:15], 1, 1, "leveldata0.c")
+saveFile(levels2[16:], 17, 0, "leveldata1.c")
 
-i = 0
-for level in levels2:
-    # print level
-    print("const struct Level const level%d =" % i)
-    print("{")
-    print("    .geometry = ")
-    for line in level['geometry']:
-        print('        "' + line + '"')
-    print("    , .start = { .x = %d, .y = %d }" % (level['start']['x'], level['start']['y']))
-    swatches = level['swatches']
-    print("    , .swatches_count = %d" % len(swatches));
-    if len(swatches) > 0:
-        print("    , .swatches =");
-        print("    {");
-        s = 0
-        for swatch in swatches:
-            print("        &swatch_%d_%d," % (i, s));
-            s += 1
-        print("    },");
-    print("};")
-    i += 1
-
-print("const struct Level* const levels[] = {")
-i = 0
-for level in levels2:
-    # print level
-    print("    &level%d," % i)
-    i += 1
-print("};")
+print("level files created")

@@ -1,0 +1,2033 @@
+                              1 ;;; gcc for m6809 : Mar 17 2019 12:45:32
+                              2 ;;; 4.3.6 (gcc6809)
+                              3 ;;; ABI version 1
+                              4 ;;; -mabi=bx -mint8 -fomit-frame-pointer -O1
+                              5 	.module	level.enr.c
+                              6 ; GNU C (GCC) version 4.3.6 (gcc6809) (m6809-unknown-none)
+                              7 ;	compiled by GNU C version 7.4.0, GMP version 4.3.2, MPFR version 2.4.2.
+                              8 ; GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+                              9 ; options passed:  -O1 -fverbose-asm -W -Wall -Wextra -Wconversion -Werror
+                             10 ; -fomit-frame-pointer -mint8 -msoft-reg-count=0 -std=gnu99
+                             11 ; -fno-time-report
+                             12 ; -IC:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include
+                             13 ; -D__INLINE_RUM=1 -DOMMIT_FRAMEPOINTER=1
+                             14 ; C:\data\bloxorz\Vide\source\level.enr.c
+                             15 ; options enabled:  -falign-loops -fargument-alias -fauto-inc-dec
+                             16 ; -fbranch-count-reg -fcommon -fcprop-registers -fdefer-pop
+                             17 ; -fearly-inlining -feliminate-unused-debug-types -ffunction-cse -fgcse-lm
+                             18 ; -fguess-branch-probability -fident -fif-conversion -fif-conversion2
+                             19 ; -finline-functions-called-once -fipa-pure-const -fipa-reference -fivopts
+                             20 ; -fkeep-static-consts -fleading-underscore -fmath-errno -fmerge-constants
+                             21 ; -fmerge-debug-strings -fmove-loop-invariants -fomit-frame-pointer
+                             22 ; -fpcc-struct-return -fpeephole -fsched-interblock -fsched-spec
+                             23 ; -fsched-stalled-insns-dep -fsigned-zeros -fsplit-ivs-in-unroller
+                             24 ; -fsplit-wide-types -ftoplevel-reorder -ftrapping-math -ftree-ccp
+                             25 ; -ftree-ch -ftree-copy-prop -ftree-copyrename -ftree-dce
+                             26 ; -ftree-dominator-opts -ftree-dse -ftree-fre -ftree-loop-im
+                             27 ; -ftree-loop-ivcanon -ftree-loop-optimize -ftree-parallelize-loops=
+                             28 ; -ftree-reassoc -ftree-salias -ftree-scev-cprop -ftree-sink -ftree-sra
+                             29 ; -ftree-ter -ftree-vect-loop-version -funit-at-a-time -fverbose-asm
+                             30 ; -fzero-initialized-in-bss
+                             31 ; Compiler executable checksum: 8f282e2d9663ae6148257c524e608c63
+                             32 	.area	.text
+                             33 	.globl	_getField
+   0000                      34 _getField:
+   0000 34 60         [ 7]   35 	pshs	y,u	;
+   0002 32 7B         [ 5]   36 	leas	-5,s	;,,
+   0004 E7 64         [ 5]   37 	stb	4,s	; x, x
+                             38 ;----- asm -----
+                             39 ; 25 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                             40 	; #ENR#[24]    char c = 0;
+                             41 ; 27 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                             42 	; #ENR#[25]    if (x >= 0 && y >= 0 && x < LEVEL_WIDTH && y < LEVEL_HEIGHT) {
+                             43 ;--- end asm ---
+   0006 5D            [ 2]   44 	tstb	; x
+   0007 2D 36         [ 3]   45 	blt	L2	;
+   0009 6D 6B         [ 7]   46 	tst	11,s	; y
+   000B 2D 32         [ 3]   47 	blt	L2	;
+   000D C1 09         [ 2]   48 	cmpb	#9	;cmpqi:	; x,
+   000F 2E 2E         [ 3]   49 	bgt	L2	;
+   0011 E6 6B         [ 5]   50 	ldb	11,s	;, y
+   0013 C1 0E         [ 2]   51 	cmpb	#14	;cmpqi:	;,
+   0015 2E 28         [ 3]   52 	bgt	L2	;
+                             53 ;----- asm -----
+                             54 ; 29 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                             55 	; #ENR#[26]        c = level->geometry[(long int) y*LEVEL_WIDTH + (long int)x];
+                             56 ;--- end asm ---
+   0017 1D            [ 2]   57 	sex		;extendqihi2: R:b -> R:d	;,
+   0018 ED E4         [ 5]   58 	std	,s	;,
+   001A E6 64         [ 5]   59 	ldb	4,s	;, x
+   001C 1D            [ 2]   60 	sex		;extendqihi2: R:b -> R:d	;,
+   001D 1F 02         [ 6]   61 	tfr	d,y	;, x
+   001F EC E4         [ 5]   62 	ldd	,s	;,
+   0021 58            [ 2]   63 	aslb	;
+   0022 49            [ 2]   64 	rola	;
+   0023 ED 62         [ 6]   65 	std	2,s	;,
+   0025 58            [ 2]   66 	aslb	;
+   0026 49            [ 2]   67 	rola	;
+   0027 58            [ 2]   68 	aslb	;
+   0028 49            [ 2]   69 	rola	;
+   0029 EE 62         [ 6]   70 	ldu	2,s	;,
+   002B 30 CB         [ 8]   71 	leax	d,u	; tmp38, tmp37,
+   002D 1E 02         [ 8]   72 	exg	d,y	;, x
+   002F 30 8B         [ 8]   73 	leax	d,x	; tmp39,, tmp39
+   0031 1E 02         [ 8]   74 	exg	d,y	;, x
+   0033 1E 01         [ 8]   75 	exg	d,x	;, tmp40
+   0035 E3 9F 00 00   [11]   76 	addd	[_level]; addhi3,3	;, <variable>.geometry
+   0039 1E 01         [ 8]   77 	exg	d,x	;, tmp40
+   003B E6 84         [ 4]   78 	ldb	,x	; c,
+   003D 20 01         [ 3]   79 	bra	L3	;
+   003F                      80 L2:
+   003F 5F            [ 2]   81 	clrb	; c
+   0040                      82 L3:
+                             83 ;----- asm -----
+                             84 ; 32 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                             85 	; #ENR#[28]	return c;
+                             86 ;--- end asm ---
+   0040 32 65         [ 5]   87 	leas	5,s	;,,
+   0042 35 E0         [ 8]   88 	puls	y,u,pc	;
+                             89 	.globl	_getShifts
+   0044                      90 _getShifts:
+                             91 ;----- asm -----
+                             92 ; 40 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                             93 	; #ENR#[35]	return shifts[bit];
+                             94 ;--- end asm ---
+   0044 8E 07 3B      [ 3]   95 	ldx	#_shifts	;
+   0047 3A            [ 3]   96 	abx
+   0048 E6 84         [ 4]   97 	ldb	,x	; tmp33
+   004A 39            [ 5]   98 	rts
+                             99 	.globl	_isSwatchFieldOn
+   004B                     100 _isSwatchFieldOn:
+   004B 34 40         [ 6]  101 	pshs	u	;
+   004D 32 7E         [ 5]  102 	leas	-2,s	;,,
+   004F E7 E4         [ 4]  103 	stb	,s	; x, x
+                            104 ;----- asm -----
+                            105 ; 46 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            106 	; #ENR#[40]	long int index = (long int) y*LEVEL_WIDTH + (long int)x;
+                            107 ;--- end asm ---
+   0051 E6 66         [ 5]  108 	ldb	6,s	;, y
+   0053 86 0A         [ 2]  109 	lda	#10	;mulqihi3	;
+   0055 3D            [11]  110 	mul
+   0056 1F 01         [ 6]  111 	tfr	d,x	;, tmp33
+   0058 E6 E4         [ 4]  112 	ldb	,s	;, x
+   005A 1D            [ 2]  113 	sex		;extendqihi2: R:b -> R:d	;,
+   005B 1F 03         [ 6]  114 	tfr	d,u	;, x
+   005D 1E 01         [ 8]  115 	exg	d,x	;, tmp33
+   005F 33 CB         [ 8]  116 	leau	d,u	; index,, index
+                            117 ;----- asm -----
+                            118 ; 48 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            119 	; #ENR#[41]	uint8_t bit = (uint8_t) (index & 7);
+                            120 ; 50 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            121 	; #ENR#[42]	index >>= 3;
+                            122 ; 52 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            123 	; #ENR#[43]	return (swatchesOn[index] & getShifts(bit)) > 0;
+                            124 ;--- end asm ---
+   0061 1F 30         [ 6]  125 	tfr	u,d	; index,
+   0063 47            [ 2]  126 	asra	;
+   0064 56            [ 2]  127 	rorb	;
+   0065 47            [ 2]  128 	asra	;
+   0066 56            [ 2]  129 	rorb	;
+   0067 47            [ 2]  130 	asra	;
+   0068 56            [ 2]  131 	rorb	;
+   0069 1F 01         [ 6]  132 	tfr	d,x	;, tmp35
+   006B E6 89 00 02   [ 8]  133 	ldb	_swatchesOn,x	;, swatchesOn
+   006F E7 61         [ 5]  134 	stb	1,s	;, D.1312
+   0071 1F 30         [ 6]  135 	tfr	u,d	;movlsbqihi: R:u -> R:b	; index, index
+   0073 C4 07         [ 2]  136 	andb	#7	; tmp38,
+   0075 BD 00 44      [ 8]  137 	jsr	_getShifts
+   0078 E4 61         [ 5]  138 	andb	1,s	; tmp40, D.1312
+   007A 27 02         [ 3]  139 	beq	L8	;
+   007C C6 01         [ 2]  140 	ldb	#1	; tmp40,
+   007E                     141 L8:
+   007E 32 62         [ 5]  142 	leas	2,s	;,,
+   0080 35 C0         [ 7]  143 	puls	u,pc	;
+                            144 	.globl	_setSwatchField
+   0082                     145 _setSwatchField:
+   0082 34 20         [ 6]  146 	pshs	y	;
+   0084 32 7C         [ 5]  147 	leas	-4,s	;,,
+   0086 E7 E4         [ 4]  148 	stb	,s	; x, x
+                            149 ;----- asm -----
+                            150 ; 58 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            151 	; #ENR#[48]	long int index = (long int) y*LEVEL_WIDTH + (long int)x;
+                            152 ;--- end asm ---
+   0088 E6 68         [ 5]  153 	ldb	8,s	;, y
+   008A 86 0A         [ 2]  154 	lda	#10	;mulqihi3	;
+   008C 3D            [11]  155 	mul
+   008D 1F 01         [ 6]  156 	tfr	d,x	;, tmp37
+   008F E6 E4         [ 4]  157 	ldb	,s	;, x
+   0091 1D            [ 2]  158 	sex		;extendqihi2: R:b -> R:d	;,
+                            159 ; Applied peep: 4-2 (tfr exg 1=1, 2=2)
+   0092 1F 02         [ 6]  160 	tfr	d,y	;, x
+                            161 ; ORG>	tfr	d,y	;, x
+                            162 ; ORG>	exg	d,y	;, x
+   0094 30 8B         [ 8]  163 	leax	d,x	; index,, index
+                            164 ;----- asm -----
+                            165 ; 60 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            166 	; #ENR#[49]	uint8_t bit = (uint8_t) (index & 7);
+                            167 ;--- end asm ---
+   0096 1F 10         [ 6]  168 	tfr	x,d	;movlsbqihi: R:x -> R:b	; index, index
+   0098 C4 07         [ 2]  169 	andb	#7	; index,
+   009A E7 62         [ 5]  170 	stb	2,s	; index, bit
+                            171 ;----- asm -----
+                            172 ; 62 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            173 	; #ENR#[50]	index >>= 3;
+                            174 ;--- end asm ---
+   009C 1F 10         [ 6]  175 	tfr	x,d	; index, index.44
+   009E 47            [ 2]  176 	asra	;
+   009F 56            [ 2]  177 	rorb	;
+   00A0 47            [ 2]  178 	asra	;
+   00A1 56            [ 2]  179 	rorb	;
+   00A2 47            [ 2]  180 	asra	;
+   00A3 56            [ 2]  181 	rorb	;
+                            182 ;----- asm -----
+                            183 ; 64 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            184 	; #ENR#[51]	if (on) {
+                            185 ;--- end asm ---
+   00A4 6D 69         [ 7]  186 	tst	9,s	; on
+   00A6 27 14         [ 3]  187 	beq	L11	;
+                            188 ;----- asm -----
+                            189 ; 66 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            190 	; #ENR#[52]		swatchesOn[index] |= getShifts(bit);
+                            191 ;--- end asm ---
+   00A8 8E 00 02      [ 3]  192 	ldx	#_swatchesOn	;,
+   00AB 31 8B         [ 8]  193 	leay	d,x	; tmp41, index.44,
+   00AD E6 A4         [ 4]  194 	ldb	,y	;, swatchesOn
+   00AF E7 61         [ 5]  195 	stb	1,s	;, D.1327
+   00B1 E6 62         [ 5]  196 	ldb	2,s	;, bit
+   00B3 BD 00 44      [ 8]  197 	jsr	_getShifts
+   00B6 EA 61         [ 5]  198 	orb	1,s	; tmp44, D.1327
+   00B8 E7 A4         [ 4]  199 	stb	,y	; tmp44, swatchesOn
+   00BA 20 13         [ 3]  200 	bra	L13	;
+   00BC                     201 L11:
+                            202 ;----- asm -----
+                            203 ; 69 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            204 	; #ENR#[54]		swatchesOn[index] &= ~getShifts(bit);
+                            205 ;--- end asm ---
+   00BC 8E 00 02      [ 3]  206 	ldx	#_swatchesOn	;,
+   00BF 31 8B         [ 8]  207 	leay	d,x	; tmp46, index.44,
+   00C1 E6 A4         [ 4]  208 	ldb	,y	;, swatchesOn
+   00C3 E7 63         [ 5]  209 	stb	3,s	;, temp.45
+   00C5 E6 62         [ 5]  210 	ldb	2,s	;, bit
+   00C7 BD 00 44      [ 8]  211 	jsr	_getShifts
+   00CA 53            [ 2]  212 	comb	; tmp49
+   00CB E4 63         [ 5]  213 	andb	3,s	; tmp50, temp.45
+   00CD E7 A4         [ 4]  214 	stb	,y	; tmp50, swatchesOn
+   00CF                     215 L13:
+   00CF 32 64         [ 5]  216 	leas	4,s	;,,
+   00D1 35 A0         [ 7]  217 	puls	y,pc	;
+                            218 	.globl	_isField
+   00D3                     219 _isField:
+   00D3 32 7E         [ 5]  220 	leas	-2,s	;,,
+   00D5 E7 E4         [ 4]  221 	stb	,s	; x, x
+                            222 ;----- asm -----
+                            223 ; 76 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            224 	; #ENR#[60]    char c = getField(x, y);
+                            225 ;--- end asm ---
+   00D7 E6 64         [ 5]  226 	ldb	4,s	;, y
+   00D9 34 04         [ 6]  227 	pshs	b	;
+   00DB E6 61         [ 5]  228 	ldb	1,s	;, x
+   00DD BD 00 00      [ 8]  229 	jsr	_getField
+   00E0 E7 62         [ 5]  230 	stb	2,s	;, c
+                            231 ;----- asm -----
+                            232 ; 80 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            233 	; #ENR#[63]    if (c == 'l' || c == 'r' || c == 'k' || c == 'q') {
+                            234 ;--- end asm ---
+   00E2 32 61         [ 5]  235 	leas	1,s	;,,
+   00E4 C1 6C         [ 2]  236 	cmpb	#108	;cmpqi:	;,
+   00E6 27 0C         [ 3]  237 	beq	L15	;
+   00E8 C1 72         [ 2]  238 	cmpb	#114	;cmpqi:	;,
+   00EA 27 08         [ 3]  239 	beq	L15	;
+   00EC C1 6B         [ 2]  240 	cmpb	#107	;cmpqi:	;,
+   00EE 27 04         [ 3]  241 	beq	L15	;
+   00F0 C1 71         [ 2]  242 	cmpb	#113	;cmpqi:	;,
+   00F2 26 12         [ 3]  243 	bne	L16	;
+   00F4                     244 L15:
+                            245 ;----- asm -----
+                            246 ; 82 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            247 	; #ENR#[64]		if (isSwatchFieldOn(x, y)) {
+                            248 ;--- end asm ---
+   00F4 E6 64         [ 5]  249 	ldb	4,s	;, y
+   00F6 34 04         [ 6]  250 	pshs	b	;
+   00F8 E6 61         [ 5]  251 	ldb	1,s	;, x
+   00FA BD 00 4B      [ 8]  252 	jsr	_isSwatchFieldOn
+   00FD 32 61         [ 5]  253 	leas	1,s	;,,
+   00FF 5D            [ 2]  254 	tstb	; D.1341
+   0100 27 04         [ 3]  255 	beq	L16	;
+                            256 ;----- asm -----
+                            257 ; 84 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            258 	; #ENR#[65]			c = 'b';
+                            259 ;--- end asm ---
+   0102 C6 62         [ 2]  260 	ldb	#98	;,
+   0104 E7 61         [ 5]  261 	stb	1,s	;, c
+   0106                     262 L16:
+                            263 ;----- asm -----
+                            264 ; 90 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            265 	; #ENR#[70]    return (uint8_t) (c == 'b' || c == 'e' || c == 's' || c == 'h' || c == 'f' || c == 'v');
+                            266 ;--- end asm ---
+   0106 E6 61         [ 5]  267 	ldb	1,s	;, c
+   0108 C1 62         [ 2]  268 	cmpb	#98	;cmpqi:	;,
+   010A 27 21         [ 3]  269 	beq	L17	;
+   010C C1 65         [ 2]  270 	cmpb	#101	;cmpqi:	;,
+   010E 27 1D         [ 3]  271 	beq	L17	;
+   0110 C1 73         [ 2]  272 	cmpb	#115	;cmpqi:	;,
+   0112 27 19         [ 3]  273 	beq	L17	;
+   0114 C1 68         [ 2]  274 	cmpb	#104	;cmpqi:	;,
+   0116 27 15         [ 3]  275 	beq	L17	;
+   0118 C1 66         [ 2]  276 	cmpb	#102	;cmpqi:	;,
+   011A 27 11         [ 3]  277 	beq	L17	;
+   011C C1 76         [ 2]  278 	cmpb	#118	;cmpqi:	;,
+   011E C8 76         [ 2]  279 	eorb	#118	; tmp34,
+   0120 4F            [ 2]  280 	clra		;zero_extendqihi: R:b -> R:d	; tmp34, tmp35
+   0121 C3 FF FF      [ 4]  281 	addd	#-1; addhi3,3	; tmp36,
+   0124 1F 89         [ 6]  282 	tfr	a,b	;,
+   0126 4F            [ 2]  283 	clra		;zero_extendqihi: R:b -> R:d	;,
+   0127 59            [ 2]  284 	rolb	;
+   0128 59            [ 2]  285 	rolb	;
+   0129 C4 01         [ 2]  286 	andb	#1	;,
+   012B 20 02         [ 3]  287 	bra	L19	;
+   012D                     288 L17:
+   012D C6 01         [ 2]  289 	ldb	#1	; iftmp.5,
+   012F                     290 L19:
+   012F 32 62         [ 5]  291 	leas	2,s	;,,
+   0131 39            [ 5]  292 	rts
+                            293 	.globl	_x3d
+   0132                     294 _x3d:
+   0132 34 40         [ 6]  295 	pshs	u	;
+   0134 32 7E         [ 5]  296 	leas	-2,s	;,,
+   0136 E7 E4         [ 4]  297 	stb	,s	; x, x
+                            298 ;----- asm -----
+                            299 ; 161 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            300 	; #ENR#[112]    x -= LEVEL_WIDTH / 2 - 4;
+                            301 ; 163 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            302 	; #ENR#[113]    return 14 * x - 6 * z;
+                            303 ;--- end asm ---
+   0138 E6 66         [ 5]  304 	ldb	6,s	;, z
+   013A 86 FA         [ 2]  305 	lda	#-6	;mulqihi3	;
+   013C 3D            [11]  306 	mul
+   013D 1F 01         [ 6]  307 	tfr	d,x	;, tmp31
+   013F E6 E4         [ 4]  308 	ldb	,s	; tmp32, x
+   0141 5A            [ 2]  309 	decb	; tmp32
+   0142 86 0E         [ 2]  310 	lda	#14	;mulqihi3	;
+   0144 3D            [11]  311 	mul
+   0145 1F 03         [ 6]  312 	tfr	d,u	;, tmp33
+   0147 1F 10         [ 6]  313 	tfr	x,d	;movlsbqihi: R:x -> R:b	; tmp31,
+   0149 E7 61         [ 5]  314 	stb	1,s	;,
+   014B 1F 30         [ 6]  315 	tfr	u,d	;movlsbqihi: R:u -> R:b	; tmp33, tmp35
+   014D EB 61         [ 5]  316 	addb	1,s	; tmp30,
+   014F 32 62         [ 5]  317 	leas	2,s	;,,
+   0151 35 C0         [ 7]  318 	puls	u,pc	;
+                            319 	.globl	_y3d
+   0153                     320 _y3d:
+   0153 32 7D         [ 5]  321 	leas	-3,s	;,,
+   0155 E7 62         [ 5]  322 	stb	2,s	; x, x
+                            323 ;----- asm -----
+                            324 ; 170 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            325 	; #ENR#[119]    y -= LEVEL_HEIGHT / 2;
+                            326 ; 172 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            327 	; #ENR#[120]    return 3 * x + 13 * y + 8 * z;
+                            328 ;--- end asm ---
+   0157 E6 65         [ 5]  329 	ldb	5,s	; tmp32, y
+   0159 CB F9         [ 2]  330 	addb	#-7	; tmp32,
+   015B 86 0D         [ 2]  331 	lda	#13	;mulqihi3	;
+   015D 3D            [11]  332 	mul
+   015E 1F 01         [ 6]  333 	tfr	d,x	;, tmp33
+   0160 E6 66         [ 5]  334 	ldb	6,s	;, z
+   0162 58            [ 2]  335 	aslb	;
+   0163 58            [ 2]  336 	aslb	;
+   0164 58            [ 2]  337 	aslb	;
+   0165 E7 61         [ 5]  338 	stb	1,s	;,
+   0167 1F 10         [ 6]  339 	tfr	x,d	;movlsbqihi: R:x -> R:b	; tmp33, tmp36
+   0169 EB 61         [ 5]  340 	addb	1,s	; tmp36,
+   016B E7 E4         [ 4]  341 	stb	,s	; tmp36,
+   016D E6 62         [ 5]  342 	ldb	2,s	; tmp38, x
+   016F 58            [ 2]  343 	aslb	; tmp38
+   0170 EB 62         [ 5]  344 	addb	2,s	; tmp39, x
+   0172 EB E4         [ 4]  345 	addb	,s	; tmp31,
+   0174 32 63         [ 5]  346 	leas	3,s	;,,
+   0176 39            [ 5]  347 	rts
+                            348 	.globl	_addTarget
+   0177                     349 _addTarget:
+   0177 34 40         [ 6]  350 	pshs	u	;
+   0179 32 70         [ 5]  351 	leas	-16,s	;,,
+   017B E7 61         [ 5]  352 	stb	1,s	; x, x
+                            353 ;----- asm -----
+                            354 ; 251 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            355 	; #ENR#[171]    lineX0[lineCount] = x3d(x, y);
+                            356 ;--- end asm ---
+   017D F6 00 00      [ 5]  357 	ldb	_lineCount	;, lineCount
+   0180 E7 62         [ 5]  358 	stb	2,s	;, lineCount.14
+   0182 E6 E8 14      [ 5]  359 	ldb	20,s	;, y
+   0185 34 04         [ 6]  360 	pshs	b	;
+   0187 E6 62         [ 5]  361 	ldb	2,s	;, x
+   0189 BD 01 32      [ 8]  362 	jsr	_x3d
+   018C E7 61         [ 5]  363 	stb	1,s	;, D.1456
+   018E E6 63         [ 5]  364 	ldb	3,s	;, lineCount.14
+   0190 4F            [ 2]  365 	clra		;zero_extendqihi: R:b -> R:d	;,
+   0191 1F 01         [ 6]  366 	tfr	d,x	;, lineCount.14
+   0193 E6 61         [ 5]  367 	ldb	1,s	;, D.1456
+   0195 E7 89 00 15   [ 8]  368 	stb	_lineX0,x	;, lineX0
+                            369 ;----- asm -----
+                            370 ; 253 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            371 	; #ENR#[172]    lineY0[lineCount] = y3d(x, 0, y);
+                            372 ;--- end asm ---
+   0199 F6 00 00      [ 5]  373 	ldb	_lineCount	;, lineCount
+   019C E7 6B         [ 5]  374 	stb	11,s	;, lineCount.69
+   019E E6 E8 15      [ 5]  375 	ldb	21,s	;, y
+   01A1 34 04         [ 6]  376 	pshs	b	;
+   01A3 6F E2         [ 8]  377 	clr	,-s	;
+   01A5 E6 64         [ 5]  378 	ldb	4,s	;, x
+   01A7 BD 01 53      [ 8]  379 	jsr	_y3d
+   01AA E7 63         [ 5]  380 	stb	3,s	;, D.1457
+   01AC E6 6D         [ 5]  381 	ldb	13,s	;, lineCount.69
+   01AE 4F            [ 2]  382 	clra		;zero_extendqihi: R:b -> R:d	;,
+   01AF 1F 01         [ 6]  383 	tfr	d,x	;, lineCount.69
+   01B1 E6 63         [ 5]  384 	ldb	3,s	;, D.1457
+   01B3 E7 89 00 8D   [ 8]  385 	stb	_lineY0,x	;, lineY0
+                            386 ;----- asm -----
+                            387 ; 255 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            388 	; #ENR#[173]    lineX1[lineCount] = x3d(x + 1, y + 1);
+                            389 ;--- end asm ---
+   01B7 F6 00 00      [ 5]  390 	ldb	_lineCount	;, lineCount
+   01BA E7 6E         [ 5]  391 	stb	14,s	;, lineCount.70
+   01BC E6 E8 17      [ 5]  392 	ldb	23,s	;, y
+   01BF 5C            [ 2]  393 	incb	;
+   01C0 E7 66         [ 5]  394 	stb	6,s	;, D.1458
+   01C2 E6 64         [ 5]  395 	ldb	4,s	;, x
+   01C4 5C            [ 2]  396 	incb	;
+   01C5 E7 67         [ 5]  397 	stb	7,s	;, D.1459
+   01C7 E6 66         [ 5]  398 	ldb	6,s	;, D.1458
+   01C9 34 04         [ 6]  399 	pshs	b	;
+   01CB E6 68         [ 5]  400 	ldb	8,s	;, D.1459
+   01CD BD 01 32      [ 8]  401 	jsr	_x3d
+   01D0 E7 64         [ 5]  402 	stb	4,s	;, D.1460
+   01D2 E6 6F         [ 5]  403 	ldb	15,s	;, lineCount.70
+   01D4 4F            [ 2]  404 	clra		;zero_extendqihi: R:b -> R:d	;,
+   01D5 1F 01         [ 6]  405 	tfr	d,x	;, lineCount.70
+   01D7 E6 64         [ 5]  406 	ldb	4,s	;, D.1460
+   01D9 E7 89 01 05   [ 8]  407 	stb	_lineX1,x	;, lineX1
+                            408 ;----- asm -----
+                            409 ; 257 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            410 	; #ENR#[174]    lineY1[lineCount] = y3d(x + 1, 0, y + 1);
+                            411 ;--- end asm ---
+   01DD F6 00 00      [ 5]  412 	ldb	_lineCount	;, lineCount
+   01E0 E7 E8 10      [ 5]  413 	stb	16,s	;, lineCount.71
+   01E3 E6 67         [ 5]  414 	ldb	7,s	;, D.1458
+   01E5 34 04         [ 6]  415 	pshs	b	;
+   01E7 6F E2         [ 8]  416 	clr	,-s	;
+   01E9 E6 6A         [ 5]  417 	ldb	10,s	;, D.1459
+   01EB BD 01 53      [ 8]  418 	jsr	_y3d
+   01EE E7 66         [ 5]  419 	stb	6,s	;, D.1461
+   01F0 E6 E8 12      [ 5]  420 	ldb	18,s	;, lineCount.71
+   01F3 4F            [ 2]  421 	clra		;zero_extendqihi: R:b -> R:d	;,
+   01F4 1F 01         [ 6]  422 	tfr	d,x	;, lineCount.71
+   01F6 E6 66         [ 5]  423 	ldb	6,s	;, D.1461
+   01F8 E7 89 01 7D   [ 8]  424 	stb	_lineY1,x	;, lineY1
+                            425 ;----- asm -----
+                            426 ; 259 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            427 	; #ENR#[175]    lineCount++;
+                            428 ;--- end asm ---
+   01FC F6 00 00      [ 5]  429 	ldb	_lineCount	;, lineCount
+   01FF 5C            [ 2]  430 	incb	;
+   0200 E7 6B         [ 5]  431 	stb	11,s	;, lineCount.15
+   0202 F7 00 00      [ 5]  432 	stb	_lineCount	;, lineCount
+                            433 ;----- asm -----
+                            434 ; 262 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            435 	; #ENR#[177]    lineX0[lineCount] = x3d(x + 1, y);
+                            436 ;--- end asm ---
+   0205 E6 E8 1A      [ 5]  437 	ldb	26,s	;, y
+   0208 34 04         [ 6]  438 	pshs	b	;
+   020A E6 6B         [ 5]  439 	ldb	11,s	;, D.1459
+   020C BD 01 32      [ 8]  440 	jsr	_x3d
+   020F E7 6D         [ 5]  441 	stb	13,s	;, D.1463
+   0211 E6 6C         [ 5]  442 	ldb	12,s	;, lineCount.15
+   0213 4F            [ 2]  443 	clra		;zero_extendqihi: R:b -> R:d	;,
+   0214 1F 01         [ 6]  444 	tfr	d,x	;, lineCount.15
+   0216 30 89 00 15   [ 8]  445 	leax	_lineX0,x	; tmp61,, lineCount.15
+   021A E6 6D         [ 5]  446 	ldb	13,s	;, D.1463
+   021C E7 84         [ 4]  447 	stb	,x	;, lineX0
+                            448 ;----- asm -----
+                            449 ; 264 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            450 	; #ENR#[178]    lineY0[lineCount] = y3d(x + 1, 0, y);
+                            451 ;--- end asm ---
+   021E F6 00 00      [ 5]  452 	ldb	_lineCount	;, lineCount
+   0221 E7 E8 14      [ 5]  453 	stb	20,s	;, lineCount.73
+   0224 E6 E8 1B      [ 5]  454 	ldb	27,s	;, y
+   0227 34 04         [ 6]  455 	pshs	b	;
+   0229 6F E2         [ 8]  456 	clr	,-s	;
+   022B E6 6D         [ 5]  457 	ldb	13,s	;, D.1459
+   022D BD 01 53      [ 8]  458 	jsr	_y3d
+   0230 E7 E8 10      [ 5]  459 	stb	16,s	;, D.1464
+   0233 E6 E8 16      [ 5]  460 	ldb	22,s	;, lineCount.73
+   0236 4F            [ 2]  461 	clra		;zero_extendqihi: R:b -> R:d	;,
+   0237 1F 01         [ 6]  462 	tfr	d,x	;, lineCount.73
+   0239 30 89 00 8D   [ 8]  463 	leax	_lineY0,x	; tmp64,, lineCount.73
+   023D E6 E8 10      [ 5]  464 	ldb	16,s	;, D.1464
+   0240 E7 84         [ 4]  465 	stb	,x	;, lineY0
+                            466 ;----- asm -----
+                            467 ; 266 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            468 	; #ENR#[179]    lineX1[lineCount] = x3d(x, y + 1);
+                            469 ;--- end asm ---
+   0242 F6 00 00      [ 5]  470 	ldb	_lineCount	;, lineCount
+   0245 E7 E8 17      [ 5]  471 	stb	23,s	;, lineCount.74
+   0248 32 69         [ 5]  472 	leas	9,s	;,,
+   024A E6 63         [ 5]  473 	ldb	3,s	;, D.1458
+   024C 34 04         [ 6]  474 	pshs	b	;
+   024E E6 62         [ 5]  475 	ldb	2,s	;, x
+   0250 BD 01 32      [ 8]  476 	jsr	_x3d
+   0253 E7 69         [ 5]  477 	stb	9,s	;, D.1465
+   0255 E6 6F         [ 5]  478 	ldb	15,s	;, lineCount.74
+   0257 4F            [ 2]  479 	clra		;zero_extendqihi: R:b -> R:d	;,
+   0258 1F 01         [ 6]  480 	tfr	d,x	;, lineCount.74
+   025A 30 89 01 05   [ 8]  481 	leax	_lineX1,x	; tmp67,, lineCount.74
+   025E E6 69         [ 5]  482 	ldb	9,s	;, D.1465
+   0260 E7 84         [ 4]  483 	stb	,x	;, lineX1
+                            484 ;----- asm -----
+                            485 ; 268 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            486 	; #ENR#[180]    lineY1[lineCount] = y3d(x, 0, y + 1);
+                            487 ;--- end asm ---
+   0262 F6 00 00      [ 5]  488 	ldb	_lineCount	;, lineCount
+   0265 E7 E8 10      [ 5]  489 	stb	16,s	;, lineCount.75
+   0268 E6 64         [ 5]  490 	ldb	4,s	;, D.1458
+   026A 34 04         [ 6]  491 	pshs	b	;
+   026C 6F E2         [ 8]  492 	clr	,-s	;
+   026E E6 64         [ 5]  493 	ldb	4,s	;, x
+   0270 BD 01 53      [ 8]  494 	jsr	_y3d
+   0273 E7 6C         [ 5]  495 	stb	12,s	;, D.1466
+   0275 E6 E8 12      [ 5]  496 	ldb	18,s	;, lineCount.75
+   0278 4F            [ 2]  497 	clra		;zero_extendqihi: R:b -> R:d	;,
+   0279 1F 01         [ 6]  498 	tfr	d,x	;, lineCount.75
+   027B 30 89 01 7D   [ 8]  499 	leax	_lineY1,x	; tmp70,, lineCount.75
+   027F E6 6C         [ 5]  500 	ldb	12,s	;, D.1466
+   0281 E7 84         [ 4]  501 	stb	,x	;, lineY1
+                            502 ;----- asm -----
+                            503 ; 270 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            504 	; #ENR#[181]    lineCount++;
+                            505 ;--- end asm ---
+   0283 7C 00 00      [ 7]  506 	inc	_lineCount	; lineCount
+   0286 32 E8 13      [ 5]  507 	leas	19,s	;,,
+   0289 35 C0         [ 7]  508 	puls	u,pc	;
+                            509 	.globl	_initSwatches
+   028B                     510 _initSwatches:
+   028B 34 60         [ 7]  511 	pshs	y,u	;
+   028D 32 7E         [ 5]  512 	leas	-2,s	;,,
+                            513 ;----- asm -----
+                            514 ; 383 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            515 	; #ENR#[255]    for (uint8_t i = 0; i < sizeof(swatchesOn); i++) {
+                            516 ;--- end asm ---
+   028F 8E 00 02      [ 3]  517 	ldx	#_swatchesOn	; ivtmp.110,
+   0292                     518 L28:
+                            519 ;----- asm -----
+                            520 ; 385 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            521 	; #ENR#[256]        swatchesOn[i] = 0;
+                            522 ;--- end asm ---
+   0292 6F 80         [ 8]  523 	clr	,x+	; swatchesOn
+   0294 8C 00 15      [ 4]  524 	cmpx	#_swatchesOn+19	;cmphi:	; ivtmp.110,
+   0297 26 F9         [ 3]  525 	bne	L28	;
+                            526 ;----- asm -----
+                            527 ; 389 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            528 	; #ENR#[259]	long int index;
+                            529 ; 391 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            530 	; #ENR#[260]	int8_t x = 0;
+                            531 ; 393 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            532 	; #ENR#[261]	int8_t y = 0;
+                            533 ; 395 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            534 	; #ENR#[262]	const char* geometry = level->geometry;
+                            535 ; 397 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            536 	; #ENR#[263]	for (y = 0; y < LEVEL_HEIGHT; y++) {
+                            537 ;--- end asm ---
+   0299 10 AE 9F 00 00[11]  538 	ldy	[_level]	; ivtmp.102, <variable>.geometry
+   029E 6F 61         [ 7]  539 	clr	1,s	; y
+   02A0                     540 L32:
+                            541 ;----- asm -----
+                            542 ; 399 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            543 	; #ENR#[264]		for (x = 0; x < LEVEL_WIDTH; x++) {
+                            544 ;--- end asm ---
+   02A0 33 A4         [ 4]  545 	leau	,y	; ivtmp.111, ivtmp.102
+   02A2 6F E4         [ 6]  546 	clr	,s	; x
+   02A4                     547 L31:
+                            548 ;----- asm -----
+                            549 ; 401 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            550 	; #ENR#[265]			index = (long int) y*LEVEL_WIDTH + (long int)x;
+                            551 ; 403 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            552 	; #ENR#[266]			char c0 = geometry[index];
+                            553 ;--- end asm ---
+   02A4 E6 C4         [ 4]  554 	ldb	,u	; c0,* ivtmp.111
+                            555 ;----- asm -----
+                            556 ; 405 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            557 	; #ENR#[267]			if (c0 == 'k' || c0 == 'q') {
+                            558 ;--- end asm ---
+   02A6 C1 6B         [ 2]  559 	cmpb	#107	;cmpqi:	; c0,
+   02A8 27 04         [ 3]  560 	beq	L29	;
+   02AA C1 71         [ 2]  561 	cmpb	#113	;cmpqi:	; c0,
+   02AC 26 0F         [ 3]  562 	bne	L30	;
+   02AE                     563 L29:
+                            564 ;----- asm -----
+                            565 ; 407 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            566 	; #ENR#[268]				setSwatchField(x, y, 1);
+                            567 ;--- end asm ---
+   02AE C6 01         [ 2]  568 	ldb	#1	;,
+   02B0 E7 E2         [ 6]  569 	stb	,-s	;,
+   02B2 E6 62         [ 5]  570 	ldb	2,s	;, y
+   02B4 34 04         [ 6]  571 	pshs	b	;
+   02B6 E6 62         [ 5]  572 	ldb	2,s	;, x
+   02B8 BD 00 82      [ 8]  573 	jsr	_setSwatchField
+   02BB 32 62         [ 5]  574 	leas	2,s	;,,
+   02BD                     575 L30:
+   02BD 6C E4         [ 6]  576 	inc	,s	; x
+   02BF 33 41         [ 5]  577 	leau	1,u	; ivtmp.111,, ivtmp.111
+   02C1 E6 E4         [ 4]  578 	ldb	,s	;, x
+   02C3 C1 0A         [ 2]  579 	cmpb	#10	;cmpqi:	;,
+   02C5 26 DD         [ 3]  580 	bne	L31	;
+   02C7 6C 61         [ 7]  581 	inc	1,s	; y
+   02C9 31 2A         [ 5]  582 	leay	10,y	; ivtmp.102,, ivtmp.102
+   02CB E6 61         [ 5]  583 	ldb	1,s	;, y
+   02CD C1 0F         [ 2]  584 	cmpb	#15	;cmpqi:	;,
+   02CF 10 26 FF CD   [ 6]  585 	lbne	L32	;
+   02D3 32 62         [ 5]  586 	leas	2,s	;,,
+   02D5 35 E0         [ 8]  587 	puls	y,u,pc	;
+   02D7                     588 LC0:
+   02D7 54 4F 4F 20 4D 41   589 	.byte	84,79,79,32,77,65,78,89
+        4E 59
+   02DF 20 4C 49 4E 45 53   590 	.byte	32,76,73,78,69,83,-128,0
+        80 00
+                            591 	.globl	_addSplit
+   02E7                     592 _addSplit:
+   02E7 32 79         [ 5]  593 	leas	-7,s	;,,
+   02E9 E7 61         [ 5]  594 	stb	1,s	; x0, x0
+                            595 ;----- asm -----
+                            596 ; 209 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            597 	; #ENR#[144]    lineX0[lineCount] = x3d(x0, y0) + 6;
+                            598 ;--- end asm ---
+   02EB F6 00 00      [ 5]  599 	ldb	_lineCount	;, lineCount
+   02EE E7 62         [ 5]  600 	stb	2,s	;, lineCount.12
+   02F0 E6 69         [ 5]  601 	ldb	9,s	;, y0
+   02F2 34 04         [ 6]  602 	pshs	b	;
+   02F4 E6 62         [ 5]  603 	ldb	2,s	;, x0
+   02F6 BD 01 32      [ 8]  604 	jsr	_x3d
+   02F9 E7 61         [ 5]  605 	stb	1,s	;, D.1424
+   02FB E6 63         [ 5]  606 	ldb	3,s	;, lineCount.12
+   02FD 4F            [ 2]  607 	clra		;zero_extendqihi: R:b -> R:d	;,
+   02FE 1F 01         [ 6]  608 	tfr	d,x	;, lineCount.12
+   0300 E6 61         [ 5]  609 	ldb	1,s	;, D.1424
+   0302 CB 06         [ 2]  610 	addb	#6	;,
+   0304 E7 89 00 15   [ 8]  611 	stb	_lineX0,x	;, lineX0
+                            612 ;----- asm -----
+                            613 ; 211 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            614 	; #ENR#[145]    lineY0[lineCount] = y3d(x0, 0, y0) + 3;
+                            615 ;--- end asm ---
+   0308 F6 00 00      [ 5]  616 	ldb	_lineCount	;, lineCount
+   030B E7 65         [ 5]  617 	stb	5,s	;, lineCount.117
+   030D E6 6A         [ 5]  618 	ldb	10,s	;, y0
+   030F 34 04         [ 6]  619 	pshs	b	;
+   0311 6F E2         [ 8]  620 	clr	,-s	;
+   0313 E6 64         [ 5]  621 	ldb	4,s	;, x0
+   0315 BD 01 53      [ 8]  622 	jsr	_y3d
+   0318 E7 63         [ 5]  623 	stb	3,s	;, D.1426
+   031A E6 67         [ 5]  624 	ldb	7,s	;, lineCount.117
+   031C 4F            [ 2]  625 	clra		;zero_extendqihi: R:b -> R:d	;,
+   031D 1F 01         [ 6]  626 	tfr	d,x	;, lineCount.117
+   031F E6 63         [ 5]  627 	ldb	3,s	;, D.1426
+   0321 CB 03         [ 2]  628 	addb	#3	;,
+   0323 E7 89 00 8D   [ 8]  629 	stb	_lineY0,x	;, lineY0
+                            630 ;----- asm -----
+                            631 ; 213 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            632 	; #ENR#[146]    lineX1[lineCount] = x3d(x0, y0 + 1) + 8;
+                            633 ;--- end asm ---
+   0327 F6 00 00      [ 5]  634 	ldb	_lineCount	;, lineCount
+   032A E7 68         [ 5]  635 	stb	8,s	;, lineCount.118
+   032C E6 6C         [ 5]  636 	ldb	12,s	;, y0
+   032E 5C            [ 2]  637 	incb	;
+   032F E7 66         [ 5]  638 	stb	6,s	;, D.1428
+   0331 34 04         [ 6]  639 	pshs	b	;
+   0333 E6 65         [ 5]  640 	ldb	5,s	;, x0
+   0335 BD 01 32      [ 8]  641 	jsr	_x3d
+   0338 E7 64         [ 5]  642 	stb	4,s	;, D.1429
+   033A E6 69         [ 5]  643 	ldb	9,s	;, lineCount.118
+   033C 4F            [ 2]  644 	clra		;zero_extendqihi: R:b -> R:d	;,
+   033D 1F 01         [ 6]  645 	tfr	d,x	;, lineCount.118
+   033F E6 64         [ 5]  646 	ldb	4,s	;, D.1429
+   0341 CB 08         [ 2]  647 	addb	#8	;,
+   0343 E7 89 01 05   [ 8]  648 	stb	_lineX1,x	;, lineX1
+                            649 ;----- asm -----
+                            650 ; 215 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            651 	; #ENR#[147]    lineY1[lineCount] = y3d(x0, 0, y0 + 1) + 0;
+                            652 ;--- end asm ---
+   0347 F6 00 00      [ 5]  653 	ldb	_lineCount	;, lineCount
+   034A E7 6A         [ 5]  654 	stb	10,s	;, lineCount.119
+   034C E6 67         [ 5]  655 	ldb	7,s	;, D.1428
+   034E 34 04         [ 6]  656 	pshs	b	;
+   0350 6F E2         [ 8]  657 	clr	,-s	;
+   0352 E6 67         [ 5]  658 	ldb	7,s	;, x0
+   0354 BD 01 53      [ 8]  659 	jsr	_y3d
+   0357 E7 66         [ 5]  660 	stb	6,s	;, D.1431
+   0359 E6 6C         [ 5]  661 	ldb	12,s	;, lineCount.119
+   035B 4F            [ 2]  662 	clra		;zero_extendqihi: R:b -> R:d	;,
+   035C 1F 01         [ 6]  663 	tfr	d,x	;, lineCount.119
+   035E E6 66         [ 5]  664 	ldb	6,s	;, D.1431
+   0360 E7 89 01 7D   [ 8]  665 	stb	_lineY1,x	;, lineY1
+                            666 ;----- asm -----
+                            667 ; 218 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            668 	; #ENR#[149]    lineCount++;
+                            669 ;--- end asm ---
+   0364 F6 00 00      [ 5]  670 	ldb	_lineCount	; lineCount.13, lineCount
+   0367 5C            [ 2]  671 	incb	; lineCount.13
+   0368 F7 00 00      [ 5]  672 	stb	_lineCount	; lineCount.13, lineCount
+                            673 ;----- asm -----
+                            674 ; 220 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            675 	; #ENR#[150]    if (lineCount >= MAX_LINES) {
+                            676 ;--- end asm ---
+   036B 32 66         [ 5]  677 	leas	6,s	;,,
+   036D C1 77         [ 2]  678 	cmpb	#119	;cmpqi:	; lineCount.13,
+   036F 23 06         [ 3]  679 	bls	L39	;
+                            680 ;----- asm -----
+                            681 ; 222 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            682 	; #ENR#[151]        runtimeError("TOO MANY LINES€");
+                            683 ;--- end asm ---
+   0371 8E 02 D7      [ 3]  684 	ldx	#LC0	;,
+   0374 BD 00 00      [ 8]  685 	jsr	_runtimeError
+   0377                     686 L39:
+   0377 32 67         [ 5]  687 	leas	7,s	;,,
+   0379 39            [ 5]  688 	rts
+                            689 	.globl	_addLineImpl
+   037A                     690 _addLineImpl:
+   037A 32 7A         [ 5]  691 	leas	-6,s	;,,
+   037C E7 61         [ 5]  692 	stb	1,s	; x0, x0
+                            693 ;----- asm -----
+                            694 ; 178 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            695 	; #ENR#[125]    lineX0[lineCount] = x3d(x0, y0);
+                            696 ;--- end asm ---
+   037E F6 00 00      [ 5]  697 	ldb	_lineCount	;, lineCount
+   0381 E7 62         [ 5]  698 	stb	2,s	;, lineCount.10
+   0383 E6 68         [ 5]  699 	ldb	8,s	;, y0
+   0385 34 04         [ 6]  700 	pshs	b	;
+   0387 E6 62         [ 5]  701 	ldb	2,s	;, x0
+   0389 BD 01 32      [ 8]  702 	jsr	_x3d
+   038C E7 61         [ 5]  703 	stb	1,s	;, D.1406
+   038E E6 63         [ 5]  704 	ldb	3,s	;, lineCount.10
+   0390 4F            [ 2]  705 	clra		;zero_extendqihi: R:b -> R:d	;,
+   0391 1F 01         [ 6]  706 	tfr	d,x	;, lineCount.10
+   0393 E6 61         [ 5]  707 	ldb	1,s	;, D.1406
+   0395 E7 89 00 15   [ 8]  708 	stb	_lineX0,x	;, lineX0
+                            709 ;----- asm -----
+                            710 ; 180 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            711 	; #ENR#[126]    lineY0[lineCount] = y3d(x0, 0, y0);
+                            712 ;--- end asm ---
+   0399 F6 00 00      [ 5]  713 	ldb	_lineCount	;, lineCount
+   039C E7 64         [ 5]  714 	stb	4,s	;, lineCount.127
+   039E E6 69         [ 5]  715 	ldb	9,s	;, y0
+   03A0 34 04         [ 6]  716 	pshs	b	;
+   03A2 6F E2         [ 8]  717 	clr	,-s	;
+   03A4 E6 64         [ 5]  718 	ldb	4,s	;, x0
+   03A6 BD 01 53      [ 8]  719 	jsr	_y3d
+   03A9 E7 63         [ 5]  720 	stb	3,s	;, D.1407
+   03AB E6 66         [ 5]  721 	ldb	6,s	;, lineCount.127
+   03AD 4F            [ 2]  722 	clra		;zero_extendqihi: R:b -> R:d	;,
+   03AE 1F 01         [ 6]  723 	tfr	d,x	;, lineCount.127
+   03B0 E6 63         [ 5]  724 	ldb	3,s	;, D.1407
+   03B2 E7 89 00 8D   [ 8]  725 	stb	_lineY0,x	;, lineY0
+                            726 ;----- asm -----
+                            727 ; 182 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            728 	; #ENR#[127]    lineX1[lineCount] = x3d(x1, y1);
+                            729 ;--- end asm ---
+   03B6 F6 00 00      [ 5]  730 	ldb	_lineCount	;, lineCount
+   03B9 E7 67         [ 5]  731 	stb	7,s	;, lineCount.128
+   03BB E6 6D         [ 5]  732 	ldb	13,s	;, y1
+   03BD 34 04         [ 6]  733 	pshs	b	;
+   03BF E6 6D         [ 5]  734 	ldb	13,s	;, x1
+   03C1 BD 01 32      [ 8]  735 	jsr	_x3d
+   03C4 E7 64         [ 5]  736 	stb	4,s	;, D.1408
+   03C6 E6 68         [ 5]  737 	ldb	8,s	;, lineCount.128
+   03C8 4F            [ 2]  738 	clra		;zero_extendqihi: R:b -> R:d	;,
+   03C9 1F 01         [ 6]  739 	tfr	d,x	;, lineCount.128
+   03CB E6 64         [ 5]  740 	ldb	4,s	;, D.1408
+   03CD E7 89 01 05   [ 8]  741 	stb	_lineX1,x	;, lineX1
+                            742 ;----- asm -----
+                            743 ; 184 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            744 	; #ENR#[128]    lineY1[lineCount] = y3d(x1, 0, y1);
+                            745 ;--- end asm ---
+   03D1 F6 00 00      [ 5]  746 	ldb	_lineCount	;, lineCount
+   03D4 E7 69         [ 5]  747 	stb	9,s	;, lineCount.129
+   03D6 E6 6E         [ 5]  748 	ldb	14,s	;, y1
+   03D8 34 04         [ 6]  749 	pshs	b	;
+   03DA 6F E2         [ 8]  750 	clr	,-s	;
+   03DC E6 6F         [ 5]  751 	ldb	15,s	;, x1
+   03DE BD 01 53      [ 8]  752 	jsr	_y3d
+   03E1 E7 66         [ 5]  753 	stb	6,s	;, D.1409
+   03E3 E6 6B         [ 5]  754 	ldb	11,s	;, lineCount.129
+   03E5 4F            [ 2]  755 	clra		;zero_extendqihi: R:b -> R:d	;,
+   03E6 1F 01         [ 6]  756 	tfr	d,x	;, lineCount.129
+   03E8 E6 66         [ 5]  757 	ldb	6,s	;, D.1409
+   03EA E7 89 01 7D   [ 8]  758 	stb	_lineY1,x	;, lineY1
+                            759 ;----- asm -----
+                            760 ; 186 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            761 	; #ENR#[129]	if (half) {
+                            762 ;--- end asm ---
+   03EE 32 66         [ 5]  763 	leas	6,s	;,,
+   03F0 6D 6B         [ 7]  764 	tst	11,s	; half
+   03F2 27 28         [ 3]  765 	beq	L41	;
+                            766 ;----- asm -----
+                            767 ; 188 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            768 	; #ENR#[130]		lineX0[lineCount] -= 1;
+                            769 ;--- end asm ---
+   03F4 F6 00 00      [ 5]  770 	ldb	_lineCount	;, lineCount
+   03F7 4F            [ 2]  771 	clra		;zero_extendqihi: R:b -> R:d	;,
+   03F8 1F 01         [ 6]  772 	tfr	d,x	;, lineCount.130
+   03FA 6A 89 00 15   [10]  773 	dec	_lineX0,x	; lineX0
+                            774 ;----- asm -----
+                            775 ; 190 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            776 	; #ENR#[131]		lineY0[lineCount] += 4;
+                            777 ;--- end asm ---
+   03FE E6 89 00 8D   [ 8]  778 	ldb	_lineY0,x	;, lineY0
+   0402 CB 04         [ 2]  779 	addb	#4	;,
+   0404 E7 89 00 8D   [ 8]  780 	stb	_lineY0,x	;, lineY0
+                            781 ;----- asm -----
+                            782 ; 192 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            783 	; #ENR#[132]		lineX1[lineCount] -= 6;
+                            784 ;--- end asm ---
+   0408 E6 89 01 05   [ 8]  785 	ldb	_lineX1,x	;, lineX1
+   040C CB FA         [ 2]  786 	addb	#-6	;,
+   040E E7 89 01 05   [ 8]  787 	stb	_lineX1,x	;, lineX1
+                            788 ;----- asm -----
+                            789 ; 194 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            790 	; #ENR#[133]		lineY1[lineCount] += 3;
+                            791 ;--- end asm ---
+   0412 E6 89 01 7D   [ 8]  792 	ldb	_lineY1,x	;, lineY1
+   0416 CB 03         [ 2]  793 	addb	#3	;,
+   0418 E7 89 01 7D   [ 8]  794 	stb	_lineY1,x	;, lineY1
+   041C                     795 L41:
+                            796 ;----- asm -----
+                            797 ; 198 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            798 	; #ENR#[136]    lineCount++;
+                            799 ;--- end asm ---
+   041C F6 00 00      [ 5]  800 	ldb	_lineCount	; lineCount.11, lineCount
+   041F 5C            [ 2]  801 	incb	; lineCount.11
+   0420 F7 00 00      [ 5]  802 	stb	_lineCount	; lineCount.11, lineCount
+                            803 ;----- asm -----
+                            804 ; 200 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            805 	; #ENR#[137]    if (lineCount >= MAX_LINES) {
+                            806 ;--- end asm ---
+   0423 C1 77         [ 2]  807 	cmpb	#119	;cmpqi:	; lineCount.11,
+   0425 23 06         [ 3]  808 	bls	L43	;
+                            809 ;----- asm -----
+                            810 ; 202 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            811 	; #ENR#[138]        runtimeError("TOO MANY LINES€");
+                            812 ;--- end asm ---
+   0427 8E 02 D7      [ 3]  813 	ldx	#LC0	;,
+   042A BD 00 00      [ 8]  814 	jsr	_runtimeError
+   042D                     815 L43:
+   042D 32 66         [ 5]  816 	leas	6,s	;,,
+   042F 39            [ 5]  817 	rts
+                            818 	.globl	_addLine
+   0430                     819 _addLine:
+   0430 32 7B         [ 5]  820 	leas	-5,s	;,,
+   0432 E7 E4         [ 4]  821 	stb	,s	; x0, x0
+                            822 ;----- asm -----
+                            823 ; 229 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            824 	; #ENR#[157]	int test = 5;
+                            825 ; 231 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            826 	; #ENR#[158]	while (x1 - x0 > test) {
+                            827 ;--- end asm ---
+   0434 E6 68         [ 5]  828 	ldb	8,s	; D.1448, x1
+   0436 E0 E4         [ 4]  829 	subb	,s	; D.1448, x0
+   0438 C1 05         [ 2]  830 	cmpb	#5	;cmpqi:	; D.1448,
+   043A 2F 33         [ 3]  831 	ble	L45	;
+   043C E7 62         [ 5]  832 	stb	2,s	; D.1448, ivtmp.152
+   043E                     833 L47:
+                            834 ;----- asm -----
+                            835 ; 233 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            836 	; #ENR#[159]		addLineImpl(x0, y0, x0 + test, y1, half);
+                            837 ;--- end asm ---
+   043E E6 E4         [ 4]  838 	ldb	,s	;, x0
+   0440 CB 05         [ 2]  839 	addb	#5	;,
+   0442 E7 63         [ 5]  840 	stb	3,s	;, x0.153
+   0444 E6 6A         [ 5]  841 	ldb	10,s	;, half
+   0446 34 04         [ 6]  842 	pshs	b	;
+   0448 E6 6A         [ 5]  843 	ldb	10,s	;, y1
+   044A 34 04         [ 6]  844 	pshs	b	;
+   044C E6 65         [ 5]  845 	ldb	5,s	;, x0.153
+   044E 34 04         [ 6]  846 	pshs	b	;
+   0450 E6 6A         [ 5]  847 	ldb	10,s	;, y0
+   0452 34 04         [ 6]  848 	pshs	b	;
+   0454 E6 64         [ 5]  849 	ldb	4,s	;, x0
+   0456 BD 03 7A      [ 8]  850 	jsr	_addLineImpl
+                            851 ;----- asm -----
+                            852 ; 235 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            853 	; #ENR#[160]		x0 += test;
+                            854 ;--- end asm ---
+   0459 E6 66         [ 5]  855 	ldb	6,s	;, ivtmp.152
+   045B CB FB         [ 2]  856 	addb	#-5	;,
+   045D E7 66         [ 5]  857 	stb	6,s	;, ivtmp.152
+   045F 32 64         [ 5]  858 	leas	4,s	;,,
+   0461 C1 05         [ 2]  859 	cmpb	#5	;cmpqi:	;,
+   0463 2F 06         [ 3]  860 	ble	L46	;
+   0465 E6 63         [ 5]  861 	ldb	3,s	;, x0.153
+   0467 E7 E4         [ 4]  862 	stb	,s	;, x0
+   0469 20 D3         [ 3]  863 	bra	L47	;
+   046B                     864 L46:
+   046B E6 63         [ 5]  865 	ldb	3,s	;, x0.153
+   046D E7 E4         [ 4]  866 	stb	,s	;, x0
+   046F                     867 L45:
+                            868 ;----- asm -----
+                            869 ; 238 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            870 	; #ENR#[162]	while (y1 - y0 > test) {
+                            871 ;--- end asm ---
+   046F E6 69         [ 5]  872 	ldb	9,s	; D.1450, y1
+   0471 E0 67         [ 5]  873 	subb	7,s	; D.1450, y0
+   0473 C1 05         [ 2]  874 	cmpb	#5	;cmpqi:	; D.1450,
+   0475 2F 33         [ 3]  875 	ble	L48	;
+   0477 E7 61         [ 5]  876 	stb	1,s	; D.1450, ivtmp.144
+   0479                     877 L50:
+                            878 ;----- asm -----
+                            879 ; 240 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            880 	; #ENR#[163]		addLineImpl(x0, y0, x1, y0 + test, half);
+                            881 ;--- end asm ---
+   0479 E6 67         [ 5]  882 	ldb	7,s	;, y0
+   047B CB 05         [ 2]  883 	addb	#5	;,
+   047D E7 64         [ 5]  884 	stb	4,s	;, y0.154
+   047F E6 6A         [ 5]  885 	ldb	10,s	;, half
+   0481 34 04         [ 6]  886 	pshs	b	;
+   0483 E6 65         [ 5]  887 	ldb	5,s	;, y0.154
+   0485 34 04         [ 6]  888 	pshs	b	;
+   0487 E6 6A         [ 5]  889 	ldb	10,s	;, x1
+   0489 34 04         [ 6]  890 	pshs	b	;
+   048B E6 6A         [ 5]  891 	ldb	10,s	;, y0
+   048D 34 04         [ 6]  892 	pshs	b	;
+   048F E6 64         [ 5]  893 	ldb	4,s	;, x0
+   0491 BD 03 7A      [ 8]  894 	jsr	_addLineImpl
+                            895 ;----- asm -----
+                            896 ; 242 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            897 	; #ENR#[164]		y0 += test;
+                            898 ;--- end asm ---
+   0494 E6 65         [ 5]  899 	ldb	5,s	;, ivtmp.144
+   0496 CB FB         [ 2]  900 	addb	#-5	;,
+   0498 E7 65         [ 5]  901 	stb	5,s	;, ivtmp.144
+   049A 32 64         [ 5]  902 	leas	4,s	;,,
+   049C C1 05         [ 2]  903 	cmpb	#5	;cmpqi:	;,
+   049E 2F 06         [ 3]  904 	ble	L49	;
+   04A0 E6 64         [ 5]  905 	ldb	4,s	;, y0.154
+   04A2 E7 67         [ 5]  906 	stb	7,s	;, y0
+   04A4 20 D3         [ 3]  907 	bra	L50	;
+   04A6                     908 L49:
+   04A6 E6 64         [ 5]  909 	ldb	4,s	;, y0.154
+   04A8 E7 67         [ 5]  910 	stb	7,s	;, y0
+   04AA                     911 L48:
+                            912 ;----- asm -----
+                            913 ; 245 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            914 	; #ENR#[166]	addLineImpl(x0, y0, x1, y1, half);
+                            915 ;--- end asm ---
+   04AA E6 6A         [ 5]  916 	ldb	10,s	;, half
+   04AC 34 04         [ 6]  917 	pshs	b	;
+   04AE E6 6A         [ 5]  918 	ldb	10,s	;, y1
+   04B0 34 04         [ 6]  919 	pshs	b	;
+   04B2 E6 6A         [ 5]  920 	ldb	10,s	;, x1
+   04B4 34 04         [ 6]  921 	pshs	b	;
+   04B6 E6 6A         [ 5]  922 	ldb	10,s	;, y0
+   04B8 34 04         [ 6]  923 	pshs	b	;
+   04BA E6 64         [ 5]  924 	ldb	4,s	;, x0
+   04BC BD 03 7A      [ 8]  925 	jsr	_addLineImpl
+   04BF 32 69         [ 5]  926 	leas	9,s	;,,
+   04C1 39            [ 5]  927 	rts
+                            928 	.globl	_setupY
+   04C2                     929 _setupY:
+   04C2 32 7B         [ 5]  930 	leas	-5,s	;,,
+                            931 ;----- asm -----
+                            932 ; 350 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            933 	; #ENR#[234]	int8_t x = 0;
+                            934 ; 352 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            935 	; #ENR#[235]	int8_t y = 0;
+                            936 ; 354 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            937 	; #ENR#[236]	for (x = -1; x < LEVEL_WIDTH; x++) {
+                            938 ;--- end asm ---
+   04C4 C6 FF         [ 2]  939 	ldb	#-1	;,
+   04C6 E7 61         [ 5]  940 	stb	1,s	;, x
+   04C8                     941 L58:
+                            942 ;----- asm -----
+                            943 ; 356 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            944 	; #ENR#[237]		int8_t y0 = -1;
+                            945 ; 358 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            946 	; #ENR#[238]		int8_t y1 = -1;
+                            947 ; 360 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            948 	; #ENR#[239]		for (y = 0; y <= LEVEL_HEIGHT; y++) {
+                            949 ;--- end asm ---
+   04C8 6F 62         [ 7]  950 	clr	2,s	; y
+   04CA C6 FF         [ 2]  951 	ldb	#-1	;,
+   04CC E7 63         [ 5]  952 	stb	3,s	;, y0
+   04CE E7 64         [ 5]  953 	stb	4,s	;, y1
+   04D0                     954 L57:
+                            955 ;----- asm -----
+                            956 ; 362 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            957 	; #ENR#[240]			if (isField(x, y) || isField(x + 1, y)) {
+                            958 ;--- end asm ---
+   04D0 E6 62         [ 5]  959 	ldb	2,s	;, y
+   04D2 34 04         [ 6]  960 	pshs	b	;
+   04D4 E6 62         [ 5]  961 	ldb	2,s	;, x
+   04D6 BD 00 D3      [ 8]  962 	jsr	_isField
+   04D9 32 61         [ 5]  963 	leas	1,s	;,,
+   04DB 5D            [ 2]  964 	tstb	; D.1511
+   04DC 26 13         [ 3]  965 	bne	L53	;
+   04DE E6 61         [ 5]  966 	ldb	1,s	;, x
+   04E0 5C            [ 2]  967 	incb	;
+   04E1 E7 E4         [ 4]  968 	stb	,s	;, D.1512
+   04E3 E6 62         [ 5]  969 	ldb	2,s	;, y
+   04E5 34 04         [ 6]  970 	pshs	b	;
+   04E7 E6 61         [ 5]  971 	ldb	1,s	;, D.1512
+   04E9 BD 00 D3      [ 8]  972 	jsr	_isField
+   04EC 32 61         [ 5]  973 	leas	1,s	;,,
+   04EE 5D            [ 2]  974 	tstb	; D.1513
+   04EF 27 0E         [ 3]  975 	beq	L54	;
+   04F1                     976 L53:
+                            977 ;----- asm -----
+                            978 ; 364 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            979 	; #ENR#[241]				if (y0 < 0) y0 = y;
+                            980 ;--- end asm ---
+   04F1 6D 63         [ 7]  981 	tst	3,s	; y0
+   04F3 2C 04         [ 3]  982 	bge	L55	;
+   04F5 E6 62         [ 5]  983 	ldb	2,s	;, y
+   04F7 E7 63         [ 5]  984 	stb	3,s	;, y0
+   04F9                     985 L55:
+                            986 ;----- asm -----
+                            987 ; 366 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            988 	; #ENR#[242]				y1 = y;
+                            989 ;--- end asm ---
+   04F9 E6 62         [ 5]  990 	ldb	2,s	;, y
+   04FB E7 64         [ 5]  991 	stb	4,s	;, y1
+   04FD 20 1E         [ 3]  992 	bra	L56	;
+   04FF                     993 L54:
+                            994 ;----- asm -----
+                            995 ; 369 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                            996 	; #ENR#[244]				if (y0 >= 0) {
+                            997 ;--- end asm ---
+   04FF 6D 63         [ 7]  998 	tst	3,s	; y0
+   0501 2D 1A         [ 3]  999 	blt	L56	;
+                           1000 ;----- asm -----
+                           1001 ; 371 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1002 	; #ENR#[245]					addLine(x + 1, y0, x + 1, y1 + 1, 0);
+                           1003 ;--- end asm ---
+   0503 6F E2         [ 8] 1004 	clr	,-s	;
+   0505 E6 65         [ 5] 1005 	ldb	5,s	;, y1
+   0507 5C            [ 2] 1006 	incb	;
+   0508 34 04         [ 6] 1007 	pshs	b	;
+   050A E6 62         [ 5] 1008 	ldb	2,s	;, D.1512
+   050C 34 04         [ 6] 1009 	pshs	b	;
+   050E E6 66         [ 5] 1010 	ldb	6,s	;, y0
+   0510 34 04         [ 6] 1011 	pshs	b	;
+   0512 E6 64         [ 5] 1012 	ldb	4,s	;, D.1512
+   0514 BD 04 30      [ 8] 1013 	jsr	_addLine
+                           1014 ;----- asm -----
+                           1015 ; 373 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1016 	; #ENR#[246]					y0 = -1;
+                           1017 ;--- end asm ---
+   0517 C6 FF         [ 2] 1018 	ldb	#-1	;,
+   0519 E7 67         [ 5] 1019 	stb	7,s	;, y0
+   051B 32 64         [ 5] 1020 	leas	4,s	;,,
+   051D                    1021 L56:
+   051D 6C 62         [ 7] 1022 	inc	2,s	; y
+   051F E6 62         [ 5] 1023 	ldb	2,s	;, y
+   0521 C1 10         [ 2] 1024 	cmpb	#16	;cmpqi:	;,
+   0523 10 26 FF A9   [ 6] 1025 	lbne	L57	;
+   0527 6C 61         [ 7] 1026 	inc	1,s	; x
+   0529 E6 61         [ 5] 1027 	ldb	1,s	;, x
+   052B C1 0A         [ 2] 1028 	cmpb	#10	;cmpqi:	;,
+   052D 10 26 FF 97   [ 6] 1029 	lbne	L58	;
+   0531 32 65         [ 5] 1030 	leas	5,s	;,,
+   0533 39            [ 5] 1031 	rts
+                           1032 	.globl	_setupX
+   0534                    1033 _setupX:
+   0534 34 60         [ 7] 1034 	pshs	y,u	;
+   0536 32 79         [ 5] 1035 	leas	-7,s	;,,
+                           1036 ;----- asm -----
+                           1037 ; 283 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1038 	; #ENR#[193]	long int index;
+                           1039 ; 285 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1040 	; #ENR#[194]	int8_t x = 0;
+                           1041 ; 287 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1042 	; #ENR#[195]	int8_t y = 0;
+                           1043 ; 289 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1044 	; #ENR#[196]	const char* geometry = level->geometry;
+                           1045 ; 291 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1046 	; #ENR#[197]	for (y = -1; y < LEVEL_HEIGHT; y++) {
+                           1047 ;--- end asm ---
+   0538 AE 9F 00 00   [10] 1048 	ldx	[_level]	;, <variable>.geometry
+   053C 31 16         [ 5] 1049 	leay	-10,x	; ivtmp.199,,
+   053E 6F 66         [ 7] 1050 	clr	6,s	; ivtmp.193
+   0540                    1051 L75:
+   0540 E6 66         [ 5] 1052 	ldb	6,s	;, ivtmp.193
+   0542 5A            [ 2] 1053 	decb	;
+   0543 E7 62         [ 5] 1054 	stb	2,s	;, y
+                           1055 ;----- asm -----
+                           1056 ; 293 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1057 	; #ENR#[198]		int8_t x0 = -1;
+                           1058 ; 295 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1059 	; #ENR#[199]		int8_t x1 = -1;
+                           1060 ; 297 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1061 	; #ENR#[200]		for (x = 0; x <= LEVEL_WIDTH; x++) {
+                           1062 ;--- end asm ---
+   0545 33 A4         [ 4] 1063 	leau	,y	; ivtmp.202, ivtmp.199
+   0547 C6 FF         [ 2] 1064 	ldb	#-1	;,
+   0549 E7 63         [ 5] 1065 	stb	3,s	;, x0
+   054B E7 64         [ 5] 1066 	stb	4,s	;, x1
+   054D C6 01         [ 2] 1067 	ldb	#1	;,
+   054F E7 65         [ 5] 1068 	stb	5,s	;, ivtmp.191
+   0551                    1069 L74:
+   0551 E6 65         [ 5] 1070 	ldb	5,s	;, ivtmp.191
+   0553 5A            [ 2] 1071 	decb	;
+   0554 E7 61         [ 5] 1072 	stb	1,s	;, x
+                           1073 ;----- asm -----
+                           1074 ; 299 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1075 	; #ENR#[201]			char c0 = 0;
+                           1076 ; 301 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1077 	; #ENR#[202]			index = (long int) y*LEVEL_WIDTH + (long int)x;
+                           1078 ; 303 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1079 	; #ENR#[203]			if (y >= 0 && x < LEVEL_WIDTH) {
+                           1080 ;--- end asm ---
+   0556 6D 62         [ 7] 1081 	tst	2,s	; y
+   0558 2D 08         [ 3] 1082 	blt	L63	;
+   055A C1 09         [ 2] 1083 	cmpb	#9	;cmpqi:	;,
+   055C 2E 04         [ 3] 1084 	bgt	L63	;
+                           1085 ;----- asm -----
+                           1086 ; 305 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1087 	; #ENR#[204]				c0 = geometry[index];
+                           1088 ;--- end asm ---
+   055E E6 C4         [ 4] 1089 	ldb	,u	; c0,* ivtmp.202
+   0560 20 01         [ 3] 1090 	bra	L64	;
+   0562                    1091 L63:
+   0562 5F            [ 2] 1092 	clrb	; c0
+   0563                    1093 L64:
+                           1094 ;----- asm -----
+                           1095 ; 308 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1096 	; #ENR#[206]			if (c0 == 'e') {
+                           1097 ;--- end asm ---
+   0563 C1 65         [ 2] 1098 	cmpb	#101	;cmpqi:	; c0,
+   0565 26 18         [ 3] 1099 	bne	L65	;
+                           1100 ;----- asm -----
+                           1101 ; 310 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1102 	; #ENR#[207]				addTarget(x, y);
+                           1103 ;--- end asm ---
+   0567 E6 62         [ 5] 1104 	ldb	2,s	;, y
+   0569 34 04         [ 6] 1105 	pshs	b	;
+   056B E6 62         [ 5] 1106 	ldb	2,s	;, x
+   056D BD 01 77      [ 8] 1107 	jsr	_addTarget
+                           1108 ;----- asm -----
+                           1109 ; 312 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1110 	; #ENR#[208]				endX = x;
+                           1111 ;--- end asm ---
+   0570 E6 62         [ 5] 1112 	ldb	2,s	;, x
+   0572 F7 00 01      [ 5] 1113 	stb	_endX	;, endX
+                           1114 ;----- asm -----
+                           1115 ; 314 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1116 	; #ENR#[209]				endY = y;
+                           1117 ;--- end asm ---
+   0575 E6 63         [ 5] 1118 	ldb	3,s	;, y
+   0577 F7 00 02      [ 5] 1119 	stb	_endY	;, endY
+   057A 32 61         [ 5] 1120 	leas	1,s	;,,
+   057C 16 00 63      [ 5] 1121 	lbra	L66	;
+   057F                    1122 L65:
+   057F C1 76         [ 2] 1123 	cmpb	#118	;cmpqi:	; c0,
+   0581 26 0E         [ 3] 1124 	bne	L67	;
+                           1125 ;----- asm -----
+                           1126 ; 317 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1127 	; #ENR#[211]				addSplit(x, y);
+                           1128 ;--- end asm ---
+   0583 E6 62         [ 5] 1129 	ldb	2,s	;, y
+   0585 34 04         [ 6] 1130 	pshs	b	;
+   0587 E6 62         [ 5] 1131 	ldb	2,s	;, x
+   0589 BD 02 E7      [ 8] 1132 	jsr	_addSplit
+   058C 32 61         [ 5] 1133 	leas	1,s	;,,
+   058E 16 00 51      [ 5] 1134 	lbra	L66	;
+   0591                    1135 L67:
+   0591 C1 73         [ 2] 1136 	cmpb	#115	;cmpqi:	; c0,
+   0593 26 17         [ 3] 1137 	bne	L68	;
+                           1138 ;----- asm -----
+                           1139 ; 320 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1140 	; #ENR#[213]				addLine(x, y, x + 1, y + 1, 0);
+                           1141 ;--- end asm ---
+   0595 6F E2         [ 8] 1142 	clr	,-s	;
+   0597 E6 67         [ 5] 1143 	ldb	7,s	;, ivtmp.193
+   0599 34 04         [ 6] 1144 	pshs	b	;
+   059B E6 67         [ 5] 1145 	ldb	7,s	;, ivtmp.191
+   059D 34 04         [ 6] 1146 	pshs	b	;
+   059F E6 65         [ 5] 1147 	ldb	5,s	;, y
+   05A1 34 04         [ 6] 1148 	pshs	b	;
+   05A3 E6 65         [ 5] 1149 	ldb	5,s	;, x
+   05A5 BD 04 30      [ 8] 1150 	jsr	_addLine
+   05A8 32 64         [ 5] 1151 	leas	4,s	;,,
+   05AA 20 36         [ 3] 1152 	bra	L66	;
+   05AC                    1153 L68:
+   05AC C1 68         [ 2] 1154 	cmpb	#104	;cmpqi:	; c0,
+   05AE 26 17         [ 3] 1155 	bne	L69	;
+                           1156 ;----- asm -----
+                           1157 ; 323 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1158 	; #ENR#[215]				addLine(x + 1, y, x, y + 1, 0);
+                           1159 ;--- end asm ---
+   05B0 6F E2         [ 8] 1160 	clr	,-s	;
+   05B2 E6 67         [ 5] 1161 	ldb	7,s	;, ivtmp.193
+   05B4 34 04         [ 6] 1162 	pshs	b	;
+   05B6 E6 63         [ 5] 1163 	ldb	3,s	;, x
+   05B8 34 04         [ 6] 1164 	pshs	b	;
+   05BA E6 65         [ 5] 1165 	ldb	5,s	;, y
+   05BC 34 04         [ 6] 1166 	pshs	b	;
+   05BE E6 69         [ 5] 1167 	ldb	9,s	;, ivtmp.191
+   05C0 BD 04 30      [ 8] 1168 	jsr	_addLine
+   05C3 32 64         [ 5] 1169 	leas	4,s	;,,
+   05C5 20 1B         [ 3] 1170 	bra	L66	;
+   05C7                    1171 L69:
+   05C7 C1 66         [ 2] 1172 	cmpb	#102	;cmpqi:	; c0,
+   05C9 26 17         [ 3] 1173 	bne	L66	;
+                           1174 ;----- asm -----
+                           1175 ; 326 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1176 	; #ENR#[217]				addLine(x, y, x + 1, y, 1);
+                           1177 ;--- end asm ---
+   05CB C6 01         [ 2] 1178 	ldb	#1	;,
+   05CD E7 E2         [ 6] 1179 	stb	,-s	;,
+   05CF E6 63         [ 5] 1180 	ldb	3,s	;, y
+   05D1 34 04         [ 6] 1181 	pshs	b	;
+   05D3 E6 67         [ 5] 1182 	ldb	7,s	;, ivtmp.191
+   05D5 34 04         [ 6] 1183 	pshs	b	;
+   05D7 E6 65         [ 5] 1184 	ldb	5,s	;, y
+   05D9 34 04         [ 6] 1185 	pshs	b	;
+   05DB E6 65         [ 5] 1186 	ldb	5,s	;, x
+   05DD BD 04 30      [ 8] 1187 	jsr	_addLine
+   05E0 32 64         [ 5] 1188 	leas	4,s	;,,
+   05E2                    1189 L66:
+                           1190 ;----- asm -----
+                           1191 ; 329 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1192 	; #ENR#[219]            if (isField(x, y) || isField(x, y + 1)) {
+                           1193 ;--- end asm ---
+   05E2 E6 62         [ 5] 1194 	ldb	2,s	;, y
+   05E4 34 04         [ 6] 1195 	pshs	b	;
+   05E6 E6 62         [ 5] 1196 	ldb	2,s	;, x
+   05E8 BD 00 D3      [ 8] 1197 	jsr	_isField
+   05EB 32 61         [ 5] 1198 	leas	1,s	;,,
+   05ED 5D            [ 2] 1199 	tstb	; D.1493
+   05EE 26 10         [ 3] 1200 	bne	L70	;
+   05F0 E6 66         [ 5] 1201 	ldb	6,s	;, ivtmp.193
+   05F2 E7 E4         [ 4] 1202 	stb	,s	;, D.1488
+   05F4 34 04         [ 6] 1203 	pshs	b	;
+   05F6 E6 62         [ 5] 1204 	ldb	2,s	;, x
+   05F8 BD 00 D3      [ 8] 1205 	jsr	_isField
+   05FB 32 61         [ 5] 1206 	leas	1,s	;,,
+   05FD 5D            [ 2] 1207 	tstb	; D.1494
+   05FE 27 0E         [ 3] 1208 	beq	L71	;
+   0600                    1209 L70:
+                           1210 ;----- asm -----
+                           1211 ; 331 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1212 	; #ENR#[220]				if (x0 < 0) x0 = x;
+                           1213 ;--- end asm ---
+   0600 6D 63         [ 7] 1214 	tst	3,s	; x0
+   0602 2C 04         [ 3] 1215 	bge	L72	;
+   0604 E6 61         [ 5] 1216 	ldb	1,s	;, x
+   0606 E7 63         [ 5] 1217 	stb	3,s	;, x0
+   0608                    1218 L72:
+                           1219 ;----- asm -----
+                           1220 ; 333 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1221 	; #ENR#[221]				x1 = x;
+                           1222 ;--- end asm ---
+   0608 E6 61         [ 5] 1223 	ldb	1,s	;, x
+   060A E7 64         [ 5] 1224 	stb	4,s	;, x1
+   060C 20 1E         [ 3] 1225 	bra	L73	;
+   060E                    1226 L71:
+                           1227 ;----- asm -----
+                           1228 ; 336 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1229 	; #ENR#[223]				if (x0 >= 0) {
+                           1230 ;--- end asm ---
+   060E 6D 63         [ 7] 1231 	tst	3,s	; x0
+   0610 2D 1A         [ 3] 1232 	blt	L73	;
+                           1233 ;----- asm -----
+                           1234 ; 338 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1235 	; #ENR#[224]					addLine(x0, y + 1, x1 + 1, y + 1, 0);
+                           1236 ;--- end asm ---
+   0612 6F E2         [ 8] 1237 	clr	,-s	;
+   0614 E6 61         [ 5] 1238 	ldb	1,s	;, D.1488
+   0616 34 04         [ 6] 1239 	pshs	b	;
+   0618 E6 66         [ 5] 1240 	ldb	6,s	;, x1
+   061A 5C            [ 2] 1241 	incb	;
+   061B 34 04         [ 6] 1242 	pshs	b	;
+   061D E6 63         [ 5] 1243 	ldb	3,s	;, D.1488
+   061F 34 04         [ 6] 1244 	pshs	b	;
+   0621 E6 67         [ 5] 1245 	ldb	7,s	;, x0
+   0623 BD 04 30      [ 8] 1246 	jsr	_addLine
+                           1247 ;----- asm -----
+                           1248 ; 340 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1249 	; #ENR#[225]					x0 = -1;
+                           1250 ;--- end asm ---
+   0626 C6 FF         [ 2] 1251 	ldb	#-1	;,
+   0628 E7 67         [ 5] 1252 	stb	7,s	;, x0
+   062A 32 64         [ 5] 1253 	leas	4,s	;,,
+   062C                    1254 L73:
+   062C 6C 65         [ 7] 1255 	inc	5,s	; ivtmp.191
+   062E 33 41         [ 5] 1256 	leau	1,u	; ivtmp.202,, ivtmp.202
+   0630 E6 65         [ 5] 1257 	ldb	5,s	;, ivtmp.191
+   0632 C1 0C         [ 2] 1258 	cmpb	#12	;cmpqi:	;,
+   0634 10 26 FF 19   [ 6] 1259 	lbne	L74	;
+   0638 6C 66         [ 7] 1260 	inc	6,s	; ivtmp.193
+   063A 31 2A         [ 5] 1261 	leay	10,y	; ivtmp.199,, ivtmp.199
+   063C E6 66         [ 5] 1262 	ldb	6,s	;, ivtmp.193
+   063E C1 10         [ 2] 1263 	cmpb	#16	;cmpqi:	;,
+   0640 10 26 FE FC   [ 6] 1264 	lbne	L75	;
+   0644 32 67         [ 5] 1265 	leas	7,s	;,,
+   0646 35 E0         [ 8] 1266 	puls	y,u,pc	;
+                           1267 	.globl	_initLevel
+   0648                    1268 _initLevel:
+                           1269 ;----- asm -----
+                           1270 ; 416 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1271 	; #ENR#[276]    lineCount = 0;
+                           1272 ;--- end asm ---
+   0648 7F 00 00      [ 7] 1273 	clr	_lineCount	; lineCount
+                           1274 ;----- asm -----
+                           1275 ; 418 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1276 	; #ENR#[277]    setupX();
+                           1277 ;--- end asm ---
+   064B BD 05 34      [ 8] 1278 	jsr	_setupX
+                           1279 ;----- asm -----
+                           1280 ; 420 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1281 	; #ENR#[278]    setupY();
+                           1282 ;--- end asm ---
+   064E BD 04 C2      [ 8] 1283 	jsr	_setupY
+   0651 39            [ 5] 1284 	rts
+                           1285 	.globl	_swatchSwitch
+   0652                    1286 _swatchSwitch:
+   0652 34 40         [ 6] 1287 	pshs	u	;
+   0654 32 79         [ 5] 1288 	leas	-7,s	;,,
+   0656 E7 62         [ 5] 1289 	stb	2,s	; x, x
+                           1290 ;----- asm -----
+                           1291 ; 96 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1292 	; #ENR#[75]	if (splitMode) return;
+                           1293 ;--- end asm ---
+   0658 7D 00 00      [ 7] 1294 	tst	_splitMode	; splitMode
+   065B 10 26 00 D8   [ 6] 1295 	lbne	L95	;
+                           1296 ;----- asm -----
+                           1297 ; 98 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1298 	; #ENR#[76]    for (uint8_t i = 0; i < level->swatches_count; i++) {
+                           1299 ;--- end asm ---
+   065F BE 00 00      [ 6] 1300 	ldx	_level	; level.7, level
+   0662 6D 04         [ 7] 1301 	tst	4,x	; <variable>.swatches_count
+   0664 10 27 00 CC   [ 6] 1302 	lbeq	L83	;
+   0668 6F 63         [ 7] 1303 	clr	3,s	; i
+   066A                    1304 L94:
+                           1305 ;----- asm -----
+                           1306 ; 100 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1307 	; #ENR#[77]        const struct Swatch* swatch = level->swatches[i];
+                           1308 ;--- end asm ---
+   066A E6 63         [ 5] 1309 	ldb	3,s	;, i
+   066C 4F            [ 2] 1310 	clra		;zero_extendqihi: R:b -> R:d	;,
+   066D ED E4         [ 5] 1311 	std	,s	;,
+   066F 58            [ 2] 1312 	aslb	;
+   0670 49            [ 2] 1313 	rola	;
+   0671 30 8B         [ 8] 1314 	leax	d,x	; tmp43, tmp42, level.7
+   0673 EE 05         [ 6] 1315 	ldu	5,x	; swatch, <variable>.swatches
+                           1316 ;----- asm -----
+                           1317 ; 102 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1318 	; #ENR#[78]		if (swatch->position.x == x && swatch->position.y == y) {
+                           1319 ;--- end asm ---
+   0675 E6 62         [ 5] 1320 	ldb	2,s	;, x
+   0677 E1 41         [ 5] 1321 	cmpb	1,u	;cmpqi:(R)	;, <variable>.position.x
+   0679 10 26 00 AA   [ 6] 1322 	lbne	L84	;
+   067D E6 6B         [ 5] 1323 	ldb	11,s	;, y
+   067F E1 42         [ 5] 1324 	cmpb	2,u	;cmpqi:(R)	;, <variable>.position.y
+   0681 10 26 00 A2   [ 6] 1325 	lbne	L84	;
+                           1326 ;----- asm -----
+                           1327 ; 104 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1328 	; #ENR#[79]            for (uint8_t j = 0; j < swatch->fields_count; j++) {
+                           1329 ;--- end asm ---
+   0685 6D 43         [ 7] 1330 	tst	3,u	; <variable>.fields_count
+   0687 10 27 00 9C   [ 6] 1331 	lbeq	L84	;
+   068B 6F 64         [ 7] 1332 	clr	4,s	; j
+   068D                    1333 L93:
+                           1334 ;----- asm -----
+                           1335 ; 106 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1336 	; #ENR#[80]                const struct SwatchField* field = swatch->fields[j];
+                           1337 ;--- end asm ---
+   068D E6 64         [ 5] 1338 	ldb	4,s	;, j
+   068F 4F            [ 2] 1339 	clra		;zero_extendqihi: R:b -> R:d	;,
+   0690 C3 00 02      [ 4] 1340 	addd	#2; addhi3,3	; tmp46,
+   0693 58            [ 2] 1341 	aslb	;
+   0694 49            [ 2] 1342 	rola	;
+   0695 30 CB         [ 8] 1343 	leax	d,u	; tmp48, tmp47, swatch
+   0697 AE 84         [ 5] 1344 	ldx	,x	; field, <variable>.fields
+                           1345 ;----- asm -----
+                           1346 ; 108 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1347 	; #ENR#[81]		       int8_t xf = field->position.x;
+                           1348 ;--- end asm ---
+   0699 E6 01         [ 5] 1349 	ldb	1,x	;, <variable>.position.x
+   069B E7 65         [ 5] 1350 	stb	5,s	;, xf
+                           1351 ;----- asm -----
+                           1352 ; 110 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1353 	; #ENR#[82]		       int8_t yf = field->position.y;
+                           1354 ;--- end asm ---
+   069D E6 02         [ 5] 1355 	ldb	2,x	;, <variable>.position.y
+   069F E7 66         [ 5] 1356 	stb	6,s	;, yf
+                           1357 ;----- asm -----
+                           1358 ; 112 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1359 	; #ENR#[83]                switch (field->action) {
+                           1360 ;--- end asm ---
+   06A1 E6 84         [ 4] 1361 	ldb	,x	;, <variable>.action
+   06A3 C1 04         [ 2] 1362 	cmpb	#4	;cmpqi:	;,
+   06A5 10 22 00 74   [ 6] 1363 	lbhi	L85	;
+   06A9 4F            [ 2] 1364 	clra		;zero_extendqihi: R:b -> R:d	;,
+   06AA ED E4         [ 5] 1365 	std	,s	;,
+   06AC 58            [ 2] 1366 	aslb	;
+   06AD 49            [ 2] 1367 	rola	;
+   06AE 1F 01         [ 6] 1368 	tfr	d,x	;, tmp51
+   06B0 6E 99 06 B4   [10] 1369 	jmp	[L91,x]	;, tmp51
+   06B4                    1370 L91:
+   06B4 06 BE              1371 	.word	L86
+   06B6 06 E3              1372 	.word	L87
+   06B8 06 F5              1373 	.word	L88
+   06BA 07 04              1374 	.word	L89
+   06BC 07 13              1375 	.word	L90
+   06BE                    1376 L86:
+                           1377 ;----- asm -----
+                           1378 ; 116 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1379 	; #ENR#[85]					setSwatchField(xf, yf, !isSwatchFieldOn(xf, yf));
+                           1380 ;--- end asm ---
+   06BE E6 66         [ 5] 1381 	ldb	6,s	;, yf
+   06C0 34 04         [ 6] 1382 	pshs	b	;
+   06C2 E6 66         [ 5] 1383 	ldb	6,s	;, xf
+   06C4 BD 00 4B      [ 8] 1384 	jsr	_isSwatchFieldOn
+   06C7 5D            [ 2] 1385 	tstb	; D.1376
+   06C8 4F            [ 2] 1386 	clra		;zero_extendqihi: R:b -> R:d	; D.1376, tmp55
+   06C9 C3 FF FF      [ 4] 1387 	addd	#-1; addhi3,3	; tmp56,
+   06CC 1F 89         [ 6] 1388 	tfr	a,b	;,
+   06CE 4F            [ 2] 1389 	clra		;zero_extendqihi: R:b -> R:d	;,
+   06CF 59            [ 2] 1390 	rolb	;
+   06D0 59            [ 2] 1391 	rolb	;
+   06D1 C4 01         [ 2] 1392 	andb	#1	;,
+   06D3 34 04         [ 6] 1393 	pshs	b	; tmp54
+   06D5 E6 68         [ 5] 1394 	ldb	8,s	;, yf
+   06D7 34 04         [ 6] 1395 	pshs	b	;
+   06D9 E6 68         [ 5] 1396 	ldb	8,s	;, xf
+   06DB BD 00 82      [ 8] 1397 	jsr	_setSwatchField
+                           1398 ;----- asm -----
+                           1399 ; 118 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1400 	; #ENR#[86]					break;
+                           1401 ;--- end asm ---
+   06DE 32 63         [ 5] 1402 	leas	3,s	;,,
+   06E0 16 00 3A      [ 5] 1403 	lbra	L85	;
+   06E3                    1404 L87:
+                           1405 ;----- asm -----
+                           1406 ; 122 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1407 	; #ENR#[88]					setSwatchField(xf, yf, 1);
+                           1408 ;--- end asm ---
+   06E3 C6 01         [ 2] 1409 	ldb	#1	;,
+   06E5 E7 E2         [ 6] 1410 	stb	,-s	;,
+   06E7 E6 67         [ 5] 1411 	ldb	7,s	;, yf
+   06E9 34 04         [ 6] 1412 	pshs	b	;
+   06EB E6 67         [ 5] 1413 	ldb	7,s	;, xf
+   06ED BD 00 82      [ 8] 1414 	jsr	_setSwatchField
+                           1415 ;----- asm -----
+                           1416 ; 124 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1417 	; #ENR#[89]					break;
+                           1418 ;--- end asm ---
+   06F0 32 62         [ 5] 1419 	leas	2,s	;,,
+   06F2 16 00 28      [ 5] 1420 	lbra	L85	;
+   06F5                    1421 L88:
+                           1422 ;----- asm -----
+                           1423 ; 128 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1424 	; #ENR#[91]					setSwatchField(xf, yf, 0);
+                           1425 ;--- end asm ---
+   06F5 6F E2         [ 8] 1426 	clr	,-s	;
+   06F7 E6 67         [ 5] 1427 	ldb	7,s	;, yf
+   06F9 34 04         [ 6] 1428 	pshs	b	;
+   06FB E6 67         [ 5] 1429 	ldb	7,s	;, xf
+   06FD BD 00 82      [ 8] 1430 	jsr	_setSwatchField
+                           1431 ;----- asm -----
+                           1432 ; 130 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1433 	; #ENR#[92]					break;
+                           1434 ;--- end asm ---
+   0700 32 62         [ 5] 1435 	leas	2,s	;,,
+   0702 20 19         [ 3] 1436 	bra	L85	;
+   0704                    1437 L89:
+                           1438 ;----- asm -----
+                           1439 ; 134 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1440 	; #ENR#[94]					blockX = xf;
+                           1441 ;--- end asm ---
+   0704 E6 65         [ 5] 1442 	ldb	5,s	;, xf
+   0706 F7 00 00      [ 5] 1443 	stb	_blockX	;, blockX
+                           1444 ;----- asm -----
+                           1445 ; 136 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1446 	; #ENR#[95]					blockY = yf;
+                           1447 ;--- end asm ---
+   0709 E6 66         [ 5] 1448 	ldb	6,s	;, yf
+   070B F7 00 00      [ 5] 1449 	stb	_blockY	;, blockY
+                           1450 ;----- asm -----
+                           1451 ; 138 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1452 	; #ENR#[96]					setSplitMode();
+                           1453 ;--- end asm ---
+   070E BD 00 00      [ 8] 1454 	jsr	_setSplitMode
+                           1455 ;----- asm -----
+                           1456 ; 140 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1457 	; #ENR#[97]					break;
+                           1458 ;--- end asm ---
+   0711 20 0A         [ 3] 1459 	bra	L85	;
+   0713                    1460 L90:
+                           1461 ;----- asm -----
+                           1462 ; 144 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1463 	; #ENR#[99]					blockX2 = xf;
+                           1464 ;--- end asm ---
+   0713 E6 65         [ 5] 1465 	ldb	5,s	;, xf
+   0715 F7 00 00      [ 5] 1466 	stb	_blockX2	;, blockX2
+                           1467 ;----- asm -----
+                           1468 ; 146 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1469 	; #ENR#[100]					blockY2 = yf;
+                           1470 ;--- end asm ---
+   0718 E6 66         [ 5] 1471 	ldb	6,s	;, yf
+   071A F7 00 00      [ 5] 1472 	stb	_blockY2	;, blockY2
+                           1473 ;----- asm -----
+                           1474 ; 148 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1475 	; #ENR#[101]					break;
+                           1476 ;--- end asm ---
+   071D                    1477 L85:
+   071D 6C 64         [ 7] 1478 	inc	4,s	; j
+   071F E6 64         [ 5] 1479 	ldb	4,s	;, j
+   0721 E1 43         [ 5] 1480 	cmpb	3,u	;cmpqi:(R)	;, <variable>.fields_count
+   0723 10 25 FF 66   [ 6] 1481 	lblo	L93	;
+   0727                    1482 L84:
+   0727 6C 63         [ 7] 1483 	inc	3,s	; i
+   0729 BE 00 00      [ 6] 1484 	ldx	_level	; level.7, level
+   072C E6 63         [ 5] 1485 	ldb	3,s	;, i
+   072E E1 04         [ 5] 1486 	cmpb	4,x	;cmpqi:(R)	;, <variable>.swatches_count
+   0730 10 25 FF 36   [ 6] 1487 	lblo	L94	;
+   0734                    1488 L83:
+                           1489 ;----- asm -----
+                           1490 ; 154 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+                           1491 	; #ENR#[106]	initLevel();
+                           1492 ;--- end asm ---
+   0734 BD 06 48      [ 8] 1493 	jsr	_initLevel
+   0737                    1494 L95:
+   0737 32 67         [ 5] 1495 	leas	7,s	;,,
+   0739 35 C0         [ 7] 1496 	puls	u,pc	;
+                           1497 	.globl	_lineCount
+                           1498 	.area	.data
+   0000                    1499 _lineCount:
+   0000 00                 1500 	.byte	0
+                           1501 	.globl	_endX
+   0001                    1502 _endX:
+   0001 00                 1503 	.byte	0
+                           1504 	.globl	_endY
+   0002                    1505 _endY:
+   0002 00                 1506 	.byte	0
+                           1507 	.globl	_levelNumber
+   0003                    1508 _levelNumber:
+   0003 00                 1509 	.byte	0
+                           1510 	.globl	_shifts
+                           1511 	.area	.text
+   073B                    1512 _shifts:
+   073B 01                 1513 	.byte	1
+   073C 02                 1514 	.byte	2
+   073D 04                 1515 	.byte	4
+   073E 08                 1516 	.byte	8
+   073F 10                 1517 	.byte	16
+   0740 20                 1518 	.byte	32
+   0741 40                 1519 	.byte	64
+   0742 80                 1520 	.byte	-128
+                           1521 	.area	.bss
+                           1522 	.globl	_level
+   0000                    1523 _level:	.blkb	2
+                           1524 	.globl	_swatchesOn
+   0002                    1525 _swatchesOn:	.blkb	19
+                           1526 	.globl	_lineX0
+   0015                    1527 _lineX0:	.blkb	120
+                           1528 	.globl	_lineY0
+   008D                    1529 _lineY0:	.blkb	120
+                           1530 	.globl	_lineX1
+   0105                    1531 _lineX1:	.blkb	120
+                           1532 	.globl	_lineY1
+   017D                    1533 _lineY1:	.blkb	120
+ASxxxx Assembler V05.00  (Motorola 6809), page 1.
+Hexidecimal [16-Bits]
+
+Symbol Table
+
+    .__.$$$.       =   2710 L   |     .__.ABS.       =   0000 G
+    .__.CPU.       =   0000 L   |     .__.H$L.       =   0001 L
+  2 A$level$1004       0503 GR  |   2 A$level$1005       0505 GR
+  2 A$level$1006       0507 GR  |   2 A$level$1007       0508 GR
+  2 A$level$1008       050A GR  |   2 A$level$1009       050C GR
+  2 A$level$101        004B GR  |   2 A$level$1010       050E GR
+  2 A$level$1011       0510 GR  |   2 A$level$1012       0512 GR
+  2 A$level$1013       0514 GR  |   2 A$level$1018       0517 GR
+  2 A$level$1019       0519 GR  |   2 A$level$102        004D GR
+  2 A$level$1020       051B GR  |   2 A$level$1022       051D GR
+  2 A$level$1023       051F GR  |   2 A$level$1024       0521 GR
+  2 A$level$1025       0523 GR  |   2 A$level$1026       0527 GR
+  2 A$level$1027       0529 GR  |   2 A$level$1028       052B GR
+  2 A$level$1029       052D GR  |   2 A$level$103        004F GR
+  2 A$level$1030       0531 GR  |   2 A$level$1031       0533 GR
+  2 A$level$1034       0534 GR  |   2 A$level$1035       0536 GR
+  2 A$level$1048       0538 GR  |   2 A$level$1049       053C GR
+  2 A$level$1050       053E GR  |   2 A$level$1052       0540 GR
+  2 A$level$1053       0542 GR  |   2 A$level$1054       0543 GR
+  2 A$level$1063       0545 GR  |   2 A$level$1064       0547 GR
+  2 A$level$1065       0549 GR  |   2 A$level$1066       054B GR
+  2 A$level$1067       054D GR  |   2 A$level$1068       054F GR
+  2 A$level$1070       0551 GR  |   2 A$level$1071       0553 GR
+  2 A$level$1072       0554 GR  |   2 A$level$108        0051 GR
+  2 A$level$1081       0556 GR  |   2 A$level$1082       0558 GR
+  2 A$level$1083       055A GR  |   2 A$level$1084       055C GR
+  2 A$level$1089       055E GR  |   2 A$level$109        0053 GR
+  2 A$level$1090       0560 GR  |   2 A$level$1092       0562 GR
+  2 A$level$1098       0563 GR  |   2 A$level$1099       0565 GR
+  2 A$level$110        0055 GR  |   2 A$level$1104       0567 GR
+  2 A$level$1105       0569 GR  |   2 A$level$1106       056B GR
+  2 A$level$1107       056D GR  |   2 A$level$111        0056 GR
+  2 A$level$1112       0570 GR  |   2 A$level$1113       0572 GR
+  2 A$level$1118       0575 GR  |   2 A$level$1119       0577 GR
+  2 A$level$112        0058 GR  |   2 A$level$1120       057A GR
+  2 A$level$1121       057C GR  |   2 A$level$1123       057F GR
+  2 A$level$1124       0581 GR  |   2 A$level$1129       0583 GR
+  2 A$level$113        005A GR  |   2 A$level$1130       0585 GR
+  2 A$level$1131       0587 GR  |   2 A$level$1132       0589 GR
+  2 A$level$1133       058C GR  |   2 A$level$1134       058E GR
+  2 A$level$1136       0591 GR  |   2 A$level$1137       0593 GR
+  2 A$level$114        005B GR  |   2 A$level$1142       0595 GR
+  2 A$level$1143       0597 GR  |   2 A$level$1144       0599 GR
+  2 A$level$1145       059B GR  |   2 A$level$1146       059D GR
+  2 A$level$1147       059F GR  |   2 A$level$1148       05A1 GR
+  2 A$level$1149       05A3 GR  |   2 A$level$115        005D GR
+  2 A$level$1150       05A5 GR  |   2 A$level$1151       05A8 GR
+  2 A$level$1152       05AA GR  |   2 A$level$1154       05AC GR
+  2 A$level$1155       05AE GR  |   2 A$level$116        005F GR
+  2 A$level$1160       05B0 GR  |   2 A$level$1161       05B2 GR
+  2 A$level$1162       05B4 GR  |   2 A$level$1163       05B6 GR
+  2 A$level$1164       05B8 GR  |   2 A$level$1165       05BA GR
+  2 A$level$1166       05BC GR  |   2 A$level$1167       05BE GR
+  2 A$level$1168       05C0 GR  |   2 A$level$1169       05C3 GR
+  2 A$level$1170       05C5 GR  |   2 A$level$1172       05C7 GR
+  2 A$level$1173       05C9 GR  |   2 A$level$1178       05CB GR
+  2 A$level$1179       05CD GR  |   2 A$level$1180       05CF GR
+  2 A$level$1181       05D1 GR  |   2 A$level$1182       05D3 GR
+  2 A$level$1183       05D5 GR  |   2 A$level$1184       05D7 GR
+  2 A$level$1185       05D9 GR  |   2 A$level$1186       05DB GR
+  2 A$level$1187       05DD GR  |   2 A$level$1188       05E0 GR
+  2 A$level$1194       05E2 GR  |   2 A$level$1195       05E4 GR
+  2 A$level$1196       05E6 GR  |   2 A$level$1197       05E8 GR
+  2 A$level$1198       05EB GR  |   2 A$level$1199       05ED GR
+  2 A$level$1200       05EE GR  |   2 A$level$1201       05F0 GR
+  2 A$level$1202       05F2 GR  |   2 A$level$1203       05F4 GR
+  2 A$level$1204       05F6 GR  |   2 A$level$1205       05F8 GR
+  2 A$level$1206       05FB GR  |   2 A$level$1207       05FD GR
+  2 A$level$1208       05FE GR  |   2 A$level$1214       0600 GR
+  2 A$level$1215       0602 GR  |   2 A$level$1216       0604 GR
+  2 A$level$1217       0606 GR  |   2 A$level$1223       0608 GR
+  2 A$level$1224       060A GR  |   2 A$level$1225       060C GR
+  2 A$level$1231       060E GR  |   2 A$level$1232       0610 GR
+  2 A$level$1237       0612 GR  |   2 A$level$1238       0614 GR
+  2 A$level$1239       0616 GR  |   2 A$level$1240       0618 GR
+  2 A$level$1241       061A GR  |   2 A$level$1242       061B GR
+  2 A$level$1243       061D GR  |   2 A$level$1244       061F GR
+  2 A$level$1245       0621 GR  |   2 A$level$1246       0623 GR
+  2 A$level$125        0061 GR  |   2 A$level$1251       0626 GR
+  2 A$level$1252       0628 GR  |   2 A$level$1253       062A GR
+  2 A$level$1255       062C GR  |   2 A$level$1256       062E GR
+  2 A$level$1257       0630 GR  |   2 A$level$1258       0632 GR
+  2 A$level$1259       0634 GR  |   2 A$level$126        0063 GR
+  2 A$level$1260       0638 GR  |   2 A$level$1261       063A GR
+  2 A$level$1262       063C GR  |   2 A$level$1263       063E GR
+  2 A$level$1264       0640 GR  |   2 A$level$1265       0644 GR
+  2 A$level$1266       0646 GR  |   2 A$level$127        0064 GR
+  2 A$level$1273       0648 GR  |   2 A$level$1278       064B GR
+  2 A$level$128        0065 GR  |   2 A$level$1283       064E GR
+  2 A$level$1284       0651 GR  |   2 A$level$1287       0652 GR
+  2 A$level$1288       0654 GR  |   2 A$level$1289       0656 GR
+  2 A$level$129        0066 GR  |   2 A$level$1294       0658 GR
+  2 A$level$1295       065B GR  |   2 A$level$130        0067 GR
+  2 A$level$1300       065F GR  |   2 A$level$1301       0662 GR
+  2 A$level$1302       0664 GR  |   2 A$level$1303       0668 GR
+  2 A$level$1309       066A GR  |   2 A$level$131        0068 GR
+  2 A$level$1310       066C GR  |   2 A$level$1311       066D GR
+  2 A$level$1312       066F GR  |   2 A$level$1313       0670 GR
+  2 A$level$1314       0671 GR  |   2 A$level$1315       0673 GR
+  2 A$level$132        0069 GR  |   2 A$level$1320       0675 GR
+  2 A$level$1321       0677 GR  |   2 A$level$1322       0679 GR
+  2 A$level$1323       067D GR  |   2 A$level$1324       067F GR
+  2 A$level$1325       0681 GR  |   2 A$level$133        006B GR
+  2 A$level$1330       0685 GR  |   2 A$level$1331       0687 GR
+  2 A$level$1332       068B GR  |   2 A$level$1338       068D GR
+  2 A$level$1339       068F GR  |   2 A$level$134        006F GR
+  2 A$level$1340       0690 GR  |   2 A$level$1341       0693 GR
+  2 A$level$1342       0694 GR  |   2 A$level$1343       0695 GR
+  2 A$level$1344       0697 GR  |   2 A$level$1349       0699 GR
+  2 A$level$135        0071 GR  |   2 A$level$1350       069B GR
+  2 A$level$1355       069D GR  |   2 A$level$1356       069F GR
+  2 A$level$136        0073 GR  |   2 A$level$1361       06A1 GR
+  2 A$level$1362       06A3 GR  |   2 A$level$1363       06A5 GR
+  2 A$level$1364       06A9 GR  |   2 A$level$1365       06AA GR
+  2 A$level$1366       06AC GR  |   2 A$level$1367       06AD GR
+  2 A$level$1368       06AE GR  |   2 A$level$1369       06B0 GR
+  2 A$level$137        0075 GR  |   2 A$level$138        0078 GR
+  2 A$level$1381       06BE GR  |   2 A$level$1382       06C0 GR
+  2 A$level$1383       06C2 GR  |   2 A$level$1384       06C4 GR
+  2 A$level$1385       06C7 GR  |   2 A$level$1386       06C8 GR
+  2 A$level$1387       06C9 GR  |   2 A$level$1388       06CC GR
+  2 A$level$1389       06CE GR  |   2 A$level$139        007A GR
+  2 A$level$1390       06CF GR  |   2 A$level$1391       06D0 GR
+  2 A$level$1392       06D1 GR  |   2 A$level$1393       06D3 GR
+  2 A$level$1394       06D5 GR  |   2 A$level$1395       06D7 GR
+  2 A$level$1396       06D9 GR  |   2 A$level$1397       06DB GR
+  2 A$level$140        007C GR  |   2 A$level$1402       06DE GR
+  2 A$level$1403       06E0 GR  |   2 A$level$1409       06E3 GR
+  2 A$level$1410       06E5 GR  |   2 A$level$1411       06E7 GR
+  2 A$level$1412       06E9 GR  |   2 A$level$1413       06EB GR
+  2 A$level$1414       06ED GR  |   2 A$level$1419       06F0 GR
+  2 A$level$142        007E GR  |   2 A$level$1420       06F2 GR
+  2 A$level$1426       06F5 GR  |   2 A$level$1427       06F7 GR
+  2 A$level$1428       06F9 GR  |   2 A$level$1429       06FB GR
+  2 A$level$143        0080 GR  |   2 A$level$1430       06FD GR
+  2 A$level$1435       0700 GR  |   2 A$level$1436       0702 GR
+  2 A$level$1442       0704 GR  |   2 A$level$1443       0706 GR
+  2 A$level$1448       0709 GR  |   2 A$level$1449       070B GR
+  2 A$level$1454       070E GR  |   2 A$level$1459       0711 GR
+  2 A$level$146        0082 GR  |   2 A$level$1465       0713 GR
+  2 A$level$1466       0715 GR  |   2 A$level$147        0084 GR
+  2 A$level$1471       0718 GR  |   2 A$level$1472       071A GR
+  2 A$level$1478       071D GR  |   2 A$level$1479       071F GR
+  2 A$level$148        0086 GR  |   2 A$level$1480       0721 GR
+  2 A$level$1481       0723 GR  |   2 A$level$1483       0727 GR
+  2 A$level$1484       0729 GR  |   2 A$level$1485       072C GR
+  2 A$level$1486       072E GR  |   2 A$level$1487       0730 GR
+  2 A$level$1493       0734 GR  |   2 A$level$1495       0737 GR
+  2 A$level$1496       0739 GR  |   2 A$level$153        0088 GR
+  2 A$level$154        008A GR  |   2 A$level$155        008C GR
+  2 A$level$156        008D GR  |   2 A$level$157        008F GR
+  2 A$level$158        0091 GR  |   2 A$level$160        0092 GR
+  2 A$level$163        0094 GR  |   2 A$level$168        0096 GR
+  2 A$level$169        0098 GR  |   2 A$level$170        009A GR
+  2 A$level$175        009C GR  |   2 A$level$176        009E GR
+  2 A$level$177        009F GR  |   2 A$level$178        00A0 GR
+  2 A$level$179        00A1 GR  |   2 A$level$180        00A2 GR
+  2 A$level$181        00A3 GR  |   2 A$level$186        00A4 GR
+  2 A$level$187        00A6 GR  |   2 A$level$192        00A8 GR
+  2 A$level$193        00AB GR  |   2 A$level$194        00AD GR
+  2 A$level$195        00AF GR  |   2 A$level$196        00B1 GR
+  2 A$level$197        00B3 GR  |   2 A$level$198        00B6 GR
+  2 A$level$199        00B8 GR  |   2 A$level$200        00BA GR
+  2 A$level$206        00BC GR  |   2 A$level$207        00BF GR
+  2 A$level$208        00C1 GR  |   2 A$level$209        00C3 GR
+  2 A$level$210        00C5 GR  |   2 A$level$211        00C7 GR
+  2 A$level$212        00CA GR  |   2 A$level$213        00CB GR
+  2 A$level$214        00CD GR  |   2 A$level$216        00CF GR
+  2 A$level$217        00D1 GR  |   2 A$level$220        00D3 GR
+  2 A$level$221        00D5 GR  |   2 A$level$226        00D7 GR
+  2 A$level$227        00D9 GR  |   2 A$level$228        00DB GR
+  2 A$level$229        00DD GR  |   2 A$level$230        00E0 GR
+  2 A$level$235        00E2 GR  |   2 A$level$236        00E4 GR
+  2 A$level$237        00E6 GR  |   2 A$level$238        00E8 GR
+  2 A$level$239        00EA GR  |   2 A$level$240        00EC GR
+  2 A$level$241        00EE GR  |   2 A$level$242        00F0 GR
+  2 A$level$243        00F2 GR  |   2 A$level$249        00F4 GR
+  2 A$level$250        00F6 GR  |   2 A$level$251        00F8 GR
+  2 A$level$252        00FA GR  |   2 A$level$253        00FD GR
+  2 A$level$254        00FF GR  |   2 A$level$255        0100 GR
+  2 A$level$260        0102 GR  |   2 A$level$261        0104 GR
+  2 A$level$267        0106 GR  |   2 A$level$268        0108 GR
+  2 A$level$269        010A GR  |   2 A$level$270        010C GR
+  2 A$level$271        010E GR  |   2 A$level$272        0110 GR
+  2 A$level$273        0112 GR  |   2 A$level$274        0114 GR
+  2 A$level$275        0116 GR  |   2 A$level$276        0118 GR
+  2 A$level$277        011A GR  |   2 A$level$278        011C GR
+  2 A$level$279        011E GR  |   2 A$level$280        0120 GR
+  2 A$level$281        0121 GR  |   2 A$level$282        0124 GR
+  2 A$level$283        0126 GR  |   2 A$level$284        0127 GR
+  2 A$level$285        0128 GR  |   2 A$level$286        0129 GR
+  2 A$level$287        012B GR  |   2 A$level$289        012D GR
+  2 A$level$291        012F GR  |   2 A$level$292        0131 GR
+  2 A$level$295        0132 GR  |   2 A$level$296        0134 GR
+  2 A$level$297        0136 GR  |   2 A$level$304        0138 GR
+  2 A$level$305        013A GR  |   2 A$level$306        013C GR
+  2 A$level$307        013D GR  |   2 A$level$308        013F GR
+  2 A$level$309        0141 GR  |   2 A$level$310        0142 GR
+  2 A$level$311        0144 GR  |   2 A$level$312        0145 GR
+  2 A$level$313        0147 GR  |   2 A$level$314        0149 GR
+  2 A$level$315        014B GR  |   2 A$level$316        014D GR
+  2 A$level$317        014F GR  |   2 A$level$318        0151 GR
+  2 A$level$321        0153 GR  |   2 A$level$322        0155 GR
+  2 A$level$329        0157 GR  |   2 A$level$330        0159 GR
+  2 A$level$331        015B GR  |   2 A$level$332        015D GR
+  2 A$level$333        015E GR  |   2 A$level$334        0160 GR
+  2 A$level$335        0162 GR  |   2 A$level$336        0163 GR
+  2 A$level$337        0164 GR  |   2 A$level$338        0165 GR
+  2 A$level$339        0167 GR  |   2 A$level$340        0169 GR
+  2 A$level$341        016B GR  |   2 A$level$342        016D GR
+  2 A$level$343        016F GR  |   2 A$level$344        0170 GR
+  2 A$level$345        0172 GR  |   2 A$level$346        0174 GR
+  2 A$level$347        0176 GR  |   2 A$level$35         0000 GR
+  2 A$level$350        0177 GR  |   2 A$level$351        0179 GR
+  2 A$level$352        017B GR  |   2 A$level$357        017D GR
+  2 A$level$358        0180 GR  |   2 A$level$359        0182 GR
+  2 A$level$36         0002 GR  |   2 A$level$360        0185 GR
+  2 A$level$361        0187 GR  |   2 A$level$362        0189 GR
+  2 A$level$363        018C GR  |   2 A$level$364        018E GR
+  2 A$level$365        0190 GR  |   2 A$level$366        0191 GR
+  2 A$level$367        0193 GR  |   2 A$level$368        0195 GR
+  2 A$level$37         0004 GR  |   2 A$level$373        0199 GR
+  2 A$level$374        019C GR  |   2 A$level$375        019E GR
+  2 A$level$376        01A1 GR  |   2 A$level$377        01A3 GR
+  2 A$level$378        01A5 GR  |   2 A$level$379        01A7 GR
+  2 A$level$380        01AA GR  |   2 A$level$381        01AC GR
+  2 A$level$382        01AE GR  |   2 A$level$383        01AF GR
+  2 A$level$384        01B1 GR  |   2 A$level$385        01B3 GR
+  2 A$level$390        01B7 GR  |   2 A$level$391        01BA GR
+  2 A$level$392        01BC GR  |   2 A$level$393        01BF GR
+  2 A$level$394        01C0 GR  |   2 A$level$395        01C2 GR
+  2 A$level$396        01C4 GR  |   2 A$level$397        01C5 GR
+  2 A$level$398        01C7 GR  |   2 A$level$399        01C9 GR
+  2 A$level$400        01CB GR  |   2 A$level$401        01CD GR
+  2 A$level$402        01D0 GR  |   2 A$level$403        01D2 GR
+  2 A$level$404        01D4 GR  |   2 A$level$405        01D5 GR
+  2 A$level$406        01D7 GR  |   2 A$level$407        01D9 GR
+  2 A$level$412        01DD GR  |   2 A$level$413        01E0 GR
+  2 A$level$414        01E3 GR  |   2 A$level$415        01E5 GR
+  2 A$level$416        01E7 GR  |   2 A$level$417        01E9 GR
+  2 A$level$418        01EB GR  |   2 A$level$419        01EE GR
+  2 A$level$420        01F0 GR  |   2 A$level$421        01F3 GR
+  2 A$level$422        01F4 GR  |   2 A$level$423        01F6 GR
+  2 A$level$424        01F8 GR  |   2 A$level$429        01FC GR
+  2 A$level$430        01FF GR  |   2 A$level$431        0200 GR
+  2 A$level$432        0202 GR  |   2 A$level$437        0205 GR
+  2 A$level$438        0208 GR  |   2 A$level$439        020A GR
+  2 A$level$44         0006 GR  |   2 A$level$440        020C GR
+  2 A$level$441        020F GR  |   2 A$level$442        0211 GR
+  2 A$level$443        0213 GR  |   2 A$level$444        0214 GR
+  2 A$level$445        0216 GR  |   2 A$level$446        021A GR
+  2 A$level$447        021C GR  |   2 A$level$45         0007 GR
+  2 A$level$452        021E GR  |   2 A$level$453        0221 GR
+  2 A$level$454        0224 GR  |   2 A$level$455        0227 GR
+  2 A$level$456        0229 GR  |   2 A$level$457        022B GR
+  2 A$level$458        022D GR  |   2 A$level$459        0230 GR
+  2 A$level$46         0009 GR  |   2 A$level$460        0233 GR
+  2 A$level$461        0236 GR  |   2 A$level$462        0237 GR
+  2 A$level$463        0239 GR  |   2 A$level$464        023D GR
+  2 A$level$465        0240 GR  |   2 A$level$47         000B GR
+  2 A$level$470        0242 GR  |   2 A$level$471        0245 GR
+  2 A$level$472        0248 GR  |   2 A$level$473        024A GR
+  2 A$level$474        024C GR  |   2 A$level$475        024E GR
+  2 A$level$476        0250 GR  |   2 A$level$477        0253 GR
+  2 A$level$478        0255 GR  |   2 A$level$479        0257 GR
+  2 A$level$48         000D GR  |   2 A$level$480        0258 GR
+  2 A$level$481        025A GR  |   2 A$level$482        025E GR
+  2 A$level$483        0260 GR  |   2 A$level$488        0262 GR
+  2 A$level$489        0265 GR  |   2 A$level$49         000F GR
+  2 A$level$490        0268 GR  |   2 A$level$491        026A GR
+  2 A$level$492        026C GR  |   2 A$level$493        026E GR
+  2 A$level$494        0270 GR  |   2 A$level$495        0273 GR
+  2 A$level$496        0275 GR  |   2 A$level$497        0278 GR
+  2 A$level$498        0279 GR  |   2 A$level$499        027B GR
+  2 A$level$50         0011 GR  |   2 A$level$500        027F GR
+  2 A$level$501        0281 GR  |   2 A$level$506        0283 GR
+  2 A$level$507        0286 GR  |   2 A$level$508        0289 GR
+  2 A$level$51         0013 GR  |   2 A$level$511        028B GR
+  2 A$level$512        028D GR  |   2 A$level$517        028F GR
+  2 A$level$52         0015 GR  |   2 A$level$523        0292 GR
+  2 A$level$524        0294 GR  |   2 A$level$525        0297 GR
+  2 A$level$538        0299 GR  |   2 A$level$539        029E GR
+  2 A$level$545        02A0 GR  |   2 A$level$546        02A2 GR
+  2 A$level$554        02A4 GR  |   2 A$level$559        02A6 GR
+  2 A$level$560        02A8 GR  |   2 A$level$561        02AA GR
+  2 A$level$562        02AC GR  |   2 A$level$568        02AE GR
+  2 A$level$569        02B0 GR  |   2 A$level$57         0017 GR
+  2 A$level$570        02B2 GR  |   2 A$level$571        02B4 GR
+  2 A$level$572        02B6 GR  |   2 A$level$573        02B8 GR
+  2 A$level$574        02BB GR  |   2 A$level$576        02BD GR
+  2 A$level$577        02BF GR  |   2 A$level$578        02C1 GR
+  2 A$level$579        02C3 GR  |   2 A$level$58         0018 GR
+  2 A$level$580        02C5 GR  |   2 A$level$581        02C7 GR
+  2 A$level$582        02C9 GR  |   2 A$level$583        02CB GR
+  2 A$level$584        02CD GR  |   2 A$level$585        02CF GR
+  2 A$level$586        02D3 GR  |   2 A$level$587        02D5 GR
+  2 A$level$59         001A GR  |   2 A$level$593        02E7 GR
+  2 A$level$594        02E9 GR  |   2 A$level$599        02EB GR
+  2 A$level$60         001C GR  |   2 A$level$600        02EE GR
+  2 A$level$601        02F0 GR  |   2 A$level$602        02F2 GR
+  2 A$level$603        02F4 GR  |   2 A$level$604        02F6 GR
+  2 A$level$605        02F9 GR  |   2 A$level$606        02FB GR
+  2 A$level$607        02FD GR  |   2 A$level$608        02FE GR
+  2 A$level$609        0300 GR  |   2 A$level$61         001D GR
+  2 A$level$610        0302 GR  |   2 A$level$611        0304 GR
+  2 A$level$616        0308 GR  |   2 A$level$617        030B GR
+  2 A$level$618        030D GR  |   2 A$level$619        030F GR
+  2 A$level$62         001F GR  |   2 A$level$620        0311 GR
+  2 A$level$621        0313 GR  |   2 A$level$622        0315 GR
+  2 A$level$623        0318 GR  |   2 A$level$624        031A GR
+  2 A$level$625        031C GR  |   2 A$level$626        031D GR
+  2 A$level$627        031F GR  |   2 A$level$628        0321 GR
+  2 A$level$629        0323 GR  |   2 A$level$63         0021 GR
+  2 A$level$634        0327 GR  |   2 A$level$635        032A GR
+  2 A$level$636        032C GR  |   2 A$level$637        032E GR
+  2 A$level$638        032F GR  |   2 A$level$639        0331 GR
+  2 A$level$64         0022 GR  |   2 A$level$640        0333 GR
+  2 A$level$641        0335 GR  |   2 A$level$642        0338 GR
+  2 A$level$643        033A GR  |   2 A$level$644        033C GR
+  2 A$level$645        033D GR  |   2 A$level$646        033F GR
+  2 A$level$647        0341 GR  |   2 A$level$648        0343 GR
+  2 A$level$65         0023 GR  |   2 A$level$653        0347 GR
+  2 A$level$654        034A GR  |   2 A$level$655        034C GR
+  2 A$level$656        034E GR  |   2 A$level$657        0350 GR
+  2 A$level$658        0352 GR  |   2 A$level$659        0354 GR
+  2 A$level$66         0025 GR  |   2 A$level$660        0357 GR
+  2 A$level$661        0359 GR  |   2 A$level$662        035B GR
+  2 A$level$663        035C GR  |   2 A$level$664        035E GR
+  2 A$level$665        0360 GR  |   2 A$level$67         0026 GR
+  2 A$level$670        0364 GR  |   2 A$level$671        0367 GR
+  2 A$level$672        0368 GR  |   2 A$level$677        036B GR
+  2 A$level$678        036D GR  |   2 A$level$679        036F GR
+  2 A$level$68         0027 GR  |   2 A$level$684        0371 GR
+  2 A$level$685        0374 GR  |   2 A$level$687        0377 GR
+  2 A$level$688        0379 GR  |   2 A$level$69         0028 GR
+  2 A$level$691        037A GR  |   2 A$level$692        037C GR
+  2 A$level$697        037E GR  |   2 A$level$698        0381 GR
+  2 A$level$699        0383 GR  |   2 A$level$70         0029 GR
+  2 A$level$700        0385 GR  |   2 A$level$701        0387 GR
+  2 A$level$702        0389 GR  |   2 A$level$703        038C GR
+  2 A$level$704        038E GR  |   2 A$level$705        0390 GR
+  2 A$level$706        0391 GR  |   2 A$level$707        0393 GR
+  2 A$level$708        0395 GR  |   2 A$level$71         002B GR
+  2 A$level$713        0399 GR  |   2 A$level$714        039C GR
+  2 A$level$715        039E GR  |   2 A$level$716        03A0 GR
+  2 A$level$717        03A2 GR  |   2 A$level$718        03A4 GR
+  2 A$level$719        03A6 GR  |   2 A$level$72         002D GR
+  2 A$level$720        03A9 GR  |   2 A$level$721        03AB GR
+  2 A$level$722        03AD GR  |   2 A$level$723        03AE GR
+  2 A$level$724        03B0 GR  |   2 A$level$725        03B2 GR
+  2 A$level$73         002F GR  |   2 A$level$730        03B6 GR
+  2 A$level$731        03B9 GR  |   2 A$level$732        03BB GR
+  2 A$level$733        03BD GR  |   2 A$level$734        03BF GR
+  2 A$level$735        03C1 GR  |   2 A$level$736        03C4 GR
+  2 A$level$737        03C6 GR  |   2 A$level$738        03C8 GR
+  2 A$level$739        03C9 GR  |   2 A$level$74         0031 GR
+  2 A$level$740        03CB GR  |   2 A$level$741        03CD GR
+  2 A$level$746        03D1 GR  |   2 A$level$747        03D4 GR
+  2 A$level$748        03D6 GR  |   2 A$level$749        03D8 GR
+  2 A$level$75         0033 GR  |   2 A$level$750        03DA GR
+  2 A$level$751        03DC GR  |   2 A$level$752        03DE GR
+  2 A$level$753        03E1 GR  |   2 A$level$754        03E3 GR
+  2 A$level$755        03E5 GR  |   2 A$level$756        03E6 GR
+  2 A$level$757        03E8 GR  |   2 A$level$758        03EA GR
+  2 A$level$76         0035 GR  |   2 A$level$763        03EE GR
+  2 A$level$764        03F0 GR  |   2 A$level$765        03F2 GR
+  2 A$level$77         0039 GR  |   2 A$level$770        03F4 GR
+  2 A$level$771        03F7 GR  |   2 A$level$772        03F8 GR
+  2 A$level$773        03FA GR  |   2 A$level$778        03FE GR
+  2 A$level$779        0402 GR  |   2 A$level$78         003B GR
+  2 A$level$780        0404 GR  |   2 A$level$785        0408 GR
+  2 A$level$786        040C GR  |   2 A$level$787        040E GR
+  2 A$level$79         003D GR  |   2 A$level$792        0412 GR
+  2 A$level$793        0416 GR  |   2 A$level$794        0418 GR
+  2 A$level$800        041C GR  |   2 A$level$801        041F GR
+  2 A$level$802        0420 GR  |   2 A$level$807        0423 GR
+  2 A$level$808        0425 GR  |   2 A$level$81         003F GR
+  2 A$level$813        0427 GR  |   2 A$level$814        042A GR
+  2 A$level$816        042D GR  |   2 A$level$817        042F GR
+  2 A$level$820        0430 GR  |   2 A$level$821        0432 GR
+  2 A$level$828        0434 GR  |   2 A$level$829        0436 GR
+  2 A$level$830        0438 GR  |   2 A$level$831        043A GR
+  2 A$level$832        043C GR  |   2 A$level$838        043E GR
+  2 A$level$839        0440 GR  |   2 A$level$840        0442 GR
+  2 A$level$841        0444 GR  |   2 A$level$842        0446 GR
+  2 A$level$843        0448 GR  |   2 A$level$844        044A GR
+  2 A$level$845        044C GR  |   2 A$level$846        044E GR
+  2 A$level$847        0450 GR  |   2 A$level$848        0452 GR
+  2 A$level$849        0454 GR  |   2 A$level$850        0456 GR
+  2 A$level$855        0459 GR  |   2 A$level$856        045B GR
+  2 A$level$857        045D GR  |   2 A$level$858        045F GR
+  2 A$level$859        0461 GR  |   2 A$level$860        0463 GR
+  2 A$level$861        0465 GR  |   2 A$level$862        0467 GR
+  2 A$level$863        0469 GR  |   2 A$level$865        046B GR
+  2 A$level$866        046D GR  |   2 A$level$87         0040 GR
+  2 A$level$872        046F GR  |   2 A$level$873        0471 GR
+  2 A$level$874        0473 GR  |   2 A$level$875        0475 GR
+  2 A$level$876        0477 GR  |   2 A$level$88         0042 GR
+  2 A$level$882        0479 GR  |   2 A$level$883        047B GR
+  2 A$level$884        047D GR  |   2 A$level$885        047F GR
+  2 A$level$886        0481 GR  |   2 A$level$887        0483 GR
+  2 A$level$888        0485 GR  |   2 A$level$889        0487 GR
+  2 A$level$890        0489 GR  |   2 A$level$891        048B GR
+  2 A$level$892        048D GR  |   2 A$level$893        048F GR
+  2 A$level$894        0491 GR  |   2 A$level$899        0494 GR
+  2 A$level$900        0496 GR  |   2 A$level$901        0498 GR
+  2 A$level$902        049A GR  |   2 A$level$903        049C GR
+  2 A$level$904        049E GR  |   2 A$level$905        04A0 GR
+  2 A$level$906        04A2 GR  |   2 A$level$907        04A4 GR
+  2 A$level$909        04A6 GR  |   2 A$level$910        04A8 GR
+  2 A$level$916        04AA GR  |   2 A$level$917        04AC GR
+  2 A$level$918        04AE GR  |   2 A$level$919        04B0 GR
+  2 A$level$920        04B2 GR  |   2 A$level$921        04B4 GR
+  2 A$level$922        04B6 GR  |   2 A$level$923        04B8 GR
+  2 A$level$924        04BA GR  |   2 A$level$925        04BC GR
+  2 A$level$926        04BF GR  |   2 A$level$927        04C1 GR
+  2 A$level$930        04C2 GR  |   2 A$level$939        04C4 GR
+  2 A$level$940        04C6 GR  |   2 A$level$95         0044 GR
+  2 A$level$950        04C8 GR  |   2 A$level$951        04CA GR
+  2 A$level$952        04CC GR  |   2 A$level$953        04CE GR
+  2 A$level$959        04D0 GR  |   2 A$level$96         0047 GR
+  2 A$level$960        04D2 GR  |   2 A$level$961        04D4 GR
+  2 A$level$962        04D6 GR  |   2 A$level$963        04D9 GR
+  2 A$level$964        04DB GR  |   2 A$level$965        04DC GR
+  2 A$level$966        04DE GR  |   2 A$level$967        04E0 GR
+  2 A$level$968        04E1 GR  |   2 A$level$969        04E3 GR
+  2 A$level$97         0048 GR  |   2 A$level$970        04E5 GR
+  2 A$level$971        04E7 GR  |   2 A$level$972        04E9 GR
+  2 A$level$973        04EC GR  |   2 A$level$974        04EE GR
+  2 A$level$975        04EF GR  |   2 A$level$98         004A GR
+  2 A$level$981        04F1 GR  |   2 A$level$982        04F3 GR
+  2 A$level$983        04F5 GR  |   2 A$level$984        04F7 GR
+  2 A$level$990        04F9 GR  |   2 A$level$991        04FB GR
+  2 A$level$992        04FD GR  |   2 A$level$998        04FF GR
+  2 A$level$999        0501 GR  |   2 L11                00BC R
+  2 L13                00CF R   |   2 L15                00F4 R
+  2 L16                0106 R   |   2 L17                012D R
+  2 L19                012F R   |   2 L2                 003F R
+  2 L28                0292 R   |   2 L29                02AE R
+  2 L3                 0040 R   |   2 L30                02BD R
+  2 L31                02A4 R   |   2 L32                02A0 R
+  2 L39                0377 R   |   2 L41                041C R
+  2 L43                042D R   |   2 L45                046F R
+  2 L46                046B R   |   2 L47                043E R
+  2 L48                04AA R   |   2 L49                04A6 R
+  2 L50                0479 R   |   2 L53                04F1 R
+  2 L54                04FF R   |   2 L55                04F9 R
+  2 L56                051D R   |   2 L57                04D0 R
+  2 L58                04C8 R   |   2 L63                0562 R
+  2 L64                0563 R   |   2 L65                057F R
+  2 L66                05E2 R   |   2 L67                0591 R
+  2 L68                05AC R   |   2 L69                05C7 R
+  2 L70                0600 R   |   2 L71                060E R
+  2 L72                0608 R   |   2 L73                062C R
+  2 L74                0551 R   |   2 L75                0540 R
+  2 L8                 007E R   |   2 L83                0734 R
+  2 L84                0727 R   |   2 L85                071D R
+  2 L86                06BE R   |   2 L87                06E3 R
+  2 L88                06F5 R   |   2 L89                0704 R
+  2 L90                0713 R   |   2 L91                06B4 R
+  2 L93                068D R   |   2 L94                066A R
+  2 L95                0737 R   |   2 LC0                02D7 R
+  2 _addLine           0430 GR  |   2 _addLineImpl       037A GR
+  2 _addSplit          02E7 GR  |   2 _addTarget         0177 GR
+    _blockX            **** GX  |     _blockX2           **** GX
+    _blockY            **** GX  |     _blockY2           **** GX
+  3 _endX              0001 GR  |   3 _endY              0002 GR
+  2 _getField          0000 GR  |   2 _getShifts         0044 GR
+  2 _initLevel         0648 GR  |   2 _initSwatches      028B GR
+  2 _isField           00D3 GR  |   2 _isSwatchField     004B GR
+  4 _level             0000 GR  |   3 _levelNumber       0003 GR
+  3 _lineCount         0000 GR  |   4 _lineX0            0015 GR
+  4 _lineX1            0105 GR  |   4 _lineY0            008D GR
+  4 _lineY1            017D GR  |     _runtimeError      **** GX
+    _setSplitMode      **** GX  |   2 _setSwatchFiel     0082 GR
+  2 _setupX            0534 GR  |   2 _setupY            04C2 GR
+  2 _shifts            073B GR  |     _splitMode         **** GX
+  2 _swatchSwitch      0652 GR  |   4 _swatchesOn        0002 GR
+  2 _x3d               0132 GR  |   2 _y3d               0153 GR
+
+ASxxxx Assembler V05.00  (Motorola 6809), page 2.
+Hexidecimal [16-Bits]
+
+Area Table
+
+[_CSEG]
+   0 _CODE            size    0   flags C080
+   2 .text            size  743   flags  100
+   3 .data            size    4   flags  100
+   4 .bss             size  1F5   flags    0
+[_DSEG]
+   1 _DATA            size    0   flags C0C0
+

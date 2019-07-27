@@ -1,0 +1,3028 @@
+HIGHEST_USED_RAM $CAF7
+COMMENT $CAF7 not used RAM onword...
+LABEL $0000 _game_header
+LABEL $001A _crt0_init_data
+LABEL $0032 _crt0_copy_data
+LABEL $003A _crt0_init_bss
+LABEL $0043 _crt0_zero_bss
+LABEL $0049 _crt0_startup
+LABEL $0052 _crt0_restart
+LABEL $0055 _memcmp
+LABEL $0062 L2
+LABEL $0098 L4
+LABEL $009E L9
+LABEL $00A6 _memcpy
+LABEL $00B5 L12
+LABEL $00CF L11
+LABEL $00D5 _memmove
+LABEL $00E8 L18
+LABEL $0105 L17
+LABEL $010B L16
+LABEL $0122 L24
+LABEL $0129 L19
+LABEL $013B _memset
+LABEL $0149 L27
+LABEL $0151 L26
+LABEL $0155 __Dot_d:PLAYER:PLY_PLAY
+LABEL $015A __Dot_dd
+LABEL $015F __Print_Str_hwyx
+LABEL $0168 __Print_Str_yx
+LABEL $016E PLY_SONGNOTOVER
+LABEL $0171 __Print_Str_d
+LABEL $0176 PLY_NONEWTRANSPOSITION1
+LABEL $017C __Print_Str_dd
+LABEL $017E PLY_NONEWTRANSPOSITION2
+LABEL $0186 PLY_NONEWTRANSPOSITION3
+LABEL $0187 __Print_List_hw
+LABEL $0190 __Print_List
+LABEL $0199 __Print_List_chk
+LABEL $019D PLY_NONEWHEIGHT
+LABEL $01A0 PLY_NEWSPECIALTRACK
+LABEL $01A2 __Print_Ships_x
+LABEL $01A5 PLY_NONEWSPECIALTRACK
+LABEL $01A7 __Print_Ships
+LABEL $01AC __Print_Str
+LABEL $01B5 __Print_MRast
+LABEL $01BC __Draw_Pat_VL_aa
+LABEL $01C1 __Draw_Pat_VL_a
+LABEL $01C2 _read_special_track:PLY_HEIGHTEND
+LABEL $01C6 __Draw_Line_d
+LABEL $01CB __Draw_VL_ab
+LABEL $01D0 __Draw_VL_a
+LABEL $01D4 PLY_SPECIALTRACK_NOESCAPECODE
+LABEL $01D5 __Mov_Draw_VL_ab
+LABEL $01D6 PLY_SPECIALTRACK_SPEED
+LABEL $01D9 PLY_PT_SPECIALTRACK_ENDDATA
+LABEL $01DA __Mov_Draw_VL_a
+LABEL $01DB PLY_SPECIALTRACK_NEWWAIT
+LABEL $01DF __Mov_Draw_VL_d
+LABEL $01E1 PLY_SPECIALTRACK_DONE
+LABEL $01E4 __Rot_VL_Mode
+LABEL $01E5 _read_track:readnextchannel
+LABEL $01ED PLY_READTRACK
+LABEL $01EF __Rot_VL_Pack
+LABEL $01F8 __Rot_VL_M_dft
+LABEL $01F9 PLY_READTRACK_READPARAMETERS
+LABEL $0201 __Random_3
+LABEL $0206 PLY_READTRACK_PITCH_END
+LABEL $0207 __Random
+LABEL $020D __Bitmask_a
+LABEL $0211 PLY_TRACK_SAMEVOLUME_2
+LABEL $0215 __Abs_a_b
+LABEL $0218 PLY_READTRACK_NOOPTIMISATION_ESCAPECODE
+LABEL $021C PLY_READTRACK_FULLOPTIMISATION
+LABEL $021D __Xform_Sin
+LABEL $0225 __Get_Rise_Run
+LABEL $0227 PLY_READTRACK_WAIT
+LABEL $022B __Xform_Run_a
+LABEL $022F do_continue_p_vol
+LABEL $0233 __Xform_Run
+LABEL $0236 do_continue_p_vol_done:PLY_TRACK_SAMEVOLUME_1
+LABEL $0239 __Xform_Rise_a
+LABEL $023F full_opt_note_given
+LABEL $0241 __Xform_Rise
+LABEL $0247 __Clear_x_d
+LABEL $024C __Move_Mem_a_1
+LABEL $0254 PLY_TRACK_NEWINSTRUMENT
+LABEL $0257 __Move_Mem_a
+LABEL $0262 __Clear_x_b_a
+LABEL $0267 __Read_Btns_Mask:PLY_TRACK_INSTRUMENTRESETPT
+LABEL $026C __Select_Game
+LABEL $026E noIntrumentRetrigger
+LABEL $0270 PLY_TRACK_NONOTEGIVEN
+LABEL $0272 PLY_TRACK_NEWINSTRUMENT_SETWAIT
+LABEL $0274 PLY_TRACK_NEWINSTRUMENT_WAIT_CONT
+LABEL $0275 __Display_Option
+LABEL $0280 __Add_Score_a
+LABEL $0285 PLY_SPEEDEND
+LABEL $0289 __Add_Score_d
+LABEL $028E __Compare_Score
+LABEL $0295 _play_sound_track:playnextchannel
+LABEL $0299 __New_High_Score
+LABEL $02A2 __Sound_Byte
+LABEL $02A3 PLY_PLAYSOUND
+LABEL $02A7 __Sound_Byte_x
+LABEL $02AC __Sound_Bytes
+LABEL $02B5 __Sound_Bytes_x
+LABEL $02BD PLY_PS_S_SOUNDON
+LABEL $02BE __Do_Sound
+LABEL $02C2 vol_not_null_1
+LABEL $02C5 __Init_Music_chk
+LABEL $02CE __Init_Music
+LABEL $02D6 PLY_PS_S_SECONDBYTENEEDED
+LABEL $02D7 __Init_Music_a
+LABEL $02E0 __Init_Music_x
+LABEL $02E7 PLY_PS_S_SBN_NONOISE
+LABEL $02E9 __Explosion_Snd
+LABEL $02F0 no_vol_underflow_1
+LABEL $02F2 __Moveto_d_7F
+LABEL $02F7 __Moveto_dd_7F
+LABEL $02FC __Moveto_d
+LABEL $0300 PLY_PS_S_SBN_SOUND
+LABEL $0301 __Moveto_dd
+LABEL $0306 __Intensity_a
+LABEL $030B __Obj_Will_Hit_u
+LABEL $030D PLY_PS_HARD
+LABEL $031D __Obj_Will_Hit:PLY_PS_HARD_NORETRIG
+LABEL $032F __Obj_Hit
+LABEL $033F __Rise_Run_X
+LABEL $0347 __Rise_Run_Y
+LABEL $034F __Rise_Run_Len
+LABEL $0357 __Rot_VL_ab
+LABEL $035B PLY_PS_SD_SHIFT_ADREESS
+LABEL $0362 __Rot_VL_Diff
+LABEL $036B __Rot_VL
+LABEL $036E no_shift_carry_sd
+LABEL $0374 __Dot_y:PLY_PS_SD_NOHARDWAREPITCH
+LABEL $0379 PLY_PS_SD_NOISE
+LABEL $037D __Dot_py
+LABEL $0386 __Draw_Pack
+LABEL $0388 ret_nla_here
+LABEL $038B PLY_PS_HARDWAREDEPENDENT
+LABEL $0390 __Draw_Pack_py
+LABEL $039A __Print_Msg
+LABEL $03A5 __Displ8_xy
+LABEL $03A9 PLY_PS_HD_SHIFT_ADREESS
+LABEL $03AE __Displ16_xy
+LABEL $03B7 __Ranpos
+LABEL $03BD __Draw_Scores:PLY_PS_HD_NOSOFTWAREPITCH
+LABEL $03C4 __Draw_Score
+LABEL $03C5 PLY_PS_HARD_LOOPORINDEPENDENT
+LABEL $03CB __Wait_Bound
+LABEL $03CE PLY_PS_INDEPENDENT
+LABEL $03DF PLY_PS_I_SOUNDON
+LABEL $03F4 PLY_PS_I_SKIPSOFTWAREFREQUENCYCALCULATION
+LABEL $041D out_sound:outahere_1
+LABEL $0427 PLY_TRACK_PLAYNOFORWARD
+LABEL $0445 doneplaying
+LABEL $0450 PLY_SENDREGISTERS
+LABEL $0466 backFromPlayer
+LABEL $0467 PLY_PS_CALCULATEFREQUENCY_TESTMANUALFREQUENCY
+LABEL $0472 PLY_PS_CALCULATEFREQUENCY
+LABEL $047E PLY_PS_S_SOUNDON_NOPITCH
+LABEL $048C PLY_PS_S_SOUNDON_ARPEGGIOEND:no_max_appegio
+LABEL $049D PLY_FREQUENCYTABLE
+LABEL $05BD initCodeModifications:PLY_INIT
+LABEL $0622 PLY_STOP
+LABEL $0633 _moveBlockImpl
+LABEL $0666 L6
+LABEL $067F L8
+LABEL $0698 L7
+LABEL $06B0 L31
+LABEL $06C6 L5
+LABEL $06C9 L30
+LABEL $06CC L2
+LABEL $06E0 L11
+LABEL $06F7 L15
+LABEL $0719 L17
+LABEL $073A L16
+LABEL $075A L33
+LABEL $0779 L14
+LABEL $077C L12
+LABEL $0793 L20
+LABEL $07AC L22
+LABEL $07C8 L21
+LABEL $07E7 L34
+LABEL $0803 L19
+LABEL $0806 L32
+LABEL $081D L25
+LABEL $083C L27
+LABEL $085C L26
+LABEL $0874 L35
+LABEL $088D L29:L24
+LABEL $0890 _doBlockAnimation
+LABEL $08B8 L38
+LABEL $08B9 _blockStartLevel
+LABEL $08CC _setSplitMode
+LABEL $08DB _testMerge
+LABEL $0914 L45
+LABEL $092E L44
+LABEL $0955 L47
+LABEL $096A L48
+LABEL $096D _swapSplit
+LABEL $0992 _drawBlock
+LABEL $0A57 L53
+LABEL $0A5B _height2FallingLeft0
+LABEL $0A8C _height2RisingRight0
+LABEL $0AC0 _height2FallingRight0
+LABEL $0AF1 _height2RisingLeft0
+LABEL $0B25 _height2FallingBack0
+LABEL $0B56 _height2RisingFront0
+LABEL $0B8A _height2FallingFront0
+LABEL $0BBB _height2RisingBack0
+LABEL $0BEF _depth2RollingLeft0
+LABEL $0C20 _depth2RollingRight0
+LABEL $0C51 _width2RollingFront0
+LABEL $0C82 _width2RollingBack0
+LABEL $0CB3 _height1FallingLeft0
+LABEL $0CE4 _height1FallingRight0
+LABEL $0D15 _height1FallingBack0
+LABEL $0D46 _height1FallingFront0
+LABEL $0D77 _height2FallingLeft1
+LABEL $0DA8 _height2RisingRight1
+LABEL $0DDC _height2FallingRight1
+LABEL $0E10 _height2RisingLeft1
+LABEL $0E44 _height2FallingBack1
+LABEL $0E78 _height2RisingFront1
+LABEL $0EAC _height2FallingFront1
+LABEL $0EDD _height2RisingBack1
+LABEL $0F11 _depth2RollingLeft1
+LABEL $0F42 _depth2RollingRight1
+LABEL $0F76 _width2RollingFront1
+LABEL $0FA7 _width2RollingBack1
+LABEL $0FDB _height1FallingLeft1
+LABEL $100C _height1FallingRight1
+LABEL $1040 _height1FallingBack1
+LABEL $1074 _height1FallingFront1
+LABEL $10A5 _height2FallingLeft2
+LABEL $10D6 _height2RisingRight2
+LABEL $110A _height2FallingRight2
+LABEL $113E _height2RisingLeft2
+LABEL $1172 _height2FallingBack2
+LABEL $11A6 _height2RisingFront2
+LABEL $11DA _height2FallingFront2
+LABEL $120B _height2RisingBack2
+LABEL $123F _depth2RollingLeft2
+LABEL $1270 _depth2RollingRight2
+LABEL $12A4 _width2RollingFront2
+LABEL $12D5 _width2RollingBack2
+LABEL $1309 _height1FallingLeft2
+LABEL $133A _height1FallingRight2
+LABEL $136E _height1FallingBack2
+LABEL $13A2 _height1FallingFront2
+LABEL $13D3 _height2FallingLeft3
+LABEL $1404 _height2RisingRight3
+LABEL $1438 _height2FallingRight3
+LABEL $146C _height2RisingLeft3
+LABEL $14A0 _height2FallingBack3
+LABEL $14D4 _height2RisingFront3
+LABEL $1508 _height2FallingFront3
+LABEL $1539 _height2RisingBack3
+LABEL $156D _depth2RollingLeft3
+LABEL $159E _depth2RollingRight3
+LABEL $15D2 _width2RollingFront3
+LABEL $1603 _width2RollingBack3
+LABEL $1637 _height1FallingLeft3
+LABEL $1668 _height1FallingRight3
+LABEL $169C _height1FallingBack3
+LABEL $16D0 _height1FallingFront3
+LABEL $1701 _height2FallingLeft4
+LABEL $1732 _height2RisingRight4
+LABEL $1766 _height2FallingRight4
+LABEL $179A _height2RisingLeft4
+LABEL $17CE _height2FallingBack4
+LABEL $1802 _height2RisingFront4
+LABEL $1836 _height2FallingFront4
+LABEL $1867 _height2RisingBack4
+LABEL $189B _depth2RollingLeft4
+LABEL $18CC _depth2RollingRight4
+LABEL $1900 _width2RollingFront4
+LABEL $1931 _width2RollingBack4
+LABEL $1965 _height1FallingLeft4
+LABEL $1996 _height1FallingRight4
+LABEL $19CA _height1FallingBack4
+LABEL $19FE _height1FallingFront4
+LABEL $1A2F _height2FallingLeft5
+LABEL $1A60 _height2RisingRight5
+LABEL $1A94 _height2FallingRight5
+LABEL $1AC8 _height2RisingLeft5
+LABEL $1AFC _height2FallingBack5
+LABEL $1B30 _height2RisingFront5
+LABEL $1B64 _height2FallingFront5
+LABEL $1B95 _height2RisingBack5
+LABEL $1BC9 _depth2RollingLeft5
+LABEL $1BFA _depth2RollingRight5
+LABEL $1C2E _width2RollingFront5
+LABEL $1C5F _width2RollingBack5
+LABEL $1C93 _height1FallingLeft5
+LABEL $1CC4 _height1FallingRight5
+LABEL $1CF8 _height1FallingBack5
+LABEL $1D2C _height1FallingFront5
+LABEL $1D5D _height2FallingLeft6
+LABEL $1D8E _height2RisingRight6
+LABEL $1DC2 _height2FallingRight6
+LABEL $1DF6 _height2RisingLeft6
+LABEL $1E2A _height2FallingBack6
+LABEL $1E5E _height2RisingFront6
+LABEL $1E92 _height2FallingFront6
+LABEL $1EC3 _height2RisingBack6
+LABEL $1EF7 _depth2RollingLeft6
+LABEL $1F28 _depth2RollingRight6
+LABEL $1F5C _width2RollingFront6
+LABEL $1F8D _width2RollingBack6
+LABEL $1FC1 _height1FallingLeft6
+LABEL $1FF2 _height1FallingRight6
+LABEL $2026 _height1FallingBack6
+LABEL $205A _height1FallingFront6
+LABEL $208B _height2FallingLeft7
+LABEL $20BC _height2RisingRight7
+LABEL $20F0 _height2FallingRight7
+LABEL $2124 _height2RisingLeft7
+LABEL $2158 _height2FallingBack7
+LABEL $218C _height2RisingFront7
+LABEL $21C0 _height2FallingFront7
+LABEL $21F1 _height2RisingBack7
+LABEL $2225 _depth2RollingLeft7
+LABEL $2256 _depth2RollingRight7
+LABEL $228A _width2RollingFront7
+LABEL $22BB _width2RollingBack7
+LABEL $22EF _height1FallingLeft7
+LABEL $2320 _height1FallingRight7
+LABEL $2354 _height1FallingBack7
+LABEL $2388 _height1FallingFront7
+LABEL $23B9 _height2FallingLeft8
+LABEL $23EA _height2RisingRight8
+LABEL $241E _height2FallingRight8
+LABEL $2452 _height2RisingLeft8
+LABEL $2486 _height2FallingBack8
+LABEL $24BA _height2RisingFront8
+LABEL $24EE _height2FallingFront8
+LABEL $251F _height2RisingBack8
+LABEL $2553 _depth2RollingLeft8
+LABEL $2584 _depth2RollingRight8
+LABEL $25B8 _width2RollingFront8
+LABEL $25E9 _width2RollingBack8
+LABEL $261D _height1FallingLeft8
+LABEL $264E _height1FallingRight8
+LABEL $2682 _height1FallingBack8
+LABEL $26B6 _height1FallingFront8
+LABEL $26E7 _height2FallingLeft9
+LABEL $2718 _height2RisingRight9
+LABEL $274C _height2FallingRight9
+LABEL $2780 _height2RisingLeft9
+LABEL $27B4 _height2FallingBack9
+LABEL $27E8 _height2RisingFront9
+LABEL $281C _height2FallingFront9
+LABEL $284D _height2RisingBack9
+LABEL $2881 _depth2RollingLeft9
+LABEL $28B2 _depth2RollingRight9
+LABEL $28E6 _width2RollingFront9
+LABEL $2917 _width2RollingBack9
+LABEL $294B _height1FallingLeft9
+LABEL $297C _height1FallingRight9
+LABEL $29B0 _height1FallingBack9
+LABEL $29E4 _height1FallingFront9
+LABEL $2A15 _height2FallingLeft10
+LABEL $2A46 _height2RisingRight10
+LABEL $2A7A _height2FallingRight10
+LABEL $2AAE _height2RisingLeft10
+LABEL $2AE2 _height2FallingBack10
+LABEL $2B16 _height2RisingFront10
+LABEL $2B4A _height2FallingFront10
+LABEL $2B7B _height2RisingBack10
+LABEL $2BAF _depth2RollingLeft10
+LABEL $2BE0 _depth2RollingRight10
+LABEL $2C14 _width2RollingFront10
+LABEL $2C45 _width2RollingBack10
+LABEL $2C79 _height1FallingLeft10
+LABEL $2CAA _height1FallingRight10
+LABEL $2CDE _height1FallingBack10
+LABEL $2D12 _height1FallingFront10
+LABEL $2D43 _height2FallingLeft11
+LABEL $2D74 _height2RisingRight11
+LABEL $2DA8 _height2FallingRight11
+LABEL $2DDC _height2RisingLeft11
+LABEL $2E10 _height2FallingBack11
+LABEL $2E44 _height2RisingFront11
+LABEL $2E78 _height2FallingFront11
+LABEL $2EA9 _height2RisingBack11
+LABEL $2EDD _depth2RollingLeft11
+LABEL $2F0E _depth2RollingRight11
+LABEL $2F42 _width2RollingFront11
+LABEL $2F73 _width2RollingBack11
+LABEL $2FA7 _height1FallingLeft11
+LABEL $2FD8 _height1FallingRight11
+LABEL $300C _height1FallingBack11
+LABEL $3040 _height1FallingFront11
+LABEL $3071 _height2FallingLeft12
+LABEL $30A2 _height2RisingRight12
+LABEL $30D6 _height2FallingRight12
+LABEL $310A _height2RisingLeft12
+LABEL $313E _height2FallingBack12
+LABEL $3172 _height2RisingFront12
+LABEL $31A6 _height2FallingFront12
+LABEL $31D7 _height2RisingBack12
+LABEL $320B _depth2RollingLeft12
+LABEL $323C _depth2RollingRight12
+LABEL $3270 _width2RollingFront12
+LABEL $32A1 _width2RollingBack12
+LABEL $32D5 _height1FallingLeft12
+LABEL $3306 _height1FallingRight12
+LABEL $333A _height1FallingBack12
+LABEL $336E _height1FallingFront12
+LABEL $339F _height2FallingLeft
+LABEL $33B7 _height2RisingRight
+LABEL $33CF _height2FallingRight
+LABEL $33E7 _height2RisingLeft
+LABEL $33FF _height2FallingBack
+LABEL $3417 _height2RisingFront
+LABEL $342F _height2FallingFront
+LABEL $3447 _height2RisingBack
+LABEL $345F _depth2RollingLeft
+LABEL $3477 _depth2RollingRight
+LABEL $348F _width2RollingFront
+LABEL $34A7 _width2RollingBack
+LABEL $34BF _height1FallingLeft
+LABEL $34D7 _height1FallingRight
+LABEL $34EF _height1FallingBack
+LABEL $3507 _height1FallingFront
+LABEL $351F _runtimeError
+LABEL $3525 L2
+LABEL $354D _sendCommand
+LABEL $354F _writeEeprom
+LABEL $3566 L8
+LABEL $3567 _readEeprom
+LABEL $3577 L10
+LABEL $3579 L11
+LABEL $357A _itoa
+LABEL $3598 L14
+LABEL $35A1 L18
+LABEL $35BD L17
+LABEL $35D2 L15
+LABEL $35D4 L16
+LABEL $35F9 _updateInfoText
+LABEL $3618 _changeMusic
+LABEL $3621 _drawField
+LABEL $3638 drawFieldLoop
+LABEL $3673 _setBank
+LABEL $3689 LC0
+LABEL $3697 LC1
+LABEL $369E LC2
+LABEL $36A4 _clearMenu
+LABEL $3704 L31
+LABEL $371A L30
+LABEL $3724 L33
+LABEL $3728 _showInfo2
+LABEL $380A _showInfo
+LABEL $3834 _blockMovingToStart
+LABEL $384C L41
+LABEL $384D _startLevel
+LABEL $387A L43
+LABEL $38C3 LC3
+LABEL $38CE LC4
+LABEL $38DC LC5
+LABEL $38EF _mainMenu
+LABEL $3950 L46
+LABEL $395C L48
+LABEL $3960 _blockMovingAtEnd
+LABEL $39A5 L51
+LABEL $39B4 L52
+LABEL $39B7 L53
+LABEL $39BA _blockFalling
+LABEL $39D6 L55
+LABEL $39E0 L57
+LABEL $39E3 _moveBlock
+LABEL $39F3 L59
+LABEL $39F7 _blockWaiting
+LABEL $3A14 L62
+LABEL $3A27 L64
+LABEL $3A3A L65
+LABEL $3A4B L63
+LABEL $3A5E L66
+LABEL $3A77 L68
+LABEL $3A80 L67
+LABEL $3A8F L70
+LABEL $3A90 _startBlockFalling
+LABEL $3AA9 _blockMoving
+LABEL $3B29 L76
+LABEL $3B33 L79
+LABEL $3B36 L80
+LABEL $3B38 L77
+LABEL $3B40 L81
+LABEL $3B43 L82
+LABEL $3B45 L98
+LABEL $3B4D L83
+LABEL $3B50 L75:L84
+LABEL $3B80 L85
+LABEL $3B8C L86
+LABEL $3B9E L88
+LABEL $3BAC L91
+LABEL $3BB9 L92
+LABEL $3BBC L89
+LABEL $3BCF L93
+LABEL $3BE3 L94
+LABEL $3BE5 L99
+LABEL $3BF8 L95
+LABEL $3C10 L87:L96
+LABEL $3C18 L97
+LABEL $3C1B _main
+LABEL $3C4C L101
+LABEL $3C80 L113
+LABEL $3C97 L110
+LABEL $3CA5 L103
+LABEL $3CAB L104
+LABEL $3CB1 L105
+LABEL $3CBA L106
+LABEL $3CC3 L107
+LABEL $3CCB L108
+LABEL $3CD3 L109
+LABEL $3CD9 L102
+LABEL $3CF8 _startMusic
+LABEL $3D18 _levelEndMusic
+LABEL $3D32 _fallingMusic
+LABEL $3D52 _movingMusic
+LABEL $3D5A _led8
+LABEL $3D70 _getField
+LABEL $3DAF L2
+LABEL $3DB0 L3
+LABEL $3DB4 _getShifts
+LABEL $3DBB _isSwatchFieldOn
+LABEL $3DEE L8
+LABEL $3DF2 _setSwatchField
+LABEL $3E2C L11
+LABEL $3E3F L13
+LABEL $3E43 _isField
+LABEL $3E64 L15
+LABEL $3E76 L16
+LABEL $3E9D L17
+LABEL $3E9F L19
+LABEL $3EA2 _x3d
+LABEL $3EC3 _y3d
+LABEL $3EE7 _addTarget
+LABEL $3FFB _initSwatches
+LABEL $4002 L28
+LABEL $4010 L32
+LABEL $4014 L31
+LABEL $401E L29
+LABEL $402D L30
+LABEL $4047 LC0
+LABEL $4057 _addSplit
+LABEL $40E7 L39
+LABEL $40EA _addLineImpl
+LABEL $418C L41
+LABEL $419D L43
+LABEL $41A0 _addLine
+LABEL $41AE L47
+LABEL $41DB L46
+LABEL $41DF L45
+LABEL $41E9 L50
+LABEL $4216 L49
+LABEL $421A L48
+LABEL $4232 _setupY
+LABEL $4238 L58
+LABEL $4240 L57
+LABEL $4261 L53
+LABEL $4269 L55
+LABEL $426F L54
+LABEL $428D L56
+LABEL $42A4 _setupX
+LABEL $42B0 L75
+LABEL $42C1 L74
+LABEL $42D2 L63
+LABEL $42D3 L64
+LABEL $42EF L65
+LABEL $4301 L67
+LABEL $431C L68
+LABEL $4337 L69
+LABEL $4352 L66
+LABEL $4370 L70
+LABEL $4378 L72
+LABEL $437E L71
+LABEL $439C L73
+LABEL $43B8 _initLevel
+LABEL $43C2 _swatchSwitch
+LABEL $43DA L94
+LABEL $43FD L93
+LABEL $4424 L91
+LABEL $442E L86
+LABEL $4453 L87
+LABEL $4465 L88
+LABEL $4474 L89
+LABEL $4483 L90
+LABEL $448D L85
+LABEL $4497 L84
+LABEL $44A4 L83
+LABEL $44A7 L95
+LABEL $44AB _shifts
+LABEL $44B3 _levelCount
+LABEL $44B4 _levelOffset
+LABEL $44B5 _nextBank
+LABEL $44B6 _swatch_1_0
+LABEL $44BE _swatch_1_1
+LABEL $44C6 _swatch_4_0
+LABEL $44CE _swatch_4_1
+LABEL $44D6 _swatch_4_2
+LABEL $44DE _swatch_4_3
+LABEL $44E6 _swatch_6_0
+LABEL $44EC _swatch_7_0
+LABEL $44F4 _swatch_8_0
+LABEL $44FC _swatch_9_0
+LABEL $4504 _swatch_9_1
+LABEL $450C _swatch_9_2
+LABEL $4518 _swatch_10_0
+LABEL $4520 _swatch_11_0
+LABEL $4526 _swatch_11_1
+LABEL $452C _swatch_13_0
+LABEL $4534 _swatch_13_1
+LABEL $453C _swatch_14_0
+LABEL $4548 _swatch_14_1
+LABEL $4554 _swatch_14_2
+LABEL $455C _swatch_14_3
+LABEL $4564 _swatch_14_4
+LABEL $456C LC0
+LABEL $4603 _level0
+LABEL $4608 LC1
+LABEL $469F _level1
+LABEL $46A8 LC2
+LABEL $473F _level2
+LABEL $4744 LC3
+LABEL $47DB _level3
+LABEL $47E0 LC4
+LABEL $4877 _level4
+LABEL $4884 LC5
+LABEL $491B _level5
+LABEL $4920 LC6
+LABEL $49B7 _level6
+LABEL $49BE LC7
+LABEL $4A55 _level7
+LABEL $4A5C LC8
+LABEL $4AF3 _level8
+LABEL $4AFA LC9
+LABEL $4B91 _level9
+LABEL $4B9C LC10
+LABEL $4C33 _level10
+LABEL $4C3A LC11
+LABEL $4CD1 _level11
+LABEL $4CDA LC12
+LABEL $4D71 _level12
+LABEL $4D76 LC13
+LABEL $4E0D _level13
+LABEL $4E16 LC14
+LABEL $4EAD _level14
+LABEL $4EBC _levels
+LABEL $4EDA ___compound_literal.0
+LABEL $4EDD ___compound_literal.1
+LABEL $4EE0 ___compound_literal.2
+LABEL $4EE3 ___compound_literal.3
+LABEL $4EE6 ___compound_literal.4
+LABEL $4EE9 ___compound_literal.5
+LABEL $4EEC ___compound_literal.6
+LABEL $4EEF ___compound_literal.7
+LABEL $4EF2 ___compound_literal.8
+LABEL $4EF5 ___compound_literal.9
+LABEL $4EF8 ___compound_literal.10
+LABEL $4EFB ___compound_literal.11
+LABEL $4EFE ___compound_literal.12
+LABEL $4F01 ___compound_literal.13
+LABEL $4F04 ___compound_literal.14
+LABEL $4F07 ___compound_literal.15
+LABEL $4F0A ___compound_literal.16
+LABEL $4F0D ___compound_literal.17
+LABEL $4F10 ___compound_literal.18
+LABEL $4F13 ___compound_literal.19
+LABEL $4F16 ___compound_literal.20
+LABEL $4F19 ___compound_literal.21
+LABEL $4F1C ___compound_literal.22
+LABEL $4F1F ___compound_literal.23
+LABEL $4F22 ___compound_literal.24
+LABEL $4F25 ___compound_literal.25
+LABEL $4F28 ___compound_literal.26
+LABEL $4F2B ___compound_literal.27
+LABEL $4F2E ___compound_literal.28
+LABEL $4F31 ___compound_literal.29
+LABEL $4F34 ___compound_literal.30
+LABEL $4F37 ___compound_literal.31
+LABEL $4F3A ___compound_literal.32
+LABEL $4F3D ___compound_literal.33
+LABEL $4F40 ___compound_literal.34
+LABEL $4F43 ___compound_literal.35
+LABEL $4F46 ___compound_literal.36
+LABEL $4F49 ___compound_literal.37
+LABEL $4F4C ___compound_literal.38
+LABEL $4F4F ___compound_literal.39
+LABEL $4F52 ___compound_literal.40
+LABEL $4F55 ___compound_literal.41
+LABEL $4F58 ___compound_literal.42
+LABEL $4F5B ___compound_literal.43
+LABEL $4F5E ___compound_literal.44
+LABEL $4F61 ___compound_literal.45
+LABEL $4F64 ___compound_literal.46
+LABEL $4F67 arkosPlayerString
+LABEL $4F75 _musicInit
+LABEL $4F7F _musicPlay
+LABEL $4F88 _player_test
+LABEL $4F90 main
+LABEL $4FA7 do_ym_sound2
+LABEL $4FB3 next_reg_dsy
+LABEL $4FD1 inc_reg_dsy
+LABEL $4FD4 doneSound_2
+LABEL $4FD5 aks_song
+LABEL $4FEC instrument0Test
+LABEL $4FEE instrument0loopTest
+LABEL $4FF5 instrument1Test
+LABEL $4FFC instrument2Test
+LABEL $5004 instrument3Test
+LABEL $5019 instrument4Test
+LABEL $5029 instrument5Test
+LABEL $505E instrument6Test
+LABEL $506E instrument7Test
+LABEL $507E instrument8Test
+LABEL $508E instrument9Test
+LABEL $509E linkerTest
+LABEL $50A4 pattern0DefinitionTest
+LABEL $50AB pattern1DefinitionTest
+LABEL $50B2 pattern2DefinitionTest
+LABEL $50B9 pattern3DefinitionTest
+LABEL $50C0 pattern4DefinitionTest
+LABEL $50C7 pattern5DefinitionTest
+LABEL $50CE pattern6DefinitionTest
+LABEL $50D5 pattern7DefinitionTest
+LABEL $50DC pattern8DefinitionTest
+LABEL $50E3 pattern9DefinitionTest
+LABEL $50EA pattern10DefinitionTest
+LABEL $50F1 pattern11DefinitionTest
+LABEL $50F8 pattern12DefinitionTest
+LABEL $50FF pattern13DefinitionTest
+LABEL $5106 pattern14DefinitionTest
+LABEL $510D pattern15DefinitionTest
+LABEL $5114 pattern16DefinitionTest
+LABEL $511B pattern17DefinitionTest
+LABEL $5122 pattern18DefinitionTest
+LABEL $5129 pattern19DefinitionTest
+LABEL $5130 pattern20DefinitionTest
+LABEL $5133 specialtrackDef0Test
+LABEL $5134 trackDef1Test
+LABEL $513A trackDef0Test
+LABEL $5189 trackDef3Test
+LABEL $519B trackDef5Test
+LABEL $51EE trackDef4Test
+LABEL $51FE trackDef16Test
+LABEL $5265 trackDef6Test
+LABEL $5280 trackDef7Test
+LABEL $52D8 trackDef8Test
+LABEL $5336 trackDef9Test
+LABEL $535B trackDef14Test
+LABEL $53DE trackDef10Test
+LABEL $5474 trackDef12Test
+LABEL $5507 trackDef15Test
+LABEL $55C9 trackDef11Test
+LABEL $564C trackDef13Test
+LABEL $56CF trackDef18Test
+LABEL $5780 trackDef17Test
+LABEL $57F9 trackDef19Test
+LABEL $5861 trackDef20Test
+LABEL $58E5 trackDef21Test
+LABEL $5992 trackDef24Test
+LABEL $59F8 trackDef26Test
+LABEL $5A66 trackDef27Test
+LABEL $5A99 trackDef29Test
+LABEL $5AED trackDef28Test
+LABEL $5B5C _picWrite
+LABEL $5B78 loop
+LABEL $5B8D loop2
+LABEL $5B9B loop3
+LABEL $5BA3 loop4
+LABEL $5BA8 _picRead
+LABEL $5BB4 wh
+LABEL $5BC3 wait_start
+LABEL $5BCC next_bit
+LABEL $5BD3 wait_start2
+LABEL $5BDE wait_start3
+LABEL $5BF7 less
+LABEL $5BFF timeout
+LABEL $5C05 _delay10ms
+LABEL $C880 _currentMusic
+LABEL $C882 _vecx
+LABEL $C884 _lineCount
+LABEL $C885 _endX
+LABEL $C886 _endY
+LABEL $C887 _levelNumber
+LABEL $C888 tmp_track_param
+LABEL $C889 tmp_track_instrument
+LABEL $C88A tmp_instrument_second_byte
+LABEL $C88B PLY_HEIGHT
+LABEL $C88C PLY_SPEED
+LABEL $C88D PLY_SPEEDCPT
+LABEL $C88E PLY_HEIGHTCPT
+LABEL $C88F PLY_TRACK_INSTRUMENTSTABLEPT
+LABEL $C891 PLY_LINKER_PT
+LABEL $C893 PLY_PSGREG13_RETRIG
+LABEL $C894 PLY_SAVESPECIALTRACK
+LABEL $C896 PLY_SPECIALTRACK_PT
+LABEL $C898 PLY_SPECIALTRACK_WAITCOUNTER
+LABEL $C899 Channel1Data
+LABEL $C8AA Channel2Data
+LABEL $C8BB Channel3Data
+LABEL $C8CC PLY_PSGREG13
+LABEL $C8CD PLY_VOL_REG
+LABEL $C8CF PLY_FREQ_REG
+LABEL $C8D1 PLY_PSGREG0
+LABEL $C8D2 PLY_PSGREG1
+LABEL $C8D3 PLY_PSGREG2
+LABEL $C8D4 PLY_PSGREG3
+LABEL $C8D5 PLY_PSGREG4
+LABEL $C8D6 PLY_PSGREG5
+LABEL $C8D7 PLY_PSGREG6
+LABEL $C8D9 PLY_PSGREG8
+LABEL $C8DA PLY_PSGREG9
+LABEL $C8DB PLY_PSGREG10
+LABEL $C8DC PLY_PSGREG11
+LABEL $C8DD PLY_PSGREG12
+LABEL $C8DF _blockOrientation
+LABEL $C8E0 _blockYOfs
+LABEL $C8E1 _lastBlockDirection
+LABEL $C8E2 _blockAnimating
+LABEL $C8E3 _splitMode
+LABEL $C8E4 _blockX
+LABEL $C8E5 _blockY
+LABEL $C8E6 _blockX2
+LABEL $C8E7 _blockY2
+LABEL $C8E8 _blockAnimation
+LABEL $C8EA _nextBlockAnimation
+LABEL $C8EC _blockAnimationStep
+LABEL $C8ED _nextBlockX
+LABEL $C8EE _nextBlockY
+LABEL $C8EF _infoText
+LABEL $C8F9 _moveCount
+LABEL $C8FB _levelHighscore
+LABEL $C8FD _picAvailable
+LABEL $C8FE _gameState
+LABEL $C8FF _level
+LABEL $C901 _swatchesOn
+LABEL $C914 _lineX0
+LABEL $C98C _lineY0
+LABEL $CA04 _lineX1
+LABEL $CA7C _lineY1
+LABEL $CAF4 data
+LABEL $CAF5 counter
+LABEL $CAF6 bit_counter
+LABEL $E7B5 ___Displ8_xy
+LABEL $E7D2 ___Displ16_xy
+LABEL $E98A ___Ranpos
+LABEL $EA3E ___Rnd_Cone
+LABEL $EA5D ___Dot_y
+LABEL $EA6D ___Dot_py
+LABEL $EA7F ___Draw_Pack
+LABEL $EA8D ___Draw_Pack_py
+LABEL $EAA8 ___Print_Msg
+LABEL $EAB4 ___Draw_Score
+LABEL $EACF ___Draw_Scores
+LABEL $EAF0 ___Wait_Bound
+LABEL $F000 ___Reset
+LABEL $F14C ___Init_VIA
+LABEL $F164 ___Init_OS_RAM
+LABEL $F18B ___Init_OS
+LABEL $F192 ___Wait_Recal
+LABEL $F1AA ___DP_to_D0
+LABEL $F1AF ___DP_to_C8
+LABEL $F1B4 ___Read_Btns_Mask
+LABEL $F1BA ___Read_Btns
+LABEL $F1F5 ___Joy_Analog
+LABEL $F1F8 ___Joy_Digital
+LABEL $F256 ___Sound_Byte
+LABEL $F259 ___Sound_Byte_x
+LABEL $F272 ___Clear_Sound
+LABEL $F27D ___Sound_Bytes
+LABEL $F284 ___Sound_Bytes_x
+LABEL $F289 ___Do_Sound
+LABEL $F28C ___Do_Sound_x
+LABEL $F29D ___Intensity_1F
+LABEL $F2A1 ___Intensity_3F
+LABEL $F2A5 ___Intensity_5F
+LABEL $F2A9 ___Intensity_7F
+LABEL $F2AB ___Intensity_a
+LABEL $F2BE ___Dot_ix_b
+LABEL $F2C1 ___Dot_ix
+LABEL $F2C3 ___Dot_d
+LABEL $F2C5 ___Dot_here
+LABEL $F2D5 ___Dot_List
+LABEL $F2DE ___Dot_List_Reset
+LABEL $F2E6 ___Recalibrate
+LABEL $F2F2 ___Moveto_x_7F
+LABEL $F2FC ___Moveto_d_7F
+LABEL $F308 ___Moveto_ix_FF
+LABEL $F30C ___Moveto_ix_7F
+LABEL $F30E ___Moveto_ix_b
+LABEL $F310 ___Moveto_ix
+LABEL $F312 ___Moveto_d
+LABEL $F34A ___Reset0Ref_D0
+LABEL $F34F ___Check0Ref
+LABEL $F354 ___Reset0Ref
+LABEL $F35B ___Reset_Pen
+LABEL $F36B ___Reset0Int
+LABEL $F373 ___Print_Str_hwyx
+LABEL $F378 ___Print_Str_yx
+LABEL $F37A ___Print_Str_d
+LABEL $F385 ___Print_List_hw
+LABEL $F38A ___Print_List
+LABEL $F38C ___Print_List_chk
+LABEL $F391 ___Print_Ships_x
+LABEL $F393 ___Print_Ships
+LABEL $F3AD ___Mov_Draw_VLc_a
+LABEL $F3B1 ___Mov_Draw_VL_b
+LABEL $F3B5 ___Mov_Draw_VLcs
+LABEL $F3B7 ___Mov_Draw_VL_ab
+LABEL $F3B9 ___Mov_Draw_VL_a
+LABEL $F3BC ___Mov_Draw_VL
+LABEL $F3BE ___Mov_Draw_VL_d
+LABEL $F3CE ___Draw_VLc
+LABEL $F3D2 ___Draw_VL_b
+LABEL $F3D6 ___Draw_VLcs
+LABEL $F3D8 ___Draw_VL_ab
+LABEL $F3DA ___Draw_VL_a
+LABEL $F3DD ___Draw_VL
+LABEL $F3DF ___Draw_Line_d
+LABEL $F404 ___Draw_VLp_FF
+LABEL $F408 ___Draw_VLp_7F
+LABEL $F40C ___Draw_VLp_scale
+LABEL $F40E ___Draw_VLp_b
+LABEL $F410 ___Draw_VLp
+LABEL $F433 ___Draw_Pat_VL_aa
+LABEL $F434 ___Draw_Pat_VL_a
+LABEL $F437 ___Draw_Pat_VL
+LABEL $F439 ___Draw_Pat_VL_d
+LABEL $F46E ___Draw_VL_mode
+LABEL $F495 ___Print_Str
+LABEL $F498 ___Print_MRast
+LABEL $F511 ___Random_3
+LABEL $F517 ___Random
+LABEL $F533 ___Init_Music_Buf
+LABEL $F53F ___Clear_x_b
+LABEL $F542 ___Clear_C8_RAM
+LABEL $F545 ___Clear_x_256
+LABEL $F548 ___Clear_x_d
+LABEL $F550 ___Clear_x_b_80
+LABEL $F552 ___Clear_x_b_a
+LABEL $F55A ___Dec_3_Counters
+LABEL $F55E ___Dec_6_Counters
+LABEL $F563 ___Dec_Counters
+LABEL $F56D ___Delay_3
+LABEL $F571 ___Delay_2
+LABEL $F575 ___Delay_1
+LABEL $F579 ___Delay_0
+LABEL $F57A ___Delay_b
+LABEL $F57D ___Delay_RTS
+LABEL $F57E ___Bitmask_a
+LABEL $F584 ___Abs_a_b
+LABEL $F58B ___Abs_b
+LABEL $F593 ___Rise_Run_Angle
+LABEL $F5D9 ___Get_Rise_Idx
+LABEL $F5DB ___Xform_Sin
+LABEL $F5EF ___Get_Rise_Run
+LABEL $F5FF ___Rise_Run_X
+LABEL $F601 ___Rise_Run_Y
+LABEL $F603 ___Rise_Run_Len
+LABEL $F610 ___Rot_VL_ab
+LABEL $F613 ___Rot_VL_Diff
+LABEL $F616 ___Rot_VL
+LABEL $F61F ___Rot_VL_Mode
+LABEL $F622 ___Rot_VL_Pack
+LABEL $F62B ___Rot_VL_M_dft
+LABEL $F65B ___Xform_Run_a
+LABEL $F65D ___Xform_Run
+LABEL $F661 ___Xform_Rise_a
+LABEL $F663 ___Xform_Rise
+LABEL $F67F ___Move_Mem_a_1
+LABEL $F683 ___Move_Mem_a
+LABEL $F687 ___Init_Music_chk
+LABEL $F68D ___Init_Music
+LABEL $F690 ___Init_Music_a
+LABEL $F692 ___Init_Music_x
+LABEL $F742 ___Stop_Sound
+LABEL $F7A9 ___Select_Game
+LABEL $F835 ___Display_Option
+LABEL $F84F ___Clear_Score
+LABEL $F85E ___Add_Score_a
+LABEL $F87C ___Add_Score_d
+LABEL $F8B7 ___Strip_Zeros
+LABEL $F8C7 ___Compare_Score
+LABEL $F8D8 ___New_High_Score
+LABEL $F8E5 ___Obj_Will_Hit_u
+LABEL $F8F3 ___Obj_Will_Hit
+LABEL $F8FF ___Obj_Hit
+LABEL $F92E ___Explosion_Snd
+LABEL $F9CA ___Set_Amp
+COMMENT $00CA cmphi
+COMMENT $00DB cmphi
+COMMENT $00FF cmphi: R:d with R:x
+COMMENT $0101 cmphi
+COMMENT $014B cmphi: R:u with R:x
+COMMENT $014D cmphi
+COMMENT $0157 BIOS call
+COMMENT $015C BIOS call
+COMMENT $0163 BIOS call
+COMMENT $016B BIOS call
+COMMENT $016C BIOS call
+COMMENT $016D skip the song over, when we just start a new pattern - cant be over yet, can it?
+COMMENT $016E if b1 = 1
+COMMENT $0176 if b2 = 1
+COMMENT $0177 BIOS call
+COMMENT $017E if b3 = 1
+COMMENT $0181 BIOS call
+COMMENT $0182 BIOS call
+COMMENT $018B BIOS call
+COMMENT $0194 BIOS call
+COMMENT $0195 if b4 = 1
+COMMENT $019D if b5 = 1
+COMMENT $01A4 BIOS call
+COMMENT $01A5 this pattern was read, whenever the tracks are playered - the next pattern will start here
+COMMENT $01A8 BIOS call
+COMMENT $01A9 BIOS call
+COMMENT $01B0 BIOS call
+COMMENT $01B6 BIOS call
+COMMENT $01B7 BIOS call
+COMMENT $01BE BIOS call
+COMMENT $01C2 BIOS call
+COMMENT $01C3 BIOS call
+COMMENT $01C7 BIOS call
+COMMENT $01C8 BIOS call
+COMMENT $01CC if b0=0 -> carry will be clear -> jump to WAIT
+COMMENT $01CD BIOS call
+COMMENT $01CF regardless if speed or digid -> if a right shift results in 0 A, than we have an escape situation, if not -> jump
+COMMENT $01D2 load the escaped (additional) value
+COMMENT $01D6 the data we got was the speed - store it:BIOS call
+COMMENT $01D7 BIOS call
+COMMENT $01D9 reset wait counter, next round might be more waiting :-)
+COMMENT $01DB is this used anywhere?:BIOS call
+COMMENT $01DC BIOS call
+COMMENT $01E1 BIOS call
+COMMENT $01EA BIOS call
+COMMENT $01EF Full Optimisation ? If yes = Note only, no Pitch, no Volume, Same Instent.
+COMMENT $01F2 0-31 = Wait.:BIOS call
+COMMENT $01F3 BIOS call
+COMMENT $01F8 0 (32-32) = Escape Code for more Notes (parameters will be read)
+COMMENT $01FB Save Parameters.:BIOS call
+COMMENT $01FC BIOS call
+COMMENT $01FE is pitch following? -> load it
+COMMENT $0200 BIOS call
+COMMENT $0201 BIOS call
+COMMENT $0206 is instent following? -> load it:BIOS call
+COMMENT $0207 BIOS call
+COMMENT $020A Volume ? If bit 4(0?) was 1, then volume exists on b3-b0 - inverted volume
+COMMENT $020F BIOS call
+COMMENT $0216 BIOS call
+COMMENT $0217 BIOS call
+COMMENT $0218 load note to B
+COMMENT $021E is param now, no need to save - accessed directly in full opt
+COMMENT $021F BIOS call
+COMMENT $0225 BIOS call
+COMMENT $022D BIOS call
+COMMENT $022F Volume ? If bit 4(0?) was 1, then volume exists on b3-b0 - inverted volume
+COMMENT $0232 BIOS call
+COMMENT $0233 BIOS call
+COMMENT $023B Note ? If no Note, we don't have to test if a new Instent is here.
+COMMENT $023F Transpose Note according to the Transposition in the Linker.
+COMMENT $0241 BIOS call
+COMMENT $0243 Reset the TrackPitch.
+COMMENT $0248 New Instent ?:BIOS call
+COMMENT $0249 BIOS call
+COMMENT $024C Same Instent. We recover its address to restart it.
+COMMENT $024E Reset the Instent Speed Counter. Never seemed useful...
+COMMENT $0252 BIOS call
+COMMENT $025D BIOS call
+COMMENT $0263 BIOS call
+COMMENT $0264 BIOS call
+COMMENT $0265 When using the Instent again, no need to give the Speed, it is skipped. ;WHEN USING THE INSTRUMENT AGAIN, NO NEED TO GIVE THE SPEED, IT IS SKIPPED.
+COMMENT $0269 BIOS call
+COMMENT $0270 BIOS call
+COMMENT $027B BIOS call
+COMMENT $0284 BIOS call
+COMMENT $028B BIOS call
+COMMENT $0291 BIOS call
+COMMENT $0292 BIOS call
+COMMENT $029D BIOS call
+COMMENT $029F U = (PLY_TRACK_PITCH/4)
+COMMENT $02A3 BIOS call
+COMMENT $02A4 BIOS call
+COMMENT $02A8 is b1 (n) set
+COMMENT $02A9 if yes jump to read second byte
+COMMENT $02AB for volume check copy the first byte to a
+COMMENT $02AF if is 0 than no sound at all:BIOS call
+COMMENT $02B0 BIOS call
+COMMENT $02B1 We have to make the volume to 0, because if a bass Hard was activated before, we have to stop it.
+COMMENT $02B5 these are the register mask bits for this sound (or this no sound)
+COMMENT $02B9 BIOS call
+COMMENT $02BD tmp_volumeN ;Code Volume. volume of instent minus inverted volume
+COMMENT $02BF BIOS call
+COMMENT $02C0 BIOS call
+COMMENT $02C8 BIOS call
+COMMENT $02C9 BIOS call
+COMMENT $02CB Needed for the subroutine to get the good flags.
+COMMENT $02D2 BIOS call
+COMMENT $02DB BIOS call
+COMMENT $02E4 BIOS call
+COMMENT $02ED BIOS call
+COMMENT $02F4 BIOS call
+COMMENT $02F8 BIOS call
+COMMENT $02F9 BIOS call
+COMMENT $02FD BIOS call
+COMMENT $02FE BIOS call
+COMMENT $0300 Needed for the subroutine to get the good flags.
+COMMENT $0303 BIOS call
+COMMENT $0306 set frequency - u gotton from above jsr
+COMMENT $0308 BIOS call
+COMMENT $030D Test Retrig here, it is common to every Hard sounds.
+COMMENT $0310 forced first channel pointer
+COMMENT $0313 forced first channel pointer:BIOS call
+COMMENT $0314 BIOS call
+COMMENT $031D WE DON'T SHIFT THE BITS, SO THAT WE CAN USE THE SAME CODE (FREQUENCY CALCULATION) SEVERAL TIMES.
+COMMENT $0325 BIOS call
+COMMENT $0326 BIOS call
+COMMENT $0330 Get the Hardware Envelope waveform.
+COMMENT $0335 BIOS call
+COMMENT $0336 BIOS call
+COMMENT $0341 BIOS call
+COMMENT $0349 0 reload second byte of current instent data
+COMMENT $034F blend out all other data
+COMMENT $0351 BIOS call
+COMMENT $0355 shifts only possible with u->D
+COMMENT $0357 to big endian
+COMMENT $035D BIOS call
+COMMENT $0366 BIOS call
+COMMENT $036E BIOS call
+COMMENT $036F BIOS call
+COMMENT $0374 correct endianness of calculated frequency to little endian for PSG poke
+COMMENT $0378 BIOS call
+COMMENT $0379 second byte of instent reloaded
+COMMENT $037C any noise?
+COMMENT $0380 BIOS call
+COMMENT $0381 BIOS call
+COMMENT $038B BIOS call
+COMMENT $0390 CODE HARDWARE FREQUENCY.
+COMMENT $0395 BIOS call
+COMMENT $0397 0 reload second byte of current instent data
+COMMENT $03A0 BIOS call
+COMMENT $03A3 shifts only possible with u->D
+COMMENT $03A5 to big endian
+COMMENT $03A9 BIOS call
+COMMENT $03B2 BIOS call
+COMMENT $03B7 BIOS call
+COMMENT $03BD correct endianness of calculated frequency to little endian for PSG poke
+COMMENT $03BF BIOS call
+COMMENT $03C5 BIOS call
+COMMENT $03C6 BIOS call
+COMMENT $03CD BIOS call
+COMMENT $03F0 write software note with its frequency to PSG
+COMMENT $0409 CODE HARDWARE FREQUENCY.
+COMMENT $0418 %11110111
+COMMENT $0456 IF ISRETRIG?, FORCE THE R13 TO BE TRIGGERED.
+COMMENT $046D switching endian anyway because PSG regs are sortof little endian
+COMMENT $0480 reuse arpegio test from above
+COMMENT $0484 ADD ARPEGGIO TO NOTE.
+COMMENT $0486 was max note reached?
+COMMENT $048A if so set max note
+COMMENT $048D for pointer in table double it
+COMMENT $0496 switching en dian anyway because PSG regs are sortof little endian
+COMMENT $05EA Copy Speed.
+COMMENT $05ED Get Instents chunk size.
+COMMENT $05F2 Skip Instents to go to the Linker address.
+COMMENT $060C make sure the hardware envelope is in an "unkown" state
+COMMENT $062E %00111111
+COMMENT $0635 move, move
+COMMENT $0639 blockAnimating
+COMMENT $063C move
+COMMENT $063E lastBlockDirection
+COMMENT $0641 splitMode
+COMMENT $0648 blockOrientation
+COMMENT $064F move
+COMMENT $0666 tmp29
+COMMENT $0669 tmp29, blockAnimation
+COMMENT $066C tmp29, nextBlockAnimation
+COMMENT $066F blockX
+COMMENT $0673 nextBlockX
+COMMENT $0676 blockY
+COMMENT $0679 nextBlockY
+COMMENT $067F tmp31
+COMMENT $0682 tmp31, blockAnimation
+COMMENT $0685 tmp31, nextBlockAnimation
+COMMENT $0688 blockX
+COMMENT $068C nextBlockX
+COMMENT $068F blockY
+COMMENT $0692 nextBlockY
+COMMENT $0698 tmp33
+COMMENT $069B tmp33, blockAnimation
+COMMENT $069E tmp33, nextBlockAnimation
+COMMENT $06A1 blockX
+COMMENT $06A4 nextBlockX
+COMMENT $06A7 blockY
+COMMENT $06AB nextBlockY
+COMMENT $06B0 tmp35
+COMMENT $06B3 tmp35, blockAnimation
+COMMENT $06B6 tmp35, nextBlockAnimation
+COMMENT $06B9 blockX
+COMMENT $06BC nextBlockX
+COMMENT $06BF blockY
+COMMENT $06C3 nextBlockY
+COMMENT $06CC blockOrientation, blockOrientation
+COMMENT $06CF : ; blockOrientation
+COMMENT $06D7 : ; blockOrientation
+COMMENT $06E0 move
+COMMENT $06FA blockAnimation
+COMMENT $0700 nextBlockAnimation
+COMMENT $0703 blockX
+COMMENT $0708 nextBlockX
+COMMENT $070B blockY
+COMMENT $070E nextBlockY
+COMMENT $0713 blockOrientation
+COMMENT $071C blockAnimation
+COMMENT $0722 nextBlockAnimation
+COMMENT $0725 blockX
+COMMENT $0729 nextBlockX
+COMMENT $072C blockY
+COMMENT $072F nextBlockY
+COMMENT $0734 blockOrientation
+COMMENT $073D blockAnimation
+COMMENT $0743 nextBlockAnimation
+COMMENT $0746 blockX
+COMMENT $0749 nextBlockX
+COMMENT $074C blockY
+COMMENT $0750 nextBlockY
+COMMENT $0755 blockOrientation
+COMMENT $075D blockAnimation
+COMMENT $0763 nextBlockAnimation
+COMMENT $0766 blockX
+COMMENT $0769 nextBlockX
+COMMENT $076C blockY
+COMMENT $0771 nextBlockY
+COMMENT $0776 blockOrientation
+COMMENT $077C move
+COMMENT $0793 tmp46
+COMMENT $0796 tmp46, blockAnimation
+COMMENT $0799 tmp46, nextBlockAnimation
+COMMENT $079C blockX
+COMMENT $07A0 nextBlockX
+COMMENT $07A3 blockY
+COMMENT $07A6 nextBlockY
+COMMENT $07AF blockAnimation
+COMMENT $07B5 nextBlockAnimation
+COMMENT $07B8 blockX
+COMMENT $07BC nextBlockX
+COMMENT $07BF blockY
+COMMENT $07C2 nextBlockY
+COMMENT $07CB blockAnimation
+COMMENT $07D1 nextBlockAnimation
+COMMENT $07D4 blockX
+COMMENT $07D7 nextBlockX
+COMMENT $07DA blockY
+COMMENT $07DF nextBlockY
+COMMENT $07E2 blockOrientation
+COMMENT $07EA blockAnimation
+COMMENT $07F0 nextBlockAnimation
+COMMENT $07F3 blockX
+COMMENT $07F6 nextBlockX
+COMMENT $07F9 blockY
+COMMENT $07FD nextBlockY
+COMMENT $0800 blockOrientation
+COMMENT $0806 move
+COMMENT $0820 blockAnimation
+COMMENT $0826 nextBlockAnimation
+COMMENT $0829 blockX
+COMMENT $082D nextBlockX
+COMMENT $0830 blockY
+COMMENT $0833 nextBlockY
+COMMENT $0836 blockOrientation
+COMMENT $083F blockAnimation
+COMMENT $0845 nextBlockAnimation
+COMMENT $0848 blockX
+COMMENT $084D nextBlockX
+COMMENT $0850 blockY
+COMMENT $0853 nextBlockY
+COMMENT $0856 blockOrientation
+COMMENT $085C tmp58
+COMMENT $085F tmp58, blockAnimation
+COMMENT $0862 tmp58, nextBlockAnimation
+COMMENT $0865 blockX
+COMMENT $0868 nextBlockX
+COMMENT $086B blockY
+COMMENT $086F nextBlockY
+COMMENT $0877 blockAnimation
+COMMENT $087D nextBlockAnimation
+COMMENT $0880 blockX
+COMMENT $0883 nextBlockX
+COMMENT $0886 blockY
+COMMENT $088A nextBlockY
+COMMENT $0890 blockAnimating
+COMMENT $0895 blockAnimationStep.23, blockAnimationStep
+COMMENT $0898 blockAnimationStep.23
+COMMENT $0899 blockAnimationStep.23, blockAnimationStep
+COMMENT $089C : ; blockAnimationStep.23
+COMMENT $08A0 nextBlockX
+COMMENT $08A3 blockX
+COMMENT $08A6 nextBlockY
+COMMENT $08A9 blockY
+COMMENT $08AC blockAnimationStep
+COMMENT $08AF nextBlockAnimation
+COMMENT $08B2 blockAnimation
+COMMENT $08B5 blockAnimating
+COMMENT $08BC blockAnimation
+COMMENT $08BF blockAnimationStep
+COMMENT $08C2 blockAnimating
+COMMENT $08C5 blockOrientation
+COMMENT $08C8 splitMode
+COMMENT $08CF blockAnimation
+COMMENT $08D2 blockOrientation
+COMMENT $08D7 splitMode
+COMMENT $08DD blockY
+COMMENT $08E0 blockY.27
+COMMENT $08E2 blockY2
+COMMENT $08E5 blockY2.28
+COMMENT $08E7 blockY.27
+COMMENT $08E9 : ;, blockY2.28
+COMMENT $08EF blockX2
+COMMENT $08F2 blockX2.29
+COMMENT $08F4 blockX
+COMMENT $08F7 blockX.30
+COMMENT $08F9 tmp31, blockX2.29
+COMMENT $08FB tmp31
+COMMENT $08FC : ; tmp31, blockX.30
+COMMENT $0903 blockAnimation
+COMMENT $0908 blockOrientation
+COMMENT $090B blockX
+COMMENT $090E splitMode
+COMMENT $0914 tmp33, blockX2.29
+COMMENT $0916 tmp33
+COMMENT $0917  ; tmp33, blockX.30
+COMMENT $0920 blockAnimation
+COMMENT $0925 blockOrientation
+COMMENT $0928 splitMode
+COMMENT $092E blockX
+COMMENT $0931 : ;, blockX2
+COMMENT $0938 tmp35, blockY2.28
+COMMENT $093A tmp35
+COMMENT $093B  ; tmp35, blockY.27
+COMMENT $0942 blockAnimation
+COMMENT $0947 blockOrientation
+COMMENT $094A blockY.27
+COMMENT $094D blockY
+COMMENT $0950 splitMode
+COMMENT $0955 tmp37, blockY2.28
+COMMENT $0957 tmp37
+COMMENT $0958  ; tmp37, blockY.27
+COMMENT $095F blockAnimation
+COMMENT $0964 blockOrientation
+COMMENT $0967 splitMode
+COMMENT $096F blockX
+COMMENT $0972 xt
+COMMENT $0974 blockY
+COMMENT $0977 yt
+COMMENT $0979 blockX2
+COMMENT $097C blockX
+COMMENT $097F blockY2
+COMMENT $0982 blockY
+COMMENT $0985 xt
+COMMENT $0987 blockX2
+COMMENT $098A yt
+COMMENT $098C blockY2
+COMMENT $0996 yofs, yofs
+COMMENT $0998 BIOS call
+COMMENT $099D a
+COMMENT $099F a
+COMMENT $09A1 BIOS call
+COMMENT $09A6 dp_VIA_t1_cnt_lo
+COMMENT $09A8 yofs
+COMMENT $09AA a
+COMMENT $09AC b
+COMMENT $09AE a
+COMMENT $09B0 b
+COMMENT $09B2 BIOS call
+COMMENT $09B5 blockY
+COMMENT $09BC blockX
+COMMENT $09C4 blockY
+COMMENT $09C9 blockX
+COMMENT $09CF b
+COMMENT $09D3 dp_VIA_t1_cnt_lo
+COMMENT $09D7 a
+COMMENT $09D9 a
+COMMENT $09DB b
+COMMENT $09DD BIOS call
+COMMENT $09E0 blockAnimationStep
+COMMENT $09E3 extendqihi2: R:b -> R:d
+COMMENT $09E8 blockAnimation
+COMMENT $09EB tmp37, tmp36
+COMMENT $09F1 dp_VIA_t1_cnt_lo
+COMMENT $09F3 D.2454, x
+COMMENT $09F5 BIOS call
+COMMENT $09FA splitMode
+COMMENT $0A01 BIOS call
+COMMENT $0A06 a
+COMMENT $0A08 a
+COMMENT $0A0A BIOS call
+COMMENT $0A0F dp_VIA_t1_cnt_lo
+COMMENT $0A11 yofs
+COMMENT $0A13 a
+COMMENT $0A15 b
+COMMENT $0A17 a
+COMMENT $0A19 b
+COMMENT $0A1B BIOS call
+COMMENT $0A1E blockY2
+COMMENT $0A25 blockX2
+COMMENT $0A2D blockY2
+COMMENT $0A32 blockX2
+COMMENT $0A38 b
+COMMENT $0A3C dp_VIA_t1_cnt_lo
+COMMENT $0A40 a
+COMMENT $0A42 a
+COMMENT $0A44 b
+COMMENT $0A46 BIOS call
+COMMENT $0A4B dp_VIA_t1_cnt_lo
+COMMENT $0A4D height1FallingLeft
+COMMENT $0A50 x
+COMMENT $0A52 BIOS call
+COMMENT $3523 msg, msg
+COMMENT $3525 BIOS call
+COMMENT $352A a
+COMMENT $352C a
+COMMENT $352E BIOS call
+COMMENT $3533 Vec_Text_Width
+COMMENT $3538 a
+COMMENT $353C b
+COMMENT $353E msg, u
+COMMENT $3541 a
+COMMENT $3543 b
+COMMENT $3545 u
+COMMENT $3547 BIOS call
+COMMENT $354F picAvailable
+COMMENT $3554 address
+COMMENT $355B data
+COMMENT $3567 picAvailable
+COMMENT $356C address
+COMMENT $3581 muls
+COMMENT $3586 muls
+COMMENT $358B muls
+COMMENT $358D number.111, number
+COMMENT $358F cmphi: ; number.111
+COMMENT $3594 number.111
+COMMENT $359A ivtmp.107
+COMMENT $359C text
+COMMENT $359F ivtmp.109
+COMMENT $35A1 ivtmp.107
+COMMENT $35A3 muls
+COMMENT $35A7 cmphi: R:y with R:x ; number.111
+COMMENT $35A9 cmphi
+COMMENT $35B3 ivtmp.97
+COMMENT $35B5 number.111
+COMMENT $35B7 subhi: R:d -= ,s ;, D.2268
+COMMENT $35B9 number.111
+COMMENT $35BB d
+COMMENT $35BD d
+COMMENT $35BF ivtmp.97
+COMMENT $35C1 number.110,, number.111
+COMMENT $35C5 tmp85,, number.110
+COMMENT $35C7 cmphi: R:x with R:d ; tmp85
+COMMENT $35C9 cmphi
+COMMENT $35CE number.111, number.110
+COMMENT $35D2 d
+COMMENT $35D4 d
+COMMENT $35D8 ivtmp.109
+COMMENT $35DC ivtmp.109
+COMMENT $35E2 ivtmp.107
+COMMENT $35E6 ivtmp.107
+COMMENT $35EA addhi3,3
+COMMENT $35ED cmphi: R:d with R:x
+COMMENT $35EF cmphi
+COMMENT $35FE moveCount
+COMMENT $3604 tmp28, levelOffset
+COMMENT $3607 tmp28, levelNumber
+COMMENT $360F zero_extendqihi: R:b -> R:d ; tmp28
+COMMENT $361D music, currentMusic
+COMMENT $3625 a
+COMMENT $3627 a
+COMMENT $3629 BIOS call
+COMMENT $3675 bank, bank
+COMMENT $3677 bank
+COMMENT $3679 bank,* vecx
+COMMENT $367D bank
+COMMENT $36A8 BIOS call
+COMMENT $36AD a
+COMMENT $36AF a
+COMMENT $36B1 BIOS call
+COMMENT $36B6 Vec_Text_Width
+COMMENT $36BB a
+COMMENT $36BF b
+COMMENT $36C4 u
+COMMENT $36C6 a
+COMMENT $36C8 b
+COMMENT $36CA u
+COMMENT $36CC BIOS call
+COMMENT $36D1 a
+COMMENT $36D5 b
+COMMENT $36DA u
+COMMENT $36DC a
+COMMENT $36DE b
+COMMENT $36E0 u
+COMMENT $36E2 BIOS call
+COMMENT $36E7 a
+COMMENT $36EB b
+COMMENT $36F0 u
+COMMENT $36F2 a
+COMMENT $36F4 b
+COMMENT $36F6 u
+COMMENT $36F8 BIOS call
+COMMENT $36FB Vec_Buttons
+COMMENT $3717 gameState
+COMMENT $371A Vec_Buttons
+COMMENT $3721 gameState
+COMMENT $372C BIOS call
+COMMENT $3731 a
+COMMENT $3733 a
+COMMENT $3735 BIOS call
+COMMENT $3738 BIOS call
+COMMENT $373D dp_VIA_t1_cnt_lo
+COMMENT $3741 a
+COMMENT $3745 b
+COMMENT $3747 a
+COMMENT $3749 b
+COMMENT $374B BIOS call
+COMMENT $3750 dp_VIA_t1_cnt_lo
+COMMENT $3752 tmp27
+COMMENT $3756 tmp27, x
+COMMENT $3759 x
+COMMENT $375B BIOS call
+COMMENT $375E BIOS call
+COMMENT $3763 dp_VIA_t1_cnt_lo
+COMMENT $3767 a
+COMMENT $376B b
+COMMENT $376D a
+COMMENT $376F b
+COMMENT $3771 BIOS call
+COMMENT $3776 dp_VIA_t1_cnt_lo
+COMMENT $3778 tmp27, x
+COMMENT $377B x
+COMMENT $377D BIOS call
+COMMENT $3780 BIOS call
+COMMENT $3785 dp_VIA_t1_cnt_lo
+COMMENT $3789 a
+COMMENT $378D b
+COMMENT $378F a
+COMMENT $3791 b
+COMMENT $3793 BIOS call
+COMMENT $3798 dp_VIA_t1_cnt_lo
+COMMENT $379A tmp27, x
+COMMENT $379D x
+COMMENT $379F BIOS call
+COMMENT $37A2 BIOS call
+COMMENT $37A7 dp_VIA_t1_cnt_lo
+COMMENT $37AB a
+COMMENT $37AD b
+COMMENT $37AF a
+COMMENT $37B1 b
+COMMENT $37B3 BIOS call
+COMMENT $37B8 dp_VIA_t1_cnt_lo
+COMMENT $37BA tmp27, x
+COMMENT $37BD x
+COMMENT $37BF BIOS call
+COMMENT $37C2 BIOS call
+COMMENT $37C7 dp_VIA_t1_cnt_lo
+COMMENT $37CB a
+COMMENT $37CF b
+COMMENT $37D1 a
+COMMENT $37D3 b
+COMMENT $37D5 BIOS call
+COMMENT $37DA dp_VIA_t1_cnt_lo
+COMMENT $37DC tmp27, x
+COMMENT $37DF x
+COMMENT $37E1 BIOS call
+COMMENT $37E4 BIOS call
+COMMENT $37E9 dp_VIA_t1_cnt_lo
+COMMENT $37ED a
+COMMENT $37F1 b
+COMMENT $37F3 a
+COMMENT $37F5 b
+COMMENT $37F7 BIOS call
+COMMENT $37FC dp_VIA_t1_cnt_lo
+COMMENT $37FE tmp27, x
+COMMENT $3801 x
+COMMENT $3803 BIOS call
+COMMENT $3810 a
+COMMENT $3812 a
+COMMENT $3814 BIOS call
+COMMENT $3819 Vec_Text_Width
+COMMENT $381C a
+COMMENT $3820 b
+COMMENT $3825 u
+COMMENT $3827 a
+COMMENT $3829 b
+COMMENT $382B u
+COMMENT $382D BIOS call
+COMMENT $3837 blockYOfs
+COMMENT $383D blockYOfs.23, blockYOfs
+COMMENT $3840 blockYOfs.23
+COMMENT $3841 blockYOfs.23, blockYOfs
+COMMENT $3844 blockYOfs.23
+COMMENT $3849 gameState
+COMMENT $384F tmp30, levelNumber
+COMMENT $3852 tmp30
+COMMENT $3856 zero_extendqihi: R:b -> R:d ; D.2297, D.2297
+COMMENT $3857 D.2297, levelHighscore
+COMMENT $385A tmp32, levelNumber
+COMMENT $385D tmp32
+COMMENT $385E tmp33
+COMMENT $3865 levelHighscore
+COMMENT $3868 levelHighscore
+COMMENT $386B levelHighscore.16, levelHighscore
+COMMENT $386E levelHighscore.16
+COMMENT $3877 levelHighscore
+COMMENT $387A levelNumber
+COMMENT $387D zero_extendqihi: R:b -> R:d
+COMMENT $3882 tmp39
+COMMENT $3884 levels
+COMMENT $3888 level
+COMMENT $3891 level, level
+COMMENT $3894 <variable>.start.x
+COMMENT $3896 blockX
+COMMENT $3899 <variable>.start.y
+COMMENT $389B blockY
+COMMENT $38A3 blockYOfs
+COMMENT $38A8 gameState
+COMMENT $38B3 * vecx
+COMMENT $38BA moveCount
+COMMENT $38F3 BIOS call
+COMMENT $38F8 a
+COMMENT $38FA a
+COMMENT $38FC BIOS call
+COMMENT $3901 Vec_Text_Width
+COMMENT $3906 a
+COMMENT $390A b
+COMMENT $390F u
+COMMENT $3911 a
+COMMENT $3913 b
+COMMENT $3915 u
+COMMENT $3917 BIOS call
+COMMENT $391C a
+COMMENT $3920 b
+COMMENT $3925 u
+COMMENT $3927 a
+COMMENT $3929 b
+COMMENT $392B u
+COMMENT $392D BIOS call
+COMMENT $3932 a
+COMMENT $3936 b
+COMMENT $393B u
+COMMENT $393D a
+COMMENT $393F b
+COMMENT $3941 u
+COMMENT $3943 BIOS call
+COMMENT $3946 Vec_Buttons
+COMMENT $3950 Vec_Buttons
+COMMENT $3959 gameState
+COMMENT $3965 blockYOfs
+COMMENT $396B blockYOfs.52, blockYOfs
+COMMENT $396E blockYOfs.52
+COMMENT $396F blockYOfs.52, blockYOfs
+COMMENT $3972 : ; blockYOfs.52
+COMMENT $3978 moveCount.53, moveCount
+COMMENT $397B cmphi: ; moveCount.53, levelHighscore
+COMMENT $3980 levelNumber
+COMMENT $3986 moveCount.53
+COMMENT $398F tmp31, levelNumber
+COMMENT $3992 tmp31
+COMMENT $3993 tmp31
+COMMENT $3994 tmp31
+COMMENT $3996 tmp33, moveCount
+COMMENT $399B zero_extendqihi: R:b -> R:d
+COMMENT $399C tmp33
+COMMENT $39A5 levelNumber.56, levelNumber
+COMMENT $39A8 levelNumber.56
+COMMENT $39A9 levelNumber.56, levelNumber
+COMMENT $39AC : ; levelNumber.56, levelCount
+COMMENT $39B1 levelNumber
+COMMENT $39BF blockYOfs
+COMMENT $39C3 blockYOfs.50
+COMMENT $39C5 blockYOfs
+COMMENT $39CC tmp28
+COMMENT $39CD mulqihi3 ; blockYOfs.50
+COMMENT $39D6 blockYOfs
+COMMENT $39E6 moveCount.8, moveCount
+COMMENT $39E9 cmphi: ; moveCount.8
+COMMENT $39EE moveCount.8
+COMMENT $39F0 moveCount
+COMMENT $39FE BIOS call
+COMMENT $3A04 : ; D.2324
+COMMENT $3A0E gameState
+COMMENT $3A17 : ; D.2325
+COMMENT $3A22 gameState
+COMMENT $3A2A : ; D.2327
+COMMENT $3A35 gameState
+COMMENT $3A3D : ; D.2328
+COMMENT $3A48 gameState
+COMMENT $3A4B gameState
+COMMENT $3A5A * vecx
+COMMENT $3A5E BIOS call
+COMMENT $3A61 Vec_Buttons
+COMMENT $3A68 levelNumber.30, levelNumber
+COMMENT $3A6B levelNumber.30
+COMMENT $3A6C levelNumber.30, levelNumber
+COMMENT $3A6F : ; levelNumber.30, levelCount
+COMMENT $3A74 levelNumber
+COMMENT $3A77 nextBank
+COMMENT $3A80 Vec_Buttons
+COMMENT $3A87 splitMode
+COMMENT $3A92 gameState
+COMMENT $3A95 blockYOfs
+COMMENT $3A98 lastBlockDirection
+COMMENT $3AA4 * vecx
+COMMENT $3AB5 blockAnimating
+COMMENT $3ABC blockY
+COMMENT $3AC1 blockX
+COMMENT $3AC7 c0
+COMMENT $3AC9 blockX
+COMMENT $3ACF blockY
+COMMENT $3AD9 c1
+COMMENT $3ADB blockY
+COMMENT $3AE1 blockX
+COMMENT $3AE7 c2
+COMMENT $3AE9 blockY
+COMMENT $3AEE blockX
+COMMENT $3AF4 f0
+COMMENT $3AF6 blockX
+COMMENT $3AFC blockY
+COMMENT $3B06 f1
+COMMENT $3B08 blockY
+COMMENT $3B0E blockX
+COMMENT $3B14 f2
+COMMENT $3B18 blockOrientation, blockOrientation
+COMMENT $3B1B : ; blockOrientation
+COMMENT $3B21 : ; blockOrientation
+COMMENT $3B29 c0
+COMMENT $3B2D f0
+COMMENT $3B38 c0
+COMMENT $3B3C c2
+COMMENT $3B45 c0
+COMMENT $3B49 c1
+COMMENT $3B50 blockOrientation
+COMMENT $3B55 blockX
+COMMENT $3B58 : ;, endX
+COMMENT $3B5D blockY
+COMMENT $3B60 : ;, endY
+COMMENT $3B65 splitMode
+COMMENT $3B6A blockYOfs
+COMMENT $3B6F gameState
+COMMENT $3B7A * vecx
+COMMENT $3B80 gameState
+COMMENT $3B89 gameState
+COMMENT $3B8C blockOrientation, blockOrientation
+COMMENT $3B8F : ; blockOrientation
+COMMENT $3B95 : ; blockOrientation
+COMMENT $3B9E f0
+COMMENT $3BAC blockY
+COMMENT $3BB1 blockX
+COMMENT $3BBC f0
+COMMENT $3BC2 blockY
+COMMENT $3BC7 blockX
+COMMENT $3BCF f2
+COMMENT $3BD5 blockY
+COMMENT $3BDB blockX
+COMMENT $3BE5 f0
+COMMENT $3BEB blockY
+COMMENT $3BF0 blockX
+COMMENT $3BF8 f1
+COMMENT $3BFE blockX
+COMMENT $3C04 blockY
+COMMENT $3C10 splitMode
+COMMENT $3C25 * vecx
+COMMENT $3C29 picAvailable
+COMMENT $3C43 : ; D.2439
+COMMENT $3C49 picAvailable
+COMMENT $3C4F infoText
+COMMENT $3C55 infoText
+COMMENT $3C5B infoText
+COMMENT $3C61 infoText
+COMMENT $3C67 infoText
+COMMENT $3C7A gameState
+COMMENT $3C80 BIOS call
+COMMENT $3C83 gameState
+COMMENT $3C8C zero_extendqihi: R:b -> R:d
+COMMENT $3C91 tmp43
+COMMENT $3C93 tmp43
+COMMENT $3CD9 gameState
+COMMENT $3CE2 BIOS call
+COMMENT $3CE5 currentMusic
+COMMENT $3CE8 u
+COMMENT $3CEA u
+COMMENT $3CEC BIOS call
+COMMENT $3CEF BIOS call
+COMMENT $3CF2 BIOS call
+COMMENT $3D74 x, x
+COMMENT $3D76 x
+COMMENT $3D79 y
+COMMENT $3D7D : ; x
+COMMENT $3D81 y
+COMMENT $3D87 extendqihi2: R:b -> R:d
+COMMENT $3D8A x
+COMMENT $3D8C extendqihi2: R:b -> R:d
+COMMENT $3D8D x
+COMMENT $3D9B tmp38, tmp37
+COMMENT $3D9D x
+COMMENT $3D9F tmp39,, tmp39
+COMMENT $3DA1 x
+COMMENT $3DA3 tmp40
+COMMENT $3DA5 addhi3,3 ;, <variable>.geometry
+COMMENT $3DA9 tmp40
+COMMENT $3DAB c
+COMMENT $3DAF c
+COMMENT $3DB8 tmp33
+COMMENT $3DBF x, x
+COMMENT $3DC1 y
+COMMENT $3DC3 mulqihi3
+COMMENT $3DC6 tmp33
+COMMENT $3DC8 x
+COMMENT $3DCA extendqihi2: R:b -> R:d
+COMMENT $3DCB x
+COMMENT $3DCD tmp33
+COMMENT $3DCF index,, index
+COMMENT $3DD1 index
+COMMENT $3DD9 tmp35
+COMMENT $3DDB swatchesOn
+COMMENT $3DE1 movlsbqihi: R:u -> R:b ; index, index
+COMMENT $3DE3 tmp38
+COMMENT $3DE8 tmp40, D.1312
+COMMENT $3DEC tmp40
+COMMENT $3DF6 x, x
+COMMENT $3DF8 y
+COMMENT $3DFA mulqihi3
+COMMENT $3DFD tmp37
+COMMENT $3DFF x
+COMMENT $3E01 extendqihi2: R:b -> R:d
+COMMENT $3E02 x
+COMMENT $3E04 index,, index
+COMMENT $3E06 movlsbqihi: R:x -> R:b ; index, index
+COMMENT $3E08 index
+COMMENT $3E0A index, bit
+COMMENT $3E0C index, index.44
+COMMENT $3E14 on
+COMMENT $3E1B tmp41, index.44
+COMMENT $3E1D swatchesOn
+COMMENT $3E21 bit
+COMMENT $3E26 tmp44, D.1327
+COMMENT $3E28 tmp44, swatchesOn
+COMMENT $3E2F tmp46, index.44
+COMMENT $3E31 swatchesOn
+COMMENT $3E33 temp.45
+COMMENT $3E35 bit
+COMMENT $3E3A tmp49
+COMMENT $3E3B tmp50, temp.45
+COMMENT $3E3D tmp50, swatchesOn
+COMMENT $3E45 x, x
+COMMENT $3E47 y
+COMMENT $3E4B x
+COMMENT $3E50 c
+COMMENT $3E64 y
+COMMENT $3E68 x
+COMMENT $3E74 c
+COMMENT $3E76 c
+COMMENT $3E8E tmp34
+COMMENT $3E90 zero_extendqihi: R:b -> R:d ; tmp34, tmp35
+COMMENT $3E91 addhi3,3 ; tmp36
+COMMENT $3E96 zero_extendqihi: R:b -> R:d
+COMMENT $3E9D iftmp.5
+COMMENT $3EA6 x, x
+COMMENT $3EA8 z
+COMMENT $3EAA mulqihi3
+COMMENT $3EAD tmp31
+COMMENT $3EAF tmp32, x
+COMMENT $3EB1 tmp32
+COMMENT $3EB2 mulqihi3
+COMMENT $3EB5 tmp33
+COMMENT $3EB7 movlsbqihi: R:x -> R:b ; tmp31
+COMMENT $3EBB movlsbqihi: R:u -> R:b ; tmp33, tmp35
+COMMENT $3EBD tmp30
+COMMENT $3EC5 x, x
+COMMENT $3EC7 tmp32, y
+COMMENT $3EC9 tmp32
+COMMENT $3ECB mulqihi3
+COMMENT $3ECE tmp33
+COMMENT $3ED0 z
+COMMENT $3ED7 movlsbqihi: R:x -> R:b ; tmp33, tmp36
+COMMENT $3ED9 tmp36
+COMMENT $3EDB tmp36
+COMMENT $3EDD tmp38, x
+COMMENT $3EDF tmp38
+COMMENT $3EE0 tmp39, x
+COMMENT $3EE2 tmp31
+COMMENT $3EEB x, x
+COMMENT $3EED lineCount
+COMMENT $3EF0 lineCount.14
+COMMENT $3EF2 y
+COMMENT $3EF7 x
+COMMENT $3EFE lineCount.14
+COMMENT $3F00 zero_extendqihi: R:b -> R:d
+COMMENT $3F01 lineCount.14
+COMMENT $3F05 lineX0
+COMMENT $3F09 lineCount
+COMMENT $3F0C lineCount.69
+COMMENT $3F0E y
+COMMENT $3F15 x
+COMMENT $3F1C lineCount.69
+COMMENT $3F1E zero_extendqihi: R:b -> R:d
+COMMENT $3F1F lineCount.69
+COMMENT $3F23 lineY0
+COMMENT $3F27 lineCount
+COMMENT $3F2A lineCount.70
+COMMENT $3F2C y
+COMMENT $3F32 x
+COMMENT $3F42 lineCount.70
+COMMENT $3F44 zero_extendqihi: R:b -> R:d
+COMMENT $3F45 lineCount.70
+COMMENT $3F49 lineX1
+COMMENT $3F4D lineCount
+COMMENT $3F50 lineCount.71
+COMMENT $3F60 lineCount.71
+COMMENT $3F63 zero_extendqihi: R:b -> R:d
+COMMENT $3F64 lineCount.71
+COMMENT $3F68 lineY1
+COMMENT $3F6C lineCount
+COMMENT $3F70 lineCount.15
+COMMENT $3F72 lineCount
+COMMENT $3F75 y
+COMMENT $3F81 lineCount.15
+COMMENT $3F83 zero_extendqihi: R:b -> R:d
+COMMENT $3F84 lineCount.15
+COMMENT $3F86 tmp61,, lineCount.15
+COMMENT $3F8C lineX0
+COMMENT $3F8E lineCount
+COMMENT $3F91 lineCount.73
+COMMENT $3F94 y
+COMMENT $3FA3 lineCount.73
+COMMENT $3FA6 zero_extendqihi: R:b -> R:d
+COMMENT $3FA7 lineCount.73
+COMMENT $3FA9 tmp64,, lineCount.73
+COMMENT $3FB0 lineY0
+COMMENT $3FB2 lineCount
+COMMENT $3FB5 lineCount.74
+COMMENT $3FBE x
+COMMENT $3FC5 lineCount.74
+COMMENT $3FC7 zero_extendqihi: R:b -> R:d
+COMMENT $3FC8 lineCount.74
+COMMENT $3FCA tmp67,, lineCount.74
+COMMENT $3FD0 lineX1
+COMMENT $3FD2 lineCount
+COMMENT $3FD5 lineCount.75
+COMMENT $3FDE x
+COMMENT $3FE5 lineCount.75
+COMMENT $3FE8 zero_extendqihi: R:b -> R:d
+COMMENT $3FE9 lineCount.75
+COMMENT $3FEB tmp70,, lineCount.75
+COMMENT $3FF1 lineY1
+COMMENT $3FF3 lineCount
+COMMENT $3FFF ivtmp.110
+COMMENT $4002 swatchesOn
+COMMENT $4004 cmphi: ; ivtmp.110
+COMMENT $4009 ivtmp.102, <variable>.geometry
+COMMENT $400E y
+COMMENT $4010 ivtmp.111, ivtmp.102
+COMMENT $4012 x
+COMMENT $4014 c0,* ivtmp.111
+COMMENT $4016 : ; c0
+COMMENT $401A : ; c0
+COMMENT $4022 y
+COMMENT $4026 x
+COMMENT $402D x
+COMMENT $402F ivtmp.111,, ivtmp.111
+COMMENT $4031 x
+COMMENT $4037 y
+COMMENT $4039 ivtmp.102,, ivtmp.102
+COMMENT $403B y
+COMMENT $4059 x0, x0
+COMMENT $405B lineCount
+COMMENT $405E lineCount.12
+COMMENT $4060 y0
+COMMENT $4064 x0
+COMMENT $406B lineCount.12
+COMMENT $406D zero_extendqihi: R:b -> R:d
+COMMENT $406E lineCount.12
+COMMENT $4074 lineX0
+COMMENT $4078 lineCount
+COMMENT $407B lineCount.117
+COMMENT $407D y0
+COMMENT $4083 x0
+COMMENT $408A lineCount.117
+COMMENT $408C zero_extendqihi: R:b -> R:d
+COMMENT $408D lineCount.117
+COMMENT $4093 lineY0
+COMMENT $4097 lineCount
+COMMENT $409A lineCount.118
+COMMENT $409C y0
+COMMENT $40A3 x0
+COMMENT $40AA lineCount.118
+COMMENT $40AC zero_extendqihi: R:b -> R:d
+COMMENT $40AD lineCount.118
+COMMENT $40B3 lineX1
+COMMENT $40B7 lineCount
+COMMENT $40BA lineCount.119
+COMMENT $40C2 x0
+COMMENT $40C9 lineCount.119
+COMMENT $40CB zero_extendqihi: R:b -> R:d
+COMMENT $40CC lineCount.119
+COMMENT $40D0 lineY1
+COMMENT $40D4 lineCount.13, lineCount
+COMMENT $40D7 lineCount.13
+COMMENT $40D8 lineCount.13, lineCount
+COMMENT $40DD : ; lineCount.13
+COMMENT $40EC x0, x0
+COMMENT $40EE lineCount
+COMMENT $40F1 lineCount.10
+COMMENT $40F3 y0
+COMMENT $40F7 x0
+COMMENT $40FE lineCount.10
+COMMENT $4100 zero_extendqihi: R:b -> R:d
+COMMENT $4101 lineCount.10
+COMMENT $4105 lineX0
+COMMENT $4109 lineCount
+COMMENT $410C lineCount.127
+COMMENT $410E y0
+COMMENT $4114 x0
+COMMENT $411B lineCount.127
+COMMENT $411D zero_extendqihi: R:b -> R:d
+COMMENT $411E lineCount.127
+COMMENT $4122 lineY0
+COMMENT $4126 lineCount
+COMMENT $4129 lineCount.128
+COMMENT $412B y1
+COMMENT $412F x1
+COMMENT $4136 lineCount.128
+COMMENT $4138 zero_extendqihi: R:b -> R:d
+COMMENT $4139 lineCount.128
+COMMENT $413D lineX1
+COMMENT $4141 lineCount
+COMMENT $4144 lineCount.129
+COMMENT $4146 y1
+COMMENT $414C x1
+COMMENT $4153 lineCount.129
+COMMENT $4155 zero_extendqihi: R:b -> R:d
+COMMENT $4156 lineCount.129
+COMMENT $415A lineY1
+COMMENT $4160 half
+COMMENT $4164 lineCount
+COMMENT $4167 zero_extendqihi: R:b -> R:d
+COMMENT $4168 lineCount.130
+COMMENT $416A lineX0
+COMMENT $416E lineY0
+COMMENT $4174 lineY0
+COMMENT $4178 lineX1
+COMMENT $417E lineX1
+COMMENT $4182 lineY1
+COMMENT $4188 lineY1
+COMMENT $418C lineCount.11, lineCount
+COMMENT $418F lineCount.11
+COMMENT $4190 lineCount.11, lineCount
+COMMENT $4193 : ; lineCount.11
+COMMENT $41A2 x0, x0
+COMMENT $41A4 D.1448, x1
+COMMENT $41A6 D.1448, x0
+COMMENT $41A8 : ; D.1448
+COMMENT $41AC D.1448, ivtmp.152
+COMMENT $41AE x0
+COMMENT $41B2 x0.153
+COMMENT $41B4 half
+COMMENT $41B8 y1
+COMMENT $41BC x0.153
+COMMENT $41C0 y0
+COMMENT $41C4 x0
+COMMENT $41C9 ivtmp.152
+COMMENT $41CD ivtmp.152
+COMMENT $41D5 x0.153
+COMMENT $41D7 x0
+COMMENT $41DB x0.153
+COMMENT $41DD x0
+COMMENT $41DF D.1450, y1
+COMMENT $41E1 D.1450, y0
+COMMENT $41E3 : ; D.1450
+COMMENT $41E7 D.1450, ivtmp.144
+COMMENT $41E9 y0
+COMMENT $41ED y0.154
+COMMENT $41EF half
+COMMENT $41F3 y0.154
+COMMENT $41F7 x1
+COMMENT $41FB y0
+COMMENT $41FF x0
+COMMENT $4204 ivtmp.144
+COMMENT $4208 ivtmp.144
+COMMENT $4210 y0.154
+COMMENT $4212 y0
+COMMENT $4216 y0.154
+COMMENT $4218 y0
+COMMENT $421A half
+COMMENT $421E y1
+COMMENT $4222 x1
+COMMENT $4226 y0
+COMMENT $422A x0
+COMMENT $4236 x
+COMMENT $4238 y
+COMMENT $423C y0
+COMMENT $423E y1
+COMMENT $4240 y
+COMMENT $4244 x
+COMMENT $424E x
+COMMENT $4253 y
+COMMENT $4261 y0
+COMMENT $4265 y
+COMMENT $4267 y0
+COMMENT $4269 y
+COMMENT $426B y1
+COMMENT $426F y0
+COMMENT $4275 y1
+COMMENT $427E y0
+COMMENT $4289 y0
+COMMENT $428D y
+COMMENT $428F y
+COMMENT $4297 x
+COMMENT $4299 x
+COMMENT $42A8 <variable>.geometry
+COMMENT $42AC ivtmp.199
+COMMENT $42AE ivtmp.193
+COMMENT $42B0 ivtmp.193
+COMMENT $42B3 y
+COMMENT $42B5 ivtmp.202, ivtmp.199
+COMMENT $42B9 x0
+COMMENT $42BB x1
+COMMENT $42BF ivtmp.191
+COMMENT $42C1 ivtmp.191
+COMMENT $42C4 x
+COMMENT $42C6 y
+COMMENT $42CE c0,* ivtmp.202
+COMMENT $42D2 c0
+COMMENT $42D3 : ; c0
+COMMENT $42D7 y
+COMMENT $42DB x
+COMMENT $42E0 x
+COMMENT $42E2 endX
+COMMENT $42E5 y
+COMMENT $42E7 endY
+COMMENT $42EF : ; c0
+COMMENT $42F3 y
+COMMENT $42F7 x
+COMMENT $4301 : ; c0
+COMMENT $4307 ivtmp.193
+COMMENT $430B ivtmp.191
+COMMENT $430F y
+COMMENT $4313 x
+COMMENT $431C : ; c0
+COMMENT $4322 ivtmp.193
+COMMENT $4326 x
+COMMENT $432A y
+COMMENT $432E ivtmp.191
+COMMENT $4337 : ; c0
+COMMENT $433F y
+COMMENT $4343 ivtmp.191
+COMMENT $4347 y
+COMMENT $434B x
+COMMENT $4352 y
+COMMENT $4356 x
+COMMENT $4360 ivtmp.193
+COMMENT $4366 x
+COMMENT $4370 x0
+COMMENT $4374 x
+COMMENT $4376 x0
+COMMENT $4378 x
+COMMENT $437A x1
+COMMENT $437E x0
+COMMENT $4388 x1
+COMMENT $4391 x0
+COMMENT $4398 x0
+COMMENT $439C ivtmp.191
+COMMENT $439E ivtmp.202,, ivtmp.202
+COMMENT $43A0 ivtmp.191
+COMMENT $43A8 ivtmp.193
+COMMENT $43AA ivtmp.199,, ivtmp.199
+COMMENT $43AC ivtmp.193
+COMMENT $43B8 lineCount
+COMMENT $43C6 x, x
+COMMENT $43C8 splitMode
+COMMENT $43CF level.7, level
+COMMENT $43D2 <variable>.swatches_count
+COMMENT $43DC zero_extendqihi: R:b -> R:d
+COMMENT $43E1 tmp43, tmp42, level.7
+COMMENT $43E3 swatch, <variable>.swatches
+COMMENT $43E5 x
+COMMENT $43E7  ;, <variable>.position.x
+COMMENT $43ED y
+COMMENT $43EF  ;, <variable>.position.y
+COMMENT $43F5 <variable>.fields_count
+COMMENT $43FB j
+COMMENT $43FD j
+COMMENT $43FF zero_extendqihi: R:b -> R:d
+COMMENT $4400 addhi3,3 ; tmp46
+COMMENT $4405 tmp48, tmp47, swatch
+COMMENT $4407 field, <variable>.fields
+COMMENT $4409 <variable>.position.x
+COMMENT $440B xf
+COMMENT $440D <variable>.position.y
+COMMENT $440F yf
+COMMENT $4411 <variable>.action
+COMMENT $4419 zero_extendqihi: R:b -> R:d
+COMMENT $441E tmp51
+COMMENT $4420 tmp51
+COMMENT $442E yf
+COMMENT $4432 xf
+COMMENT $4438 zero_extendqihi: R:b -> R:d ; D.1376, tmp55
+COMMENT $4439 addhi3,3 ; tmp56
+COMMENT $443E zero_extendqihi: R:b -> R:d
+COMMENT $4443 tmp54
+COMMENT $4445 yf
+COMMENT $4449 xf
+COMMENT $4457 yf
+COMMENT $445B xf
+COMMENT $4467 yf
+COMMENT $446B xf
+COMMENT $4474 xf
+COMMENT $4476 blockX
+COMMENT $4479 yf
+COMMENT $447B blockY
+COMMENT $4483 xf
+COMMENT $4485 blockX2
+COMMENT $4488 yf
+COMMENT $448A blockY2
+COMMENT $448D j
+COMMENT $448F j
+COMMENT $4491  ;, <variable>.fields_count
+COMMENT $4499 level.7, level
+COMMENT $449E  ;, <variable>.swatches_count
+COMMENT $4F7D restore registers from stack and return
+COMMENT $4F86 restore registers from stack and return
+COMMENT $4F90 Vectrex BIOS recalibration
+COMMENT $4F93 Sets the intensity of the
+COMMENT $4F96 address of string
+COMMENT $4F99 Text position relative Y
+COMMENT $4F9B Text position relative X
+COMMENT $4F9D Vectrex BIOS print routine
+COMMENT $4FA5 and repeat forever
+COMMENT $4FA7 setup direct page to 0xd000
+COMMENT $4FAB number of regs to copy (+1)
+COMMENT $4FAD music players write here
+COMMENT $4FB0 shadow of actual PSG
+COMMENT $4FB9 ensure shadow has copy
+COMMENT $4FBB store register select byte
+COMMENT $4FBD sound BDIR on, BC1 on, mux off _ LATCH
+COMMENT $4FC1 sound BDIR off, BC1 off, mux off - INACTIVE
+COMMENT $4FC5 read sound chip status (?)
+COMMENT $4FC7 store data byte
+COMMENT $4FC9 sound BDIR on, BC1 off, mux off - WRITE
+COMMENT $4FCD sound BDIR off, BC1 off, mux off - INACTIVE
+COMMENT $4FD8 0h000C: [0h4020] pointer to instent 0
+COMMENT $4FDA 0h000E: [0h4029] pointer to instent 1
+COMMENT $4FDC 0h0010: [0h4030] pointer to instent 2
+COMMENT $4FDE 0h0012: [0h4038] pointer to instent 3
+COMMENT $4FE0 0h0014: [0h404D] pointer to instent 4
+COMMENT $4FE2 0h0016: [0h405D] pointer to instent 5
+COMMENT $4FE4 0h0018: [0h4092] pointer to instent 6
+COMMENT $4FE6 0h001A: [0h40A2] pointer to instent 7
+COMMENT $4FE8 0h001C: [0h40B2] pointer to instent 8
+COMMENT $4FEA 0h001E: [0h40C2] pointer to instent 9
+COMMENT $4FF3 0h0027: [0h4022] loop
+COMMENT $4FFA 0h002E: [0h4022] loop
+COMMENT $5002 0h0036: [0h4022] loop
+COMMENT $5017 0h004B: [0h4022] loop
+COMMENT $5027 0h005B: [0h4022] loop
+COMMENT $505C 0h0090: [0h4022] loop
+COMMENT $506C 0h00A0: [0h4022] loop
+COMMENT $507C 0h00B0: [0h4022] loop
+COMMENT $508C 0h00C0: [0h4022] loop
+COMMENT $509C 0h00D0: [0h4022] loop
+COMMENT $50A2 0h00D6: [0h4167] specialTrack
+COMMENT $50A5 0h00D9: [0h416E] pattern 0, track 1
+COMMENT $50A7 0h00DB: [0h4168] pattern 0, track 2
+COMMENT $50A9 0h00DD: [0h4168] pattern 0, track 3
+COMMENT $50AC 0h00E0: [0h416E] pattern 1, track 1
+COMMENT $50AE 0h00E2: [0h41BD] pattern 1, track 2
+COMMENT $50B0 0h00E4: [0h4222] pattern 1, track 3
+COMMENT $50B3 0h00E7: [0h416E] pattern 2, track 1
+COMMENT $50B5 0h00E9: [0h41CF] pattern 2, track 2
+COMMENT $50B7 0h00EB: [0h4299] pattern 2, track 3
+COMMENT $50BA 0h00EE: [0h42B4] pattern 3, track 1
+COMMENT $50BC 0h00F0: [0h430C] pattern 3, track 2
+COMMENT $50BE 0h00F2: [0h436A] pattern 3, track 3
+COMMENT $50C1 0h00F5: [0h416E] pattern 4, track 1
+COMMENT $50C3 0h00F7: [0h4412] pattern 4, track 2
+COMMENT $50C5 0h00F9: [0h45FD] pattern 4, track 3
+COMMENT $50C8 0h00FC: [0h42B4] pattern 5, track 1
+COMMENT $50CA 0h00FE: [0h44A8] pattern 5, track 2
+COMMENT $50CC 0h0100: [0h4680] pattern 5, track 3
+COMMENT $50CF 0h0103: [0h438F] pattern 6, track 1
+COMMENT $50D1 0h0105: [0h453B] pattern 6, track 2
+COMMENT $50D3 0h0107: [0h4232] pattern 6, track 3
+COMMENT $50D6 0h010A: [0h47B4] pattern 7, track 1
+COMMENT $50D8 0h010C: [0h4703] pattern 7, track 2
+COMMENT $50DA 0h010E: [0h482D] pattern 7, track 3
+COMMENT $50DD 0h0111: [0h4895] pattern 8, track 1
+COMMENT $50DF 0h0113: [0h4919] pattern 8, track 2
+COMMENT $50E1 0h0115: [0h4232] pattern 8, track 3
+COMMENT $50E4 0h0118: [0h4895] pattern 9, track 1
+COMMENT $50E6 0h011A: [0h4919] pattern 9, track 2
+COMMENT $50E8 0h011C: [0h482D] pattern 9, track 3
+COMMENT $50EB 0h011F: [0h438F] pattern 10, track 1
+COMMENT $50ED 0h0121: [0h453B] pattern 10, track 2
+COMMENT $50EF 0h0123: [0h49C6] pattern 10, track 3
+COMMENT $50F2 0h0126: [0h47B4] pattern 11, track 1
+COMMENT $50F4 0h0128: [0h4703] pattern 11, track 2
+COMMENT $50F6 0h012A: [0h4A2C] pattern 11, track 3
+COMMENT $50F9 0h012D: [0h4168] pattern 12, track 1
+COMMENT $50FB 0h012F: [0h4168] pattern 12, track 2
+COMMENT $50FD 0h0131: [0h4A9A] pattern 12, track 3
+COMMENT $5100 0h0134: [0h4B21] pattern 13, track 1
+COMMENT $5102 0h0136: [0h4ACD] pattern 13, track 2
+COMMENT $5104 0h0138: [0h4A9A] pattern 13, track 3
+COMMENT $5107 0h013B: [0h438F] pattern 14, track 1
+COMMENT $5109 0h013D: [0h453B] pattern 14, track 2
+COMMENT $510B 0h013F: [0h4232] pattern 14, track 3
+COMMENT $510E 0h0142: [0h47B4] pattern 15, track 1
+COMMENT $5110 0h0144: [0h4703] pattern 15, track 2
+COMMENT $5112 0h0146: [0h482D] pattern 15, track 3
+COMMENT $5115 0h0149: [0h4895] pattern 16, track 1
+COMMENT $5117 0h014B: [0h4919] pattern 16, track 2
+COMMENT $5119 0h014D: [0h4232] pattern 16, track 3
+COMMENT $511C 0h0150: [0h4895] pattern 17, track 1
+COMMENT $511E 0h0152: [0h4919] pattern 17, track 2
+COMMENT $5120 0h0154: [0h482D] pattern 17, track 3
+COMMENT $5123 0h0157: [0h438F] pattern 18, track 1
+COMMENT $5125 0h0159: [0h453B] pattern 18, track 2
+COMMENT $5127 0h015B: [0h49C6] pattern 18, track 3
+COMMENT $512A 0h015E: [0h47B4] pattern 19, track 1
+COMMENT $512C 0h0160: [0h4703] pattern 19, track 2
+COMMENT $512E 0h0162: [0h4A2C] pattern 19, track 3
+COMMENT $5131 0h0165: [0h40D8] song restart address
+COMMENT $5B61 setup direct page to 0xd000
+COMMENT $5B6E PB6 direction = output
+COMMENT $5B81 PB6 direction = input
+COMMENT $5B89 PB6 direction = output
+COMMENT $5B8F PB6 direction = input
+COMMENT $5B93 PB6 direction = output
+COMMENT $5BA6 restore registers from stack and return
+COMMENT $5BAA setup direct page to 0xd000
+COMMENT $5BB0 PB6 direction = input
+COMMENT $5BFF restore registers from stack
+COMMENT $5C11 restore registers from stack and return
+COMMENT_LINE $099F  asm volatile(
+COMMENT_LINE $09AE  asm volatile(
+COMMENT_LINE $09D9  asm volatile(
+COMMENT_LINE $09F3  asm volatile(
+COMMENT_LINE $0A08  asm volatile(
+COMMENT_LINE $0A17  asm volatile(
+COMMENT_LINE $0A42  asm volatile(
+COMMENT_LINE $0A50  asm volatile(
+COMMENT_LINE $352C  asm volatile(
+COMMENT_LINE $3541  asm volatile(
+COMMENT_LINE $3627  asm volatile(
+COMMENT_LINE $36AF  asm volatile(
+COMMENT_LINE $36C6  asm volatile(
+COMMENT_LINE $36DC  asm volatile(
+COMMENT_LINE $36F2  asm volatile(
+COMMENT_LINE $3733  asm volatile(
+COMMENT_LINE $3747  asm volatile(
+COMMENT_LINE $3759  asm volatile(
+COMMENT_LINE $376D  asm volatile(
+COMMENT_LINE $377B  asm volatile(
+COMMENT_LINE $378F  asm volatile(
+COMMENT_LINE $379D  asm volatile(
+COMMENT_LINE $37AF  asm volatile(
+COMMENT_LINE $37BD  asm volatile(
+COMMENT_LINE $37D1  asm volatile(
+COMMENT_LINE $37DF  asm volatile(
+COMMENT_LINE $37F3  asm volatile(
+COMMENT_LINE $3801  asm volatile(
+COMMENT_LINE $3812  asm volatile(
+COMMENT_LINE $3827  asm volatile(
+COMMENT_LINE $38FA  asm volatile(
+COMMENT_LINE $3911  asm volatile(
+COMMENT_LINE $3927  asm volatile(
+COMMENT_LINE $393D  asm volatile(
+COMMENT_LINE $3CEA  asm volatile(
+C_INFO_BLOCK $0637 "C:\data\bloxorz\Vide\source\block.c "FN_END 28 " blockAnimating = 1; " BKPOINT=0
+C_INFO_BLOCK $063C "C:\data\bloxorz\Vide\source\block.c "FN_END 29 " lastBlockDirection = move; " BKPOINT=0
+C_INFO_BLOCK $0641 "C:\data\bloxorz\Vide\source\block.c "FN_END 30 " if (splitMode) { " BKPOINT=0
+C_INFO_BLOCK $0648 "C:\data\bloxorz\Vide\source\block.c "FN_END 31 "     switch (blockOrientation) { " BKPOINT=0
+C_INFO_BLOCK $064F "C:\data\bloxorz\Vide\source\block.c "FN_END 33 "              switch (move) { " BKPOINT=0
+C_INFO_BLOCK $0666 "C:\data\bloxorz\Vide\source\block.c "FN_END 35 "                   blockAnimation = height1FallingLeft; " BKPOINT=0
+C_INFO_BLOCK $066C "C:\data\bloxorz\Vide\source\block.c "FN_END 36 "                    nextBlockAnimation = height1FallingLeft; " BKPOINT=0
+C_INFO_BLOCK $066F "C:\data\bloxorz\Vide\source\block.c "FN_END 37 "                    nextBlockX = blockX - 1; " BKPOINT=0
+C_INFO_BLOCK $0676 "C:\data\bloxorz\Vide\source\block.c "FN_END 38 "                    nextBlockY = blockY; " BKPOINT=0
+C_INFO_BLOCK $067C "C:\data\bloxorz\Vide\source\block.c "FN_END 39 "                    break; " BKPOINT=0
+C_INFO_BLOCK $067F "C:\data\bloxorz\Vide\source\block.c "FN_END 41 "                    blockAnimation = height1FallingRight; " BKPOINT=0
+C_INFO_BLOCK $0685 "C:\data\bloxorz\Vide\source\block.c "FN_END 42 "                    nextBlockAnimation = height1FallingRight; " BKPOINT=0
+C_INFO_BLOCK $0688 "C:\data\bloxorz\Vide\source\block.c "FN_END 43 "                    nextBlockX = blockX + 1; " BKPOINT=0
+C_INFO_BLOCK $068F "C:\data\bloxorz\Vide\source\block.c "FN_END 44 "                    nextBlockY = blockY; " BKPOINT=0
+C_INFO_BLOCK $0695 "C:\data\bloxorz\Vide\source\block.c "FN_END 45 "                    break; " BKPOINT=0
+C_INFO_BLOCK $0698 "C:\data\bloxorz\Vide\source\block.c "FN_END 47 "                    blockAnimation = height1FallingBack; " BKPOINT=0
+C_INFO_BLOCK $069E "C:\data\bloxorz\Vide\source\block.c "FN_END 48 "                    nextBlockAnimation = height1FallingBack; " BKPOINT=0
+C_INFO_BLOCK $06A1 "C:\data\bloxorz\Vide\source\block.c "FN_END 49 "                    nextBlockX = blockX; " BKPOINT=0
+C_INFO_BLOCK $06A7 "C:\data\bloxorz\Vide\source\block.c "FN_END 50 "                    nextBlockY = blockY + 1; " BKPOINT=0
+C_INFO_BLOCK $06AE "C:\data\bloxorz\Vide\source\block.c "FN_END 51 "                    break; " BKPOINT=0
+C_INFO_BLOCK $06B0 "C:\data\bloxorz\Vide\source\block.c "FN_END 53 "                    blockAnimation = height1FallingFront; " BKPOINT=0
+C_INFO_BLOCK $06B6 "C:\data\bloxorz\Vide\source\block.c "FN_END 54 "                    nextBlockAnimation = height1FallingFront; " BKPOINT=0
+C_INFO_BLOCK $06B9 "C:\data\bloxorz\Vide\source\block.c "FN_END 55 "                    nextBlockX = blockX; " BKPOINT=0
+C_INFO_BLOCK $06BF "C:\data\bloxorz\Vide\source\block.c "FN_END 56 "                    nextBlockY = blockY - 1; " BKPOINT=0
+C_INFO_BLOCK $06C6 "C:\data\bloxorz\Vide\source\block.c "FN_END 57 "                    break;              break; " BKPOINT=0
+C_INFO_BLOCK $06C9 "C:\data\bloxorz\Vide\source\block.c "FN_END 61 "   break; " BKPOINT=0
+C_INFO_BLOCK $06CC "C:\data\bloxorz\Vide\source\block.c "FN_END 64 "     switch (blockOrientation) { " BKPOINT=0
+C_INFO_BLOCK $06E0 "C:\data\bloxorz\Vide\source\block.c "FN_END 66 "              switch (move) { " BKPOINT=0
+C_INFO_BLOCK $06F7 "C:\data\bloxorz\Vide\source\block.c "FN_END 68 "                   blockAnimation = height2FallingLeft; " BKPOINT=0
+C_INFO_BLOCK $06FD "C:\data\bloxorz\Vide\source\block.c "FN_END 69 "                    nextBlockAnimation = width2RollingFront; " BKPOINT=0
+C_INFO_BLOCK $0703 "C:\data\bloxorz\Vide\source\block.c "FN_END 70 "                    nextBlockX = blockX - 2; " BKPOINT=0
+C_INFO_BLOCK $070B "C:\data\bloxorz\Vide\source\block.c "FN_END 71 "                    nextBlockY = blockY; " BKPOINT=0
+C_INFO_BLOCK $0711 "C:\data\bloxorz\Vide\source\block.c "FN_END 72 "                    blockOrientation = Horizontal; " BKPOINT=0
+C_INFO_BLOCK $0716 "C:\data\bloxorz\Vide\source\block.c "FN_END 73 "                    break; " BKPOINT=0
+C_INFO_BLOCK $0719 "C:\data\bloxorz\Vide\source\block.c "FN_END 75 "                    blockAnimation = height2FallingRight; " BKPOINT=0
+C_INFO_BLOCK $071F "C:\data\bloxorz\Vide\source\block.c "FN_END 76 "                    nextBlockAnimation = width2RollingFront; " BKPOINT=0
+C_INFO_BLOCK $0725 "C:\data\bloxorz\Vide\source\block.c "FN_END 77 "                    nextBlockX = blockX + 1; " BKPOINT=0
+C_INFO_BLOCK $072C "C:\data\bloxorz\Vide\source\block.c "FN_END 78 "                    nextBlockY = blockY; " BKPOINT=0
+C_INFO_BLOCK $0732 "C:\data\bloxorz\Vide\source\block.c "FN_END 79 "                    blockOrientation = Horizontal; " BKPOINT=0
+C_INFO_BLOCK $0737 "C:\data\bloxorz\Vide\source\block.c "FN_END 80 "                    break; " BKPOINT=0
+C_INFO_BLOCK $073A "C:\data\bloxorz\Vide\source\block.c "FN_END 82 "                    blockAnimation = height2FallingBack; " BKPOINT=0
+C_INFO_BLOCK $0740 "C:\data\bloxorz\Vide\source\block.c "FN_END 83 "                    nextBlockAnimation = depth2RollingLeft; " BKPOINT=0
+C_INFO_BLOCK $0746 "C:\data\bloxorz\Vide\source\block.c "FN_END 84 "                    nextBlockX = blockX; " BKPOINT=0
+C_INFO_BLOCK $074C "C:\data\bloxorz\Vide\source\block.c "FN_END 85 "                    nextBlockY = blockY + 1; " BKPOINT=0
+C_INFO_BLOCK $0753 "C:\data\bloxorz\Vide\source\block.c "FN_END 86 "                    blockOrientation = Vertical; " BKPOINT=0
+C_INFO_BLOCK $0758 "C:\data\bloxorz\Vide\source\block.c "FN_END 87 "                    break; " BKPOINT=0
+C_INFO_BLOCK $075A "C:\data\bloxorz\Vide\source\block.c "FN_END 89 "                    blockAnimation = height2FallingFront; " BKPOINT=0
+C_INFO_BLOCK $0760 "C:\data\bloxorz\Vide\source\block.c "FN_END 90 "                    nextBlockAnimation = depth2RollingLeft; " BKPOINT=0
+C_INFO_BLOCK $0766 "C:\data\bloxorz\Vide\source\block.c "FN_END 91 "                    nextBlockX = blockX; " BKPOINT=0
+C_INFO_BLOCK $076C "C:\data\bloxorz\Vide\source\block.c "FN_END 92 "                    nextBlockY = blockY - 2; " BKPOINT=0
+C_INFO_BLOCK $0774 "C:\data\bloxorz\Vide\source\block.c "FN_END 93 "                    blockOrientation = Vertical; " BKPOINT=0
+C_INFO_BLOCK $0779 "C:\data\bloxorz\Vide\source\block.c "FN_END 94 "                    break;              break; " BKPOINT=0
+C_INFO_BLOCK $077C "C:\data\bloxorz\Vide\source\block.c "FN_END 98 "              switch (move) { " BKPOINT=0
+C_INFO_BLOCK $0793 "C:\data\bloxorz\Vide\source\block.c "FN_END 100 "                   blockAnimation = depth2RollingLeft; " BKPOINT=0
+C_INFO_BLOCK $0799 "C:\data\bloxorz\Vide\source\block.c "FN_END 101 "                   nextBlockAnimation = depth2RollingLeft; " BKPOINT=0
+C_INFO_BLOCK $079C "C:\data\bloxorz\Vide\source\block.c "FN_END 102 "                   nextBlockX = blockX - 1; " BKPOINT=0
+C_INFO_BLOCK $07A3 "C:\data\bloxorz\Vide\source\block.c "FN_END 103 "                   nextBlockY = blockY; " BKPOINT=0
+C_INFO_BLOCK $07A9 "C:\data\bloxorz\Vide\source\block.c "FN_END 104 "                   break; " BKPOINT=0
+C_INFO_BLOCK $07AC "C:\data\bloxorz\Vide\source\block.c "FN_END 106 "                   blockAnimation = depth2RollingRight; " BKPOINT=0
+C_INFO_BLOCK $07B2 "C:\data\bloxorz\Vide\source\block.c "FN_END 107 "                   nextBlockAnimation = depth2RollingLeft; " BKPOINT=0
+C_INFO_BLOCK $07B8 "C:\data\bloxorz\Vide\source\block.c "FN_END 108 "                   nextBlockX = blockX + 1; " BKPOINT=0
+C_INFO_BLOCK $07BF "C:\data\bloxorz\Vide\source\block.c "FN_END 109 "                   nextBlockY = blockY; " BKPOINT=0
+C_INFO_BLOCK $07C5 "C:\data\bloxorz\Vide\source\block.c "FN_END 110 "                   break; " BKPOINT=0
+C_INFO_BLOCK $07C8 "C:\data\bloxorz\Vide\source\block.c "FN_END 112 "                   blockAnimation = height2RisingBack; " BKPOINT=0
+C_INFO_BLOCK $07CE "C:\data\bloxorz\Vide\source\block.c "FN_END 113 "                   nextBlockAnimation = height2FallingFront; " BKPOINT=0
+C_INFO_BLOCK $07D4 "C:\data\bloxorz\Vide\source\block.c "FN_END 114 "                   nextBlockX = blockX; " BKPOINT=0
+C_INFO_BLOCK $07DA "C:\data\bloxorz\Vide\source\block.c "FN_END 115 "                   nextBlockY = blockY + 2; " BKPOINT=0
+C_INFO_BLOCK $07E2 "C:\data\bloxorz\Vide\source\block.c "FN_END 116 "                   blockOrientation = Standing; " BKPOINT=0
+C_INFO_BLOCK $07E5 "C:\data\bloxorz\Vide\source\block.c "FN_END 117 "                   break; " BKPOINT=0
+C_INFO_BLOCK $07E7 "C:\data\bloxorz\Vide\source\block.c "FN_END 119 "                   blockAnimation = height2RisingFront; " BKPOINT=0
+C_INFO_BLOCK $07ED "C:\data\bloxorz\Vide\source\block.c "FN_END 120 "                   nextBlockAnimation = height2FallingFront; " BKPOINT=0
+C_INFO_BLOCK $07F3 "C:\data\bloxorz\Vide\source\block.c "FN_END 121 "                   nextBlockX = blockX; " BKPOINT=0
+C_INFO_BLOCK $07F9 "C:\data\bloxorz\Vide\source\block.c "FN_END 122 "                   nextBlockY = blockY - 1; " BKPOINT=0
+C_INFO_BLOCK $0800 "C:\data\bloxorz\Vide\source\block.c "FN_END 123 "                   blockOrientation = Standing; " BKPOINT=0
+C_INFO_BLOCK $0803 "C:\data\bloxorz\Vide\source\block.c "FN_END 124 "                   break;              break; " BKPOINT=0
+C_INFO_BLOCK $0806 "C:\data\bloxorz\Vide\source\block.c "FN_END 128 "              switch (move) { " BKPOINT=0
+C_INFO_BLOCK $081D "C:\data\bloxorz\Vide\source\block.c "FN_END 130 "                   blockAnimation = height2RisingLeft; " BKPOINT=0
+C_INFO_BLOCK $0823 "C:\data\bloxorz\Vide\source\block.c "FN_END 131 "                   nextBlockAnimation = height2FallingRight; " BKPOINT=0
+C_INFO_BLOCK $0829 "C:\data\bloxorz\Vide\source\block.c "FN_END 132 "                   nextBlockX = blockX - 1; " BKPOINT=0
+C_INFO_BLOCK $0830 "C:\data\bloxorz\Vide\source\block.c "FN_END 133 "                   nextBlockY = blockY; " BKPOINT=0
+C_INFO_BLOCK $0836 "C:\data\bloxorz\Vide\source\block.c "FN_END 134 "                   blockOrientation = Standing; " BKPOINT=0
+C_INFO_BLOCK $0839 "C:\data\bloxorz\Vide\source\block.c "FN_END 135 "                   break; " BKPOINT=0
+C_INFO_BLOCK $083C "C:\data\bloxorz\Vide\source\block.c "FN_END 137 "                   blockAnimation = height2RisingRight; " BKPOINT=0
+C_INFO_BLOCK $0842 "C:\data\bloxorz\Vide\source\block.c "FN_END 138 "                   nextBlockAnimation = height2FallingLeft; " BKPOINT=0
+C_INFO_BLOCK $0848 "C:\data\bloxorz\Vide\source\block.c "FN_END 139 "                   nextBlockX = blockX + 2; " BKPOINT=0
+C_INFO_BLOCK $0850 "C:\data\bloxorz\Vide\source\block.c "FN_END 140 "                   nextBlockY = blockY; " BKPOINT=0
+C_INFO_BLOCK $0856 "C:\data\bloxorz\Vide\source\block.c "FN_END 141 "                   blockOrientation = Standing; " BKPOINT=0
+C_INFO_BLOCK $0859 "C:\data\bloxorz\Vide\source\block.c "FN_END 142 "                   break; " BKPOINT=0
+C_INFO_BLOCK $085C "C:\data\bloxorz\Vide\source\block.c "FN_END 144 "                   blockAnimation = width2RollingBack; " BKPOINT=0
+C_INFO_BLOCK $0862 "C:\data\bloxorz\Vide\source\block.c "FN_END 145 "                   nextBlockAnimation = width2RollingBack; " BKPOINT=0
+C_INFO_BLOCK $0865 "C:\data\bloxorz\Vide\source\block.c "FN_END 146 "                   nextBlockX = blockX; " BKPOINT=0
+C_INFO_BLOCK $086B "C:\data\bloxorz\Vide\source\block.c "FN_END 147 "                   nextBlockY = blockY + 1; " BKPOINT=0
+C_INFO_BLOCK $0872 "C:\data\bloxorz\Vide\source\block.c "FN_END 148 "                   break; " BKPOINT=0
+C_INFO_BLOCK $0874 "C:\data\bloxorz\Vide\source\block.c "FN_END 150 "                   blockAnimation = width2RollingFront; " BKPOINT=0
+C_INFO_BLOCK $087A "C:\data\bloxorz\Vide\source\block.c "FN_END 151 "                   nextBlockAnimation = width2RollingBack; " BKPOINT=0
+C_INFO_BLOCK $0880 "C:\data\bloxorz\Vide\source\block.c "FN_END 152 "                   nextBlockX = blockX; " BKPOINT=0
+C_INFO_BLOCK $0886 "C:\data\bloxorz\Vide\source\block.c "FN_END 153 "                   nextBlockY = blockY - 1; " BKPOINT=0
+C_INFO_BLOCK $088D "C:\data\bloxorz\Vide\source\block.c "FN_END 154 "                   break;              break; " BKPOINT=0
+C_INFO_BLOCK $0890 "C:\data\bloxorz\Vide\source\block.c "FN_END 182 " if (blockAnimating) { " BKPOINT=0
+C_INFO_BLOCK $0895 "C:\data\bloxorz\Vide\source\block.c "FN_END 183 "  if (++blockAnimationStep == BLOCK_STEPS_COUNT) { " BKPOINT=0
+C_INFO_BLOCK $08A0 "C:\data\bloxorz\Vide\source\block.c "FN_END 184 "   blockX = nextBlockX; " BKPOINT=0
+C_INFO_BLOCK $08A6 "C:\data\bloxorz\Vide\source\block.c "FN_END 185 "   blockY = nextBlockY; " BKPOINT=0
+C_INFO_BLOCK $08AC "C:\data\bloxorz\Vide\source\block.c "FN_END 186 "   blockAnimationStep = 0; " BKPOINT=0
+C_INFO_BLOCK $08AF "C:\data\bloxorz\Vide\source\block.c "FN_END 187 "   blockAnimation = nextBlockAnimation; " BKPOINT=0
+C_INFO_BLOCK $08B5 "C:\data\bloxorz\Vide\source\block.c "FN_END 188 "   blockAnimating = 0; " BKPOINT=0
+C_INFO_BLOCK $08B9 "C:\data\bloxorz\Vide\source\block.c "FN_END 195 " blockAnimation = height2FallingLeft; " BKPOINT=0
+C_INFO_BLOCK $08BF "C:\data\bloxorz\Vide\source\block.c "FN_END 196 " blockAnimationStep = 0; " BKPOINT=0
+C_INFO_BLOCK $08C2 "C:\data\bloxorz\Vide\source\block.c "FN_END 197 " blockAnimating = 0; " BKPOINT=0
+C_INFO_BLOCK $08C5 "C:\data\bloxorz\Vide\source\block.c "FN_END 198 " blockOrientation = Standing; " BKPOINT=0
+C_INFO_BLOCK $08C8 "C:\data\bloxorz\Vide\source\block.c "FN_END 199 " splitMode = 0; " BKPOINT=0
+C_INFO_BLOCK $08CC "C:\data\bloxorz\Vide\source\block.c "FN_END 204 " blockAnimation = height1FallingLeft; " BKPOINT=0
+C_INFO_BLOCK $08D2 "C:\data\bloxorz\Vide\source\block.c "FN_END 205 " blockOrientation = Standing; " BKPOINT=0
+C_INFO_BLOCK $08D5 "C:\data\bloxorz\Vide\source\block.c "FN_END 206 " splitMode = 1; " BKPOINT=0
+C_INFO_BLOCK $08DD "C:\data\bloxorz\Vide\source\block.c "FN_END 211 " if (blockY == blockY2) { " BKPOINT=0
+C_INFO_BLOCK $08EF "C:\data\bloxorz\Vide\source\block.c "FN_END 212 "  if (blockX == blockX2 + 1) { " BKPOINT=0
+C_INFO_BLOCK $0900 "C:\data\bloxorz\Vide\source\block.c "FN_END 213 "   blockAnimation = width2RollingFront; " BKPOINT=0
+C_INFO_BLOCK $0906 "C:\data\bloxorz\Vide\source\block.c "FN_END 214 "   blockOrientation = Horizontal; " BKPOINT=0
+C_INFO_BLOCK $090B "C:\data\bloxorz\Vide\source\block.c "FN_END 215 "   blockX--; " BKPOINT=0
+C_INFO_BLOCK $090E "C:\data\bloxorz\Vide\source\block.c "FN_END 216 "   splitMode = 0; " BKPOINT=0
+C_INFO_BLOCK $091D "C:\data\bloxorz\Vide\source\block.c "FN_END 218 "   blockAnimation = width2RollingFront; " BKPOINT=0
+C_INFO_BLOCK $0923 "C:\data\bloxorz\Vide\source\block.c "FN_END 219 "   blockOrientation = Horizontal; " BKPOINT=0
+C_INFO_BLOCK $0928 "C:\data\bloxorz\Vide\source\block.c "FN_END 220 "   splitMode = 0; " BKPOINT=0
+C_INFO_BLOCK $0938 "C:\data\bloxorz\Vide\source\block.c "FN_END 223 "  if (blockY == blockY2 + 1) { " BKPOINT=0
+C_INFO_BLOCK $093F "C:\data\bloxorz\Vide\source\block.c "FN_END 224 "   blockAnimation = depth2RollingLeft; " BKPOINT=0
+C_INFO_BLOCK $0945 "C:\data\bloxorz\Vide\source\block.c "FN_END 225 "   blockOrientation = Vertical; " BKPOINT=0
+C_INFO_BLOCK $094A "C:\data\bloxorz\Vide\source\block.c "FN_END 226 "   blockY--; " BKPOINT=0
+C_INFO_BLOCK $0950 "C:\data\bloxorz\Vide\source\block.c "FN_END 227 "   splitMode = 0; " BKPOINT=0
+C_INFO_BLOCK $095C "C:\data\bloxorz\Vide\source\block.c "FN_END 229 "   blockAnimation = depth2RollingLeft; " BKPOINT=0
+C_INFO_BLOCK $0962 "C:\data\bloxorz\Vide\source\block.c "FN_END 230 "   blockOrientation = Vertical;; " BKPOINT=0
+C_INFO_BLOCK $0967 "C:\data\bloxorz\Vide\source\block.c "FN_END 231 "   splitMode = 0; " BKPOINT=0
+C_INFO_BLOCK $096F "C:\data\bloxorz\Vide\source\block.c "FN_END 238 " int8_t xt = blockX; " BKPOINT=0
+C_INFO_BLOCK $0974 "C:\data\bloxorz\Vide\source\block.c "FN_END 239 " int8_t yt = blockY; " BKPOINT=0
+C_INFO_BLOCK $0979 "C:\data\bloxorz\Vide\source\block.c "FN_END 240 " blockX = blockX2; " BKPOINT=0
+C_INFO_BLOCK $097F "C:\data\bloxorz\Vide\source\block.c "FN_END 241 " blockY = blockY2; " BKPOINT=0
+C_INFO_BLOCK $0985 "C:\data\bloxorz\Vide\source\block.c "FN_END 242 " blockX2 = xt; " BKPOINT=0
+C_INFO_BLOCK $098A "C:\data\bloxorz\Vide\source\block.c "FN_END 243 " blockY2 = yt; " BKPOINT=0
+C_INFO_BLOCK $0998 "C:\data\bloxorz\Vide\source\block.c "FN_END 163 " zergnd(); " BKPOINT=0
+C_INFO_BLOCK $099B "C:\data\bloxorz\Vide\source\block.c "FN_END 164 " intens(0x63); " BKPOINT=0
+C_INFO_BLOCK $09A4 "C:\data\bloxorz\Vide\source\block.c "FN_END 165 " positd(0, yofs); " BKPOINT=0
+C_INFO_BLOCK $09B5 "C:\data\bloxorz\Vide\source\block.c "FN_END 167 " positd(x3d(blockX, blockY), y3d(blockX, 0, blockY)); " BKPOINT=0
+C_INFO_BLOCK $09E0 "C:\data\bloxorz\Vide\source\block.c "FN_END 168 " pack1x((void*)(blockAnimation[blockAnimationStep])); " BKPOINT=0
+C_INFO_BLOCK $09F8 "C:\data\bloxorz\Vide\source\block.c "FN_END 171 " if (splitMode) { " BKPOINT=0
+C_INFO_BLOCK $0A01 "C:\data\bloxorz\Vide\source\block.c "FN_END 172 "      zergnd(); " BKPOINT=0
+C_INFO_BLOCK $0A04 "C:\data\bloxorz\Vide\source\block.c "FN_END 173 "      intens(0x35); " BKPOINT=0
+C_INFO_BLOCK $0A0D "C:\data\bloxorz\Vide\source\block.c "FN_END 174 "      positd(0, yofs); " BKPOINT=0
+C_INFO_BLOCK $0A1E "C:\data\bloxorz\Vide\source\block.c "FN_END 175 "      positd(x3d(blockX2, blockY2), y3d(blockX2, 0, blockY2)); " BKPOINT=0
+C_INFO_BLOCK $0A49 "C:\data\bloxorz\Vide\source\block.c "FN_END 176 "      pack1x((void*)(height1FallingLeft[0])); " BKPOINT=0
+C_INFO_BLOCK $3525 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 153 " while (1) {  frwait(); " BKPOINT=0
+C_INFO_BLOCK $3528 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 155 "         Intensity_a(0x5f); " BKPOINT=0
+C_INFO_BLOCK $3531 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 156 "         Vec_Text_Width = 90; " BKPOINT=0
+C_INFO_BLOCK $3536 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 157 "         Print_Str_d(-10, -110, msg); " BKPOINT=0
+C_INFO_BLOCK $354D "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 163 "return 0; " BKPOINT=0
+C_INFO_BLOCK $354F "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 175 " if (picAvailable) { " BKPOINT=0
+C_INFO_BLOCK $3554 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 176 "      sendCommand(CMD_SET_EEPROM_ADR, address); " BKPOINT=0
+C_INFO_BLOCK $355B "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 177 "      sendCommand(CMD_EEPROM_WRITE, data); " BKPOINT=0
+C_INFO_BLOCK $3567 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 183 " if (picAvailable) { " BKPOINT=0
+C_INFO_BLOCK $356C "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 184 "  return sendCommand(CMD_EEPROM_READ, address); " BKPOINT=0
+C_INFO_BLOCK $3577 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 186 "  return 0xff; " BKPOINT=0
+C_INFO_BLOCK $357E "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 194 " uint16_t muls[] = { 100, 10, 1 }; " BKPOINT=0
+C_INFO_BLOCK $358D "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 195 " if (number > 999) number = 999; " BKPOINT=0
+C_INFO_BLOCK $3598 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 196 " for (uint8_t i = 0; i < 3; i++) { " BKPOINT=0
+C_INFO_BLOCK $35A1 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 198 "  uint8_t d = 0;,   while (number >= muls[i]) { " BKPOINT=0
+C_INFO_BLOCK $35BD "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 199 "   d++; " BKPOINT=0
+C_INFO_BLOCK $35BF "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 200 "   number -= muls[i]; " BKPOINT=0
+C_INFO_BLOCK $35D4 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 202 "  text[i] = d + '0'; " BKPOINT=0
+C_INFO_BLOCK $35F9 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 208 " itoa(moveCount, &infoText[0]); " BKPOINT=0
+C_INFO_BLOCK $3604 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 210 " itoa(levelNumber + levelOffset, &infoText[6]); " BKPOINT=0
+C_INFO_BLOCK $3618 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 215 " tstat = 1; " BKPOINT=0
+C_INFO_BLOCK $361D "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 216 " currentMusic = music; " BKPOINT=0
+C_INFO_BLOCK $3623 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 258 " intens(0x35); " BKPOINT=0
+C_INFO_BLOCK $3677 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 314 " *vecx = 16 + bank; " BKPOINT=0
+C_INFO_BLOCK $367D "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 315 " sendCommand(CMD_SET_BANK, bank); " BKPOINT=0
+C_INFO_BLOCK $36A8 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 479 " Read_Btns(); " BKPOINT=0
+C_INFO_BLOCK $36AB "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 480 "    Intensity_a(0x5f); " BKPOINT=0
+C_INFO_BLOCK $36B4 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 481 "    Vec_Text_Width = 90; " BKPOINT=0
+C_INFO_BLOCK $36B9 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 482 "    Print_Str_d(100, -80, "CLEAR SCORE?€"); " BKPOINT=0
+C_INFO_BLOCK $36CF "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 483 "    Print_Str_d(50, -110, "3 YES€"); " BKPOINT=0
+C_INFO_BLOCK $36E5 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 484 "    Print_Str_d(20, -110, "4 NO€"); " BKPOINT=0
+C_INFO_BLOCK $36FB "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 485 " if (Vec_Buttons & 4) { " BKPOINT=0
+C_INFO_BLOCK $3702 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 486 "  for (uint8_t i = 0; i < 6; i++) { " BKPOINT=0
+C_INFO_BLOCK $3704 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 487 "   writeEeprom(i, 0xff); " BKPOINT=0
+C_INFO_BLOCK $3717 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 489 "  gameState = MainMenu; " BKPOINT=0
+C_INFO_BLOCK $371A "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 491 " if (Vec_Buttons & 8) { " BKPOINT=0
+C_INFO_BLOCK $3721 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 492 "  gameState = MainMenu; " BKPOINT=0
+C_INFO_BLOCK $372C "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 509 " zergnd(); " BKPOINT=0
+C_INFO_BLOCK $372F "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 510 " intens(0x50); " BKPOINT=0
+C_INFO_BLOCK $3738 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 512 " zergnd(); " BKPOINT=0
+C_INFO_BLOCK $373B "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 513 " positd(-50, 100); " BKPOINT=0
+C_INFO_BLOCK $374E "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 514 " pack1x((void*)led8); " BKPOINT=0
+C_INFO_BLOCK $375E "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 516 " zergnd(); " BKPOINT=0
+C_INFO_BLOCK $3761 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 517 " positd(-40, 110); " BKPOINT=0
+C_INFO_BLOCK $3774 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 518 " pack1x((void*)led8); " BKPOINT=0
+C_INFO_BLOCK $3780 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 520 " zergnd(); " BKPOINT=0
+C_INFO_BLOCK $3783 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 521 " positd(-30, 120); " BKPOINT=0
+C_INFO_BLOCK $3796 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 522 " pack1x((void*)led8); " BKPOINT=0
+C_INFO_BLOCK $37A2 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 524 " zergnd(); " BKPOINT=0
+C_INFO_BLOCK $37A5 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 525 " positd(0, 120); " BKPOINT=0
+C_INFO_BLOCK $37B6 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 526 " pack1x((void*)led8); " BKPOINT=0
+C_INFO_BLOCK $37C2 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 528 " zergnd(); " BKPOINT=0
+C_INFO_BLOCK $37C5 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 529 " positd(10, 120); " BKPOINT=0
+C_INFO_BLOCK $37D8 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 530 " pack1x((void*)led8); " BKPOINT=0
+C_INFO_BLOCK $37E4 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 532 " zergnd(); " BKPOINT=0
+C_INFO_BLOCK $37E7 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 533 " positd(20, 120); " BKPOINT=0
+C_INFO_BLOCK $37FA "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 534 " pack1x((void*)led8); " BKPOINT=0
+C_INFO_BLOCK $380E "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 539 "    Intensity_a(0x5f); " BKPOINT=0
+C_INFO_BLOCK $3817 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 540 "    Vec_Text_Width = 100; " BKPOINT=0
+C_INFO_BLOCK $381C "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 541 "    Print_Str_d(100, -70, infoText); " BKPOINT=0
+C_INFO_BLOCK $3834 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 304 " drawField(); " BKPOINT=0
+C_INFO_BLOCK $3837 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 305 " drawBlock(blockYOfs); " BKPOINT=0
+C_INFO_BLOCK $383D "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 306 " blockYOfs++; " BKPOINT=0
+C_INFO_BLOCK $3844 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 307 " if (blockYOfs == 0) { " BKPOINT=0
+C_INFO_BLOCK $3847 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 308 "  gameState = BlockWaiting; " BKPOINT=0
+C_INFO_BLOCK $384F "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 237 " levelHighscore = readEeprom((uint8_t) (levelNumber * 2)); " BKPOINT=0
+C_INFO_BLOCK $385A "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 238 " levelHighscore |= ((uint16_t) readEeprom((uint8_t) (levelNumber * 2 + 1))) << 8; " BKPOINT=0
+C_INFO_BLOCK $386E "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 239 " if (levelHighscore == 0) levelHighscore = 999; " BKPOINT=0
+C_INFO_BLOCK $387A "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 240 "    level = levels[levelNumber]; " BKPOINT=0
+C_INFO_BLOCK $388B "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 241 " initSwatches(); " BKPOINT=0
+C_INFO_BLOCK $388E "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 242 " initLevel(); " BKPOINT=0
+C_INFO_BLOCK $3891 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 243 " blockX = level->start.x; " BKPOINT=0
+C_INFO_BLOCK $3899 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 244 " blockY = level->start.y; " BKPOINT=0
+C_INFO_BLOCK $389E "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 245 " blockStartLevel(); " BKPOINT=0
+C_INFO_BLOCK $38A1 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 246 " blockYOfs = -30; " BKPOINT=0
+C_INFO_BLOCK $38A6 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 247 " gameState = BlockMovingToStart; " BKPOINT=0
+C_INFO_BLOCK $38AB "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 248 " changeMusic(startMusic); " BKPOINT=0
+C_INFO_BLOCK $38B1 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 249 " *vecx = 2; " BKPOINT=0
+C_INFO_BLOCK $38B7 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 250 " moveCount = 0; " BKPOINT=0
+C_INFO_BLOCK $38BD "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 251 " updateInfoText(); " BKPOINT=0
+C_INFO_BLOCK $38F3 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 463 " Read_Btns(); " BKPOINT=0
+C_INFO_BLOCK $38F6 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 464 "    Intensity_a(0x5f); " BKPOINT=0
+C_INFO_BLOCK $38FF "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 465 "    Vec_Text_Width = 90; " BKPOINT=0
+C_INFO_BLOCK $3904 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 466 "    Print_Str_d(100, -70, "MAIN MENU€"); " BKPOINT=0
+C_INFO_BLOCK $391A "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 467 "    Print_Str_d(50, -110, "1 START GAME€"); " BKPOINT=0
+C_INFO_BLOCK $3930 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 468 "    Print_Str_d(20, -110, "2 CLEAR HIGHSCORE€"); " BKPOINT=0
+C_INFO_BLOCK $3946 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 469 " if (Vec_Buttons & 1) { " BKPOINT=0
+C_INFO_BLOCK $394D "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 470 "  startLevel(); " BKPOINT=0
+C_INFO_BLOCK $3950 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 472 " if (Vec_Buttons & 2) { " BKPOINT=0
+C_INFO_BLOCK $3957 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 473 "  gameState = ClearMenu; " BKPOINT=0
+C_INFO_BLOCK $3962 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 447 " drawField(); " BKPOINT=0
+C_INFO_BLOCK $3965 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 448 " drawBlock(blockYOfs); " BKPOINT=0
+C_INFO_BLOCK $396B "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 449 " blockYOfs++; " BKPOINT=0
+C_INFO_BLOCK $3972 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 450 " if (blockYOfs == 30) { " BKPOINT=0
+C_INFO_BLOCK $3978 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 451 "  if (moveCount < levelHighscore) { " BKPOINT=0
+C_INFO_BLOCK $3980 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 452 "   writeEeprom((uint8_t) (2 * levelNumber), (uint8_t) (moveCount & 0xff)); " BKPOINT=0
+C_INFO_BLOCK $398F "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 453 "   writeEeprom((uint8_t) (2 * levelNumber + 1), (uint8_t) (moveCount >> 8)); " BKPOINT=0
+C_INFO_BLOCK $39A5 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 455 "  levelNumber++; " BKPOINT=0
+C_INFO_BLOCK $39AC "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 456 "  if (levelNumber >= levelCount) levelNumber = 0; " BKPOINT=0
+C_INFO_BLOCK $39B4 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 457 "  startLevel(); " BKPOINT=0
+C_INFO_BLOCK $39BC "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 434 " drawField(); " BKPOINT=0
+C_INFO_BLOCK $39BF "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 435 " blockYOfs++; " BKPOINT=0
+C_INFO_BLOCK $39C8 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 436 " if (blockYOfs < 12) { " BKPOINT=0
+C_INFO_BLOCK $39CC "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 437 "  drawBlock(-blockYOfs*blockYOfs); " BKPOINT=0
+C_INFO_BLOCK $39D3 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 438 "  doBlockAnimation(); " BKPOINT=0
+C_INFO_BLOCK $39D6 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 440 " if (blockYOfs == 50) { " BKPOINT=0
+C_INFO_BLOCK $39DD "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 441 "  startLevel(); " BKPOINT=0
+C_INFO_BLOCK $39E3 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 221 " moveBlockImpl(move); " BKPOINT=0
+C_INFO_BLOCK $39E6 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 222 " if (moveCount < 999) moveCount++; " BKPOINT=0
+C_INFO_BLOCK $39F3 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 223 " updateInfoText(); " BKPOINT=0
+C_INFO_BLOCK $39F7 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 321 " drawField(); " BKPOINT=0
+C_INFO_BLOCK $39FA "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 322 " drawBlock(0); " BKPOINT=0
+C_INFO_BLOCK $39FE "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 323 " joybit(); " BKPOINT=0
+C_INFO_BLOCK $3A01 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 324 " if (pot0 < -10) { " BKPOINT=0
+C_INFO_BLOCK $3A08 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 325 "  moveBlock(Left); " BKPOINT=0
+C_INFO_BLOCK $3A0C "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 326 "  gameState = BlockMoving; " BKPOINT=0
+C_INFO_BLOCK $3A1B "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 328 "  moveBlock(Right); " BKPOINT=0
+C_INFO_BLOCK $3A20 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 329 "  gameState = BlockMoving; " BKPOINT=0
+C_INFO_BLOCK $3A2E "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 331 "  moveBlock(Down); " BKPOINT=0
+C_INFO_BLOCK $3A33 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 332 "  gameState = BlockMoving; " BKPOINT=0
+C_INFO_BLOCK $3A41 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 334 "  moveBlock(Up); " BKPOINT=0
+C_INFO_BLOCK $3A46 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 335 "  gameState = BlockMoving; " BKPOINT=0
+C_INFO_BLOCK $3A4B "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 337 " if (gameState == BlockMoving) { " BKPOINT=0
+C_INFO_BLOCK $3A52 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 338 "  changeMusic(movingMusic); " BKPOINT=0
+C_INFO_BLOCK $3A58 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 339 "  *vecx = 3; " BKPOINT=0
+C_INFO_BLOCK $3A5E "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 342 "     Read_Btns(); " BKPOINT=0
+C_INFO_BLOCK $3A61 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 343 "     if (Vec_Buttons & 1) { " BKPOINT=0
+C_INFO_BLOCK $3A68 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 344 "  levelNumber++; " BKPOINT=0
+C_INFO_BLOCK $3A6F "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 345 "  if (levelNumber >= levelCount) levelNumber = 0; " BKPOINT=0
+C_INFO_BLOCK $3A77 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 346 "  setBank(nextBank); " BKPOINT=0
+C_INFO_BLOCK $3A7D "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 347 "      startLevel(); " BKPOINT=0
+C_INFO_BLOCK $3A80 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 349 "     if (Vec_Buttons & 2) { " BKPOINT=0
+C_INFO_BLOCK $3A87 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 350 "  if (splitMode) { " BKPOINT=0
+C_INFO_BLOCK $3A8C "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 351 "   swapSplit(); " BKPOINT=0
+C_INFO_BLOCK $3A90 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 228 " gameState = BlockFalling; " BKPOINT=0
+C_INFO_BLOCK $3A95 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 229 " blockYOfs = 0; " BKPOINT=0
+C_INFO_BLOCK $3A98 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 230 " moveBlock(lastBlockDirection); " BKPOINT=0
+C_INFO_BLOCK $3A9E "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 231 " changeMusic(fallingMusic); " BKPOINT=0
+C_INFO_BLOCK $3AA4 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 232 " *vecx = 0; " BKPOINT=0
+C_INFO_BLOCK $3AAB "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 358 " drawField(); " BKPOINT=0
+C_INFO_BLOCK $3AAE "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 359 " drawBlock(0); " BKPOINT=0
+C_INFO_BLOCK $3AB2 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 360 " doBlockAnimation(); " BKPOINT=0
+C_INFO_BLOCK $3AB5 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 361 " if (!blockAnimating) { " BKPOINT=0
+C_INFO_BLOCK $3ABC "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 363 "  uint8_t c0 = isField(blockX, blockY); " BKPOINT=0
+C_INFO_BLOCK $3AC9 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 364 "  uint8_t c1 = isField(blockX + 1, blockY); " BKPOINT=0
+C_INFO_BLOCK $3ADB "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 365 "  uint8_t c2 = isField(blockX, blockY + 1); " BKPOINT=0
+C_INFO_BLOCK $3AE9 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 366 "  char f0 = getField(blockX, blockY); " BKPOINT=0
+C_INFO_BLOCK $3AF6 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 367 "  char f1 = getField(blockX + 1, blockY); " BKPOINT=0
+C_INFO_BLOCK $3B08 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 368 "  char f2 = getField(blockX, blockY + 1); " BKPOINT=0
+C_INFO_BLOCK $3B16 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 369 "  switch (blockOrientation) { " BKPOINT=0
+C_INFO_BLOCK $3B29 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 371 "   if (!c0 || f0 == 'f') { " BKPOINT=0
+C_INFO_BLOCK $3B33 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 372 "    startBlockFalling(); " BKPOINT=0
+C_INFO_BLOCK $3B36 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 374 "   break; " BKPOINT=0
+C_INFO_BLOCK $3B38 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 376 "   if (!c0 || !c2) { " BKPOINT=0
+C_INFO_BLOCK $3B40 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 377 "    startBlockFalling(); " BKPOINT=0
+C_INFO_BLOCK $3B43 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 379 "   break; " BKPOINT=0
+C_INFO_BLOCK $3B45 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 381 "   if (!c0 || ! c1) { " BKPOINT=0
+C_INFO_BLOCK $3B4D "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 382 "    startBlockFalling(); " BKPOINT=0
+C_INFO_BLOCK $3B50 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 384 "   break;  if (blockOrientation == Standing && blockX == endX && blockY == endY && !splitMode) { " BKPOINT=0
+C_INFO_BLOCK $3B6A "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 389 "   blockYOfs = 0; " BKPOINT=0
+C_INFO_BLOCK $3B6D "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 390 "   gameState = BlockMovingAtEnd; " BKPOINT=0
+C_INFO_BLOCK $3B72 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 391 "   changeMusic(levelEndMusic); " BKPOINT=0
+C_INFO_BLOCK $3B78 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 392 "   *vecx = 1; " BKPOINT=0
+C_INFO_BLOCK $3B80 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 395 "   if (gameState != BlockFalling) { " BKPOINT=0
+C_INFO_BLOCK $3B87 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 396 "    gameState = BlockWaiting; " BKPOINT=0
+C_INFO_BLOCK $3B8C "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 401 "  switch (blockOrientation) { " BKPOINT=0
+C_INFO_BLOCK $3B9E "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 403 "   if (f0 == 's' || f0 == 'h' || f0 == 'v') { " BKPOINT=0
+C_INFO_BLOCK $3BAC "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 404 "    swatchSwitch(blockX, blockY); " BKPOINT=0
+C_INFO_BLOCK $3BB9 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 406 "   break; " BKPOINT=0
+C_INFO_BLOCK $3BBC "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 408 "   if (f0 == 's') { " BKPOINT=0
+C_INFO_BLOCK $3BC2 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 409 "    swatchSwitch(blockX, blockY); " BKPOINT=0
+C_INFO_BLOCK $3BCF "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 411 "   if (f2 == 's') { " BKPOINT=0
+C_INFO_BLOCK $3BD5 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 412 "    swatchSwitch(blockX, blockY + 1); " BKPOINT=0
+C_INFO_BLOCK $3BE3 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 414 "   break; " BKPOINT=0
+C_INFO_BLOCK $3BE5 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 416 "   if (f0 == 's') { " BKPOINT=0
+C_INFO_BLOCK $3BEB "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 417 "    swatchSwitch(blockX, blockY); " BKPOINT=0
+C_INFO_BLOCK $3BF8 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 419 "   if (f1 == 's') { " BKPOINT=0
+C_INFO_BLOCK $3BFE "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 420 "    swatchSwitch(blockX + 1, blockY); " BKPOINT=0
+C_INFO_BLOCK $3C10 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 422 "   break;  if (splitMode) { " BKPOINT=0
+C_INFO_BLOCK $3C15 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 427 "   testMerge(); " BKPOINT=0
+C_INFO_BLOCK $3C1F "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 548 " setBank(0); " BKPOINT=0
+C_INFO_BLOCK $3C23 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 551 " *vecx = 4; " BKPOINT=0
+C_INFO_BLOCK $3C29 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 554 " picAvailable = 0; " BKPOINT=0
+C_INFO_BLOCK $3C2C "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 555 " sendCommand(CMD_VERSION, 0); " BKPOINT=0
+C_INFO_BLOCK $3C33 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 556 " sendCommand(CMD_VERSION, 0); " BKPOINT=0
+C_INFO_BLOCK $3C3A "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 557 " if (sendCommand(CMD_VERSION, 0) == 4) { " BKPOINT=0
+C_INFO_BLOCK $3C47 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 558 "  picAvailable = 1; " BKPOINT=0
+C_INFO_BLOCK $3C4C "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 562 " memcpy(infoText, "001 - 999€", 10); " BKPOINT=0
+C_INFO_BLOCK $3C6A "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 565 " epot0 = 1; " BKPOINT=0
+C_INFO_BLOCK $3C6F "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 566 " epot1 = 3; " BKPOINT=0
+C_INFO_BLOCK $3C74 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 567 " epot2 = 0; " BKPOINT=0
+C_INFO_BLOCK $3C77 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 568 " epot3 = 0; " BKPOINT=0
+C_INFO_BLOCK $3C7A "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 570 " gameState = MainMenu; " BKPOINT=0
+C_INFO_BLOCK $3C7D "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 571 " startLevel(); " BKPOINT=0
+C_INFO_BLOCK $3C80 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 574 " while (1) {  frwait(); " BKPOINT=0
+C_INFO_BLOCK $3C83 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 578 "  switch (gameState) { " BKPOINT=0
+C_INFO_BLOCK $3CA5 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 580 "           mainMenu(); " BKPOINT=0
+C_INFO_BLOCK $3CA8 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 582 "           break; " BKPOINT=0
+C_INFO_BLOCK $3CAB "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 584 "    clearMenu(); " BKPOINT=0
+C_INFO_BLOCK $3CAE "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 586 "    break; " BKPOINT=0
+C_INFO_BLOCK $3CB1 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 588 "    showInfo(); " BKPOINT=0
+C_INFO_BLOCK $3CB4 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 589 "           blockMovingToStart(); " BKPOINT=0
+C_INFO_BLOCK $3CB7 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 590 "           break; " BKPOINT=0
+C_INFO_BLOCK $3CBA "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 592 "    showInfo(); " BKPOINT=0
+C_INFO_BLOCK $3CBD "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 593 "           blockWaiting(); " BKPOINT=0
+C_INFO_BLOCK $3CC0 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 594 "           break; " BKPOINT=0
+C_INFO_BLOCK $3CC3 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 596 "    showInfo(); " BKPOINT=0
+C_INFO_BLOCK $3CC6 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 597 "           blockMoving(); " BKPOINT=0
+C_INFO_BLOCK $3CC9 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 598 "           break; " BKPOINT=0
+C_INFO_BLOCK $3CCB "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 600 "    showInfo(); " BKPOINT=0
+C_INFO_BLOCK $3CCE "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 601 "           blockFalling(); " BKPOINT=0
+C_INFO_BLOCK $3CD1 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 602 "           break; " BKPOINT=0
+C_INFO_BLOCK $3CD3 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 604 "    showInfo(); " BKPOINT=0
+C_INFO_BLOCK $3CD6 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 605 "           blockMovingAtEnd(); " BKPOINT=0
+C_INFO_BLOCK $3CD9 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 606 "           break;  if (gameState > ClearMenu) { " BKPOINT=0
+C_INFO_BLOCK $3CE2 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 611 "       DP_to_C8(); " BKPOINT=0
+C_INFO_BLOCK $3CE5 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 612 "       replay(currentMusic); " BKPOINT=0
+C_INFO_BLOCK $3CEF "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 613 "       DP_to_D0(); " BKPOINT=0
+C_INFO_BLOCK $3CF2 "C:\data\bloxorz\Vide\source\bloxorz.c "FN_END 614 "       reqout(); " BKPOINT=0
+C_INFO_BLOCK $3D76 "C:\data\bloxorz\Vide\source\level.c "FN_END 25 "    char c = 0;,     if (x >= 0 && y >= 0 && x < LEVEL_WIDTH && y < LEVEL_HEIGHT) { " BKPOINT=0
+C_INFO_BLOCK $3D87 "C:\data\bloxorz\Vide\source\level.c "FN_END 26 "        c = level->geometry[(long int) y*LEVEL_WIDTH + (long int)x]; " BKPOINT=0
+C_INFO_BLOCK $3DB0 "C:\data\bloxorz\Vide\source\level.c "FN_END 28 " return c; " BKPOINT=0
+C_INFO_BLOCK $3DB4 "C:\data\bloxorz\Vide\source\level.c "FN_END 35 " return shifts[bit]; " BKPOINT=0
+C_INFO_BLOCK $3DC1 "C:\data\bloxorz\Vide\source\level.c "FN_END 40 " long int index = (long int) y*LEVEL_WIDTH + (long int)x; " BKPOINT=0
+C_INFO_BLOCK $3DD1 "C:\data\bloxorz\Vide\source\level.c "FN_END 43 " uint8_t bit = (uint8_t) (index & 7);,  index >>= 3;,  return (swatchesOn[index] & getShifts(bit)) > 0; " BKPOINT=0
+C_INFO_BLOCK $3DF8 "C:\data\bloxorz\Vide\source\level.c "FN_END 48 " long int index = (long int) y*LEVEL_WIDTH + (long int)x; " BKPOINT=0
+C_INFO_BLOCK $3E06 "C:\data\bloxorz\Vide\source\level.c "FN_END 49 " uint8_t bit = (uint8_t) (index & 7); " BKPOINT=0
+C_INFO_BLOCK $3E0C "C:\data\bloxorz\Vide\source\level.c "FN_END 50 " index >>= 3; " BKPOINT=0
+C_INFO_BLOCK $3E14 "C:\data\bloxorz\Vide\source\level.c "FN_END 51 " if (on) { " BKPOINT=0
+C_INFO_BLOCK $3E18 "C:\data\bloxorz\Vide\source\level.c "FN_END 52 "  swatchesOn[index] |= getShifts(bit); " BKPOINT=0
+C_INFO_BLOCK $3E2C "C:\data\bloxorz\Vide\source\level.c "FN_END 54 "  swatchesOn[index] &= ~getShifts(bit); " BKPOINT=0
+C_INFO_BLOCK $3E47 "C:\data\bloxorz\Vide\source\level.c "FN_END 60 "    char c = getField(x, y); " BKPOINT=0
+C_INFO_BLOCK $3E52 "C:\data\bloxorz\Vide\source\level.c "FN_END 63 "    if (c == 'l' || c == 'r' || c == 'k' || c == 'q') { " BKPOINT=0
+C_INFO_BLOCK $3E64 "C:\data\bloxorz\Vide\source\level.c "FN_END 64 "  if (isSwatchFieldOn(x, y)) { " BKPOINT=0
+C_INFO_BLOCK $3E72 "C:\data\bloxorz\Vide\source\level.c "FN_END 65 "   c = 'b'; " BKPOINT=0
+C_INFO_BLOCK $3E76 "C:\data\bloxorz\Vide\source\level.c "FN_END 70 "    return (uint8_t) (c == 'b' || c == 'e' || c == 's' || c == 'h' || c == 'f' || c == 'v'); " BKPOINT=0
+C_INFO_BLOCK $3EA8 "C:\data\bloxorz\Vide\source\level.c "FN_END 113 "    x -= LEVEL_WIDTH / 2 - 4;,     return 14 * x - 6 * z; " BKPOINT=0
+C_INFO_BLOCK $3EC7 "C:\data\bloxorz\Vide\source\level.c "FN_END 120 "    y -= LEVEL_HEIGHT / 2;,     return 3 * x + 13 * y + 8 * z; " BKPOINT=0
+C_INFO_BLOCK $3EED "C:\data\bloxorz\Vide\source\level.c "FN_END 171 "    lineX0[lineCount] = x3d(x, y); " BKPOINT=0
+C_INFO_BLOCK $3F09 "C:\data\bloxorz\Vide\source\level.c "FN_END 172 "    lineY0[lineCount] = y3d(x, 0, y); " BKPOINT=0
+C_INFO_BLOCK $3F27 "C:\data\bloxorz\Vide\source\level.c "FN_END 173 "    lineX1[lineCount] = x3d(x + 1, y + 1); " BKPOINT=0
+C_INFO_BLOCK $3F4D "C:\data\bloxorz\Vide\source\level.c "FN_END 174 "    lineY1[lineCount] = y3d(x + 1, 0, y + 1); " BKPOINT=0
+C_INFO_BLOCK $3F6C "C:\data\bloxorz\Vide\source\level.c "FN_END 175 "    lineCount++; " BKPOINT=0
+C_INFO_BLOCK $3F75 "C:\data\bloxorz\Vide\source\level.c "FN_END 177 "    lineX0[lineCount] = x3d(x + 1, y); " BKPOINT=0
+C_INFO_BLOCK $3F8E "C:\data\bloxorz\Vide\source\level.c "FN_END 178 "    lineY0[lineCount] = y3d(x + 1, 0, y); " BKPOINT=0
+C_INFO_BLOCK $3FB2 "C:\data\bloxorz\Vide\source\level.c "FN_END 179 "    lineX1[lineCount] = x3d(x, y + 1); " BKPOINT=0
+C_INFO_BLOCK $3FD2 "C:\data\bloxorz\Vide\source\level.c "FN_END 180 "    lineY1[lineCount] = y3d(x, 0, y + 1); " BKPOINT=0
+C_INFO_BLOCK $3FF3 "C:\data\bloxorz\Vide\source\level.c "FN_END 181 "    lineCount++; " BKPOINT=0
+C_INFO_BLOCK $3FFF "C:\data\bloxorz\Vide\source\level.c "FN_END 255 "    for (uint8_t i = 0; i < sizeof(swatchesOn); i++) { " BKPOINT=0
+C_INFO_BLOCK $4002 "C:\data\bloxorz\Vide\source\level.c "FN_END 256 "        swatchesOn[i] = 0; " BKPOINT=0
+C_INFO_BLOCK $4009 "C:\data\bloxorz\Vide\source\level.c "FN_END 263 " long int index;,  int8_t x = 0;,  int8_t y = 0;,  const char* geometry = level->geometry;,  for (y = 0; y < LEVEL_HEIGHT; y++) { " BKPOINT=0
+C_INFO_BLOCK $4010 "C:\data\bloxorz\Vide\source\level.c "FN_END 264 "  for (x = 0; x < LEVEL_WIDTH; x++) { " BKPOINT=0
+C_INFO_BLOCK $4014 "C:\data\bloxorz\Vide\source\level.c "FN_END 266 "   index = (long int) y*LEVEL_WIDTH + (long int)x;,    char c0 = geometry[index]; " BKPOINT=0
+C_INFO_BLOCK $4016 "C:\data\bloxorz\Vide\source\level.c "FN_END 267 "   if (c0 == 'k' || c0 == 'q') { " BKPOINT=0
+C_INFO_BLOCK $401E "C:\data\bloxorz\Vide\source\level.c "FN_END 268 "    setSwatchField(x, y, 1); " BKPOINT=0
+C_INFO_BLOCK $405B "C:\data\bloxorz\Vide\source\level.c "FN_END 144 "    lineX0[lineCount] = x3d(x0, y0) + 6; " BKPOINT=0
+C_INFO_BLOCK $4078 "C:\data\bloxorz\Vide\source\level.c "FN_END 145 "    lineY0[lineCount] = y3d(x0, 0, y0) + 3; " BKPOINT=0
+C_INFO_BLOCK $4097 "C:\data\bloxorz\Vide\source\level.c "FN_END 146 "    lineX1[lineCount] = x3d(x0, y0 + 1) + 8; " BKPOINT=0
+C_INFO_BLOCK $40B7 "C:\data\bloxorz\Vide\source\level.c "FN_END 147 "    lineY1[lineCount] = y3d(x0, 0, y0 + 1) + 0; " BKPOINT=0
+C_INFO_BLOCK $40D4 "C:\data\bloxorz\Vide\source\level.c "FN_END 149 "    lineCount++; " BKPOINT=0
+C_INFO_BLOCK $40DB "C:\data\bloxorz\Vide\source\level.c "FN_END 150 "    if (lineCount >= MAX_LINES) { " BKPOINT=0
+C_INFO_BLOCK $40E1 "C:\data\bloxorz\Vide\source\level.c "FN_END 151 "        runtimeError("TOO MANY LINES€"); " BKPOINT=0
+C_INFO_BLOCK $40EE "C:\data\bloxorz\Vide\source\level.c "FN_END 125 "    lineX0[lineCount] = x3d(x0, y0); " BKPOINT=0
+C_INFO_BLOCK $4109 "C:\data\bloxorz\Vide\source\level.c "FN_END 126 "    lineY0[lineCount] = y3d(x0, 0, y0); " BKPOINT=0
+C_INFO_BLOCK $4126 "C:\data\bloxorz\Vide\source\level.c "FN_END 127 "    lineX1[lineCount] = x3d(x1, y1); " BKPOINT=0
+C_INFO_BLOCK $4141 "C:\data\bloxorz\Vide\source\level.c "FN_END 128 "    lineY1[lineCount] = y3d(x1, 0, y1); " BKPOINT=0
+C_INFO_BLOCK $415E "C:\data\bloxorz\Vide\source\level.c "FN_END 129 " if (half) { " BKPOINT=0
+C_INFO_BLOCK $4164 "C:\data\bloxorz\Vide\source\level.c "FN_END 130 "  lineX0[lineCount] -= 1; " BKPOINT=0
+C_INFO_BLOCK $416E "C:\data\bloxorz\Vide\source\level.c "FN_END 131 "  lineY0[lineCount] += 4; " BKPOINT=0
+C_INFO_BLOCK $4178 "C:\data\bloxorz\Vide\source\level.c "FN_END 132 "  lineX1[lineCount] -= 6; " BKPOINT=0
+C_INFO_BLOCK $4182 "C:\data\bloxorz\Vide\source\level.c "FN_END 133 "  lineY1[lineCount] += 3; " BKPOINT=0
+C_INFO_BLOCK $418C "C:\data\bloxorz\Vide\source\level.c "FN_END 136 "    lineCount++; " BKPOINT=0
+C_INFO_BLOCK $4193 "C:\data\bloxorz\Vide\source\level.c "FN_END 137 "    if (lineCount >= MAX_LINES) { " BKPOINT=0
+C_INFO_BLOCK $4197 "C:\data\bloxorz\Vide\source\level.c "FN_END 138 "        runtimeError("TOO MANY LINES€"); " BKPOINT=0
+C_INFO_BLOCK $41A4 "C:\data\bloxorz\Vide\source\level.c "FN_END 158 " int test = 5;,  while (x1 - x0 > test) { " BKPOINT=0
+C_INFO_BLOCK $41AE "C:\data\bloxorz\Vide\source\level.c "FN_END 159 "  addLineImpl(x0, y0, x0 + test, y1, half); " BKPOINT=0
+C_INFO_BLOCK $41C9 "C:\data\bloxorz\Vide\source\level.c "FN_END 160 "  x0 += test; " BKPOINT=0
+C_INFO_BLOCK $41DF "C:\data\bloxorz\Vide\source\level.c "FN_END 162 " while (y1 - y0 > test) { " BKPOINT=0
+C_INFO_BLOCK $41E9 "C:\data\bloxorz\Vide\source\level.c "FN_END 163 "  addLineImpl(x0, y0, x1, y0 + test, half); " BKPOINT=0
+C_INFO_BLOCK $4204 "C:\data\bloxorz\Vide\source\level.c "FN_END 164 "  y0 += test; " BKPOINT=0
+C_INFO_BLOCK $421A "C:\data\bloxorz\Vide\source\level.c "FN_END 166 " addLineImpl(x0, y0, x1, y1, half); " BKPOINT=0
+C_INFO_BLOCK $4234 "C:\data\bloxorz\Vide\source\level.c "FN_END 236 " int8_t x = 0;,  int8_t y = 0;,  for (x = -1; x < LEVEL_WIDTH; x++) { " BKPOINT=0
+C_INFO_BLOCK $4238 "C:\data\bloxorz\Vide\source\level.c "FN_END 239 "  int8_t y0 = -1;,   int8_t y1 = -1;,   for (y = 0; y <= LEVEL_HEIGHT; y++) { " BKPOINT=0
+C_INFO_BLOCK $4240 "C:\data\bloxorz\Vide\source\level.c "FN_END 240 "   if (isField(x, y) || isField(x + 1, y)) { " BKPOINT=0
+C_INFO_BLOCK $4261 "C:\data\bloxorz\Vide\source\level.c "FN_END 241 "    if (y0 < 0) y0 = y; " BKPOINT=0
+C_INFO_BLOCK $4269 "C:\data\bloxorz\Vide\source\level.c "FN_END 242 "    y1 = y; " BKPOINT=0
+C_INFO_BLOCK $426F "C:\data\bloxorz\Vide\source\level.c "FN_END 244 "    if (y0 >= 0) { " BKPOINT=0
+C_INFO_BLOCK $4273 "C:\data\bloxorz\Vide\source\level.c "FN_END 245 "     addLine(x + 1, y0, x + 1, y1 + 1, 0); " BKPOINT=0
+C_INFO_BLOCK $4287 "C:\data\bloxorz\Vide\source\level.c "FN_END 246 "     y0 = -1; " BKPOINT=0
+C_INFO_BLOCK $42A8 "C:\data\bloxorz\Vide\source\level.c "FN_END 197 " long int index;,  int8_t x = 0;,  int8_t y = 0;,  const char* geometry = level->geometry;,  for (y = -1; y < LEVEL_HEIGHT; y++) { " BKPOINT=0
+C_INFO_BLOCK $42B5 "C:\data\bloxorz\Vide\source\level.c "FN_END 200 "  int8_t x0 = -1;,   int8_t x1 = -1;,   for (x = 0; x <= LEVEL_WIDTH; x++) { " BKPOINT=0
+C_INFO_BLOCK $42C6 "C:\data\bloxorz\Vide\source\level.c "FN_END 203 "   char c0 = 0;,    index = (long int) y*LEVEL_WIDTH + (long int)x;,    if (y >= 0 && x < LEVEL_WIDTH) { " BKPOINT=0
+C_INFO_BLOCK $42CE "C:\data\bloxorz\Vide\source\level.c "FN_END 204 "    c0 = geometry[index]; " BKPOINT=0
+C_INFO_BLOCK $42D3 "C:\data\bloxorz\Vide\source\level.c "FN_END 206 "   if (c0 == 'e') { " BKPOINT=0
+C_INFO_BLOCK $42D7 "C:\data\bloxorz\Vide\source\level.c "FN_END 207 "    addTarget(x, y); " BKPOINT=0
+C_INFO_BLOCK $42E0 "C:\data\bloxorz\Vide\source\level.c "FN_END 208 "    endX = x; " BKPOINT=0
+C_INFO_BLOCK $42E5 "C:\data\bloxorz\Vide\source\level.c "FN_END 209 "    endY = y; " BKPOINT=0
+C_INFO_BLOCK $42F3 "C:\data\bloxorz\Vide\source\level.c "FN_END 211 "    addSplit(x, y); " BKPOINT=0
+C_INFO_BLOCK $4305 "C:\data\bloxorz\Vide\source\level.c "FN_END 213 "    addLine(x, y, x + 1, y + 1, 0); " BKPOINT=0
+C_INFO_BLOCK $4320 "C:\data\bloxorz\Vide\source\level.c "FN_END 215 "    addLine(x + 1, y, x, y + 1, 0); " BKPOINT=0
+C_INFO_BLOCK $433B "C:\data\bloxorz\Vide\source\level.c "FN_END 217 "    addLine(x, y, x + 1, y, 1); " BKPOINT=0
+C_INFO_BLOCK $4352 "C:\data\bloxorz\Vide\source\level.c "FN_END 219 "            if (isField(x, y) || isField(x, y + 1)) { " BKPOINT=0
+C_INFO_BLOCK $4370 "C:\data\bloxorz\Vide\source\level.c "FN_END 220 "    if (x0 < 0) x0 = x; " BKPOINT=0
+C_INFO_BLOCK $4378 "C:\data\bloxorz\Vide\source\level.c "FN_END 221 "    x1 = x; " BKPOINT=0
+C_INFO_BLOCK $437E "C:\data\bloxorz\Vide\source\level.c "FN_END 223 "    if (x0 >= 0) { " BKPOINT=0
+C_INFO_BLOCK $4382 "C:\data\bloxorz\Vide\source\level.c "FN_END 224 "     addLine(x0, y + 1, x1 + 1, y + 1, 0); " BKPOINT=0
+C_INFO_BLOCK $4396 "C:\data\bloxorz\Vide\source\level.c "FN_END 225 "     x0 = -1; " BKPOINT=0
+C_INFO_BLOCK $43B8 "C:\data\bloxorz\Vide\source\level.c "FN_END 276 "    lineCount = 0; " BKPOINT=0
+C_INFO_BLOCK $43BB "C:\data\bloxorz\Vide\source\level.c "FN_END 277 "    setupX(); " BKPOINT=0
+C_INFO_BLOCK $43BE "C:\data\bloxorz\Vide\source\level.c "FN_END 278 "    setupY(); " BKPOINT=0
+C_INFO_BLOCK $43C8 "C:\data\bloxorz\Vide\source\level.c "FN_END 75 " if (splitMode) return; " BKPOINT=0
+C_INFO_BLOCK $43CF "C:\data\bloxorz\Vide\source\level.c "FN_END 76 "    for (uint8_t i = 0; i < level->swatches_count; i++) { " BKPOINT=0
+C_INFO_BLOCK $43DA "C:\data\bloxorz\Vide\source\level.c "FN_END 77 "        const struct Swatch* swatch = level->swatches[i]; " BKPOINT=0
+C_INFO_BLOCK $43E5 "C:\data\bloxorz\Vide\source\level.c "FN_END 78 "  if (swatch->position.x == x && swatch->position.y == y) { " BKPOINT=0
+C_INFO_BLOCK $43F5 "C:\data\bloxorz\Vide\source\level.c "FN_END 79 "            for (uint8_t j = 0; j < swatch->fields_count; j++) { " BKPOINT=0
+C_INFO_BLOCK $43FD "C:\data\bloxorz\Vide\source\level.c "FN_END 80 "                const struct SwatchField* field = swatch->fields[j]; " BKPOINT=0
+C_INFO_BLOCK $4409 "C:\data\bloxorz\Vide\source\level.c "FN_END 81 "         int8_t xf = field->position.x; " BKPOINT=0
+C_INFO_BLOCK $440D "C:\data\bloxorz\Vide\source\level.c "FN_END 82 "         int8_t yf = field->position.y; " BKPOINT=0
+C_INFO_BLOCK $4411 "C:\data\bloxorz\Vide\source\level.c "FN_END 83 "                switch (field->action) { " BKPOINT=0
+C_INFO_BLOCK $442E "C:\data\bloxorz\Vide\source\level.c "FN_END 85 "     setSwatchField(xf, yf, !isSwatchFieldOn(xf, yf)); " BKPOINT=0
+C_INFO_BLOCK $444E "C:\data\bloxorz\Vide\source\level.c "FN_END 86 "     break; " BKPOINT=0
+C_INFO_BLOCK $4453 "C:\data\bloxorz\Vide\source\level.c "FN_END 88 "     setSwatchField(xf, yf, 1); " BKPOINT=0
+C_INFO_BLOCK $4460 "C:\data\bloxorz\Vide\source\level.c "FN_END 89 "     break; " BKPOINT=0
+C_INFO_BLOCK $4465 "C:\data\bloxorz\Vide\source\level.c "FN_END 91 "     setSwatchField(xf, yf, 0); " BKPOINT=0
+C_INFO_BLOCK $4470 "C:\data\bloxorz\Vide\source\level.c "FN_END 92 "     break; " BKPOINT=0
+C_INFO_BLOCK $4474 "C:\data\bloxorz\Vide\source\level.c "FN_END 94 "     blockX = xf; " BKPOINT=0
+C_INFO_BLOCK $4479 "C:\data\bloxorz\Vide\source\level.c "FN_END 95 "     blockY = yf; " BKPOINT=0
+C_INFO_BLOCK $447E "C:\data\bloxorz\Vide\source\level.c "FN_END 96 "     setSplitMode(); " BKPOINT=0
+C_INFO_BLOCK $4481 "C:\data\bloxorz\Vide\source\level.c "FN_END 97 "     break; " BKPOINT=0
+C_INFO_BLOCK $4483 "C:\data\bloxorz\Vide\source\level.c "FN_END 99 "     blockX2 = xf; " BKPOINT=0
+C_INFO_BLOCK $4488 "C:\data\bloxorz\Vide\source\level.c "FN_END 100 "     blockY2 = yf; " BKPOINT=0
+C_INFO_BLOCK $448D "C:\data\bloxorz\Vide\source\level.c "FN_END 101 "     break; " BKPOINT=0
+C_INFO_BLOCK $44A4 "C:\data\bloxorz\Vide\source\level.c "FN_END 106 " initLevel(); " BKPOINT=0
+RANGE $0000-$0001 DB_DATA 8
+RANGE $0008-$0009 DB_DATA 8
+RANGE $000B-$000D DW_DATA 4
+RANGE $000D-$0012 DB_DATA 8
+RANGE $0019-$001A DB_DATA 8
+RANGE $001A-$049D CODE
+RANGE $05BD-$0A5B CODE
+RANGE $0A5B-$339F DB_DATA 8
+RANGE $339F-$351F DW_DATA 4
+RANGE $351F-$3689 CODE
+RANGE $3689-$368A DB_DATA 8
+RANGE $3691-$3692 DB_DATA 8
+RANGE $3697-$3698 DB_DATA 8
+RANGE $369E-$369F DB_DATA 8
+RANGE $36A4-$38C3 CODE
+RANGE $38C3-$38C4 DB_DATA 8
+RANGE $38CB-$38CC DB_DATA 8
+RANGE $38CE-$38CF DB_DATA 8
+RANGE $38D6-$38D7 DB_DATA 8
+RANGE $38DC-$38DD DB_DATA 8
+RANGE $38E4-$38E5 DB_DATA 8
+RANGE $38EC-$38ED DB_DATA 8
+RANGE $38EF-$3C97 CODE
+RANGE $3C97-$3CA5 DW_DATA 4
+RANGE $3CA5-$3CF8 CODE
+RANGE $3CF8-$3D70 DB_DATA 8
+RANGE $3D70-$400D CODE
+RANGE $400E-$4047 CODE
+RANGE $4047-$4048 DB_DATA 8
+RANGE $404F-$4050 DB_DATA 8
+RANGE $4057-$4424 CODE
+RANGE $4424-$442E DW_DATA 4
+RANGE $442E-$44AB CODE
+RANGE $44AB-$44BA DB_DATA 8
+RANGE $44BA-$44BE DW_DATA 4
+RANGE $44BE-$44C2 DB_DATA 8
+RANGE $44C2-$44C6 DW_DATA 4
+RANGE $44C6-$44CA DB_DATA 8
+RANGE $44CA-$44CE DW_DATA 4
+RANGE $44CE-$44D2 DB_DATA 8
+RANGE $44D2-$44D6 DW_DATA 4
+RANGE $44D6-$44DA DB_DATA 8
+RANGE $44DA-$44DE DW_DATA 4
+RANGE $44DE-$44E2 DB_DATA 8
+RANGE $44E2-$44E6 DW_DATA 4
+RANGE $44E6-$44EA DB_DATA 8
+RANGE $44EA-$44EC DW_DATA 4
+RANGE $44EC-$44F0 DB_DATA 8
+RANGE $44F0-$44F4 DW_DATA 4
+RANGE $44F4-$44F8 DB_DATA 8
+RANGE $44F8-$44FC DW_DATA 4
+RANGE $44FC-$4500 DB_DATA 8
+RANGE $4500-$4504 DW_DATA 4
+RANGE $4504-$4508 DB_DATA 8
+RANGE $4508-$450C DW_DATA 4
+RANGE $450C-$4510 DB_DATA 8
+RANGE $4510-$4518 DW_DATA 4
+RANGE $4518-$451C DB_DATA 8
+RANGE $451C-$4520 DW_DATA 4
+RANGE $4520-$4524 DB_DATA 8
+RANGE $4524-$4526 DW_DATA 4
+RANGE $4526-$452A DB_DATA 8
+RANGE $452A-$452C DW_DATA 4
+RANGE $452C-$4530 DB_DATA 8
+RANGE $4530-$4534 DW_DATA 4
+RANGE $4534-$4538 DB_DATA 8
+RANGE $4538-$453C DW_DATA 4
+RANGE $453C-$4540 DB_DATA 8
+RANGE $4540-$4548 DW_DATA 4
+RANGE $4548-$454C DB_DATA 8
+RANGE $454C-$4554 DW_DATA 4
+RANGE $4554-$4558 DB_DATA 8
+RANGE $4558-$455C DW_DATA 4
+RANGE $455C-$4560 DB_DATA 8
+RANGE $4560-$4564 DW_DATA 4
+RANGE $4564-$4568 DB_DATA 8
+RANGE $4568-$456C DW_DATA 4
+RANGE $456C-$4603 CHAR_DATA 20
+RANGE $4603-$4605 DW_DATA 4
+RANGE $4605-$4608 DB_DATA 8
+RANGE $4608-$469F CHAR_DATA 20
+RANGE $469F-$46A1 DW_DATA 4
+RANGE $46A1-$46A4 DB_DATA 8
+RANGE $46A4-$46A8 DW_DATA 4
+RANGE $46A8-$473F CHAR_DATA 20
+RANGE $473F-$4741 DW_DATA 4
+RANGE $4741-$4744 DB_DATA 8
+RANGE $4744-$47DB CHAR_DATA 20
+RANGE $47DB-$47DD DW_DATA 4
+RANGE $47DD-$47E0 DB_DATA 8
+RANGE $47E0-$4877 CHAR_DATA 20
+RANGE $4877-$4879 DW_DATA 4
+RANGE $4879-$487C DB_DATA 8
+RANGE $487C-$4884 DW_DATA 4
+RANGE $4884-$491B CHAR_DATA 20
+RANGE $491B-$491D DW_DATA 4
+RANGE $491D-$4920 DB_DATA 8
+RANGE $4920-$49B7 CHAR_DATA 20
+RANGE $49B7-$49B9 DW_DATA 4
+RANGE $49B9-$49BC DB_DATA 8
+RANGE $49BC-$49BE DW_DATA 4
+RANGE $49BE-$4A55 CHAR_DATA 20
+RANGE $4A55-$4A57 DW_DATA 4
+RANGE $4A57-$4A5A DB_DATA 8
+RANGE $4A5A-$4A5C DW_DATA 4
+RANGE $4A5C-$4AF3 CHAR_DATA 20
+RANGE $4AF3-$4AF5 DW_DATA 4
+RANGE $4AF5-$4AF8 DB_DATA 8
+RANGE $4AF8-$4AFA DW_DATA 4
+RANGE $4AFA-$4B91 CHAR_DATA 20
+RANGE $4B91-$4B93 DW_DATA 4
+RANGE $4B93-$4B96 DB_DATA 8
+RANGE $4B96-$4B9C DW_DATA 4
+RANGE $4B9C-$4C33 CHAR_DATA 20
+RANGE $4C33-$4C35 DW_DATA 4
+RANGE $4C35-$4C38 DB_DATA 8
+RANGE $4C38-$4C3A DW_DATA 4
+RANGE $4C3A-$4CD1 CHAR_DATA 20
+RANGE $4CD1-$4CD3 DW_DATA 4
+RANGE $4CD3-$4CD6 DB_DATA 8
+RANGE $4CD6-$4CDA DW_DATA 4
+RANGE $4CDA-$4D71 CHAR_DATA 20
+RANGE $4D71-$4D73 DW_DATA 4
+RANGE $4D73-$4D76 DB_DATA 8
+RANGE $4D76-$4E0D CHAR_DATA 20
+RANGE $4E0D-$4E0F DW_DATA 4
+RANGE $4E0F-$4E12 DB_DATA 8
+RANGE $4E12-$4E16 DW_DATA 4
+RANGE $4E16-$4EAD CHAR_DATA 20
+RANGE $4EAD-$4EAF DW_DATA 4
+RANGE $4EAF-$4EB2 DB_DATA 8
+RANGE $4EB2-$4EDA DW_DATA 4
+RANGE $4EDA-$4F67 DB_DATA 8
+RANGE $4F67-$4F73 CHAR_DATA 20
+RANGE $4F75-$4FD5 CODE
+RANGE $4FD8-$4FEC CODE
+RANGE $4FF3-$4FF5 CODE
+RANGE $4FFA-$4FFC CODE
+RANGE $5002-$5004 CODE
+RANGE $5017-$5019 CODE
+RANGE $5027-$5029 CODE
+RANGE $505C-$505E CODE
+RANGE $506C-$506E CODE
+RANGE $507C-$507E CODE
+RANGE $508C-$508E CODE
+RANGE $509C-$509E CODE
+RANGE $50A2-$50A4 CODE
+RANGE $50A5-$50AB CODE
+RANGE $50AC-$50B2 CODE
+RANGE $50B3-$50B9 CODE
+RANGE $50BA-$50C0 CODE
+RANGE $50C1-$50C7 CODE
+RANGE $50C8-$50CE CODE
+RANGE $50CF-$50D5 CODE
+RANGE $50D6-$50DC CODE
+RANGE $50DD-$50E3 CODE
+RANGE $50E4-$50EA CODE
+RANGE $50EB-$50F1 CODE
+RANGE $50F2-$50F8 CODE
+RANGE $50F9-$50FF CODE
+RANGE $5100-$5106 CODE
+RANGE $5107-$510D CODE
+RANGE $510E-$5114 CODE
+RANGE $5115-$511B CODE
+RANGE $511C-$5122 CODE
+RANGE $5123-$5129 CODE
+RANGE $512A-$5130 CODE
+RANGE $5131-$5133 CODE
+RANGE $5B5C-$5C13 CODE
+

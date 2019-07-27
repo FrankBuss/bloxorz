@@ -208,7 +208,7 @@ void updateInfoText()
 {
 	itoa(moveCount, &infoText[0]);
 //	itoa(levelHighscore, &infoText[6]);
-	itoa(levelNumber + 1, &infoText[6]);
+	itoa(levelNumber + levelOffset, &infoText[6]);
 }
 
 void changeMusic(const uint8_t* music)
@@ -310,6 +310,13 @@ void blockMovingToStart()
 	}
 }
 
+void setBank(uint8_t bank)
+{
+	*vecx = 16 + bank;
+	sendCommand(CMD_SET_BANK, bank);
+//	asm("	jmp _main");
+}
+
 void blockWaiting()
 {
 	drawField();
@@ -337,6 +344,7 @@ void blockWaiting()
     	if (Vec_Buttons & 1) {
 		levelNumber++;
 		if (levelNumber >= levelCount) levelNumber = 0;
+		setBank(nextBank);
     		startLevel();
     	}
     	if (Vec_Buttons & 2) {
@@ -459,16 +467,11 @@ void mainMenu()
     Print_Str_d(100, -70, "MAIN MENU\x80");
     Print_Str_d(50, -110, "1 START GAME\x80");
     Print_Str_d(20, -110, "2 CLEAR HIGHSCORE\x80");
-    Print_Str_d(-10, -110, "3 BANKING TEST\x80");
 	if (Vec_Buttons & 1) {
 		startLevel();
 	}
 	if (Vec_Buttons & 2) {
 		gameState = ClearMenu;
-	}
-	if (Vec_Buttons & 4) {
-		sendCommand(CMD_SET_BANK, 1);
-		asm("	jmp 0xf000");
 	}
 }
 
@@ -541,6 +544,11 @@ void showInfo()
 
 int main()
 {
+	// on reset, switch back to bank 0
+	// for same code locations, switch to bank 0 when in bank 0 as well
+	setBank(0);
+
+	// start title music in emulator
 	*vecx = 4;
 
 	// check if PIC is available
