@@ -1,0 +1,1 @@
+copy /y bloxorz.bin  ..\MonoGame\Bloxorz\Content\Bloxorz.bin

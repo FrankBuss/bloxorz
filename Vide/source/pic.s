@@ -5,7 +5,7 @@ DCNTRL = 0hd002	; DDRB      - Data Direction Register B
 data: .blkb   1
 counter: .blkb   1
 bit_counter: .blkb   1
- 
+
 	.area .text
 
 	.globl  _picWrite

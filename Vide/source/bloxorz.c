@@ -137,8 +137,6 @@ const uint8_t movingMusic[] = {
 
 const uint8_t* currentMusic = startMusic;
 
-uint8_t* vecx = (uint8_t*) 0x8000;
-
 enum GameState_t {
 	MainMenu,
 	ClearMenu,
@@ -149,6 +147,25 @@ enum GameState_t {
 	BlockMovingAtEnd,
 } gameState;
 
+uint8_t* vecx = (uint8_t*) 0x8000;
+
+uint8_t sendCommand(uint8_t cmd, uint8_t arg)
+{
+	uint8_t result;
+	picWrite('V');
+	picWrite(cmd);
+	picWrite(arg);
+	result = picRead();
+	delay10ms();
+	return result;
+}
+
+void setBank(uint8_t bank)
+{
+	*vecx = 16 + bank;
+	sendCommand(CMD_SET_BANK, bank);
+}
+
 void runtimeError(char* msg)
 {
 	while (1) {
@@ -157,18 +174,6 @@ void runtimeError(char* msg)
          Vec_Text_Width = 90;
          Print_Str_d(-10, -110, msg);
 	}
-}
-
-uint8_t sendCommand(uint8_t cmd, uint8_t arg)
-{
-return 0;
-	uint8_t result;
-	picWrite('V');
-	picWrite(cmd);
-	picWrite(arg);
-	result = picRead();
-	delay10ms();
-	return result;
 }
 
 void writeEeprom(uint8_t address, uint8_t data)
@@ -310,13 +315,6 @@ void blockMovingToStart()
 	}
 }
 
-void setBank(uint8_t bank)
-{
-	*vecx = 16 + bank;
-	sendCommand(CMD_SET_BANK, bank);
-//	asm("	jmp _main");
-}
-
 void blockWaiting()
 {
 	drawField();
@@ -343,8 +341,10 @@ void blockWaiting()
     	Read_Btns();
     	if (Vec_Buttons & 1) {
 		levelNumber++;
-		if (levelNumber >= levelCount) levelNumber = 0;
-		setBank(nextBank);
+		if (levelNumber >= levelCount) {
+			levelNumber = 0;
+			setBank(nextBank);
+		}
     		startLevel();
     	}
     	if (Vec_Buttons & 2) {
@@ -569,8 +569,7 @@ int main()
 	epot3 = 0;
 	
 	gameState = MainMenu;
-	startLevel();
-	//musicInit();
+	musicInit();
 
 	while (1) {
 		// wait for frame boundary (one frame = 30,000 cyles = 50 Hz)
@@ -579,11 +578,11 @@ int main()
 		switch (gameState) {
 			case MainMenu:
         			mainMenu();
-				//musicPlay();
+				musicPlay();
         			break;
 			case ClearMenu:
 				clearMenu();
-				//musicPlay();
+				musicPlay();
 				break;
 			case BlockMovingToStart:
 				showInfo();

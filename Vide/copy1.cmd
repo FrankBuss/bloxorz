@@ -1,1 +1,1 @@
-copy /y build\Bloxorz_rom.bin Bloxorz_rom1.bin
+copy /y bin\Bloxorz.bin Bloxorz_rom1.bin

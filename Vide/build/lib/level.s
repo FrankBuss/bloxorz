@@ -1,17 +1,16 @@
-;;; gcc for m6809 : Mar 17 2019 12:45:32
+;;; gcc for m6809 : Mar 17 2019 11:56:12
 ;;; 4.3.6 (gcc6809)
 ;;; ABI version 1
 ;;; -mabi=bx -mint8 -fomit-frame-pointer -O1
 	.module	level.enr.c
 ; GNU C (GCC) version 4.3.6 (gcc6809) (m6809-unknown-none)
-;	compiled by GNU C version 7.4.0, GMP version 4.3.2, MPFR version 2.4.2.
+;	compiled by GNU C version 5.4.0 20160609, GMP version 6.1.0, MPFR version 3.1.4.
 ; GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 ; options passed:  -O1 -fverbose-asm -W -Wall -Wextra -Wconversion -Werror
 ; -fomit-frame-pointer -mint8 -msoft-reg-count=0 -std=gnu99
-; -fno-time-report
-; -IC:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include
+; -fno-time-report -I/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include
 ; -D__INLINE_RUM=1 -DOMMIT_FRAMEPOINTER=1
-; C:\data\bloxorz\Vide\source\level.enr.c
+; /home/frank/data/projects/bloxorz/Vide/source/level.enr.c
 ; options enabled:  -falign-loops -fargument-alias -fauto-inc-dec
 ; -fbranch-count-reg -fcommon -fcprop-registers -fdefer-pop
 ; -fearly-inlining -feliminate-unused-debug-types -ffunction-cse -fgcse-lm
@@ -28,7 +27,7 @@
 ; -ftree-reassoc -ftree-salias -ftree-scev-cprop -ftree-sink -ftree-sra
 ; -ftree-ter -ftree-vect-loop-version -funit-at-a-time -fverbose-asm
 ; -fzero-initialized-in-bss
-; Compiler executable checksum: 8f282e2d9663ae6148257c524e608c63
+; Compiler executable checksum: 74a0323a4f41feb77857e3eae52873ae
 	.area	.text
 	.globl	_getField
 _getField:
@@ -36,10 +35,12 @@ _getField:
 	leas	-5,s	;,,
 	stb	4,s	; x, x
 ;----- asm -----
-; 25 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 25 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[24]    char c = 0;
-; 27 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 0 "" 2
+; 27 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[25]    if (x >= 0 && y >= 0 && x < LEVEL_WIDTH && y < LEVEL_HEIGHT) {
+; 0 "" 2
 ;--- end asm ---
 	tstb	; x
 	blt	L2	;
@@ -51,8 +52,9 @@ _getField:
 	cmpb	#14	;cmpqi:	;,
 	bgt	L2	;
 ;----- asm -----
-; 29 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 29 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[26]        c = level->geometry[(long int) y*LEVEL_WIDTH + (long int)x];
+; 0 "" 2
 ;--- end asm ---
 	sex		;extendqihi2: R:b -> R:d	;,
 	std	,s	;,
@@ -81,16 +83,18 @@ L2:
 	clrb	; c
 L3:
 ;----- asm -----
-; 32 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 32 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[28]	return c;
+; 0 "" 2
 ;--- end asm ---
 	leas	5,s	;,,
 	puls	y,u,pc	;
 	.globl	_getShifts
 _getShifts:
 ;----- asm -----
-; 40 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 40 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[35]	return shifts[bit];
+; 0 "" 2
 ;--- end asm ---
 	ldx	#_shifts	;
 	abx
@@ -102,8 +106,9 @@ _isSwatchFieldOn:
 	leas	-2,s	;,,
 	stb	,s	; x, x
 ;----- asm -----
-; 46 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 46 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[40]	long int index = (long int) y*LEVEL_WIDTH + (long int)x;
+; 0 "" 2
 ;--- end asm ---
 	ldb	6,s	;, y
 	lda	#10	;mulqihi3	;
@@ -115,12 +120,15 @@ _isSwatchFieldOn:
 	exg	d,x	;, tmp33
 	leau	d,u	; index,, index
 ;----- asm -----
-; 48 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 48 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[41]	uint8_t bit = (uint8_t) (index & 7);
-; 50 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 0 "" 2
+; 50 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[42]	index >>= 3;
-; 52 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 0 "" 2
+; 52 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[43]	return (swatchesOn[index] & getShifts(bit)) > 0;
+; 0 "" 2
 ;--- end asm ---
 	tfr	u,d	; index,
 	asra	;
@@ -131,11 +139,11 @@ _isSwatchFieldOn:
 	rorb	;
 	tfr	d,x	;, tmp35
 	ldb	_swatchesOn,x	;, swatchesOn
-	stb	1,s	;, D.1312
+	stb	1,s	;, D.1327
 	tfr	u,d	;movlsbqihi: R:u -> R:b	; index, index
 	andb	#7	; tmp38,
 	jsr	_getShifts
-	andb	1,s	; tmp40, D.1312
+	andb	1,s	; tmp40, D.1327
 	beq	L8	;
 	ldb	#1	; tmp40,
 L8:
@@ -147,8 +155,9 @@ _setSwatchField:
 	leas	-4,s	;,,
 	stb	,s	; x, x
 ;----- asm -----
-; 58 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 58 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[48]	long int index = (long int) y*LEVEL_WIDTH + (long int)x;
+; 0 "" 2
 ;--- end asm ---
 	ldb	8,s	;, y
 	lda	#10	;mulqihi3	;
@@ -162,15 +171,17 @@ _setSwatchField:
 ; ORG>	exg	d,y	;, x
 	leax	d,x	; index,, index
 ;----- asm -----
-; 60 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 60 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[49]	uint8_t bit = (uint8_t) (index & 7);
+; 0 "" 2
 ;--- end asm ---
 	tfr	x,d	;movlsbqihi: R:x -> R:b	; index, index
 	andb	#7	; index,
 	stb	2,s	; index, bit
 ;----- asm -----
-; 62 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 62 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[50]	index >>= 3;
+; 0 "" 2
 ;--- end asm ---
 	tfr	x,d	; index, index.44
 	asra	;
@@ -180,28 +191,31 @@ _setSwatchField:
 	asra	;
 	rorb	;
 ;----- asm -----
-; 64 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 64 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[51]	if (on) {
+; 0 "" 2
 ;--- end asm ---
 	tst	9,s	; on
 	beq	L11	;
 ;----- asm -----
-; 66 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 66 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[52]		swatchesOn[index] |= getShifts(bit);
+; 0 "" 2
 ;--- end asm ---
 	ldx	#_swatchesOn	;,
 	leay	d,x	; tmp41, index.44,
 	ldb	,y	;, swatchesOn
-	stb	1,s	;, D.1327
+	stb	1,s	;, D.1342
 	ldb	2,s	;, bit
 	jsr	_getShifts
-	orb	1,s	; tmp44, D.1327
+	orb	1,s	; tmp44, D.1342
 	stb	,y	; tmp44, swatchesOn
 	bra	L13	;
 L11:
 ;----- asm -----
-; 69 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 69 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[54]		swatchesOn[index] &= ~getShifts(bit);
+; 0 "" 2
 ;--- end asm ---
 	ldx	#_swatchesOn	;,
 	leay	d,x	; tmp46, index.44,
@@ -220,8 +234,9 @@ _isField:
 	leas	-2,s	;,,
 	stb	,s	; x, x
 ;----- asm -----
-; 76 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 76 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[60]    char c = getField(x, y);
+; 0 "" 2
 ;--- end asm ---
 	ldb	4,s	;, y
 	pshs	b	;
@@ -229,8 +244,9 @@ _isField:
 	jsr	_getField
 	stb	2,s	;, c
 ;----- asm -----
-; 80 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 80 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[63]    if (c == 'l' || c == 'r' || c == 'k' || c == 'q') {
+; 0 "" 2
 ;--- end asm ---
 	leas	1,s	;,,
 	cmpb	#108	;cmpqi:	;,
@@ -243,26 +259,29 @@ _isField:
 	bne	L16	;
 L15:
 ;----- asm -----
-; 82 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 82 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[64]		if (isSwatchFieldOn(x, y)) {
+; 0 "" 2
 ;--- end asm ---
 	ldb	4,s	;, y
 	pshs	b	;
 	ldb	1,s	;, x
 	jsr	_isSwatchFieldOn
 	leas	1,s	;,,
-	tstb	; D.1341
+	tstb	; D.1356
 	beq	L16	;
 ;----- asm -----
-; 84 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 84 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[65]			c = 'b';
+; 0 "" 2
 ;--- end asm ---
 	ldb	#98	;,
 	stb	1,s	;, c
 L16:
 ;----- asm -----
-; 90 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 90 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[70]    return (uint8_t) (c == 'b' || c == 'e' || c == 's' || c == 'h' || c == 'f' || c == 'v');
+; 0 "" 2
 ;--- end asm ---
 	ldb	1,s	;, c
 	cmpb	#98	;cmpqi:	;,
@@ -296,10 +315,12 @@ _x3d:
 	leas	-2,s	;,,
 	stb	,s	; x, x
 ;----- asm -----
-; 161 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 161 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[112]    x -= LEVEL_WIDTH / 2 - 4;
-; 163 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 0 "" 2
+; 163 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[113]    return 14 * x - 6 * z;
+; 0 "" 2
 ;--- end asm ---
 	ldb	6,s	;, z
 	lda	#-6	;mulqihi3	;
@@ -321,10 +342,12 @@ _y3d:
 	leas	-3,s	;,,
 	stb	2,s	; x, x
 ;----- asm -----
-; 170 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 170 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[119]    y -= LEVEL_HEIGHT / 2;
-; 172 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 0 "" 2
+; 172 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[120]    return 3 * x + 13 * y + 8 * z;
+; 0 "" 2
 ;--- end asm ---
 	ldb	5,s	; tmp32, y
 	addb	#-7	; tmp32,
@@ -351,8 +374,9 @@ _addTarget:
 	leas	-16,s	;,,
 	stb	1,s	; x, x
 ;----- asm -----
-; 251 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 251 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[171]    lineX0[lineCount] = x3d(x, y);
+; 0 "" 2
 ;--- end asm ---
 	ldb	_lineCount	;, lineCount
 	stb	2,s	;, lineCount.14
@@ -360,15 +384,16 @@ _addTarget:
 	pshs	b	;
 	ldb	2,s	;, x
 	jsr	_x3d
-	stb	1,s	;, D.1456
+	stb	1,s	;, D.1471
 	ldb	3,s	;, lineCount.14
 	clra		;zero_extendqihi: R:b -> R:d	;,
 	tfr	d,x	;, lineCount.14
-	ldb	1,s	;, D.1456
+	ldb	1,s	;, D.1471
 	stb	_lineX0,x	;, lineX0
 ;----- asm -----
-; 253 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 253 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[172]    lineY0[lineCount] = y3d(x, 0, y);
+; 0 "" 2
 ;--- end asm ---
 	ldb	_lineCount	;, lineCount
 	stb	11,s	;, lineCount.69
@@ -377,131 +402,139 @@ _addTarget:
 	clr	,-s	;
 	ldb	4,s	;, x
 	jsr	_y3d
-	stb	3,s	;, D.1457
+	stb	3,s	;, D.1472
 	ldb	13,s	;, lineCount.69
 	clra		;zero_extendqihi: R:b -> R:d	;,
 	tfr	d,x	;, lineCount.69
-	ldb	3,s	;, D.1457
+	ldb	3,s	;, D.1472
 	stb	_lineY0,x	;, lineY0
 ;----- asm -----
-; 255 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 255 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[173]    lineX1[lineCount] = x3d(x + 1, y + 1);
+; 0 "" 2
 ;--- end asm ---
 	ldb	_lineCount	;, lineCount
 	stb	14,s	;, lineCount.70
 	ldb	23,s	;, y
 	incb	;
-	stb	6,s	;, D.1458
+	stb	6,s	;, D.1473
 	ldb	4,s	;, x
 	incb	;
-	stb	7,s	;, D.1459
-	ldb	6,s	;, D.1458
+	stb	7,s	;, D.1474
+	ldb	6,s	;, D.1473
 	pshs	b	;
-	ldb	8,s	;, D.1459
+	ldb	8,s	;, D.1474
 	jsr	_x3d
-	stb	4,s	;, D.1460
+	stb	4,s	;, D.1475
 	ldb	15,s	;, lineCount.70
 	clra		;zero_extendqihi: R:b -> R:d	;,
 	tfr	d,x	;, lineCount.70
-	ldb	4,s	;, D.1460
+	ldb	4,s	;, D.1475
 	stb	_lineX1,x	;, lineX1
 ;----- asm -----
-; 257 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 257 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[174]    lineY1[lineCount] = y3d(x + 1, 0, y + 1);
+; 0 "" 2
 ;--- end asm ---
 	ldb	_lineCount	;, lineCount
 	stb	16,s	;, lineCount.71
-	ldb	7,s	;, D.1458
+	ldb	7,s	;, D.1473
 	pshs	b	;
 	clr	,-s	;
-	ldb	10,s	;, D.1459
+	ldb	10,s	;, D.1474
 	jsr	_y3d
-	stb	6,s	;, D.1461
+	stb	6,s	;, D.1476
 	ldb	18,s	;, lineCount.71
 	clra		;zero_extendqihi: R:b -> R:d	;,
 	tfr	d,x	;, lineCount.71
-	ldb	6,s	;, D.1461
+	ldb	6,s	;, D.1476
 	stb	_lineY1,x	;, lineY1
 ;----- asm -----
-; 259 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 259 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[175]    lineCount++;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_lineCount	;, lineCount
 	incb	;
 	stb	11,s	;, lineCount.15
 	stb	_lineCount	;, lineCount
 ;----- asm -----
-; 262 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 262 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[177]    lineX0[lineCount] = x3d(x + 1, y);
+; 0 "" 2
 ;--- end asm ---
 	ldb	26,s	;, y
 	pshs	b	;
-	ldb	11,s	;, D.1459
+	ldb	11,s	;, D.1474
 	jsr	_x3d
-	stb	13,s	;, D.1463
+	stb	13,s	;, D.1478
 	ldb	12,s	;, lineCount.15
 	clra		;zero_extendqihi: R:b -> R:d	;,
 	tfr	d,x	;, lineCount.15
 	leax	_lineX0,x	; tmp61,, lineCount.15
-	ldb	13,s	;, D.1463
+	ldb	13,s	;, D.1478
 	stb	,x	;, lineX0
 ;----- asm -----
-; 264 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 264 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[178]    lineY0[lineCount] = y3d(x + 1, 0, y);
+; 0 "" 2
 ;--- end asm ---
 	ldb	_lineCount	;, lineCount
 	stb	20,s	;, lineCount.73
 	ldb	27,s	;, y
 	pshs	b	;
 	clr	,-s	;
-	ldb	13,s	;, D.1459
+	ldb	13,s	;, D.1474
 	jsr	_y3d
-	stb	16,s	;, D.1464
+	stb	16,s	;, D.1479
 	ldb	22,s	;, lineCount.73
 	clra		;zero_extendqihi: R:b -> R:d	;,
 	tfr	d,x	;, lineCount.73
 	leax	_lineY0,x	; tmp64,, lineCount.73
-	ldb	16,s	;, D.1464
+	ldb	16,s	;, D.1479
 	stb	,x	;, lineY0
 ;----- asm -----
-; 266 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 266 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[179]    lineX1[lineCount] = x3d(x, y + 1);
+; 0 "" 2
 ;--- end asm ---
 	ldb	_lineCount	;, lineCount
 	stb	23,s	;, lineCount.74
 	leas	9,s	;,,
-	ldb	3,s	;, D.1458
+	ldb	3,s	;, D.1473
 	pshs	b	;
 	ldb	2,s	;, x
 	jsr	_x3d
-	stb	9,s	;, D.1465
+	stb	9,s	;, D.1480
 	ldb	15,s	;, lineCount.74
 	clra		;zero_extendqihi: R:b -> R:d	;,
 	tfr	d,x	;, lineCount.74
 	leax	_lineX1,x	; tmp67,, lineCount.74
-	ldb	9,s	;, D.1465
+	ldb	9,s	;, D.1480
 	stb	,x	;, lineX1
 ;----- asm -----
-; 268 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 268 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[180]    lineY1[lineCount] = y3d(x, 0, y + 1);
+; 0 "" 2
 ;--- end asm ---
 	ldb	_lineCount	;, lineCount
 	stb	16,s	;, lineCount.75
-	ldb	4,s	;, D.1458
+	ldb	4,s	;, D.1473
 	pshs	b	;
 	clr	,-s	;
 	ldb	4,s	;, x
 	jsr	_y3d
-	stb	12,s	;, D.1466
+	stb	12,s	;, D.1481
 	ldb	18,s	;, lineCount.75
 	clra		;zero_extendqihi: R:b -> R:d	;,
 	tfr	d,x	;, lineCount.75
 	leax	_lineY1,x	; tmp70,, lineCount.75
-	ldb	12,s	;, D.1466
+	ldb	12,s	;, D.1481
 	stb	,x	;, lineY1
 ;----- asm -----
-; 270 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 270 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[181]    lineCount++;
+; 0 "" 2
 ;--- end asm ---
 	inc	_lineCount	; lineCount
 	leas	19,s	;,,
@@ -511,50 +544,61 @@ _initSwatches:
 	pshs	y,u	;
 	leas	-2,s	;,,
 ;----- asm -----
-; 383 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 383 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[255]    for (uint8_t i = 0; i < sizeof(swatchesOn); i++) {
+; 0 "" 2
 ;--- end asm ---
 	ldx	#_swatchesOn	; ivtmp.110,
 L28:
 ;----- asm -----
-; 385 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 385 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[256]        swatchesOn[i] = 0;
+; 0 "" 2
 ;--- end asm ---
 	clr	,x+	; swatchesOn
 	cmpx	#_swatchesOn+19	;cmphi:	; ivtmp.110,
 	bne	L28	;
 ;----- asm -----
-; 389 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 389 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[259]	long int index;
-; 391 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 0 "" 2
+; 391 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[260]	int8_t x = 0;
-; 393 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 0 "" 2
+; 393 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[261]	int8_t y = 0;
-; 395 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 0 "" 2
+; 395 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[262]	const char* geometry = level->geometry;
-; 397 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 0 "" 2
+; 397 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[263]	for (y = 0; y < LEVEL_HEIGHT; y++) {
+; 0 "" 2
 ;--- end asm ---
 	ldy	[_level]	; ivtmp.102, <variable>.geometry
 	clr	1,s	; y
 L32:
 ;----- asm -----
-; 399 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 399 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[264]		for (x = 0; x < LEVEL_WIDTH; x++) {
+; 0 "" 2
 ;--- end asm ---
 	leau	,y	; ivtmp.111, ivtmp.102
 	clr	,s	; x
 L31:
 ;----- asm -----
-; 401 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 401 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[265]			index = (long int) y*LEVEL_WIDTH + (long int)x;
-; 403 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 0 "" 2
+; 403 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[266]			char c0 = geometry[index];
+; 0 "" 2
 ;--- end asm ---
 	ldb	,u	; c0,* ivtmp.111
 ;----- asm -----
-; 405 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 405 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[267]			if (c0 == 'k' || c0 == 'q') {
+; 0 "" 2
 ;--- end asm ---
 	cmpb	#107	;cmpqi:	; c0,
 	beq	L29	;
@@ -562,8 +606,9 @@ L31:
 	bne	L30	;
 L29:
 ;----- asm -----
-; 407 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 407 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[268]				setSwatchField(x, y, 1);
+; 0 "" 2
 ;--- end asm ---
 	ldb	#1	;,
 	stb	,-s	;,
@@ -593,8 +638,9 @@ _addSplit:
 	leas	-7,s	;,,
 	stb	1,s	; x0, x0
 ;----- asm -----
-; 209 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 209 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[144]    lineX0[lineCount] = x3d(x0, y0) + 6;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_lineCount	;, lineCount
 	stb	2,s	;, lineCount.12
@@ -602,16 +648,17 @@ _addSplit:
 	pshs	b	;
 	ldb	2,s	;, x0
 	jsr	_x3d
-	stb	1,s	;, D.1424
+	stb	1,s	;, D.1439
 	ldb	3,s	;, lineCount.12
 	clra		;zero_extendqihi: R:b -> R:d	;,
 	tfr	d,x	;, lineCount.12
-	ldb	1,s	;, D.1424
+	ldb	1,s	;, D.1439
 	addb	#6	;,
 	stb	_lineX0,x	;, lineX0
 ;----- asm -----
-; 211 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 211 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[145]    lineY0[lineCount] = y3d(x0, 0, y0) + 3;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_lineCount	;, lineCount
 	stb	5,s	;, lineCount.117
@@ -620,66 +667,71 @@ _addSplit:
 	clr	,-s	;
 	ldb	4,s	;, x0
 	jsr	_y3d
-	stb	3,s	;, D.1426
+	stb	3,s	;, D.1441
 	ldb	7,s	;, lineCount.117
 	clra		;zero_extendqihi: R:b -> R:d	;,
 	tfr	d,x	;, lineCount.117
-	ldb	3,s	;, D.1426
+	ldb	3,s	;, D.1441
 	addb	#3	;,
 	stb	_lineY0,x	;, lineY0
 ;----- asm -----
-; 213 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 213 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[146]    lineX1[lineCount] = x3d(x0, y0 + 1) + 8;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_lineCount	;, lineCount
 	stb	8,s	;, lineCount.118
 	ldb	12,s	;, y0
 	incb	;
-	stb	6,s	;, D.1428
+	stb	6,s	;, D.1443
 	pshs	b	;
 	ldb	5,s	;, x0
 	jsr	_x3d
-	stb	4,s	;, D.1429
+	stb	4,s	;, D.1444
 	ldb	9,s	;, lineCount.118
 	clra		;zero_extendqihi: R:b -> R:d	;,
 	tfr	d,x	;, lineCount.118
-	ldb	4,s	;, D.1429
+	ldb	4,s	;, D.1444
 	addb	#8	;,
 	stb	_lineX1,x	;, lineX1
 ;----- asm -----
-; 215 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 215 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[147]    lineY1[lineCount] = y3d(x0, 0, y0 + 1) + 0;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_lineCount	;, lineCount
 	stb	10,s	;, lineCount.119
-	ldb	7,s	;, D.1428
+	ldb	7,s	;, D.1443
 	pshs	b	;
 	clr	,-s	;
 	ldb	7,s	;, x0
 	jsr	_y3d
-	stb	6,s	;, D.1431
+	stb	6,s	;, D.1446
 	ldb	12,s	;, lineCount.119
 	clra		;zero_extendqihi: R:b -> R:d	;,
 	tfr	d,x	;, lineCount.119
-	ldb	6,s	;, D.1431
+	ldb	6,s	;, D.1446
 	stb	_lineY1,x	;, lineY1
 ;----- asm -----
-; 218 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 218 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[149]    lineCount++;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_lineCount	; lineCount.13, lineCount
 	incb	; lineCount.13
 	stb	_lineCount	; lineCount.13, lineCount
 ;----- asm -----
-; 220 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 220 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[150]    if (lineCount >= MAX_LINES) {
+; 0 "" 2
 ;--- end asm ---
 	leas	6,s	;,,
 	cmpb	#119	;cmpqi:	; lineCount.13,
 	bls	L39	;
 ;----- asm -----
-; 222 "C:\data\bloxorz\Vide\source\level.enr.c" 1
-	; #ENR#[151]        runtimeError("TOO MANY LINES€");
+; 222 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
+	; #ENR#[151]        runtimeError("TOO MANY LINESï¿½");
+; 0 "" 2
 ;--- end asm ---
 	ldx	#LC0	;,
 	jsr	_runtimeError
@@ -691,8 +743,9 @@ _addLineImpl:
 	leas	-6,s	;,,
 	stb	1,s	; x0, x0
 ;----- asm -----
-; 178 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 178 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[125]    lineX0[lineCount] = x3d(x0, y0);
+; 0 "" 2
 ;--- end asm ---
 	ldb	_lineCount	;, lineCount
 	stb	2,s	;, lineCount.10
@@ -700,15 +753,16 @@ _addLineImpl:
 	pshs	b	;
 	ldb	2,s	;, x0
 	jsr	_x3d
-	stb	1,s	;, D.1406
+	stb	1,s	;, D.1421
 	ldb	3,s	;, lineCount.10
 	clra		;zero_extendqihi: R:b -> R:d	;,
 	tfr	d,x	;, lineCount.10
-	ldb	1,s	;, D.1406
+	ldb	1,s	;, D.1421
 	stb	_lineX0,x	;, lineX0
 ;----- asm -----
-; 180 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 180 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[126]    lineY0[lineCount] = y3d(x0, 0, y0);
+; 0 "" 2
 ;--- end asm ---
 	ldb	_lineCount	;, lineCount
 	stb	4,s	;, lineCount.127
@@ -717,15 +771,16 @@ _addLineImpl:
 	clr	,-s	;
 	ldb	4,s	;, x0
 	jsr	_y3d
-	stb	3,s	;, D.1407
+	stb	3,s	;, D.1422
 	ldb	6,s	;, lineCount.127
 	clra		;zero_extendqihi: R:b -> R:d	;,
 	tfr	d,x	;, lineCount.127
-	ldb	3,s	;, D.1407
+	ldb	3,s	;, D.1422
 	stb	_lineY0,x	;, lineY0
 ;----- asm -----
-; 182 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 182 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[127]    lineX1[lineCount] = x3d(x1, y1);
+; 0 "" 2
 ;--- end asm ---
 	ldb	_lineCount	;, lineCount
 	stb	7,s	;, lineCount.128
@@ -733,15 +788,16 @@ _addLineImpl:
 	pshs	b	;
 	ldb	13,s	;, x1
 	jsr	_x3d
-	stb	4,s	;, D.1408
+	stb	4,s	;, D.1423
 	ldb	8,s	;, lineCount.128
 	clra		;zero_extendqihi: R:b -> R:d	;,
 	tfr	d,x	;, lineCount.128
-	ldb	4,s	;, D.1408
+	ldb	4,s	;, D.1423
 	stb	_lineX1,x	;, lineX1
 ;----- asm -----
-; 184 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 184 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[128]    lineY1[lineCount] = y3d(x1, 0, y1);
+; 0 "" 2
 ;--- end asm ---
 	ldb	_lineCount	;, lineCount
 	stb	9,s	;, lineCount.129
@@ -750,65 +806,73 @@ _addLineImpl:
 	clr	,-s	;
 	ldb	15,s	;, x1
 	jsr	_y3d
-	stb	6,s	;, D.1409
+	stb	6,s	;, D.1424
 	ldb	11,s	;, lineCount.129
 	clra		;zero_extendqihi: R:b -> R:d	;,
 	tfr	d,x	;, lineCount.129
-	ldb	6,s	;, D.1409
+	ldb	6,s	;, D.1424
 	stb	_lineY1,x	;, lineY1
 ;----- asm -----
-; 186 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 186 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[129]	if (half) {
+; 0 "" 2
 ;--- end asm ---
 	leas	6,s	;,,
 	tst	11,s	; half
 	beq	L41	;
 ;----- asm -----
-; 188 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 188 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[130]		lineX0[lineCount] -= 1;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_lineCount	;, lineCount
 	clra		;zero_extendqihi: R:b -> R:d	;,
 	tfr	d,x	;, lineCount.130
 	dec	_lineX0,x	; lineX0
 ;----- asm -----
-; 190 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 190 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[131]		lineY0[lineCount] += 4;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_lineY0,x	;, lineY0
 	addb	#4	;,
 	stb	_lineY0,x	;, lineY0
 ;----- asm -----
-; 192 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 192 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[132]		lineX1[lineCount] -= 6;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_lineX1,x	;, lineX1
 	addb	#-6	;,
 	stb	_lineX1,x	;, lineX1
 ;----- asm -----
-; 194 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 194 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[133]		lineY1[lineCount] += 3;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_lineY1,x	;, lineY1
 	addb	#3	;,
 	stb	_lineY1,x	;, lineY1
 L41:
 ;----- asm -----
-; 198 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 198 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[136]    lineCount++;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_lineCount	; lineCount.11, lineCount
 	incb	; lineCount.11
 	stb	_lineCount	; lineCount.11, lineCount
 ;----- asm -----
-; 200 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 200 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[137]    if (lineCount >= MAX_LINES) {
+; 0 "" 2
 ;--- end asm ---
 	cmpb	#119	;cmpqi:	; lineCount.11,
 	bls	L43	;
 ;----- asm -----
-; 202 "C:\data\bloxorz\Vide\source\level.enr.c" 1
-	; #ENR#[138]        runtimeError("TOO MANY LINES€");
+; 202 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
+	; #ENR#[138]        runtimeError("TOO MANY LINESï¿½");
+; 0 "" 2
 ;--- end asm ---
 	ldx	#LC0	;,
 	jsr	_runtimeError
@@ -820,20 +884,23 @@ _addLine:
 	leas	-5,s	;,,
 	stb	,s	; x0, x0
 ;----- asm -----
-; 229 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 229 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[157]	int test = 5;
-; 231 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 0 "" 2
+; 231 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[158]	while (x1 - x0 > test) {
+; 0 "" 2
 ;--- end asm ---
-	ldb	8,s	; D.1448, x1
-	subb	,s	; D.1448, x0
-	cmpb	#5	;cmpqi:	; D.1448,
+	ldb	8,s	; D.1463, x1
+	subb	,s	; D.1463, x0
+	cmpb	#5	;cmpqi:	; D.1463,
 	ble	L45	;
-	stb	2,s	; D.1448, ivtmp.152
+	stb	2,s	; D.1463, ivtmp.152
 L47:
 ;----- asm -----
-; 233 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 233 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[159]		addLineImpl(x0, y0, x0 + test, y1, half);
+; 0 "" 2
 ;--- end asm ---
 	ldb	,s	;, x0
 	addb	#5	;,
@@ -849,8 +916,9 @@ L47:
 	ldb	4,s	;, x0
 	jsr	_addLineImpl
 ;----- asm -----
-; 235 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 235 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[160]		x0 += test;
+; 0 "" 2
 ;--- end asm ---
 	ldb	6,s	;, ivtmp.152
 	addb	#-5	;,
@@ -866,18 +934,20 @@ L46:
 	stb	,s	;, x0
 L45:
 ;----- asm -----
-; 238 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 238 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[162]	while (y1 - y0 > test) {
+; 0 "" 2
 ;--- end asm ---
-	ldb	9,s	; D.1450, y1
-	subb	7,s	; D.1450, y0
-	cmpb	#5	;cmpqi:	; D.1450,
+	ldb	9,s	; D.1465, y1
+	subb	7,s	; D.1465, y0
+	cmpb	#5	;cmpqi:	; D.1465,
 	ble	L48	;
-	stb	1,s	; D.1450, ivtmp.144
+	stb	1,s	; D.1465, ivtmp.144
 L50:
 ;----- asm -----
-; 240 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 240 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[163]		addLineImpl(x0, y0, x1, y0 + test, half);
+; 0 "" 2
 ;--- end asm ---
 	ldb	7,s	;, y0
 	addb	#5	;,
@@ -893,8 +963,9 @@ L50:
 	ldb	4,s	;, x0
 	jsr	_addLineImpl
 ;----- asm -----
-; 242 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 242 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[164]		y0 += test;
+; 0 "" 2
 ;--- end asm ---
 	ldb	5,s	;, ivtmp.144
 	addb	#-5	;,
@@ -910,8 +981,9 @@ L49:
 	stb	7,s	;, y0
 L48:
 ;----- asm -----
-; 245 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 245 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[166]	addLineImpl(x0, y0, x1, y1, half);
+; 0 "" 2
 ;--- end asm ---
 	ldb	10,s	;, half
 	pshs	b	;
@@ -929,23 +1001,29 @@ L48:
 _setupY:
 	leas	-5,s	;,,
 ;----- asm -----
-; 350 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 350 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[234]	int8_t x = 0;
-; 352 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 0 "" 2
+; 352 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[235]	int8_t y = 0;
-; 354 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 0 "" 2
+; 354 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[236]	for (x = -1; x < LEVEL_WIDTH; x++) {
+; 0 "" 2
 ;--- end asm ---
 	ldb	#-1	;,
 	stb	1,s	;, x
 L58:
 ;----- asm -----
-; 356 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 356 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[237]		int8_t y0 = -1;
-; 358 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 0 "" 2
+; 358 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[238]		int8_t y1 = -1;
-; 360 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 0 "" 2
+; 360 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[239]		for (y = 0; y <= LEVEL_HEIGHT; y++) {
+; 0 "" 2
 ;--- end asm ---
 	clr	2,s	; y
 	ldb	#-1	;,
@@ -953,30 +1031,32 @@ L58:
 	stb	4,s	;, y1
 L57:
 ;----- asm -----
-; 362 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 362 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[240]			if (isField(x, y) || isField(x + 1, y)) {
+; 0 "" 2
 ;--- end asm ---
 	ldb	2,s	;, y
 	pshs	b	;
 	ldb	2,s	;, x
 	jsr	_isField
 	leas	1,s	;,,
-	tstb	; D.1511
+	tstb	; D.1526
 	bne	L53	;
 	ldb	1,s	;, x
 	incb	;
-	stb	,s	;, D.1512
+	stb	,s	;, D.1527
 	ldb	2,s	;, y
 	pshs	b	;
-	ldb	1,s	;, D.1512
+	ldb	1,s	;, D.1527
 	jsr	_isField
 	leas	1,s	;,,
-	tstb	; D.1513
+	tstb	; D.1528
 	beq	L54	;
 L53:
 ;----- asm -----
-; 364 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 364 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[241]				if (y0 < 0) y0 = y;
+; 0 "" 2
 ;--- end asm ---
 	tst	3,s	; y0
 	bge	L55	;
@@ -984,36 +1064,40 @@ L53:
 	stb	3,s	;, y0
 L55:
 ;----- asm -----
-; 366 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 366 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[242]				y1 = y;
+; 0 "" 2
 ;--- end asm ---
 	ldb	2,s	;, y
 	stb	4,s	;, y1
 	bra	L56	;
 L54:
 ;----- asm -----
-; 369 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 369 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[244]				if (y0 >= 0) {
+; 0 "" 2
 ;--- end asm ---
 	tst	3,s	; y0
 	blt	L56	;
 ;----- asm -----
-; 371 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 371 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[245]					addLine(x + 1, y0, x + 1, y1 + 1, 0);
+; 0 "" 2
 ;--- end asm ---
 	clr	,-s	;
 	ldb	5,s	;, y1
 	incb	;
 	pshs	b	;
-	ldb	2,s	;, D.1512
+	ldb	2,s	;, D.1527
 	pshs	b	;
 	ldb	6,s	;, y0
 	pshs	b	;
-	ldb	4,s	;, D.1512
+	ldb	4,s	;, D.1527
 	jsr	_addLine
 ;----- asm -----
-; 373 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 373 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[246]					y0 = -1;
+; 0 "" 2
 ;--- end asm ---
 	ldb	#-1	;,
 	stb	7,s	;, y0
@@ -1034,16 +1118,21 @@ _setupX:
 	pshs	y,u	;
 	leas	-7,s	;,,
 ;----- asm -----
-; 283 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 283 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[193]	long int index;
-; 285 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 0 "" 2
+; 285 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[194]	int8_t x = 0;
-; 287 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 0 "" 2
+; 287 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[195]	int8_t y = 0;
-; 289 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 0 "" 2
+; 289 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[196]	const char* geometry = level->geometry;
-; 291 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 0 "" 2
+; 291 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[197]	for (y = -1; y < LEVEL_HEIGHT; y++) {
+; 0 "" 2
 ;--- end asm ---
 	ldx	[_level]	;, <variable>.geometry
 	leay	-10,x	; ivtmp.199,,
@@ -1053,12 +1142,15 @@ L75:
 	decb	;
 	stb	2,s	;, y
 ;----- asm -----
-; 293 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 293 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[198]		int8_t x0 = -1;
-; 295 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 0 "" 2
+; 295 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[199]		int8_t x1 = -1;
-; 297 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 0 "" 2
+; 297 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[200]		for (x = 0; x <= LEVEL_WIDTH; x++) {
+; 0 "" 2
 ;--- end asm ---
 	leau	,y	; ivtmp.202, ivtmp.199
 	ldb	#-1	;,
@@ -1071,20 +1163,24 @@ L74:
 	decb	;
 	stb	1,s	;, x
 ;----- asm -----
-; 299 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 299 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[201]			char c0 = 0;
-; 301 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 0 "" 2
+; 301 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[202]			index = (long int) y*LEVEL_WIDTH + (long int)x;
-; 303 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 0 "" 2
+; 303 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[203]			if (y >= 0 && x < LEVEL_WIDTH) {
+; 0 "" 2
 ;--- end asm ---
 	tst	2,s	; y
 	blt	L63	;
 	cmpb	#9	;cmpqi:	;,
 	bgt	L63	;
 ;----- asm -----
-; 305 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 305 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[204]				c0 = geometry[index];
+; 0 "" 2
 ;--- end asm ---
 	ldb	,u	; c0,* ivtmp.202
 	bra	L64	;
@@ -1092,28 +1188,32 @@ L63:
 	clrb	; c0
 L64:
 ;----- asm -----
-; 308 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 308 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[206]			if (c0 == 'e') {
+; 0 "" 2
 ;--- end asm ---
 	cmpb	#101	;cmpqi:	; c0,
 	bne	L65	;
 ;----- asm -----
-; 310 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 310 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[207]				addTarget(x, y);
+; 0 "" 2
 ;--- end asm ---
 	ldb	2,s	;, y
 	pshs	b	;
 	ldb	2,s	;, x
 	jsr	_addTarget
 ;----- asm -----
-; 312 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 312 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[208]				endX = x;
+; 0 "" 2
 ;--- end asm ---
 	ldb	2,s	;, x
 	stb	_endX	;, endX
 ;----- asm -----
-; 314 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 314 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[209]				endY = y;
+; 0 "" 2
 ;--- end asm ---
 	ldb	3,s	;, y
 	stb	_endY	;, endY
@@ -1123,8 +1223,9 @@ L65:
 	cmpb	#118	;cmpqi:	; c0,
 	bne	L67	;
 ;----- asm -----
-; 317 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 317 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[211]				addSplit(x, y);
+; 0 "" 2
 ;--- end asm ---
 	ldb	2,s	;, y
 	pshs	b	;
@@ -1136,8 +1237,9 @@ L67:
 	cmpb	#115	;cmpqi:	; c0,
 	bne	L68	;
 ;----- asm -----
-; 320 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 320 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[213]				addLine(x, y, x + 1, y + 1, 0);
+; 0 "" 2
 ;--- end asm ---
 	clr	,-s	;
 	ldb	7,s	;, ivtmp.193
@@ -1154,8 +1256,9 @@ L68:
 	cmpb	#104	;cmpqi:	; c0,
 	bne	L69	;
 ;----- asm -----
-; 323 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 323 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[215]				addLine(x + 1, y, x, y + 1, 0);
+; 0 "" 2
 ;--- end asm ---
 	clr	,-s	;
 	ldb	7,s	;, ivtmp.193
@@ -1172,8 +1275,9 @@ L69:
 	cmpb	#102	;cmpqi:	; c0,
 	bne	L66	;
 ;----- asm -----
-; 326 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 326 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[217]				addLine(x, y, x + 1, y, 1);
+; 0 "" 2
 ;--- end asm ---
 	ldb	#1	;,
 	stb	,-s	;,
@@ -1188,28 +1292,30 @@ L69:
 	leas	4,s	;,,
 L66:
 ;----- asm -----
-; 329 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 329 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[219]            if (isField(x, y) || isField(x, y + 1)) {
+; 0 "" 2
 ;--- end asm ---
 	ldb	2,s	;, y
 	pshs	b	;
 	ldb	2,s	;, x
 	jsr	_isField
 	leas	1,s	;,,
-	tstb	; D.1493
+	tstb	; D.1508
 	bne	L70	;
 	ldb	6,s	;, ivtmp.193
-	stb	,s	;, D.1488
+	stb	,s	;, D.1503
 	pshs	b	;
 	ldb	2,s	;, x
 	jsr	_isField
 	leas	1,s	;,,
-	tstb	; D.1494
+	tstb	; D.1509
 	beq	L71	;
 L70:
 ;----- asm -----
-; 331 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 331 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[220]				if (x0 < 0) x0 = x;
+; 0 "" 2
 ;--- end asm ---
 	tst	3,s	; x0
 	bge	L72	;
@@ -1217,36 +1323,40 @@ L70:
 	stb	3,s	;, x0
 L72:
 ;----- asm -----
-; 333 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 333 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[221]				x1 = x;
+; 0 "" 2
 ;--- end asm ---
 	ldb	1,s	;, x
 	stb	4,s	;, x1
 	bra	L73	;
 L71:
 ;----- asm -----
-; 336 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 336 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[223]				if (x0 >= 0) {
+; 0 "" 2
 ;--- end asm ---
 	tst	3,s	; x0
 	blt	L73	;
 ;----- asm -----
-; 338 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 338 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[224]					addLine(x0, y + 1, x1 + 1, y + 1, 0);
+; 0 "" 2
 ;--- end asm ---
 	clr	,-s	;
-	ldb	1,s	;, D.1488
+	ldb	1,s	;, D.1503
 	pshs	b	;
 	ldb	6,s	;, x1
 	incb	;
 	pshs	b	;
-	ldb	3,s	;, D.1488
+	ldb	3,s	;, D.1503
 	pshs	b	;
 	ldb	7,s	;, x0
 	jsr	_addLine
 ;----- asm -----
-; 340 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 340 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[225]					x0 = -1;
+; 0 "" 2
 ;--- end asm ---
 	ldb	#-1	;,
 	stb	7,s	;, x0
@@ -1267,18 +1377,21 @@ L73:
 	.globl	_initLevel
 _initLevel:
 ;----- asm -----
-; 416 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 416 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[276]    lineCount = 0;
+; 0 "" 2
 ;--- end asm ---
 	clr	_lineCount	; lineCount
 ;----- asm -----
-; 418 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 418 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[277]    setupX();
+; 0 "" 2
 ;--- end asm ---
 	jsr	_setupX
 ;----- asm -----
-; 420 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 420 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[278]    setupY();
+; 0 "" 2
 ;--- end asm ---
 	jsr	_setupY
 	rts
@@ -1288,14 +1401,16 @@ _swatchSwitch:
 	leas	-7,s	;,,
 	stb	2,s	; x, x
 ;----- asm -----
-; 96 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 96 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[75]	if (splitMode) return;
+; 0 "" 2
 ;--- end asm ---
 	tst	_splitMode	; splitMode
 	lbne	L95	;
 ;----- asm -----
-; 98 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 98 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[76]    for (uint8_t i = 0; i < level->swatches_count; i++) {
+; 0 "" 2
 ;--- end asm ---
 	ldx	_level	; level.7, level
 	tst	4,x	; <variable>.swatches_count
@@ -1303,8 +1418,9 @@ _swatchSwitch:
 	clr	3,s	; i
 L94:
 ;----- asm -----
-; 100 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 100 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[77]        const struct Swatch* swatch = level->swatches[i];
+; 0 "" 2
 ;--- end asm ---
 	ldb	3,s	;, i
 	clra		;zero_extendqihi: R:b -> R:d	;,
@@ -1314,8 +1430,9 @@ L94:
 	leax	d,x	; tmp43, tmp42, level.7
 	ldu	5,x	; swatch, <variable>.swatches
 ;----- asm -----
-; 102 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 102 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[78]		if (swatch->position.x == x && swatch->position.y == y) {
+; 0 "" 2
 ;--- end asm ---
 	ldb	2,s	;, x
 	cmpb	1,u	;cmpqi:(R)	;, <variable>.position.x
@@ -1324,16 +1441,18 @@ L94:
 	cmpb	2,u	;cmpqi:(R)	;, <variable>.position.y
 	lbne	L84	;
 ;----- asm -----
-; 104 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 104 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[79]            for (uint8_t j = 0; j < swatch->fields_count; j++) {
+; 0 "" 2
 ;--- end asm ---
 	tst	3,u	; <variable>.fields_count
 	lbeq	L84	;
 	clr	4,s	; j
 L93:
 ;----- asm -----
-; 106 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 106 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[80]                const struct SwatchField* field = swatch->fields[j];
+; 0 "" 2
 ;--- end asm ---
 	ldb	4,s	;, j
 	clra		;zero_extendqihi: R:b -> R:d	;,
@@ -1343,20 +1462,23 @@ L93:
 	leax	d,u	; tmp48, tmp47, swatch
 	ldx	,x	; field, <variable>.fields
 ;----- asm -----
-; 108 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 108 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[81]		       int8_t xf = field->position.x;
+; 0 "" 2
 ;--- end asm ---
 	ldb	1,x	;, <variable>.position.x
 	stb	5,s	;, xf
 ;----- asm -----
-; 110 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 110 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[82]		       int8_t yf = field->position.y;
+; 0 "" 2
 ;--- end asm ---
 	ldb	2,x	;, <variable>.position.y
 	stb	6,s	;, yf
 ;----- asm -----
-; 112 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 112 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[83]                switch (field->action) {
+; 0 "" 2
 ;--- end asm ---
 	ldb	,x	;, <variable>.action
 	cmpb	#4	;cmpqi:	;,
@@ -1375,15 +1497,16 @@ L91:
 	.word	L90
 L86:
 ;----- asm -----
-; 116 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 116 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[85]					setSwatchField(xf, yf, !isSwatchFieldOn(xf, yf));
+; 0 "" 2
 ;--- end asm ---
 	ldb	6,s	;, yf
 	pshs	b	;
 	ldb	6,s	;, xf
 	jsr	_isSwatchFieldOn
-	tstb	; D.1376
-	clra		;zero_extendqihi: R:b -> R:d	; D.1376, tmp55
+	tstb	; D.1391
+	clra		;zero_extendqihi: R:b -> R:d	; D.1391, tmp55
 	addd	#-1; addhi3,3	; tmp56,
 	tfr	a,b	;,
 	clra		;zero_extendqihi: R:b -> R:d	;,
@@ -1396,15 +1519,17 @@ L86:
 	ldb	8,s	;, xf
 	jsr	_setSwatchField
 ;----- asm -----
-; 118 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 118 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[86]					break;
+; 0 "" 2
 ;--- end asm ---
 	leas	3,s	;,,
 	lbra	L85	;
 L87:
 ;----- asm -----
-; 122 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 122 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[88]					setSwatchField(xf, yf, 1);
+; 0 "" 2
 ;--- end asm ---
 	ldb	#1	;,
 	stb	,-s	;,
@@ -1413,15 +1538,17 @@ L87:
 	ldb	7,s	;, xf
 	jsr	_setSwatchField
 ;----- asm -----
-; 124 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 124 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[89]					break;
+; 0 "" 2
 ;--- end asm ---
 	leas	2,s	;,,
 	lbra	L85	;
 L88:
 ;----- asm -----
-; 128 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 128 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[91]					setSwatchField(xf, yf, 0);
+; 0 "" 2
 ;--- end asm ---
 	clr	,-s	;
 	ldb	7,s	;, yf
@@ -1429,50 +1556,58 @@ L88:
 	ldb	7,s	;, xf
 	jsr	_setSwatchField
 ;----- asm -----
-; 130 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 130 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[92]					break;
+; 0 "" 2
 ;--- end asm ---
 	leas	2,s	;,,
 	bra	L85	;
 L89:
 ;----- asm -----
-; 134 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 134 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[94]					blockX = xf;
+; 0 "" 2
 ;--- end asm ---
 	ldb	5,s	;, xf
 	stb	_blockX	;, blockX
 ;----- asm -----
-; 136 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 136 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[95]					blockY = yf;
+; 0 "" 2
 ;--- end asm ---
 	ldb	6,s	;, yf
 	stb	_blockY	;, blockY
 ;----- asm -----
-; 138 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 138 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[96]					setSplitMode();
+; 0 "" 2
 ;--- end asm ---
 	jsr	_setSplitMode
 ;----- asm -----
-; 140 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 140 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[97]					break;
+; 0 "" 2
 ;--- end asm ---
 	bra	L85	;
 L90:
 ;----- asm -----
-; 144 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 144 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[99]					blockX2 = xf;
+; 0 "" 2
 ;--- end asm ---
 	ldb	5,s	;, xf
 	stb	_blockX2	;, blockX2
 ;----- asm -----
-; 146 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 146 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[100]					blockY2 = yf;
+; 0 "" 2
 ;--- end asm ---
 	ldb	6,s	;, yf
 	stb	_blockY2	;, blockY2
 ;----- asm -----
-; 148 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 148 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[101]					break;
+; 0 "" 2
 ;--- end asm ---
 L85:
 	inc	4,s	; j
@@ -1487,8 +1622,9 @@ L84:
 	lblo	L94	;
 L83:
 ;----- asm -----
-; 154 "C:\data\bloxorz\Vide\source\level.enr.c" 1
+; 154 "/home/frank/data/projects/bloxorz/Vide/source/level.enr.c" 1
 	; #ENR#[106]	initLevel();
+; 0 "" 2
 ;--- end asm ---
 	jsr	_initLevel
 L95:

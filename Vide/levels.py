@@ -559,7 +559,7 @@ for level in levels:
                         x2 = s['position']['x']
                         y2 = s['position']['y']
                         
-                        # rotate back -90° to get swatch name
+                        # rotate back -90 deg to get swatch name
                         (x2, y2) = rotate(x2, y2)
                         (x2, y2) = rotate(x2, y2)
                         (x2, y2) = rotate(x2, y2)
@@ -609,7 +609,7 @@ for level in levels:
 #   k, q : same as l and r, but initially on instead of off
 # start: x, y start coordinate of the block
 
-# rotate geometry by 90°
+# rotate geometry by 90 deg
 def setc(level, x, y, c):
     line = level[y]
     line = line[:x] + c + line[x+1:]
@@ -700,6 +700,6 @@ def saveFile(levels2, levelOffset, nextBank, filename):
         file.write("};\n")
 
 saveFile(levels2[:15], 1, 1, "leveldata0.c")
-saveFile(levels2[16:], 17, 0, "leveldata1.c")
+saveFile(levels2[15:], 16, 0, "leveldata1.c")
 
 print("level files created")

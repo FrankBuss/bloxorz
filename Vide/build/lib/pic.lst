@@ -5,7 +5,7 @@
    0000                       5 data: .blkb   1
    0001                       6 counter: .blkb   1
    0002                       7 bit_counter: .blkb   1
-                              8  
+                              8 
                               9 	.area .text
                              10 
                              11 	.globl  _picWrite

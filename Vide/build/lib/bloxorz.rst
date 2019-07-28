@@ -1,2088 +1,2439 @@
-                              1 ;;; gcc for m6809 : Mar 17 2019 12:45:32
+                              1 ;;; gcc for m6809 : Mar 17 2019 11:56:12
                               2 ;;; 4.3.6 (gcc6809)
                               3 ;;; ABI version 1
                               4 ;;; -mabi=bx -mint8 -fomit-frame-pointer -O1
                               5 	.module	bloxorz.enr.c
                               6 ; GNU C (GCC) version 4.3.6 (gcc6809) (m6809-unknown-none)
-                              7 ;	compiled by GNU C version 7.4.0, GMP version 4.3.2, MPFR version 2.4.2.
+                              7 ;	compiled by GNU C version 5.4.0 20160609, GMP version 6.1.0, MPFR version 3.1.4.
                               8 ; GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
                               9 ; options passed:  -O1 -fverbose-asm -W -Wall -Wextra -Wconversion -Werror
                              10 ; -fomit-frame-pointer -mint8 -msoft-reg-count=0 -std=gnu99
-                             11 ; -fno-time-report
-                             12 ; -IC:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include
-                             13 ; -D__INLINE_RUM=1 -DOMMIT_FRAMEPOINTER=1
-                             14 ; C:\data\bloxorz\Vide\source\bloxorz.enr.c
-                             15 ; options enabled:  -falign-loops -fargument-alias -fauto-inc-dec
-                             16 ; -fbranch-count-reg -fcommon -fcprop-registers -fdefer-pop
-                             17 ; -fearly-inlining -feliminate-unused-debug-types -ffunction-cse -fgcse-lm
-                             18 ; -fguess-branch-probability -fident -fif-conversion -fif-conversion2
-                             19 ; -finline-functions-called-once -fipa-pure-const -fipa-reference -fivopts
-                             20 ; -fkeep-static-consts -fleading-underscore -fmath-errno -fmerge-constants
-                             21 ; -fmerge-debug-strings -fmove-loop-invariants -fomit-frame-pointer
-                             22 ; -fpcc-struct-return -fpeephole -fsched-interblock -fsched-spec
-                             23 ; -fsched-stalled-insns-dep -fsigned-zeros -fsplit-ivs-in-unroller
-                             24 ; -fsplit-wide-types -ftoplevel-reorder -ftrapping-math -ftree-ccp
-                             25 ; -ftree-ch -ftree-copy-prop -ftree-copyrename -ftree-dce
-                             26 ; -ftree-dominator-opts -ftree-dse -ftree-fre -ftree-loop-im
-                             27 ; -ftree-loop-ivcanon -ftree-loop-optimize -ftree-parallelize-loops=
-                             28 ; -ftree-reassoc -ftree-salias -ftree-scev-cprop -ftree-sink -ftree-sra
-                             29 ; -ftree-ter -ftree-vect-loop-version -funit-at-a-time -fverbose-asm
-                             30 ; -fzero-initialized-in-bss
-                             31 ; Compiler executable checksum: 8f282e2d9663ae6148257c524e608c63
-                             32 	.area	.text
-                             33 	.globl	_runtimeError
-   351F                      34 _runtimeError:
-   351F 34 60         [ 7]   35 	pshs	y,u	;
-   3521 32 7C         [ 5]   36 	leas	-4,s	;,,
-   3523 31 84         [ 4]   37 	leay	,x	; msg, msg
-                             38 ;----- asm -----
-                             39 ; 154 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                             40 	; #ENR#[153]	while (1) {
+                             11 ; -fno-time-report -I/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include
+                             12 ; -D__INLINE_RUM=1 -DOMMIT_FRAMEPOINTER=1
+                             13 ; /home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c
+                             14 ; options enabled:  -falign-loops -fargument-alias -fauto-inc-dec
+                             15 ; -fbranch-count-reg -fcommon -fcprop-registers -fdefer-pop
+                             16 ; -fearly-inlining -feliminate-unused-debug-types -ffunction-cse -fgcse-lm
+                             17 ; -fguess-branch-probability -fident -fif-conversion -fif-conversion2
+                             18 ; -finline-functions-called-once -fipa-pure-const -fipa-reference -fivopts
+                             19 ; -fkeep-static-consts -fleading-underscore -fmath-errno -fmerge-constants
+                             20 ; -fmerge-debug-strings -fmove-loop-invariants -fomit-frame-pointer
+                             21 ; -fpcc-struct-return -fpeephole -fsched-interblock -fsched-spec
+                             22 ; -fsched-stalled-insns-dep -fsigned-zeros -fsplit-ivs-in-unroller
+                             23 ; -fsplit-wide-types -ftoplevel-reorder -ftrapping-math -ftree-ccp
+                             24 ; -ftree-ch -ftree-copy-prop -ftree-copyrename -ftree-dce
+                             25 ; -ftree-dominator-opts -ftree-dse -ftree-fre -ftree-loop-im
+                             26 ; -ftree-loop-ivcanon -ftree-loop-optimize -ftree-parallelize-loops=
+                             27 ; -ftree-reassoc -ftree-salias -ftree-scev-cprop -ftree-sink -ftree-sra
+                             28 ; -ftree-ter -ftree-vect-loop-version -funit-at-a-time -fverbose-asm
+                             29 ; -fzero-initialized-in-bss
+                             30 ; Compiler executable checksum: 74a0323a4f41feb77857e3eae52873ae
+                             31 	.area	.text
+                             32 	.globl	_runtimeError
+   48A0                      33 _runtimeError:
+   48A0 34 60         [ 7]   34 	pshs	y,u	;
+   48A2 32 7C         [ 5]   35 	leas	-4,s	;,,
+   48A4 31 84         [ 4]   36 	leay	,x	; msg, msg
+                             37 ;----- asm -----
+                             38 ; 180 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                             39 	; #ENR#[170]	while (1) {
+                             40 ; 0 "" 2
                              41 ;--- end asm ---
-   3525                      42 L2:
+   48A6                      42 L2:
                              43 ;----- asm -----
-                             44 ; 156 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                             45 	; #ENR#[154]		frwait();
-                             46 ; 97 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   3525 BD F1 92      [ 8]   47 	jsr ___Wait_Recal; BIOS call
-                             48 ; 158 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                             49 	; #ENR#[155]         Intensity_a(0x5f);
-                             50 ;--- end asm ---
-   3528 C6 5F         [ 2]   51 	ldb	#95	;,
-   352A E7 63         [ 5]   52 	stb	3,s	;, a
-                             53 ;----- asm -----
-                             54 ; 3427 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   352C A6 63         [ 5]   55 	lda 3,s	; a
-   352E BD F2 AB      [ 8]   56 	jsr ___Intensity_a; BIOS call
-                             57 ; 160 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                             58 	; #ENR#[156]         Vec_Text_Width = 90;
-                             59 ;--- end asm ---
-   3531 C6 5A         [ 2]   60 	ldb	#90	;,
-   3533 F7 C8 2B      [ 5]   61 	stb	_Vec_Text_Width	;, Vec_Text_Width
-                             62 ;----- asm -----
-                             63 ; 162 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                             64 	; #ENR#[157]         Print_Str_d(-10, -110, msg);
-                             65 ;--- end asm ---
-   3536 C6 F6         [ 2]   66 	ldb	#-10	;,
-   3538 E7 63         [ 5]   67 	stb	3,s	;, a
-   353A C6 92         [ 2]   68 	ldb	#-110	;,
-   353C E7 62         [ 5]   69 	stb	2,s	;, b
-   353E 10 AF E4      [ 6]   70 	sty	,s	; msg, u
-                             71 ;----- asm -----
-                             72 ; 666 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   3541 A6 63         [ 5]   73 	lda 3,s	; a
-   3543 E6 62         [ 5]   74 	ldb 2,s	; b
-   3545 EE E4         [ 5]   75 	ldu ,s	; u
-   3547 BD F3 7A      [ 8]   76 	jsr ___Print_Str_d; BIOS call
-                             77 ;--- end asm ---
-   354A 16 FF D8      [ 5]   78 	lbra	L2	;
-                             79 	.globl	_sendCommand
-   354D                      80 _sendCommand:
-                             81 ;----- asm -----
-                             82 ; 169 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                             83 	; #ENR#[163]return 0;
+                             44 ; 182 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                             45 	; #ENR#[171]		frwait();
+                             46 ; 0 "" 2
+                             47 ; 97 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   48A6 BD F1 92      [ 8]   48 	jsr ___Wait_Recal; BIOS call
+                             49 ; 0 "" 2
+                             50 ; 184 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                             51 	; #ENR#[172]         Intensity_a(0x5f);
+                             52 ; 0 "" 2
+                             53 ;--- end asm ---
+   48A9 C6 5F         [ 2]   54 	ldb	#95	;,
+   48AB E7 63         [ 5]   55 	stb	3,s	;, a
+                             56 ;----- asm -----
+                             57 ; 3427 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   48AD A6 63         [ 5]   58 	lda 3,s	; a
+   48AF BD F2 AB      [ 8]   59 	jsr ___Intensity_a; BIOS call
+                             60 ; 0 "" 2
+                             61 ; 186 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                             62 	; #ENR#[173]         Vec_Text_Width = 90;
+                             63 ; 0 "" 2
+                             64 ;--- end asm ---
+   48B2 C6 5A         [ 2]   65 	ldb	#90	;,
+   48B4 F7 C8 2B      [ 5]   66 	stb	_Vec_Text_Width	;, Vec_Text_Width
+                             67 ;----- asm -----
+                             68 ; 188 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                             69 	; #ENR#[174]         Print_Str_d(-10, -110, msg);
+                             70 ; 0 "" 2
+                             71 ;--- end asm ---
+   48B7 C6 F6         [ 2]   72 	ldb	#-10	;,
+   48B9 E7 63         [ 5]   73 	stb	3,s	;, a
+   48BB C6 92         [ 2]   74 	ldb	#-110	;,
+   48BD E7 62         [ 5]   75 	stb	2,s	;, b
+   48BF 10 AF E4      [ 6]   76 	sty	,s	; msg, u
+                             77 ;----- asm -----
+                             78 ; 666 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   48C2 A6 63         [ 5]   79 	lda 3,s	; a
+   48C4 E6 62         [ 5]   80 	ldb 2,s	; b
+   48C6 EE E4         [ 5]   81 	ldu ,s	; u
+   48C8 BD F3 7A      [ 8]   82 	jsr ___Print_Str_d; BIOS call
+                             83 ; 0 "" 2
                              84 ;--- end asm ---
-   354D 5F            [ 2]   85 	clrb	;
-   354E 39            [ 5]   86 	rts
-                             87 	.globl	_writeEeprom
-   354F                      88 _writeEeprom:
-                             89 ;----- asm -----
-                             90 ; 189 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                             91 	; #ENR#[175]	if (picAvailable) {
-                             92 ;--- end asm ---
-   354F 7D C8 FD      [ 7]   93 	tst	_picAvailable	; picAvailable
-   3552 27 12         [ 3]   94 	beq	L8	;
-                             95 ;----- asm -----
-                             96 ; 191 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                             97 	; #ENR#[176]	    	sendCommand(CMD_SET_EEPROM_ADR, address);
-                             98 ;--- end asm ---
-   3554 34 04         [ 6]   99 	pshs	b	; address
-   3556 C6 02         [ 2]  100 	ldb	#2	;,
-   3558 BD 35 4D      [ 8]  101 	jsr	_sendCommand
-                            102 ;----- asm -----
-                            103 ; 193 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            104 	; #ENR#[177]	    	sendCommand(CMD_EEPROM_WRITE, data);
+   48CB 16 FF D8      [ 5]   85 	lbra	L2	;
+                             86 	.globl	_itoa
+   48CE                      87 _itoa:
+   48CE 34 60         [ 7]   88 	pshs	y,u	;
+   48D0 32 71         [ 5]   89 	leas	-15,s	;,,
+                             90 ;----- asm -----
+                             91 ; 220 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                             92 	; #ENR#[199]	uint16_t muls[] = { 100, 10, 1 };
+                             93 ; 0 "" 2
+                             94 ;--- end asm ---
+   48D2 CC 00 64      [ 3]   95 	ldd	#100	;,
+   48D5 ED 69         [ 6]   96 	std	9,s	;, muls
+   48D7 CC 00 0A      [ 3]   97 	ldd	#10	;,
+   48DA ED 6B         [ 6]   98 	std	11,s	;, muls
+   48DC CC 00 01      [ 3]   99 	ldd	#1	;,
+   48DF ED 6D         [ 6]  100 	std	13,s	;, muls
+                            101 ;----- asm -----
+                            102 ; 222 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            103 	; #ENR#[200]	if (number > 999) number = 999;
+                            104 ; 0 "" 2
                             105 ;--- end asm ---
-   355B E6 63         [ 5]  106 	ldb	3,s	;, data
-   355D E7 E2         [ 6]  107 	stb	,-s	;,
-   355F C6 03         [ 2]  108 	ldb	#3	;,
-   3561 BD 35 4D      [ 8]  109 	jsr	_sendCommand
-   3564 32 62         [ 5]  110 	leas	2,s	;,,
-   3566                     111 L8:
-   3566 39            [ 5]  112 	rts
-                            113 	.globl	_readEeprom
-   3567                     114 _readEeprom:
-                            115 ;----- asm -----
-                            116 ; 200 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            117 	; #ENR#[183]	if (picAvailable) {
-                            118 ;--- end asm ---
-   3567 7D C8 FD      [ 7]  119 	tst	_picAvailable	; picAvailable
-   356A 27 0B         [ 3]  120 	beq	L10	;
+   48E1 31 84         [ 4]  106 	leay	,x	; number.96, number
+   48E3 8C 03 E7      [ 4]  107 	cmpx	#999	;cmphi:	; number.96,
+   48E6 23 04         [ 3]  108 	bls	L5	;
+   48E8 10 8E 03 E7   [ 4]  109 	ldy	#999	; number.96,
+   48EC                     110 L5:
+                            111 ;----- asm -----
+                            112 ; 224 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            113 	; #ENR#[201]	for (uint8_t i = 0; i < 3; i++) {
+                            114 ; 0 "" 2
+                            115 ;--- end asm ---
+   48EC 30 69         [ 5]  116 	leax	9,s	;,,
+   48EE AF 65         [ 6]  117 	stx	5,s	;, ivtmp.92
+   48F0 EC E8 15      [ 6]  118 	ldd	21,s	;, text
+   48F3 ED 67         [ 6]  119 	std	7,s	;, ivtmp.94
+   48F5                     120 L9:
                             121 ;----- asm -----
-                            122 ; 202 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            123 	; #ENR#[184]		return sendCommand(CMD_EEPROM_READ, address);
-                            124 ;--- end asm ---
-   356C 34 04         [ 6]  125 	pshs	b	; address
-   356E C6 04         [ 2]  126 	ldb	#4	;,
-   3570 BD 35 4D      [ 8]  127 	jsr	_sendCommand
-   3573 32 61         [ 5]  128 	leas	1,s	;,,
-   3575 20 02         [ 3]  129 	bra	L11	;
-   3577                     130 L10:
-                            131 ;----- asm -----
-                            132 ; 205 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            133 	; #ENR#[186]		return 0xff;
-                            134 ;--- end asm ---
-   3577 C6 FF         [ 2]  135 	ldb	#-1	; D.2252,
-   3579                     136 L11:
-   3579 39            [ 5]  137 	rts
-                            138 	.globl	_itoa
-   357A                     139 _itoa:
-   357A 34 60         [ 7]  140 	pshs	y,u	;
-   357C 32 71         [ 5]  141 	leas	-15,s	;,,
-                            142 ;----- asm -----
-                            143 ; 214 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            144 	; #ENR#[194]	uint16_t muls[] = { 100, 10, 1 };
-                            145 ;--- end asm ---
-   357E CC 00 64      [ 3]  146 	ldd	#100	;,
-   3581 ED 69         [ 6]  147 	std	9,s	;, muls
-   3583 CC 00 0A      [ 3]  148 	ldd	#10	;,
-   3586 ED 6B         [ 6]  149 	std	11,s	;, muls
-   3588 CC 00 01      [ 3]  150 	ldd	#1	;,
-   358B ED 6D         [ 6]  151 	std	13,s	;, muls
-                            152 ;----- asm -----
-                            153 ; 216 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            154 	; #ENR#[195]	if (number > 999) number = 999;
+                            122 ; 226 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            123 	; #ENR#[202]		uint8_t d = 0;
+                            124 ; 0 "" 2
+                            125 ; 228 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            126 	; #ENR#[203]		while (number >= muls[i]) {
+                            127 ; 0 "" 2
+                            128 ;--- end asm ---
+   48F5 AE 65         [ 6]  129 	ldx	5,s	;, ivtmp.92
+   48F7 AE 84         [ 5]  130 	ldx	,x	;, muls
+   48F9 AF E4         [ 5]  131 	stx	,s	;, D.2288
+   48FB 34 20         [ 6]  132 	pshs	y	;cmphi: R:y with R:x	; number.96,
+   48FD AC E1         [ 9]  133 	cmpx	,s++	;cmphi:	;
+   48FF 22 25         [ 3]  134 	bhi	L6	;
+   4901 1F 10         [ 6]  135 	tfr	x,d	;,
+   4903 40            [ 2]  136 	nega
+   4904 50            [ 2]  137 	negb
+   4905 82 00         [ 2]  138 	sbca	#0
+   4907 ED 63         [ 6]  139 	std	3,s	;, ivtmp.82
+   4909 1F 20         [ 6]  140 	tfr	y,d	; number.96,
+   490B A3 E4         [ 6]  141 	subd	,s	;subhi: R:d -= ,s	;, D.2288
+   490D 1F 02         [ 6]  142 	tfr	d,y	;, number.96
+   490F 6F 62         [ 7]  143 	clr	2,s	; d
+   4911                     144 L8:
+                            145 ;----- asm -----
+                            146 ; 230 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            147 	; #ENR#[204]			d++;
+                            148 ; 0 "" 2
+                            149 ;--- end asm ---
+   4911 6C 62         [ 7]  150 	inc	2,s	; d
+                            151 ;----- asm -----
+                            152 ; 232 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            153 	; #ENR#[205]			number -= muls[i];
+                            154 ; 0 "" 2
                             155 ;--- end asm ---
-   358D 31 84         [ 4]  156 	leay	,x	; number.111, number
-   358F 8C 03 E7      [ 4]  157 	cmpx	#999	;cmphi:	; number.111,
-   3592 23 04         [ 3]  158 	bls	L14	;
-   3594 10 8E 03 E7   [ 4]  159 	ldy	#999	; number.111,
-   3598                     160 L14:
-                            161 ;----- asm -----
-                            162 ; 218 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            163 	; #ENR#[196]	for (uint8_t i = 0; i < 3; i++) {
-                            164 ;--- end asm ---
-   3598 30 69         [ 5]  165 	leax	9,s	;,,
-   359A AF 65         [ 6]  166 	stx	5,s	;, ivtmp.107
-   359C EC E8 15      [ 6]  167 	ldd	21,s	;, text
-   359F ED 67         [ 6]  168 	std	7,s	;, ivtmp.109
-   35A1                     169 L18:
-                            170 ;----- asm -----
-                            171 ; 220 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            172 	; #ENR#[197]		uint8_t d = 0;
-                            173 ; 222 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            174 	; #ENR#[198]		while (number >= muls[i]) {
-                            175 ;--- end asm ---
-   35A1 AE 65         [ 6]  176 	ldx	5,s	;, ivtmp.107
-   35A3 AE 84         [ 5]  177 	ldx	,x	;, muls
-   35A5 AF E4         [ 5]  178 	stx	,s	;, D.2268
-   35A7 34 20         [ 6]  179 	pshs	y	;cmphi: R:y with R:x	; number.111,
-   35A9 AC E1         [ 9]  180 	cmpx	,s++	;cmphi:	;
-   35AB 22 25         [ 3]  181 	bhi	L15	;
-   35AD 1F 10         [ 6]  182 	tfr	x,d	;,
-   35AF 40            [ 2]  183 	nega
-   35B0 50            [ 2]  184 	negb
-   35B1 82 00         [ 2]  185 	sbca	#0
-   35B3 ED 63         [ 6]  186 	std	3,s	;, ivtmp.97
-   35B5 1F 20         [ 6]  187 	tfr	y,d	; number.111,
-   35B7 A3 E4         [ 6]  188 	subd	,s	;subhi: R:d -= ,s	;, D.2268
-   35B9 1F 02         [ 6]  189 	tfr	d,y	;, number.111
-   35BB 6F 62         [ 7]  190 	clr	2,s	; d
-   35BD                     191 L17:
+   4913 EC 63         [ 6]  156 	ldd	3,s	;, ivtmp.82
+   4915 33 AB         [ 8]  157 	leau	d,y	; number.95,, number.96
+   4917 EC E4         [ 5]  158 	ldd	,s	;, D.2288
+   4919 30 CB         [ 8]  159 	leax	d,u	; tmp85,, number.95
+   491B 34 10         [ 6]  160 	pshs	x	;cmphi: R:x with R:d	; tmp85,
+   491D 10 A3 E1      [10]  161 	cmpd	,s++	;cmphi:	;
+   4920 22 06         [ 3]  162 	bhi	L7	;
+   4922 31 C4         [ 4]  163 	leay	,u	; number.96, number.95
+   4924 20 EB         [ 3]  164 	bra	L8	;
+   4926                     165 L6:
+   4926 6F 62         [ 7]  166 	clr	2,s	; d
+   4928                     167 L7:
+                            168 ;----- asm -----
+                            169 ; 235 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            170 	; #ENR#[207]		text[i] = d + '0';
+                            171 ; 0 "" 2
+                            172 ;--- end asm ---
+   4928 E6 62         [ 5]  173 	ldb	2,s	;, d
+   492A CB 30         [ 2]  174 	addb	#48	;,
+   492C AE 67         [ 6]  175 	ldx	7,s	;, ivtmp.94
+   492E 30 01         [ 5]  176 	leax	1,x	;,,
+   4930 AF 67         [ 6]  177 	stx	7,s	;, ivtmp.94
+   4932 30 1F         [ 5]  178 	leax	-1,x	;,,
+   4934 E7 80         [ 6]  179 	stb	,x+	;,
+   4936 AE 65         [ 6]  180 	ldx	5,s	;, ivtmp.92
+   4938 30 02         [ 5]  181 	leax	2,x	;,,
+   493A AF 65         [ 6]  182 	stx	5,s	;, ivtmp.92
+   493C 1F 40         [ 6]  183 	tfr	s,d	;,
+   493E C3 00 0F      [ 4]  184 	addd	#15; addhi3,3	;,
+   4941 34 06         [ 7]  185 	pshs	d	;cmphi: R:d with R:x	;,
+   4943 AC E1         [ 9]  186 	cmpx	,s++	;cmphi:	;
+   4945 10 26 FF AC   [ 6]  187 	lbne	L9	;
+   4949 32 6F         [ 5]  188 	leas	15,s	;,,
+   494B 35 E0         [ 8]  189 	puls	y,u,pc	;
+                            190 	.globl	_updateInfoText
+   494D                     191 _updateInfoText:
                             192 ;----- asm -----
-                            193 ; 224 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            194 	; #ENR#[199]			d++;
-                            195 ;--- end asm ---
-   35BD 6C 62         [ 7]  196 	inc	2,s	; d
-                            197 ;----- asm -----
-                            198 ; 226 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            199 	; #ENR#[200]			number -= muls[i];
-                            200 ;--- end asm ---
-   35BF EC 63         [ 6]  201 	ldd	3,s	;, ivtmp.97
-   35C1 33 AB         [ 8]  202 	leau	d,y	; number.110,, number.111
-   35C3 EC E4         [ 5]  203 	ldd	,s	;, D.2268
-   35C5 30 CB         [ 8]  204 	leax	d,u	; tmp85,, number.110
-   35C7 34 10         [ 6]  205 	pshs	x	;cmphi: R:x with R:d	; tmp85,
-   35C9 10 A3 E1      [10]  206 	cmpd	,s++	;cmphi:	;
-   35CC 22 06         [ 3]  207 	bhi	L16	;
-   35CE 31 C4         [ 4]  208 	leay	,u	; number.111, number.110
-   35D0 20 EB         [ 3]  209 	bra	L17	;
-   35D2                     210 L15:
-   35D2 6F 62         [ 7]  211 	clr	2,s	; d
-   35D4                     212 L16:
-                            213 ;----- asm -----
-                            214 ; 229 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            215 	; #ENR#[202]		text[i] = d + '0';
-                            216 ;--- end asm ---
-   35D4 E6 62         [ 5]  217 	ldb	2,s	;, d
-   35D6 CB 30         [ 2]  218 	addb	#48	;,
-   35D8 AE 67         [ 6]  219 	ldx	7,s	;, ivtmp.109
-   35DA 30 01         [ 5]  220 	leax	1,x	;,,
-   35DC AF 67         [ 6]  221 	stx	7,s	;, ivtmp.109
-   35DE 30 1F         [ 5]  222 	leax	-1,x	;,,
-   35E0 E7 80         [ 6]  223 	stb	,x+	;,
-   35E2 AE 65         [ 6]  224 	ldx	5,s	;, ivtmp.107
-   35E4 30 02         [ 5]  225 	leax	2,x	;,,
-   35E6 AF 65         [ 6]  226 	stx	5,s	;, ivtmp.107
-   35E8 1F 40         [ 6]  227 	tfr	s,d	;,
-   35EA C3 00 0F      [ 4]  228 	addd	#15; addhi3,3	;,
-   35ED 34 06         [ 7]  229 	pshs	d	;cmphi: R:d with R:x	;,
-   35EF AC E1         [ 9]  230 	cmpx	,s++	;cmphi:	;
-   35F1 10 26 FF AC   [ 6]  231 	lbne	L18	;
-   35F5 32 6F         [ 5]  232 	leas	15,s	;,,
-   35F7 35 E0         [ 8]  233 	puls	y,u,pc	;
-                            234 	.globl	_updateInfoText
-   35F9                     235 _updateInfoText:
-                            236 ;----- asm -----
-                            237 ; 236 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            238 	; #ENR#[208]	itoa(moveCount, &infoText[0]);
-                            239 ;--- end asm ---
-   35F9 8E C8 EF      [ 3]  240 	ldx	#_infoText	;,
-   35FC AF E3         [ 8]  241 	stx	,--s	;,
-   35FE BE C8 F9      [ 6]  242 	ldx	_moveCount	;, moveCount
-   3601 BD 35 7A      [ 8]  243 	jsr	_itoa
-                            244 ;----- asm -----
-                            245 ; 239 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            246 	; #ENR#[210]	itoa(levelNumber + levelOffset, &infoText[6]);
-                            247 ;--- end asm ---
-   3604 F6 44 B4      [ 5]  248 	ldb	_levelOffset	; tmp28, levelOffset
-   3607 FB C8 87      [ 5]  249 	addb	_levelNumber	; tmp28, levelNumber
-   360A 8E C8 F5      [ 3]  250 	ldx	#_infoText+6	;,
-   360D AF E3         [ 8]  251 	stx	,--s	;,
-   360F 4F            [ 2]  252 	clra		;zero_extendqihi: R:b -> R:d	; tmp28,
-   3610 1F 01         [ 6]  253 	tfr	d,x	;,
-   3612 BD 35 7A      [ 8]  254 	jsr	_itoa
-   3615 32 64         [ 5]  255 	leas	4,s	;,,
-   3617 39            [ 5]  256 	rts
-                            257 	.globl	_changeMusic
-   3618                     258 _changeMusic:
-                            259 ;----- asm -----
-                            260 ; 245 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            261 	; #ENR#[215]	tstat = 1;
-                            262 ;--- end asm ---
-   3618 C6 01         [ 2]  263 	ldb	#1	;,
-   361A F7 C8 56      [ 5]  264 	stb	-14250	;,
-                            265 ;----- asm -----
-                            266 ; 247 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            267 	; #ENR#[216]	currentMusic = music;
-                            268 ;--- end asm ---
-   361D BF C8 80      [ 6]  269 	stx	_currentMusic	; music, currentMusic
-   3620 39            [ 5]  270 	rts
-                            271 	.globl	_drawField
-   3621                     272 _drawField:
-   3621 32 7F         [ 5]  273 	leas	-1,s	;,,
-                            274 ;----- asm -----
-                            275 ; 313 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            276 	; #ENR#[258]	intens(0x35);
-                            277 ;--- end asm ---
-   3623 C6 35         [ 2]  278 	ldb	#53	;,
-   3625 E7 E4         [ 4]  279 	stb	,s	;, a
-                            280 ;----- asm -----
-                            281 ; 3427 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   3627 A6 E4         [ 4]  282 	lda ,s	; a
-   3629 BD F2 AB      [ 8]  283 	jsr ___Intensity_a; BIOS call
-                            284 ; 328 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-   362C 34 5E         [10]  285 		pshs a, b, dp, x, u
-                            286 ; 329 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-   362E 86 D0         [ 2]  287 		lda #0xd0
-                            288 ; 330 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-   3630 1F 8B         [ 6]  289 		tfr a, dp
-                            290 ; 331 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-   3632 8E 00 00      [ 3]  291 		ldx #0
-                            292 ; 332 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-   3635 F6 C8 84      [ 5]  293 		ldb _lineCount
-                            294 ; 333 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-   3638                     295 	drawFieldLoop:
-                            296 ; 334 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-   3638 34 04         [ 6]  297 		pshs b
-                            298 ; 335 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-   363A 34 10         [ 6]  299 		pshs x
-                            300 ; 336 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-   363C BD F3 54      [ 8]  301 		jsr 0xf354
-                            302 ; 337 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-   363F 35 10         [ 6]  303 		puls x
-                            304 ; 338 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-   3641 A6 89 C9 8C   [ 8]  305 		lda _lineY0,x
-                            306 ; 339 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-   3645 E6 89 C9 14   [ 8]  307 		ldb _lineX0,x
-                            308 ; 340 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-   3649 34 10         [ 6]  309 		pshs x
-                            310 ; 341 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-   364B BD F2 FC      [ 8]  311 		jsr 0xf2fc
-                            312 ; 342 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-   364E 35 10         [ 6]  313 		puls x
-                            314 ; 343 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-   3650 A6 89 CA 7C   [ 8]  315 		lda _lineY1,x
-                            316 ; 344 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-   3654 E6 89 CA 04   [ 8]  317 		ldb _lineX1,x
-                            318 ; 345 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-   3658 A0 89 C9 8C   [ 8]  319 		suba _lineY0,x
-                            320 ; 346 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-   365C E0 89 C9 14   [ 8]  321 		subb _lineX0,x
-                            322 ; 347 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-   3660 34 10         [ 6]  323 		pshs x
-                            324 ; 348 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-   3662 BD F3 DF      [ 8]  325 		jsr 0xf3df
-                            326 ; 349 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-   3665 35 10         [ 6]  327 		puls x
-                            328 ; 350 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-   3667 A6 80         [ 6]  329 		lda ,x+
-                            330 ; 351 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-   3669 35 04         [ 6]  331 		puls b
-                            332 ; 352 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-   366B 5A            [ 2]  333 		decb
-                            334 ; 353 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-   366C 26 CA         [ 3]  335 		bne drawFieldLoop
-                            336 ; 354 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-   366E 35 5E         [10]  337 		puls a, b, dp, x, u
-                            338 ;--- end asm ---
-   3670 32 61         [ 5]  339 	leas	1,s	;,,
-   3672 39            [ 5]  340 	rts
-                            341 	.globl	_setBank
-   3673                     342 _setBank:
-   3673 32 7F         [ 5]  343 	leas	-1,s	;,,
-   3675 E7 E4         [ 4]  344 	stb	,s	; bank, bank
-                            345 ;----- asm -----
-                            346 ; 375 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            347 	; #ENR#[314]	*vecx = 16 + bank;
-                            348 ;--- end asm ---
-   3677 CB 10         [ 2]  349 	addb	#16	; bank,
-   3679 E7 9F C8 82   [ 9]  350 	stb	[_vecx]	; bank,* vecx
-                            351 ;----- asm -----
-                            352 ; 377 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            353 	; #ENR#[315]	sendCommand(CMD_SET_BANK, bank);
-                            354 ;--- end asm ---
-   367D E6 E4         [ 4]  355 	ldb	,s	;, bank
-   367F 34 04         [ 6]  356 	pshs	b	;
-   3681 C6 05         [ 2]  357 	ldb	#5	;,
-   3683 BD 35 4D      [ 8]  358 	jsr	_sendCommand
-   3686 32 62         [ 5]  359 	leas	2,s	;,,
-   3688 39            [ 5]  360 	rts
-   3689                     361 LC0:
-   3689 43 4C 45 41 52 20   362 	.byte	67,76,69,65,82,32,83,67
-        53 43
-   3691 4F 52 45 3F 80 00   363 	.byte	79,82,69,63,-128,0
-   3697                     364 LC1:
-   3697 33 20 59 45 53 80   365 	.byte	51,32,89,69,83,-128,0
-        00
-   369E                     366 LC2:
-   369E 34 20 4E 4F 80 00   367 	.byte	52,32,78,79,-128,0
-                            368 	.globl	_clearMenu
-   36A4                     369 _clearMenu:
-   36A4 34 40         [ 6]  370 	pshs	u	;
-   36A6 32 7B         [ 5]  371 	leas	-5,s	;,,
-                            372 ;----- asm -----
-                            373 ; 642 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            374 	; #ENR#[479]	Read_Btns();
-                            375 ; 2286 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   36A8 BD F1 BA      [ 8]  376 	jsr ___Read_Btns; BIOS call
-                            377 ; 644 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            378 	; #ENR#[480]    Intensity_a(0x5f);
-                            379 ;--- end asm ---
-   36AB C6 5F         [ 2]  380 	ldb	#95	;,
-   36AD E7 64         [ 5]  381 	stb	4,s	;, a
+                            193 ; 242 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            194 	; #ENR#[213]	itoa(moveCount, &infoText[0]);
+                            195 ; 0 "" 2
+                            196 ;--- end asm ---
+   494D 8E CA E7      [ 3]  197 	ldx	#_infoText	;,
+   4950 AF E3         [ 8]  198 	stx	,--s	;,
+   4952 BE CA F1      [ 6]  199 	ldx	_moveCount	;, moveCount
+   4955 BD 48 CE      [ 8]  200 	jsr	_itoa
+                            201 ;----- asm -----
+                            202 ; 245 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            203 	; #ENR#[215]	itoa(levelNumber + levelOffset, &infoText[6]);
+                            204 ; 0 "" 2
+                            205 ;--- end asm ---
+   4958 F6 51 84      [ 5]  206 	ldb	_levelOffset	; tmp28, levelOffset
+   495B FB C8 83      [ 5]  207 	addb	_levelNumber	; tmp28, levelNumber
+   495E 8E CA ED      [ 3]  208 	ldx	#_infoText+6	;,
+   4961 AF E3         [ 8]  209 	stx	,--s	;,
+   4963 4F            [ 2]  210 	clra		;zero_extendqihi: R:b -> R:d	; tmp28,
+   4964 1F 01         [ 6]  211 	tfr	d,x	;,
+   4966 BD 48 CE      [ 8]  212 	jsr	_itoa
+   4969 32 64         [ 5]  213 	leas	4,s	;,,
+   496B 39            [ 5]  214 	rts
+                            215 	.globl	_changeMusic
+   496C                     216 _changeMusic:
+                            217 ;----- asm -----
+                            218 ; 251 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            219 	; #ENR#[220]	tstat = 1;
+                            220 ; 0 "" 2
+                            221 ;--- end asm ---
+   496C C6 01         [ 2]  222 	ldb	#1	;,
+   496E F7 C8 56      [ 5]  223 	stb	-14250	;,
+                            224 ;----- asm -----
+                            225 ; 253 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            226 	; #ENR#[221]	currentMusic = music;
+                            227 ; 0 "" 2
+                            228 ;--- end asm ---
+   4971 BF C8 84      [ 6]  229 	stx	_currentMusic	; music, currentMusic
+   4974 39            [ 5]  230 	rts
+                            231 	.globl	_drawField
+   4975                     232 _drawField:
+   4975 32 7F         [ 5]  233 	leas	-1,s	;,,
+                            234 ;----- asm -----
+                            235 ; 319 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            236 	; #ENR#[263]	intens(0x35);
+                            237 ; 0 "" 2
+                            238 ;--- end asm ---
+   4977 C6 35         [ 2]  239 	ldb	#53	;,
+   4979 E7 E4         [ 4]  240 	stb	,s	;, a
+                            241 ;----- asm -----
+                            242 ; 3427 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   497B A6 E4         [ 4]  243 	lda ,s	; a
+   497D BD F2 AB      [ 8]  244 	jsr ___Intensity_a; BIOS call
+                            245 ; 0 "" 2
+                            246 ; 334 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+   4980 34 5E         [10]  247 		pshs a, b, dp, x, u
+                            248 ; 0 "" 2
+                            249 ; 335 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+   4982 86 D0         [ 2]  250 		lda #0xd0
+                            251 ; 0 "" 2
+                            252 ; 336 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+   4984 1F 8B         [ 6]  253 		tfr a, dp
+                            254 ; 0 "" 2
+                            255 ; 337 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+   4986 8E 00 00      [ 3]  256 		ldx #0
+                            257 ; 0 "" 2
+                            258 ; 338 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+   4989 F6 C8 80      [ 5]  259 		ldb _lineCount
+                            260 ; 0 "" 2
+                            261 ; 339 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+   498C                     262 	drawFieldLoop:
+                            263 ; 0 "" 2
+                            264 ; 340 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+   498C 34 04         [ 6]  265 		pshs b
+                            266 ; 0 "" 2
+                            267 ; 341 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+   498E 34 10         [ 6]  268 		pshs x
+                            269 ; 0 "" 2
+                            270 ; 342 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+   4990 BD F3 54      [ 8]  271 		jsr 0xf354
+                            272 ; 0 "" 2
+                            273 ; 343 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+   4993 35 10         [ 6]  274 		puls x
+                            275 ; 0 "" 2
+                            276 ; 344 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+   4995 A6 89 C9 7F   [ 8]  277 		lda _lineY0,x
+                            278 ; 0 "" 2
+                            279 ; 345 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+   4999 E6 89 C9 07   [ 8]  280 		ldb _lineX0,x
+                            281 ; 0 "" 2
+                            282 ; 346 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+   499D 34 10         [ 6]  283 		pshs x
+                            284 ; 0 "" 2
+                            285 ; 347 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+   499F BD F2 FC      [ 8]  286 		jsr 0xf2fc
+                            287 ; 0 "" 2
+                            288 ; 348 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+   49A2 35 10         [ 6]  289 		puls x
+                            290 ; 0 "" 2
+                            291 ; 349 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+   49A4 A6 89 CA 6F   [ 8]  292 		lda _lineY1,x
+                            293 ; 0 "" 2
+                            294 ; 350 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+   49A8 E6 89 C9 F7   [ 8]  295 		ldb _lineX1,x
+                            296 ; 0 "" 2
+                            297 ; 351 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+   49AC A0 89 C9 7F   [ 8]  298 		suba _lineY0,x
+                            299 ; 0 "" 2
+                            300 ; 352 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+   49B0 E0 89 C9 07   [ 8]  301 		subb _lineX0,x
+                            302 ; 0 "" 2
+                            303 ; 353 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+   49B4 34 10         [ 6]  304 		pshs x
+                            305 ; 0 "" 2
+                            306 ; 354 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+   49B6 BD F3 DF      [ 8]  307 		jsr 0xf3df
+                            308 ; 0 "" 2
+                            309 ; 355 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+   49B9 35 10         [ 6]  310 		puls x
+                            311 ; 0 "" 2
+                            312 ; 356 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+   49BB A6 80         [ 6]  313 		lda ,x+
+                            314 ; 0 "" 2
+                            315 ; 357 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+   49BD 35 04         [ 6]  316 		puls b
+                            317 ; 0 "" 2
+                            318 ; 358 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+   49BF 5A            [ 2]  319 		decb
+                            320 ; 0 "" 2
+                            321 ; 359 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+   49C0 26 CA         [ 3]  322 		bne drawFieldLoop
+                            323 ; 0 "" 2
+                            324 ; 360 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+   49C2 35 5E         [10]  325 		puls a, b, dp, x, u
+                            326 ; 0 "" 2
+                            327 ;--- end asm ---
+   49C4 32 61         [ 5]  328 	leas	1,s	;,,
+   49C6 39            [ 5]  329 	rts
+                            330 	.globl	_showInfo2
+   49C7                     331 _showInfo2:
+   49C7 34 20         [ 6]  332 	pshs	y	;
+   49C9 32 7D         [ 5]  333 	leas	-3,s	;,,
+                            334 ;----- asm -----
+                            335 ; 684 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            336 	; #ENR#[509]	zergnd();
+                            337 ; 0 "" 2
+                            338 ; 181 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   49CB BD F3 54      [ 8]  339 	jsr ___Reset0Ref; BIOS call
+                            340 ; 0 "" 2
+                            341 ; 686 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            342 	; #ENR#[510]	intens(0x50);
+                            343 ; 0 "" 2
+                            344 ;--- end asm ---
+   49CE C6 50         [ 2]  345 	ldb	#80	;,
+   49D0 E7 E4         [ 4]  346 	stb	,s	;, a
+                            347 ;----- asm -----
+                            348 ; 3427 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   49D2 A6 E4         [ 4]  349 	lda ,s	; a
+   49D4 BD F2 AB      [ 8]  350 	jsr ___Intensity_a; BIOS call
+                            351 ; 0 "" 2
+                            352 ; 689 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            353 	; #ENR#[512]	zergnd();
+                            354 ; 0 "" 2
+                            355 ; 181 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   49D7 BD F3 54      [ 8]  356 	jsr ___Reset0Ref; BIOS call
+                            357 ; 0 "" 2
+                            358 ; 691 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            359 	; #ENR#[513]	positd(-50, 100);
+                            360 ; 0 "" 2
+                            361 ;--- end asm ---
+   49DA C6 80         [ 2]  362 	ldb	#-128	;,
+   49DC D7 04         [ 4]  363 	stb	*_dp_VIA_t1_cnt_lo	;, dp_VIA_t1_cnt_lo
+   49DE C6 64         [ 2]  364 	ldb	#100	;,
+   49E0 E7 62         [ 5]  365 	stb	2,s	;, a
+   49E2 C6 CE         [ 2]  366 	ldb	#-50	;,
+   49E4 E7 E4         [ 4]  367 	stb	,s	;, b
+                            368 ;----- asm -----
+                            369 ; 3315 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   49E6 A6 62         [ 5]  370 	lda 2,s	; a
+   49E8 E6 E4         [ 4]  371 	ldb ,s	; b
+   49EA BD F3 12      [ 8]  372 	jsr ___Moveto_d; BIOS call
+                            373 ; 0 "" 2
+                            374 ; 693 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            375 	; #ENR#[514]	pack1x((void*)led8);
+                            376 ; 0 "" 2
+                            377 ;--- end asm ---
+   49ED C6 80         [ 2]  378 	ldb	#-128	;,
+   49EF D7 04         [ 4]  379 	stb	*_dp_VIA_t1_cnt_lo	;, dp_VIA_t1_cnt_lo
+   49F1 10 8E 50 FF   [ 4]  380 	ldy	#_led8	; tmp27,
+   49F5 10 AF E4      [ 6]  381 	sty	,s	; tmp27, x
                             382 ;----- asm -----
-                            383 ; 3427 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   36AF A6 64         [ 5]  384 	lda 4,s	; a
-   36B1 BD F2 AB      [ 8]  385 	jsr ___Intensity_a; BIOS call
-                            386 ; 646 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            387 	; #ENR#[481]    Vec_Text_Width = 90;
-                            388 ;--- end asm ---
-   36B4 C6 5A         [ 2]  389 	ldb	#90	;,
-   36B6 F7 C8 2B      [ 5]  390 	stb	_Vec_Text_Width	;, Vec_Text_Width
-                            391 ;----- asm -----
-                            392 ; 648 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            393 	; #ENR#[482]    Print_Str_d(100, -80, "CLEAR SCORE?€");
-                            394 ;--- end asm ---
-   36B9 CB 0A         [ 2]  395 	addb	#10	;,
-   36BB E7 64         [ 5]  396 	stb	4,s	;, a
-   36BD C6 B0         [ 2]  397 	ldb	#-80	;,
-   36BF E7 63         [ 5]  398 	stb	3,s	;, b
-   36C1 8E 36 89      [ 3]  399 	ldx	#LC0	;,
-   36C4 AF 61         [ 6]  400 	stx	1,s	;, u
-                            401 ;----- asm -----
-                            402 ; 666 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   36C6 A6 64         [ 5]  403 	lda 4,s	; a
-   36C8 E6 63         [ 5]  404 	ldb 3,s	; b
-   36CA EE 61         [ 6]  405 	ldu 1,s	; u
-   36CC BD F3 7A      [ 8]  406 	jsr ___Print_Str_d; BIOS call
-                            407 ; 650 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            408 	; #ENR#[483]    Print_Str_d(50, -110, "3 YES€");
-                            409 ;--- end asm ---
-   36CF C6 32         [ 2]  410 	ldb	#50	;,
-   36D1 E7 63         [ 5]  411 	stb	3,s	;, a
-   36D3 C6 92         [ 2]  412 	ldb	#-110	;,
-   36D5 E7 64         [ 5]  413 	stb	4,s	;, b
-   36D7 8E 36 97      [ 3]  414 	ldx	#LC1	;,
-   36DA AF 61         [ 6]  415 	stx	1,s	;, u
+                            383 ; 1610 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   49F8 AE E4         [ 5]  384 	ldx ,s	; x
+   49FA BD F4 10      [ 8]  385 	jsr ___Draw_VLp; BIOS call
+                            386 ; 0 "" 2
+                            387 ; 696 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            388 	; #ENR#[516]	zergnd();
+                            389 ; 0 "" 2
+                            390 ; 181 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   49FD BD F3 54      [ 8]  391 	jsr ___Reset0Ref; BIOS call
+                            392 ; 0 "" 2
+                            393 ; 698 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            394 	; #ENR#[517]	positd(-40, 110);
+                            395 ; 0 "" 2
+                            396 ;--- end asm ---
+   4A00 C6 80         [ 2]  397 	ldb	#-128	;,
+   4A02 D7 04         [ 4]  398 	stb	*_dp_VIA_t1_cnt_lo	;, dp_VIA_t1_cnt_lo
+   4A04 C6 6E         [ 2]  399 	ldb	#110	;,
+   4A06 E7 E4         [ 4]  400 	stb	,s	;, a
+   4A08 C6 D8         [ 2]  401 	ldb	#-40	;,
+   4A0A E7 62         [ 5]  402 	stb	2,s	;, b
+                            403 ;----- asm -----
+                            404 ; 3315 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   4A0C A6 E4         [ 4]  405 	lda ,s	; a
+   4A0E E6 62         [ 5]  406 	ldb 2,s	; b
+   4A10 BD F3 12      [ 8]  407 	jsr ___Moveto_d; BIOS call
+                            408 ; 0 "" 2
+                            409 ; 700 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            410 	; #ENR#[518]	pack1x((void*)led8);
+                            411 ; 0 "" 2
+                            412 ;--- end asm ---
+   4A13 C6 80         [ 2]  413 	ldb	#-128	;,
+   4A15 D7 04         [ 4]  414 	stb	*_dp_VIA_t1_cnt_lo	;, dp_VIA_t1_cnt_lo
+   4A17 10 AF E4      [ 6]  415 	sty	,s	; tmp27, x
                             416 ;----- asm -----
-                            417 ; 666 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   36DC A6 63         [ 5]  418 	lda 3,s	; a
-   36DE E6 64         [ 5]  419 	ldb 4,s	; b
-   36E0 EE 61         [ 6]  420 	ldu 1,s	; u
-   36E2 BD F3 7A      [ 8]  421 	jsr ___Print_Str_d; BIOS call
-                            422 ; 652 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            423 	; #ENR#[484]    Print_Str_d(20, -110, "4 NO€");
-                            424 ;--- end asm ---
-   36E5 C6 14         [ 2]  425 	ldb	#20	;,
-   36E7 E7 64         [ 5]  426 	stb	4,s	;, a
-   36E9 C6 92         [ 2]  427 	ldb	#-110	;,
-   36EB E7 63         [ 5]  428 	stb	3,s	;, b
-   36ED 8E 36 9E      [ 3]  429 	ldx	#LC2	;,
-   36F0 AF 61         [ 6]  430 	stx	1,s	;, u
-                            431 ;----- asm -----
-                            432 ; 666 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   36F2 A6 64         [ 5]  433 	lda 4,s	; a
-   36F4 E6 63         [ 5]  434 	ldb 3,s	; b
-   36F6 EE 61         [ 6]  435 	ldu 1,s	; u
-   36F8 BD F3 7A      [ 8]  436 	jsr ___Print_Str_d; BIOS call
-                            437 ; 654 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            438 	; #ENR#[485]	if (Vec_Buttons & 4) {
-                            439 ;--- end asm ---
-   36FB F6 C8 11      [ 5]  440 	ldb	_Vec_Buttons	;, Vec_Buttons
-   36FE C5 04         [ 2]  441 	bitb	#4	;,
-   3700 27 18         [ 3]  442 	beq	L30	;
-                            443 ;----- asm -----
-                            444 ; 656 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            445 	; #ENR#[486]		for (uint8_t i = 0; i < 6; i++) {
+                            417 ; 1610 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   4A1A AE E4         [ 5]  418 	ldx ,s	; x
+   4A1C BD F4 10      [ 8]  419 	jsr ___Draw_VLp; BIOS call
+                            420 ; 0 "" 2
+                            421 ; 703 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            422 	; #ENR#[520]	zergnd();
+                            423 ; 0 "" 2
+                            424 ; 181 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   4A1F BD F3 54      [ 8]  425 	jsr ___Reset0Ref; BIOS call
+                            426 ; 0 "" 2
+                            427 ; 705 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            428 	; #ENR#[521]	positd(-30, 120);
+                            429 ; 0 "" 2
+                            430 ;--- end asm ---
+   4A22 C6 80         [ 2]  431 	ldb	#-128	;,
+   4A24 D7 04         [ 4]  432 	stb	*_dp_VIA_t1_cnt_lo	;, dp_VIA_t1_cnt_lo
+   4A26 C6 78         [ 2]  433 	ldb	#120	;,
+   4A28 E7 62         [ 5]  434 	stb	2,s	;, a
+   4A2A C6 E2         [ 2]  435 	ldb	#-30	;,
+   4A2C E7 E4         [ 4]  436 	stb	,s	;, b
+                            437 ;----- asm -----
+                            438 ; 3315 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   4A2E A6 62         [ 5]  439 	lda 2,s	; a
+   4A30 E6 E4         [ 4]  440 	ldb ,s	; b
+   4A32 BD F3 12      [ 8]  441 	jsr ___Moveto_d; BIOS call
+                            442 ; 0 "" 2
+                            443 ; 707 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            444 	; #ENR#[522]	pack1x((void*)led8);
+                            445 ; 0 "" 2
                             446 ;--- end asm ---
-   3702 6F E4         [ 6]  447 	clr	,s	; i
-   3704                     448 L31:
-                            449 ;----- asm -----
-                            450 ; 658 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            451 	; #ENR#[487]			writeEeprom(i, 0xff);
-                            452 ;--- end asm ---
-   3704 C6 FF         [ 2]  453 	ldb	#-1	;,
-   3706 E7 E2         [ 6]  454 	stb	,-s	;,
-   3708 E6 61         [ 5]  455 	ldb	1,s	;, i
-   370A BD 35 4F      [ 8]  456 	jsr	_writeEeprom
-   370D 6C 61         [ 7]  457 	inc	1,s	; i
-   370F 32 61         [ 5]  458 	leas	1,s	;,,
-   3711 E6 E4         [ 4]  459 	ldb	,s	;, i
-   3713 C1 06         [ 2]  460 	cmpb	#6	;cmpqi:	;,
-   3715 26 ED         [ 3]  461 	bne	L31	;
-                            462 ;----- asm -----
-                            463 ; 661 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            464 	; #ENR#[489]		gameState = MainMenu;
-                            465 ;--- end asm ---
-   3717 7F C8 FE      [ 7]  466 	clr	_gameState	; gameState
-   371A                     467 L30:
-                            468 ;----- asm -----
-                            469 ; 664 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            470 	; #ENR#[491]	if (Vec_Buttons & 8) {
-                            471 ;--- end asm ---
-   371A F6 C8 11      [ 5]  472 	ldb	_Vec_Buttons	;, Vec_Buttons
-   371D C5 08         [ 2]  473 	bitb	#8	;,
-   371F 27 03         [ 3]  474 	beq	L33	;
-                            475 ;----- asm -----
-                            476 ; 666 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            477 	; #ENR#[492]		gameState = MainMenu;
-                            478 ;--- end asm ---
-   3721 7F C8 FE      [ 7]  479 	clr	_gameState	; gameState
-   3724                     480 L33:
-   3724 32 65         [ 5]  481 	leas	5,s	;,,
-   3726 35 C0         [ 7]  482 	puls	u,pc	;
-                            483 	.globl	_showInfo2
-   3728                     484 _showInfo2:
-   3728 34 20         [ 6]  485 	pshs	y	;
-   372A 32 7D         [ 5]  486 	leas	-3,s	;,,
-                            487 ;----- asm -----
-                            488 ; 684 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            489 	; #ENR#[509]	zergnd();
-                            490 ; 181 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   372C BD F3 54      [ 8]  491 	jsr ___Reset0Ref; BIOS call
-                            492 ; 686 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            493 	; #ENR#[510]	intens(0x50);
-                            494 ;--- end asm ---
-   372F C6 50         [ 2]  495 	ldb	#80	;,
-   3731 E7 E4         [ 4]  496 	stb	,s	;, a
-                            497 ;----- asm -----
-                            498 ; 3427 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   3733 A6 E4         [ 4]  499 	lda ,s	; a
-   3735 BD F2 AB      [ 8]  500 	jsr ___Intensity_a; BIOS call
-                            501 ; 689 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            502 	; #ENR#[512]	zergnd();
-                            503 ; 181 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   3738 BD F3 54      [ 8]  504 	jsr ___Reset0Ref; BIOS call
-                            505 ; 691 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            506 	; #ENR#[513]	positd(-50, 100);
-                            507 ;--- end asm ---
-   373B C6 80         [ 2]  508 	ldb	#-128	;,
-   373D D7 04         [ 4]  509 	stb	*_dp_VIA_t1_cnt_lo	;, dp_VIA_t1_cnt_lo
-   373F C6 64         [ 2]  510 	ldb	#100	;,
-   3741 E7 62         [ 5]  511 	stb	2,s	;, a
-   3743 C6 CE         [ 2]  512 	ldb	#-50	;,
-   3745 E7 E4         [ 4]  513 	stb	,s	;, b
-                            514 ;----- asm -----
-                            515 ; 3315 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   3747 A6 62         [ 5]  516 	lda 2,s	; a
-   3749 E6 E4         [ 4]  517 	ldb ,s	; b
-   374B BD F3 12      [ 8]  518 	jsr ___Moveto_d; BIOS call
-                            519 ; 693 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            520 	; #ENR#[514]	pack1x((void*)led8);
-                            521 ;--- end asm ---
-   374E C6 80         [ 2]  522 	ldb	#-128	;,
-   3750 D7 04         [ 4]  523 	stb	*_dp_VIA_t1_cnt_lo	;, dp_VIA_t1_cnt_lo
-   3752 10 8E 3D 5A   [ 4]  524 	ldy	#_led8	; tmp27,
-   3756 10 AF E4      [ 6]  525 	sty	,s	; tmp27, x
-                            526 ;----- asm -----
-                            527 ; 1610 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   3759 AE E4         [ 5]  528 	ldx ,s	; x
-   375B BD F4 10      [ 8]  529 	jsr ___Draw_VLp; BIOS call
-                            530 ; 696 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            531 	; #ENR#[516]	zergnd();
-                            532 ; 181 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   375E BD F3 54      [ 8]  533 	jsr ___Reset0Ref; BIOS call
-                            534 ; 698 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            535 	; #ENR#[517]	positd(-40, 110);
-                            536 ;--- end asm ---
-   3761 C6 80         [ 2]  537 	ldb	#-128	;,
-   3763 D7 04         [ 4]  538 	stb	*_dp_VIA_t1_cnt_lo	;, dp_VIA_t1_cnt_lo
-   3765 C6 6E         [ 2]  539 	ldb	#110	;,
-   3767 E7 E4         [ 4]  540 	stb	,s	;, a
-   3769 C6 D8         [ 2]  541 	ldb	#-40	;,
-   376B E7 62         [ 5]  542 	stb	2,s	;, b
-                            543 ;----- asm -----
-                            544 ; 3315 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   376D A6 E4         [ 4]  545 	lda ,s	; a
-   376F E6 62         [ 5]  546 	ldb 2,s	; b
-   3771 BD F3 12      [ 8]  547 	jsr ___Moveto_d; BIOS call
-                            548 ; 700 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            549 	; #ENR#[518]	pack1x((void*)led8);
-                            550 ;--- end asm ---
-   3774 C6 80         [ 2]  551 	ldb	#-128	;,
-   3776 D7 04         [ 4]  552 	stb	*_dp_VIA_t1_cnt_lo	;, dp_VIA_t1_cnt_lo
-   3778 10 AF E4      [ 6]  553 	sty	,s	; tmp27, x
-                            554 ;----- asm -----
-                            555 ; 1610 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   377B AE E4         [ 5]  556 	ldx ,s	; x
-   377D BD F4 10      [ 8]  557 	jsr ___Draw_VLp; BIOS call
-                            558 ; 703 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            559 	; #ENR#[520]	zergnd();
-                            560 ; 181 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   3780 BD F3 54      [ 8]  561 	jsr ___Reset0Ref; BIOS call
-                            562 ; 705 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            563 	; #ENR#[521]	positd(-30, 120);
-                            564 ;--- end asm ---
-   3783 C6 80         [ 2]  565 	ldb	#-128	;,
-   3785 D7 04         [ 4]  566 	stb	*_dp_VIA_t1_cnt_lo	;, dp_VIA_t1_cnt_lo
-   3787 C6 78         [ 2]  567 	ldb	#120	;,
-   3789 E7 62         [ 5]  568 	stb	2,s	;, a
-   378B C6 E2         [ 2]  569 	ldb	#-30	;,
-   378D E7 E4         [ 4]  570 	stb	,s	;, b
-                            571 ;----- asm -----
-                            572 ; 3315 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   378F A6 62         [ 5]  573 	lda 2,s	; a
-   3791 E6 E4         [ 4]  574 	ldb ,s	; b
-   3793 BD F3 12      [ 8]  575 	jsr ___Moveto_d; BIOS call
-                            576 ; 707 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            577 	; #ENR#[522]	pack1x((void*)led8);
+   4A35 C6 80         [ 2]  447 	ldb	#-128	;,
+   4A37 D7 04         [ 4]  448 	stb	*_dp_VIA_t1_cnt_lo	;, dp_VIA_t1_cnt_lo
+   4A39 10 AF E4      [ 6]  449 	sty	,s	; tmp27, x
+                            450 ;----- asm -----
+                            451 ; 1610 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   4A3C AE E4         [ 5]  452 	ldx ,s	; x
+   4A3E BD F4 10      [ 8]  453 	jsr ___Draw_VLp; BIOS call
+                            454 ; 0 "" 2
+                            455 ; 710 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            456 	; #ENR#[524]	zergnd();
+                            457 ; 0 "" 2
+                            458 ; 181 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   4A41 BD F3 54      [ 8]  459 	jsr ___Reset0Ref; BIOS call
+                            460 ; 0 "" 2
+                            461 ; 712 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            462 	; #ENR#[525]	positd(0, 120);
+                            463 ; 0 "" 2
+                            464 ;--- end asm ---
+   4A44 C6 80         [ 2]  465 	ldb	#-128	;,
+   4A46 D7 04         [ 4]  466 	stb	*_dp_VIA_t1_cnt_lo	;, dp_VIA_t1_cnt_lo
+   4A48 C6 78         [ 2]  467 	ldb	#120	;,
+   4A4A E7 E4         [ 4]  468 	stb	,s	;, a
+   4A4C 6F 62         [ 7]  469 	clr	2,s	; b
+                            470 ;----- asm -----
+                            471 ; 3315 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   4A4E A6 E4         [ 4]  472 	lda ,s	; a
+   4A50 E6 62         [ 5]  473 	ldb 2,s	; b
+   4A52 BD F3 12      [ 8]  474 	jsr ___Moveto_d; BIOS call
+                            475 ; 0 "" 2
+                            476 ; 714 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            477 	; #ENR#[526]	pack1x((void*)led8);
+                            478 ; 0 "" 2
+                            479 ;--- end asm ---
+   4A55 C6 80         [ 2]  480 	ldb	#-128	;,
+   4A57 D7 04         [ 4]  481 	stb	*_dp_VIA_t1_cnt_lo	;, dp_VIA_t1_cnt_lo
+   4A59 10 AF E4      [ 6]  482 	sty	,s	; tmp27, x
+                            483 ;----- asm -----
+                            484 ; 1610 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   4A5C AE E4         [ 5]  485 	ldx ,s	; x
+   4A5E BD F4 10      [ 8]  486 	jsr ___Draw_VLp; BIOS call
+                            487 ; 0 "" 2
+                            488 ; 717 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            489 	; #ENR#[528]	zergnd();
+                            490 ; 0 "" 2
+                            491 ; 181 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   4A61 BD F3 54      [ 8]  492 	jsr ___Reset0Ref; BIOS call
+                            493 ; 0 "" 2
+                            494 ; 719 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            495 	; #ENR#[529]	positd(10, 120);
+                            496 ; 0 "" 2
+                            497 ;--- end asm ---
+   4A64 C6 80         [ 2]  498 	ldb	#-128	;,
+   4A66 D7 04         [ 4]  499 	stb	*_dp_VIA_t1_cnt_lo	;, dp_VIA_t1_cnt_lo
+   4A68 C6 78         [ 2]  500 	ldb	#120	;,
+   4A6A E7 62         [ 5]  501 	stb	2,s	;, a
+   4A6C C6 0A         [ 2]  502 	ldb	#10	;,
+   4A6E E7 E4         [ 4]  503 	stb	,s	;, b
+                            504 ;----- asm -----
+                            505 ; 3315 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   4A70 A6 62         [ 5]  506 	lda 2,s	; a
+   4A72 E6 E4         [ 4]  507 	ldb ,s	; b
+   4A74 BD F3 12      [ 8]  508 	jsr ___Moveto_d; BIOS call
+                            509 ; 0 "" 2
+                            510 ; 721 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            511 	; #ENR#[530]	pack1x((void*)led8);
+                            512 ; 0 "" 2
+                            513 ;--- end asm ---
+   4A77 C6 80         [ 2]  514 	ldb	#-128	;,
+   4A79 D7 04         [ 4]  515 	stb	*_dp_VIA_t1_cnt_lo	;, dp_VIA_t1_cnt_lo
+   4A7B 10 AF E4      [ 6]  516 	sty	,s	; tmp27, x
+                            517 ;----- asm -----
+                            518 ; 1610 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   4A7E AE E4         [ 5]  519 	ldx ,s	; x
+   4A80 BD F4 10      [ 8]  520 	jsr ___Draw_VLp; BIOS call
+                            521 ; 0 "" 2
+                            522 ; 724 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            523 	; #ENR#[532]	zergnd();
+                            524 ; 0 "" 2
+                            525 ; 181 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   4A83 BD F3 54      [ 8]  526 	jsr ___Reset0Ref; BIOS call
+                            527 ; 0 "" 2
+                            528 ; 726 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            529 	; #ENR#[533]	positd(20, 120);
+                            530 ; 0 "" 2
+                            531 ;--- end asm ---
+   4A86 C6 80         [ 2]  532 	ldb	#-128	;,
+   4A88 D7 04         [ 4]  533 	stb	*_dp_VIA_t1_cnt_lo	;, dp_VIA_t1_cnt_lo
+   4A8A C6 78         [ 2]  534 	ldb	#120	;,
+   4A8C E7 E4         [ 4]  535 	stb	,s	;, a
+   4A8E C6 14         [ 2]  536 	ldb	#20	;,
+   4A90 E7 62         [ 5]  537 	stb	2,s	;, b
+                            538 ;----- asm -----
+                            539 ; 3315 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   4A92 A6 E4         [ 4]  540 	lda ,s	; a
+   4A94 E6 62         [ 5]  541 	ldb 2,s	; b
+   4A96 BD F3 12      [ 8]  542 	jsr ___Moveto_d; BIOS call
+                            543 ; 0 "" 2
+                            544 ; 728 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            545 	; #ENR#[534]	pack1x((void*)led8);
+                            546 ; 0 "" 2
+                            547 ;--- end asm ---
+   4A99 C6 80         [ 2]  548 	ldb	#-128	;,
+   4A9B D7 04         [ 4]  549 	stb	*_dp_VIA_t1_cnt_lo	;, dp_VIA_t1_cnt_lo
+   4A9D 10 AF E4      [ 6]  550 	sty	,s	; tmp27, x
+                            551 ;----- asm -----
+                            552 ; 1610 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   4AA0 AE E4         [ 5]  553 	ldx ,s	; x
+   4AA2 BD F4 10      [ 8]  554 	jsr ___Draw_VLp; BIOS call
+                            555 ; 0 "" 2
+                            556 ;--- end asm ---
+   4AA5 32 63         [ 5]  557 	leas	3,s	;,,
+   4AA7 35 A0         [ 7]  558 	puls	y,pc	;
+                            559 	.globl	_showInfo
+   4AA9                     560 _showInfo:
+   4AA9 34 40         [ 6]  561 	pshs	u	;
+   4AAB 32 7C         [ 5]  562 	leas	-4,s	;,,
+                            563 ;----- asm -----
+                            564 ; 734 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            565 	; #ENR#[539]    Intensity_a(0x5f);
+                            566 ; 0 "" 2
+                            567 ;--- end asm ---
+   4AAD C6 5F         [ 2]  568 	ldb	#95	;,
+   4AAF E7 63         [ 5]  569 	stb	3,s	;, a
+                            570 ;----- asm -----
+                            571 ; 3427 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   4AB1 A6 63         [ 5]  572 	lda 3,s	; a
+   4AB3 BD F2 AB      [ 8]  573 	jsr ___Intensity_a; BIOS call
+                            574 ; 0 "" 2
+                            575 ; 736 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            576 	; #ENR#[540]    Vec_Text_Width = 100;
+                            577 ; 0 "" 2
                             578 ;--- end asm ---
-   3796 C6 80         [ 2]  579 	ldb	#-128	;,
-   3798 D7 04         [ 4]  580 	stb	*_dp_VIA_t1_cnt_lo	;, dp_VIA_t1_cnt_lo
-   379A 10 AF E4      [ 6]  581 	sty	,s	; tmp27, x
-                            582 ;----- asm -----
-                            583 ; 1610 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   379D AE E4         [ 5]  584 	ldx ,s	; x
-   379F BD F4 10      [ 8]  585 	jsr ___Draw_VLp; BIOS call
-                            586 ; 710 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            587 	; #ENR#[524]	zergnd();
-                            588 ; 181 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   37A2 BD F3 54      [ 8]  589 	jsr ___Reset0Ref; BIOS call
-                            590 ; 712 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            591 	; #ENR#[525]	positd(0, 120);
-                            592 ;--- end asm ---
-   37A5 C6 80         [ 2]  593 	ldb	#-128	;,
-   37A7 D7 04         [ 4]  594 	stb	*_dp_VIA_t1_cnt_lo	;, dp_VIA_t1_cnt_lo
-   37A9 C6 78         [ 2]  595 	ldb	#120	;,
-   37AB E7 E4         [ 4]  596 	stb	,s	;, a
-   37AD 6F 62         [ 7]  597 	clr	2,s	; b
-                            598 ;----- asm -----
-                            599 ; 3315 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   37AF A6 E4         [ 4]  600 	lda ,s	; a
-   37B1 E6 62         [ 5]  601 	ldb 2,s	; b
-   37B3 BD F3 12      [ 8]  602 	jsr ___Moveto_d; BIOS call
-                            603 ; 714 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            604 	; #ENR#[526]	pack1x((void*)led8);
-                            605 ;--- end asm ---
-   37B6 C6 80         [ 2]  606 	ldb	#-128	;,
-   37B8 D7 04         [ 4]  607 	stb	*_dp_VIA_t1_cnt_lo	;, dp_VIA_t1_cnt_lo
-   37BA 10 AF E4      [ 6]  608 	sty	,s	; tmp27, x
+   4AB6 C6 64         [ 2]  579 	ldb	#100	;,
+   4AB8 F7 C8 2B      [ 5]  580 	stb	_Vec_Text_Width	;, Vec_Text_Width
+                            581 ;----- asm -----
+                            582 ; 738 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            583 	; #ENR#[541]    Print_Str_d(100, -70, infoText);
+                            584 ; 0 "" 2
+                            585 ;--- end asm ---
+   4ABB E7 63         [ 5]  586 	stb	3,s	;, a
+   4ABD C6 BA         [ 2]  587 	ldb	#-70	;,
+   4ABF E7 62         [ 5]  588 	stb	2,s	;, b
+   4AC1 8E CA E7      [ 3]  589 	ldx	#_infoText	;,
+   4AC4 AF E4         [ 5]  590 	stx	,s	;, u
+                            591 ;----- asm -----
+                            592 ; 666 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   4AC6 A6 63         [ 5]  593 	lda 3,s	; a
+   4AC8 E6 62         [ 5]  594 	ldb 2,s	; b
+   4ACA EE E4         [ 5]  595 	ldu ,s	; u
+   4ACC BD F3 7A      [ 8]  596 	jsr ___Print_Str_d; BIOS call
+                            597 ; 0 "" 2
+                            598 ;--- end asm ---
+   4ACF 32 64         [ 5]  599 	leas	4,s	;,,
+   4AD1 35 C0         [ 7]  600 	puls	u,pc	;
+                            601 	.globl	_blockMovingToStart
+   4AD3                     602 _blockMovingToStart:
+                            603 ;----- asm -----
+                            604 ; 366 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            605 	; #ENR#[309]	drawField();
+                            606 ; 0 "" 2
+                            607 ;--- end asm ---
+   4AD3 BD 49 75      [ 8]  608 	jsr	_drawField
                             609 ;----- asm -----
-                            610 ; 1610 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   37BD AE E4         [ 5]  611 	ldx ,s	; x
-   37BF BD F4 10      [ 8]  612 	jsr ___Draw_VLp; BIOS call
-                            613 ; 717 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            614 	; #ENR#[528]	zergnd();
-                            615 ; 181 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   37C2 BD F3 54      [ 8]  616 	jsr ___Reset0Ref; BIOS call
-                            617 ; 719 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            618 	; #ENR#[529]	positd(10, 120);
-                            619 ;--- end asm ---
-   37C5 C6 80         [ 2]  620 	ldb	#-128	;,
-   37C7 D7 04         [ 4]  621 	stb	*_dp_VIA_t1_cnt_lo	;, dp_VIA_t1_cnt_lo
-   37C9 C6 78         [ 2]  622 	ldb	#120	;,
-   37CB E7 62         [ 5]  623 	stb	2,s	;, a
-   37CD C6 0A         [ 2]  624 	ldb	#10	;,
-   37CF E7 E4         [ 4]  625 	stb	,s	;, b
-                            626 ;----- asm -----
-                            627 ; 3315 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   37D1 A6 62         [ 5]  628 	lda 2,s	; a
-   37D3 E6 E4         [ 4]  629 	ldb ,s	; b
-   37D5 BD F3 12      [ 8]  630 	jsr ___Moveto_d; BIOS call
-                            631 ; 721 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            632 	; #ENR#[530]	pack1x((void*)led8);
-                            633 ;--- end asm ---
-   37D8 C6 80         [ 2]  634 	ldb	#-128	;,
-   37DA D7 04         [ 4]  635 	stb	*_dp_VIA_t1_cnt_lo	;, dp_VIA_t1_cnt_lo
-   37DC 10 AF E4      [ 6]  636 	sty	,s	; tmp27, x
-                            637 ;----- asm -----
-                            638 ; 1610 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   37DF AE E4         [ 5]  639 	ldx ,s	; x
-   37E1 BD F4 10      [ 8]  640 	jsr ___Draw_VLp; BIOS call
-                            641 ; 724 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            642 	; #ENR#[532]	zergnd();
-                            643 ; 181 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   37E4 BD F3 54      [ 8]  644 	jsr ___Reset0Ref; BIOS call
-                            645 ; 726 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            646 	; #ENR#[533]	positd(20, 120);
-                            647 ;--- end asm ---
-   37E7 C6 80         [ 2]  648 	ldb	#-128	;,
-   37E9 D7 04         [ 4]  649 	stb	*_dp_VIA_t1_cnt_lo	;, dp_VIA_t1_cnt_lo
-   37EB C6 78         [ 2]  650 	ldb	#120	;,
-   37ED E7 E4         [ 4]  651 	stb	,s	;, a
-   37EF C6 14         [ 2]  652 	ldb	#20	;,
-   37F1 E7 62         [ 5]  653 	stb	2,s	;, b
-                            654 ;----- asm -----
-                            655 ; 3315 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   37F3 A6 E4         [ 4]  656 	lda ,s	; a
-   37F5 E6 62         [ 5]  657 	ldb 2,s	; b
-   37F7 BD F3 12      [ 8]  658 	jsr ___Moveto_d; BIOS call
-                            659 ; 728 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            660 	; #ENR#[534]	pack1x((void*)led8);
-                            661 ;--- end asm ---
-   37FA C6 80         [ 2]  662 	ldb	#-128	;,
-   37FC D7 04         [ 4]  663 	stb	*_dp_VIA_t1_cnt_lo	;, dp_VIA_t1_cnt_lo
-   37FE 10 AF E4      [ 6]  664 	sty	,s	; tmp27, x
-                            665 ;----- asm -----
-                            666 ; 1610 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   3801 AE E4         [ 5]  667 	ldx ,s	; x
-   3803 BD F4 10      [ 8]  668 	jsr ___Draw_VLp; BIOS call
-                            669 ;--- end asm ---
-   3806 32 63         [ 5]  670 	leas	3,s	;,,
-   3808 35 A0         [ 7]  671 	puls	y,pc	;
-                            672 	.globl	_showInfo
-   380A                     673 _showInfo:
-   380A 34 40         [ 6]  674 	pshs	u	;
-   380C 32 7C         [ 5]  675 	leas	-4,s	;,,
-                            676 ;----- asm -----
-                            677 ; 734 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            678 	; #ENR#[539]    Intensity_a(0x5f);
+                            610 ; 368 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            611 	; #ENR#[310]	drawBlock(blockYOfs);
+                            612 ; 0 "" 2
+                            613 ;--- end asm ---
+   4AD6 F6 C8 89      [ 5]  614 	ldb	_blockYOfs	;, blockYOfs
+   4AD9 BD 04 B4      [ 8]  615 	jsr	_drawBlock
+                            616 ;----- asm -----
+                            617 ; 370 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            618 	; #ENR#[311]	blockYOfs++;
+                            619 ; 0 "" 2
+                            620 ;--- end asm ---
+   4ADC F6 C8 89      [ 5]  621 	ldb	_blockYOfs	; blockYOfs.24, blockYOfs
+   4ADF 5C            [ 2]  622 	incb	; blockYOfs.24
+   4AE0 F7 C8 89      [ 5]  623 	stb	_blockYOfs	; blockYOfs.24, blockYOfs
+                            624 ;----- asm -----
+                            625 ; 372 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            626 	; #ENR#[312]	if (blockYOfs == 0) {
+                            627 ; 0 "" 2
+                            628 ;--- end asm ---
+   4AE3 5D            [ 2]  629 	tstb	; blockYOfs.24
+   4AE4 26 05         [ 3]  630 	bne	L24	;
+                            631 ;----- asm -----
+                            632 ; 374 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            633 	; #ENR#[313]		gameState = BlockWaiting;
+                            634 ; 0 "" 2
+                            635 ;--- end asm ---
+   4AE6 C6 03         [ 2]  636 	ldb	#3	;,
+   4AE8 F7 CA F6      [ 5]  637 	stb	_gameState	;, gameState
+   4AEB                     638 L24:
+   4AEB 39            [ 5]  639 	rts
+                            640 	.globl	_moveBlock
+   4AEC                     641 _moveBlock:
+                            642 ;----- asm -----
+                            643 ; 259 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            644 	; #ENR#[226]	moveBlockImpl(move);
+                            645 ; 0 "" 2
+                            646 ;--- end asm ---
+   4AEC BD 01 55      [ 8]  647 	jsr	_moveBlockImpl
+                            648 ;----- asm -----
+                            649 ; 261 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            650 	; #ENR#[227]	if (moveCount < 999) moveCount++;
+                            651 ; 0 "" 2
+                            652 ;--- end asm ---
+   4AEF BE CA F1      [ 6]  653 	ldx	_moveCount	; moveCount.9, moveCount
+   4AF2 8C 03 E6      [ 4]  654 	cmpx	#998	;cmphi:	; moveCount.9,
+   4AF5 22 05         [ 3]  655 	bhi	L26	;
+   4AF7 30 01         [ 5]  656 	leax	1,x	;,, moveCount.9
+   4AF9 BF CA F1      [ 6]  657 	stx	_moveCount	;, moveCount
+   4AFC                     658 L26:
+                            659 ;----- asm -----
+                            660 ; 263 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            661 	; #ENR#[228]	updateInfoText();
+                            662 ; 0 "" 2
+                            663 ;--- end asm ---
+   4AFC BD 49 4D      [ 8]  664 	jsr	_updateInfoText
+   4AFF 39            [ 5]  665 	rts
+                            666 	.globl	_startBlockFalling
+   4B00                     667 _startBlockFalling:
+                            668 ;----- asm -----
+                            669 ; 269 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            670 	; #ENR#[233]	gameState = BlockFalling;
+                            671 ; 0 "" 2
+                            672 ;--- end asm ---
+   4B00 C6 05         [ 2]  673 	ldb	#5	;,
+   4B02 F7 CA F6      [ 5]  674 	stb	_gameState	;, gameState
+                            675 ;----- asm -----
+                            676 ; 271 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            677 	; #ENR#[234]	blockYOfs = 0;
+                            678 ; 0 "" 2
                             679 ;--- end asm ---
-   380E C6 5F         [ 2]  680 	ldb	#95	;,
-   3810 E7 63         [ 5]  681 	stb	3,s	;, a
-                            682 ;----- asm -----
-                            683 ; 3427 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   3812 A6 63         [ 5]  684 	lda 3,s	; a
-   3814 BD F2 AB      [ 8]  685 	jsr ___Intensity_a; BIOS call
-                            686 ; 736 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            687 	; #ENR#[540]    Vec_Text_Width = 100;
-                            688 ;--- end asm ---
-   3817 C6 64         [ 2]  689 	ldb	#100	;,
-   3819 F7 C8 2B      [ 5]  690 	stb	_Vec_Text_Width	;, Vec_Text_Width
-                            691 ;----- asm -----
-                            692 ; 738 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            693 	; #ENR#[541]    Print_Str_d(100, -70, infoText);
-                            694 ;--- end asm ---
-   381C E7 63         [ 5]  695 	stb	3,s	;, a
-   381E C6 BA         [ 2]  696 	ldb	#-70	;,
-   3820 E7 62         [ 5]  697 	stb	2,s	;, b
-   3822 8E C8 EF      [ 3]  698 	ldx	#_infoText	;,
-   3825 AF E4         [ 5]  699 	stx	,s	;, u
-                            700 ;----- asm -----
-                            701 ; 666 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   3827 A6 63         [ 5]  702 	lda 3,s	; a
-   3829 E6 62         [ 5]  703 	ldb 2,s	; b
-   382B EE E4         [ 5]  704 	ldu ,s	; u
-   382D BD F3 7A      [ 8]  705 	jsr ___Print_Str_d; BIOS call
-                            706 ;--- end asm ---
-   3830 32 64         [ 5]  707 	leas	4,s	;,,
-   3832 35 C0         [ 7]  708 	puls	u,pc	;
-                            709 	.globl	_blockMovingToStart
-   3834                     710 _blockMovingToStart:
+   4B05 7F C8 89      [ 7]  680 	clr	_blockYOfs	; blockYOfs
+                            681 ;----- asm -----
+                            682 ; 273 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            683 	; #ENR#[235]	moveBlock(lastBlockDirection);
+                            684 ; 0 "" 2
+                            685 ;--- end asm ---
+   4B08 F6 C8 8A      [ 5]  686 	ldb	_lastBlockDirection	;, lastBlockDirection
+   4B0B BD 4A EC      [ 8]  687 	jsr	_moveBlock
+                            688 ;----- asm -----
+                            689 ; 275 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            690 	; #ENR#[236]	changeMusic(fallingMusic);
+                            691 ; 0 "" 2
+                            692 ;--- end asm ---
+   4B0E 8E 50 D7      [ 3]  693 	ldx	#_fallingMusic	;,
+   4B11 BD 49 6C      [ 8]  694 	jsr	_changeMusic
+                            695 ;----- asm -----
+                            696 ; 277 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            697 	; #ENR#[237]	*vecx = 0;
+                            698 ; 0 "" 2
+                            699 ;--- end asm ---
+   4B14 6F 9F C8 86   [11]  700 	clr	[_vecx]	;* vecx
+   4B18 39            [ 5]  701 	rts
+                            702 	.globl	_blockMoving
+   4B19                     703 _blockMoving:
+   4B19 32 79         [ 5]  704 	leas	-7,s	;,,
+                            705 ;----- asm -----
+                            706 ; 445 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            707 	; #ENR#[358]	drawField();
+                            708 ; 0 "" 2
+                            709 ;--- end asm ---
+   4B1B BD 49 75      [ 8]  710 	jsr	_drawField
                             711 ;----- asm -----
-                            712 ; 360 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            713 	; #ENR#[304]	drawField();
-                            714 ;--- end asm ---
-   3834 BD 36 21      [ 8]  715 	jsr	_drawField
-                            716 ;----- asm -----
-                            717 ; 362 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            718 	; #ENR#[305]	drawBlock(blockYOfs);
-                            719 ;--- end asm ---
-   3837 F6 C8 E0      [ 5]  720 	ldb	_blockYOfs	;, blockYOfs
-   383A BD 09 92      [ 8]  721 	jsr	_drawBlock
-                            722 ;----- asm -----
-                            723 ; 364 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            724 	; #ENR#[306]	blockYOfs++;
-                            725 ;--- end asm ---
-   383D F6 C8 E0      [ 5]  726 	ldb	_blockYOfs	; blockYOfs.23, blockYOfs
-   3840 5C            [ 2]  727 	incb	; blockYOfs.23
-   3841 F7 C8 E0      [ 5]  728 	stb	_blockYOfs	; blockYOfs.23, blockYOfs
-                            729 ;----- asm -----
-                            730 ; 366 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            731 	; #ENR#[307]	if (blockYOfs == 0) {
-                            732 ;--- end asm ---
-   3844 5D            [ 2]  733 	tstb	; blockYOfs.23
-   3845 26 05         [ 3]  734 	bne	L41	;
-                            735 ;----- asm -----
-                            736 ; 368 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            737 	; #ENR#[308]		gameState = BlockWaiting;
-                            738 ;--- end asm ---
-   3847 C6 03         [ 2]  739 	ldb	#3	;,
-   3849 F7 C8 FE      [ 5]  740 	stb	_gameState	;, gameState
-   384C                     741 L41:
-   384C 39            [ 5]  742 	rts
-                            743 	.globl	_startLevel
-   384D                     744 _startLevel:
-   384D 32 7E         [ 5]  745 	leas	-2,s	;,,
-                            746 ;----- asm -----
-                            747 ; 277 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            748 	; #ENR#[237]	levelHighscore = readEeprom((uint8_t) (levelNumber * 2));
-                            749 ;--- end asm ---
-   384F F6 C8 87      [ 5]  750 	ldb	_levelNumber	; tmp30, levelNumber
-   3852 58            [ 2]  751 	aslb	; tmp30
-   3853 BD 35 67      [ 8]  752 	jsr	_readEeprom
-   3856 4F            [ 2]  753 	clra		;zero_extendqihi: R:b -> R:d	; D.2297, D.2297
-   3857 FD C8 FB      [ 6]  754 	std	_levelHighscore	; D.2297, levelHighscore
-                            755 ;----- asm -----
-                            756 ; 279 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            757 	; #ENR#[238]	levelHighscore |= ((uint16_t) readEeprom((uint8_t) (levelNumber * 2 + 1))) << 8;
+                            712 ; 447 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            713 	; #ENR#[359]	drawBlock(0);
+                            714 ; 0 "" 2
+                            715 ;--- end asm ---
+   4B1E 5F            [ 2]  716 	clrb	;
+   4B1F BD 04 B4      [ 8]  717 	jsr	_drawBlock
+                            718 ;----- asm -----
+                            719 ; 449 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            720 	; #ENR#[360]	doBlockAnimation();
+                            721 ; 0 "" 2
+                            722 ;--- end asm ---
+   4B22 BD 03 B2      [ 8]  723 	jsr	_doBlockAnimation
+                            724 ;----- asm -----
+                            725 ; 451 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            726 	; #ENR#[361]	if (!blockAnimating) {
+                            727 ; 0 "" 2
+                            728 ;--- end asm ---
+   4B25 7D C8 8B      [ 7]  729 	tst	_blockAnimating	; blockAnimating
+   4B28 10 26 01 5C   [ 6]  730 	lbne	L54	;
+                            731 ;----- asm -----
+                            732 ; 454 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            733 	; #ENR#[363]		uint8_t c0 = isField(blockX, blockY);
+                            734 ; 0 "" 2
+                            735 ;--- end asm ---
+   4B2C F6 C8 8E      [ 5]  736 	ldb	_blockY	;, blockY
+   4B2F E7 E2         [ 6]  737 	stb	,-s	;,
+   4B31 F6 C8 8D      [ 5]  738 	ldb	_blockX	;, blockX
+   4B34 BD 36 A9      [ 8]  739 	jsr	_isField
+   4B37 E7 62         [ 5]  740 	stb	2,s	;, c0
+                            741 ;----- asm -----
+                            742 ; 456 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            743 	; #ENR#[364]		uint8_t c1 = isField(blockX + 1, blockY);
+                            744 ; 0 "" 2
+                            745 ;--- end asm ---
+   4B39 F6 C8 8D      [ 5]  746 	ldb	_blockX	;, blockX
+   4B3C 5C            [ 2]  747 	incb	;
+   4B3D E7 61         [ 5]  748 	stb	1,s	;,
+   4B3F F6 C8 8E      [ 5]  749 	ldb	_blockY	;, blockY
+   4B42 E7 E2         [ 6]  750 	stb	,-s	;,
+   4B44 E6 62         [ 5]  751 	ldb	2,s	;,
+   4B46 BD 36 A9      [ 8]  752 	jsr	_isField
+   4B49 E7 64         [ 5]  753 	stb	4,s	;, c1
+                            754 ;----- asm -----
+                            755 ; 458 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            756 	; #ENR#[365]		uint8_t c2 = isField(blockX, blockY + 1);
+                            757 ; 0 "" 2
                             758 ;--- end asm ---
-   385A F6 C8 87      [ 5]  759 	ldb	_levelNumber	; tmp32, levelNumber
-   385D 58            [ 2]  760 	aslb	; tmp32
-   385E 5C            [ 2]  761 	incb	; tmp33
-   385F BD 35 67      [ 8]  762 	jsr	_readEeprom
-   3862 1F 98         [ 6]  763 	tfr	b,a	;,
-   3864 5F            [ 2]  764 	clrb	;
-   3865 BA C8 FB      [ 5]  765 	ora	_levelHighscore	;, levelHighscore
-   3868 FA C8 FC      [ 5]  766 	orb	_levelHighscore+1	;, levelHighscore
-   386B FD C8 FB      [ 6]  767 	std	_levelHighscore	; levelHighscore.16, levelHighscore
-                            768 ;----- asm -----
-                            769 ; 281 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            770 	; #ENR#[239]	if (levelHighscore == 0) levelHighscore = 999;
-                            771 ;--- end asm ---
-   386E 10 83 00 00   [ 5]  772 	cmpd	#0	; levelHighscore.16
-   3872 26 06         [ 3]  773 	bne	L43	;
-   3874 8E 03 E7      [ 3]  774 	ldx	#999	;,
-   3877 BF C8 FB      [ 6]  775 	stx	_levelHighscore	;, levelHighscore
-   387A                     776 L43:
-                            777 ;----- asm -----
-                            778 ; 283 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            779 	; #ENR#[240]    level = levels[levelNumber];
-                            780 ;--- end asm ---
-   387A F6 C8 87      [ 5]  781 	ldb	_levelNumber	;, levelNumber
-   387D 4F            [ 2]  782 	clra		;zero_extendqihi: R:b -> R:d	;,
-   387E ED E4         [ 5]  783 	std	,s	;,
-   3880 58            [ 2]  784 	aslb	;
-   3881 49            [ 2]  785 	rola	;
-   3882 1F 01         [ 6]  786 	tfr	d,x	;, tmp39
-   3884 AE 89 4E BC   [ 9]  787 	ldx	_levels,x	;, levels
-   3888 BF C8 FF      [ 6]  788 	stx	_level	;, level
-                            789 ;----- asm -----
-                            790 ; 285 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            791 	; #ENR#[241]	initSwatches();
+   4B4B F6 C8 8E      [ 5]  759 	ldb	_blockY	;, blockY
+   4B4E 5C            [ 2]  760 	incb	;
+   4B4F 34 04         [ 6]  761 	pshs	b	;
+   4B51 F6 C8 8D      [ 5]  762 	ldb	_blockX	;, blockX
+   4B54 BD 36 A9      [ 8]  763 	jsr	_isField
+   4B57 E7 66         [ 5]  764 	stb	6,s	;, c2
+                            765 ;----- asm -----
+                            766 ; 460 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            767 	; #ENR#[366]		char f0 = getField(blockX, blockY);
+                            768 ; 0 "" 2
+                            769 ;--- end asm ---
+   4B59 F6 C8 8E      [ 5]  770 	ldb	_blockY	;, blockY
+   4B5C E7 E2         [ 6]  771 	stb	,-s	;,
+   4B5E F6 C8 8D      [ 5]  772 	ldb	_blockX	;, blockX
+   4B61 BD 35 D6      [ 8]  773 	jsr	_getField
+   4B64 E7 68         [ 5]  774 	stb	8,s	;, f0
+                            775 ;----- asm -----
+                            776 ; 462 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            777 	; #ENR#[367]		char f1 = getField(blockX + 1, blockY);
+                            778 ; 0 "" 2
+                            779 ;--- end asm ---
+   4B66 F6 C8 8D      [ 5]  780 	ldb	_blockX	;, blockX
+   4B69 5C            [ 2]  781 	incb	;
+   4B6A E7 64         [ 5]  782 	stb	4,s	;,
+   4B6C F6 C8 8E      [ 5]  783 	ldb	_blockY	;, blockY
+   4B6F E7 E2         [ 6]  784 	stb	,-s	;,
+   4B71 E6 65         [ 5]  785 	ldb	5,s	;,
+   4B73 BD 35 D6      [ 8]  786 	jsr	_getField
+   4B76 E7 6A         [ 5]  787 	stb	10,s	;, f1
+                            788 ;----- asm -----
+                            789 ; 464 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            790 	; #ENR#[368]		char f2 = getField(blockX, blockY + 1);
+                            791 ; 0 "" 2
                             792 ;--- end asm ---
-   388B BD 3F FB      [ 8]  793 	jsr	_initSwatches
-                            794 ;----- asm -----
-                            795 ; 287 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            796 	; #ENR#[242]	initLevel();
-                            797 ;--- end asm ---
-   388E BD 43 B8      [ 8]  798 	jsr	_initLevel
+   4B78 F6 C8 8E      [ 5]  793 	ldb	_blockY	;, blockY
+   4B7B 5C            [ 2]  794 	incb	;
+   4B7C 34 04         [ 6]  795 	pshs	b	;
+   4B7E F6 C8 8D      [ 5]  796 	ldb	_blockX	;, blockX
+   4B81 BD 35 D6      [ 8]  797 	jsr	_getField
+   4B84 E7 6C         [ 5]  798 	stb	12,s	;, f2
                             799 ;----- asm -----
-                            800 ; 289 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            801 	; #ENR#[243]	blockX = level->start.x;
-                            802 ;--- end asm ---
-   3891 BE C8 FF      [ 6]  803 	ldx	_level	; level, level
-   3894 E6 02         [ 5]  804 	ldb	2,x	;, <variable>.start.x
-   3896 F7 C8 E4      [ 5]  805 	stb	_blockX	;, blockX
-                            806 ;----- asm -----
-                            807 ; 291 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            808 	; #ENR#[244]	blockY = level->start.y;
-                            809 ;--- end asm ---
-   3899 E6 03         [ 5]  810 	ldb	3,x	;, <variable>.start.y
-   389B F7 C8 E5      [ 5]  811 	stb	_blockY	;, blockY
-                            812 ;----- asm -----
-                            813 ; 293 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            814 	; #ENR#[245]	blockStartLevel();
-                            815 ;--- end asm ---
-   389E BD 08 B9      [ 8]  816 	jsr	_blockStartLevel
-                            817 ;----- asm -----
-                            818 ; 295 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            819 	; #ENR#[246]	blockYOfs = -30;
-                            820 ;--- end asm ---
-   38A1 C6 E2         [ 2]  821 	ldb	#-30	;,
-   38A3 F7 C8 E0      [ 5]  822 	stb	_blockYOfs	;, blockYOfs
-                            823 ;----- asm -----
-                            824 ; 297 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            825 	; #ENR#[247]	gameState = BlockMovingToStart;
-                            826 ;--- end asm ---
-   38A6 C6 02         [ 2]  827 	ldb	#2	;,
-   38A8 F7 C8 FE      [ 5]  828 	stb	_gameState	;, gameState
-                            829 ;----- asm -----
-                            830 ; 299 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            831 	; #ENR#[248]	changeMusic(startMusic);
-                            832 ;--- end asm ---
-   38AB 8E 3C F8      [ 3]  833 	ldx	#_startMusic	;,
-   38AE BD 36 18      [ 8]  834 	jsr	_changeMusic
-                            835 ;----- asm -----
-                            836 ; 301 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            837 	; #ENR#[249]	*vecx = 2;
-                            838 ;--- end asm ---
-   38B1 C6 02         [ 2]  839 	ldb	#2	;,
-   38B3 E7 9F C8 82   [ 9]  840 	stb	[_vecx]	;,* vecx
-                            841 ;----- asm -----
-                            842 ; 303 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            843 	; #ENR#[250]	moveCount = 0;
-                            844 ;--- end asm ---
-   38B7 CC 00 00      [ 3]  845 	ldd	#0	;,
-   38BA FD C8 F9      [ 6]  846 	std	_moveCount	;, moveCount
-                            847 ;----- asm -----
-                            848 ; 305 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            849 	; #ENR#[251]	updateInfoText();
-                            850 ;--- end asm ---
-   38BD BD 35 F9      [ 8]  851 	jsr	_updateInfoText
-   38C0 32 62         [ 5]  852 	leas	2,s	;,,
-   38C2 39            [ 5]  853 	rts
-   38C3                     854 LC3:
-   38C3 4D 41 49 4E 20 4D   855 	.byte	77,65,73,78,32,77,69,78
-        45 4E
-   38CB 55 80 00            856 	.byte	85,-128,0
-   38CE                     857 LC4:
-   38CE 31 20 53 54 41 52   858 	.byte	49,32,83,84,65,82,84,32
-        54 20
-   38D6 47 41 4D 45 80 00   859 	.byte	71,65,77,69,-128,0
-   38DC                     860 LC5:
-   38DC 32 20 43 4C 45 41   861 	.byte	50,32,67,76,69,65,82,32
-        52 20
-   38E4 48 49 47 48 53 43   862 	.byte	72,73,71,72,83,67,79,82
-        4F 52
-   38EC 45 80 00            863 	.byte	69,-128,0
-                            864 	.globl	_mainMenu
-   38EF                     865 _mainMenu:
-   38EF 34 40         [ 6]  866 	pshs	u	;
-   38F1 32 7C         [ 5]  867 	leas	-4,s	;,,
-                            868 ;----- asm -----
-                            869 ; 616 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            870 	; #ENR#[463]	Read_Btns();
-                            871 ; 2286 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   38F3 BD F1 BA      [ 8]  872 	jsr ___Read_Btns; BIOS call
-                            873 ; 618 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            874 	; #ENR#[464]    Intensity_a(0x5f);
-                            875 ;--- end asm ---
-   38F6 C6 5F         [ 2]  876 	ldb	#95	;,
-   38F8 E7 63         [ 5]  877 	stb	3,s	;, a
-                            878 ;----- asm -----
-                            879 ; 3427 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   38FA A6 63         [ 5]  880 	lda 3,s	; a
-   38FC BD F2 AB      [ 8]  881 	jsr ___Intensity_a; BIOS call
-                            882 ; 620 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            883 	; #ENR#[465]    Vec_Text_Width = 90;
-                            884 ;--- end asm ---
-   38FF C6 5A         [ 2]  885 	ldb	#90	;,
-   3901 F7 C8 2B      [ 5]  886 	stb	_Vec_Text_Width	;, Vec_Text_Width
-                            887 ;----- asm -----
-                            888 ; 622 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            889 	; #ENR#[466]    Print_Str_d(100, -70, "MAIN MENU€");
-                            890 ;--- end asm ---
-   3904 CB 0A         [ 2]  891 	addb	#10	;,
-   3906 E7 63         [ 5]  892 	stb	3,s	;, a
-   3908 C6 BA         [ 2]  893 	ldb	#-70	;,
-   390A E7 62         [ 5]  894 	stb	2,s	;, b
-   390C 8E 38 C3      [ 3]  895 	ldx	#LC3	;,
-   390F AF E4         [ 5]  896 	stx	,s	;, u
-                            897 ;----- asm -----
-                            898 ; 666 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   3911 A6 63         [ 5]  899 	lda 3,s	; a
-   3913 E6 62         [ 5]  900 	ldb 2,s	; b
-   3915 EE E4         [ 5]  901 	ldu ,s	; u
-   3917 BD F3 7A      [ 8]  902 	jsr ___Print_Str_d; BIOS call
-                            903 ; 624 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            904 	; #ENR#[467]    Print_Str_d(50, -110, "1 START GAME€");
-                            905 ;--- end asm ---
-   391A C6 32         [ 2]  906 	ldb	#50	;,
-   391C E7 62         [ 5]  907 	stb	2,s	;, a
-   391E C6 92         [ 2]  908 	ldb	#-110	;,
-   3920 E7 63         [ 5]  909 	stb	3,s	;, b
-   3922 8E 38 CE      [ 3]  910 	ldx	#LC4	;,
-   3925 AF E4         [ 5]  911 	stx	,s	;, u
-                            912 ;----- asm -----
-                            913 ; 666 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   3927 A6 62         [ 5]  914 	lda 2,s	; a
-   3929 E6 63         [ 5]  915 	ldb 3,s	; b
-   392B EE E4         [ 5]  916 	ldu ,s	; u
-   392D BD F3 7A      [ 8]  917 	jsr ___Print_Str_d; BIOS call
-                            918 ; 626 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            919 	; #ENR#[468]    Print_Str_d(20, -110, "2 CLEAR HIGHSCORE€");
-                            920 ;--- end asm ---
-   3930 C6 14         [ 2]  921 	ldb	#20	;,
-   3932 E7 63         [ 5]  922 	stb	3,s	;, a
-   3934 C6 92         [ 2]  923 	ldb	#-110	;,
-   3936 E7 62         [ 5]  924 	stb	2,s	;, b
-   3938 8E 38 DC      [ 3]  925 	ldx	#LC5	;,
-   393B AF E4         [ 5]  926 	stx	,s	;, u
-                            927 ;----- asm -----
-                            928 ; 666 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   393D A6 63         [ 5]  929 	lda 3,s	; a
-   393F E6 62         [ 5]  930 	ldb 2,s	; b
-   3941 EE E4         [ 5]  931 	ldu ,s	; u
-   3943 BD F3 7A      [ 8]  932 	jsr ___Print_Str_d; BIOS call
-                            933 ; 628 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            934 	; #ENR#[469]	if (Vec_Buttons & 1) {
-                            935 ;--- end asm ---
-   3946 F6 C8 11      [ 5]  936 	ldb	_Vec_Buttons	;, Vec_Buttons
-   3949 C5 01         [ 2]  937 	bitb	#1	;,
-   394B 27 03         [ 3]  938 	beq	L46	;
-                            939 ;----- asm -----
-                            940 ; 630 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            941 	; #ENR#[470]		startLevel();
-                            942 ;--- end asm ---
-   394D BD 38 4D      [ 8]  943 	jsr	_startLevel
-   3950                     944 L46:
+                            800 ; 466 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            801 	; #ENR#[369]		switch (blockOrientation) {
+                            802 ; 0 "" 2
+                            803 ;--- end asm ---
+   4B86 32 66         [ 5]  804 	leas	6,s	;,,
+   4B88 F6 C8 88      [ 5]  805 	ldb	_blockOrientation	; blockOrientation, blockOrientation
+   4B8B C1 01         [ 2]  806 	cmpb	#1	;cmpqi:	; blockOrientation,
+   4B8D 27 19         [ 3]  807 	beq	L34	;
+   4B8F 25 08         [ 3]  808 	blo	L33	;
+   4B91 C1 02         [ 2]  809 	cmpb	#2	;cmpqi:	; blockOrientation,
+   4B93 10 26 00 29   [ 6]  810 	lbne	L32	;
+   4B97 20 1C         [ 3]  811 	bra	L55	;
+   4B99                     812 L33:
+                            813 ;----- asm -----
+                            814 ; 470 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            815 	; #ENR#[371]			if (!c0 || f0 == 'f') {
+                            816 ; 0 "" 2
+                            817 ;--- end asm ---
+   4B99 6D 61         [ 7]  818 	tst	1,s	; c0
+   4B9B 27 06         [ 3]  819 	beq	L36	;
+   4B9D E6 64         [ 5]  820 	ldb	4,s	;, f0
+   4B9F C1 66         [ 2]  821 	cmpb	#102	;cmpqi:	;,
+   4BA1 26 03         [ 3]  822 	bne	L37	;
+   4BA3                     823 L36:
+                            824 ;----- asm -----
+                            825 ; 472 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            826 	; #ENR#[372]				startBlockFalling();
+                            827 ; 0 "" 2
+                            828 ;--- end asm ---
+   4BA3 BD 4B 00      [ 8]  829 	jsr	_startBlockFalling
+   4BA6                     830 L37:
+                            831 ;----- asm -----
+                            832 ; 475 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            833 	; #ENR#[374]			break;
+                            834 ; 0 "" 2
+                            835 ;--- end asm ---
+   4BA6 20 18         [ 3]  836 	bra	L32	;
+   4BA8                     837 L34:
+                            838 ;----- asm -----
+                            839 ; 479 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            840 	; #ENR#[376]			if (!c0 || !c2) {
+                            841 ; 0 "" 2
+                            842 ;--- end asm ---
+   4BA8 6D 61         [ 7]  843 	tst	1,s	; c0
+   4BAA 27 04         [ 3]  844 	beq	L38	;
+   4BAC 6D 63         [ 7]  845 	tst	3,s	; c2
+   4BAE 26 03         [ 3]  846 	bne	L39	;
+   4BB0                     847 L38:
+                            848 ;----- asm -----
+                            849 ; 481 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            850 	; #ENR#[377]				startBlockFalling();
+                            851 ; 0 "" 2
+                            852 ;--- end asm ---
+   4BB0 BD 4B 00      [ 8]  853 	jsr	_startBlockFalling
+   4BB3                     854 L39:
+                            855 ;----- asm -----
+                            856 ; 484 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            857 	; #ENR#[379]			break;
+                            858 ; 0 "" 2
+                            859 ;--- end asm ---
+   4BB3 20 0B         [ 3]  860 	bra	L32	;
+   4BB5                     861 L55:
+                            862 ;----- asm -----
+                            863 ; 488 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            864 	; #ENR#[381]			if (!c0 || ! c1) {
+                            865 ; 0 "" 2
+                            866 ;--- end asm ---
+   4BB5 6D 61         [ 7]  867 	tst	1,s	; c0
+   4BB7 27 04         [ 3]  868 	beq	L40	;
+   4BB9 6D 62         [ 7]  869 	tst	2,s	; c1
+   4BBB 26 03         [ 3]  870 	bne	L41	;
+   4BBD                     871 L40:
+                            872 ;----- asm -----
+                            873 ; 490 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            874 	; #ENR#[382]				startBlockFalling();
+                            875 ; 0 "" 2
+                            876 ;--- end asm ---
+   4BBD BD 4B 00      [ 8]  877 	jsr	_startBlockFalling
+   4BC0                     878 L41:
+                            879 ;----- asm -----
+                            880 ; 493 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            881 	; #ENR#[384]			break;
+                            882 ; 0 "" 2
+                            883 ;--- end asm ---
+   4BC0                     884 L32:
+                            885 ;----- asm -----
+                            886 ; 498 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            887 	; #ENR#[388]		if (blockOrientation == Standing && blockX == endX && blockY == endY && !splitMode) {
+                            888 ; 0 "" 2
+                            889 ;--- end asm ---
+   4BC0 7D C8 88      [ 7]  890 	tst	_blockOrientation	; blockOrientation
+   4BC3 26 2B         [ 3]  891 	bne	L42	;
+   4BC5 F6 C8 8D      [ 5]  892 	ldb	_blockX	;, blockX
+   4BC8 F1 C8 81      [ 5]  893 	cmpb	_endX	;cmpqi:	;, endX
+   4BCB 26 23         [ 3]  894 	bne	L42	;
+   4BCD F6 C8 8E      [ 5]  895 	ldb	_blockY	;, blockY
+   4BD0 F1 C8 82      [ 5]  896 	cmpb	_endY	;cmpqi:	;, endY
+   4BD3 26 1B         [ 3]  897 	bne	L42	;
+   4BD5 7D C8 8C      [ 7]  898 	tst	_splitMode	; splitMode
+   4BD8 26 16         [ 3]  899 	bne	L42	;
+                            900 ;----- asm -----
+                            901 ; 500 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            902 	; #ENR#[389]			blockYOfs = 0;
+                            903 ; 0 "" 2
+                            904 ;--- end asm ---
+   4BDA 7F C8 89      [ 7]  905 	clr	_blockYOfs	; blockYOfs
+                            906 ;----- asm -----
+                            907 ; 502 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            908 	; #ENR#[390]			gameState = BlockMovingAtEnd;
+                            909 ; 0 "" 2
+                            910 ;--- end asm ---
+   4BDD C6 06         [ 2]  911 	ldb	#6	;,
+   4BDF F7 CA F6      [ 5]  912 	stb	_gameState	;, gameState
+                            913 ;----- asm -----
+                            914 ; 504 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            915 	; #ENR#[391]			changeMusic(levelEndMusic);
+                            916 ; 0 "" 2
+                            917 ;--- end asm ---
+   4BE2 8E 50 BD      [ 3]  918 	ldx	#_levelEndMusic	;,
+   4BE5 BD 49 6C      [ 8]  919 	jsr	_changeMusic
+                            920 ;----- asm -----
+                            921 ; 506 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            922 	; #ENR#[392]			*vecx = 1;
+                            923 ; 0 "" 2
+                            924 ;--- end asm ---
+   4BE8 C6 01         [ 2]  925 	ldb	#1	;,
+   4BEA E7 9F C8 86   [ 9]  926 	stb	[_vecx]	;,* vecx
+   4BEE 20 0C         [ 3]  927 	bra	L43	;
+   4BF0                     928 L42:
+                            929 ;----- asm -----
+                            930 ; 510 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            931 	; #ENR#[395]			if (gameState != BlockFalling) {
+                            932 ; 0 "" 2
+                            933 ;--- end asm ---
+   4BF0 F6 CA F6      [ 5]  934 	ldb	_gameState	;, gameState
+   4BF3 C1 05         [ 2]  935 	cmpb	#5	;cmpqi:	;,
+   4BF5 27 05         [ 3]  936 	beq	L43	;
+                            937 ;----- asm -----
+                            938 ; 512 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            939 	; #ENR#[396]				gameState = BlockWaiting;
+                            940 ; 0 "" 2
+                            941 ;--- end asm ---
+   4BF7 C6 03         [ 2]  942 	ldb	#3	;,
+   4BF9 F7 CA F6      [ 5]  943 	stb	_gameState	;, gameState
+   4BFC                     944 L43:
                             945 ;----- asm -----
-                            946 ; 633 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            947 	; #ENR#[472]	if (Vec_Buttons & 2) {
-                            948 ;--- end asm ---
-   3950 F6 C8 11      [ 5]  949 	ldb	_Vec_Buttons	;, Vec_Buttons
-   3953 C5 02         [ 2]  950 	bitb	#2	;,
-   3955 27 05         [ 3]  951 	beq	L48	;
-                            952 ;----- asm -----
-                            953 ; 635 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            954 	; #ENR#[473]		gameState = ClearMenu;
-                            955 ;--- end asm ---
-   3957 C6 01         [ 2]  956 	ldb	#1	;,
-   3959 F7 C8 FE      [ 5]  957 	stb	_gameState	;, gameState
-   395C                     958 L48:
-   395C 32 64         [ 5]  959 	leas	4,s	;,,
-   395E 35 C0         [ 7]  960 	puls	u,pc	;
-                            961 	.globl	_blockMovingAtEnd
-   3960                     962 _blockMovingAtEnd:
-   3960 32 7E         [ 5]  963 	leas	-2,s	;,,
-                            964 ;----- asm -----
-                            965 ; 590 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            966 	; #ENR#[447]	drawField();
-                            967 ;--- end asm ---
-   3962 BD 36 21      [ 8]  968 	jsr	_drawField
-                            969 ;----- asm -----
-                            970 ; 592 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            971 	; #ENR#[448]	drawBlock(blockYOfs);
-                            972 ;--- end asm ---
-   3965 F6 C8 E0      [ 5]  973 	ldb	_blockYOfs	;, blockYOfs
-   3968 BD 09 92      [ 8]  974 	jsr	_drawBlock
-                            975 ;----- asm -----
-                            976 ; 594 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            977 	; #ENR#[449]	blockYOfs++;
-                            978 ;--- end asm ---
-   396B F6 C8 E0      [ 5]  979 	ldb	_blockYOfs	; blockYOfs.52, blockYOfs
-   396E 5C            [ 2]  980 	incb	; blockYOfs.52
-   396F F7 C8 E0      [ 5]  981 	stb	_blockYOfs	; blockYOfs.52, blockYOfs
+                            946 ; 518 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            947 	; #ENR#[401]		switch (blockOrientation) {
+                            948 ; 0 "" 2
+                            949 ;--- end asm ---
+   4BFC F6 C8 88      [ 5]  950 	ldb	_blockOrientation	; blockOrientation, blockOrientation
+   4BFF C1 01         [ 2]  951 	cmpb	#1	;cmpqi:	; blockOrientation,
+   4C01 27 29         [ 3]  952 	beq	L46	;
+   4C03 25 09         [ 3]  953 	blo	L45	;
+   4C05 C1 02         [ 2]  954 	cmpb	#2	;cmpqi:	; blockOrientation,
+   4C07 10 26 00 75   [ 6]  955 	lbne	L44	;
+   4C0B 16 00 47      [ 5]  956 	lbra	L56	;
+   4C0E                     957 L45:
+                            958 ;----- asm -----
+                            959 ; 522 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            960 	; #ENR#[403]			if (f0 == 's' || f0 == 'h' || f0 == 'v') {
+                            961 ; 0 "" 2
+                            962 ;--- end asm ---
+   4C0E E6 64         [ 5]  963 	ldb	4,s	;, f0
+   4C10 C1 73         [ 2]  964 	cmpb	#115	;cmpqi:	;,
+   4C12 27 08         [ 3]  965 	beq	L48	;
+   4C14 C1 68         [ 2]  966 	cmpb	#104	;cmpqi:	;,
+   4C16 27 04         [ 3]  967 	beq	L48	;
+   4C18 C1 76         [ 2]  968 	cmpb	#118	;cmpqi:	;,
+   4C1A 26 0D         [ 3]  969 	bne	L49	;
+   4C1C                     970 L48:
+                            971 ;----- asm -----
+                            972 ; 524 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            973 	; #ENR#[404]				swatchSwitch(blockX, blockY);
+                            974 ; 0 "" 2
+                            975 ;--- end asm ---
+   4C1C F6 C8 8E      [ 5]  976 	ldb	_blockY	;, blockY
+   4C1F E7 E2         [ 6]  977 	stb	,-s	;,
+   4C21 F6 C8 8D      [ 5]  978 	ldb	_blockX	;, blockX
+   4C24 BD 3C 28      [ 8]  979 	jsr	_swatchSwitch
+   4C27 32 61         [ 5]  980 	leas	1,s	;,,
+   4C29                     981 L49:
                             982 ;----- asm -----
-                            983 ; 596 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            984 	; #ENR#[450]	if (blockYOfs == 30) {
-                            985 ;--- end asm ---
-   3972 C1 1E         [ 2]  986 	cmpb	#30	;cmpqi:	; blockYOfs.52,
-   3974 10 26 00 3F   [ 6]  987 	lbne	L53	;
-                            988 ;----- asm -----
-                            989 ; 598 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            990 	; #ENR#[451]		if (moveCount < levelHighscore) {
-                            991 ;--- end asm ---
-   3978 BE C8 F9      [ 6]  992 	ldx	_moveCount	; moveCount.53, moveCount
-   397B BC C8 FB      [ 7]  993 	cmpx	_levelHighscore	;cmphi:	; moveCount.53, levelHighscore
-   397E 24 25         [ 3]  994 	bhs	L51	;
-                            995 ;----- asm -----
-                            996 ; 600 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                            997 	; #ENR#[452]			writeEeprom((uint8_t) (2 * levelNumber), (uint8_t) (moveCount & 0xff));
-                            998 ;--- end asm ---
-   3980 F6 C8 87      [ 5]  999 	ldb	_levelNumber	;, levelNumber
-   3983 58            [ 2] 1000 	aslb	;
-   3984 E7 E4         [ 4] 1001 	stb	,s	;,
-   3986 1F 10         [ 6] 1002 	tfr	x,d	; moveCount.53,
-   3988 34 04         [ 6] 1003 	pshs	b	;
-   398A E6 61         [ 5] 1004 	ldb	1,s	;,
-   398C BD 35 4F      [ 8] 1005 	jsr	_writeEeprom
-                           1006 ;----- asm -----
-                           1007 ; 602 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1008 	; #ENR#[453]			writeEeprom((uint8_t) (2 * levelNumber + 1), (uint8_t) (moveCount >> 8));
-                           1009 ;--- end asm ---
-   398F F6 C8 87      [ 5] 1010 	ldb	_levelNumber	; tmp31, levelNumber
-   3992 58            [ 2] 1011 	aslb	; tmp31
-   3993 5C            [ 2] 1012 	incb	; tmp31
-   3994 E7 62         [ 5] 1013 	stb	2,s	; tmp31,
-   3996 FC C8 F9      [ 6] 1014 	ldd	_moveCount	; tmp33, moveCount
-   3999 1F 89         [ 6] 1015 	tfr	a,b	;,
-   399B 4F            [ 2] 1016 	clra		;zero_extendqihi: R:b -> R:d	;,
-   399C 34 04         [ 6] 1017 	pshs	b	; tmp33
-   399E E6 63         [ 5] 1018 	ldb	3,s	;,
-   39A0 BD 35 4F      [ 8] 1019 	jsr	_writeEeprom
-   39A3 32 62         [ 5] 1020 	leas	2,s	;,,
-   39A5                    1021 L51:
-                           1022 ;----- asm -----
-                           1023 ; 605 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1024 	; #ENR#[455]		levelNumber++;
-                           1025 ;--- end asm ---
-   39A5 F6 C8 87      [ 5] 1026 	ldb	_levelNumber	; levelNumber.56, levelNumber
-   39A8 5C            [ 2] 1027 	incb	; levelNumber.56
-   39A9 F7 C8 87      [ 5] 1028 	stb	_levelNumber	; levelNumber.56, levelNumber
-                           1029 ;----- asm -----
-                           1030 ; 607 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1031 	; #ENR#[456]		if (levelNumber >= levelCount) levelNumber = 0;
+                            983 ; 527 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            984 	; #ENR#[406]			break;
+                            985 ; 0 "" 2
+                            986 ;--- end asm ---
+   4C29 16 00 54      [ 5]  987 	lbra	L44	;
+   4C2C                     988 L46:
+                            989 ;----- asm -----
+                            990 ; 531 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            991 	; #ENR#[408]			if (f0 == 's') {
+                            992 ; 0 "" 2
+                            993 ;--- end asm ---
+   4C2C E6 64         [ 5]  994 	ldb	4,s	;, f0
+   4C2E C1 73         [ 2]  995 	cmpb	#115	;cmpqi:	;,
+   4C30 26 0D         [ 3]  996 	bne	L50	;
+                            997 ;----- asm -----
+                            998 ; 533 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                            999 	; #ENR#[409]				swatchSwitch(blockX, blockY);
+                           1000 ; 0 "" 2
+                           1001 ;--- end asm ---
+   4C32 F6 C8 8E      [ 5] 1002 	ldb	_blockY	;, blockY
+   4C35 E7 E2         [ 6] 1003 	stb	,-s	;,
+   4C37 F6 C8 8D      [ 5] 1004 	ldb	_blockX	;, blockX
+   4C3A BD 3C 28      [ 8] 1005 	jsr	_swatchSwitch
+   4C3D 32 61         [ 5] 1006 	leas	1,s	;,,
+   4C3F                    1007 L50:
+                           1008 ;----- asm -----
+                           1009 ; 536 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1010 	; #ENR#[411]			if (f2 == 's') {
+                           1011 ; 0 "" 2
+                           1012 ;--- end asm ---
+   4C3F E6 66         [ 5] 1013 	ldb	6,s	;, f2
+   4C41 C1 73         [ 2] 1014 	cmpb	#115	;cmpqi:	;,
+   4C43 26 0E         [ 3] 1015 	bne	L51	;
+                           1016 ;----- asm -----
+                           1017 ; 538 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1018 	; #ENR#[412]				swatchSwitch(blockX, blockY + 1);
+                           1019 ; 0 "" 2
+                           1020 ;--- end asm ---
+   4C45 F6 C8 8E      [ 5] 1021 	ldb	_blockY	;, blockY
+   4C48 5C            [ 2] 1022 	incb	;
+   4C49 34 04         [ 6] 1023 	pshs	b	;
+   4C4B F6 C8 8D      [ 5] 1024 	ldb	_blockX	;, blockX
+   4C4E BD 3C 28      [ 8] 1025 	jsr	_swatchSwitch
+   4C51 32 61         [ 5] 1026 	leas	1,s	;,,
+   4C53                    1027 L51:
+                           1028 ;----- asm -----
+                           1029 ; 541 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1030 	; #ENR#[414]			break;
+                           1031 ; 0 "" 2
                            1032 ;--- end asm ---
-   39AC F1 44 B3      [ 5] 1033 	cmpb	_levelCount	;cmpqi:	; levelNumber.56, levelCount
-   39AF 25 03         [ 3] 1034 	blo	L52	;
-   39B1 7F C8 87      [ 7] 1035 	clr	_levelNumber	; levelNumber
-   39B4                    1036 L52:
-                           1037 ;----- asm -----
-                           1038 ; 609 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1039 	; #ENR#[457]		startLevel();
-                           1040 ;--- end asm ---
-   39B4 BD 38 4D      [ 8] 1041 	jsr	_startLevel
-   39B7                    1042 L53:
-   39B7 32 62         [ 5] 1043 	leas	2,s	;,,
-   39B9 39            [ 5] 1044 	rts
-                           1045 	.globl	_blockFalling
-   39BA                    1046 _blockFalling:
-   39BA 32 7F         [ 5] 1047 	leas	-1,s	;,,
-                           1048 ;----- asm -----
-                           1049 ; 570 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1050 	; #ENR#[434]	drawField();
-                           1051 ;--- end asm ---
-   39BC BD 36 21      [ 8] 1052 	jsr	_drawField
-                           1053 ;----- asm -----
-                           1054 ; 572 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1055 	; #ENR#[435]	blockYOfs++;
-                           1056 ;--- end asm ---
-   39BF F6 C8 E0      [ 5] 1057 	ldb	_blockYOfs	;, blockYOfs
-   39C2 5C            [ 2] 1058 	incb	;
-   39C3 E7 E4         [ 4] 1059 	stb	,s	;, blockYOfs.50
-   39C5 F7 C8 E0      [ 5] 1060 	stb	_blockYOfs	;, blockYOfs
-                           1061 ;----- asm -----
-                           1062 ; 574 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1063 	; #ENR#[436]	if (blockYOfs < 12) {
-                           1064 ;--- end asm ---
-   39C8 C1 0B         [ 2] 1065 	cmpb	#11	;cmpqi:	;,
-   39CA 2E 0A         [ 3] 1066 	bgt	L55	;
-                           1067 ;----- asm -----
-                           1068 ; 576 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1069 	; #ENR#[437]		drawBlock(-blockYOfs*blockYOfs);
-                           1070 ;--- end asm ---
-   39CC 50            [ 2] 1071 	negb	; tmp28
-   39CD A6 E4         [ 4] 1072 	lda	,s	;mulqihi3	; blockYOfs.50
-   39CF 3D            [11] 1073 	mul
-                           1074 		;movlsbqihi: D->B
-   39D0 BD 09 92      [ 8] 1075 	jsr	_drawBlock
+   4C53 20 2B         [ 3] 1033 	bra	L44	;
+   4C55                    1034 L56:
+                           1035 ;----- asm -----
+                           1036 ; 545 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1037 	; #ENR#[416]			if (f0 == 's') {
+                           1038 ; 0 "" 2
+                           1039 ;--- end asm ---
+   4C55 E6 64         [ 5] 1040 	ldb	4,s	;, f0
+   4C57 C1 73         [ 2] 1041 	cmpb	#115	;cmpqi:	;,
+   4C59 26 0D         [ 3] 1042 	bne	L52	;
+                           1043 ;----- asm -----
+                           1044 ; 547 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1045 	; #ENR#[417]				swatchSwitch(blockX, blockY);
+                           1046 ; 0 "" 2
+                           1047 ;--- end asm ---
+   4C5B F6 C8 8E      [ 5] 1048 	ldb	_blockY	;, blockY
+   4C5E E7 E2         [ 6] 1049 	stb	,-s	;,
+   4C60 F6 C8 8D      [ 5] 1050 	ldb	_blockX	;, blockX
+   4C63 BD 3C 28      [ 8] 1051 	jsr	_swatchSwitch
+   4C66 32 61         [ 5] 1052 	leas	1,s	;,,
+   4C68                    1053 L52:
+                           1054 ;----- asm -----
+                           1055 ; 550 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1056 	; #ENR#[419]			if (f1 == 's') {
+                           1057 ; 0 "" 2
+                           1058 ;--- end asm ---
+   4C68 E6 65         [ 5] 1059 	ldb	5,s	;, f1
+   4C6A C1 73         [ 2] 1060 	cmpb	#115	;cmpqi:	;,
+   4C6C 26 12         [ 3] 1061 	bne	L53	;
+                           1062 ;----- asm -----
+                           1063 ; 552 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1064 	; #ENR#[420]				swatchSwitch(blockX + 1, blockY);
+                           1065 ; 0 "" 2
+                           1066 ;--- end asm ---
+   4C6E F6 C8 8D      [ 5] 1067 	ldb	_blockX	;, blockX
+   4C71 5C            [ 2] 1068 	incb	;
+   4C72 E7 E4         [ 4] 1069 	stb	,s	;,
+   4C74 F6 C8 8E      [ 5] 1070 	ldb	_blockY	;, blockY
+   4C77 E7 E2         [ 6] 1071 	stb	,-s	;,
+   4C79 E6 61         [ 5] 1072 	ldb	1,s	;,
+   4C7B BD 3C 28      [ 8] 1073 	jsr	_swatchSwitch
+   4C7E 32 61         [ 5] 1074 	leas	1,s	;,,
+   4C80                    1075 L53:
                            1076 ;----- asm -----
-                           1077 ; 578 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1078 	; #ENR#[438]		doBlockAnimation();
-                           1079 ;--- end asm ---
-   39D3 BD 08 90      [ 8] 1080 	jsr	_doBlockAnimation
-   39D6                    1081 L55:
+                           1077 ; 555 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1078 	; #ENR#[422]			break;
+                           1079 ; 0 "" 2
+                           1080 ;--- end asm ---
+   4C80                    1081 L44:
                            1082 ;----- asm -----
-                           1083 ; 581 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1084 	; #ENR#[440]	if (blockYOfs == 50) {
-                           1085 ;--- end asm ---
-   39D6 F6 C8 E0      [ 5] 1086 	ldb	_blockYOfs	;, blockYOfs
-   39D9 C1 32         [ 2] 1087 	cmpb	#50	;cmpqi:	;,
-   39DB 26 03         [ 3] 1088 	bne	L57	;
+                           1083 ; 560 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1084 	; #ENR#[426]		if (splitMode) {
+                           1085 ; 0 "" 2
+                           1086 ;--- end asm ---
+   4C80 7D C8 8C      [ 7] 1087 	tst	_splitMode	; splitMode
+   4C83 27 03         [ 3] 1088 	beq	L54	;
                            1089 ;----- asm -----
-                           1090 ; 583 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1091 	; #ENR#[441]		startLevel();
-                           1092 ;--- end asm ---
-   39DD BD 38 4D      [ 8] 1093 	jsr	_startLevel
-   39E0                    1094 L57:
-   39E0 32 61         [ 5] 1095 	leas	1,s	;,,
-   39E2 39            [ 5] 1096 	rts
-                           1097 	.globl	_moveBlock
-   39E3                    1098 _moveBlock:
-                           1099 ;----- asm -----
-                           1100 ; 253 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1101 	; #ENR#[221]	moveBlockImpl(move);
-                           1102 ;--- end asm ---
-   39E3 BD 06 33      [ 8] 1103 	jsr	_moveBlockImpl
-                           1104 ;----- asm -----
-                           1105 ; 255 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1106 	; #ENR#[222]	if (moveCount < 999) moveCount++;
-                           1107 ;--- end asm ---
-   39E6 BE C8 F9      [ 6] 1108 	ldx	_moveCount	; moveCount.8, moveCount
-   39E9 8C 03 E6      [ 4] 1109 	cmpx	#998	;cmphi:	; moveCount.8,
-   39EC 22 05         [ 3] 1110 	bhi	L59	;
-   39EE 30 01         [ 5] 1111 	leax	1,x	;,, moveCount.8
-   39F0 BF C8 F9      [ 6] 1112 	stx	_moveCount	;, moveCount
-   39F3                    1113 L59:
-                           1114 ;----- asm -----
-                           1115 ; 257 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1116 	; #ENR#[223]	updateInfoText();
-                           1117 ;--- end asm ---
-   39F3 BD 35 F9      [ 8] 1118 	jsr	_updateInfoText
-   39F6 39            [ 5] 1119 	rts
-                           1120 	.globl	_blockWaiting
-   39F7                    1121 _blockWaiting:
-                           1122 ;----- asm -----
-                           1123 ; 384 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1124 	; #ENR#[321]	drawField();
-                           1125 ;--- end asm ---
-   39F7 BD 36 21      [ 8] 1126 	jsr	_drawField
-                           1127 ;----- asm -----
-                           1128 ; 386 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1129 	; #ENR#[322]	drawBlock(0);
+                           1090 ; 562 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1091 	; #ENR#[427]			testMerge();
+                           1092 ; 0 "" 2
+                           1093 ;--- end asm ---
+   4C85 BD 03 FD      [ 8] 1094 	jsr	_testMerge
+   4C88                    1095 L54:
+   4C88 32 67         [ 5] 1096 	leas	7,s	;,,
+   4C8A 39            [ 5] 1097 	rts
+                           1098 	.globl	_sendCommand
+   4C8B                    1099 _sendCommand:
+   4C8B 32 7E         [ 5] 1100 	leas	-2,s	;,,
+   4C8D E7 E4         [ 4] 1101 	stb	,s	; cmd, cmd
+                           1102 ;----- asm -----
+                           1103 ; 154 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1104 	; #ENR#[153]	uint8_t result;
+                           1105 ; 0 "" 2
+                           1106 ; 156 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1107 	; #ENR#[154]	picWrite('V');
+                           1108 ; 0 "" 2
+                           1109 ;--- end asm ---
+   4C8F C6 56         [ 2] 1110 	ldb	#86	;,
+   4C91 BD 30 41      [ 8] 1111 	jsr	_picWrite
+                           1112 ;----- asm -----
+                           1113 ; 158 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1114 	; #ENR#[155]	picWrite(cmd);
+                           1115 ; 0 "" 2
+                           1116 ;--- end asm ---
+   4C94 E6 E4         [ 4] 1117 	ldb	,s	;, cmd
+   4C96 BD 30 41      [ 8] 1118 	jsr	_picWrite
+                           1119 ;----- asm -----
+                           1120 ; 160 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1121 	; #ENR#[156]	picWrite(arg);
+                           1122 ; 0 "" 2
+                           1123 ;--- end asm ---
+   4C99 E6 64         [ 5] 1124 	ldb	4,s	;, arg
+   4C9B BD 30 41      [ 8] 1125 	jsr	_picWrite
+                           1126 ;----- asm -----
+                           1127 ; 162 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1128 	; #ENR#[157]	result = picRead();
+                           1129 ; 0 "" 2
                            1130 ;--- end asm ---
-   39FA 5F            [ 2] 1131 	clrb	;
-   39FB BD 09 92      [ 8] 1132 	jsr	_drawBlock
+   4C9E BD 30 8D      [ 8] 1131 	jsr	_picRead
+   4CA1 E7 61         [ 5] 1132 	stb	1,s	;, result
                            1133 ;----- asm -----
-                           1134 ; 388 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1135 	; #ENR#[323]	joybit();
-                           1136 ; 2354 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   39FE BD F1 F8      [ 8] 1137 	jsr ___Joy_Digital; BIOS call
-                           1138 ; 390 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1139 	; #ENR#[324]	if (pot0 < -10) {
-                           1140 ;--- end asm ---
-   3A01 F6 C8 1B      [ 5] 1141 	ldb	-14309	; D.2324,
-   3A04 C1 F6         [ 2] 1142 	cmpb	#-10	;cmpqi:	; D.2324,
-   3A06 2C 0C         [ 3] 1143 	bge	L62	;
-                           1144 ;----- asm -----
-                           1145 ; 392 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1146 	; #ENR#[325]		moveBlock(Left);
-                           1147 ;--- end asm ---
-   3A08 5F            [ 2] 1148 	clrb	;
-   3A09 BD 39 E3      [ 8] 1149 	jsr	_moveBlock
-                           1150 ;----- asm -----
-                           1151 ; 394 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1152 	; #ENR#[326]		gameState = BlockMoving;
+                           1134 ; 164 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1135 	; #ENR#[158]	delay10ms();
+                           1136 ; 0 "" 2
+                           1137 ;--- end asm ---
+   4CA3 BD 30 EA      [ 8] 1138 	jsr	_delay10ms
+                           1139 ;----- asm -----
+                           1140 ; 166 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1141 	; #ENR#[159]	return result;
+                           1142 ; 0 "" 2
+                           1143 ;--- end asm ---
+   4CA6 E6 61         [ 5] 1144 	ldb	1,s	;, result
+   4CA8 32 62         [ 5] 1145 	leas	2,s	;,,
+   4CAA 39            [ 5] 1146 	rts
+                           1147 	.globl	_readEeprom
+   4CAB                    1148 _readEeprom:
+                           1149 ;----- asm -----
+                           1150 ; 206 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1151 	; #ENR#[188]	if (picAvailable) {
+                           1152 ; 0 "" 2
                            1153 ;--- end asm ---
-   3A0C C6 04         [ 2] 1154 	ldb	#4	;,
-   3A0E F7 C8 FE      [ 5] 1155 	stb	_gameState	;, gameState
-   3A11 16 00 37      [ 5] 1156 	lbra	L63	;
-   3A14                    1157 L62:
-   3A14 F6 C8 1B      [ 5] 1158 	ldb	-14309	; D.2325,
-   3A17 C1 0A         [ 2] 1159 	cmpb	#10	;cmpqi:	; D.2325,
-   3A19 2F 0C         [ 3] 1160 	ble	L64	;
-                           1161 ;----- asm -----
-                           1162 ; 397 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1163 	; #ENR#[328]		moveBlock(Right);
-                           1164 ;--- end asm ---
-   3A1B C6 02         [ 2] 1165 	ldb	#2	;,
-   3A1D BD 39 E3      [ 8] 1166 	jsr	_moveBlock
+   4CAB 7D CA F5      [ 7] 1154 	tst	_picAvailable	; picAvailable
+   4CAE 27 0B         [ 3] 1155 	beq	L60	;
+                           1156 ;----- asm -----
+                           1157 ; 208 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1158 	; #ENR#[189]		return sendCommand(CMD_EEPROM_READ, address);
+                           1159 ; 0 "" 2
+                           1160 ;--- end asm ---
+   4CB0 34 04         [ 6] 1161 	pshs	b	; address
+   4CB2 C6 04         [ 2] 1162 	ldb	#4	;,
+   4CB4 BD 4C 8B      [ 8] 1163 	jsr	_sendCommand
+   4CB7 32 61         [ 5] 1164 	leas	1,s	;,,
+   4CB9 20 02         [ 3] 1165 	bra	L61	;
+   4CBB                    1166 L60:
                            1167 ;----- asm -----
-                           1168 ; 399 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1169 	; #ENR#[329]		gameState = BlockMoving;
-                           1170 ;--- end asm ---
-   3A20 C6 04         [ 2] 1171 	ldb	#4	;,
-   3A22 F7 C8 FE      [ 5] 1172 	stb	_gameState	;, gameState
-   3A25 20 24         [ 3] 1173 	bra	L63	;
-   3A27                    1174 L64:
-   3A27 F6 C8 1C      [ 5] 1175 	ldb	-14308	; D.2327,
-   3A2A C1 F6         [ 2] 1176 	cmpb	#-10	;cmpqi:	; D.2327,
-   3A2C 2C 0C         [ 3] 1177 	bge	L65	;
+                           1168 ; 211 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1169 	; #ENR#[191]		return 0xff;
+                           1170 ; 0 "" 2
+                           1171 ;--- end asm ---
+   4CBB C6 FF         [ 2] 1172 	ldb	#-1	; D.2272,
+   4CBD                    1173 L61:
+   4CBD 39            [ 5] 1174 	rts
+                           1175 	.globl	_startLevel
+   4CBE                    1176 _startLevel:
+   4CBE 32 7E         [ 5] 1177 	leas	-2,s	;,,
                            1178 ;----- asm -----
-                           1179 ; 402 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1180 	; #ENR#[331]		moveBlock(Down);
-                           1181 ;--- end asm ---
-   3A2E C6 03         [ 2] 1182 	ldb	#3	;,
-   3A30 BD 39 E3      [ 8] 1183 	jsr	_moveBlock
-                           1184 ;----- asm -----
-                           1185 ; 404 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1186 	; #ENR#[332]		gameState = BlockMoving;
-                           1187 ;--- end asm ---
-   3A33 C6 04         [ 2] 1188 	ldb	#4	;,
-   3A35 F7 C8 FE      [ 5] 1189 	stb	_gameState	;, gameState
-   3A38 20 11         [ 3] 1190 	bra	L63	;
-   3A3A                    1191 L65:
-   3A3A F6 C8 1C      [ 5] 1192 	ldb	-14308	; D.2328,
-   3A3D C1 0A         [ 2] 1193 	cmpb	#10	;cmpqi:	; D.2328,
-   3A3F 2F 0A         [ 3] 1194 	ble	L63	;
-                           1195 ;----- asm -----
-                           1196 ; 407 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1197 	; #ENR#[334]		moveBlock(Up);
-                           1198 ;--- end asm ---
-   3A41 C6 01         [ 2] 1199 	ldb	#1	;,
-   3A43 BD 39 E3      [ 8] 1200 	jsr	_moveBlock
-                           1201 ;----- asm -----
-                           1202 ; 409 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1203 	; #ENR#[335]		gameState = BlockMoving;
-                           1204 ;--- end asm ---
-   3A46 C6 04         [ 2] 1205 	ldb	#4	;,
-   3A48 F7 C8 FE      [ 5] 1206 	stb	_gameState	;, gameState
-   3A4B                    1207 L63:
-                           1208 ;----- asm -----
-                           1209 ; 412 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1210 	; #ENR#[337]	if (gameState == BlockMoving) {
-                           1211 ;--- end asm ---
-   3A4B F6 C8 FE      [ 5] 1212 	ldb	_gameState	;, gameState
-   3A4E C1 04         [ 2] 1213 	cmpb	#4	;cmpqi:	;,
-   3A50 26 0C         [ 3] 1214 	bne	L66	;
-                           1215 ;----- asm -----
-                           1216 ; 414 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1217 	; #ENR#[338]		changeMusic(movingMusic);
-                           1218 ;--- end asm ---
-   3A52 8E 3D 52      [ 3] 1219 	ldx	#_movingMusic	;,
-   3A55 BD 36 18      [ 8] 1220 	jsr	_changeMusic
-                           1221 ;----- asm -----
-                           1222 ; 416 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1223 	; #ENR#[339]		*vecx = 3;
-                           1224 ;--- end asm ---
-   3A58 C6 03         [ 2] 1225 	ldb	#3	;,
-   3A5A E7 9F C8 82   [ 9] 1226 	stb	[_vecx]	;,* vecx
-   3A5E                    1227 L66:
-                           1228 ;----- asm -----
-                           1229 ; 420 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1230 	; #ENR#[342]    	Read_Btns();
-                           1231 ; 2286 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   3A5E BD F1 BA      [ 8] 1232 	jsr ___Read_Btns; BIOS call
-                           1233 ; 422 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1234 	; #ENR#[343]    	if (Vec_Buttons & 1) {
+                           1179 ; 283 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1180 	; #ENR#[242]	levelHighscore = readEeprom((uint8_t) (levelNumber * 2));
+                           1181 ; 0 "" 2
+                           1182 ;--- end asm ---
+   4CC0 F6 C8 83      [ 5] 1183 	ldb	_levelNumber	; tmp30, levelNumber
+   4CC3 58            [ 2] 1184 	aslb	; tmp30
+   4CC4 BD 4C AB      [ 8] 1185 	jsr	_readEeprom
+   4CC7 4F            [ 2] 1186 	clra		;zero_extendqihi: R:b -> R:d	; D.2317, D.2317
+   4CC8 FD CA F3      [ 6] 1187 	std	_levelHighscore	; D.2317, levelHighscore
+                           1188 ;----- asm -----
+                           1189 ; 285 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1190 	; #ENR#[243]	levelHighscore |= ((uint16_t) readEeprom((uint8_t) (levelNumber * 2 + 1))) << 8;
+                           1191 ; 0 "" 2
+                           1192 ;--- end asm ---
+   4CCB F6 C8 83      [ 5] 1193 	ldb	_levelNumber	; tmp32, levelNumber
+   4CCE 58            [ 2] 1194 	aslb	; tmp32
+   4CCF 5C            [ 2] 1195 	incb	; tmp33
+   4CD0 BD 4C AB      [ 8] 1196 	jsr	_readEeprom
+   4CD3 1F 98         [ 6] 1197 	tfr	b,a	;,
+   4CD5 5F            [ 2] 1198 	clrb	;
+   4CD6 BA CA F3      [ 5] 1199 	ora	_levelHighscore	;, levelHighscore
+   4CD9 FA CA F4      [ 5] 1200 	orb	_levelHighscore+1	;, levelHighscore
+   4CDC FD CA F3      [ 6] 1201 	std	_levelHighscore	; levelHighscore.17, levelHighscore
+                           1202 ;----- asm -----
+                           1203 ; 287 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1204 	; #ENR#[244]	if (levelHighscore == 0) levelHighscore = 999;
+                           1205 ; 0 "" 2
+                           1206 ;--- end asm ---
+   4CDF 10 83 00 00   [ 5] 1207 	cmpd	#0	; levelHighscore.17
+   4CE3 26 06         [ 3] 1208 	bne	L64	;
+   4CE5 8E 03 E7      [ 3] 1209 	ldx	#999	;,
+   4CE8 BF CA F3      [ 6] 1210 	stx	_levelHighscore	;, levelHighscore
+   4CEB                    1211 L64:
+                           1212 ;----- asm -----
+                           1213 ; 289 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1214 	; #ENR#[245]    level = levels[levelNumber];
+                           1215 ; 0 "" 2
+                           1216 ;--- end asm ---
+   4CEB F6 C8 83      [ 5] 1217 	ldb	_levelNumber	;, levelNumber
+   4CEE 4F            [ 2] 1218 	clra		;zero_extendqihi: R:b -> R:d	;,
+   4CEF ED E4         [ 5] 1219 	std	,s	;,
+   4CF1 58            [ 2] 1220 	aslb	;
+   4CF2 49            [ 2] 1221 	rola	;
+   4CF3 1F 01         [ 6] 1222 	tfr	d,x	;, tmp39
+   4CF5 AE 89 5F FA   [ 9] 1223 	ldx	_levels,x	;, levels
+   4CF9 BF C8 F2      [ 6] 1224 	stx	_level	;, level
+                           1225 ;----- asm -----
+                           1226 ; 291 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1227 	; #ENR#[246]	initSwatches();
+                           1228 ; 0 "" 2
+                           1229 ;--- end asm ---
+   4CFC BD 38 61      [ 8] 1230 	jsr	_initSwatches
+                           1231 ;----- asm -----
+                           1232 ; 293 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1233 	; #ENR#[247]	initLevel();
+                           1234 ; 0 "" 2
                            1235 ;--- end asm ---
-   3A61 F6 C8 11      [ 5] 1236 	ldb	_Vec_Buttons	;, Vec_Buttons
-   3A64 C5 01         [ 2] 1237 	bitb	#1	;,
-   3A66 27 18         [ 3] 1238 	beq	L67	;
-                           1239 ;----- asm -----
-                           1240 ; 424 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1241 	; #ENR#[344]		levelNumber++;
-                           1242 ;--- end asm ---
-   3A68 F6 C8 87      [ 5] 1243 	ldb	_levelNumber	; levelNumber.30, levelNumber
-   3A6B 5C            [ 2] 1244 	incb	; levelNumber.30
-   3A6C F7 C8 87      [ 5] 1245 	stb	_levelNumber	; levelNumber.30, levelNumber
-                           1246 ;----- asm -----
-                           1247 ; 426 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1248 	; #ENR#[345]		if (levelNumber >= levelCount) levelNumber = 0;
+   4CFF BD 3C 1E      [ 8] 1236 	jsr	_initLevel
+                           1237 ;----- asm -----
+                           1238 ; 295 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1239 	; #ENR#[248]	blockX = level->start.x;
+                           1240 ; 0 "" 2
+                           1241 ;--- end asm ---
+   4D02 BE C8 F2      [ 6] 1242 	ldx	_level	; level, level
+   4D05 E6 02         [ 5] 1243 	ldb	2,x	;, <variable>.start.x
+   4D07 F7 C8 8D      [ 5] 1244 	stb	_blockX	;, blockX
+                           1245 ;----- asm -----
+                           1246 ; 297 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1247 	; #ENR#[249]	blockY = level->start.y;
+                           1248 ; 0 "" 2
                            1249 ;--- end asm ---
-   3A6F F1 44 B3      [ 5] 1250 	cmpb	_levelCount	;cmpqi:	; levelNumber.30, levelCount
-   3A72 25 03         [ 3] 1251 	blo	L68	;
-   3A74 7F C8 87      [ 7] 1252 	clr	_levelNumber	; levelNumber
-   3A77                    1253 L68:
-                           1254 ;----- asm -----
-                           1255 ; 428 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1256 	; #ENR#[346]		setBank(nextBank);
-                           1257 ;--- end asm ---
-   3A77 F6 44 B5      [ 5] 1258 	ldb	_nextBank	;, nextBank
-   3A7A BD 36 73      [ 8] 1259 	jsr	_setBank
-                           1260 ;----- asm -----
-                           1261 ; 430 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1262 	; #ENR#[347]    		startLevel();
-                           1263 ;--- end asm ---
-   3A7D BD 38 4D      [ 8] 1264 	jsr	_startLevel
-   3A80                    1265 L67:
-                           1266 ;----- asm -----
-                           1267 ; 433 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1268 	; #ENR#[349]    	if (Vec_Buttons & 2) {
+   4D0A E6 03         [ 5] 1250 	ldb	3,x	;, <variable>.start.y
+   4D0C F7 C8 8E      [ 5] 1251 	stb	_blockY	;, blockY
+                           1252 ;----- asm -----
+                           1253 ; 299 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1254 	; #ENR#[250]	blockStartLevel();
+                           1255 ; 0 "" 2
+                           1256 ;--- end asm ---
+   4D0F BD 03 DB      [ 8] 1257 	jsr	_blockStartLevel
+                           1258 ;----- asm -----
+                           1259 ; 301 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1260 	; #ENR#[251]	blockYOfs = -30;
+                           1261 ; 0 "" 2
+                           1262 ;--- end asm ---
+   4D12 C6 E2         [ 2] 1263 	ldb	#-30	;,
+   4D14 F7 C8 89      [ 5] 1264 	stb	_blockYOfs	;, blockYOfs
+                           1265 ;----- asm -----
+                           1266 ; 303 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1267 	; #ENR#[252]	gameState = BlockMovingToStart;
+                           1268 ; 0 "" 2
                            1269 ;--- end asm ---
-   3A80 F6 C8 11      [ 5] 1270 	ldb	_Vec_Buttons	;, Vec_Buttons
-   3A83 C5 02         [ 2] 1271 	bitb	#2	;,
-   3A85 27 08         [ 3] 1272 	beq	L70	;
-                           1273 ;----- asm -----
-                           1274 ; 435 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1275 	; #ENR#[350]		if (splitMode) {
+   4D17 C6 02         [ 2] 1270 	ldb	#2	;,
+   4D19 F7 CA F6      [ 5] 1271 	stb	_gameState	;, gameState
+                           1272 ;----- asm -----
+                           1273 ; 305 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1274 	; #ENR#[253]	changeMusic(startMusic);
+                           1275 ; 0 "" 2
                            1276 ;--- end asm ---
-   3A87 7D C8 E3      [ 7] 1277 	tst	_splitMode	; splitMode
-   3A8A 27 03         [ 3] 1278 	beq	L70	;
+   4D1C 8E 50 9D      [ 3] 1277 	ldx	#_startMusic	;,
+   4D1F BD 49 6C      [ 8] 1278 	jsr	_changeMusic
                            1279 ;----- asm -----
-                           1280 ; 437 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1281 	; #ENR#[351]			swapSplit();
-                           1282 ;--- end asm ---
-   3A8C BD 09 6D      [ 8] 1283 	jsr	_swapSplit
-   3A8F                    1284 L70:
-   3A8F 39            [ 5] 1285 	rts
-                           1286 	.globl	_startBlockFalling
-   3A90                    1287 _startBlockFalling:
-                           1288 ;----- asm -----
-                           1289 ; 263 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1290 	; #ENR#[228]	gameState = BlockFalling;
-                           1291 ;--- end asm ---
-   3A90 C6 05         [ 2] 1292 	ldb	#5	;,
-   3A92 F7 C8 FE      [ 5] 1293 	stb	_gameState	;, gameState
-                           1294 ;----- asm -----
-                           1295 ; 265 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1296 	; #ENR#[229]	blockYOfs = 0;
+                           1280 ; 307 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1281 	; #ENR#[254]	*vecx = 2;
+                           1282 ; 0 "" 2
+                           1283 ;--- end asm ---
+   4D22 C6 02         [ 2] 1284 	ldb	#2	;,
+   4D24 E7 9F C8 86   [ 9] 1285 	stb	[_vecx]	;,* vecx
+                           1286 ;----- asm -----
+                           1287 ; 309 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1288 	; #ENR#[255]	moveCount = 0;
+                           1289 ; 0 "" 2
+                           1290 ;--- end asm ---
+   4D28 CC 00 00      [ 3] 1291 	ldd	#0	;,
+   4D2B FD CA F1      [ 6] 1292 	std	_moveCount	;, moveCount
+                           1293 ;----- asm -----
+                           1294 ; 311 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1295 	; #ENR#[256]	updateInfoText();
+                           1296 ; 0 "" 2
                            1297 ;--- end asm ---
-   3A95 7F C8 E0      [ 7] 1298 	clr	_blockYOfs	; blockYOfs
-                           1299 ;----- asm -----
-                           1300 ; 267 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1301 	; #ENR#[230]	moveBlock(lastBlockDirection);
-                           1302 ;--- end asm ---
-   3A98 F6 C8 E1      [ 5] 1303 	ldb	_lastBlockDirection	;, lastBlockDirection
-   3A9B BD 39 E3      [ 8] 1304 	jsr	_moveBlock
-                           1305 ;----- asm -----
-                           1306 ; 269 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1307 	; #ENR#[231]	changeMusic(fallingMusic);
-                           1308 ;--- end asm ---
-   3A9E 8E 3D 32      [ 3] 1309 	ldx	#_fallingMusic	;,
-   3AA1 BD 36 18      [ 8] 1310 	jsr	_changeMusic
-                           1311 ;----- asm -----
-                           1312 ; 271 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1313 	; #ENR#[232]	*vecx = 0;
-                           1314 ;--- end asm ---
-   3AA4 6F 9F C8 82   [11] 1315 	clr	[_vecx]	;* vecx
-   3AA8 39            [ 5] 1316 	rts
-                           1317 	.globl	_blockMoving
-   3AA9                    1318 _blockMoving:
-   3AA9 32 79         [ 5] 1319 	leas	-7,s	;,,
-                           1320 ;----- asm -----
-                           1321 ; 445 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1322 	; #ENR#[358]	drawField();
-                           1323 ;--- end asm ---
-   3AAB BD 36 21      [ 8] 1324 	jsr	_drawField
-                           1325 ;----- asm -----
-                           1326 ; 447 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1327 	; #ENR#[359]	drawBlock(0);
-                           1328 ;--- end asm ---
-   3AAE 5F            [ 2] 1329 	clrb	;
-   3AAF BD 09 92      [ 8] 1330 	jsr	_drawBlock
-                           1331 ;----- asm -----
-                           1332 ; 449 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1333 	; #ENR#[360]	doBlockAnimation();
-                           1334 ;--- end asm ---
-   3AB2 BD 08 90      [ 8] 1335 	jsr	_doBlockAnimation
-                           1336 ;----- asm -----
-                           1337 ; 451 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1338 	; #ENR#[361]	if (!blockAnimating) {
-                           1339 ;--- end asm ---
-   3AB5 7D C8 E2      [ 7] 1340 	tst	_blockAnimating	; blockAnimating
-   3AB8 10 26 01 5C   [ 6] 1341 	lbne	L97	;
-                           1342 ;----- asm -----
-                           1343 ; 454 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1344 	; #ENR#[363]		uint8_t c0 = isField(blockX, blockY);
-                           1345 ;--- end asm ---
-   3ABC F6 C8 E5      [ 5] 1346 	ldb	_blockY	;, blockY
-   3ABF E7 E2         [ 6] 1347 	stb	,-s	;,
-   3AC1 F6 C8 E4      [ 5] 1348 	ldb	_blockX	;, blockX
-   3AC4 BD 3E 43      [ 8] 1349 	jsr	_isField
-   3AC7 E7 62         [ 5] 1350 	stb	2,s	;, c0
-                           1351 ;----- asm -----
-                           1352 ; 456 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1353 	; #ENR#[364]		uint8_t c1 = isField(blockX + 1, blockY);
-                           1354 ;--- end asm ---
-   3AC9 F6 C8 E4      [ 5] 1355 	ldb	_blockX	;, blockX
-   3ACC 5C            [ 2] 1356 	incb	;
-   3ACD E7 61         [ 5] 1357 	stb	1,s	;,
-   3ACF F6 C8 E5      [ 5] 1358 	ldb	_blockY	;, blockY
-   3AD2 E7 E2         [ 6] 1359 	stb	,-s	;,
-   3AD4 E6 62         [ 5] 1360 	ldb	2,s	;,
-   3AD6 BD 3E 43      [ 8] 1361 	jsr	_isField
-   3AD9 E7 64         [ 5] 1362 	stb	4,s	;, c1
-                           1363 ;----- asm -----
-                           1364 ; 458 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1365 	; #ENR#[365]		uint8_t c2 = isField(blockX, blockY + 1);
-                           1366 ;--- end asm ---
-   3ADB F6 C8 E5      [ 5] 1367 	ldb	_blockY	;, blockY
-   3ADE 5C            [ 2] 1368 	incb	;
-   3ADF 34 04         [ 6] 1369 	pshs	b	;
-   3AE1 F6 C8 E4      [ 5] 1370 	ldb	_blockX	;, blockX
-   3AE4 BD 3E 43      [ 8] 1371 	jsr	_isField
-   3AE7 E7 66         [ 5] 1372 	stb	6,s	;, c2
-                           1373 ;----- asm -----
-                           1374 ; 460 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1375 	; #ENR#[366]		char f0 = getField(blockX, blockY);
-                           1376 ;--- end asm ---
-   3AE9 F6 C8 E5      [ 5] 1377 	ldb	_blockY	;, blockY
-   3AEC E7 E2         [ 6] 1378 	stb	,-s	;,
-   3AEE F6 C8 E4      [ 5] 1379 	ldb	_blockX	;, blockX
-   3AF1 BD 3D 70      [ 8] 1380 	jsr	_getField
-   3AF4 E7 68         [ 5] 1381 	stb	8,s	;, f0
-                           1382 ;----- asm -----
-                           1383 ; 462 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1384 	; #ENR#[367]		char f1 = getField(blockX + 1, blockY);
-                           1385 ;--- end asm ---
-   3AF6 F6 C8 E4      [ 5] 1386 	ldb	_blockX	;, blockX
-   3AF9 5C            [ 2] 1387 	incb	;
-   3AFA E7 64         [ 5] 1388 	stb	4,s	;,
-   3AFC F6 C8 E5      [ 5] 1389 	ldb	_blockY	;, blockY
-   3AFF E7 E2         [ 6] 1390 	stb	,-s	;,
-   3B01 E6 65         [ 5] 1391 	ldb	5,s	;,
-   3B03 BD 3D 70      [ 8] 1392 	jsr	_getField
-   3B06 E7 6A         [ 5] 1393 	stb	10,s	;, f1
-                           1394 ;----- asm -----
-                           1395 ; 464 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1396 	; #ENR#[368]		char f2 = getField(blockX, blockY + 1);
-                           1397 ;--- end asm ---
-   3B08 F6 C8 E5      [ 5] 1398 	ldb	_blockY	;, blockY
-   3B0B 5C            [ 2] 1399 	incb	;
-   3B0C 34 04         [ 6] 1400 	pshs	b	;
-   3B0E F6 C8 E4      [ 5] 1401 	ldb	_blockX	;, blockX
-   3B11 BD 3D 70      [ 8] 1402 	jsr	_getField
-   3B14 E7 6C         [ 5] 1403 	stb	12,s	;, f2
-                           1404 ;----- asm -----
-                           1405 ; 466 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1406 	; #ENR#[369]		switch (blockOrientation) {
-                           1407 ;--- end asm ---
-   3B16 32 66         [ 5] 1408 	leas	6,s	;,,
-   3B18 F6 C8 DF      [ 5] 1409 	ldb	_blockOrientation	; blockOrientation, blockOrientation
-   3B1B C1 01         [ 2] 1410 	cmpb	#1	;cmpqi:	; blockOrientation,
-   3B1D 27 19         [ 3] 1411 	beq	L77	;
-   3B1F 25 08         [ 3] 1412 	blo	L76	;
-   3B21 C1 02         [ 2] 1413 	cmpb	#2	;cmpqi:	; blockOrientation,
-   3B23 10 26 00 29   [ 6] 1414 	lbne	L75	;
-   3B27 20 1C         [ 3] 1415 	bra	L98	;
-   3B29                    1416 L76:
-                           1417 ;----- asm -----
-                           1418 ; 470 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1419 	; #ENR#[371]			if (!c0 || f0 == 'f') {
-                           1420 ;--- end asm ---
-   3B29 6D 61         [ 7] 1421 	tst	1,s	; c0
-   3B2B 27 06         [ 3] 1422 	beq	L79	;
-   3B2D E6 64         [ 5] 1423 	ldb	4,s	;, f0
-   3B2F C1 66         [ 2] 1424 	cmpb	#102	;cmpqi:	;,
-   3B31 26 03         [ 3] 1425 	bne	L80	;
-   3B33                    1426 L79:
-                           1427 ;----- asm -----
-                           1428 ; 472 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1429 	; #ENR#[372]				startBlockFalling();
+   4D2E BD 49 4D      [ 8] 1298 	jsr	_updateInfoText
+   4D31 32 62         [ 5] 1299 	leas	2,s	;,,
+   4D33 39            [ 5] 1300 	rts
+   4D34                    1301 LC0:
+   4D34 4D 41 49 4E 20 4D  1302 	.byte	77,65,73,78,32,77,69,78
+        45 4E
+   4D3C 55 80 00           1303 	.byte	85,-128,0
+   4D3F                    1304 LC1:
+   4D3F 31 20 53 54 41 52  1305 	.byte	49,32,83,84,65,82,84,32
+        54 20
+   4D47 47 41 4D 45 80 00  1306 	.byte	71,65,77,69,-128,0
+   4D4D                    1307 LC2:
+   4D4D 32 20 43 4C 45 41  1308 	.byte	50,32,67,76,69,65,82,32
+        52 20
+   4D55 48 49 47 48 53 43  1309 	.byte	72,73,71,72,83,67,79,82
+        4F 52
+   4D5D 45 80 00           1310 	.byte	69,-128,0
+                           1311 	.globl	_mainMenu
+   4D60                    1312 _mainMenu:
+   4D60 34 40         [ 6] 1313 	pshs	u	;
+   4D62 32 7C         [ 5] 1314 	leas	-4,s	;,,
+                           1315 ;----- asm -----
+                           1316 ; 616 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1317 	; #ENR#[463]	Read_Btns();
+                           1318 ; 0 "" 2
+                           1319 ; 2286 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   4D64 BD F1 BA      [ 8] 1320 	jsr ___Read_Btns; BIOS call
+                           1321 ; 0 "" 2
+                           1322 ; 618 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1323 	; #ENR#[464]    Intensity_a(0x5f);
+                           1324 ; 0 "" 2
+                           1325 ;--- end asm ---
+   4D67 C6 5F         [ 2] 1326 	ldb	#95	;,
+   4D69 E7 63         [ 5] 1327 	stb	3,s	;, a
+                           1328 ;----- asm -----
+                           1329 ; 3427 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   4D6B A6 63         [ 5] 1330 	lda 3,s	; a
+   4D6D BD F2 AB      [ 8] 1331 	jsr ___Intensity_a; BIOS call
+                           1332 ; 0 "" 2
+                           1333 ; 620 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1334 	; #ENR#[465]    Vec_Text_Width = 90;
+                           1335 ; 0 "" 2
+                           1336 ;--- end asm ---
+   4D70 C6 5A         [ 2] 1337 	ldb	#90	;,
+   4D72 F7 C8 2B      [ 5] 1338 	stb	_Vec_Text_Width	;, Vec_Text_Width
+                           1339 ;----- asm -----
+                           1340 ; 622 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1341 	; #ENR#[466]    Print_Str_d(100, -70, "MAIN MENUï¿½");
+                           1342 ; 0 "" 2
+                           1343 ;--- end asm ---
+   4D75 CB 0A         [ 2] 1344 	addb	#10	;,
+   4D77 E7 63         [ 5] 1345 	stb	3,s	;, a
+   4D79 C6 BA         [ 2] 1346 	ldb	#-70	;,
+   4D7B E7 62         [ 5] 1347 	stb	2,s	;, b
+   4D7D 8E 4D 34      [ 3] 1348 	ldx	#LC0	;,
+   4D80 AF E4         [ 5] 1349 	stx	,s	;, u
+                           1350 ;----- asm -----
+                           1351 ; 666 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   4D82 A6 63         [ 5] 1352 	lda 3,s	; a
+   4D84 E6 62         [ 5] 1353 	ldb 2,s	; b
+   4D86 EE E4         [ 5] 1354 	ldu ,s	; u
+   4D88 BD F3 7A      [ 8] 1355 	jsr ___Print_Str_d; BIOS call
+                           1356 ; 0 "" 2
+                           1357 ; 624 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1358 	; #ENR#[467]    Print_Str_d(50, -110, "1 START GAMEï¿½");
+                           1359 ; 0 "" 2
+                           1360 ;--- end asm ---
+   4D8B C6 32         [ 2] 1361 	ldb	#50	;,
+   4D8D E7 62         [ 5] 1362 	stb	2,s	;, a
+   4D8F C6 92         [ 2] 1363 	ldb	#-110	;,
+   4D91 E7 63         [ 5] 1364 	stb	3,s	;, b
+   4D93 8E 4D 3F      [ 3] 1365 	ldx	#LC1	;,
+   4D96 AF E4         [ 5] 1366 	stx	,s	;, u
+                           1367 ;----- asm -----
+                           1368 ; 666 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   4D98 A6 62         [ 5] 1369 	lda 2,s	; a
+   4D9A E6 63         [ 5] 1370 	ldb 3,s	; b
+   4D9C EE E4         [ 5] 1371 	ldu ,s	; u
+   4D9E BD F3 7A      [ 8] 1372 	jsr ___Print_Str_d; BIOS call
+                           1373 ; 0 "" 2
+                           1374 ; 626 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1375 	; #ENR#[468]    Print_Str_d(20, -110, "2 CLEAR HIGHSCOREï¿½");
+                           1376 ; 0 "" 2
+                           1377 ;--- end asm ---
+   4DA1 C6 14         [ 2] 1378 	ldb	#20	;,
+   4DA3 E7 63         [ 5] 1379 	stb	3,s	;, a
+   4DA5 C6 92         [ 2] 1380 	ldb	#-110	;,
+   4DA7 E7 62         [ 5] 1381 	stb	2,s	;, b
+   4DA9 8E 4D 4D      [ 3] 1382 	ldx	#LC2	;,
+   4DAC AF E4         [ 5] 1383 	stx	,s	;, u
+                           1384 ;----- asm -----
+                           1385 ; 666 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   4DAE A6 63         [ 5] 1386 	lda 3,s	; a
+   4DB0 E6 62         [ 5] 1387 	ldb 2,s	; b
+   4DB2 EE E4         [ 5] 1388 	ldu ,s	; u
+   4DB4 BD F3 7A      [ 8] 1389 	jsr ___Print_Str_d; BIOS call
+                           1390 ; 0 "" 2
+                           1391 ; 628 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1392 	; #ENR#[469]	if (Vec_Buttons & 1) {
+                           1393 ; 0 "" 2
+                           1394 ;--- end asm ---
+   4DB7 F6 C8 11      [ 5] 1395 	ldb	_Vec_Buttons	;, Vec_Buttons
+   4DBA C5 01         [ 2] 1396 	bitb	#1	;,
+   4DBC 27 03         [ 3] 1397 	beq	L67	;
+                           1398 ;----- asm -----
+                           1399 ; 630 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1400 	; #ENR#[470]		startLevel();
+                           1401 ; 0 "" 2
+                           1402 ;--- end asm ---
+   4DBE BD 4C BE      [ 8] 1403 	jsr	_startLevel
+   4DC1                    1404 L67:
+                           1405 ;----- asm -----
+                           1406 ; 633 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1407 	; #ENR#[472]	if (Vec_Buttons & 2) {
+                           1408 ; 0 "" 2
+                           1409 ;--- end asm ---
+   4DC1 F6 C8 11      [ 5] 1410 	ldb	_Vec_Buttons	;, Vec_Buttons
+   4DC4 C5 02         [ 2] 1411 	bitb	#2	;,
+   4DC6 27 05         [ 3] 1412 	beq	L69	;
+                           1413 ;----- asm -----
+                           1414 ; 635 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1415 	; #ENR#[473]		gameState = ClearMenu;
+                           1416 ; 0 "" 2
+                           1417 ;--- end asm ---
+   4DC8 C6 01         [ 2] 1418 	ldb	#1	;,
+   4DCA F7 CA F6      [ 5] 1419 	stb	_gameState	;, gameState
+   4DCD                    1420 L69:
+   4DCD 32 64         [ 5] 1421 	leas	4,s	;,,
+   4DCF 35 C0         [ 7] 1422 	puls	u,pc	;
+                           1423 	.globl	_blockFalling
+   4DD1                    1424 _blockFalling:
+   4DD1 32 7F         [ 5] 1425 	leas	-1,s	;,,
+                           1426 ;----- asm -----
+                           1427 ; 570 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1428 	; #ENR#[434]	drawField();
+                           1429 ; 0 "" 2
                            1430 ;--- end asm ---
-   3B33 BD 3A 90      [ 8] 1431 	jsr	_startBlockFalling
-   3B36                    1432 L80:
-                           1433 ;----- asm -----
-                           1434 ; 475 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1435 	; #ENR#[374]			break;
+   4DD3 BD 49 75      [ 8] 1431 	jsr	_drawField
+                           1432 ;----- asm -----
+                           1433 ; 572 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1434 	; #ENR#[435]	blockYOfs++;
+                           1435 ; 0 "" 2
                            1436 ;--- end asm ---
-   3B36 20 18         [ 3] 1437 	bra	L75	;
-   3B38                    1438 L77:
-                           1439 ;----- asm -----
-                           1440 ; 479 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1441 	; #ENR#[376]			if (!c0 || !c2) {
-                           1442 ;--- end asm ---
-   3B38 6D 61         [ 7] 1443 	tst	1,s	; c0
-   3B3A 27 04         [ 3] 1444 	beq	L81	;
-   3B3C 6D 63         [ 7] 1445 	tst	3,s	; c2
-   3B3E 26 03         [ 3] 1446 	bne	L82	;
-   3B40                    1447 L81:
+   4DD6 F6 C8 89      [ 5] 1437 	ldb	_blockYOfs	;, blockYOfs
+   4DD9 5C            [ 2] 1438 	incb	;
+   4DDA E7 E4         [ 4] 1439 	stb	,s	;, blockYOfs.50
+   4DDC F7 C8 89      [ 5] 1440 	stb	_blockYOfs	;, blockYOfs
+                           1441 ;----- asm -----
+                           1442 ; 574 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1443 	; #ENR#[436]	if (blockYOfs < 12) {
+                           1444 ; 0 "" 2
+                           1445 ;--- end asm ---
+   4DDF C1 0B         [ 2] 1446 	cmpb	#11	;cmpqi:	;,
+   4DE1 2E 0A         [ 3] 1447 	bgt	L71	;
                            1448 ;----- asm -----
-                           1449 ; 481 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1450 	; #ENR#[377]				startBlockFalling();
-                           1451 ;--- end asm ---
-   3B40 BD 3A 90      [ 8] 1452 	jsr	_startBlockFalling
-   3B43                    1453 L82:
-                           1454 ;----- asm -----
-                           1455 ; 484 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1456 	; #ENR#[379]			break;
-                           1457 ;--- end asm ---
-   3B43 20 0B         [ 3] 1458 	bra	L75	;
-   3B45                    1459 L98:
-                           1460 ;----- asm -----
-                           1461 ; 488 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1462 	; #ENR#[381]			if (!c0 || ! c1) {
-                           1463 ;--- end asm ---
-   3B45 6D 61         [ 7] 1464 	tst	1,s	; c0
-   3B47 27 04         [ 3] 1465 	beq	L83	;
-   3B49 6D 62         [ 7] 1466 	tst	2,s	; c1
-   3B4B 26 03         [ 3] 1467 	bne	L84	;
-   3B4D                    1468 L83:
-                           1469 ;----- asm -----
-                           1470 ; 490 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1471 	; #ENR#[382]				startBlockFalling();
-                           1472 ;--- end asm ---
-   3B4D BD 3A 90      [ 8] 1473 	jsr	_startBlockFalling
-   3B50                    1474 L84:
-                           1475 ;----- asm -----
-                           1476 ; 493 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1477 	; #ENR#[384]			break;
-                           1478 ;--- end asm ---
-   3B50                    1479 L75:
-                           1480 ;----- asm -----
-                           1481 ; 498 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1482 	; #ENR#[388]		if (blockOrientation == Standing && blockX == endX && blockY == endY && !splitMode) {
-                           1483 ;--- end asm ---
-   3B50 7D C8 DF      [ 7] 1484 	tst	_blockOrientation	; blockOrientation
-   3B53 26 2B         [ 3] 1485 	bne	L85	;
-   3B55 F6 C8 E4      [ 5] 1486 	ldb	_blockX	;, blockX
-   3B58 F1 C8 85      [ 5] 1487 	cmpb	_endX	;cmpqi:	;, endX
-   3B5B 26 23         [ 3] 1488 	bne	L85	;
-   3B5D F6 C8 E5      [ 5] 1489 	ldb	_blockY	;, blockY
-   3B60 F1 C8 86      [ 5] 1490 	cmpb	_endY	;cmpqi:	;, endY
-   3B63 26 1B         [ 3] 1491 	bne	L85	;
-   3B65 7D C8 E3      [ 7] 1492 	tst	_splitMode	; splitMode
-   3B68 26 16         [ 3] 1493 	bne	L85	;
-                           1494 ;----- asm -----
-                           1495 ; 500 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1496 	; #ENR#[389]			blockYOfs = 0;
-                           1497 ;--- end asm ---
-   3B6A 7F C8 E0      [ 7] 1498 	clr	_blockYOfs	; blockYOfs
+                           1449 ; 576 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1450 	; #ENR#[437]		drawBlock(-blockYOfs*blockYOfs);
+                           1451 ; 0 "" 2
+                           1452 ;--- end asm ---
+   4DE3 50            [ 2] 1453 	negb	; tmp28
+   4DE4 A6 E4         [ 4] 1454 	lda	,s	;mulqihi3	; blockYOfs.50
+   4DE6 3D            [11] 1455 	mul
+                           1456 		;movlsbqihi: D->B
+   4DE7 BD 04 B4      [ 8] 1457 	jsr	_drawBlock
+                           1458 ;----- asm -----
+                           1459 ; 578 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1460 	; #ENR#[438]		doBlockAnimation();
+                           1461 ; 0 "" 2
+                           1462 ;--- end asm ---
+   4DEA BD 03 B2      [ 8] 1463 	jsr	_doBlockAnimation
+   4DED                    1464 L71:
+                           1465 ;----- asm -----
+                           1466 ; 581 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1467 	; #ENR#[440]	if (blockYOfs == 50) {
+                           1468 ; 0 "" 2
+                           1469 ;--- end asm ---
+   4DED F6 C8 89      [ 5] 1470 	ldb	_blockYOfs	;, blockYOfs
+   4DF0 C1 32         [ 2] 1471 	cmpb	#50	;cmpqi:	;,
+   4DF2 26 03         [ 3] 1472 	bne	L73	;
+                           1473 ;----- asm -----
+                           1474 ; 583 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1475 	; #ENR#[441]		startLevel();
+                           1476 ; 0 "" 2
+                           1477 ;--- end asm ---
+   4DF4 BD 4C BE      [ 8] 1478 	jsr	_startLevel
+   4DF7                    1479 L73:
+   4DF7 32 61         [ 5] 1480 	leas	1,s	;,,
+   4DF9 39            [ 5] 1481 	rts
+                           1482 	.globl	_writeEeprom
+   4DFA                    1483 _writeEeprom:
+                           1484 ;----- asm -----
+                           1485 ; 195 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1486 	; #ENR#[180]	if (picAvailable) {
+                           1487 ; 0 "" 2
+                           1488 ;--- end asm ---
+   4DFA 7D CA F5      [ 7] 1489 	tst	_picAvailable	; picAvailable
+   4DFD 27 12         [ 3] 1490 	beq	L76	;
+                           1491 ;----- asm -----
+                           1492 ; 197 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1493 	; #ENR#[181]	    	sendCommand(CMD_SET_EEPROM_ADR, address);
+                           1494 ; 0 "" 2
+                           1495 ;--- end asm ---
+   4DFF 34 04         [ 6] 1496 	pshs	b	; address
+   4E01 C6 02         [ 2] 1497 	ldb	#2	;,
+   4E03 BD 4C 8B      [ 8] 1498 	jsr	_sendCommand
                            1499 ;----- asm -----
-                           1500 ; 502 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1501 	; #ENR#[390]			gameState = BlockMovingAtEnd;
-                           1502 ;--- end asm ---
-   3B6D C6 06         [ 2] 1503 	ldb	#6	;,
-   3B6F F7 C8 FE      [ 5] 1504 	stb	_gameState	;, gameState
-                           1505 ;----- asm -----
-                           1506 ; 504 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1507 	; #ENR#[391]			changeMusic(levelEndMusic);
-                           1508 ;--- end asm ---
-   3B72 8E 3D 18      [ 3] 1509 	ldx	#_levelEndMusic	;,
-   3B75 BD 36 18      [ 8] 1510 	jsr	_changeMusic
-                           1511 ;----- asm -----
-                           1512 ; 506 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1513 	; #ENR#[392]			*vecx = 1;
-                           1514 ;--- end asm ---
-   3B78 C6 01         [ 2] 1515 	ldb	#1	;,
-   3B7A E7 9F C8 82   [ 9] 1516 	stb	[_vecx]	;,* vecx
-   3B7E 20 0C         [ 3] 1517 	bra	L86	;
-   3B80                    1518 L85:
-                           1519 ;----- asm -----
-                           1520 ; 510 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1521 	; #ENR#[395]			if (gameState != BlockFalling) {
-                           1522 ;--- end asm ---
-   3B80 F6 C8 FE      [ 5] 1523 	ldb	_gameState	;, gameState
-   3B83 C1 05         [ 2] 1524 	cmpb	#5	;cmpqi:	;,
-   3B85 27 05         [ 3] 1525 	beq	L86	;
-                           1526 ;----- asm -----
-                           1527 ; 512 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1528 	; #ENR#[396]				gameState = BlockWaiting;
-                           1529 ;--- end asm ---
-   3B87 C6 03         [ 2] 1530 	ldb	#3	;,
-   3B89 F7 C8 FE      [ 5] 1531 	stb	_gameState	;, gameState
-   3B8C                    1532 L86:
-                           1533 ;----- asm -----
-                           1534 ; 518 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1535 	; #ENR#[401]		switch (blockOrientation) {
-                           1536 ;--- end asm ---
-   3B8C F6 C8 DF      [ 5] 1537 	ldb	_blockOrientation	; blockOrientation, blockOrientation
-   3B8F C1 01         [ 2] 1538 	cmpb	#1	;cmpqi:	; blockOrientation,
-   3B91 27 29         [ 3] 1539 	beq	L89	;
-   3B93 25 09         [ 3] 1540 	blo	L88	;
-   3B95 C1 02         [ 2] 1541 	cmpb	#2	;cmpqi:	; blockOrientation,
-   3B97 10 26 00 75   [ 6] 1542 	lbne	L87	;
-   3B9B 16 00 47      [ 5] 1543 	lbra	L99	;
-   3B9E                    1544 L88:
-                           1545 ;----- asm -----
-                           1546 ; 522 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1547 	; #ENR#[403]			if (f0 == 's' || f0 == 'h' || f0 == 'v') {
-                           1548 ;--- end asm ---
-   3B9E E6 64         [ 5] 1549 	ldb	4,s	;, f0
-   3BA0 C1 73         [ 2] 1550 	cmpb	#115	;cmpqi:	;,
-   3BA2 27 08         [ 3] 1551 	beq	L91	;
-   3BA4 C1 68         [ 2] 1552 	cmpb	#104	;cmpqi:	;,
-   3BA6 27 04         [ 3] 1553 	beq	L91	;
-   3BA8 C1 76         [ 2] 1554 	cmpb	#118	;cmpqi:	;,
-   3BAA 26 0D         [ 3] 1555 	bne	L92	;
-   3BAC                    1556 L91:
+                           1500 ; 199 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1501 	; #ENR#[182]	    	sendCommand(CMD_EEPROM_WRITE, data);
+                           1502 ; 0 "" 2
+                           1503 ;--- end asm ---
+   4E06 E6 63         [ 5] 1504 	ldb	3,s	;, data
+   4E08 E7 E2         [ 6] 1505 	stb	,-s	;,
+   4E0A C6 03         [ 2] 1506 	ldb	#3	;,
+   4E0C BD 4C 8B      [ 8] 1507 	jsr	_sendCommand
+   4E0F 32 62         [ 5] 1508 	leas	2,s	;,,
+   4E11                    1509 L76:
+   4E11 39            [ 5] 1510 	rts
+   4E12                    1511 LC3:
+   4E12 43 4C 45 41 52 20  1512 	.byte	67,76,69,65,82,32,83,67
+        53 43
+   4E1A 4F 52 45 3F 80 00  1513 	.byte	79,82,69,63,-128,0
+   4E20                    1514 LC4:
+   4E20 33 20 59 45 53 80  1515 	.byte	51,32,89,69,83,-128,0
+        00
+   4E27                    1516 LC5:
+   4E27 34 20 4E 4F 80 00  1517 	.byte	52,32,78,79,-128,0
+                           1518 	.globl	_clearMenu
+   4E2D                    1519 _clearMenu:
+   4E2D 34 40         [ 6] 1520 	pshs	u	;
+   4E2F 32 7B         [ 5] 1521 	leas	-5,s	;,,
+                           1522 ;----- asm -----
+                           1523 ; 642 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1524 	; #ENR#[479]	Read_Btns();
+                           1525 ; 0 "" 2
+                           1526 ; 2286 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   4E31 BD F1 BA      [ 8] 1527 	jsr ___Read_Btns; BIOS call
+                           1528 ; 0 "" 2
+                           1529 ; 644 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1530 	; #ENR#[480]    Intensity_a(0x5f);
+                           1531 ; 0 "" 2
+                           1532 ;--- end asm ---
+   4E34 C6 5F         [ 2] 1533 	ldb	#95	;,
+   4E36 E7 64         [ 5] 1534 	stb	4,s	;, a
+                           1535 ;----- asm -----
+                           1536 ; 3427 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   4E38 A6 64         [ 5] 1537 	lda 4,s	; a
+   4E3A BD F2 AB      [ 8] 1538 	jsr ___Intensity_a; BIOS call
+                           1539 ; 0 "" 2
+                           1540 ; 646 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1541 	; #ENR#[481]    Vec_Text_Width = 90;
+                           1542 ; 0 "" 2
+                           1543 ;--- end asm ---
+   4E3D C6 5A         [ 2] 1544 	ldb	#90	;,
+   4E3F F7 C8 2B      [ 5] 1545 	stb	_Vec_Text_Width	;, Vec_Text_Width
+                           1546 ;----- asm -----
+                           1547 ; 648 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1548 	; #ENR#[482]    Print_Str_d(100, -80, "CLEAR SCORE?ï¿½");
+                           1549 ; 0 "" 2
+                           1550 ;--- end asm ---
+   4E42 CB 0A         [ 2] 1551 	addb	#10	;,
+   4E44 E7 64         [ 5] 1552 	stb	4,s	;, a
+   4E46 C6 B0         [ 2] 1553 	ldb	#-80	;,
+   4E48 E7 63         [ 5] 1554 	stb	3,s	;, b
+   4E4A 8E 4E 12      [ 3] 1555 	ldx	#LC3	;,
+   4E4D AF 61         [ 6] 1556 	stx	1,s	;, u
                            1557 ;----- asm -----
-                           1558 ; 524 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1559 	; #ENR#[404]				swatchSwitch(blockX, blockY);
-                           1560 ;--- end asm ---
-   3BAC F6 C8 E5      [ 5] 1561 	ldb	_blockY	;, blockY
-   3BAF E7 E2         [ 6] 1562 	stb	,-s	;,
-   3BB1 F6 C8 E4      [ 5] 1563 	ldb	_blockX	;, blockX
-   3BB4 BD 43 C2      [ 8] 1564 	jsr	_swatchSwitch
-   3BB7 32 61         [ 5] 1565 	leas	1,s	;,,
-   3BB9                    1566 L92:
-                           1567 ;----- asm -----
-                           1568 ; 527 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1569 	; #ENR#[406]			break;
-                           1570 ;--- end asm ---
-   3BB9 16 00 54      [ 5] 1571 	lbra	L87	;
-   3BBC                    1572 L89:
-                           1573 ;----- asm -----
-                           1574 ; 531 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1575 	; #ENR#[408]			if (f0 == 's') {
-                           1576 ;--- end asm ---
-   3BBC E6 64         [ 5] 1577 	ldb	4,s	;, f0
-   3BBE C1 73         [ 2] 1578 	cmpb	#115	;cmpqi:	;,
-   3BC0 26 0D         [ 3] 1579 	bne	L93	;
-                           1580 ;----- asm -----
-                           1581 ; 533 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1582 	; #ENR#[409]				swatchSwitch(blockX, blockY);
-                           1583 ;--- end asm ---
-   3BC2 F6 C8 E5      [ 5] 1584 	ldb	_blockY	;, blockY
-   3BC5 E7 E2         [ 6] 1585 	stb	,-s	;,
-   3BC7 F6 C8 E4      [ 5] 1586 	ldb	_blockX	;, blockX
-   3BCA BD 43 C2      [ 8] 1587 	jsr	_swatchSwitch
-   3BCD 32 61         [ 5] 1588 	leas	1,s	;,,
-   3BCF                    1589 L93:
-                           1590 ;----- asm -----
-                           1591 ; 536 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1592 	; #ENR#[411]			if (f2 == 's') {
-                           1593 ;--- end asm ---
-   3BCF E6 66         [ 5] 1594 	ldb	6,s	;, f2
-   3BD1 C1 73         [ 2] 1595 	cmpb	#115	;cmpqi:	;,
-   3BD3 26 0E         [ 3] 1596 	bne	L94	;
-                           1597 ;----- asm -----
-                           1598 ; 538 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1599 	; #ENR#[412]				swatchSwitch(blockX, blockY + 1);
-                           1600 ;--- end asm ---
-   3BD5 F6 C8 E5      [ 5] 1601 	ldb	_blockY	;, blockY
-   3BD8 5C            [ 2] 1602 	incb	;
-   3BD9 34 04         [ 6] 1603 	pshs	b	;
-   3BDB F6 C8 E4      [ 5] 1604 	ldb	_blockX	;, blockX
-   3BDE BD 43 C2      [ 8] 1605 	jsr	_swatchSwitch
-   3BE1 32 61         [ 5] 1606 	leas	1,s	;,,
-   3BE3                    1607 L94:
-                           1608 ;----- asm -----
-                           1609 ; 541 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1610 	; #ENR#[414]			break;
-                           1611 ;--- end asm ---
-   3BE3 20 2B         [ 3] 1612 	bra	L87	;
-   3BE5                    1613 L99:
-                           1614 ;----- asm -----
-                           1615 ; 545 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1616 	; #ENR#[416]			if (f0 == 's') {
-                           1617 ;--- end asm ---
-   3BE5 E6 64         [ 5] 1618 	ldb	4,s	;, f0
-   3BE7 C1 73         [ 2] 1619 	cmpb	#115	;cmpqi:	;,
-   3BE9 26 0D         [ 3] 1620 	bne	L95	;
-                           1621 ;----- asm -----
-                           1622 ; 547 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1623 	; #ENR#[417]				swatchSwitch(blockX, blockY);
-                           1624 ;--- end asm ---
-   3BEB F6 C8 E5      [ 5] 1625 	ldb	_blockY	;, blockY
-   3BEE E7 E2         [ 6] 1626 	stb	,-s	;,
-   3BF0 F6 C8 E4      [ 5] 1627 	ldb	_blockX	;, blockX
-   3BF3 BD 43 C2      [ 8] 1628 	jsr	_swatchSwitch
-   3BF6 32 61         [ 5] 1629 	leas	1,s	;,,
-   3BF8                    1630 L95:
-                           1631 ;----- asm -----
-                           1632 ; 550 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1633 	; #ENR#[419]			if (f1 == 's') {
-                           1634 ;--- end asm ---
-   3BF8 E6 65         [ 5] 1635 	ldb	5,s	;, f1
-   3BFA C1 73         [ 2] 1636 	cmpb	#115	;cmpqi:	;,
-   3BFC 26 12         [ 3] 1637 	bne	L96	;
-                           1638 ;----- asm -----
-                           1639 ; 552 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1640 	; #ENR#[420]				swatchSwitch(blockX + 1, blockY);
-                           1641 ;--- end asm ---
-   3BFE F6 C8 E4      [ 5] 1642 	ldb	_blockX	;, blockX
-   3C01 5C            [ 2] 1643 	incb	;
-   3C02 E7 E4         [ 4] 1644 	stb	,s	;,
-   3C04 F6 C8 E5      [ 5] 1645 	ldb	_blockY	;, blockY
-   3C07 E7 E2         [ 6] 1646 	stb	,-s	;,
-   3C09 E6 61         [ 5] 1647 	ldb	1,s	;,
-   3C0B BD 43 C2      [ 8] 1648 	jsr	_swatchSwitch
-   3C0E 32 61         [ 5] 1649 	leas	1,s	;,,
-   3C10                    1650 L96:
-                           1651 ;----- asm -----
-                           1652 ; 555 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1653 	; #ENR#[422]			break;
-                           1654 ;--- end asm ---
-   3C10                    1655 L87:
-                           1656 ;----- asm -----
-                           1657 ; 560 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1658 	; #ENR#[426]		if (splitMode) {
-                           1659 ;--- end asm ---
-   3C10 7D C8 E3      [ 7] 1660 	tst	_splitMode	; splitMode
-   3C13 27 03         [ 3] 1661 	beq	L97	;
-                           1662 ;----- asm -----
-                           1663 ; 562 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1664 	; #ENR#[427]			testMerge();
-                           1665 ;--- end asm ---
-   3C15 BD 08 DB      [ 8] 1666 	jsr	_testMerge
-   3C18                    1667 L97:
-   3C18 32 67         [ 5] 1668 	leas	7,s	;,,
-   3C1A 39            [ 5] 1669 	rts
-                           1670 	.globl	_main
-   3C1B                    1671 _main:
-   3C1B 34 60         [ 7] 1672 	pshs	y,u	;
-   3C1D 32 7C         [ 5] 1673 	leas	-4,s	;,,
+                           1558 ; 666 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   4E4F A6 64         [ 5] 1559 	lda 4,s	; a
+   4E51 E6 63         [ 5] 1560 	ldb 3,s	; b
+   4E53 EE 61         [ 6] 1561 	ldu 1,s	; u
+   4E55 BD F3 7A      [ 8] 1562 	jsr ___Print_Str_d; BIOS call
+                           1563 ; 0 "" 2
+                           1564 ; 650 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1565 	; #ENR#[483]    Print_Str_d(50, -110, "3 YESï¿½");
+                           1566 ; 0 "" 2
+                           1567 ;--- end asm ---
+   4E58 C6 32         [ 2] 1568 	ldb	#50	;,
+   4E5A E7 63         [ 5] 1569 	stb	3,s	;, a
+   4E5C C6 92         [ 2] 1570 	ldb	#-110	;,
+   4E5E E7 64         [ 5] 1571 	stb	4,s	;, b
+   4E60 8E 4E 20      [ 3] 1572 	ldx	#LC4	;,
+   4E63 AF 61         [ 6] 1573 	stx	1,s	;, u
+                           1574 ;----- asm -----
+                           1575 ; 666 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   4E65 A6 63         [ 5] 1576 	lda 3,s	; a
+   4E67 E6 64         [ 5] 1577 	ldb 4,s	; b
+   4E69 EE 61         [ 6] 1578 	ldu 1,s	; u
+   4E6B BD F3 7A      [ 8] 1579 	jsr ___Print_Str_d; BIOS call
+                           1580 ; 0 "" 2
+                           1581 ; 652 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1582 	; #ENR#[484]    Print_Str_d(20, -110, "4 NOï¿½");
+                           1583 ; 0 "" 2
+                           1584 ;--- end asm ---
+   4E6E C6 14         [ 2] 1585 	ldb	#20	;,
+   4E70 E7 64         [ 5] 1586 	stb	4,s	;, a
+   4E72 C6 92         [ 2] 1587 	ldb	#-110	;,
+   4E74 E7 63         [ 5] 1588 	stb	3,s	;, b
+   4E76 8E 4E 27      [ 3] 1589 	ldx	#LC5	;,
+   4E79 AF 61         [ 6] 1590 	stx	1,s	;, u
+                           1591 ;----- asm -----
+                           1592 ; 666 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   4E7B A6 64         [ 5] 1593 	lda 4,s	; a
+   4E7D E6 63         [ 5] 1594 	ldb 3,s	; b
+   4E7F EE 61         [ 6] 1595 	ldu 1,s	; u
+   4E81 BD F3 7A      [ 8] 1596 	jsr ___Print_Str_d; BIOS call
+                           1597 ; 0 "" 2
+                           1598 ; 654 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1599 	; #ENR#[485]	if (Vec_Buttons & 4) {
+                           1600 ; 0 "" 2
+                           1601 ;--- end asm ---
+   4E84 F6 C8 11      [ 5] 1602 	ldb	_Vec_Buttons	;, Vec_Buttons
+   4E87 C5 04         [ 2] 1603 	bitb	#4	;,
+   4E89 27 18         [ 3] 1604 	beq	L78	;
+                           1605 ;----- asm -----
+                           1606 ; 656 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1607 	; #ENR#[486]		for (uint8_t i = 0; i < 6; i++) {
+                           1608 ; 0 "" 2
+                           1609 ;--- end asm ---
+   4E8B 6F E4         [ 6] 1610 	clr	,s	; i
+   4E8D                    1611 L79:
+                           1612 ;----- asm -----
+                           1613 ; 658 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1614 	; #ENR#[487]			writeEeprom(i, 0xff);
+                           1615 ; 0 "" 2
+                           1616 ;--- end asm ---
+   4E8D C6 FF         [ 2] 1617 	ldb	#-1	;,
+   4E8F E7 E2         [ 6] 1618 	stb	,-s	;,
+   4E91 E6 61         [ 5] 1619 	ldb	1,s	;, i
+   4E93 BD 4D FA      [ 8] 1620 	jsr	_writeEeprom
+   4E96 6C 61         [ 7] 1621 	inc	1,s	; i
+   4E98 32 61         [ 5] 1622 	leas	1,s	;,,
+   4E9A E6 E4         [ 4] 1623 	ldb	,s	;, i
+   4E9C C1 06         [ 2] 1624 	cmpb	#6	;cmpqi:	;,
+   4E9E 26 ED         [ 3] 1625 	bne	L79	;
+                           1626 ;----- asm -----
+                           1627 ; 661 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1628 	; #ENR#[489]		gameState = MainMenu;
+                           1629 ; 0 "" 2
+                           1630 ;--- end asm ---
+   4EA0 7F CA F6      [ 7] 1631 	clr	_gameState	; gameState
+   4EA3                    1632 L78:
+                           1633 ;----- asm -----
+                           1634 ; 664 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1635 	; #ENR#[491]	if (Vec_Buttons & 8) {
+                           1636 ; 0 "" 2
+                           1637 ;--- end asm ---
+   4EA3 F6 C8 11      [ 5] 1638 	ldb	_Vec_Buttons	;, Vec_Buttons
+   4EA6 C5 08         [ 2] 1639 	bitb	#8	;,
+   4EA8 27 03         [ 3] 1640 	beq	L81	;
+                           1641 ;----- asm -----
+                           1642 ; 666 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1643 	; #ENR#[492]		gameState = MainMenu;
+                           1644 ; 0 "" 2
+                           1645 ;--- end asm ---
+   4EAA 7F CA F6      [ 7] 1646 	clr	_gameState	; gameState
+   4EAD                    1647 L81:
+   4EAD 32 65         [ 5] 1648 	leas	5,s	;,,
+   4EAF 35 C0         [ 7] 1649 	puls	u,pc	;
+                           1650 	.globl	_blockMovingAtEnd
+   4EB1                    1651 _blockMovingAtEnd:
+   4EB1 32 7E         [ 5] 1652 	leas	-2,s	;,,
+                           1653 ;----- asm -----
+                           1654 ; 590 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1655 	; #ENR#[447]	drawField();
+                           1656 ; 0 "" 2
+                           1657 ;--- end asm ---
+   4EB3 BD 49 75      [ 8] 1658 	jsr	_drawField
+                           1659 ;----- asm -----
+                           1660 ; 592 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1661 	; #ENR#[448]	drawBlock(blockYOfs);
+                           1662 ; 0 "" 2
+                           1663 ;--- end asm ---
+   4EB6 F6 C8 89      [ 5] 1664 	ldb	_blockYOfs	;, blockYOfs
+   4EB9 BD 04 B4      [ 8] 1665 	jsr	_drawBlock
+                           1666 ;----- asm -----
+                           1667 ; 594 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1668 	; #ENR#[449]	blockYOfs++;
+                           1669 ; 0 "" 2
+                           1670 ;--- end asm ---
+   4EBC F6 C8 89      [ 5] 1671 	ldb	_blockYOfs	; blockYOfs.52, blockYOfs
+   4EBF 5C            [ 2] 1672 	incb	; blockYOfs.52
+   4EC0 F7 C8 89      [ 5] 1673 	stb	_blockYOfs	; blockYOfs.52, blockYOfs
                            1674 ;----- asm -----
-                           1675 ; 746 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1676 	; #ENR#[548]	setBank(0);
-                           1677 ;--- end asm ---
-   3C1F 5F            [ 2] 1678 	clrb	;
-   3C20 BD 36 73      [ 8] 1679 	jsr	_setBank
-                           1680 ;----- asm -----
-                           1681 ; 750 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1682 	; #ENR#[551]	*vecx = 4;
-                           1683 ;--- end asm ---
-   3C23 C6 04         [ 2] 1684 	ldb	#4	;,
-   3C25 E7 9F C8 82   [ 9] 1685 	stb	[_vecx]	;,* vecx
-                           1686 ;----- asm -----
-                           1687 ; 754 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1688 	; #ENR#[554]	picAvailable = 0;
-                           1689 ;--- end asm ---
-   3C29 7F C8 FD      [ 7] 1690 	clr	_picAvailable	; picAvailable
-                           1691 ;----- asm -----
-                           1692 ; 756 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1693 	; #ENR#[555]	sendCommand(CMD_VERSION, 0);
-                           1694 ;--- end asm ---
-   3C2C 6F E2         [ 8] 1695 	clr	,-s	;
-   3C2E C6 01         [ 2] 1696 	ldb	#1	;,
-   3C30 BD 35 4D      [ 8] 1697 	jsr	_sendCommand
-                           1698 ;----- asm -----
-                           1699 ; 758 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1700 	; #ENR#[556]	sendCommand(CMD_VERSION, 0);
-                           1701 ;--- end asm ---
-   3C33 6F E2         [ 8] 1702 	clr	,-s	;
-   3C35 C6 01         [ 2] 1703 	ldb	#1	;,
-   3C37 BD 35 4D      [ 8] 1704 	jsr	_sendCommand
-                           1705 ;----- asm -----
-                           1706 ; 760 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1707 	; #ENR#[557]	if (sendCommand(CMD_VERSION, 0) == 4) {
-                           1708 ;--- end asm ---
-   3C3A 6F E2         [ 8] 1709 	clr	,-s	;
-   3C3C C6 01         [ 2] 1710 	ldb	#1	;,
-   3C3E BD 35 4D      [ 8] 1711 	jsr	_sendCommand
-   3C41 32 63         [ 5] 1712 	leas	3,s	;,,
-   3C43 C1 04         [ 2] 1713 	cmpb	#4	;cmpqi:	; D.2439,
-   3C45 26 05         [ 3] 1714 	bne	L101	;
-                           1715 ;----- asm -----
-                           1716 ; 762 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1717 	; #ENR#[558]		picAvailable = 1;
-                           1718 ;--- end asm ---
-   3C47 C6 01         [ 2] 1719 	ldb	#1	;,
-   3C49 F7 C8 FD      [ 5] 1720 	stb	_picAvailable	;, picAvailable
-   3C4C                    1721 L101:
-                           1722 ;----- asm -----
-                           1723 ; 767 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1724 	; #ENR#[562]	memcpy(infoText, "001 - 999€", 10);
-                           1725 ;--- end asm ---
-   3C4C 8E 30 30      [ 3] 1726 	ldx	#12336	;,
-   3C4F BF C8 EF      [ 6] 1727 	stx	_infoText	;, infoText
-   3C52 8E 31 20      [ 3] 1728 	ldx	#12576	;,
-   3C55 BF C8 F1      [ 6] 1729 	stx	_infoText+2	;, infoText
-   3C58 8E 2D 20      [ 3] 1730 	ldx	#11552	;,
-   3C5B BF C8 F3      [ 6] 1731 	stx	_infoText+4	;, infoText
-   3C5E 8E 39 39      [ 3] 1732 	ldx	#14649	;,
-   3C61 BF C8 F5      [ 6] 1733 	stx	_infoText+6	;, infoText
-   3C64 8E 39 80      [ 3] 1734 	ldx	#14720	;,
-   3C67 BF C8 F7      [ 6] 1735 	stx	_infoText+8	;, infoText
-                           1736 ;----- asm -----
-                           1737 ; 771 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1738 	; #ENR#[565]	epot0 = 1;
+                           1675 ; 596 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1676 	; #ENR#[450]	if (blockYOfs == 30) {
+                           1677 ; 0 "" 2
+                           1678 ;--- end asm ---
+   4EC3 C1 1E         [ 2] 1679 	cmpb	#30	;cmpqi:	; blockYOfs.52,
+   4EC5 10 26 00 3F   [ 6] 1680 	lbne	L87	;
+                           1681 ;----- asm -----
+                           1682 ; 598 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1683 	; #ENR#[451]		if (moveCount < levelHighscore) {
+                           1684 ; 0 "" 2
+                           1685 ;--- end asm ---
+   4EC9 BE CA F1      [ 6] 1686 	ldx	_moveCount	; moveCount.53, moveCount
+   4ECC BC CA F3      [ 7] 1687 	cmpx	_levelHighscore	;cmphi:	; moveCount.53, levelHighscore
+   4ECF 24 25         [ 3] 1688 	bhs	L85	;
+                           1689 ;----- asm -----
+                           1690 ; 600 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1691 	; #ENR#[452]			writeEeprom((uint8_t) (2 * levelNumber), (uint8_t) (moveCount & 0xff));
+                           1692 ; 0 "" 2
+                           1693 ;--- end asm ---
+   4ED1 F6 C8 83      [ 5] 1694 	ldb	_levelNumber	;, levelNumber
+   4ED4 58            [ 2] 1695 	aslb	;
+   4ED5 E7 E4         [ 4] 1696 	stb	,s	;,
+   4ED7 1F 10         [ 6] 1697 	tfr	x,d	; moveCount.53,
+   4ED9 34 04         [ 6] 1698 	pshs	b	;
+   4EDB E6 61         [ 5] 1699 	ldb	1,s	;,
+   4EDD BD 4D FA      [ 8] 1700 	jsr	_writeEeprom
+                           1701 ;----- asm -----
+                           1702 ; 602 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1703 	; #ENR#[453]			writeEeprom((uint8_t) (2 * levelNumber + 1), (uint8_t) (moveCount >> 8));
+                           1704 ; 0 "" 2
+                           1705 ;--- end asm ---
+   4EE0 F6 C8 83      [ 5] 1706 	ldb	_levelNumber	; tmp31, levelNumber
+   4EE3 58            [ 2] 1707 	aslb	; tmp31
+   4EE4 5C            [ 2] 1708 	incb	; tmp31
+   4EE5 E7 62         [ 5] 1709 	stb	2,s	; tmp31,
+   4EE7 FC CA F1      [ 6] 1710 	ldd	_moveCount	; tmp33, moveCount
+   4EEA 1F 89         [ 6] 1711 	tfr	a,b	;,
+   4EEC 4F            [ 2] 1712 	clra		;zero_extendqihi: R:b -> R:d	;,
+   4EED 34 04         [ 6] 1713 	pshs	b	; tmp33
+   4EEF E6 63         [ 5] 1714 	ldb	3,s	;,
+   4EF1 BD 4D FA      [ 8] 1715 	jsr	_writeEeprom
+   4EF4 32 62         [ 5] 1716 	leas	2,s	;,,
+   4EF6                    1717 L85:
+                           1718 ;----- asm -----
+                           1719 ; 605 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1720 	; #ENR#[455]		levelNumber++;
+                           1721 ; 0 "" 2
+                           1722 ;--- end asm ---
+   4EF6 F6 C8 83      [ 5] 1723 	ldb	_levelNumber	; levelNumber.56, levelNumber
+   4EF9 5C            [ 2] 1724 	incb	; levelNumber.56
+   4EFA F7 C8 83      [ 5] 1725 	stb	_levelNumber	; levelNumber.56, levelNumber
+                           1726 ;----- asm -----
+                           1727 ; 607 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1728 	; #ENR#[456]		if (levelNumber >= levelCount) levelNumber = 0;
+                           1729 ; 0 "" 2
+                           1730 ;--- end asm ---
+   4EFD F1 51 83      [ 5] 1731 	cmpb	_levelCount	;cmpqi:	; levelNumber.56, levelCount
+   4F00 25 03         [ 3] 1732 	blo	L86	;
+   4F02 7F C8 83      [ 7] 1733 	clr	_levelNumber	; levelNumber
+   4F05                    1734 L86:
+                           1735 ;----- asm -----
+                           1736 ; 609 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1737 	; #ENR#[457]		startLevel();
+                           1738 ; 0 "" 2
                            1739 ;--- end asm ---
-   3C6A C6 01         [ 2] 1740 	ldb	#1	;,
-   3C6C F7 C8 1F      [ 5] 1741 	stb	-14305	;,
-                           1742 ;----- asm -----
-                           1743 ; 773 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1744 	; #ENR#[566]	epot1 = 3;
-                           1745 ;--- end asm ---
-   3C6F C6 03         [ 2] 1746 	ldb	#3	;,
-   3C71 F7 C8 20      [ 5] 1747 	stb	-14304	;,
+   4F05 BD 4C BE      [ 8] 1740 	jsr	_startLevel
+   4F08                    1741 L87:
+   4F08 32 62         [ 5] 1742 	leas	2,s	;,,
+   4F0A 39            [ 5] 1743 	rts
+                           1744 	.globl	_setBank
+   4F0B                    1745 _setBank:
+   4F0B 32 7F         [ 5] 1746 	leas	-1,s	;,,
+   4F0D E7 E4         [ 4] 1747 	stb	,s	; bank, bank
                            1748 ;----- asm -----
-                           1749 ; 775 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1750 	; #ENR#[567]	epot2 = 0;
-                           1751 ;--- end asm ---
-   3C74 7F C8 21      [ 7] 1752 	clr	-14303	;
-                           1753 ;----- asm -----
-                           1754 ; 777 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1755 	; #ENR#[568]	epot3 = 0;
-                           1756 ;--- end asm ---
-   3C77 7F C8 22      [ 7] 1757 	clr	-14302	;
-                           1758 ;----- asm -----
-                           1759 ; 780 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1760 	; #ENR#[570]	gameState = MainMenu;
-                           1761 ;--- end asm ---
-   3C7A 7F C8 FE      [ 7] 1762 	clr	_gameState	; gameState
-                           1763 ;----- asm -----
-                           1764 ; 782 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1765 	; #ENR#[571]	startLevel();
-                           1766 ;--- end asm ---
-   3C7D BD 38 4D      [ 8] 1767 	jsr	_startLevel
+                           1749 ; 172 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1750 	; #ENR#[164]	*vecx = 16 + bank;
+                           1751 ; 0 "" 2
+                           1752 ;--- end asm ---
+   4F0F CB 10         [ 2] 1753 	addb	#16	; bank,
+   4F11 E7 9F C8 86   [ 9] 1754 	stb	[_vecx]	; bank,* vecx
+                           1755 ;----- asm -----
+                           1756 ; 174 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1757 	; #ENR#[165]	sendCommand(CMD_SET_BANK, bank);
+                           1758 ; 0 "" 2
+                           1759 ;--- end asm ---
+   4F15 E6 E4         [ 4] 1760 	ldb	,s	;, bank
+   4F17 34 04         [ 6] 1761 	pshs	b	;
+   4F19 C6 05         [ 2] 1762 	ldb	#5	;,
+   4F1B BD 4C 8B      [ 8] 1763 	jsr	_sendCommand
+   4F1E 32 62         [ 5] 1764 	leas	2,s	;,,
+   4F20 39            [ 5] 1765 	rts
+                           1766 	.globl	_blockWaiting
+   4F21                    1767 _blockWaiting:
                            1768 ;----- asm -----
-                           1769 ; 786 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1770 	; #ENR#[574]	while (1) {
-                           1771 ;--- end asm ---
-   3C80                    1772 L113:
-                           1773 ;----- asm -----
-                           1774 ; 789 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1775 	; #ENR#[576]		frwait();
-                           1776 ; 97 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   3C80 BD F1 92      [ 8] 1777 	jsr ___Wait_Recal; BIOS call
-                           1778 ; 792 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1779 	; #ENR#[578]		switch (gameState) {
-                           1780 ;--- end asm ---
-   3C83 F6 C8 FE      [ 5] 1781 	ldb	_gameState	;, gameState
-   3C86 C1 06         [ 2] 1782 	cmpb	#6	;cmpqi:	;,
-   3C88 10 22 00 4D   [ 6] 1783 	lbhi	L102	;
-   3C8C 4F            [ 2] 1784 	clra		;zero_extendqihi: R:b -> R:d	;,
-   3C8D ED E4         [ 5] 1785 	std	,s	;,
-   3C8F 58            [ 2] 1786 	aslb	;
-   3C90 49            [ 2] 1787 	rola	;
-   3C91 1F 01         [ 6] 1788 	tfr	d,x	;, tmp43
-   3C93 6E 99 3C 97   [10] 1789 	jmp	[L110,x]	;, tmp43
-   3C97                    1790 L110:
-   3C97 3C A5              1791 	.word	L103
-   3C99 3C AB              1792 	.word	L104
-   3C9B 3C B1              1793 	.word	L105
-   3C9D 3C BA              1794 	.word	L106
-   3C9F 3C C3              1795 	.word	L107
-   3CA1 3C CB              1796 	.word	L108
-   3CA3 3C D3              1797 	.word	L109
-   3CA5                    1798 L103:
-                           1799 ;----- asm -----
-                           1800 ; 796 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1801 	; #ENR#[580]        			mainMenu();
-                           1802 ;--- end asm ---
-   3CA5 BD 38 EF      [ 8] 1803 	jsr	_mainMenu
-                           1804 ;----- asm -----
-                           1805 ; 799 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1806 	; #ENR#[582]        			break;
-                           1807 ;--- end asm ---
-   3CA8 16 00 2E      [ 5] 1808 	lbra	L102	;
-   3CAB                    1809 L104:
-                           1810 ;----- asm -----
-                           1811 ; 803 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1812 	; #ENR#[584]				clearMenu();
-                           1813 ;--- end asm ---
-   3CAB BD 36 A4      [ 8] 1814 	jsr	_clearMenu
-                           1815 ;----- asm -----
-                           1816 ; 806 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1817 	; #ENR#[586]				break;
+                           1769 ; 381 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1770 	; #ENR#[319]	drawField();
+                           1771 ; 0 "" 2
+                           1772 ;--- end asm ---
+   4F21 BD 49 75      [ 8] 1773 	jsr	_drawField
+                           1774 ;----- asm -----
+                           1775 ; 383 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1776 	; #ENR#[320]	drawBlock(0);
+                           1777 ; 0 "" 2
+                           1778 ;--- end asm ---
+   4F24 5F            [ 2] 1779 	clrb	;
+   4F25 BD 04 B4      [ 8] 1780 	jsr	_drawBlock
+                           1781 ;----- asm -----
+                           1782 ; 385 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1783 	; #ENR#[321]	joybit();
+                           1784 ; 0 "" 2
+                           1785 ; 2354 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   4F28 BD F1 F8      [ 8] 1786 	jsr ___Joy_Digital; BIOS call
+                           1787 ; 0 "" 2
+                           1788 ; 387 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1789 	; #ENR#[322]	if (pot0 < -10) {
+                           1790 ; 0 "" 2
+                           1791 ;--- end asm ---
+   4F2B F6 C8 1B      [ 5] 1792 	ldb	-14309	; D.2339,
+   4F2E C1 F6         [ 2] 1793 	cmpb	#-10	;cmpqi:	; D.2339,
+   4F30 2C 0C         [ 3] 1794 	bge	L91	;
+                           1795 ;----- asm -----
+                           1796 ; 389 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1797 	; #ENR#[323]		moveBlock(Left);
+                           1798 ; 0 "" 2
+                           1799 ;--- end asm ---
+   4F32 5F            [ 2] 1800 	clrb	;
+   4F33 BD 4A EC      [ 8] 1801 	jsr	_moveBlock
+                           1802 ;----- asm -----
+                           1803 ; 391 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1804 	; #ENR#[324]		gameState = BlockMoving;
+                           1805 ; 0 "" 2
+                           1806 ;--- end asm ---
+   4F36 C6 04         [ 2] 1807 	ldb	#4	;,
+   4F38 F7 CA F6      [ 5] 1808 	stb	_gameState	;, gameState
+   4F3B 16 00 37      [ 5] 1809 	lbra	L92	;
+   4F3E                    1810 L91:
+   4F3E F6 C8 1B      [ 5] 1811 	ldb	-14309	; D.2340,
+   4F41 C1 0A         [ 2] 1812 	cmpb	#10	;cmpqi:	; D.2340,
+   4F43 2F 0C         [ 3] 1813 	ble	L93	;
+                           1814 ;----- asm -----
+                           1815 ; 394 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1816 	; #ENR#[326]		moveBlock(Right);
+                           1817 ; 0 "" 2
                            1818 ;--- end asm ---
-   3CAE 16 00 28      [ 5] 1819 	lbra	L102	;
-   3CB1                    1820 L105:
+   4F45 C6 02         [ 2] 1819 	ldb	#2	;,
+   4F47 BD 4A EC      [ 8] 1820 	jsr	_moveBlock
                            1821 ;----- asm -----
-                           1822 ; 810 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1823 	; #ENR#[588]				showInfo();
-                           1824 ;--- end asm ---
-   3CB1 BD 38 0A      [ 8] 1825 	jsr	_showInfo
-                           1826 ;----- asm -----
-                           1827 ; 812 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1828 	; #ENR#[589]        			blockMovingToStart();
-                           1829 ;--- end asm ---
-   3CB4 BD 38 34      [ 8] 1830 	jsr	_blockMovingToStart
-                           1831 ;----- asm -----
-                           1832 ; 814 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1833 	; #ENR#[590]        			break;
-                           1834 ;--- end asm ---
-   3CB7 16 00 1F      [ 5] 1835 	lbra	L102	;
-   3CBA                    1836 L106:
-                           1837 ;----- asm -----
-                           1838 ; 818 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1839 	; #ENR#[592]				showInfo();
-                           1840 ;--- end asm ---
-   3CBA BD 38 0A      [ 8] 1841 	jsr	_showInfo
-                           1842 ;----- asm -----
-                           1843 ; 820 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1844 	; #ENR#[593]        			blockWaiting();
-                           1845 ;--- end asm ---
-   3CBD BD 39 F7      [ 8] 1846 	jsr	_blockWaiting
-                           1847 ;----- asm -----
-                           1848 ; 822 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1849 	; #ENR#[594]        			break;
-                           1850 ;--- end asm ---
-   3CC0 16 00 16      [ 5] 1851 	lbra	L102	;
-   3CC3                    1852 L107:
-                           1853 ;----- asm -----
-                           1854 ; 826 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1855 	; #ENR#[596]				showInfo();
+                           1822 ; 396 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1823 	; #ENR#[327]		gameState = BlockMoving;
+                           1824 ; 0 "" 2
+                           1825 ;--- end asm ---
+   4F4A C6 04         [ 2] 1826 	ldb	#4	;,
+   4F4C F7 CA F6      [ 5] 1827 	stb	_gameState	;, gameState
+   4F4F 20 24         [ 3] 1828 	bra	L92	;
+   4F51                    1829 L93:
+   4F51 F6 C8 1C      [ 5] 1830 	ldb	-14308	; D.2342,
+   4F54 C1 F6         [ 2] 1831 	cmpb	#-10	;cmpqi:	; D.2342,
+   4F56 2C 0C         [ 3] 1832 	bge	L94	;
+                           1833 ;----- asm -----
+                           1834 ; 399 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1835 	; #ENR#[329]		moveBlock(Down);
+                           1836 ; 0 "" 2
+                           1837 ;--- end asm ---
+   4F58 C6 03         [ 2] 1838 	ldb	#3	;,
+   4F5A BD 4A EC      [ 8] 1839 	jsr	_moveBlock
+                           1840 ;----- asm -----
+                           1841 ; 401 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1842 	; #ENR#[330]		gameState = BlockMoving;
+                           1843 ; 0 "" 2
+                           1844 ;--- end asm ---
+   4F5D C6 04         [ 2] 1845 	ldb	#4	;,
+   4F5F F7 CA F6      [ 5] 1846 	stb	_gameState	;, gameState
+   4F62 20 11         [ 3] 1847 	bra	L92	;
+   4F64                    1848 L94:
+   4F64 F6 C8 1C      [ 5] 1849 	ldb	-14308	; D.2343,
+   4F67 C1 0A         [ 2] 1850 	cmpb	#10	;cmpqi:	; D.2343,
+   4F69 2F 0A         [ 3] 1851 	ble	L92	;
+                           1852 ;----- asm -----
+                           1853 ; 404 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1854 	; #ENR#[332]		moveBlock(Up);
+                           1855 ; 0 "" 2
                            1856 ;--- end asm ---
-   3CC3 BD 38 0A      [ 8] 1857 	jsr	_showInfo
-                           1858 ;----- asm -----
-                           1859 ; 828 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1860 	; #ENR#[597]        			blockMoving();
-                           1861 ;--- end asm ---
-   3CC6 BD 3A A9      [ 8] 1862 	jsr	_blockMoving
-                           1863 ;----- asm -----
-                           1864 ; 830 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1865 	; #ENR#[598]        			break;
-                           1866 ;--- end asm ---
-   3CC9 20 0E         [ 3] 1867 	bra	L102	;
-   3CCB                    1868 L108:
-                           1869 ;----- asm -----
-                           1870 ; 834 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1871 	; #ENR#[600]				showInfo();
-                           1872 ;--- end asm ---
-   3CCB BD 38 0A      [ 8] 1873 	jsr	_showInfo
-                           1874 ;----- asm -----
-                           1875 ; 836 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1876 	; #ENR#[601]        			blockFalling();
-                           1877 ;--- end asm ---
-   3CCE BD 39 BA      [ 8] 1878 	jsr	_blockFalling
-                           1879 ;----- asm -----
-                           1880 ; 838 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1881 	; #ENR#[602]        			break;
-                           1882 ;--- end asm ---
-   3CD1 20 06         [ 3] 1883 	bra	L102	;
-   3CD3                    1884 L109:
-                           1885 ;----- asm -----
-                           1886 ; 842 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1887 	; #ENR#[604]				showInfo();
-                           1888 ;--- end asm ---
-   3CD3 BD 38 0A      [ 8] 1889 	jsr	_showInfo
+   4F6B C6 01         [ 2] 1857 	ldb	#1	;,
+   4F6D BD 4A EC      [ 8] 1858 	jsr	_moveBlock
+                           1859 ;----- asm -----
+                           1860 ; 406 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1861 	; #ENR#[333]		gameState = BlockMoving;
+                           1862 ; 0 "" 2
+                           1863 ;--- end asm ---
+   4F70 C6 04         [ 2] 1864 	ldb	#4	;,
+   4F72 F7 CA F6      [ 5] 1865 	stb	_gameState	;, gameState
+   4F75                    1866 L92:
+                           1867 ;----- asm -----
+                           1868 ; 409 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1869 	; #ENR#[335]	if (gameState == BlockMoving) {
+                           1870 ; 0 "" 2
+                           1871 ;--- end asm ---
+   4F75 F6 CA F6      [ 5] 1872 	ldb	_gameState	;, gameState
+   4F78 C1 04         [ 2] 1873 	cmpb	#4	;cmpqi:	;,
+   4F7A 26 0C         [ 3] 1874 	bne	L95	;
+                           1875 ;----- asm -----
+                           1876 ; 411 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1877 	; #ENR#[336]		changeMusic(movingMusic);
+                           1878 ; 0 "" 2
+                           1879 ;--- end asm ---
+   4F7C 8E 50 F7      [ 3] 1880 	ldx	#_movingMusic	;,
+   4F7F BD 49 6C      [ 8] 1881 	jsr	_changeMusic
+                           1882 ;----- asm -----
+                           1883 ; 413 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1884 	; #ENR#[337]		*vecx = 3;
+                           1885 ; 0 "" 2
+                           1886 ;--- end asm ---
+   4F82 C6 03         [ 2] 1887 	ldb	#3	;,
+   4F84 E7 9F C8 86   [ 9] 1888 	stb	[_vecx]	;,* vecx
+   4F88                    1889 L95:
                            1890 ;----- asm -----
-                           1891 ; 844 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1892 	; #ENR#[605]        			blockMovingAtEnd();
-                           1893 ;--- end asm ---
-   3CD6 BD 39 60      [ 8] 1894 	jsr	_blockMovingAtEnd
-                           1895 ;----- asm -----
-                           1896 ; 846 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1897 	; #ENR#[606]        			break;
-                           1898 ;--- end asm ---
-   3CD9                    1899 L102:
-                           1900 ;----- asm -----
-                           1901 ; 851 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1902 	; #ENR#[610]		if (gameState > ClearMenu) {
-                           1903 ;--- end asm ---
-   3CD9 F6 C8 FE      [ 5] 1904 	ldb	_gameState	;, gameState
-   3CDC C1 01         [ 2] 1905 	cmpb	#1	;cmpqi:	;,
-   3CDE 10 23 FF 9E   [ 6] 1906 	lbls	L113	;
-                           1907 ;----- asm -----
-                           1908 ; 853 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1909 	; #ENR#[611]    			DP_to_C8();
-                           1910 ; 316 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   3CE2 BD F1 AF      [ 8] 1911 	jsr ___DP_to_C8; BIOS call
-                           1912 ; 855 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1913 	; #ENR#[612]    			replay(currentMusic);
-                           1914 ;--- end asm ---
-   3CE5 BE C8 80      [ 6] 1915 	ldx	_currentMusic	;, currentMusic
-   3CE8 AF 62         [ 6] 1916 	stx	2,s	;, u
-                           1917 ;----- asm -----
-                           1918 ; 2917 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   3CEA EE 62         [ 6] 1919 	ldu 2,s	; u
-   3CEC BD F6 87      [ 8] 1920 	jsr ___Init_Music_chk; BIOS call
-                           1921 ; 857 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1922 	; #ENR#[613]    			DP_to_D0();
-                           1923 ; 300 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   3CEF BD F1 AA      [ 8] 1924 	jsr ___DP_to_D0; BIOS call
-                           1925 ; 859 "C:\data\bloxorz\Vide\source\bloxorz.enr.c" 1
-                           1926 	; #ENR#[614]    			reqout();
-                           1927 ; 2880 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-   3CF2 BD F2 89      [ 8] 1928 	jsr ___Do_Sound; BIOS call
+                           1891 ; 417 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1892 	; #ENR#[340]    	Read_Btns();
+                           1893 ; 0 "" 2
+                           1894 ; 2286 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   4F88 BD F1 BA      [ 8] 1895 	jsr ___Read_Btns; BIOS call
+                           1896 ; 0 "" 2
+                           1897 ; 419 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1898 	; #ENR#[341]    	if (Vec_Buttons & 1) {
+                           1899 ; 0 "" 2
+                           1900 ;--- end asm ---
+   4F8B F6 C8 11      [ 5] 1901 	ldb	_Vec_Buttons	;, Vec_Buttons
+   4F8E C5 01         [ 2] 1902 	bitb	#1	;,
+   4F90 27 18         [ 3] 1903 	beq	L96	;
+                           1904 ;----- asm -----
+                           1905 ; 421 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1906 	; #ENR#[342]		levelNumber++;
+                           1907 ; 0 "" 2
+                           1908 ;--- end asm ---
+   4F92 F6 C8 83      [ 5] 1909 	ldb	_levelNumber	; levelNumber.30, levelNumber
+   4F95 5C            [ 2] 1910 	incb	; levelNumber.30
+   4F96 F7 C8 83      [ 5] 1911 	stb	_levelNumber	; levelNumber.30, levelNumber
+                           1912 ;----- asm -----
+                           1913 ; 423 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1914 	; #ENR#[343]		if (levelNumber >= levelCount) {
+                           1915 ; 0 "" 2
+                           1916 ;--- end asm ---
+   4F99 F1 51 83      [ 5] 1917 	cmpb	_levelCount	;cmpqi:	; levelNumber.30, levelCount
+   4F9C 25 09         [ 3] 1918 	blo	L97	;
+                           1919 ;----- asm -----
+                           1920 ; 425 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1921 	; #ENR#[344]			levelNumber = 0;
+                           1922 ; 0 "" 2
+                           1923 ;--- end asm ---
+   4F9E 7F C8 83      [ 7] 1924 	clr	_levelNumber	; levelNumber
+                           1925 ;----- asm -----
+                           1926 ; 427 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1927 	; #ENR#[345]			setBank(nextBank);
+                           1928 ; 0 "" 2
                            1929 ;--- end asm ---
-   3CF5 16 FF 88      [ 5] 1930 	lbra	L113	;
-                           1931 	.globl	_startMusic
-   3CF8                    1932 _startMusic:
-   3CF8 FE                 1933 	.byte	-2
-   3CF9 E8                 1934 	.byte	-24
-   3CFA FE                 1935 	.byte	-2
-   3CFB B6                 1936 	.byte	-74
-   3CFC 01                 1937 	.byte	1
-   3CFD 01                 1938 	.byte	1
-   3CFE 02                 1939 	.byte	2
-   3CFF 01                 1940 	.byte	1
-   3D00 03                 1941 	.byte	3
-   3D01 01                 1942 	.byte	1
-   3D02 04                 1943 	.byte	4
-   3D03 01                 1944 	.byte	1
-   3D04 05                 1945 	.byte	5
-   3D05 01                 1946 	.byte	1
-   3D06 06                 1947 	.byte	6
-   3D07 01                 1948 	.byte	1
-   3D08 07                 1949 	.byte	7
-   3D09 01                 1950 	.byte	1
-   3D0A 08                 1951 	.byte	8
-   3D0B 01                 1952 	.byte	1
-   3D0C 09                 1953 	.byte	9
-   3D0D 01                 1954 	.byte	1
-   3D0E 0A                 1955 	.byte	10
-   3D0F 01                 1956 	.byte	1
-   3D10 0B                 1957 	.byte	11
-   3D11 01                 1958 	.byte	1
-   3D12 0C                 1959 	.byte	12
-   3D13 01                 1960 	.byte	1
-   3D14 0D                 1961 	.byte	13
-   3D15 01                 1962 	.byte	1
-   3D16 00                 1963 	.byte	0
-   3D17 80                 1964 	.byte	-128
-                           1965 	.globl	_levelEndMusic
-   3D18                    1966 _levelEndMusic:
-   3D18 FE                 1967 	.byte	-2
-   3D19 E8                 1968 	.byte	-24
-   3D1A FE                 1969 	.byte	-2
-   3D1B B6                 1970 	.byte	-74
-   3D1C 0D                 1971 	.byte	13
-   3D1D 01                 1972 	.byte	1
-   3D1E 0E                 1973 	.byte	14
-   3D1F 01                 1974 	.byte	1
-   3D20 0F                 1975 	.byte	15
-   3D21 01                 1976 	.byte	1
-   3D22 10                 1977 	.byte	16
-   3D23 01                 1978 	.byte	1
-   3D24 11                 1979 	.byte	17
-   3D25 01                 1980 	.byte	1
-   3D26 12                 1981 	.byte	18
-   3D27 01                 1982 	.byte	1
-   3D28 13                 1983 	.byte	19
-   3D29 01                 1984 	.byte	1
-   3D2A 14                 1985 	.byte	20
-   3D2B 01                 1986 	.byte	1
-   3D2C 15                 1987 	.byte	21
-   3D2D 01                 1988 	.byte	1
-   3D2E 16                 1989 	.byte	22
-   3D2F 01                 1990 	.byte	1
-   3D30 00                 1991 	.byte	0
-   3D31 80                 1992 	.byte	-128
-                           1993 	.globl	_fallingMusic
-   3D32                    1994 _fallingMusic:
-   3D32 FE                 1995 	.byte	-2
-   3D33 E8                 1996 	.byte	-24
-   3D34 FE                 1997 	.byte	-2
-   3D35 B6                 1998 	.byte	-74
-   3D36 0D                 1999 	.byte	13
-   3D37 02                 2000 	.byte	2
-   3D38 0C                 2001 	.byte	12
-   3D39 02                 2002 	.byte	2
-   3D3A 0B                 2003 	.byte	11
-   3D3B 02                 2004 	.byte	2
-   3D3C 0A                 2005 	.byte	10
-   3D3D 02                 2006 	.byte	2
-   3D3E 09                 2007 	.byte	9
-   3D3F 02                 2008 	.byte	2
-   3D40 08                 2009 	.byte	8
-   3D41 02                 2010 	.byte	2
-   3D42 07                 2011 	.byte	7
-   3D43 02                 2012 	.byte	2
-   3D44 06                 2013 	.byte	6
-   3D45 02                 2014 	.byte	2
-   3D46 05                 2015 	.byte	5
-   3D47 02                 2016 	.byte	2
-   3D48 04                 2017 	.byte	4
-   3D49 02                 2018 	.byte	2
-   3D4A 03                 2019 	.byte	3
-   3D4B 02                 2020 	.byte	2
-   3D4C 02                 2021 	.byte	2
-   3D4D 02                 2022 	.byte	2
-   3D4E 01                 2023 	.byte	1
-   3D4F 02                 2024 	.byte	2
-   3D50 00                 2025 	.byte	0
-   3D51 80                 2026 	.byte	-128
-                           2027 	.globl	_movingMusic
-   3D52                    2028 _movingMusic:
-   3D52 FD                 2029 	.byte	-3
-   3D53 C3                 2030 	.byte	-61
-   3D54 FE                 2031 	.byte	-2
-   3D55 B6                 2032 	.byte	-74
-   3D56 01                 2033 	.byte	1
-   3D57 05                 2034 	.byte	5
-   3D58 00                 2035 	.byte	0
-   3D59 80                 2036 	.byte	-128
-                           2037 	.globl	_currentMusic
-                           2038 	.area	.data
-   C880                    2039 _currentMusic:
-   C880 3C F8              2040 	.word	_startMusic
-                           2041 	.globl	_vecx
-   C882                    2042 _vecx:
-   C882 80 00              2043 	.word	-32768
-                           2044 	.globl	_led8
-                           2045 	.area	.text
-   3D5A                    2046 _led8:
-   3D5A FF                 2047 	.byte	-1
-   3D5B 00                 2048 	.byte	0
-   3D5C 05                 2049 	.byte	5
-   3D5D FF                 2050 	.byte	-1
-   3D5E FB                 2051 	.byte	-5
-   3D5F 00                 2052 	.byte	0
-   3D60 FF                 2053 	.byte	-1
-   3D61 00                 2054 	.byte	0
-   3D62 FB                 2055 	.byte	-5
-   3D63 FF                 2056 	.byte	-1
-   3D64 05                 2057 	.byte	5
-   3D65 00                 2058 	.byte	0
-   3D66 FF                 2059 	.byte	-1
-   3D67 05                 2060 	.byte	5
-   3D68 00                 2061 	.byte	0
-   3D69 FF                 2062 	.byte	-1
-   3D6A 00                 2063 	.byte	0
-   3D6B 05                 2064 	.byte	5
-   3D6C FF                 2065 	.byte	-1
-   3D6D FB                 2066 	.byte	-5
-   3D6E 00                 2067 	.byte	0
-   3D6F 01                 2068 	.byte	1
-                           2069 	.area	.bss
-                           2070 	.globl	_infoText
-   C8EF                    2071 _infoText:	.blkb	10
-                           2072 	.globl	_moveCount
-   C8F9                    2073 _moveCount:	.blkb	2
-                           2074 	.globl	_levelHighscore
-   C8FB                    2075 _levelHighscore:	.blkb	2
-                           2076 	.globl	_picAvailable
-   C8FD                    2077 _picAvailable:	.blkb	1
-                           2078 	.globl	_gameState
-   C8FE                    2079 _gameState:	.blkb	1
+   4FA1 F6 51 85      [ 5] 1930 	ldb	_nextBank	;, nextBank
+   4FA4 BD 4F 0B      [ 8] 1931 	jsr	_setBank
+   4FA7                    1932 L97:
+                           1933 ;----- asm -----
+                           1934 ; 430 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1935 	; #ENR#[347]    		startLevel();
+                           1936 ; 0 "" 2
+                           1937 ;--- end asm ---
+   4FA7 BD 4C BE      [ 8] 1938 	jsr	_startLevel
+   4FAA                    1939 L96:
+                           1940 ;----- asm -----
+                           1941 ; 433 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1942 	; #ENR#[349]    	if (Vec_Buttons & 2) {
+                           1943 ; 0 "" 2
+                           1944 ;--- end asm ---
+   4FAA F6 C8 11      [ 5] 1945 	ldb	_Vec_Buttons	;, Vec_Buttons
+   4FAD C5 02         [ 2] 1946 	bitb	#2	;,
+   4FAF 27 08         [ 3] 1947 	beq	L99	;
+                           1948 ;----- asm -----
+                           1949 ; 435 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1950 	; #ENR#[350]		if (splitMode) {
+                           1951 ; 0 "" 2
+                           1952 ;--- end asm ---
+   4FB1 7D C8 8C      [ 7] 1953 	tst	_splitMode	; splitMode
+   4FB4 27 03         [ 3] 1954 	beq	L99	;
+                           1955 ;----- asm -----
+                           1956 ; 437 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1957 	; #ENR#[351]			swapSplit();
+                           1958 ; 0 "" 2
+                           1959 ;--- end asm ---
+   4FB6 BD 04 8F      [ 8] 1960 	jsr	_swapSplit
+   4FB9                    1961 L99:
+   4FB9 39            [ 5] 1962 	rts
+                           1963 	.globl	_main
+   4FBA                    1964 _main:
+   4FBA 34 60         [ 7] 1965 	pshs	y,u	;
+   4FBC 32 7C         [ 5] 1966 	leas	-4,s	;,,
+                           1967 ;----- asm -----
+                           1968 ; 746 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1969 	; #ENR#[548]	setBank(0);
+                           1970 ; 0 "" 2
+                           1971 ;--- end asm ---
+   4FBE 5F            [ 2] 1972 	clrb	;
+   4FBF BD 4F 0B      [ 8] 1973 	jsr	_setBank
+                           1974 ;----- asm -----
+                           1975 ; 750 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1976 	; #ENR#[551]	*vecx = 4;
+                           1977 ; 0 "" 2
+                           1978 ;--- end asm ---
+   4FC2 C6 04         [ 2] 1979 	ldb	#4	;,
+   4FC4 E7 9F C8 86   [ 9] 1980 	stb	[_vecx]	;,* vecx
+                           1981 ;----- asm -----
+                           1982 ; 754 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1983 	; #ENR#[554]	picAvailable = 0;
+                           1984 ; 0 "" 2
+                           1985 ;--- end asm ---
+   4FC8 7F CA F5      [ 7] 1986 	clr	_picAvailable	; picAvailable
+                           1987 ;----- asm -----
+                           1988 ; 756 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1989 	; #ENR#[555]	sendCommand(CMD_VERSION, 0);
+                           1990 ; 0 "" 2
+                           1991 ;--- end asm ---
+   4FCB 6F E2         [ 8] 1992 	clr	,-s	;
+   4FCD C6 01         [ 2] 1993 	ldb	#1	;,
+   4FCF BD 4C 8B      [ 8] 1994 	jsr	_sendCommand
+                           1995 ;----- asm -----
+                           1996 ; 758 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           1997 	; #ENR#[556]	sendCommand(CMD_VERSION, 0);
+                           1998 ; 0 "" 2
+                           1999 ;--- end asm ---
+   4FD2 6F E2         [ 8] 2000 	clr	,-s	;
+   4FD4 C6 01         [ 2] 2001 	ldb	#1	;,
+   4FD6 BD 4C 8B      [ 8] 2002 	jsr	_sendCommand
+                           2003 ;----- asm -----
+                           2004 ; 760 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           2005 	; #ENR#[557]	if (sendCommand(CMD_VERSION, 0) == 4) {
+                           2006 ; 0 "" 2
+                           2007 ;--- end asm ---
+   4FD9 6F E2         [ 8] 2008 	clr	,-s	;
+   4FDB C6 01         [ 2] 2009 	ldb	#1	;,
+   4FDD BD 4C 8B      [ 8] 2010 	jsr	_sendCommand
+   4FE0 32 63         [ 5] 2011 	leas	3,s	;,,
+   4FE2 C1 04         [ 2] 2012 	cmpb	#4	;cmpqi:	; D.2454,
+   4FE4 26 05         [ 3] 2013 	bne	L101	;
+                           2014 ;----- asm -----
+                           2015 ; 762 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           2016 	; #ENR#[558]		picAvailable = 1;
+                           2017 ; 0 "" 2
+                           2018 ;--- end asm ---
+   4FE6 C6 01         [ 2] 2019 	ldb	#1	;,
+   4FE8 F7 CA F5      [ 5] 2020 	stb	_picAvailable	;, picAvailable
+   4FEB                    2021 L101:
+                           2022 ;----- asm -----
+                           2023 ; 767 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           2024 	; #ENR#[562]	memcpy(infoText, "001 - 999ï¿½", 10);
+                           2025 ; 0 "" 2
+                           2026 ;--- end asm ---
+   4FEB 8E 30 30      [ 3] 2027 	ldx	#12336	;,
+   4FEE BF CA E7      [ 6] 2028 	stx	_infoText	;, infoText
+   4FF1 8E 31 20      [ 3] 2029 	ldx	#12576	;,
+   4FF4 BF CA E9      [ 6] 2030 	stx	_infoText+2	;, infoText
+   4FF7 8E 2D 20      [ 3] 2031 	ldx	#11552	;,
+   4FFA BF CA EB      [ 6] 2032 	stx	_infoText+4	;, infoText
+   4FFD 8E 39 39      [ 3] 2033 	ldx	#14649	;,
+   5000 BF CA ED      [ 6] 2034 	stx	_infoText+6	;, infoText
+   5003 8E 39 80      [ 3] 2035 	ldx	#14720	;,
+   5006 BF CA EF      [ 6] 2036 	stx	_infoText+8	;, infoText
+                           2037 ;----- asm -----
+                           2038 ; 771 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           2039 	; #ENR#[565]	epot0 = 1;
+                           2040 ; 0 "" 2
+                           2041 ;--- end asm ---
+   5009 C6 01         [ 2] 2042 	ldb	#1	;,
+   500B F7 C8 1F      [ 5] 2043 	stb	-14305	;,
+                           2044 ;----- asm -----
+                           2045 ; 773 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           2046 	; #ENR#[566]	epot1 = 3;
+                           2047 ; 0 "" 2
+                           2048 ;--- end asm ---
+   500E C6 03         [ 2] 2049 	ldb	#3	;,
+   5010 F7 C8 20      [ 5] 2050 	stb	-14304	;,
+                           2051 ;----- asm -----
+                           2052 ; 775 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           2053 	; #ENR#[567]	epot2 = 0;
+                           2054 ; 0 "" 2
+                           2055 ;--- end asm ---
+   5013 7F C8 21      [ 7] 2056 	clr	-14303	;
+                           2057 ;----- asm -----
+                           2058 ; 777 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           2059 	; #ENR#[568]	epot3 = 0;
+                           2060 ; 0 "" 2
+                           2061 ;--- end asm ---
+   5016 7F C8 22      [ 7] 2062 	clr	-14302	;
+                           2063 ;----- asm -----
+                           2064 ; 780 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           2065 	; #ENR#[570]	gameState = MainMenu;
+                           2066 ; 0 "" 2
+                           2067 ;--- end asm ---
+   5019 7F CA F6      [ 7] 2068 	clr	_gameState	; gameState
+                           2069 ;----- asm -----
+                           2070 ; 782 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           2071 	; #ENR#[571]	musicInit();
+                           2072 ; 0 "" 2
+                           2073 ;--- end asm ---
+   501C BD 51 23      [ 8] 2074 	jsr	_musicInit
+                           2075 ;----- asm -----
+                           2076 ; 785 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           2077 	; #ENR#[573]	while (1) {
+                           2078 ; 0 "" 2
+                           2079 ;--- end asm ---
+   501F                    2080 L113:
+                           2081 ;----- asm -----
+                           2082 ; 788 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           2083 	; #ENR#[575]		frwait();
+                           2084 ; 0 "" 2
+                           2085 ; 97 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   501F BD F1 92      [ 8] 2086 	jsr ___Wait_Recal; BIOS call
+                           2087 ; 0 "" 2
+                           2088 ; 791 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           2089 	; #ENR#[577]		switch (gameState) {
+                           2090 ; 0 "" 2
+                           2091 ;--- end asm ---
+   5022 F6 CA F6      [ 5] 2092 	ldb	_gameState	;, gameState
+   5025 C1 06         [ 2] 2093 	cmpb	#6	;cmpqi:	;,
+   5027 10 22 00 53   [ 6] 2094 	lbhi	L102	;
+   502B 4F            [ 2] 2095 	clra		;zero_extendqihi: R:b -> R:d	;,
+   502C ED E4         [ 5] 2096 	std	,s	;,
+   502E 58            [ 2] 2097 	aslb	;
+   502F 49            [ 2] 2098 	rola	;
+   5030 1F 01         [ 6] 2099 	tfr	d,x	;, tmp43
+   5032 6E 99 50 36   [10] 2100 	jmp	[L110,x]	;, tmp43
+   5036                    2101 L110:
+   5036 50 44              2102 	.word	L103
+   5038 50 4D              2103 	.word	L104
+   503A 50 56              2104 	.word	L105
+   503C 50 5F              2105 	.word	L106
+   503E 50 68              2106 	.word	L107
+   5040 50 70              2107 	.word	L108
+   5042 50 78              2108 	.word	L109
+   5044                    2109 L103:
+                           2110 ;----- asm -----
+                           2111 ; 795 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           2112 	; #ENR#[579]        			mainMenu();
+                           2113 ; 0 "" 2
+                           2114 ;--- end asm ---
+   5044 BD 4D 60      [ 8] 2115 	jsr	_mainMenu
+                           2116 ;----- asm -----
+                           2117 ; 797 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           2118 	; #ENR#[580]				musicPlay();
+                           2119 ; 0 "" 2
+                           2120 ;--- end asm ---
+   5047 BD 51 2D      [ 8] 2121 	jsr	_musicPlay
+                           2122 ;----- asm -----
+                           2123 ; 799 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           2124 	; #ENR#[581]        			break;
+                           2125 ; 0 "" 2
+                           2126 ;--- end asm ---
+   504A 16 00 31      [ 5] 2127 	lbra	L102	;
+   504D                    2128 L104:
+                           2129 ;----- asm -----
+                           2130 ; 803 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           2131 	; #ENR#[583]				clearMenu();
+                           2132 ; 0 "" 2
+                           2133 ;--- end asm ---
+   504D BD 4E 2D      [ 8] 2134 	jsr	_clearMenu
+                           2135 ;----- asm -----
+                           2136 ; 805 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           2137 	; #ENR#[584]				musicPlay();
+                           2138 ; 0 "" 2
+                           2139 ;--- end asm ---
+   5050 BD 51 2D      [ 8] 2140 	jsr	_musicPlay
+                           2141 ;----- asm -----
+                           2142 ; 807 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           2143 	; #ENR#[585]				break;
+                           2144 ; 0 "" 2
+                           2145 ;--- end asm ---
+   5053 16 00 28      [ 5] 2146 	lbra	L102	;
+   5056                    2147 L105:
+                           2148 ;----- asm -----
+                           2149 ; 811 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           2150 	; #ENR#[587]				showInfo();
+                           2151 ; 0 "" 2
+                           2152 ;--- end asm ---
+   5056 BD 4A A9      [ 8] 2153 	jsr	_showInfo
+                           2154 ;----- asm -----
+                           2155 ; 813 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           2156 	; #ENR#[588]        			blockMovingToStart();
+                           2157 ; 0 "" 2
+                           2158 ;--- end asm ---
+   5059 BD 4A D3      [ 8] 2159 	jsr	_blockMovingToStart
+                           2160 ;----- asm -----
+                           2161 ; 815 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           2162 	; #ENR#[589]        			break;
+                           2163 ; 0 "" 2
+                           2164 ;--- end asm ---
+   505C 16 00 1F      [ 5] 2165 	lbra	L102	;
+   505F                    2166 L106:
+                           2167 ;----- asm -----
+                           2168 ; 819 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           2169 	; #ENR#[591]				showInfo();
+                           2170 ; 0 "" 2
+                           2171 ;--- end asm ---
+   505F BD 4A A9      [ 8] 2172 	jsr	_showInfo
+                           2173 ;----- asm -----
+                           2174 ; 821 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           2175 	; #ENR#[592]        			blockWaiting();
+                           2176 ; 0 "" 2
+                           2177 ;--- end asm ---
+   5062 BD 4F 21      [ 8] 2178 	jsr	_blockWaiting
+                           2179 ;----- asm -----
+                           2180 ; 823 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           2181 	; #ENR#[593]        			break;
+                           2182 ; 0 "" 2
+                           2183 ;--- end asm ---
+   5065 16 00 16      [ 5] 2184 	lbra	L102	;
+   5068                    2185 L107:
+                           2186 ;----- asm -----
+                           2187 ; 827 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           2188 	; #ENR#[595]				showInfo();
+                           2189 ; 0 "" 2
+                           2190 ;--- end asm ---
+   5068 BD 4A A9      [ 8] 2191 	jsr	_showInfo
+                           2192 ;----- asm -----
+                           2193 ; 829 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           2194 	; #ENR#[596]        			blockMoving();
+                           2195 ; 0 "" 2
+                           2196 ;--- end asm ---
+   506B BD 4B 19      [ 8] 2197 	jsr	_blockMoving
+                           2198 ;----- asm -----
+                           2199 ; 831 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           2200 	; #ENR#[597]        			break;
+                           2201 ; 0 "" 2
+                           2202 ;--- end asm ---
+   506E 20 0E         [ 3] 2203 	bra	L102	;
+   5070                    2204 L108:
+                           2205 ;----- asm -----
+                           2206 ; 835 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           2207 	; #ENR#[599]				showInfo();
+                           2208 ; 0 "" 2
+                           2209 ;--- end asm ---
+   5070 BD 4A A9      [ 8] 2210 	jsr	_showInfo
+                           2211 ;----- asm -----
+                           2212 ; 837 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           2213 	; #ENR#[600]        			blockFalling();
+                           2214 ; 0 "" 2
+                           2215 ;--- end asm ---
+   5073 BD 4D D1      [ 8] 2216 	jsr	_blockFalling
+                           2217 ;----- asm -----
+                           2218 ; 839 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           2219 	; #ENR#[601]        			break;
+                           2220 ; 0 "" 2
+                           2221 ;--- end asm ---
+   5076 20 06         [ 3] 2222 	bra	L102	;
+   5078                    2223 L109:
+                           2224 ;----- asm -----
+                           2225 ; 843 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           2226 	; #ENR#[603]				showInfo();
+                           2227 ; 0 "" 2
+                           2228 ;--- end asm ---
+   5078 BD 4A A9      [ 8] 2229 	jsr	_showInfo
+                           2230 ;----- asm -----
+                           2231 ; 845 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           2232 	; #ENR#[604]        			blockMovingAtEnd();
+                           2233 ; 0 "" 2
+                           2234 ;--- end asm ---
+   507B BD 4E B1      [ 8] 2235 	jsr	_blockMovingAtEnd
+                           2236 ;----- asm -----
+                           2237 ; 847 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           2238 	; #ENR#[605]        			break;
+                           2239 ; 0 "" 2
+                           2240 ;--- end asm ---
+   507E                    2241 L102:
+                           2242 ;----- asm -----
+                           2243 ; 852 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           2244 	; #ENR#[609]		if (gameState > ClearMenu) {
+                           2245 ; 0 "" 2
+                           2246 ;--- end asm ---
+   507E F6 CA F6      [ 5] 2247 	ldb	_gameState	;, gameState
+   5081 C1 01         [ 2] 2248 	cmpb	#1	;cmpqi:	;,
+   5083 10 23 FF 98   [ 6] 2249 	lbls	L113	;
+                           2250 ;----- asm -----
+                           2251 ; 854 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           2252 	; #ENR#[610]    			DP_to_C8();
+                           2253 ; 0 "" 2
+                           2254 ; 316 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   5087 BD F1 AF      [ 8] 2255 	jsr ___DP_to_C8; BIOS call
+                           2256 ; 0 "" 2
+                           2257 ; 856 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           2258 	; #ENR#[611]    			replay(currentMusic);
+                           2259 ; 0 "" 2
+                           2260 ;--- end asm ---
+   508A BE C8 84      [ 6] 2261 	ldx	_currentMusic	;, currentMusic
+   508D AF 62         [ 6] 2262 	stx	2,s	;, u
+                           2263 ;----- asm -----
+                           2264 ; 2917 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   508F EE 62         [ 6] 2265 	ldu 2,s	; u
+   5091 BD F6 87      [ 8] 2266 	jsr ___Init_Music_chk; BIOS call
+                           2267 ; 0 "" 2
+                           2268 ; 858 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           2269 	; #ENR#[612]    			DP_to_D0();
+                           2270 ; 0 "" 2
+                           2271 ; 300 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   5094 BD F1 AA      [ 8] 2272 	jsr ___DP_to_D0; BIOS call
+                           2273 ; 0 "" 2
+                           2274 ; 860 "/home/frank/data/projects/bloxorz/Vide/source/bloxorz.enr.c" 1
+                           2275 	; #ENR#[613]    			reqout();
+                           2276 ; 0 "" 2
+                           2277 ; 2880 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+   5097 BD F2 89      [ 8] 2278 	jsr ___Do_Sound; BIOS call
+                           2279 ; 0 "" 2
+                           2280 ;--- end asm ---
+   509A 16 FF 82      [ 5] 2281 	lbra	L113	;
+                           2282 	.globl	_startMusic
+   509D                    2283 _startMusic:
+   509D FE                 2284 	.byte	-2
+   509E E8                 2285 	.byte	-24
+   509F FE                 2286 	.byte	-2
+   50A0 B6                 2287 	.byte	-74
+   50A1 01                 2288 	.byte	1
+   50A2 01                 2289 	.byte	1
+   50A3 02                 2290 	.byte	2
+   50A4 01                 2291 	.byte	1
+   50A5 03                 2292 	.byte	3
+   50A6 01                 2293 	.byte	1
+   50A7 04                 2294 	.byte	4
+   50A8 01                 2295 	.byte	1
+   50A9 05                 2296 	.byte	5
+   50AA 01                 2297 	.byte	1
+   50AB 06                 2298 	.byte	6
+   50AC 01                 2299 	.byte	1
+   50AD 07                 2300 	.byte	7
+   50AE 01                 2301 	.byte	1
+   50AF 08                 2302 	.byte	8
+   50B0 01                 2303 	.byte	1
+   50B1 09                 2304 	.byte	9
+   50B2 01                 2305 	.byte	1
+   50B3 0A                 2306 	.byte	10
+   50B4 01                 2307 	.byte	1
+   50B5 0B                 2308 	.byte	11
+   50B6 01                 2309 	.byte	1
+   50B7 0C                 2310 	.byte	12
+   50B8 01                 2311 	.byte	1
+   50B9 0D                 2312 	.byte	13
+   50BA 01                 2313 	.byte	1
+   50BB 00                 2314 	.byte	0
+   50BC 80                 2315 	.byte	-128
+                           2316 	.globl	_levelEndMusic
+   50BD                    2317 _levelEndMusic:
+   50BD FE                 2318 	.byte	-2
+   50BE E8                 2319 	.byte	-24
+   50BF FE                 2320 	.byte	-2
+   50C0 B6                 2321 	.byte	-74
+   50C1 0D                 2322 	.byte	13
+   50C2 01                 2323 	.byte	1
+   50C3 0E                 2324 	.byte	14
+   50C4 01                 2325 	.byte	1
+   50C5 0F                 2326 	.byte	15
+   50C6 01                 2327 	.byte	1
+   50C7 10                 2328 	.byte	16
+   50C8 01                 2329 	.byte	1
+   50C9 11                 2330 	.byte	17
+   50CA 01                 2331 	.byte	1
+   50CB 12                 2332 	.byte	18
+   50CC 01                 2333 	.byte	1
+   50CD 13                 2334 	.byte	19
+   50CE 01                 2335 	.byte	1
+   50CF 14                 2336 	.byte	20
+   50D0 01                 2337 	.byte	1
+   50D1 15                 2338 	.byte	21
+   50D2 01                 2339 	.byte	1
+   50D3 16                 2340 	.byte	22
+   50D4 01                 2341 	.byte	1
+   50D5 00                 2342 	.byte	0
+   50D6 80                 2343 	.byte	-128
+                           2344 	.globl	_fallingMusic
+   50D7                    2345 _fallingMusic:
+   50D7 FE                 2346 	.byte	-2
+   50D8 E8                 2347 	.byte	-24
+   50D9 FE                 2348 	.byte	-2
+   50DA B6                 2349 	.byte	-74
+   50DB 0D                 2350 	.byte	13
+   50DC 02                 2351 	.byte	2
+   50DD 0C                 2352 	.byte	12
+   50DE 02                 2353 	.byte	2
+   50DF 0B                 2354 	.byte	11
+   50E0 02                 2355 	.byte	2
+   50E1 0A                 2356 	.byte	10
+   50E2 02                 2357 	.byte	2
+   50E3 09                 2358 	.byte	9
+   50E4 02                 2359 	.byte	2
+   50E5 08                 2360 	.byte	8
+   50E6 02                 2361 	.byte	2
+   50E7 07                 2362 	.byte	7
+   50E8 02                 2363 	.byte	2
+   50E9 06                 2364 	.byte	6
+   50EA 02                 2365 	.byte	2
+   50EB 05                 2366 	.byte	5
+   50EC 02                 2367 	.byte	2
+   50ED 04                 2368 	.byte	4
+   50EE 02                 2369 	.byte	2
+   50EF 03                 2370 	.byte	3
+   50F0 02                 2371 	.byte	2
+   50F1 02                 2372 	.byte	2
+   50F2 02                 2373 	.byte	2
+   50F3 01                 2374 	.byte	1
+   50F4 02                 2375 	.byte	2
+   50F5 00                 2376 	.byte	0
+   50F6 80                 2377 	.byte	-128
+                           2378 	.globl	_movingMusic
+   50F7                    2379 _movingMusic:
+   50F7 FD                 2380 	.byte	-3
+   50F8 C3                 2381 	.byte	-61
+   50F9 FE                 2382 	.byte	-2
+   50FA B6                 2383 	.byte	-74
+   50FB 01                 2384 	.byte	1
+   50FC 05                 2385 	.byte	5
+   50FD 00                 2386 	.byte	0
+   50FE 80                 2387 	.byte	-128
+                           2388 	.globl	_currentMusic
+                           2389 	.area	.data
+   C884                    2390 _currentMusic:
+   C884 50 9D              2391 	.word	_startMusic
+                           2392 	.globl	_vecx
+   C886                    2393 _vecx:
+   C886 80 00              2394 	.word	-32768
+                           2395 	.globl	_led8
+                           2396 	.area	.text
+   50FF                    2397 _led8:
+   50FF FF                 2398 	.byte	-1
+   5100 00                 2399 	.byte	0
+   5101 05                 2400 	.byte	5
+   5102 FF                 2401 	.byte	-1
+   5103 FB                 2402 	.byte	-5
+   5104 00                 2403 	.byte	0
+   5105 FF                 2404 	.byte	-1
+   5106 00                 2405 	.byte	0
+   5107 FB                 2406 	.byte	-5
+   5108 FF                 2407 	.byte	-1
+   5109 05                 2408 	.byte	5
+   510A 00                 2409 	.byte	0
+   510B FF                 2410 	.byte	-1
+   510C 05                 2411 	.byte	5
+   510D 00                 2412 	.byte	0
+   510E FF                 2413 	.byte	-1
+   510F 00                 2414 	.byte	0
+   5110 05                 2415 	.byte	5
+   5111 FF                 2416 	.byte	-1
+   5112 FB                 2417 	.byte	-5
+   5113 00                 2418 	.byte	0
+   5114 01                 2419 	.byte	1
+                           2420 	.area	.bss
+                           2421 	.globl	_infoText
+   CAE7                    2422 _infoText:	.blkb	10
+                           2423 	.globl	_moveCount
+   CAF1                    2424 _moveCount:	.blkb	2
+                           2425 	.globl	_levelHighscore
+   CAF3                    2426 _levelHighscore:	.blkb	2
+                           2427 	.globl	_picAvailable
+   CAF5                    2428 _picAvailable:	.blkb	1
+                           2429 	.globl	_gameState
+   CAF6                    2430 _gameState:	.blkb	1
 ASxxxx Assembler V05.00  (Motorola 6809), page 1.
 Hexidecimal [16-Bits]
 
@@ -2090,450 +2441,457 @@ Symbol Table
 
     .__.$$$.       =   2710 L   |     .__.ABS.       =   0000 G
     .__.CPU.       =   0000 L   |     .__.H$L.       =   0001 L
-  2 A$bloxorz$100      0037 GR  |   2 A$bloxorz$1000     0464 GR
-  2 A$bloxorz$1001     0465 GR  |   2 A$bloxorz$1002     0467 GR
-  2 A$bloxorz$1003     0469 GR  |   2 A$bloxorz$1004     046B GR
-  2 A$bloxorz$1005     046D GR  |   2 A$bloxorz$101      0039 GR
-  2 A$bloxorz$1010     0470 GR  |   2 A$bloxorz$1011     0473 GR
-  2 A$bloxorz$1012     0474 GR  |   2 A$bloxorz$1013     0475 GR
-  2 A$bloxorz$1014     0477 GR  |   2 A$bloxorz$1015     047A GR
-  2 A$bloxorz$1016     047C GR  |   2 A$bloxorz$1017     047D GR
-  2 A$bloxorz$1018     047F GR  |   2 A$bloxorz$1019     0481 GR
-  2 A$bloxorz$1020     0484 GR  |   2 A$bloxorz$1026     0486 GR
-  2 A$bloxorz$1027     0489 GR  |   2 A$bloxorz$1028     048A GR
-  2 A$bloxorz$1033     048D GR  |   2 A$bloxorz$1034     0490 GR
-  2 A$bloxorz$1035     0492 GR  |   2 A$bloxorz$1041     0495 GR
-  2 A$bloxorz$1043     0498 GR  |   2 A$bloxorz$1044     049A GR
-  2 A$bloxorz$1047     049B GR  |   2 A$bloxorz$1052     049D GR
-  2 A$bloxorz$1057     04A0 GR  |   2 A$bloxorz$1058     04A3 GR
-  2 A$bloxorz$1059     04A4 GR  |   2 A$bloxorz$106      003C GR
-  2 A$bloxorz$1060     04A6 GR  |   2 A$bloxorz$1065     04A9 GR
-  2 A$bloxorz$1066     04AB GR  |   2 A$bloxorz$107      003E GR
-  2 A$bloxorz$1071     04AD GR  |   2 A$bloxorz$1072     04AE GR
-  2 A$bloxorz$1073     04B0 GR  |   2 A$bloxorz$1075     04B1 GR
-  2 A$bloxorz$108      0040 GR  |   2 A$bloxorz$1080     04B4 GR
-  2 A$bloxorz$1086     04B7 GR  |   2 A$bloxorz$1087     04BA GR
-  2 A$bloxorz$1088     04BC GR  |   2 A$bloxorz$109      0042 GR
-  2 A$bloxorz$1093     04BE GR  |   2 A$bloxorz$1095     04C1 GR
-  2 A$bloxorz$1096     04C3 GR  |   2 A$bloxorz$110      0045 GR
-  2 A$bloxorz$1103     04C4 GR  |   2 A$bloxorz$1108     04C7 GR
-  2 A$bloxorz$1109     04CA GR  |   2 A$bloxorz$1110     04CD GR
-  2 A$bloxorz$1111     04CF GR  |   2 A$bloxorz$1112     04D1 GR
-  2 A$bloxorz$1118     04D4 GR  |   2 A$bloxorz$1119     04D7 GR
-  2 A$bloxorz$112      0047 GR  |   2 A$bloxorz$1126     04D8 GR
-  2 A$bloxorz$1131     04DB GR  |   2 A$bloxorz$1132     04DC GR
-  2 A$bloxorz$1137     04DF GR  |   2 A$bloxorz$1141     04E2 GR
-  2 A$bloxorz$1142     04E5 GR  |   2 A$bloxorz$1143     04E7 GR
-  2 A$bloxorz$1148     04E9 GR  |   2 A$bloxorz$1149     04EA GR
-  2 A$bloxorz$1154     04ED GR  |   2 A$bloxorz$1155     04EF GR
-  2 A$bloxorz$1156     04F2 GR  |   2 A$bloxorz$1158     04F5 GR
-  2 A$bloxorz$1159     04F8 GR  |   2 A$bloxorz$1160     04FA GR
-  2 A$bloxorz$1165     04FC GR  |   2 A$bloxorz$1166     04FE GR
-  2 A$bloxorz$1171     0501 GR  |   2 A$bloxorz$1172     0503 GR
-  2 A$bloxorz$1173     0506 GR  |   2 A$bloxorz$1175     0508 GR
-  2 A$bloxorz$1176     050B GR  |   2 A$bloxorz$1177     050D GR
-  2 A$bloxorz$1182     050F GR  |   2 A$bloxorz$1183     0511 GR
-  2 A$bloxorz$1188     0514 GR  |   2 A$bloxorz$1189     0516 GR
-  2 A$bloxorz$119      0048 GR  |   2 A$bloxorz$1190     0519 GR
-  2 A$bloxorz$1192     051B GR  |   2 A$bloxorz$1193     051E GR
-  2 A$bloxorz$1194     0520 GR  |   2 A$bloxorz$1199     0522 GR
-  2 A$bloxorz$120      004B GR  |   2 A$bloxorz$1200     0524 GR
-  2 A$bloxorz$1205     0527 GR  |   2 A$bloxorz$1206     0529 GR
-  2 A$bloxorz$1212     052C GR  |   2 A$bloxorz$1213     052F GR
-  2 A$bloxorz$1214     0531 GR  |   2 A$bloxorz$1219     0533 GR
-  2 A$bloxorz$1220     0536 GR  |   2 A$bloxorz$1225     0539 GR
-  2 A$bloxorz$1226     053B GR  |   2 A$bloxorz$1232     053F GR
-  2 A$bloxorz$1236     0542 GR  |   2 A$bloxorz$1237     0545 GR
-  2 A$bloxorz$1238     0547 GR  |   2 A$bloxorz$1243     0549 GR
-  2 A$bloxorz$1244     054C GR  |   2 A$bloxorz$1245     054D GR
-  2 A$bloxorz$125      004D GR  |   2 A$bloxorz$1250     0550 GR
-  2 A$bloxorz$1251     0553 GR  |   2 A$bloxorz$1252     0555 GR
-  2 A$bloxorz$1258     0558 GR  |   2 A$bloxorz$1259     055B GR
-  2 A$bloxorz$126      004F GR  |   2 A$bloxorz$1264     055E GR
-  2 A$bloxorz$127      0051 GR  |   2 A$bloxorz$1270     0561 GR
-  2 A$bloxorz$1271     0564 GR  |   2 A$bloxorz$1272     0566 GR
-  2 A$bloxorz$1277     0568 GR  |   2 A$bloxorz$1278     056B GR
-  2 A$bloxorz$128      0054 GR  |   2 A$bloxorz$1283     056D GR
-  2 A$bloxorz$1285     0570 GR  |   2 A$bloxorz$129      0056 GR
-  2 A$bloxorz$1292     0571 GR  |   2 A$bloxorz$1293     0573 GR
-  2 A$bloxorz$1298     0576 GR  |   2 A$bloxorz$1303     0579 GR
-  2 A$bloxorz$1304     057C GR  |   2 A$bloxorz$1309     057F GR
-  2 A$bloxorz$1310     0582 GR  |   2 A$bloxorz$1315     0585 GR
-  2 A$bloxorz$1316     0589 GR  |   2 A$bloxorz$1319     058A GR
-  2 A$bloxorz$1324     058C GR  |   2 A$bloxorz$1329     058F GR
-  2 A$bloxorz$1330     0590 GR  |   2 A$bloxorz$1335     0593 GR
-  2 A$bloxorz$1340     0596 GR  |   2 A$bloxorz$1341     0599 GR
-  2 A$bloxorz$1346     059D GR  |   2 A$bloxorz$1347     05A0 GR
-  2 A$bloxorz$1348     05A2 GR  |   2 A$bloxorz$1349     05A5 GR
-  2 A$bloxorz$135      0058 GR  |   2 A$bloxorz$1350     05A8 GR
-  2 A$bloxorz$1355     05AA GR  |   2 A$bloxorz$1356     05AD GR
-  2 A$bloxorz$1357     05AE GR  |   2 A$bloxorz$1358     05B0 GR
-  2 A$bloxorz$1359     05B3 GR  |   2 A$bloxorz$1360     05B5 GR
-  2 A$bloxorz$1361     05B7 GR  |   2 A$bloxorz$1362     05BA GR
-  2 A$bloxorz$1367     05BC GR  |   2 A$bloxorz$1368     05BF GR
-  2 A$bloxorz$1369     05C0 GR  |   2 A$bloxorz$137      005A GR
-  2 A$bloxorz$1370     05C2 GR  |   2 A$bloxorz$1371     05C5 GR
-  2 A$bloxorz$1372     05C8 GR  |   2 A$bloxorz$1377     05CA GR
-  2 A$bloxorz$1378     05CD GR  |   2 A$bloxorz$1379     05CF GR
-  2 A$bloxorz$1380     05D2 GR  |   2 A$bloxorz$1381     05D5 GR
-  2 A$bloxorz$1386     05D7 GR  |   2 A$bloxorz$1387     05DA GR
-  2 A$bloxorz$1388     05DB GR  |   2 A$bloxorz$1389     05DD GR
-  2 A$bloxorz$1390     05E0 GR  |   2 A$bloxorz$1391     05E2 GR
-  2 A$bloxorz$1392     05E4 GR  |   2 A$bloxorz$1393     05E7 GR
-  2 A$bloxorz$1398     05E9 GR  |   2 A$bloxorz$1399     05EC GR
-  2 A$bloxorz$140      005B GR  |   2 A$bloxorz$1400     05ED GR
-  2 A$bloxorz$1401     05EF GR  |   2 A$bloxorz$1402     05F2 GR
-  2 A$bloxorz$1403     05F5 GR  |   2 A$bloxorz$1408     05F7 GR
-  2 A$bloxorz$1409     05F9 GR  |   2 A$bloxorz$141      005D GR
-  2 A$bloxorz$1410     05FC GR  |   2 A$bloxorz$1411     05FE GR
-  2 A$bloxorz$1412     0600 GR  |   2 A$bloxorz$1413     0602 GR
-  2 A$bloxorz$1414     0604 GR  |   2 A$bloxorz$1415     0608 GR
-  2 A$bloxorz$1421     060A GR  |   2 A$bloxorz$1422     060C GR
-  2 A$bloxorz$1423     060E GR  |   2 A$bloxorz$1424     0610 GR
-  2 A$bloxorz$1425     0612 GR  |   2 A$bloxorz$1431     0614 GR
-  2 A$bloxorz$1437     0617 GR  |   2 A$bloxorz$1443     0619 GR
-  2 A$bloxorz$1444     061B GR  |   2 A$bloxorz$1445     061D GR
-  2 A$bloxorz$1446     061F GR  |   2 A$bloxorz$1452     0621 GR
-  2 A$bloxorz$1458     0624 GR  |   2 A$bloxorz$146      005F GR
-  2 A$bloxorz$1464     0626 GR  |   2 A$bloxorz$1465     0628 GR
-  2 A$bloxorz$1466     062A GR  |   2 A$bloxorz$1467     062C GR
-  2 A$bloxorz$147      0062 GR  |   2 A$bloxorz$1473     062E GR
-  2 A$bloxorz$148      0064 GR  |   2 A$bloxorz$1484     0631 GR
-  2 A$bloxorz$1485     0634 GR  |   2 A$bloxorz$1486     0636 GR
-  2 A$bloxorz$1487     0639 GR  |   2 A$bloxorz$1488     063C GR
-  2 A$bloxorz$1489     063E GR  |   2 A$bloxorz$149      0067 GR
-  2 A$bloxorz$1490     0641 GR  |   2 A$bloxorz$1491     0644 GR
-  2 A$bloxorz$1492     0646 GR  |   2 A$bloxorz$1493     0649 GR
-  2 A$bloxorz$1498     064B GR  |   2 A$bloxorz$150      0069 GR
-  2 A$bloxorz$1503     064E GR  |   2 A$bloxorz$1504     0650 GR
-  2 A$bloxorz$1509     0653 GR  |   2 A$bloxorz$151      006C GR
-  2 A$bloxorz$1510     0656 GR  |   2 A$bloxorz$1515     0659 GR
-  2 A$bloxorz$1516     065B GR  |   2 A$bloxorz$1517     065F GR
-  2 A$bloxorz$1523     0661 GR  |   2 A$bloxorz$1524     0664 GR
-  2 A$bloxorz$1525     0666 GR  |   2 A$bloxorz$1530     0668 GR
-  2 A$bloxorz$1531     066A GR  |   2 A$bloxorz$1537     066D GR
-  2 A$bloxorz$1538     0670 GR  |   2 A$bloxorz$1539     0672 GR
-  2 A$bloxorz$1540     0674 GR  |   2 A$bloxorz$1541     0676 GR
-  2 A$bloxorz$1542     0678 GR  |   2 A$bloxorz$1543     067C GR
-  2 A$bloxorz$1549     067F GR  |   2 A$bloxorz$1550     0681 GR
-  2 A$bloxorz$1551     0683 GR  |   2 A$bloxorz$1552     0685 GR
-  2 A$bloxorz$1553     0687 GR  |   2 A$bloxorz$1554     0689 GR
-  2 A$bloxorz$1555     068B GR  |   2 A$bloxorz$156      006E GR
-  2 A$bloxorz$1561     068D GR  |   2 A$bloxorz$1562     0690 GR
-  2 A$bloxorz$1563     0692 GR  |   2 A$bloxorz$1564     0695 GR
-  2 A$bloxorz$1565     0698 GR  |   2 A$bloxorz$157      0070 GR
-  2 A$bloxorz$1571     069A GR  |   2 A$bloxorz$1577     069D GR
-  2 A$bloxorz$1578     069F GR  |   2 A$bloxorz$1579     06A1 GR
-  2 A$bloxorz$158      0073 GR  |   2 A$bloxorz$1584     06A3 GR
-  2 A$bloxorz$1585     06A6 GR  |   2 A$bloxorz$1586     06A8 GR
-  2 A$bloxorz$1587     06AB GR  |   2 A$bloxorz$1588     06AE GR
-  2 A$bloxorz$159      0075 GR  |   2 A$bloxorz$1594     06B0 GR
-  2 A$bloxorz$1595     06B2 GR  |   2 A$bloxorz$1596     06B4 GR
-  2 A$bloxorz$1601     06B6 GR  |   2 A$bloxorz$1602     06B9 GR
-  2 A$bloxorz$1603     06BA GR  |   2 A$bloxorz$1604     06BC GR
-  2 A$bloxorz$1605     06BF GR  |   2 A$bloxorz$1606     06C2 GR
-  2 A$bloxorz$1612     06C4 GR  |   2 A$bloxorz$1618     06C6 GR
-  2 A$bloxorz$1619     06C8 GR  |   2 A$bloxorz$1620     06CA GR
-  2 A$bloxorz$1625     06CC GR  |   2 A$bloxorz$1626     06CF GR
-  2 A$bloxorz$1627     06D1 GR  |   2 A$bloxorz$1628     06D4 GR
-  2 A$bloxorz$1629     06D7 GR  |   2 A$bloxorz$1635     06D9 GR
-  2 A$bloxorz$1636     06DB GR  |   2 A$bloxorz$1637     06DD GR
-  2 A$bloxorz$1642     06DF GR  |   2 A$bloxorz$1643     06E2 GR
-  2 A$bloxorz$1644     06E3 GR  |   2 A$bloxorz$1645     06E5 GR
-  2 A$bloxorz$1646     06E8 GR  |   2 A$bloxorz$1647     06EA GR
-  2 A$bloxorz$1648     06EC GR  |   2 A$bloxorz$1649     06EF GR
-  2 A$bloxorz$165      0079 GR  |   2 A$bloxorz$166      007B GR
-  2 A$bloxorz$1660     06F1 GR  |   2 A$bloxorz$1661     06F4 GR
-  2 A$bloxorz$1666     06F6 GR  |   2 A$bloxorz$1668     06F9 GR
-  2 A$bloxorz$1669     06FB GR  |   2 A$bloxorz$167      007D GR
-  2 A$bloxorz$1672     06FC GR  |   2 A$bloxorz$1673     06FE GR
-  2 A$bloxorz$1678     0700 GR  |   2 A$bloxorz$1679     0701 GR
-  2 A$bloxorz$168      0080 GR  |   2 A$bloxorz$1684     0704 GR
-  2 A$bloxorz$1685     0706 GR  |   2 A$bloxorz$1690     070A GR
-  2 A$bloxorz$1695     070D GR  |   2 A$bloxorz$1696     070F GR
-  2 A$bloxorz$1697     0711 GR  |   2 A$bloxorz$1702     0714 GR
-  2 A$bloxorz$1703     0716 GR  |   2 A$bloxorz$1704     0718 GR
-  2 A$bloxorz$1709     071B GR  |   2 A$bloxorz$1710     071D GR
-  2 A$bloxorz$1711     071F GR  |   2 A$bloxorz$1712     0722 GR
-  2 A$bloxorz$1713     0724 GR  |   2 A$bloxorz$1714     0726 GR
-  2 A$bloxorz$1719     0728 GR  |   2 A$bloxorz$1720     072A GR
-  2 A$bloxorz$1726     072D GR  |   2 A$bloxorz$1727     0730 GR
-  2 A$bloxorz$1728     0733 GR  |   2 A$bloxorz$1729     0736 GR
-  2 A$bloxorz$1730     0739 GR  |   2 A$bloxorz$1731     073C GR
-  2 A$bloxorz$1732     073F GR  |   2 A$bloxorz$1733     0742 GR
-  2 A$bloxorz$1734     0745 GR  |   2 A$bloxorz$1735     0748 GR
-  2 A$bloxorz$1740     074B GR  |   2 A$bloxorz$1741     074D GR
-  2 A$bloxorz$1746     0750 GR  |   2 A$bloxorz$1747     0752 GR
-  2 A$bloxorz$1752     0755 GR  |   2 A$bloxorz$1757     0758 GR
-  2 A$bloxorz$176      0082 GR  |   2 A$bloxorz$1762     075B GR
-  2 A$bloxorz$1767     075E GR  |   2 A$bloxorz$177      0084 GR
-  2 A$bloxorz$1777     0761 GR  |   2 A$bloxorz$178      0086 GR
-  2 A$bloxorz$1781     0764 GR  |   2 A$bloxorz$1782     0767 GR
-  2 A$bloxorz$1783     0769 GR  |   2 A$bloxorz$1784     076D GR
-  2 A$bloxorz$1785     076E GR  |   2 A$bloxorz$1786     0770 GR
-  2 A$bloxorz$1787     0771 GR  |   2 A$bloxorz$1788     0772 GR
-  2 A$bloxorz$1789     0774 GR  |   2 A$bloxorz$179      0088 GR
-  2 A$bloxorz$180      008A GR  |   2 A$bloxorz$1803     0786 GR
-  2 A$bloxorz$1808     0789 GR  |   2 A$bloxorz$181      008C GR
-  2 A$bloxorz$1814     078C GR  |   2 A$bloxorz$1819     078F GR
-  2 A$bloxorz$182      008E GR  |   2 A$bloxorz$1825     0792 GR
-  2 A$bloxorz$183      0090 GR  |   2 A$bloxorz$1830     0795 GR
-  2 A$bloxorz$1835     0798 GR  |   2 A$bloxorz$184      0091 GR
-  2 A$bloxorz$1841     079B GR  |   2 A$bloxorz$1846     079E GR
-  2 A$bloxorz$185      0092 GR  |   2 A$bloxorz$1851     07A1 GR
-  2 A$bloxorz$1857     07A4 GR  |   2 A$bloxorz$186      0094 GR
-  2 A$bloxorz$1862     07A7 GR  |   2 A$bloxorz$1867     07AA GR
-  2 A$bloxorz$187      0096 GR  |   2 A$bloxorz$1873     07AC GR
-  2 A$bloxorz$1878     07AF GR  |   2 A$bloxorz$188      0098 GR
-  2 A$bloxorz$1883     07B2 GR  |   2 A$bloxorz$1889     07B4 GR
-  2 A$bloxorz$189      009A GR  |   2 A$bloxorz$1894     07B7 GR
-  2 A$bloxorz$190      009C GR  |   2 A$bloxorz$1904     07BA GR
-  2 A$bloxorz$1905     07BD GR  |   2 A$bloxorz$1906     07BF GR
-  2 A$bloxorz$1911     07C3 GR  |   2 A$bloxorz$1915     07C6 GR
-  2 A$bloxorz$1916     07C9 GR  |   2 A$bloxorz$1919     07CB GR
-  2 A$bloxorz$1920     07CD GR  |   2 A$bloxorz$1924     07D0 GR
-  2 A$bloxorz$1928     07D3 GR  |   2 A$bloxorz$1930     07D6 GR
-  2 A$bloxorz$196      009E GR  |   2 A$bloxorz$201      00A0 GR
-  2 A$bloxorz$202      00A2 GR  |   2 A$bloxorz$203      00A4 GR
-  2 A$bloxorz$204      00A6 GR  |   2 A$bloxorz$205      00A8 GR
-  2 A$bloxorz$206      00AA GR  |   2 A$bloxorz$207      00AD GR
-  2 A$bloxorz$208      00AF GR  |   2 A$bloxorz$209      00B1 GR
-  2 A$bloxorz$211      00B3 GR  |   2 A$bloxorz$217      00B5 GR
-  2 A$bloxorz$218      00B7 GR  |   2 A$bloxorz$219      00B9 GR
-  2 A$bloxorz$220      00BB GR  |   2 A$bloxorz$221      00BD GR
-  2 A$bloxorz$222      00BF GR  |   2 A$bloxorz$223      00C1 GR
-  2 A$bloxorz$224      00C3 GR  |   2 A$bloxorz$225      00C5 GR
-  2 A$bloxorz$226      00C7 GR  |   2 A$bloxorz$227      00C9 GR
-  2 A$bloxorz$228      00CB GR  |   2 A$bloxorz$229      00CE GR
-  2 A$bloxorz$230      00D0 GR  |   2 A$bloxorz$231      00D2 GR
-  2 A$bloxorz$232      00D6 GR  |   2 A$bloxorz$233      00D8 GR
-  2 A$bloxorz$240      00DA GR  |   2 A$bloxorz$241      00DD GR
-  2 A$bloxorz$242      00DF GR  |   2 A$bloxorz$243      00E2 GR
-  2 A$bloxorz$248      00E5 GR  |   2 A$bloxorz$249      00E8 GR
-  2 A$bloxorz$250      00EB GR  |   2 A$bloxorz$251      00EE GR
-  2 A$bloxorz$252      00F0 GR  |   2 A$bloxorz$253      00F1 GR
-  2 A$bloxorz$254      00F3 GR  |   2 A$bloxorz$255      00F6 GR
-  2 A$bloxorz$256      00F8 GR  |   2 A$bloxorz$263      00F9 GR
-  2 A$bloxorz$264      00FB GR  |   2 A$bloxorz$269      00FE GR
-  2 A$bloxorz$270      0101 GR  |   2 A$bloxorz$273      0102 GR
-  2 A$bloxorz$278      0104 GR  |   2 A$bloxorz$279      0106 GR
-  2 A$bloxorz$282      0108 GR  |   2 A$bloxorz$283      010A GR
-  2 A$bloxorz$285      010D GR  |   2 A$bloxorz$287      010F GR
-  2 A$bloxorz$289      0111 GR  |   2 A$bloxorz$291      0113 GR
-  2 A$bloxorz$293      0116 GR  |   2 A$bloxorz$297      0119 GR
-  2 A$bloxorz$299      011B GR  |   2 A$bloxorz$301      011D GR
-  2 A$bloxorz$303      0120 GR  |   2 A$bloxorz$305      0122 GR
-  2 A$bloxorz$307      0126 GR  |   2 A$bloxorz$309      012A GR
-  2 A$bloxorz$311      012C GR  |   2 A$bloxorz$313      012F GR
-  2 A$bloxorz$315      0131 GR  |   2 A$bloxorz$317      0135 GR
-  2 A$bloxorz$319      0139 GR  |   2 A$bloxorz$321      013D GR
-  2 A$bloxorz$323      0141 GR  |   2 A$bloxorz$325      0143 GR
-  2 A$bloxorz$327      0146 GR  |   2 A$bloxorz$329      0148 GR
-  2 A$bloxorz$331      014A GR  |   2 A$bloxorz$333      014C GR
-  2 A$bloxorz$335      014D GR  |   2 A$bloxorz$337      014F GR
-  2 A$bloxorz$339      0151 GR  |   2 A$bloxorz$340      0153 GR
-  2 A$bloxorz$343      0154 GR  |   2 A$bloxorz$344      0156 GR
-  2 A$bloxorz$349      0158 GR  |   2 A$bloxorz$35       0000 GR
-  2 A$bloxorz$350      015A GR  |   2 A$bloxorz$355      015E GR
-  2 A$bloxorz$356      0160 GR  |   2 A$bloxorz$357      0162 GR
-  2 A$bloxorz$358      0164 GR  |   2 A$bloxorz$359      0167 GR
-  2 A$bloxorz$36       0002 GR  |   2 A$bloxorz$360      0169 GR
-  2 A$bloxorz$37       0004 GR  |   2 A$bloxorz$370      0185 GR
-  2 A$bloxorz$371      0187 GR  |   2 A$bloxorz$376      0189 GR
-  2 A$bloxorz$380      018C GR  |   2 A$bloxorz$381      018E GR
-  2 A$bloxorz$384      0190 GR  |   2 A$bloxorz$385      0192 GR
-  2 A$bloxorz$389      0195 GR  |   2 A$bloxorz$390      0197 GR
-  2 A$bloxorz$395      019A GR  |   2 A$bloxorz$396      019C GR
-  2 A$bloxorz$397      019E GR  |   2 A$bloxorz$398      01A0 GR
-  2 A$bloxorz$399      01A2 GR  |   2 A$bloxorz$400      01A5 GR
-  2 A$bloxorz$403      01A7 GR  |   2 A$bloxorz$404      01A9 GR
-  2 A$bloxorz$405      01AB GR  |   2 A$bloxorz$406      01AD GR
-  2 A$bloxorz$410      01B0 GR  |   2 A$bloxorz$411      01B2 GR
-  2 A$bloxorz$412      01B4 GR  |   2 A$bloxorz$413      01B6 GR
-  2 A$bloxorz$414      01B8 GR  |   2 A$bloxorz$415      01BB GR
-  2 A$bloxorz$418      01BD GR  |   2 A$bloxorz$419      01BF GR
-  2 A$bloxorz$420      01C1 GR  |   2 A$bloxorz$421      01C3 GR
-  2 A$bloxorz$425      01C6 GR  |   2 A$bloxorz$426      01C8 GR
-  2 A$bloxorz$427      01CA GR  |   2 A$bloxorz$428      01CC GR
-  2 A$bloxorz$429      01CE GR  |   2 A$bloxorz$430      01D1 GR
-  2 A$bloxorz$433      01D3 GR  |   2 A$bloxorz$434      01D5 GR
-  2 A$bloxorz$435      01D7 GR  |   2 A$bloxorz$436      01D9 GR
-  2 A$bloxorz$440      01DC GR  |   2 A$bloxorz$441      01DF GR
-  2 A$bloxorz$442      01E1 GR  |   2 A$bloxorz$447      01E3 GR
-  2 A$bloxorz$453      01E5 GR  |   2 A$bloxorz$454      01E7 GR
-  2 A$bloxorz$455      01E9 GR  |   2 A$bloxorz$456      01EB GR
-  2 A$bloxorz$457      01EE GR  |   2 A$bloxorz$458      01F0 GR
-  2 A$bloxorz$459      01F2 GR  |   2 A$bloxorz$460      01F4 GR
-  2 A$bloxorz$461      01F6 GR  |   2 A$bloxorz$466      01F8 GR
-  2 A$bloxorz$47       0006 GR  |   2 A$bloxorz$472      01FB GR
-  2 A$bloxorz$473      01FE GR  |   2 A$bloxorz$474      0200 GR
-  2 A$bloxorz$479      0202 GR  |   2 A$bloxorz$481      0205 GR
-  2 A$bloxorz$482      0207 GR  |   2 A$bloxorz$485      0209 GR
-  2 A$bloxorz$486      020B GR  |   2 A$bloxorz$491      020D GR
-  2 A$bloxorz$495      0210 GR  |   2 A$bloxorz$496      0212 GR
-  2 A$bloxorz$499      0214 GR  |   2 A$bloxorz$500      0216 GR
-  2 A$bloxorz$504      0219 GR  |   2 A$bloxorz$508      021C GR
-  2 A$bloxorz$509      021E GR  |   2 A$bloxorz$51       0009 GR
-  2 A$bloxorz$510      0220 GR  |   2 A$bloxorz$511      0222 GR
-  2 A$bloxorz$512      0224 GR  |   2 A$bloxorz$513      0226 GR
-  2 A$bloxorz$516      0228 GR  |   2 A$bloxorz$517      022A GR
-  2 A$bloxorz$518      022C GR  |   2 A$bloxorz$52       000B GR
-  2 A$bloxorz$522      022F GR  |   2 A$bloxorz$523      0231 GR
-  2 A$bloxorz$524      0233 GR  |   2 A$bloxorz$525      0237 GR
-  2 A$bloxorz$528      023A GR  |   2 A$bloxorz$529      023C GR
-  2 A$bloxorz$533      023F GR  |   2 A$bloxorz$537      0242 GR
-  2 A$bloxorz$538      0244 GR  |   2 A$bloxorz$539      0246 GR
-  2 A$bloxorz$540      0248 GR  |   2 A$bloxorz$541      024A GR
-  2 A$bloxorz$542      024C GR  |   2 A$bloxorz$545      024E GR
-  2 A$bloxorz$546      0250 GR  |   2 A$bloxorz$547      0252 GR
-  2 A$bloxorz$55       000D GR  |   2 A$bloxorz$551      0255 GR
-  2 A$bloxorz$552      0257 GR  |   2 A$bloxorz$553      0259 GR
-  2 A$bloxorz$556      025C GR  |   2 A$bloxorz$557      025E GR
-  2 A$bloxorz$56       000F GR  |   2 A$bloxorz$561      0261 GR
-  2 A$bloxorz$565      0264 GR  |   2 A$bloxorz$566      0266 GR
-  2 A$bloxorz$567      0268 GR  |   2 A$bloxorz$568      026A GR
-  2 A$bloxorz$569      026C GR  |   2 A$bloxorz$570      026E GR
-  2 A$bloxorz$573      0270 GR  |   2 A$bloxorz$574      0272 GR
-  2 A$bloxorz$575      0274 GR  |   2 A$bloxorz$579      0277 GR
-  2 A$bloxorz$580      0279 GR  |   2 A$bloxorz$581      027B GR
-  2 A$bloxorz$584      027E GR  |   2 A$bloxorz$585      0280 GR
-  2 A$bloxorz$589      0283 GR  |   2 A$bloxorz$593      0286 GR
-  2 A$bloxorz$594      0288 GR  |   2 A$bloxorz$595      028A GR
-  2 A$bloxorz$596      028C GR  |   2 A$bloxorz$597      028E GR
-  2 A$bloxorz$60       0012 GR  |   2 A$bloxorz$600      0290 GR
-  2 A$bloxorz$601      0292 GR  |   2 A$bloxorz$602      0294 GR
-  2 A$bloxorz$606      0297 GR  |   2 A$bloxorz$607      0299 GR
-  2 A$bloxorz$608      029B GR  |   2 A$bloxorz$61       0014 GR
-  2 A$bloxorz$611      029E GR  |   2 A$bloxorz$612      02A0 GR
-  2 A$bloxorz$616      02A3 GR  |   2 A$bloxorz$620      02A6 GR
-  2 A$bloxorz$621      02A8 GR  |   2 A$bloxorz$622      02AA GR
-  2 A$bloxorz$623      02AC GR  |   2 A$bloxorz$624      02AE GR
-  2 A$bloxorz$625      02B0 GR  |   2 A$bloxorz$628      02B2 GR
-  2 A$bloxorz$629      02B4 GR  |   2 A$bloxorz$630      02B6 GR
-  2 A$bloxorz$634      02B9 GR  |   2 A$bloxorz$635      02BB GR
-  2 A$bloxorz$636      02BD GR  |   2 A$bloxorz$639      02C0 GR
-  2 A$bloxorz$640      02C2 GR  |   2 A$bloxorz$644      02C5 GR
-  2 A$bloxorz$648      02C8 GR  |   2 A$bloxorz$649      02CA GR
-  2 A$bloxorz$650      02CC GR  |   2 A$bloxorz$651      02CE GR
-  2 A$bloxorz$652      02D0 GR  |   2 A$bloxorz$653      02D2 GR
-  2 A$bloxorz$656      02D4 GR  |   2 A$bloxorz$657      02D6 GR
-  2 A$bloxorz$658      02D8 GR  |   2 A$bloxorz$66       0017 GR
-  2 A$bloxorz$662      02DB GR  |   2 A$bloxorz$663      02DD GR
-  2 A$bloxorz$664      02DF GR  |   2 A$bloxorz$667      02E2 GR
-  2 A$bloxorz$668      02E4 GR  |   2 A$bloxorz$67       0019 GR
-  2 A$bloxorz$670      02E7 GR  |   2 A$bloxorz$671      02E9 GR
-  2 A$bloxorz$674      02EB GR  |   2 A$bloxorz$675      02ED GR
-  2 A$bloxorz$68       001B GR  |   2 A$bloxorz$680      02EF GR
-  2 A$bloxorz$681      02F1 GR  |   2 A$bloxorz$684      02F3 GR
-  2 A$bloxorz$685      02F5 GR  |   2 A$bloxorz$689      02F8 GR
-  2 A$bloxorz$69       001D GR  |   2 A$bloxorz$690      02FA GR
-  2 A$bloxorz$695      02FD GR  |   2 A$bloxorz$696      02FF GR
-  2 A$bloxorz$697      0301 GR  |   2 A$bloxorz$698      0303 GR
-  2 A$bloxorz$699      0306 GR  |   2 A$bloxorz$70       001F GR
-  2 A$bloxorz$702      0308 GR  |   2 A$bloxorz$703      030A GR
-  2 A$bloxorz$704      030C GR  |   2 A$bloxorz$705      030E GR
-  2 A$bloxorz$707      0311 GR  |   2 A$bloxorz$708      0313 GR
-  2 A$bloxorz$715      0315 GR  |   2 A$bloxorz$720      0318 GR
-  2 A$bloxorz$721      031B GR  |   2 A$bloxorz$726      031E GR
-  2 A$bloxorz$727      0321 GR  |   2 A$bloxorz$728      0322 GR
-  2 A$bloxorz$73       0022 GR  |   2 A$bloxorz$733      0325 GR
-  2 A$bloxorz$734      0326 GR  |   2 A$bloxorz$739      0328 GR
-  2 A$bloxorz$74       0024 GR  |   2 A$bloxorz$740      032A GR
-  2 A$bloxorz$742      032D GR  |   2 A$bloxorz$745      032E GR
-  2 A$bloxorz$75       0026 GR  |   2 A$bloxorz$750      0330 GR
-  2 A$bloxorz$751      0333 GR  |   2 A$bloxorz$752      0334 GR
-  2 A$bloxorz$753      0337 GR  |   2 A$bloxorz$754      0338 GR
-  2 A$bloxorz$759      033B GR  |   2 A$bloxorz$76       0028 GR
-  2 A$bloxorz$760      033E GR  |   2 A$bloxorz$761      033F GR
-  2 A$bloxorz$762      0340 GR  |   2 A$bloxorz$763      0343 GR
-  2 A$bloxorz$764      0345 GR  |   2 A$bloxorz$765      0346 GR
-  2 A$bloxorz$766      0349 GR  |   2 A$bloxorz$767      034C GR
-  2 A$bloxorz$772      034F GR  |   2 A$bloxorz$773      0353 GR
-  2 A$bloxorz$774      0355 GR  |   2 A$bloxorz$775      0358 GR
-  2 A$bloxorz$78       002B GR  |   2 A$bloxorz$781      035B GR
-  2 A$bloxorz$782      035E GR  |   2 A$bloxorz$783      035F GR
-  2 A$bloxorz$784      0361 GR  |   2 A$bloxorz$785      0362 GR
-  2 A$bloxorz$786      0363 GR  |   2 A$bloxorz$787      0365 GR
-  2 A$bloxorz$788      0369 GR  |   2 A$bloxorz$793      036C GR
-  2 A$bloxorz$798      036F GR  |   2 A$bloxorz$803      0372 GR
-  2 A$bloxorz$804      0375 GR  |   2 A$bloxorz$805      0377 GR
-  2 A$bloxorz$810      037A GR  |   2 A$bloxorz$811      037C GR
-  2 A$bloxorz$816      037F GR  |   2 A$bloxorz$821      0382 GR
-  2 A$bloxorz$822      0384 GR  |   2 A$bloxorz$827      0387 GR
-  2 A$bloxorz$828      0389 GR  |   2 A$bloxorz$833      038C GR
-  2 A$bloxorz$834      038F GR  |   2 A$bloxorz$839      0392 GR
-  2 A$bloxorz$840      0394 GR  |   2 A$bloxorz$845      0398 GR
-  2 A$bloxorz$846      039B GR  |   2 A$bloxorz$85       002E GR
-  2 A$bloxorz$851      039E GR  |   2 A$bloxorz$852      03A1 GR
-  2 A$bloxorz$853      03A3 GR  |   2 A$bloxorz$86       002F GR
-  2 A$bloxorz$866      03D0 GR  |   2 A$bloxorz$867      03D2 GR
-  2 A$bloxorz$872      03D4 GR  |   2 A$bloxorz$876      03D7 GR
-  2 A$bloxorz$877      03D9 GR  |   2 A$bloxorz$880      03DB GR
-  2 A$bloxorz$881      03DD GR  |   2 A$bloxorz$885      03E0 GR
-  2 A$bloxorz$886      03E2 GR  |   2 A$bloxorz$891      03E5 GR
-  2 A$bloxorz$892      03E7 GR  |   2 A$bloxorz$893      03E9 GR
-  2 A$bloxorz$894      03EB GR  |   2 A$bloxorz$895      03ED GR
-  2 A$bloxorz$896      03F0 GR  |   2 A$bloxorz$899      03F2 GR
-  2 A$bloxorz$900      03F4 GR  |   2 A$bloxorz$901      03F6 GR
-  2 A$bloxorz$902      03F8 GR  |   2 A$bloxorz$906      03FB GR
-  2 A$bloxorz$907      03FD GR  |   2 A$bloxorz$908      03FF GR
-  2 A$bloxorz$909      0401 GR  |   2 A$bloxorz$910      0403 GR
-  2 A$bloxorz$911      0406 GR  |   2 A$bloxorz$914      0408 GR
-  2 A$bloxorz$915      040A GR  |   2 A$bloxorz$916      040C GR
-  2 A$bloxorz$917      040E GR  |   2 A$bloxorz$921      0411 GR
-  2 A$bloxorz$922      0413 GR  |   2 A$bloxorz$923      0415 GR
-  2 A$bloxorz$924      0417 GR  |   2 A$bloxorz$925      0419 GR
-  2 A$bloxorz$926      041C GR  |   2 A$bloxorz$929      041E GR
-  2 A$bloxorz$93       0030 GR  |   2 A$bloxorz$930      0420 GR
-  2 A$bloxorz$931      0422 GR  |   2 A$bloxorz$932      0424 GR
-  2 A$bloxorz$936      0427 GR  |   2 A$bloxorz$937      042A GR
-  2 A$bloxorz$938      042C GR  |   2 A$bloxorz$94       0033 GR
-  2 A$bloxorz$943      042E GR  |   2 A$bloxorz$949      0431 GR
-  2 A$bloxorz$950      0434 GR  |   2 A$bloxorz$951      0436 GR
-  2 A$bloxorz$956      0438 GR  |   2 A$bloxorz$957      043A GR
-  2 A$bloxorz$959      043D GR  |   2 A$bloxorz$960      043F GR
-  2 A$bloxorz$963      0441 GR  |   2 A$bloxorz$968      0443 GR
-  2 A$bloxorz$973      0446 GR  |   2 A$bloxorz$974      0449 GR
-  2 A$bloxorz$979      044C GR  |   2 A$bloxorz$980      044F GR
-  2 A$bloxorz$981      0450 GR  |   2 A$bloxorz$986      0453 GR
-  2 A$bloxorz$987      0455 GR  |   2 A$bloxorz$99       0035 GR
-  2 A$bloxorz$992      0459 GR  |   2 A$bloxorz$993      045C GR
-  2 A$bloxorz$994      045F GR  |   2 A$bloxorz$999      0461 GR
-  2 L10                0058 R   |   2 L101               072D R
-  2 L102               07BA R   |   2 L103               0786 R
-  2 L104               078C R   |   2 L105               0792 R
-  2 L106               079B R   |   2 L107               07A4 R
-  2 L108               07AC R   |   2 L109               07B4 R
-  2 L11                005A R   |   2 L110               0778 R
-  2 L113               0761 R   |   2 L14                0079 R
-  2 L15                00B3 R   |   2 L16                00B5 R
-  2 L17                009E R   |   2 L18                0082 R
-  2 L2                 0006 R   |   2 L30                01FB R
-  2 L31                01E5 R   |   2 L33                0205 R
-  2 L41                032D R   |   2 L43                035B R
-  2 L46                0431 R   |   2 L48                043D R
-  2 L51                0486 R   |   2 L52                0495 R
-  2 L53                0498 R   |   2 L55                04B7 R
-  2 L57                04C1 R   |   2 L59                04D4 R
-  2 L62                04F5 R   |   2 L63                052C R
-  2 L64                0508 R   |   2 L65                051B R
-  2 L66                053F R   |   2 L67                0561 R
-  2 L68                0558 R   |   2 L70                0570 R
-  2 L75                0631 R   |   2 L76                060A R
-  2 L77                0619 R   |   2 L79                0614 R
-  2 L8                 0047 R   |   2 L80                0617 R
-  2 L81                0621 R   |   2 L82                0624 R
-  2 L83                062E R   |   2 L84                0631 R
-  2 L85                0661 R   |   2 L86                066D R
-  2 L87                06F1 R   |   2 L88                067F R
-  2 L89                069D R   |   2 L91                068D R
-  2 L92                069A R   |   2 L93                06B0 R
-  2 L94                06C4 R   |   2 L95                06D9 R
-  2 L96                06F1 R   |   2 L97                06F9 R
-  2 L98                0626 R   |   2 L99                06C6 R
-  2 LC0                016A R   |   2 LC1                0178 R
-  2 LC2                017F R   |   2 LC3                03A4 R
-  2 LC4                03AF R   |   2 LC5                03BD R
+  2 A$bloxorz$100      003F GR  |   2 A$bloxorz$1002     0392 GR
+  2 A$bloxorz$1003     0395 GR  |   2 A$bloxorz$1004     0397 GR
+  2 A$bloxorz$1005     039A GR  |   2 A$bloxorz$1006     039D GR
+  2 A$bloxorz$1013     039F GR  |   2 A$bloxorz$1014     03A1 GR
+  2 A$bloxorz$1015     03A3 GR  |   2 A$bloxorz$1021     03A5 GR
+  2 A$bloxorz$1022     03A8 GR  |   2 A$bloxorz$1023     03A9 GR
+  2 A$bloxorz$1024     03AB GR  |   2 A$bloxorz$1025     03AE GR
+  2 A$bloxorz$1026     03B1 GR  |   2 A$bloxorz$1033     03B3 GR
+  2 A$bloxorz$1040     03B5 GR  |   2 A$bloxorz$1041     03B7 GR
+  2 A$bloxorz$1042     03B9 GR  |   2 A$bloxorz$1048     03BB GR
+  2 A$bloxorz$1049     03BE GR  |   2 A$bloxorz$1050     03C0 GR
+  2 A$bloxorz$1051     03C3 GR  |   2 A$bloxorz$1052     03C6 GR
+  2 A$bloxorz$1059     03C8 GR  |   2 A$bloxorz$106      0041 GR
+  2 A$bloxorz$1060     03CA GR  |   2 A$bloxorz$1061     03CC GR
+  2 A$bloxorz$1067     03CE GR  |   2 A$bloxorz$1068     03D1 GR
+  2 A$bloxorz$1069     03D2 GR  |   2 A$bloxorz$107      0043 GR
+  2 A$bloxorz$1070     03D4 GR  |   2 A$bloxorz$1071     03D7 GR
+  2 A$bloxorz$1072     03D9 GR  |   2 A$bloxorz$1073     03DB GR
+  2 A$bloxorz$1074     03DE GR  |   2 A$bloxorz$108      0046 GR
+  2 A$bloxorz$1087     03E0 GR  |   2 A$bloxorz$1088     03E3 GR
+  2 A$bloxorz$109      0048 GR  |   2 A$bloxorz$1094     03E5 GR
+  2 A$bloxorz$1096     03E8 GR  |   2 A$bloxorz$1097     03EA GR
+  2 A$bloxorz$1100     03EB GR  |   2 A$bloxorz$1101     03ED GR
+  2 A$bloxorz$1110     03EF GR  |   2 A$bloxorz$1111     03F1 GR
+  2 A$bloxorz$1117     03F4 GR  |   2 A$bloxorz$1118     03F6 GR
+  2 A$bloxorz$1124     03F9 GR  |   2 A$bloxorz$1125     03FB GR
+  2 A$bloxorz$1131     03FE GR  |   2 A$bloxorz$1132     0401 GR
+  2 A$bloxorz$1138     0403 GR  |   2 A$bloxorz$1144     0406 GR
+  2 A$bloxorz$1145     0408 GR  |   2 A$bloxorz$1146     040A GR
+  2 A$bloxorz$1154     040B GR  |   2 A$bloxorz$1155     040E GR
+  2 A$bloxorz$116      004C GR  |   2 A$bloxorz$1161     0410 GR
+  2 A$bloxorz$1162     0412 GR  |   2 A$bloxorz$1163     0414 GR
+  2 A$bloxorz$1164     0417 GR  |   2 A$bloxorz$1165     0419 GR
+  2 A$bloxorz$117      004E GR  |   2 A$bloxorz$1172     041B GR
+  2 A$bloxorz$1174     041D GR  |   2 A$bloxorz$1177     041E GR
+  2 A$bloxorz$118      0050 GR  |   2 A$bloxorz$1183     0420 GR
+  2 A$bloxorz$1184     0423 GR  |   2 A$bloxorz$1185     0424 GR
+  2 A$bloxorz$1186     0427 GR  |   2 A$bloxorz$1187     0428 GR
+  2 A$bloxorz$119      0053 GR  |   2 A$bloxorz$1193     042B GR
+  2 A$bloxorz$1194     042E GR  |   2 A$bloxorz$1195     042F GR
+  2 A$bloxorz$1196     0430 GR  |   2 A$bloxorz$1197     0433 GR
+  2 A$bloxorz$1198     0435 GR  |   2 A$bloxorz$1199     0436 GR
+  2 A$bloxorz$1200     0439 GR  |   2 A$bloxorz$1201     043C GR
+  2 A$bloxorz$1207     043F GR  |   2 A$bloxorz$1208     0443 GR
+  2 A$bloxorz$1209     0445 GR  |   2 A$bloxorz$1210     0448 GR
+  2 A$bloxorz$1217     044B GR  |   2 A$bloxorz$1218     044E GR
+  2 A$bloxorz$1219     044F GR  |   2 A$bloxorz$1220     0451 GR
+  2 A$bloxorz$1221     0452 GR  |   2 A$bloxorz$1222     0453 GR
+  2 A$bloxorz$1223     0455 GR  |   2 A$bloxorz$1224     0459 GR
+  2 A$bloxorz$1230     045C GR  |   2 A$bloxorz$1236     045F GR
+  2 A$bloxorz$1242     0462 GR  |   2 A$bloxorz$1243     0465 GR
+  2 A$bloxorz$1244     0467 GR  |   2 A$bloxorz$1250     046A GR
+  2 A$bloxorz$1251     046C GR  |   2 A$bloxorz$1257     046F GR
+  2 A$bloxorz$1263     0472 GR  |   2 A$bloxorz$1264     0474 GR
+  2 A$bloxorz$1270     0477 GR  |   2 A$bloxorz$1271     0479 GR
+  2 A$bloxorz$1277     047C GR  |   2 A$bloxorz$1278     047F GR
+  2 A$bloxorz$1284     0482 GR  |   2 A$bloxorz$1285     0484 GR
+  2 A$bloxorz$129      0055 GR  |   2 A$bloxorz$1291     0488 GR
+  2 A$bloxorz$1292     048B GR  |   2 A$bloxorz$1298     048E GR
+  2 A$bloxorz$1299     0491 GR  |   2 A$bloxorz$130      0057 GR
+  2 A$bloxorz$1300     0493 GR  |   2 A$bloxorz$131      0059 GR
+  2 A$bloxorz$1313     04C0 GR  |   2 A$bloxorz$1314     04C2 GR
+  2 A$bloxorz$132      005B GR  |   2 A$bloxorz$1320     04C4 GR
+  2 A$bloxorz$1326     04C7 GR  |   2 A$bloxorz$1327     04C9 GR
+  2 A$bloxorz$133      005D GR  |   2 A$bloxorz$1330     04CB GR
+  2 A$bloxorz$1331     04CD GR  |   2 A$bloxorz$1337     04D0 GR
+  2 A$bloxorz$1338     04D2 GR  |   2 A$bloxorz$134      005F GR
+  2 A$bloxorz$1344     04D5 GR  |   2 A$bloxorz$1345     04D7 GR
+  2 A$bloxorz$1346     04D9 GR  |   2 A$bloxorz$1347     04DB GR
+  2 A$bloxorz$1348     04DD GR  |   2 A$bloxorz$1349     04E0 GR
+  2 A$bloxorz$135      0061 GR  |   2 A$bloxorz$1352     04E2 GR
+  2 A$bloxorz$1353     04E4 GR  |   2 A$bloxorz$1354     04E6 GR
+  2 A$bloxorz$1355     04E8 GR  |   2 A$bloxorz$136      0063 GR
+  2 A$bloxorz$1361     04EB GR  |   2 A$bloxorz$1362     04ED GR
+  2 A$bloxorz$1363     04EF GR  |   2 A$bloxorz$1364     04F1 GR
+  2 A$bloxorz$1365     04F3 GR  |   2 A$bloxorz$1366     04F6 GR
+  2 A$bloxorz$1369     04F8 GR  |   2 A$bloxorz$137      0064 GR
+  2 A$bloxorz$1370     04FA GR  |   2 A$bloxorz$1371     04FC GR
+  2 A$bloxorz$1372     04FE GR  |   2 A$bloxorz$1378     0501 GR
+  2 A$bloxorz$1379     0503 GR  |   2 A$bloxorz$138      0065 GR
+  2 A$bloxorz$1380     0505 GR  |   2 A$bloxorz$1381     0507 GR
+  2 A$bloxorz$1382     0509 GR  |   2 A$bloxorz$1383     050C GR
+  2 A$bloxorz$1386     050E GR  |   2 A$bloxorz$1387     0510 GR
+  2 A$bloxorz$1388     0512 GR  |   2 A$bloxorz$1389     0514 GR
+  2 A$bloxorz$139      0067 GR  |   2 A$bloxorz$1395     0517 GR
+  2 A$bloxorz$1396     051A GR  |   2 A$bloxorz$1397     051C GR
+  2 A$bloxorz$140      0069 GR  |   2 A$bloxorz$1403     051E GR
+  2 A$bloxorz$141      006B GR  |   2 A$bloxorz$1410     0521 GR
+  2 A$bloxorz$1411     0524 GR  |   2 A$bloxorz$1412     0526 GR
+  2 A$bloxorz$1418     0528 GR  |   2 A$bloxorz$1419     052A GR
+  2 A$bloxorz$142      006D GR  |   2 A$bloxorz$1421     052D GR
+  2 A$bloxorz$1422     052F GR  |   2 A$bloxorz$1425     0531 GR
+  2 A$bloxorz$143      006F GR  |   2 A$bloxorz$1431     0533 GR
+  2 A$bloxorz$1437     0536 GR  |   2 A$bloxorz$1438     0539 GR
+  2 A$bloxorz$1439     053A GR  |   2 A$bloxorz$1440     053C GR
+  2 A$bloxorz$1446     053F GR  |   2 A$bloxorz$1447     0541 GR
+  2 A$bloxorz$1453     0543 GR  |   2 A$bloxorz$1454     0544 GR
+  2 A$bloxorz$1455     0546 GR  |   2 A$bloxorz$1457     0547 GR
+  2 A$bloxorz$1463     054A GR  |   2 A$bloxorz$1470     054D GR
+  2 A$bloxorz$1471     0550 GR  |   2 A$bloxorz$1472     0552 GR
+  2 A$bloxorz$1478     0554 GR  |   2 A$bloxorz$1480     0557 GR
+  2 A$bloxorz$1481     0559 GR  |   2 A$bloxorz$1489     055A GR
+  2 A$bloxorz$1490     055D GR  |   2 A$bloxorz$1496     055F GR
+  2 A$bloxorz$1497     0561 GR  |   2 A$bloxorz$1498     0563 GR
+  2 A$bloxorz$150      0071 GR  |   2 A$bloxorz$1504     0566 GR
+  2 A$bloxorz$1505     0568 GR  |   2 A$bloxorz$1506     056A GR
+  2 A$bloxorz$1507     056C GR  |   2 A$bloxorz$1508     056F GR
+  2 A$bloxorz$1510     0571 GR  |   2 A$bloxorz$1520     058D GR
+  2 A$bloxorz$1521     058F GR  |   2 A$bloxorz$1527     0591 GR
+  2 A$bloxorz$1533     0594 GR  |   2 A$bloxorz$1534     0596 GR
+  2 A$bloxorz$1537     0598 GR  |   2 A$bloxorz$1538     059A GR
+  2 A$bloxorz$1544     059D GR  |   2 A$bloxorz$1545     059F GR
+  2 A$bloxorz$1551     05A2 GR  |   2 A$bloxorz$1552     05A4 GR
+  2 A$bloxorz$1553     05A6 GR  |   2 A$bloxorz$1554     05A8 GR
+  2 A$bloxorz$1555     05AA GR  |   2 A$bloxorz$1556     05AD GR
+  2 A$bloxorz$1559     05AF GR  |   2 A$bloxorz$156      0073 GR
+  2 A$bloxorz$1560     05B1 GR  |   2 A$bloxorz$1561     05B3 GR
+  2 A$bloxorz$1562     05B5 GR  |   2 A$bloxorz$1568     05B8 GR
+  2 A$bloxorz$1569     05BA GR  |   2 A$bloxorz$157      0075 GR
+  2 A$bloxorz$1570     05BC GR  |   2 A$bloxorz$1571     05BE GR
+  2 A$bloxorz$1572     05C0 GR  |   2 A$bloxorz$1573     05C3 GR
+  2 A$bloxorz$1576     05C5 GR  |   2 A$bloxorz$1577     05C7 GR
+  2 A$bloxorz$1578     05C9 GR  |   2 A$bloxorz$1579     05CB GR
+  2 A$bloxorz$158      0077 GR  |   2 A$bloxorz$1585     05CE GR
+  2 A$bloxorz$1586     05D0 GR  |   2 A$bloxorz$1587     05D2 GR
+  2 A$bloxorz$1588     05D4 GR  |   2 A$bloxorz$1589     05D6 GR
+  2 A$bloxorz$159      0079 GR  |   2 A$bloxorz$1590     05D9 GR
+  2 A$bloxorz$1593     05DB GR  |   2 A$bloxorz$1594     05DD GR
+  2 A$bloxorz$1595     05DF GR  |   2 A$bloxorz$1596     05E1 GR
+  2 A$bloxorz$160      007B GR  |   2 A$bloxorz$1602     05E4 GR
+  2 A$bloxorz$1603     05E7 GR  |   2 A$bloxorz$1604     05E9 GR
+  2 A$bloxorz$161      007D GR  |   2 A$bloxorz$1610     05EB GR
+  2 A$bloxorz$1617     05ED GR  |   2 A$bloxorz$1618     05EF GR
+  2 A$bloxorz$1619     05F1 GR  |   2 A$bloxorz$162      0080 GR
+  2 A$bloxorz$1620     05F3 GR  |   2 A$bloxorz$1621     05F6 GR
+  2 A$bloxorz$1622     05F8 GR  |   2 A$bloxorz$1623     05FA GR
+  2 A$bloxorz$1624     05FC GR  |   2 A$bloxorz$1625     05FE GR
+  2 A$bloxorz$163      0082 GR  |   2 A$bloxorz$1631     0600 GR
+  2 A$bloxorz$1638     0603 GR  |   2 A$bloxorz$1639     0606 GR
+  2 A$bloxorz$164      0084 GR  |   2 A$bloxorz$1640     0608 GR
+  2 A$bloxorz$1646     060A GR  |   2 A$bloxorz$1648     060D GR
+  2 A$bloxorz$1649     060F GR  |   2 A$bloxorz$1652     0611 GR
+  2 A$bloxorz$1658     0613 GR  |   2 A$bloxorz$166      0086 GR
+  2 A$bloxorz$1664     0616 GR  |   2 A$bloxorz$1665     0619 GR
+  2 A$bloxorz$1671     061C GR  |   2 A$bloxorz$1672     061F GR
+  2 A$bloxorz$1673     0620 GR  |   2 A$bloxorz$1679     0623 GR
+  2 A$bloxorz$1680     0625 GR  |   2 A$bloxorz$1686     0629 GR
+  2 A$bloxorz$1687     062C GR  |   2 A$bloxorz$1688     062F GR
+  2 A$bloxorz$1694     0631 GR  |   2 A$bloxorz$1695     0634 GR
+  2 A$bloxorz$1696     0635 GR  |   2 A$bloxorz$1697     0637 GR
+  2 A$bloxorz$1698     0639 GR  |   2 A$bloxorz$1699     063B GR
+  2 A$bloxorz$1700     063D GR  |   2 A$bloxorz$1706     0640 GR
+  2 A$bloxorz$1707     0643 GR  |   2 A$bloxorz$1708     0644 GR
+  2 A$bloxorz$1709     0645 GR  |   2 A$bloxorz$1710     0647 GR
+  2 A$bloxorz$1711     064A GR  |   2 A$bloxorz$1712     064C GR
+  2 A$bloxorz$1713     064D GR  |   2 A$bloxorz$1714     064F GR
+  2 A$bloxorz$1715     0651 GR  |   2 A$bloxorz$1716     0654 GR
+  2 A$bloxorz$1723     0656 GR  |   2 A$bloxorz$1724     0659 GR
+  2 A$bloxorz$1725     065A GR  |   2 A$bloxorz$173      0088 GR
+  2 A$bloxorz$1731     065D GR  |   2 A$bloxorz$1732     0660 GR
+  2 A$bloxorz$1733     0662 GR  |   2 A$bloxorz$174      008A GR
+  2 A$bloxorz$1740     0665 GR  |   2 A$bloxorz$1742     0668 GR
+  2 A$bloxorz$1743     066A GR  |   2 A$bloxorz$1746     066B GR
+  2 A$bloxorz$1747     066D GR  |   2 A$bloxorz$175      008C GR
+  2 A$bloxorz$1753     066F GR  |   2 A$bloxorz$1754     0671 GR
+  2 A$bloxorz$176      008E GR  |   2 A$bloxorz$1760     0675 GR
+  2 A$bloxorz$1761     0677 GR  |   2 A$bloxorz$1762     0679 GR
+  2 A$bloxorz$1763     067B GR  |   2 A$bloxorz$1764     067E GR
+  2 A$bloxorz$1765     0680 GR  |   2 A$bloxorz$177      0090 GR
+  2 A$bloxorz$1773     0681 GR  |   2 A$bloxorz$1779     0684 GR
+  2 A$bloxorz$178      0092 GR  |   2 A$bloxorz$1780     0685 GR
+  2 A$bloxorz$1786     0688 GR  |   2 A$bloxorz$179      0094 GR
+  2 A$bloxorz$1792     068B GR  |   2 A$bloxorz$1793     068E GR
+  2 A$bloxorz$1794     0690 GR  |   2 A$bloxorz$180      0096 GR
+  2 A$bloxorz$1800     0692 GR  |   2 A$bloxorz$1801     0693 GR
+  2 A$bloxorz$1807     0696 GR  |   2 A$bloxorz$1808     0698 GR
+  2 A$bloxorz$1809     069B GR  |   2 A$bloxorz$181      0098 GR
+  2 A$bloxorz$1811     069E GR  |   2 A$bloxorz$1812     06A1 GR
+  2 A$bloxorz$1813     06A3 GR  |   2 A$bloxorz$1819     06A5 GR
+  2 A$bloxorz$182      009A GR  |   2 A$bloxorz$1820     06A7 GR
+  2 A$bloxorz$1826     06AA GR  |   2 A$bloxorz$1827     06AC GR
+  2 A$bloxorz$1828     06AF GR  |   2 A$bloxorz$183      009C GR
+  2 A$bloxorz$1830     06B1 GR  |   2 A$bloxorz$1831     06B4 GR
+  2 A$bloxorz$1832     06B6 GR  |   2 A$bloxorz$1838     06B8 GR
+  2 A$bloxorz$1839     06BA GR  |   2 A$bloxorz$184      009E GR
+  2 A$bloxorz$1845     06BD GR  |   2 A$bloxorz$1846     06BF GR
+  2 A$bloxorz$1847     06C2 GR  |   2 A$bloxorz$1849     06C4 GR
+  2 A$bloxorz$185      00A1 GR  |   2 A$bloxorz$1850     06C7 GR
+  2 A$bloxorz$1851     06C9 GR  |   2 A$bloxorz$1857     06CB GR
+  2 A$bloxorz$1858     06CD GR  |   2 A$bloxorz$186      00A3 GR
+  2 A$bloxorz$1864     06D0 GR  |   2 A$bloxorz$1865     06D2 GR
+  2 A$bloxorz$187      00A5 GR  |   2 A$bloxorz$1872     06D5 GR
+  2 A$bloxorz$1873     06D8 GR  |   2 A$bloxorz$1874     06DA GR
+  2 A$bloxorz$188      00A9 GR  |   2 A$bloxorz$1880     06DC GR
+  2 A$bloxorz$1881     06DF GR  |   2 A$bloxorz$1887     06E2 GR
+  2 A$bloxorz$1888     06E4 GR  |   2 A$bloxorz$189      00AB GR
+  2 A$bloxorz$1895     06E8 GR  |   2 A$bloxorz$1901     06EB GR
+  2 A$bloxorz$1902     06EE GR  |   2 A$bloxorz$1903     06F0 GR
+  2 A$bloxorz$1909     06F2 GR  |   2 A$bloxorz$1910     06F5 GR
+  2 A$bloxorz$1911     06F6 GR  |   2 A$bloxorz$1917     06F9 GR
+  2 A$bloxorz$1918     06FC GR  |   2 A$bloxorz$1924     06FE GR
+  2 A$bloxorz$1930     0701 GR  |   2 A$bloxorz$1931     0704 GR
+  2 A$bloxorz$1938     0707 GR  |   2 A$bloxorz$1945     070A GR
+  2 A$bloxorz$1946     070D GR  |   2 A$bloxorz$1947     070F GR
+  2 A$bloxorz$1953     0711 GR  |   2 A$bloxorz$1954     0714 GR
+  2 A$bloxorz$1960     0716 GR  |   2 A$bloxorz$1962     0719 GR
+  2 A$bloxorz$1965     071A GR  |   2 A$bloxorz$1966     071C GR
+  2 A$bloxorz$197      00AD GR  |   2 A$bloxorz$1972     071E GR
+  2 A$bloxorz$1973     071F GR  |   2 A$bloxorz$1979     0722 GR
+  2 A$bloxorz$198      00B0 GR  |   2 A$bloxorz$1980     0724 GR
+  2 A$bloxorz$1986     0728 GR  |   2 A$bloxorz$199      00B2 GR
+  2 A$bloxorz$1992     072B GR  |   2 A$bloxorz$1993     072D GR
+  2 A$bloxorz$1994     072F GR  |   2 A$bloxorz$200      00B5 GR
+  2 A$bloxorz$2000     0732 GR  |   2 A$bloxorz$2001     0734 GR
+  2 A$bloxorz$2002     0736 GR  |   2 A$bloxorz$2008     0739 GR
+  2 A$bloxorz$2009     073B GR  |   2 A$bloxorz$2010     073D GR
+  2 A$bloxorz$2011     0740 GR  |   2 A$bloxorz$2012     0742 GR
+  2 A$bloxorz$2013     0744 GR  |   2 A$bloxorz$2019     0746 GR
+  2 A$bloxorz$2020     0748 GR  |   2 A$bloxorz$2027     074B GR
+  2 A$bloxorz$2028     074E GR  |   2 A$bloxorz$2029     0751 GR
+  2 A$bloxorz$2030     0754 GR  |   2 A$bloxorz$2031     0757 GR
+  2 A$bloxorz$2032     075A GR  |   2 A$bloxorz$2033     075D GR
+  2 A$bloxorz$2034     0760 GR  |   2 A$bloxorz$2035     0763 GR
+  2 A$bloxorz$2036     0766 GR  |   2 A$bloxorz$2042     0769 GR
+  2 A$bloxorz$2043     076B GR  |   2 A$bloxorz$2049     076E GR
+  2 A$bloxorz$2050     0770 GR  |   2 A$bloxorz$2056     0773 GR
+  2 A$bloxorz$206      00B8 GR  |   2 A$bloxorz$2062     0776 GR
+  2 A$bloxorz$2068     0779 GR  |   2 A$bloxorz$207      00BB GR
+  2 A$bloxorz$2074     077C GR  |   2 A$bloxorz$208      00BE GR
+  2 A$bloxorz$2086     077F GR  |   2 A$bloxorz$209      00C1 GR
+  2 A$bloxorz$2092     0782 GR  |   2 A$bloxorz$2093     0785 GR
+  2 A$bloxorz$2094     0787 GR  |   2 A$bloxorz$2095     078B GR
+  2 A$bloxorz$2096     078C GR  |   2 A$bloxorz$2097     078E GR
+  2 A$bloxorz$2098     078F GR  |   2 A$bloxorz$2099     0790 GR
+  2 A$bloxorz$210      00C3 GR  |   2 A$bloxorz$2100     0792 GR
+  2 A$bloxorz$211      00C4 GR  |   2 A$bloxorz$2115     07A4 GR
+  2 A$bloxorz$212      00C6 GR  |   2 A$bloxorz$2121     07A7 GR
+  2 A$bloxorz$2127     07AA GR  |   2 A$bloxorz$213      00C9 GR
+  2 A$bloxorz$2134     07AD GR  |   2 A$bloxorz$214      00CB GR
+  2 A$bloxorz$2140     07B0 GR  |   2 A$bloxorz$2146     07B3 GR
+  2 A$bloxorz$2153     07B6 GR  |   2 A$bloxorz$2159     07B9 GR
+  2 A$bloxorz$2165     07BC GR  |   2 A$bloxorz$2172     07BF GR
+  2 A$bloxorz$2178     07C2 GR  |   2 A$bloxorz$2184     07C5 GR
+  2 A$bloxorz$2191     07C8 GR  |   2 A$bloxorz$2197     07CB GR
+  2 A$bloxorz$2203     07CE GR  |   2 A$bloxorz$2210     07D0 GR
+  2 A$bloxorz$2216     07D3 GR  |   2 A$bloxorz$222      00CC GR
+  2 A$bloxorz$2222     07D6 GR  |   2 A$bloxorz$2229     07D8 GR
+  2 A$bloxorz$223      00CE GR  |   2 A$bloxorz$2235     07DB GR
+  2 A$bloxorz$2247     07DE GR  |   2 A$bloxorz$2248     07E1 GR
+  2 A$bloxorz$2249     07E3 GR  |   2 A$bloxorz$2255     07E7 GR
+  2 A$bloxorz$2261     07EA GR  |   2 A$bloxorz$2262     07ED GR
+  2 A$bloxorz$2265     07EF GR  |   2 A$bloxorz$2266     07F1 GR
+  2 A$bloxorz$2272     07F4 GR  |   2 A$bloxorz$2278     07F7 GR
+  2 A$bloxorz$2281     07FA GR  |   2 A$bloxorz$229      00D1 GR
+  2 A$bloxorz$230      00D4 GR  |   2 A$bloxorz$233      00D5 GR
+  2 A$bloxorz$239      00D7 GR  |   2 A$bloxorz$240      00D9 GR
+  2 A$bloxorz$243      00DB GR  |   2 A$bloxorz$244      00DD GR
+  2 A$bloxorz$247      00E0 GR  |   2 A$bloxorz$250      00E2 GR
+  2 A$bloxorz$253      00E4 GR  |   2 A$bloxorz$256      00E6 GR
+  2 A$bloxorz$259      00E9 GR  |   2 A$bloxorz$265      00EC GR
+  2 A$bloxorz$268      00EE GR  |   2 A$bloxorz$271      00F0 GR
+  2 A$bloxorz$274      00F3 GR  |   2 A$bloxorz$277      00F5 GR
+  2 A$bloxorz$280      00F9 GR  |   2 A$bloxorz$283      00FD GR
+  2 A$bloxorz$286      00FF GR  |   2 A$bloxorz$289      0102 GR
+  2 A$bloxorz$292      0104 GR  |   2 A$bloxorz$295      0108 GR
+  2 A$bloxorz$298      010C GR  |   2 A$bloxorz$301      0110 GR
+  2 A$bloxorz$304      0114 GR  |   2 A$bloxorz$307      0116 GR
+  2 A$bloxorz$310      0119 GR  |   2 A$bloxorz$313      011B GR
+  2 A$bloxorz$316      011D GR  |   2 A$bloxorz$319      011F GR
+  2 A$bloxorz$322      0120 GR  |   2 A$bloxorz$325      0122 GR
+  2 A$bloxorz$328      0124 GR  |   2 A$bloxorz$329      0126 GR
+  2 A$bloxorz$332      0127 GR  |   2 A$bloxorz$333      0129 GR
+  2 A$bloxorz$339      012B GR  |   2 A$bloxorz$34       0000 GR
+  2 A$bloxorz$345      012E GR  |   2 A$bloxorz$346      0130 GR
+  2 A$bloxorz$349      0132 GR  |   2 A$bloxorz$35       0002 GR
+  2 A$bloxorz$350      0134 GR  |   2 A$bloxorz$356      0137 GR
+  2 A$bloxorz$36       0004 GR  |   2 A$bloxorz$362      013A GR
+  2 A$bloxorz$363      013C GR  |   2 A$bloxorz$364      013E GR
+  2 A$bloxorz$365      0140 GR  |   2 A$bloxorz$366      0142 GR
+  2 A$bloxorz$367      0144 GR  |   2 A$bloxorz$370      0146 GR
+  2 A$bloxorz$371      0148 GR  |   2 A$bloxorz$372      014A GR
+  2 A$bloxorz$378      014D GR  |   2 A$bloxorz$379      014F GR
+  2 A$bloxorz$380      0151 GR  |   2 A$bloxorz$381      0155 GR
+  2 A$bloxorz$384      0158 GR  |   2 A$bloxorz$385      015A GR
+  2 A$bloxorz$391      015D GR  |   2 A$bloxorz$397      0160 GR
+  2 A$bloxorz$398      0162 GR  |   2 A$bloxorz$399      0164 GR
+  2 A$bloxorz$400      0166 GR  |   2 A$bloxorz$401      0168 GR
+  2 A$bloxorz$402      016A GR  |   2 A$bloxorz$405      016C GR
+  2 A$bloxorz$406      016E GR  |   2 A$bloxorz$407      0170 GR
+  2 A$bloxorz$413      0173 GR  |   2 A$bloxorz$414      0175 GR
+  2 A$bloxorz$415      0177 GR  |   2 A$bloxorz$418      017A GR
+  2 A$bloxorz$419      017C GR  |   2 A$bloxorz$425      017F GR
+  2 A$bloxorz$431      0182 GR  |   2 A$bloxorz$432      0184 GR
+  2 A$bloxorz$433      0186 GR  |   2 A$bloxorz$434      0188 GR
+  2 A$bloxorz$435      018A GR  |   2 A$bloxorz$436      018C GR
+  2 A$bloxorz$439      018E GR  |   2 A$bloxorz$440      0190 GR
+  2 A$bloxorz$441      0192 GR  |   2 A$bloxorz$447      0195 GR
+  2 A$bloxorz$448      0197 GR  |   2 A$bloxorz$449      0199 GR
+  2 A$bloxorz$452      019C GR  |   2 A$bloxorz$453      019E GR
+  2 A$bloxorz$459      01A1 GR  |   2 A$bloxorz$465      01A4 GR
+  2 A$bloxorz$466      01A6 GR  |   2 A$bloxorz$467      01A8 GR
+  2 A$bloxorz$468      01AA GR  |   2 A$bloxorz$469      01AC GR
+  2 A$bloxorz$472      01AE GR  |   2 A$bloxorz$473      01B0 GR
+  2 A$bloxorz$474      01B2 GR  |   2 A$bloxorz$48       0006 GR
+  2 A$bloxorz$480      01B5 GR  |   2 A$bloxorz$481      01B7 GR
+  2 A$bloxorz$482      01B9 GR  |   2 A$bloxorz$485      01BC GR
+  2 A$bloxorz$486      01BE GR  |   2 A$bloxorz$492      01C1 GR
+  2 A$bloxorz$498      01C4 GR  |   2 A$bloxorz$499      01C6 GR
+  2 A$bloxorz$500      01C8 GR  |   2 A$bloxorz$501      01CA GR
+  2 A$bloxorz$502      01CC GR  |   2 A$bloxorz$503      01CE GR
+  2 A$bloxorz$506      01D0 GR  |   2 A$bloxorz$507      01D2 GR
+  2 A$bloxorz$508      01D4 GR  |   2 A$bloxorz$514      01D7 GR
+  2 A$bloxorz$515      01D9 GR  |   2 A$bloxorz$516      01DB GR
+  2 A$bloxorz$519      01DE GR  |   2 A$bloxorz$520      01E0 GR
+  2 A$bloxorz$526      01E3 GR  |   2 A$bloxorz$532      01E6 GR
+  2 A$bloxorz$533      01E8 GR  |   2 A$bloxorz$534      01EA GR
+  2 A$bloxorz$535      01EC GR  |   2 A$bloxorz$536      01EE GR
+  2 A$bloxorz$537      01F0 GR  |   2 A$bloxorz$54       0009 GR
+  2 A$bloxorz$540      01F2 GR  |   2 A$bloxorz$541      01F4 GR
+  2 A$bloxorz$542      01F6 GR  |   2 A$bloxorz$548      01F9 GR
+  2 A$bloxorz$549      01FB GR  |   2 A$bloxorz$55       000B GR
+  2 A$bloxorz$550      01FD GR  |   2 A$bloxorz$553      0200 GR
+  2 A$bloxorz$554      0202 GR  |   2 A$bloxorz$557      0205 GR
+  2 A$bloxorz$558      0207 GR  |   2 A$bloxorz$561      0209 GR
+  2 A$bloxorz$562      020B GR  |   2 A$bloxorz$568      020D GR
+  2 A$bloxorz$569      020F GR  |   2 A$bloxorz$572      0211 GR
+  2 A$bloxorz$573      0213 GR  |   2 A$bloxorz$579      0216 GR
+  2 A$bloxorz$58       000D GR  |   2 A$bloxorz$580      0218 GR
+  2 A$bloxorz$586      021B GR  |   2 A$bloxorz$587      021D GR
+  2 A$bloxorz$588      021F GR  |   2 A$bloxorz$589      0221 GR
+  2 A$bloxorz$59       000F GR  |   2 A$bloxorz$590      0224 GR
+  2 A$bloxorz$593      0226 GR  |   2 A$bloxorz$594      0228 GR
+  2 A$bloxorz$595      022A GR  |   2 A$bloxorz$596      022C GR
+  2 A$bloxorz$599      022F GR  |   2 A$bloxorz$600      0231 GR
+  2 A$bloxorz$608      0233 GR  |   2 A$bloxorz$614      0236 GR
+  2 A$bloxorz$615      0239 GR  |   2 A$bloxorz$621      023C GR
+  2 A$bloxorz$622      023F GR  |   2 A$bloxorz$623      0240 GR
+  2 A$bloxorz$629      0243 GR  |   2 A$bloxorz$630      0244 GR
+  2 A$bloxorz$636      0246 GR  |   2 A$bloxorz$637      0248 GR
+  2 A$bloxorz$639      024B GR  |   2 A$bloxorz$647      024C GR
+  2 A$bloxorz$65       0012 GR  |   2 A$bloxorz$653      024F GR
+  2 A$bloxorz$654      0252 GR  |   2 A$bloxorz$655      0255 GR
+  2 A$bloxorz$656      0257 GR  |   2 A$bloxorz$657      0259 GR
+  2 A$bloxorz$66       0014 GR  |   2 A$bloxorz$664      025C GR
+  2 A$bloxorz$665      025F GR  |   2 A$bloxorz$673      0260 GR
+  2 A$bloxorz$674      0262 GR  |   2 A$bloxorz$680      0265 GR
+  2 A$bloxorz$686      0268 GR  |   2 A$bloxorz$687      026B GR
+  2 A$bloxorz$693      026E GR  |   2 A$bloxorz$694      0271 GR
+  2 A$bloxorz$700      0274 GR  |   2 A$bloxorz$701      0278 GR
+  2 A$bloxorz$704      0279 GR  |   2 A$bloxorz$710      027B GR
+  2 A$bloxorz$716      027E GR  |   2 A$bloxorz$717      027F GR
+  2 A$bloxorz$72       0017 GR  |   2 A$bloxorz$723      0282 GR
+  2 A$bloxorz$729      0285 GR  |   2 A$bloxorz$73       0019 GR
+  2 A$bloxorz$730      0288 GR  |   2 A$bloxorz$736      028C GR
+  2 A$bloxorz$737      028F GR  |   2 A$bloxorz$738      0291 GR
+  2 A$bloxorz$739      0294 GR  |   2 A$bloxorz$74       001B GR
+  2 A$bloxorz$740      0297 GR  |   2 A$bloxorz$746      0299 GR
+  2 A$bloxorz$747      029C GR  |   2 A$bloxorz$748      029D GR
+  2 A$bloxorz$749      029F GR  |   2 A$bloxorz$75       001D GR
+  2 A$bloxorz$750      02A2 GR  |   2 A$bloxorz$751      02A4 GR
+  2 A$bloxorz$752      02A6 GR  |   2 A$bloxorz$753      02A9 GR
+  2 A$bloxorz$759      02AB GR  |   2 A$bloxorz$76       001F GR
+  2 A$bloxorz$760      02AE GR  |   2 A$bloxorz$761      02AF GR
+  2 A$bloxorz$762      02B1 GR  |   2 A$bloxorz$763      02B4 GR
+  2 A$bloxorz$764      02B7 GR  |   2 A$bloxorz$770      02B9 GR
+  2 A$bloxorz$771      02BC GR  |   2 A$bloxorz$772      02BE GR
+  2 A$bloxorz$773      02C1 GR  |   2 A$bloxorz$774      02C4 GR
+  2 A$bloxorz$780      02C6 GR  |   2 A$bloxorz$781      02C9 GR
+  2 A$bloxorz$782      02CA GR  |   2 A$bloxorz$783      02CC GR
+  2 A$bloxorz$784      02CF GR  |   2 A$bloxorz$785      02D1 GR
+  2 A$bloxorz$786      02D3 GR  |   2 A$bloxorz$787      02D6 GR
+  2 A$bloxorz$79       0022 GR  |   2 A$bloxorz$793      02D8 GR
+  2 A$bloxorz$794      02DB GR  |   2 A$bloxorz$795      02DC GR
+  2 A$bloxorz$796      02DE GR  |   2 A$bloxorz$797      02E1 GR
+  2 A$bloxorz$798      02E4 GR  |   2 A$bloxorz$80       0024 GR
+  2 A$bloxorz$804      02E6 GR  |   2 A$bloxorz$805      02E8 GR
+  2 A$bloxorz$806      02EB GR  |   2 A$bloxorz$807      02ED GR
+  2 A$bloxorz$808      02EF GR  |   2 A$bloxorz$809      02F1 GR
+  2 A$bloxorz$81       0026 GR  |   2 A$bloxorz$810      02F3 GR
+  2 A$bloxorz$811      02F7 GR  |   2 A$bloxorz$818      02F9 GR
+  2 A$bloxorz$819      02FB GR  |   2 A$bloxorz$82       0028 GR
+  2 A$bloxorz$820      02FD GR  |   2 A$bloxorz$821      02FF GR
+  2 A$bloxorz$822      0301 GR  |   2 A$bloxorz$829      0303 GR
+  2 A$bloxorz$836      0306 GR  |   2 A$bloxorz$843      0308 GR
+  2 A$bloxorz$844      030A GR  |   2 A$bloxorz$845      030C GR
+  2 A$bloxorz$846      030E GR  |   2 A$bloxorz$85       002B GR
+  2 A$bloxorz$853      0310 GR  |   2 A$bloxorz$860      0313 GR
+  2 A$bloxorz$867      0315 GR  |   2 A$bloxorz$868      0317 GR
+  2 A$bloxorz$869      0319 GR  |   2 A$bloxorz$870      031B GR
+  2 A$bloxorz$877      031D GR  |   2 A$bloxorz$88       002E GR
+  2 A$bloxorz$89       0030 GR  |   2 A$bloxorz$890      0320 GR
+  2 A$bloxorz$891      0323 GR  |   2 A$bloxorz$892      0325 GR
+  2 A$bloxorz$893      0328 GR  |   2 A$bloxorz$894      032B GR
+  2 A$bloxorz$895      032D GR  |   2 A$bloxorz$896      0330 GR
+  2 A$bloxorz$897      0333 GR  |   2 A$bloxorz$898      0335 GR
+  2 A$bloxorz$899      0338 GR  |   2 A$bloxorz$905      033A GR
+  2 A$bloxorz$911      033D GR  |   2 A$bloxorz$912      033F GR
+  2 A$bloxorz$918      0342 GR  |   2 A$bloxorz$919      0345 GR
+  2 A$bloxorz$925      0348 GR  |   2 A$bloxorz$926      034A GR
+  2 A$bloxorz$927      034E GR  |   2 A$bloxorz$934      0350 GR
+  2 A$bloxorz$935      0353 GR  |   2 A$bloxorz$936      0355 GR
+  2 A$bloxorz$942      0357 GR  |   2 A$bloxorz$943      0359 GR
+  2 A$bloxorz$95       0032 GR  |   2 A$bloxorz$950      035C GR
+  2 A$bloxorz$951      035F GR  |   2 A$bloxorz$952      0361 GR
+  2 A$bloxorz$953      0363 GR  |   2 A$bloxorz$954      0365 GR
+  2 A$bloxorz$955      0367 GR  |   2 A$bloxorz$956      036B GR
+  2 A$bloxorz$96       0035 GR  |   2 A$bloxorz$963      036E GR
+  2 A$bloxorz$964      0370 GR  |   2 A$bloxorz$965      0372 GR
+  2 A$bloxorz$966      0374 GR  |   2 A$bloxorz$967      0376 GR
+  2 A$bloxorz$968      0378 GR  |   2 A$bloxorz$969      037A GR
+  2 A$bloxorz$97       0037 GR  |   2 A$bloxorz$976      037C GR
+  2 A$bloxorz$977      037F GR  |   2 A$bloxorz$978      0381 GR
+  2 A$bloxorz$979      0384 GR  |   2 A$bloxorz$98       003A GR
+  2 A$bloxorz$980      0387 GR  |   2 A$bloxorz$987      0389 GR
+  2 A$bloxorz$99       003C GR  |   2 A$bloxorz$994      038C GR
+  2 A$bloxorz$995      038E GR  |   2 A$bloxorz$996      0390 GR
+  2 L101               074B R   |   2 L102               07DE R
+  2 L103               07A4 R   |   2 L104               07AD R
+  2 L105               07B6 R   |   2 L106               07BF R
+  2 L107               07C8 R   |   2 L108               07D0 R
+  2 L109               07D8 R   |   2 L110               0796 R
+  2 L113               077F R   |   2 L2                 0006 R
+  2 L24                024B R   |   2 L26                025C R
+  2 L32                0320 R   |   2 L33                02F9 R
+  2 L34                0308 R   |   2 L36                0303 R
+  2 L37                0306 R   |   2 L38                0310 R
+  2 L39                0313 R   |   2 L40                031D R
+  2 L41                0320 R   |   2 L42                0350 R
+  2 L43                035C R   |   2 L44                03E0 R
+  2 L45                036E R   |   2 L46                038C R
+  2 L48                037C R   |   2 L49                0389 R
+  2 L5                 004C R   |   2 L50                039F R
+  2 L51                03B3 R   |   2 L52                03C8 R
+  2 L53                03E0 R   |   2 L54                03E8 R
+  2 L55                0315 R   |   2 L56                03B5 R
+  2 L6                 0086 R   |   2 L60                041B R
+  2 L61                041D R   |   2 L64                044B R
+  2 L67                0521 R   |   2 L69                052D R
+  2 L7                 0088 R   |   2 L71                054D R
+  2 L73                0557 R   |   2 L76                0571 R
+  2 L78                0603 R   |   2 L79                05ED R
+  2 L8                 0071 R   |   2 L81                060D R
+  2 L85                0656 R   |   2 L86                0665 R
+  2 L87                0668 R   |   2 L9                 0055 R
+  2 L91                069E R   |   2 L92                06D5 R
+  2 L93                06B1 R   |   2 L94                06C4 R
+  2 L95                06E8 R   |   2 L96                070A R
+  2 L97                0707 R   |   2 L99                0719 R
+  2 LC0                0494 R   |   2 LC1                049F R
+  2 LC2                04AD R   |   2 LC3                0572 R
+  2 LC4                0580 R   |   2 LC5                0587 R
     _Vec_Buttons       **** GX  |     _Vec_Text_Widt     **** GX
     ___DP_to_C8        **** GX  |     ___DP_to_D0        **** GX
     ___Do_Sound        **** GX  |     ___Draw_VLp        **** GX
@@ -2541,40 +2899,42 @@ Symbol Table
     ___Joy_Digital     **** GX  |     ___Moveto_d        **** GX
     ___Print_Str_d     **** GX  |     ___Read_Btns       **** GX
     ___Reset0Ref       **** GX  |     ___Wait_Recal      **** GX
-    _blockAnimatin     **** GX  |   2 _blockFalling      049B GR
-  2 _blockMoving       058A GR  |   2 _blockMovingAt     0441 GR
-  2 _blockMovingTo     0315 GR  |     _blockOrientat     **** GX
-    _blockStartLev     **** GX  |   2 _blockWaiting      04D8 GR
+    _blockAnimatin     **** GX  |   2 _blockFalling      0531 GR
+  2 _blockMoving       0279 GR  |   2 _blockMovingAt     0611 GR
+  2 _blockMovingTo     0233 GR  |     _blockOrientat     **** GX
+    _blockStartLev     **** GX  |   2 _blockWaiting      0681 GR
     _blockX            **** GX  |     _blockY            **** GX
-    _blockYOfs         **** GX  |   2 _changeMusic       00F9 GR
-  2 _clearMenu         0185 GR  |   3 _currentMusic      0000 GR
-    _doBlockAnimat     **** GX  |     _dp_VIA_t1_cnt     **** GX
-    _drawBlock         **** GX  |   2 _drawField         0102 GR
-    _endX              **** GX  |     _endY              **** GX
-  2 _fallingMusic      0813 GR  |   4 _gameState         000F GR
-    _getField          **** GX  |   4 _infoText          0000 GR
-    _initLevel         **** GX  |     _initSwatches      **** GX
-    _isField           **** GX  |   2 _itoa              005B GR
-    _lastBlockDire     **** GX  |   2 _led8              083B GR
-    _level             **** GX  |     _levelCount        **** GX
-  2 _levelEndMusic     07F9 GR  |   4 _levelHighscor     000C GR
-    _levelNumber       **** GX  |     _levelOffset       **** GX
-    _levels            **** GX  |     _lineCount         **** GX
-    _lineX0            **** GX  |     _lineX1            **** GX
-    _lineY0            **** GX  |     _lineY1            **** GX
-  2 _main              06FC GR  |   2 _mainMenu          03D0 GR
-  2 _moveBlock         04C4 GR  |     _moveBlockImpl     **** GX
-  4 _moveCount         000A GR  |   2 _movingMusic       0833 GR
-    _nextBank          **** GX  |   4 _picAvailable      000E GR
-  2 _readEeprom        0048 GR  |   2 _runtimeError      0000 GR
-  2 _sendCommand       002E GR  |   2 _setBank           0154 GR
-  2 _showInfo          02EB GR  |   2 _showInfo2         0209 GR
-    _splitMode         **** GX  |   2 _startBlockFal     0571 GR
-  2 _startLevel        032E GR  |   2 _startMusic        07D9 GR
-    _swapSplit         **** GX  |     _swatchSwitch      **** GX
-    _testMerge         **** GX  |   2 _updateInfoTex     00DA GR
-  3 _vecx              0002 GR  |   2 _writeEeprom       0030 GR
-  2 drawFieldLoop      0119 R
+    _blockYOfs         **** GX  |   2 _changeMusic       00CC GR
+  2 _clearMenu         058D GR  |   3 _currentMusic      0000 GR
+    _delay10ms         **** GX  |     _doBlockAnimat     **** GX
+    _dp_VIA_t1_cnt     **** GX  |     _drawBlock         **** GX
+  2 _drawField         00D5 GR  |     _endX              **** GX
+    _endY              **** GX  |   2 _fallingMusic      0837 GR
+  4 _gameState         000F GR  |     _getField          **** GX
+  4 _infoText          0000 GR  |     _initLevel         **** GX
+    _initSwatches      **** GX  |     _isField           **** GX
+  2 _itoa              002E GR  |     _lastBlockDire     **** GX
+  2 _led8              085F GR  |     _level             **** GX
+    _levelCount        **** GX  |   2 _levelEndMusic     081D GR
+  4 _levelHighscor     000C GR  |     _levelNumber       **** GX
+    _levelOffset       **** GX  |     _levels            **** GX
+    _lineCount         **** GX  |     _lineX0            **** GX
+    _lineX1            **** GX  |     _lineY0            **** GX
+    _lineY1            **** GX  |   2 _main              071A GR
+  2 _mainMenu          04C0 GR  |   2 _moveBlock         024C GR
+    _moveBlockImpl     **** GX  |   4 _moveCount         000A GR
+  2 _movingMusic       0857 GR  |     _musicInit         **** GX
+    _musicPlay         **** GX  |     _nextBank          **** GX
+  4 _picAvailable      000E GR  |     _picRead           **** GX
+    _picWrite          **** GX  |   2 _readEeprom        040B GR
+  2 _runtimeError      0000 GR  |   2 _sendCommand       03EB GR
+  2 _setBank           066B GR  |   2 _showInfo          0209 GR
+  2 _showInfo2         0127 GR  |     _splitMode         **** GX
+  2 _startBlockFal     0260 GR  |   2 _startLevel        041E GR
+  2 _startMusic        07FD GR  |     _swapSplit         **** GX
+    _swatchSwitch      **** GX  |     _testMerge         **** GX
+  2 _updateInfoTex     00AD GR  |   3 _vecx              0002 GR
+  2 _writeEeprom       055A GR  |   2 drawFieldLoop      00EC R
 
 ASxxxx Assembler V05.00  (Motorola 6809), page 2.
 Hexidecimal [16-Bits]
@@ -2583,7 +2943,7 @@ Area Table
 
 [_CSEG]
    0 _CODE            size    0   flags C080
-   2 .text            size  851   flags  100
+   2 .text            size  875   flags  100
    3 .data            size    4   flags  100
    4 .bss             size   10   flags    0
 [_DSEG]

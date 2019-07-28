@@ -15,8 +15,9 @@ namespace Bloxorz
         public SoundEffectInstance music;
 
         public byte[] rom = new byte[8192];
-		public byte[] cart = new byte[49152];
-		public byte[] ram = new byte[1024];      
+		public byte[] cart = new byte[65536];
+		public byte[] ram = new byte[1024];
+        public int bank = 0;
 
         /* the sound chip registers */
 
@@ -382,11 +383,11 @@ namespace Bloxorz
                     }
                 }
             }
-            else if (address < 0xc000)
+            else if (address < 0x8000)
             {
                 /* cartridge */
 
-                data = cart[address];
+                data = cart[address + bank * 0x8000];
             }
             else
             {
@@ -412,6 +413,7 @@ namespace Bloxorz
                 if (data == 2) levelStart.Play();
                 if (data == 3) move.Play();
                 if (data == 4) music.Play();
+                if (data >= 16) bank = data & 15;
             }
 
             if ((address & 0xe000) == 0xe000)

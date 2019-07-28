@@ -1,17 +1,16 @@
-;;; gcc for m6809 : Mar 17 2019 12:45:32
+;;; gcc for m6809 : Mar 17 2019 11:56:12
 ;;; 4.3.6 (gcc6809)
 ;;; ABI version 1
 ;;; -mabi=bx -mint8 -fomit-frame-pointer -O1
 	.module	block.enr.c
 ; GNU C (GCC) version 4.3.6 (gcc6809) (m6809-unknown-none)
-;	compiled by GNU C version 7.4.0, GMP version 4.3.2, MPFR version 2.4.2.
+;	compiled by GNU C version 5.4.0 20160609, GMP version 6.1.0, MPFR version 3.1.4.
 ; GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 ; options passed:  -O1 -fverbose-asm -W -Wall -Wextra -Wconversion -Werror
 ; -fomit-frame-pointer -mint8 -msoft-reg-count=0 -std=gnu99
-; -fno-time-report
-; -IC:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include
+; -fno-time-report -I/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include
 ; -D__INLINE_RUM=1 -DOMMIT_FRAMEPOINTER=1
-; C:\data\bloxorz\Vide\source\block.enr.c
+; /home/frank/data/projects/bloxorz/Vide/source/block.enr.c
 ; options enabled:  -falign-loops -fargument-alias -fauto-inc-dec
 ; -fbranch-count-reg -fcommon -fcprop-registers -fdefer-pop
 ; -fearly-inlining -feliminate-unused-debug-types -ffunction-cse -fgcse-lm
@@ -28,39 +27,44 @@
 ; -ftree-reassoc -ftree-salias -ftree-scev-cprop -ftree-sink -ftree-sra
 ; -ftree-ter -ftree-vect-loop-version -funit-at-a-time -fverbose-asm
 ; -fzero-initialized-in-bss
-; Compiler executable checksum: 8f282e2d9663ae6148257c524e608c63
+; Compiler executable checksum: 74a0323a4f41feb77857e3eae52873ae
 	.area	.text
 	.globl	_moveBlockImpl
 _moveBlockImpl:
 	leas	-1,s	;,,
 	stb	,s	; move, move
 ;----- asm -----
-; 29 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 29 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[28]	blockAnimating = 1;
+; 0 "" 2
 ;--- end asm ---
 	ldb	#1	;,
 	stb	_blockAnimating	;, blockAnimating
 ;----- asm -----
-; 31 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 31 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[29]	lastBlockDirection = move;
+; 0 "" 2
 ;--- end asm ---
 	ldb	,s	;, move
 	stb	_lastBlockDirection	;, lastBlockDirection
 ;----- asm -----
-; 33 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 33 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[30]	if (splitMode) {
+; 0 "" 2
 ;--- end asm ---
 	tst	_splitMode	; splitMode
 	lbeq	L2	;
 ;----- asm -----
-; 35 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 35 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[31]    	switch (blockOrientation) {
+; 0 "" 2
 ;--- end asm ---
 	tst	_blockOrientation	; blockOrientation
 	lbne	L30	;
 ;----- asm -----
-; 39 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 39 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[33]            		switch (move) {
+; 0 "" 2
 ;--- end asm ---
 	ldb	,s	;, move
 	cmpb	#1	;cmpqi:	;,
@@ -73,139 +77,162 @@ _moveBlockImpl:
 	lbra	L31	;
 L6:
 ;----- asm -----
-; 43 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 43 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[35]                			blockAnimation = height1FallingLeft;
+; 0 "" 2
 ;--- end asm ---
 	ldx	#_height1FallingLeft	; tmp29,
 	stx	_blockAnimation	; tmp29, blockAnimation
 ;----- asm -----
-; 45 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 45 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[36]                 			nextBlockAnimation = height1FallingLeft;
+; 0 "" 2
 ;--- end asm ---
 	stx	_nextBlockAnimation	; tmp29, nextBlockAnimation
 ;----- asm -----
-; 47 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 47 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[37]                 			nextBlockX = blockX - 1;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockX	;, blockX
 	decb	;
 	stb	_nextBlockX	;, nextBlockX
 ;----- asm -----
-; 49 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 49 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[38]                 			nextBlockY = blockY;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockY	;, blockY
 	stb	_nextBlockY	;, nextBlockY
 ;----- asm -----
-; 51 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 51 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[39]                 			break;
+; 0 "" 2
 ;--- end asm ---
 	lbra	L5	;
 L8:
 ;----- asm -----
-; 55 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 55 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[41]                 			blockAnimation = height1FallingRight;
+; 0 "" 2
 ;--- end asm ---
 	ldx	#_height1FallingRight	; tmp31,
 	stx	_blockAnimation	; tmp31, blockAnimation
 ;----- asm -----
-; 57 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 57 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[42]                 			nextBlockAnimation = height1FallingRight;
+; 0 "" 2
 ;--- end asm ---
 	stx	_nextBlockAnimation	; tmp31, nextBlockAnimation
 ;----- asm -----
-; 59 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 59 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[43]                 			nextBlockX = blockX + 1;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockX	;, blockX
 	incb	;
 	stb	_nextBlockX	;, nextBlockX
 ;----- asm -----
-; 61 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 61 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[44]                 			nextBlockY = blockY;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockY	;, blockY
 	stb	_nextBlockY	;, nextBlockY
 ;----- asm -----
-; 63 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 63 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[45]                 			break;
+; 0 "" 2
 ;--- end asm ---
 	lbra	L5	;
 L7:
 ;----- asm -----
-; 67 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 67 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[47]                 			blockAnimation = height1FallingBack;
+; 0 "" 2
 ;--- end asm ---
 	ldx	#_height1FallingBack	; tmp33,
 	stx	_blockAnimation	; tmp33, blockAnimation
 ;----- asm -----
-; 69 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 69 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[48]                 			nextBlockAnimation = height1FallingBack;
+; 0 "" 2
 ;--- end asm ---
 	stx	_nextBlockAnimation	; tmp33, nextBlockAnimation
 ;----- asm -----
-; 71 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 71 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[49]                 			nextBlockX = blockX;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockX	;, blockX
 	stb	_nextBlockX	;, nextBlockX
 ;----- asm -----
-; 73 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 73 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[50]                 			nextBlockY = blockY + 1;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockY	;, blockY
 	incb	;
 	stb	_nextBlockY	;, nextBlockY
 ;----- asm -----
-; 75 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 75 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[51]                 			break;
+; 0 "" 2
 ;--- end asm ---
 	bra	L5	;
 L31:
 ;----- asm -----
-; 79 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 79 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[53]                 			blockAnimation = height1FallingFront;
+; 0 "" 2
 ;--- end asm ---
 	ldx	#_height1FallingFront	; tmp35,
 	stx	_blockAnimation	; tmp35, blockAnimation
 ;----- asm -----
-; 81 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 81 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[54]                 			nextBlockAnimation = height1FallingFront;
+; 0 "" 2
 ;--- end asm ---
 	stx	_nextBlockAnimation	; tmp35, nextBlockAnimation
 ;----- asm -----
-; 83 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 83 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[55]                 			nextBlockX = blockX;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockX	;, blockX
 	stb	_nextBlockX	;, nextBlockX
 ;----- asm -----
-; 85 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 85 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[56]                 			nextBlockY = blockY - 1;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockY	;, blockY
 	decb	;
 	stb	_nextBlockY	;, nextBlockY
 ;----- asm -----
-; 87 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 87 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[57]                 			break;
+; 0 "" 2
 ;--- end asm ---
 L5:
 ;----- asm -----
-; 90 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 90 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[59]            		break;
+; 0 "" 2
 ;--- end asm ---
 	lbra	L29	;
 L30:
 ;----- asm -----
-; 94 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 94 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[61]			break;
+; 0 "" 2
 ;--- end asm ---
 	lbra	L29	;
 L2:
 ;----- asm -----
-; 98 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 98 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[64]    	switch (blockOrientation) {
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockOrientation	; blockOrientation, blockOrientation
 	cmpb	#1	;cmpqi:	; blockOrientation,
@@ -216,8 +243,9 @@ L2:
 	lbra	L32	;
 L11:
 ;----- asm -----
-; 102 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 102 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[66]            		switch (move) {
+; 0 "" 2
 ;--- end asm ---
 	ldb	,s	;, move
 	cmpb	#1	;cmpqi:	;,
@@ -230,161 +258,187 @@ L11:
 	lbra	L33	;
 L15:
 ;----- asm -----
-; 106 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 106 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[68]                			blockAnimation = height2FallingLeft;
+; 0 "" 2
 ;--- end asm ---
 	ldx	#_height2FallingLeft	;,
 	stx	_blockAnimation	;, blockAnimation
 ;----- asm -----
-; 108 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 108 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[69]                 			nextBlockAnimation = width2RollingFront;
+; 0 "" 2
 ;--- end asm ---
 	ldx	#_width2RollingFront	;,
 	stx	_nextBlockAnimation	;, nextBlockAnimation
 ;----- asm -----
-; 110 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 110 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[70]                 			nextBlockX = blockX - 2;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockX	;, blockX
 	addb	#-2	;,
 	stb	_nextBlockX	;, nextBlockX
 ;----- asm -----
-; 112 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 112 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[71]                 			nextBlockY = blockY;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockY	;, blockY
 	stb	_nextBlockY	;, nextBlockY
 ;----- asm -----
-; 114 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 114 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[72]                 			blockOrientation = Horizontal;
+; 0 "" 2
 ;--- end asm ---
 	ldb	#2	;,
 	stb	_blockOrientation	;, blockOrientation
 ;----- asm -----
-; 116 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 116 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[73]                 			break;
+; 0 "" 2
 ;--- end asm ---
 	lbra	L14	;
 L17:
 ;----- asm -----
-; 120 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 120 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[75]                 			blockAnimation = height2FallingRight;
+; 0 "" 2
 ;--- end asm ---
 	ldx	#_height2FallingRight	;,
 	stx	_blockAnimation	;, blockAnimation
 ;----- asm -----
-; 122 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 122 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[76]                 			nextBlockAnimation = width2RollingFront;
+; 0 "" 2
 ;--- end asm ---
 	ldx	#_width2RollingFront	;,
 	stx	_nextBlockAnimation	;, nextBlockAnimation
 ;----- asm -----
-; 124 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 124 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[77]                 			nextBlockX = blockX + 1;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockX	;, blockX
 	incb	;
 	stb	_nextBlockX	;, nextBlockX
 ;----- asm -----
-; 126 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 126 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[78]                 			nextBlockY = blockY;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockY	;, blockY
 	stb	_nextBlockY	;, nextBlockY
 ;----- asm -----
-; 128 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 128 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[79]                 			blockOrientation = Horizontal;
+; 0 "" 2
 ;--- end asm ---
 	ldb	#2	;,
 	stb	_blockOrientation	;, blockOrientation
 ;----- asm -----
-; 130 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 130 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[80]                 			break;
+; 0 "" 2
 ;--- end asm ---
 	lbra	L14	;
 L16:
 ;----- asm -----
-; 134 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 134 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[82]                 			blockAnimation = height2FallingBack;
+; 0 "" 2
 ;--- end asm ---
 	ldx	#_height2FallingBack	;,
 	stx	_blockAnimation	;, blockAnimation
 ;----- asm -----
-; 136 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 136 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[83]                 			nextBlockAnimation = depth2RollingLeft;
+; 0 "" 2
 ;--- end asm ---
 	ldx	#_depth2RollingLeft	;,
 	stx	_nextBlockAnimation	;, nextBlockAnimation
 ;----- asm -----
-; 138 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 138 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[84]                 			nextBlockX = blockX;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockX	;, blockX
 	stb	_nextBlockX	;, nextBlockX
 ;----- asm -----
-; 140 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 140 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[85]                 			nextBlockY = blockY + 1;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockY	;, blockY
 	incb	;
 	stb	_nextBlockY	;, nextBlockY
 ;----- asm -----
-; 142 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 142 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[86]                 			blockOrientation = Vertical;
+; 0 "" 2
 ;--- end asm ---
 	ldb	#1	;,
 	stb	_blockOrientation	;, blockOrientation
 ;----- asm -----
-; 144 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 144 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[87]                 			break;
+; 0 "" 2
 ;--- end asm ---
 	bra	L14	;
 L33:
 ;----- asm -----
-; 148 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 148 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[89]                 			blockAnimation = height2FallingFront;
+; 0 "" 2
 ;--- end asm ---
 	ldx	#_height2FallingFront	;,
 	stx	_blockAnimation	;, blockAnimation
 ;----- asm -----
-; 150 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 150 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[90]                 			nextBlockAnimation = depth2RollingLeft;
+; 0 "" 2
 ;--- end asm ---
 	ldx	#_depth2RollingLeft	;,
 	stx	_nextBlockAnimation	;, nextBlockAnimation
 ;----- asm -----
-; 152 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 152 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[91]                 			nextBlockX = blockX;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockX	;, blockX
 	stb	_nextBlockX	;, nextBlockX
 ;----- asm -----
-; 154 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 154 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[92]                 			nextBlockY = blockY - 2;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockY	;, blockY
 	addb	#-2	;,
 	stb	_nextBlockY	;, nextBlockY
 ;----- asm -----
-; 156 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 156 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[93]                 			blockOrientation = Vertical;
+; 0 "" 2
 ;--- end asm ---
 	ldb	#1	;,
 	stb	_blockOrientation	;, blockOrientation
 ;----- asm -----
-; 158 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 158 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[94]                 			break;
+; 0 "" 2
 ;--- end asm ---
 L14:
 ;----- asm -----
-; 161 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 161 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[96]            		break;
+; 0 "" 2
 ;--- end asm ---
 	lbra	L29	;
 L12:
 ;----- asm -----
-; 165 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 165 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[98]            		switch (move) {
+; 0 "" 2
 ;--- end asm ---
 	ldb	,s	;, move
 	cmpb	#1	;cmpqi:	;,
@@ -397,146 +451,170 @@ L12:
 	lbra	L34	;
 L20:
 ;----- asm -----
-; 169 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 169 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[100]                			blockAnimation = depth2RollingLeft;
+; 0 "" 2
 ;--- end asm ---
 	ldx	#_depth2RollingLeft	; tmp46,
 	stx	_blockAnimation	; tmp46, blockAnimation
 ;----- asm -----
-; 171 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 171 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[101]                			nextBlockAnimation = depth2RollingLeft;
+; 0 "" 2
 ;--- end asm ---
 	stx	_nextBlockAnimation	; tmp46, nextBlockAnimation
 ;----- asm -----
-; 173 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 173 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[102]                			nextBlockX = blockX - 1;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockX	;, blockX
 	decb	;
 	stb	_nextBlockX	;, nextBlockX
 ;----- asm -----
-; 175 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 175 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[103]                			nextBlockY = blockY;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockY	;, blockY
 	stb	_nextBlockY	;, nextBlockY
 ;----- asm -----
-; 177 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 177 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[104]                			break;
+; 0 "" 2
 ;--- end asm ---
 	lbra	L19	;
 L22:
 ;----- asm -----
-; 181 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 181 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[106]                			blockAnimation = depth2RollingRight;
+; 0 "" 2
 ;--- end asm ---
 	ldx	#_depth2RollingRight	;,
 	stx	_blockAnimation	;, blockAnimation
 ;----- asm -----
-; 183 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 183 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[107]                			nextBlockAnimation = depth2RollingLeft;
+; 0 "" 2
 ;--- end asm ---
 	ldx	#_depth2RollingLeft	;,
 	stx	_nextBlockAnimation	;, nextBlockAnimation
 ;----- asm -----
-; 185 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 185 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[108]                			nextBlockX = blockX + 1;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockX	;, blockX
 	incb	;
 	stb	_nextBlockX	;, nextBlockX
 ;----- asm -----
-; 187 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 187 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[109]                			nextBlockY = blockY;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockY	;, blockY
 	stb	_nextBlockY	;, nextBlockY
 ;----- asm -----
-; 189 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 189 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[110]                			break;
+; 0 "" 2
 ;--- end asm ---
 	lbra	L19	;
 L21:
 ;----- asm -----
-; 193 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 193 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[112]                			blockAnimation = height2RisingBack;
+; 0 "" 2
 ;--- end asm ---
 	ldx	#_height2RisingBack	;,
 	stx	_blockAnimation	;, blockAnimation
 ;----- asm -----
-; 195 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 195 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[113]                			nextBlockAnimation = height2FallingFront;
+; 0 "" 2
 ;--- end asm ---
 	ldx	#_height2FallingFront	;,
 	stx	_nextBlockAnimation	;, nextBlockAnimation
 ;----- asm -----
-; 197 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 197 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[114]                			nextBlockX = blockX;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockX	;, blockX
 	stb	_nextBlockX	;, nextBlockX
 ;----- asm -----
-; 199 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 199 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[115]                			nextBlockY = blockY + 2;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockY	;, blockY
 	addb	#2	;,
 	stb	_nextBlockY	;, nextBlockY
 ;----- asm -----
-; 201 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 201 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[116]                			blockOrientation = Standing;
+; 0 "" 2
 ;--- end asm ---
 	clr	_blockOrientation	; blockOrientation
 ;----- asm -----
-; 203 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 203 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[117]                			break;
+; 0 "" 2
 ;--- end asm ---
 	bra	L19	;
 L34:
 ;----- asm -----
-; 207 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 207 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[119]                			blockAnimation = height2RisingFront;
+; 0 "" 2
 ;--- end asm ---
 	ldx	#_height2RisingFront	;,
 	stx	_blockAnimation	;, blockAnimation
 ;----- asm -----
-; 209 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 209 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[120]                			nextBlockAnimation = height2FallingFront;
+; 0 "" 2
 ;--- end asm ---
 	ldx	#_height2FallingFront	;,
 	stx	_nextBlockAnimation	;, nextBlockAnimation
 ;----- asm -----
-; 211 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 211 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[121]                			nextBlockX = blockX;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockX	;, blockX
 	stb	_nextBlockX	;, nextBlockX
 ;----- asm -----
-; 213 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 213 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[122]                			nextBlockY = blockY - 1;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockY	;, blockY
 	decb	;
 	stb	_nextBlockY	;, nextBlockY
 ;----- asm -----
-; 215 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 215 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[123]                			blockOrientation = Standing;
+; 0 "" 2
 ;--- end asm ---
 	clr	_blockOrientation	; blockOrientation
 ;----- asm -----
-; 217 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 217 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[124]                			break;
+; 0 "" 2
 ;--- end asm ---
 L19:
 ;----- asm -----
-; 220 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 220 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[126]            		break;
+; 0 "" 2
 ;--- end asm ---
 	lbra	L29	;
 L32:
 ;----- asm -----
-; 224 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 224 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[128]            		switch (move) {
+; 0 "" 2
 ;--- end asm ---
 	ldb	,s	;, move
 	cmpb	#1	;cmpqi:	;,
@@ -549,140 +627,163 @@ L32:
 	lbra	L35	;
 L25:
 ;----- asm -----
-; 228 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 228 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[130]                			blockAnimation = height2RisingLeft;
+; 0 "" 2
 ;--- end asm ---
 	ldx	#_height2RisingLeft	;,
 	stx	_blockAnimation	;, blockAnimation
 ;----- asm -----
-; 230 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 230 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[131]                			nextBlockAnimation = height2FallingRight;
+; 0 "" 2
 ;--- end asm ---
 	ldx	#_height2FallingRight	;,
 	stx	_nextBlockAnimation	;, nextBlockAnimation
 ;----- asm -----
-; 232 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 232 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[132]                			nextBlockX = blockX - 1;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockX	;, blockX
 	decb	;
 	stb	_nextBlockX	;, nextBlockX
 ;----- asm -----
-; 234 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 234 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[133]                			nextBlockY = blockY;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockY	;, blockY
 	stb	_nextBlockY	;, nextBlockY
 ;----- asm -----
-; 236 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 236 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[134]                			blockOrientation = Standing;
+; 0 "" 2
 ;--- end asm ---
 	clr	_blockOrientation	; blockOrientation
 ;----- asm -----
-; 238 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 238 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[135]                			break;
+; 0 "" 2
 ;--- end asm ---
 	lbra	L24	;
 L27:
 ;----- asm -----
-; 242 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 242 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[137]                			blockAnimation = height2RisingRight;
+; 0 "" 2
 ;--- end asm ---
 	ldx	#_height2RisingRight	;,
 	stx	_blockAnimation	;, blockAnimation
 ;----- asm -----
-; 244 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 244 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[138]                			nextBlockAnimation = height2FallingLeft;
+; 0 "" 2
 ;--- end asm ---
 	ldx	#_height2FallingLeft	;,
 	stx	_nextBlockAnimation	;, nextBlockAnimation
 ;----- asm -----
-; 246 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 246 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[139]                			nextBlockX = blockX + 2;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockX	;, blockX
 	addb	#2	;,
 	stb	_nextBlockX	;, nextBlockX
 ;----- asm -----
-; 248 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 248 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[140]                			nextBlockY = blockY;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockY	;, blockY
 	stb	_nextBlockY	;, nextBlockY
 ;----- asm -----
-; 250 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 250 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[141]                			blockOrientation = Standing;
+; 0 "" 2
 ;--- end asm ---
 	clr	_blockOrientation	; blockOrientation
 ;----- asm -----
-; 252 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 252 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[142]                			break;
+; 0 "" 2
 ;--- end asm ---
 	lbra	L24	;
 L26:
 ;----- asm -----
-; 256 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 256 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[144]                			blockAnimation = width2RollingBack;
+; 0 "" 2
 ;--- end asm ---
 	ldx	#_width2RollingBack	; tmp58,
 	stx	_blockAnimation	; tmp58, blockAnimation
 ;----- asm -----
-; 258 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 258 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[145]                			nextBlockAnimation = width2RollingBack;
+; 0 "" 2
 ;--- end asm ---
 	stx	_nextBlockAnimation	; tmp58, nextBlockAnimation
 ;----- asm -----
-; 260 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 260 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[146]                			nextBlockX = blockX;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockX	;, blockX
 	stb	_nextBlockX	;, nextBlockX
 ;----- asm -----
-; 262 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 262 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[147]                			nextBlockY = blockY + 1;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockY	;, blockY
 	incb	;
 	stb	_nextBlockY	;, nextBlockY
 ;----- asm -----
-; 264 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 264 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[148]                			break;
+; 0 "" 2
 ;--- end asm ---
 	bra	L24	;
 L35:
 ;----- asm -----
-; 268 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 268 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[150]                			blockAnimation = width2RollingFront;
+; 0 "" 2
 ;--- end asm ---
 	ldx	#_width2RollingFront	;,
 	stx	_blockAnimation	;, blockAnimation
 ;----- asm -----
-; 270 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 270 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[151]                			nextBlockAnimation = width2RollingBack;
+; 0 "" 2
 ;--- end asm ---
 	ldx	#_width2RollingBack	;,
 	stx	_nextBlockAnimation	;, nextBlockAnimation
 ;----- asm -----
-; 272 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 272 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[152]                			nextBlockX = blockX;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockX	;, blockX
 	stb	_nextBlockX	;, nextBlockX
 ;----- asm -----
-; 274 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 274 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[153]                			nextBlockY = blockY - 1;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockY	;, blockY
 	decb	;
 	stb	_nextBlockY	;, nextBlockY
 ;----- asm -----
-; 276 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 276 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[154]                			break;
+; 0 "" 2
 ;--- end asm ---
 L24:
 ;----- asm -----
-; 279 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 279 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[156]            		break;
+; 0 "" 2
 ;--- end asm ---
 L29:
 	leas	1,s	;,,
@@ -690,14 +791,16 @@ L29:
 	.globl	_doBlockAnimation
 _doBlockAnimation:
 ;----- asm -----
-; 317 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 317 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[182]	if (blockAnimating) {
+; 0 "" 2
 ;--- end asm ---
 	tst	_blockAnimating	; blockAnimating
 	beq	L38	;
 ;----- asm -----
-; 319 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 319 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[183]		if (++blockAnimationStep == BLOCK_STEPS_COUNT) {
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockAnimationStep	; blockAnimationStep.23, blockAnimationStep
 	incb	; blockAnimationStep.23
@@ -705,31 +808,36 @@ _doBlockAnimation:
 	cmpb	#12	;cmpqi:	; blockAnimationStep.23,
 	bne	L38	;
 ;----- asm -----
-; 321 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 321 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[184]			blockX = nextBlockX;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_nextBlockX	;, nextBlockX
 	stb	_blockX	;, blockX
 ;----- asm -----
-; 323 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 323 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[185]			blockY = nextBlockY;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_nextBlockY	;, nextBlockY
 	stb	_blockY	;, blockY
 ;----- asm -----
-; 325 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 325 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[186]			blockAnimationStep = 0;
+; 0 "" 2
 ;--- end asm ---
 	clr	_blockAnimationStep	; blockAnimationStep
 ;----- asm -----
-; 327 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 327 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[187]			blockAnimation = nextBlockAnimation;
+; 0 "" 2
 ;--- end asm ---
 	ldx	_nextBlockAnimation	;, nextBlockAnimation
 	stx	_blockAnimation	;, blockAnimation
 ;----- asm -----
-; 329 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 329 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[188]			blockAnimating = 0;
+; 0 "" 2
 ;--- end asm ---
 	clr	_blockAnimating	; blockAnimating
 L38:
@@ -737,48 +845,56 @@ L38:
 	.globl	_blockStartLevel
 _blockStartLevel:
 ;----- asm -----
-; 337 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 337 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[195]	blockAnimation = height2FallingLeft;
+; 0 "" 2
 ;--- end asm ---
 	ldx	#_height2FallingLeft	;,
 	stx	_blockAnimation	;, blockAnimation
 ;----- asm -----
-; 339 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 339 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[196]	blockAnimationStep = 0;
+; 0 "" 2
 ;--- end asm ---
 	clr	_blockAnimationStep	; blockAnimationStep
 ;----- asm -----
-; 341 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 341 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[197]	blockAnimating = 0;
+; 0 "" 2
 ;--- end asm ---
 	clr	_blockAnimating	; blockAnimating
 ;----- asm -----
-; 343 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 343 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[198]	blockOrientation = Standing;
+; 0 "" 2
 ;--- end asm ---
 	clr	_blockOrientation	; blockOrientation
 ;----- asm -----
-; 345 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 345 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[199]	splitMode = 0;
+; 0 "" 2
 ;--- end asm ---
 	clr	_splitMode	; splitMode
 	rts
 	.globl	_setSplitMode
 _setSplitMode:
 ;----- asm -----
-; 351 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 351 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[204]	blockAnimation = height1FallingLeft;
+; 0 "" 2
 ;--- end asm ---
 	ldx	#_height1FallingLeft	;,
 	stx	_blockAnimation	;, blockAnimation
 ;----- asm -----
-; 353 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 353 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[205]	blockOrientation = Standing;
+; 0 "" 2
 ;--- end asm ---
 	clr	_blockOrientation	; blockOrientation
 ;----- asm -----
-; 355 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 355 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[206]	splitMode = 1;
+; 0 "" 2
 ;--- end asm ---
 	ldb	#1	;,
 	stb	_splitMode	;, splitMode
@@ -787,8 +903,9 @@ _setSplitMode:
 _testMerge:
 	leas	-4,s	;,,
 ;----- asm -----
-; 361 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 361 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[211]	if (blockY == blockY2) {
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockY	;, blockY
 	stb	,s	;, blockY.27
@@ -798,8 +915,9 @@ _testMerge:
 	cmpb	1,s	;cmpqi:	;, blockY2.28
 	lbne	L44	;
 ;----- asm -----
-; 363 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 363 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[212]		if (blockX == blockX2 + 1) {
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockX2	;, blockX2
 	stb	2,s	;, blockX2.29
@@ -810,25 +928,29 @@ _testMerge:
 	cmpb	3,s	;cmpqi:	; tmp31, blockX.30
 	bne	L45	;
 ;----- asm -----
-; 365 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 365 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[213]			blockAnimation = width2RollingFront;
+; 0 "" 2
 ;--- end asm ---
 	ldx	#_width2RollingFront	;,
 	stx	_blockAnimation	;, blockAnimation
 ;----- asm -----
-; 367 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 367 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[214]			blockOrientation = Horizontal;
+; 0 "" 2
 ;--- end asm ---
 	ldb	#2	;,
 	stb	_blockOrientation	;, blockOrientation
 ;----- asm -----
-; 369 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 369 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[215]			blockX--;
+; 0 "" 2
 ;--- end asm ---
 	dec	_blockX	; blockX
 ;----- asm -----
-; 371 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 371 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[216]			splitMode = 0;
+; 0 "" 2
 ;--- end asm ---
 	clr	_splitMode	; splitMode
 	lbra	L48	;
@@ -838,20 +960,23 @@ L45:
 	cmpb	3,s	;cmpqi:(R)	; tmp33, blockX.30
 	lbne	L48	;
 ;----- asm -----
-; 374 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 374 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[218]			blockAnimation = width2RollingFront;
+; 0 "" 2
 ;--- end asm ---
 	ldx	#_width2RollingFront	;,
 	stx	_blockAnimation	;, blockAnimation
 ;----- asm -----
-; 376 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 376 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[219]			blockOrientation = Horizontal;
+; 0 "" 2
 ;--- end asm ---
 	ldb	#2	;,
 	stb	_blockOrientation	;, blockOrientation
 ;----- asm -----
-; 378 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 378 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[220]			splitMode = 0;
+; 0 "" 2
 ;--- end asm ---
 	clr	_splitMode	; splitMode
 	lbra	L48	;
@@ -860,35 +985,40 @@ L44:
 	cmpb	_blockX2	;cmpqi:	;, blockX2
 	lbne	L48	;
 ;----- asm -----
-; 382 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 382 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[223]		if (blockY == blockY2 + 1) {
+; 0 "" 2
 ;--- end asm ---
 	ldb	1,s	; tmp35, blockY2.28
 	incb	; tmp35
 	cmpb	,s	;cmpqi:(R)	; tmp35, blockY.27
 	bne	L47	;
 ;----- asm -----
-; 384 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 384 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[224]			blockAnimation = depth2RollingLeft;
+; 0 "" 2
 ;--- end asm ---
 	ldx	#_depth2RollingLeft	;,
 	stx	_blockAnimation	;, blockAnimation
 ;----- asm -----
-; 386 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 386 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[225]			blockOrientation = Vertical;
+; 0 "" 2
 ;--- end asm ---
 	ldb	#1	;,
 	stb	_blockOrientation	;, blockOrientation
 ;----- asm -----
-; 388 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 388 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[226]			blockY--;
+; 0 "" 2
 ;--- end asm ---
 	ldb	,s	;, blockY.27
 	decb	;
 	stb	_blockY	;, blockY
 ;----- asm -----
-; 390 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 390 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[227]			splitMode = 0;
+; 0 "" 2
 ;--- end asm ---
 	clr	_splitMode	; splitMode
 	bra	L48	;
@@ -898,20 +1028,23 @@ L47:
 	cmpb	,s	;cmpqi:(R)	; tmp37, blockY.27
 	bne	L48	;
 ;----- asm -----
-; 393 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 393 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[229]			blockAnimation = depth2RollingLeft;
+; 0 "" 2
 ;--- end asm ---
 	ldx	#_depth2RollingLeft	;,
 	stx	_blockAnimation	;, blockAnimation
 ;----- asm -----
-; 395 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 395 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[230]			blockOrientation = Vertical;;
+; 0 "" 2
 ;--- end asm ---
 	ldb	#1	;,
 	stb	_blockOrientation	;, blockOrientation
 ;----- asm -----
-; 397 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 397 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[231]			splitMode = 0;
+; 0 "" 2
 ;--- end asm ---
 	clr	_splitMode	; splitMode
 L48:
@@ -921,38 +1054,44 @@ L48:
 _swapSplit:
 	leas	-2,s	;,,
 ;----- asm -----
-; 405 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 405 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[238]	int8_t xt = blockX;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockX	;, blockX
 	stb	,s	;, xt
 ;----- asm -----
-; 407 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 407 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[239]	int8_t yt = blockY;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockY	;, blockY
 	stb	1,s	;, yt
 ;----- asm -----
-; 409 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 409 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[240]	blockX = blockX2;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockX2	;, blockX2
 	stb	_blockX	;, blockX
 ;----- asm -----
-; 411 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 411 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[241]	blockY = blockY2;
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockY2	;, blockY2
 	stb	_blockY	;, blockY
 ;----- asm -----
-; 413 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 413 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[242]	blockX2 = xt;
+; 0 "" 2
 ;--- end asm ---
 	ldb	,s	;, xt
 	stb	_blockX2	;, blockX2
 ;----- asm -----
-; 415 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 415 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[243]	blockY2 = yt;
+; 0 "" 2
 ;--- end asm ---
 	ldb	1,s	;, yt
 	stb	_blockY2	;, blockY2
@@ -964,21 +1103,26 @@ _drawBlock:
 	leas	-8,s	;,,
 	stb	2,s	; yofs, yofs
 ;----- asm -----
-; 287 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 287 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[163]	zergnd();
-; 181 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
+; 0 "" 2
+; 181 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	jsr ___Reset0Ref; BIOS call
-; 289 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 0 "" 2
+; 289 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[164]	intens(0x63);
+; 0 "" 2
 ;--- end asm ---
 	ldb	#99	;,
 	stb	5,s	;, a
 ;----- asm -----
-; 3427 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
+; 3427 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 5,s	; a
 	jsr ___Intensity_a; BIOS call
-; 291 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 0 "" 2
+; 291 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[165]	positd(0, yofs);
+; 0 "" 2
 ;--- end asm ---
 	ldb	#-128	;,
 	stb	*_dp_VIA_t1_cnt_lo	;, dp_VIA_t1_cnt_lo
@@ -986,19 +1130,21 @@ _drawBlock:
 	stb	7,s	;, a
 	clr	5,s	; b
 ;----- asm -----
-; 3315 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
+; 3315 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 7,s	; a
 	ldb 5,s	; b
 	jsr ___Moveto_d; BIOS call
-; 294 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 0 "" 2
+; 294 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[167]	positd(x3d(blockX, blockY), y3d(blockX, 0, blockY));
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockY	;, blockY
 	stb	,-s	;,
 	clr	,-s	;
 	ldb	_blockX	;, blockX
 	jsr	_y3d
-	stb	5,s	;, D.2447
+	stb	5,s	;, D.2462
 	ldb	_blockY	;, blockY
 	stb	,-s	;,
 	ldb	_blockX	;, blockX
@@ -1006,15 +1152,17 @@ _drawBlock:
 	stb	10,s	;, b
 	ldb	#-128	;,
 	stb	*_dp_VIA_t1_cnt_lo	;, dp_VIA_t1_cnt_lo
-	ldb	6,s	;, D.2447
+	ldb	6,s	;, D.2462
 	stb	8,s	;, a
 ;----- asm -----
-; 3315 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
+; 3315 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 8,s	; a
 	ldb 10,s	; b
 	jsr ___Moveto_d; BIOS call
-; 296 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 0 "" 2
+; 296 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[168]	pack1x((void*)(blockAnimation[blockAnimationStep]));
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockAnimationStep	;, blockAnimationStep
 	sex		;extendqihi2: R:b -> R:d	;,
@@ -1023,40 +1171,47 @@ _drawBlock:
 	rola	;
 	ldu	_blockAnimation	;, blockAnimation
 	leax	d,u	; tmp37, tmp36,
-	ldx	,x	; D.2454,
+	ldx	,x	; D.2469,
 	ldb	#-128	;,
 	stb	*_dp_VIA_t1_cnt_lo	;, dp_VIA_t1_cnt_lo
 ; Applied peep: 2 (no load after store)
 ;----- asm -----
-; 1610 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
-	stx	8,s	; D.2454, x
-; ORG>	stx	8,s	; D.2454, x
+; 1610 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
+	stx	8,s	; D.2469, x
+; ORG>	stx	8,s	; D.2469, x
 ; ORG>;----- asm -----
-; ORG>; 1610 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
+; ORG>; 1610 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 ; ORG>	ldx 8,s	; x
 	jsr ___Draw_VLp; BIOS call
-; 300 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 0 "" 2
+; 300 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[171]	if (splitMode) {
+; 0 "" 2
 ;--- end asm ---
 	leas	3,s	;,,
 	tst	_splitMode	; splitMode
 	lbeq	L53	;
 ;----- asm -----
-; 302 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 302 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[172]	    	zergnd();
-; 181 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
+; 0 "" 2
+; 181 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	jsr ___Reset0Ref; BIOS call
-; 304 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 0 "" 2
+; 304 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[173]	    	intens(0x35);
+; 0 "" 2
 ;--- end asm ---
 	ldb	#53	;,
 	stb	5,s	;, a
 ;----- asm -----
-; 3427 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
+; 3427 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 5,s	; a
 	jsr ___Intensity_a; BIOS call
-; 306 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 0 "" 2
+; 306 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[174]	    	positd(0, yofs);
+; 0 "" 2
 ;--- end asm ---
 	ldb	#-128	;,
 	stb	*_dp_VIA_t1_cnt_lo	;, dp_VIA_t1_cnt_lo
@@ -1064,19 +1219,21 @@ _drawBlock:
 	stb	7,s	;, a
 	clr	5,s	; b
 ;----- asm -----
-; 3315 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
+; 3315 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 7,s	; a
 	ldb 5,s	; b
 	jsr ___Moveto_d; BIOS call
-; 308 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 0 "" 2
+; 308 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[175]	    	positd(x3d(blockX2, blockY2), y3d(blockX2, 0, blockY2));
+; 0 "" 2
 ;--- end asm ---
 	ldb	_blockY2	;, blockY2
 	stb	,-s	;,
 	clr	,-s	;
 	ldb	_blockX2	;, blockX2
 	jsr	_y3d
-	stb	6,s	;, D.2458
+	stb	6,s	;, D.2473
 	ldb	_blockY2	;, blockY2
 	stb	,-s	;,
 	ldb	_blockX2	;, blockX2
@@ -1084,28 +1241,31 @@ _drawBlock:
 	stb	10,s	;, b
 	ldb	#-128	;,
 	stb	*_dp_VIA_t1_cnt_lo	;, dp_VIA_t1_cnt_lo
-	ldb	7,s	;, D.2458
+	ldb	7,s	;, D.2473
 	stb	8,s	;, a
 ;----- asm -----
-; 3315 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
+; 3315 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	lda 8,s	; a
 	ldb 10,s	; b
 	jsr ___Moveto_d; BIOS call
-; 310 "C:\data\bloxorz\Vide\source\block.enr.c" 1
+; 0 "" 2
+; 310 "/home/frank/data/projects/bloxorz/Vide/source/block.enr.c" 1
 	; #ENR#[176]	    	pack1x((void*)(height1FallingLeft[0]));
+; 0 "" 2
 ;--- end asm ---
 	ldb	#-128	;,
 	stb	*_dp_VIA_t1_cnt_lo	;, dp_VIA_t1_cnt_lo
 	ldx	_height1FallingLeft	;, height1FallingLeft
 ; Applied peep: 2 (no load after store)
 ;----- asm -----
-; 1610 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
+; 1610 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 	stx	8,s	;, x
 ; ORG>	stx	8,s	;, x
 ; ORG>;----- asm -----
-; ORG>; 1610 "C:\tmp\Vide2.5.1.java\Vide.java\C\PeerC\vectrex\include/vec_rum_inl.h" 1
+; ORG>; 1610 "/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include/vec_rum_inl.h" 1
 ; ORG>	ldx 8,s	; x
 	jsr ___Draw_VLp; BIOS call
+; 0 "" 2
 ;--- end asm ---
 	leas	3,s	;,,
 L53:
