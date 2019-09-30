@@ -1,12 +1,12 @@
-# 1 "/home/frank/data/projects/bloxorz/Vide/source/level.c"
+# 1 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/level.c"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/frank/data/projects/bloxorz/Vide/source/level.c"
-# 1 "/home/frank/data/projects/bloxorz/Vide/source/level.h" 1
+# 1 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/level.c"
+# 1 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/level.h" 1
 
 
 
-# 1 "/home/frank/data/projects/bloxorz/Vide/source/stdint.h" 1
+# 1 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/stdint.h" 1
 
 
 
@@ -14,8 +14,8 @@ typedef unsigned long uint16_t;
 typedef signed char int8_t;
 typedef long int16_t;
 typedef unsigned char uint8_t;
-# 5 "/home/frank/data/projects/bloxorz/Vide/source/level.h" 2
-# 13 "/home/frank/data/projects/bloxorz/Vide/source/level.h"
+# 5 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/level.h" 2
+# 13 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/level.h"
 enum SwatchType {
     SWATCH_TYPE_S,
     SWATCH_TYPE_H,
@@ -79,8 +79,8 @@ void initLevel();
 int8_t x3d(int8_t x, int8_t z);
 
 int8_t y3d(int8_t x, int8_t y, int8_t z);
-# 2 "/home/frank/data/projects/bloxorz/Vide/source/level.c" 2
-# 1 "/home/frank/data/projects/bloxorz/Vide/source/block.h" 1
+# 2 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/level.c" 2
+# 1 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/block.h" 1
 
 
 
@@ -128,7 +128,7 @@ void setSplitMode();
 void testMerge();
 
 void swapSplit();
-# 3 "/home/frank/data/projects/bloxorz/Vide/source/level.c" 2
+# 3 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/level.c" 2
 
 
 uint8_t swatchesOn[19];
@@ -310,7 +310,7 @@ void addTarget(int8_t x, int8_t y)
     lineY1[lineCount] = y3d(x, 0, y + 1);
     lineCount++;
 }
-# 192 "/home/frank/data/projects/bloxorz/Vide/source/level.c"
+# 192 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/level.c"
 void setupX()
 {
  long int index;

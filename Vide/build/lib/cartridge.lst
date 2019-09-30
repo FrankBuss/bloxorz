@@ -1,54 +1,68 @@
-                              1 ;;; gcc for m6809 : Mar 17 2019 11:56:12
+                              1 ;;; gcc for m6809 : Sep 13 2017 10:25:42
                               2 ;;; 4.3.6 (gcc6809)
                               3 ;;; ABI version 1
-                              4 ;;; -mabi=bx -mint8 -fomit-frame-pointer -O1
+                              4 ;;; -mint8
                               5 	.module	cartridge.enr.c
-                              6 ; GNU C (GCC) version 4.3.6 (gcc6809) (m6809-unknown-none)
-                              7 ;	compiled by GNU C version 5.4.0 20160609, GMP version 6.1.0, MPFR version 3.1.4.
-                              8 ; GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-                              9 ; options passed:  -O1 -fverbose-asm -W -Wall -Wextra -Wconversion -Werror
-                             10 ; -fomit-frame-pointer -mint8 -msoft-reg-count=0 -std=gnu99
-                             11 ; -fno-time-report -I/home/frank/bin/Vide2.5.1.java/C/PeerC/vectrex/include
-                             12 ; -D__INLINE_RUM=1 -DOMMIT_FRAMEPOINTER=1
-                             13 ; /home/frank/data/projects/bloxorz/Vide/source/cartridge.enr.c
-                             14 ; options enabled:  -falign-loops -fargument-alias -fauto-inc-dec
-                             15 ; -fbranch-count-reg -fcommon -fcprop-registers -fdefer-pop
-                             16 ; -fearly-inlining -feliminate-unused-debug-types -ffunction-cse -fgcse-lm
-                             17 ; -fguess-branch-probability -fident -fif-conversion -fif-conversion2
-                             18 ; -finline-functions-called-once -fipa-pure-const -fipa-reference -fivopts
-                             19 ; -fkeep-static-consts -fleading-underscore -fmath-errno -fmerge-constants
-                             20 ; -fmerge-debug-strings -fmove-loop-invariants -fomit-frame-pointer
-                             21 ; -fpcc-struct-return -fpeephole -fsched-interblock -fsched-spec
-                             22 ; -fsched-stalled-insns-dep -fsigned-zeros -fsplit-ivs-in-unroller
-                             23 ; -fsplit-wide-types -ftoplevel-reorder -ftrapping-math -ftree-ccp
-                             24 ; -ftree-ch -ftree-copy-prop -ftree-copyrename -ftree-dce
-                             25 ; -ftree-dominator-opts -ftree-dse -ftree-fre -ftree-loop-im
-                             26 ; -ftree-loop-ivcanon -ftree-loop-optimize -ftree-parallelize-loops=
-                             27 ; -ftree-reassoc -ftree-salias -ftree-scev-cprop -ftree-sink -ftree-sra
-                             28 ; -ftree-ter -ftree-vect-loop-version -funit-at-a-time -fverbose-asm
-                             29 ; -fzero-initialized-in-bss
-                             30 ; Compiler executable checksum: 74a0323a4f41feb77857e3eae52873ae
-                             31 	.globl	_game_header
+                              6 ;  GNU C (GCC) version 4.3.6 (gcc6809) (m6809-unknown-none)
+                              7 ; 	compiled by GNU C version 5.4.0 20160609, GMP version 4.3.2, MPFR version 2.4.2.
+                              8 ;  GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+                              9 ;  options passed:  -O1 -fverbose-asm -W -Wall -Wextra -Wconversion -Werror
+                             10 ;  -fomit-frame-pointer -mint8 -msoft-reg-count=0 -std=gnu99
+                             11 ;  -fno-time-report -I/home/frank/bin/Vide/C/PeerC/vectrex/include
+                             12 ;  -D__RUM_INLINE=1 -DOMMIT_FRAMEPOINTER=1
+                             13 ;  /home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/cartridge.enr.c
+                             14 ;  options enabled:  -falign-loops -fargument-alias -fauto-inc-dec
+                             15 ;  -fbranch-count-reg -fcommon -fcprop-registers -fdefer-pop
+                             16 ;  -fearly-inlining -feliminate-unused-debug-types -ffunction-cse -fgcse-lm
+                             17 ;  -fguess-branch-probability -fident -fif-conversion -fif-conversion2
+                             18 ;  -finline-functions-called-once -fipa-pure-const -fipa-reference -fivopts
+                             19 ;  -fkeep-static-consts -fleading-underscore -fmath-errno -fmerge-constants
+                             20 ;  -fmerge-debug-strings -fmove-loop-invariants -fomit-frame-pointer
+                             21 ;  -fpcc-struct-return -fpeephole -fsched-interblock -fsched-spec
+                             22 ;  -fsched-stalled-insns-dep -fsigned-zeros -fsplit-ivs-in-unroller
+                             23 ;  -fsplit-wide-types -ftoplevel-reorder -ftrapping-math -ftree-ccp
+                             24 ;  -ftree-ch -ftree-copy-prop -ftree-copyrename -ftree-dce
+                             25 ;  -ftree-dominator-opts -ftree-dse -ftree-fre -ftree-loop-im
+                             26 ;  -ftree-loop-ivcanon -ftree-loop-optimize -ftree-parallelize-loops=
+                             27 ;  -ftree-reassoc -ftree-salias -ftree-scev-cprop -ftree-sink -ftree-sra
+                             28 ;  -ftree-ter -ftree-vect-loop-version -funit-at-a-time -fverbose-asm
+                             29 ;  -fzero-initialized-in-bss
+                             30 ;  Compiler executable checksum: 2c98d3c5ec6c12badb1abdde57df156f
+                             31 	.globl _game_header
                              32 	.area	.cartridge
    0000                      33 _game_header:
-                             34 ; copyright:
-   0000 67 20 47 43 45 20    35 	.byte	103,32,71,67,69,32,50,48
-        32 30
-   0008 31 39 80             36 	.byte	49,57,-128
-                             37 ; music:
-   000B 00 00                38 	.word	_Vec_Music_1
-                             39 ; title_height:
-   000D F8                   40 	.byte	-8
-                             41 ; title_width:
-   000E 50                   42 	.byte	80
-                             43 ; title_y:
-   000F F0                   44 	.byte	-16
-                             45 ; title_x:
-   0010 B8                   46 	.byte	-72
-                             47 ; title:
-   0011 42 4C 4F 58 4F 52    48 	.byte	66,76,79,88,79,82,90,-128
-        5A 80
-   0019 00                   49 	.byte	0
+                             34 ;  copyright:
+   0000 67                   35 	.byte	0x67
+   0001 20                   36 	.byte	0x20
+   0002 47                   37 	.byte	0x47
+   0003 43                   38 	.byte	0x43
+   0004 45                   39 	.byte	0x45
+   0005 20                   40 	.byte	0x20
+   0006 32                   41 	.byte	0x32
+   0007 30                   42 	.byte	0x30
+   0008 31                   43 	.byte	0x31
+   0009 39                   44 	.byte	0x39
+   000A 80                   45 	.byte	0x80
+                             46 ;  music:
+   000B 00 00                47 	.word	_Vec_Music_1
+                             48 ;  title_height:
+   000D F8                   49 	.byte	-8
+                             50 ;  title_width:
+   000E 50                   51 	.byte	80
+                             52 ;  title_y:
+   000F F0                   53 	.byte	-16
+                             54 ;  title_x:
+   0010 B8                   55 	.byte	-72
+                             56 ;  title:
+   0011 42                   57 	.byte	0x42
+   0012 4C                   58 	.byte	0x4C
+   0013 4F                   59 	.byte	0x4F
+   0014 58                   60 	.byte	0x58
+   0015 4F                   61 	.byte	0x4F
+   0016 52                   62 	.byte	0x52
+   0017 5A                   63 	.byte	0x5A
+   0018 80                   64 	.byte	0x80
+   0019 00                   65 	.byte	0x00
 ASxxxx Assembler V05.00  (Motorola 6809), page 1.
 Hexidecimal [16-Bits]
 

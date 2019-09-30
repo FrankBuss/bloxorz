@@ -14,84 +14,84 @@
                              14 
                              15                     .setdp   0xd000,_DATA 
                              16 	
-   5115                      17 arkosPlayerString:
-   5115 41 52 4B 4F 53 20    18                     .ascii       "ARKOS PLAYER"             ; some game information
+   5411                      17 arkosPlayerString:
+   5411 41 52 4B 4F 53 20    18                     .ascii       "ARKOS PLAYER"             ; some game information
         50 4C 41 59 45 52
-   5121 80 00                19                     .db       0h80, 0                    ; end of game header 
+   541D 80 00                19                     .db       0h80, 0                    ; end of game header 
                              20 	
                              21 	.globl  _musicInit
-   5123                      22 _musicInit:
-   5123 34 1E         [ 9]   23 	pshs    d,dp,x
-   5125 CE 3D 19      [ 3]   24  ldu #aks_song
-   5128 BD 35 60      [ 8]   25  jsr    PLY_INIT 
-   512B 35 9E         [10]   26 	puls d,dp,x,pc       ; restore registers from stack and return
+   541F                      22 _musicInit:
+   541F 34 1E         [ 9]   23 	pshs    d,dp,x
+   5421 CE 3D 18      [ 3]   24  ldu #aks_song
+   5424 BD 35 60      [ 8]   25  jsr    PLY_INIT 
+   5427 35 9E         [10]   26 	puls d,dp,x,pc       ; restore registers from stack and return
                              27  
                              28 	.globl  _musicPlay
-   512D                      29 _musicPlay:
-   512D 34 1E         [ 9]   30 	pshs    d,dp,x
-   512F BD 30 F8      [ 8]   31  jsr    PLY_PLAY   
-   5132 8D 21         [ 7]   32  bsr do_ym_sound2
+   5429                      29 _musicPlay:
+   5429 34 1E         [ 9]   30 	pshs    d,dp,x
+   542B BD 30 F8      [ 8]   31  jsr    PLY_PLAY   
+   542E 8D 21         [ 7]   32  bsr do_ym_sound2
                              33 
-   5134 35 9E         [10]   34 	puls d,dp,x,pc       ; restore registers from stack and return
+   5430 35 9E         [10]   34 	puls d,dp,x,pc       ; restore registers from stack and return
                              35 
                              36 	
                              37 
                              38 	.globl  _player_test
-   5136                      39 _player_test:
+   5432                      39 _player_test:
                              40 
-   5136 CE 3D 19      [ 3]   41  ldu #aks_song
-   5139 BD 35 60      [ 8]   42  jsr    PLY_INIT 
-   513C 20 00         [ 3]   43  bra main
-   513E                      44 main: 
-   513E BD F1 92      [ 8]   45                     JSR      Wait_Recal           ; Vectrex BIOS recalibration 
-   5141 BD F2 A5      [ 8]   46                     JSR      Intensity_5F         ; Sets the intensity of the 
+   5432 CE 3D 18      [ 3]   41  ldu #aks_song
+   5435 BD 35 60      [ 8]   42  jsr    PLY_INIT 
+   5438 20 00         [ 3]   43  bra main
+   543A                      44 main: 
+   543A BD F1 92      [ 8]   45                     JSR      Wait_Recal           ; Vectrex BIOS recalibration 
+   543D BD F2 A5      [ 8]   46                     JSR      Intensity_5F         ; Sets the intensity of the 
                              47                                                   ; vector beam to 0h5f 
-   5144 CE 51 15      [ 3]   48                     LDU      #arkosPlayerString  ; address of string 
-   5147 86 10         [ 2]   49                     LDA      #0h10                 ; Text position relative Y 
-   5149 C6 50         [ 2]   50                     LDB      #0h50                ; Text position relative X 
-   514B BD F3 7A      [ 8]   51                     JSR      Print_Str_d          ; Vectrex BIOS print routine 
+   5440 CE 54 11      [ 3]   48                     LDU      #arkosPlayerString  ; address of string 
+   5443 86 10         [ 2]   49                     LDA      #0h10                 ; Text position relative Y 
+   5445 C6 50         [ 2]   50                     LDB      #0h50                ; Text position relative X 
+   5447 BD F3 7A      [ 8]   51                     JSR      Print_Str_d          ; Vectrex BIOS print routine 
                              52 
-   514E BD 30 F8      [ 8]   53  jsr    PLY_PLAY   
-   5151 8D 02         [ 7]   54  bsr do_ym_sound2
+   544A BD 30 F8      [ 8]   53  jsr    PLY_PLAY   
+   544D 8D 02         [ 7]   54  bsr do_ym_sound2
                              55 
-   5153 20 E9         [ 3]   56                     BRA      main                 ; and repeat forever 
+   544F 20 E9         [ 3]   56                     BRA      main                 ; and repeat forever 
                              57 
                              58 ;***************************************************************************
                              59 
-   5155                      60 do_ym_sound2:  
+   5451                      60 do_ym_sound2:  
                              61                                              ;#isfunction  
-   5155 86 D0         [ 2]   62 	lda #0hd0		; setup direct page to 0xd000
-   5157 1F 8B         [ 6]   63 	tfr a, dp
+   5451 86 D0         [ 2]   62 	lda #0hd0		; setup direct page to 0xd000
+   5453 1F 8B         [ 6]   63 	tfr a, dp
                              64 
                              65 ; copy all shadows
-   5159 86 0D         [ 2]   66                     lda      #13                          ; number of regs to copy (+1) 
-   515B 8E C8 E4      [ 3]   67                     ldx      #PLY_PSGREG0                 ; music players write here 
-   515E CE C8 00      [ 3]   68                     ldu      #Vec_Snd_Shadow              ; shadow of actual PSG 
-   5161                      69 next_reg_dsy: 
-   5161 E6 86         [ 5]   70                     ldb      a, x 
-   5163 E1 C6         [ 5]   71                     cmpb     a, u 
-   5165 27 18         [ 3]   72                     beq      inc_reg_dsy 
+   5455 86 0D         [ 2]   66                     lda      #13                          ; number of regs to copy (+1) 
+   5457 8E C8 E4      [ 3]   67                     ldx      #PLY_PSGREG0                 ; music players write here 
+   545A CE C8 00      [ 3]   68                     ldu      #Vec_Snd_Shadow              ; shadow of actual PSG 
+   545D                      69 next_reg_dsy: 
+   545D E6 86         [ 5]   70                     ldb      a, x 
+   545F E1 C6         [ 5]   71                     cmpb     a, u 
+   5461 27 18         [ 3]   72                     beq      inc_reg_dsy 
                              73 ; no put to psg
-   5167 E7 C6         [ 5]   74                     stb      a,u                          ; ensure shadow has copy 
+   5463 E7 C6         [ 5]   74                     stb      a,u                          ; ensure shadow has copy 
                              75 ; a = register
                              76 ; b = value
-   5169 97 01         [ 4]   77                     STA      *VIA_port_a                  ;store register select byte 
-   516B 86 19         [ 2]   78                     LDA      #0h19                         ;sound BDIR on, BC1 on, mux off _ LATCH 
-   516D 97 00         [ 4]   79                     STA      *VIA_port_b 
-   516F 86 01         [ 2]   80                     LDA      #0h01                         ;sound BDIR off, BC1 off, mux off - INACTIVE 
-   5171 97 00         [ 4]   81                     STA      *VIA_port_b 
-   5173 96 01         [ 4]   82                     LDA      *VIA_port_a                  ;read sound chip status (?) 
-   5175 D7 01         [ 4]   83                     STB      *VIA_port_a                  ;store data byte 
-   5177 C6 11         [ 2]   84                     LDB      #0h11                         ;sound BDIR on, BC1 off, mux off - WRITE 
-   5179 D7 00         [ 4]   85                     STB      *VIA_port_b 
-   517B C6 01         [ 2]   86                     LDB      #0h01                         ;sound BDIR off, BC1 off, mux off - INACTIVE 
-   517D D7 00         [ 4]   87                     STB      *VIA_port_b 
-   517F                      88 inc_reg_dsy: 
-   517F 4A            [ 2]   89                     deca     
-   5180 2A DF         [ 3]   90                     bpl      next_reg_dsy 
+   5465 97 01         [ 4]   77                     STA      *VIA_port_a                  ;store register select byte 
+   5467 86 19         [ 2]   78                     LDA      #0h19                         ;sound BDIR on, BC1 on, mux off _ LATCH 
+   5469 97 00         [ 4]   79                     STA      *VIA_port_b 
+   546B 86 01         [ 2]   80                     LDA      #0h01                         ;sound BDIR off, BC1 off, mux off - INACTIVE 
+   546D 97 00         [ 4]   81                     STA      *VIA_port_b 
+   546F 96 01         [ 4]   82                     LDA      *VIA_port_a                  ;read sound chip status (?) 
+   5471 D7 01         [ 4]   83                     STB      *VIA_port_a                  ;store data byte 
+   5473 C6 11         [ 2]   84                     LDB      #0h11                         ;sound BDIR on, BC1 off, mux off - WRITE 
+   5475 D7 00         [ 4]   85                     STB      *VIA_port_b 
+   5477 C6 01         [ 2]   86                     LDB      #0h01                         ;sound BDIR off, BC1 off, mux off - INACTIVE 
+   5479 D7 00         [ 4]   87                     STB      *VIA_port_b 
+   547B                      88 inc_reg_dsy: 
+   547B 4A            [ 2]   89                     deca     
+   547C 2A DF         [ 3]   90                     bpl      next_reg_dsy 
                              91 
-   5182                      92 doneSound_2:
-   5182 39            [ 5]   93                     rts      
+   547E                      92 doneSound_2:
+   547E 39            [ 5]   93                     rts      
 ASxxxx Assembler V05.00  (Motorola 6809), page 1.
 Hexidecimal [16-Bits]
 

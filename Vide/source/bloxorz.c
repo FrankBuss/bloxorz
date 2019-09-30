@@ -70,13 +70,25 @@ extern void delay10ms();
 extern void musicInit();
 extern void musicPlay();
 
-char infoText[10];
+char infoText[20];
 
 uint16_t moveCount;
+uint16_t frames;
 
 uint16_t levelHighscore;
 
 uint8_t picAvailable;
+
+uint8_t arcadeMode;
+uint8_t arcadeSelection;
+uint8_t arcadeIndex;
+
+static const uint8_t arcadeLevels[4][5] = {
+	{ 1, 2, 0 },
+	{ 4, 5, 6, 0 },
+	{ 7, 8, 9, 0 },
+	{ 10, 11, 12, 0 }
+};
 
 const uint8_t startMusic[] = {
 	0xFE,0xE8,   0xFE,0xB6,  // ADSR and twang address tables, in Vectrex ROM
@@ -139,6 +151,8 @@ const uint8_t* currentMusic = startMusic;
 
 enum GameState_t {
 	MainMenu,
+	ArcadeMenu,
+	ArcadeEnd,
 	ClearMenu,
 	BlockMovingToStart,
 	BlockWaiting,
@@ -211,9 +225,9 @@ void itoa(uint16_t number, char* text)
 
 void updateInfoText()
 {
-	itoa(moveCount, &infoText[0]);
-//	itoa(levelHighscore, &infoText[6]);
-	itoa(levelNumber + levelOffset, &infoText[6]);
+	memcpy(infoText, "001 - 999\x80", 10);
+    	itoa(moveCount, &infoText[0]);
+    	itoa(levelNumber + levelOffset, &infoText[6]);
 }
 
 void changeMusic(const uint8_t* music)
@@ -225,8 +239,10 @@ void changeMusic(const uint8_t* music)
 void moveBlock(enum BlockDirection_t move)
 {
 	moveBlockImpl(move);
-	if (moveCount < 999) moveCount++;
-	updateInfoText();
+	if (!arcadeMode) {
+		if (moveCount < 999) moveCount++;
+		updateInfoText();
+	}
 }
 
 void startBlockFalling()
@@ -240,9 +256,13 @@ void startBlockFalling()
 
 void startLevel()
 {
-	levelHighscore = readEeprom((uint8_t) (levelNumber * 2));
-	levelHighscore |= ((uint16_t) readEeprom((uint8_t) (levelNumber * 2 + 1))) << 8;
-	if (levelHighscore == 0) levelHighscore = 999;
+	if (arcadeMode) {
+		levelNumber = arcadeLevels[arcadeSelection][arcadeIndex] - 1;
+	} else {
+	    	levelHighscore = readEeprom((uint8_t) (levelNumber * 2));
+	    	levelHighscore |= ((uint16_t) readEeprom((uint8_t) (levelNumber * 2 + 1))) << 8;
+	    	if (levelHighscore == 0) levelHighscore = 999;
+	}
     level = levels[levelNumber];
 	initSwatches();
 	initLevel();
@@ -253,8 +273,10 @@ void startLevel()
 	gameState = BlockMovingToStart;
 	changeMusic(startMusic);
 	*vecx = 2;
-	moveCount = 0;
-	updateInfoText();
+	if (!arcadeMode) {
+		moveCount = 0;
+		updateInfoText();
+	}
 }
 
 void __attribute__((noinline)) drawField()
@@ -340,6 +362,11 @@ void blockWaiting()
 
     	Read_Btns();
     	if (Vec_Buttons & 1) {
+		if (splitMode) {
+			swapSplit();
+		}
+    	}
+    	if ((Vec_Buttons & 2) && !arcadeMode) {
 		levelNumber++;
 		if (levelNumber >= levelCount) {
 			levelNumber = 0;
@@ -347,11 +374,18 @@ void blockWaiting()
 		}
     		startLevel();
     	}
-    	if (Vec_Buttons & 2) {
-		if (splitMode) {
-			swapSplit();
+    	if ((Vec_Buttons & 4) && !arcadeMode) {
+		if (levelNumber > 0) {
+			levelNumber--;
+		} else {
+	    		levelNumber = levelCount - 1;
+    			setBank(nextBank);
 		}
+    		startLevel();
     	}
+	if (Vec_Buttons & 8) {
+		gameState = MainMenu;
+	}
 }
 
 void blockMoving()
@@ -453,9 +487,22 @@ void blockMovingAtEnd()
 			writeEeprom((uint8_t) (2 * levelNumber), (uint8_t) (moveCount & 0xff));
 			writeEeprom((uint8_t) (2 * levelNumber + 1), (uint8_t) (moveCount >> 8));
 		}
-		levelNumber++;
-		if (levelNumber >= levelCount) levelNumber = 0;
-		startLevel();
+		if (arcadeMode) {
+			arcadeIndex++;
+			levelNumber = arcadeLevels[arcadeSelection][arcadeIndex];
+			if (levelNumber == 0) {
+				gameState = ArcadeEnd;
+				memcpy(infoText, "TIME: 000 SECONDS\x80", 18);
+			    	itoa(moveCount, &infoText[6]);
+				arcadeMode = 0;
+			} else {
+				startLevel();
+			}
+		} else {
+			levelNumber++;
+			if (levelNumber >= levelCount) levelNumber = 0;
+			startLevel();
+		}
 	}
 }
 
@@ -465,13 +512,72 @@ void mainMenu()
     Intensity_a(0x5f);
     Vec_Text_Width = 90;
     Print_Str_d(100, -70, "MAIN MENU\x80");
-    Print_Str_d(50, -110, "1 START GAME\x80");
-    Print_Str_d(20, -110, "2 CLEAR HIGHSCORE\x80");
+    Print_Str_d(50, -110, "1 PUZZLE MODE\x80");
+    Print_Str_d(20, -110, "2 ARCADE MODE\x80");
+    Print_Str_d(-10, -110, "3 CLEAR HIGHSCORE\x80");
 	if (Vec_Buttons & 1) {
+		arcadeMode = 0;
+		levelNumber = 0;
 		startLevel();
 	}
 	if (Vec_Buttons & 2) {
+		frames = 0;
+		moveCount = 0;
+		arcadeMode = 1;
+		arcadeIndex = 0;
+		gameState = ArcadeMenu;
+	}
+	if (Vec_Buttons & 4) {
 		gameState = ClearMenu;
+	}
+}
+
+void arcadeMenu()
+{
+	Read_Btns();
+    Intensity_a(0x5f);
+    Vec_Text_Width = 90;
+    Print_Str_d(100, -70, "ARCADE MODE\x80");
+    Print_Str_d(50, -110, "1 SET 1\x80");
+    Print_Str_d(20, -110, "2 SET 2\x80");
+    Print_Str_d(-10, -110, "3 SET 3\x80");
+    Print_Str_d(-40, -110, "4 SET 4\x80");
+	if (Vec_Buttons & 1) {
+		arcadeSelection = 0;
+		startLevel();
+	}
+	if (Vec_Buttons & 2) {
+		arcadeSelection = 1;
+		startLevel();
+	}
+	if (Vec_Buttons & 4) {
+		arcadeSelection = 2;
+		startLevel();
+	}
+	if (Vec_Buttons & 8) {
+		arcadeSelection = 3;
+		startLevel();
+	}
+}
+
+void arcadeEnd()
+{
+	Read_Btns();
+    Intensity_a(0x5f);
+    Vec_Text_Width = 90;
+    Print_Str_d(100, -70, "GAME OVER\x80");
+    Print_Str_d(50, -110, infoText);
+	if (Vec_Buttons & 1) {
+		gameState = MainMenu;
+	}
+	if (Vec_Buttons & 2) {
+		gameState = MainMenu;
+	}
+	if (Vec_Buttons & 4) {
+		gameState = MainMenu;
+	}
+	if (Vec_Buttons & 8) {
+		gameState = MainMenu;
 	}
 }
 
@@ -559,9 +665,6 @@ int main()
 		picAvailable = 1;
 	}
 
-	// initial info text for current and best move count
-	memcpy(infoText, "001 - 999\x80", 10);
-	
 	// setup joystick read function to read only joystick 1
 	epot0 = 1;
 	epot1 = 3;
@@ -582,6 +685,14 @@ int main()
         			break;
 			case ClearMenu:
 				clearMenu();
+				musicPlay();
+				break;
+			case ArcadeMenu:
+				arcadeMenu();
+				musicPlay();
+				break;
+			case ArcadeEnd:
+				arcadeEnd();
 				musicPlay();
 				break;
 			case BlockMovingToStart:
@@ -612,6 +723,18 @@ int main()
     			replay(currentMusic);
     			DP_to_D0();
     			reqout();
+		}
+
+		// in arcade mode, moveCount is used for seconds
+		if (arcadeMode) {
+			frames++;
+			if (frames == 50) {
+				frames = 0;
+				if (moveCount < 999) {
+					moveCount++;
+					updateInfoText();
+				}
+			}
 		}
 	}
 	return 0;
