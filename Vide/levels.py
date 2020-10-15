@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 
 import sys
-#import pprint
+import pprint
 
-#pp = pprint.PrettyPrinter(indent=4)
+pp = pprint.PrettyPrinter(indent=4)
 
 
 # original Flash level data
@@ -699,6 +699,7 @@ def saveFile(levels2, levelOffset, nextBank, filename):
             i += 1
         file.write("};\n")
 
+pp.pprint(levels2)
 saveFile(levels2[:15], 1, 1, "leveldata0.c")
 saveFile(levels2[15:], 16, 0, "leveldata1.c")
 
