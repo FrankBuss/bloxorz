@@ -93,7 +93,7 @@ def getField(x, y):
         c = level['geometry'][y][x]
     return c;
 
-def isField(x, y):
+def isField(state, x, y):
     c = getField(x, y)
 
     # swatches test
@@ -104,7 +104,7 @@ def isField(x, y):
     # normal and split field test
     return c == 'b' or c == 'e' or c == 's' or c == 'h' or c == 'f' or c == 'v'
 
-def setupX():
+def setupX(state):
     x = 0
     y = 0
     geometry = level['geometry']
@@ -123,15 +123,15 @@ def setupX():
                 addLine(x + 1, y, x, y + 1, 0)
             if (c0 == 'f'):
                 addLine(x, y, x + 1, y, 1)
-            if (isField(x, y) or isField(x, y + 1)):
+            if (isField(state, x, y) or isField(state, x, y + 1)):
                 addLine(x, y + 1, x + 1, y + 1, 0)
 
-def setupY():
+def setupY(state):
     x = 0
     y = 0
     for x in range(-1, LEVEL_WIDTH):
         for y in range(0, LEVEL_HEIGHT + 1):
-            if (isField(x, y) or isField(x + 1, y)):
+            if (isField(state, x, y) or isField(state, x + 1, y)):
                 addLine(x + 1, y, x + 1, y + 1, 0)
 
 def add_line3d(x0, y0, z0, x1, y1, z1):
@@ -158,7 +158,7 @@ def draw_block_impl(x0, y0, x1, y1, x2, y2, x3, y3, height):
     add_line3d(x2, y2, 0, x3, y3, 0)
     add_line3d(x3, y3, 0, x0, y0, 0)
 
-def draw_block():
+def draw_block(state):
     x = state.blockX
     y = state.blockY
     x2 = state.blockX2
@@ -174,22 +174,12 @@ def draw_block():
         if state.blockOrientation == BlockOrientation.Vertical:
             draw_block_impl(x, y, x + 1, y, x + 1, y + 2, x, y + 2, 1)
 
-def draw_field():
-    setupX()
-    setupY()
-    draw_block()
+def draw_field(state):
+    setupX(state)
+    setupY(state)
+    draw_block(state)
 
 class State:
-    def key(self):
-        flat = [j for sub in self.swatchesOn for j in sub]
-        x = self.blockX
-        y = self.blockY
-        x2 = self.blockX2
-        y2 = self.blockY2
-        #if x > x2 or y > y2:
-        #    x, y, x2, y2 = x2, y2, x, y
-        return (self.blockOrientation, x, y, x2, y2, self.splitMode, tuple(flat), self.game_over, self.game_won)
-        
     def __init__(self):
         self.blockOrientation = BlockOrientation.Standing
         self.blockX = 0
@@ -203,6 +193,8 @@ class State:
         
         self.game_over = False
         self.game_won = False
+
+        self.moves = []
  
     def init_by_level(self):
         global endX, endY
@@ -221,132 +213,143 @@ class State:
                     endX = x
                     endY = y
 
-def swatchSwitch(x, y):
-    if state.splitMode: return
-    swatches = level["swatches"]
-    for swatch in swatches:
-        xs = swatch["position"]["x"]
-        ys = swatch["position"]["y"]
-        fields = swatch["fields"]
-        if xs == x and ys == y:
-            for field in fields:
-                xf = field["position"]["x"]
-                yf = field["position"]["y"]
-                action = field["action"]
-                if action == "onoff":
-                    state.swatchesOn[yf][xf] = not state.swatchesOn[yf][xf]
-                elif action == "on":
-                    state.swatchesOn[yf][xf] = True
-                elif action == "off":
-                    state.swatchesOn[yf][xf] = False
-                elif action == "split1":
-                    state.blockX = xf
-                    state.blockY = yf
-                    state.splitMode = True
-                elif action == "split2":
-                    state.blockX2 = xf
-                    state.blockY2 = yf
+    def swatchSwitch(self, x, y):
+        if self.splitMode: return
+        swatches = level["swatches"]
+        for swatch in swatches:
+            xs = swatch["position"]["x"]
+            ys = swatch["position"]["y"]
+            fields = swatch["fields"]
+            if xs == x and ys == y:
+                for field in fields:
+                    xf = field["position"]["x"]
+                    yf = field["position"]["y"]
+                    action = field["action"]
+                    if action == "onoff":
+                        self.swatchesOn[yf][xf] = not self.swatchesOn[yf][xf]
+                    elif action == "on":
+                        self.swatchesOn[yf][xf] = True
+                    elif action == "off":
+                        self.swatchesOn[yf][xf] = False
+                    elif action == "split1":
+                        self.blockX = xf
+                        self.blockY = yf
+                        self.splitMode = True
+                    elif action == "split2":
+                        self.blockX2 = xf
+                        self.blockY2 = yf
 
-def move_block(move):
-    # move block
-    two = 2
-    if state.splitMode: two = 1
-    if state.blockOrientation == BlockOrientation.Standing:
-        if move == Move.Left:
-            state.blockX = state.blockX - two
-            state.blockOrientation = BlockOrientation.Horizontal
-        if move == Move.Right:
-            state.blockX = state.blockX + 1
-            state.blockOrientation = BlockOrientation.Horizontal
-        if move == Move.Up:
-            state.blockY = state.blockY + 1
-            state.blockOrientation = BlockOrientation.Vertical
-        if move == Move.Down:
-            state.blockY = state.blockY - two
-            state.blockOrientation = BlockOrientation.Vertical
-    elif state.blockOrientation == BlockOrientation.Vertical:
-        if move == Move.Left:
-            state.blockX = state.blockX - 1
-        if move == Move.Right:
-            state.blockX = state.blockX + 1
-        if move == Move.Up:
-            state.blockY = state.blockY + two
-            state.blockOrientation = BlockOrientation.Standing
-        if move == Move.Down:
-            state.blockY = state.blockY - 1
-            state.blockOrientation = BlockOrientation.Standing
-    elif state.blockOrientation == BlockOrientation.Horizontal:
-        if move == Move.Left:
-            state.blockX = state.blockX - 1
-            state.blockOrientation = BlockOrientation.Standing
-        if move == Move.Right:
-            state.blockX = state.blockX + two
-            state.blockOrientation = BlockOrientation.Standing
-        if move == Move.Up:
-            state.blockY = state.blockY + 1
-        if move == Move.Down:
-            state.blockY = state.blockY - 1
-    
-    if state.splitMode and move == Move.SplitSwap:
-        state.blockX, state.blockY, state.blockX2, state.blockY2 = state.blockX2, state.blockY2, state.blockX, state.blockY
-    
-    # check for out of field
-    c0 = isField(state.blockX, state.blockY)
-    c1 = isField(state.blockX + 1, state.blockY)
-    c2 = isField(state.blockX, state.blockY + 1)
-    f0 = getField(state.blockX, state.blockY)
-    f1 = getField(state.blockX + 1, state.blockY)
-    f2 = getField(state.blockX, state.blockY + 1)
-    if state.blockOrientation == BlockOrientation.Standing:
-        if not c0 or f0 == 'f':
-            state.game_over = True
-    elif state.blockOrientation == BlockOrientation.Vertical:
-        if not c0 or not c2:
-            state.game_over = True
-    elif state.blockOrientation == BlockOrientation.Horizontal:
-        if not c0 or not c1:
-            state.game_over = True
-    
-    # check for block at target
-    if state.blockOrientation == BlockOrientation.Standing and state.blockX == endX and state.blockY == endY and not state.splitMode:
-        state.game_won = True
+    def move_block(self, move):
+        # move block
+        self.moves.append(move)
+        two = 2
+        if self.splitMode: two = 1
+        if self.blockOrientation == BlockOrientation.Standing:
+            if move == Move.Left:
+                self.blockX = self.blockX - two
+                self.blockOrientation = BlockOrientation.Horizontal
+            if move == Move.Right:
+                self.blockX = self.blockX + 1
+                self.blockOrientation = BlockOrientation.Horizontal
+            if move == Move.Up:
+                self.blockY = self.blockY + 1
+                self.blockOrientation = BlockOrientation.Vertical
+            if move == Move.Down:
+                self.blockY = self.blockY - two
+                self.blockOrientation = BlockOrientation.Vertical
+        elif self.blockOrientation == BlockOrientation.Vertical:
+            if move == Move.Left:
+                self.blockX = self.blockX - 1
+            if move == Move.Right:
+                self.blockX = self.blockX + 1
+            if move == Move.Up:
+                self.blockY = self.blockY + two
+                self.blockOrientation = BlockOrientation.Standing
+            if move == Move.Down:
+                self.blockY = self.blockY - 1
+                self.blockOrientation = BlockOrientation.Standing
+        elif self.blockOrientation == BlockOrientation.Horizontal:
+            if move == Move.Left:
+                self.blockX = self.blockX - 1
+                self.blockOrientation = BlockOrientation.Standing
+            if move == Move.Right:
+                self.blockX = self.blockX + two
+                self.blockOrientation = BlockOrientation.Standing
+            if move == Move.Up:
+                self.blockY = self.blockY + 1
+            if move == Move.Down:
+                self.blockY = self.blockY - 1
+        
+        if self.splitMode and move == Move.SplitSwap:
+            self.blockX, self.blockY, self.blockX2, self.blockY2 = self.blockX2, self.blockY2, self.blockX, self.blockY
+        
+        # check for out of field
+        c0 = isField(self, self.blockX, self.blockY)
+        c1 = isField(self, self.blockX + 1, self.blockY)
+        c2 = isField(self, self.blockX, self.blockY + 1)
+        f0 = getField(self.blockX, self.blockY)
+        f1 = getField(self.blockX + 1, self.blockY)
+        f2 = getField(self.blockX, self.blockY + 1)
+        if self.blockOrientation == BlockOrientation.Standing:
+            if not c0 or f0 == 'f':
+                self.game_over = True
+        elif self.blockOrientation == BlockOrientation.Vertical:
+            if not c0 or not c2:
+                self.game_over = True
+        elif self.blockOrientation == BlockOrientation.Horizontal:
+            if not c0 or not c1:
+                self.game_over = True
+        
+        # check for block at target
+        if self.blockOrientation == BlockOrientation.Standing and self.blockX == endX and self.blockY == endY and not self.splitMode:
+            self.game_won = True
 
-    # check for swatch
-    if state.blockOrientation == BlockOrientation.Standing:
-        if f0 == 's' or f0 == 'h' or f0 == 'v':
-            swatchSwitch(state.blockX, state.blockY)
-    elif state.blockOrientation == BlockOrientation.Vertical:
-        if f0 == 's':
-            swatchSwitch(state.blockX, state.blockY)
-        if f2 == 's':
-            swatchSwitch(state.blockX, state.blockY + 1)
-    elif state.blockOrientation == BlockOrientation.Horizontal:
-        if f0 == 's':
-            swatchSwitch(state.blockX, state.blockY)
-        if f1 == 's':
-            swatchSwitch(state.blockX + 1, state.blockY)
-    
-    # check for block merge in split mode
-    if state.splitMode:
-        if state.blockY == state.blockY2:
-            if state.blockX == state.blockX2 + 1:
-                state.blockOrientation = BlockOrientation.Horizontal
-                state.blockX = state.blockX - 1
-                state.splitMode = False
-            elif state.blockX == state.blockX2 - 1:
-                state.blockOrientation = BlockOrientation.Horizontal
-                state.splitMode = False
-        elif state.blockX == state.blockX2:
-            if state.blockY == state.blockY2 + 1:
-                state.blockOrientation = BlockOrientation.Vertical
-                state.blockY = state.blockY - 1
-                state.splitMode = False
-            elif state.blockY == state.blockY2 - 1:
-                state.blockOrientation = BlockOrientation.Vertical
-                state.splitMode = False
-        if not state.splitMode:
-            state.blockX2 = 0
-            state.blockY2 = 0
+        # check for swatch
+        if self.blockOrientation == BlockOrientation.Standing:
+            if f0 == 's' or f0 == 'h' or f0 == 'v':
+                self.swatchSwitch(self.blockX, self.blockY)
+        elif self.blockOrientation == BlockOrientation.Vertical:
+            if f0 == 's':
+                self.swatchSwitch(self.blockX, self.blockY)
+            if f2 == 's':
+                self.swatchSwitch(self.blockX, self.blockY + 1)
+        elif self.blockOrientation == BlockOrientation.Horizontal:
+            if f0 == 's':
+                self.swatchSwitch(self.blockX, self.blockY)
+            if f1 == 's':
+                self.swatchSwitch(self.blockX + 1, self.blockY)
+        
+        # check for block merge in split mode
+        if self.splitMode:
+            if self.blockY == self.blockY2:
+                if self.blockX == self.blockX2 + 1:
+                    self.blockOrientation = BlockOrientation.Horizontal
+                    self.blockX = self.blockX - 1
+                    self.splitMode = False
+                elif self.blockX == self.blockX2 - 1:
+                    self.blockOrientation = BlockOrientation.Horizontal
+                    self.splitMode = False
+            elif self.blockX == self.blockX2:
+                if self.blockY == self.blockY2 + 1:
+                    self.blockOrientation = BlockOrientation.Vertical
+                    self.blockY = self.blockY - 1
+                    self.splitMode = False
+                elif self.blockY == self.blockY2 - 1:
+                    self.blockOrientation = BlockOrientation.Vertical
+                    self.splitMode = False
+            if not self.splitMode:
+                self.blockX2 = 0
+                self.blockY2 = 0
+
+    def key(self):
+        flat = [j for sub in self.swatchesOn for j in sub]
+        x = self.blockX
+        y = self.blockY
+        x2 = self.blockX2
+        y2 = self.blockY2
+        #if x > x2 or y > y2:
+        #    x, y, x2, y2 = x2, y2, x, y
+        return (self.blockOrientation, x, y, x2, y2, self.splitMode, tuple(flat), self.game_over, self.game_won)
 
 class Solver:
     def __init__(self):
@@ -358,13 +361,13 @@ class Solver:
     
     def run(self):
         global moves
+        state = State()
+        state.init_by_level()
         while True:
             self.tk.after(400)
             self.canvas.delete("all")
-            draw_field()
-            draw_block()
+            draw_field(state)
             self.tk.update()
-            
             if len(moves) > 0:
                 move = moves[0]
                 if move == "l":
@@ -378,40 +381,42 @@ class Solver:
                 elif move == "s":
                     move = Move.SplitSwap
                 #print(move)
-                move_block(move)
+                state.move_block(move)
                 moves = moves[1:]
             else:
                 self.tk.destroy()
                 break
 
-def search_impl(move, moves):
-    global state
-    visited[state.key()] = len(moves)
+def try_move(state, move, states):
+    #print(moves_to_string(state.moves))
+    # move
     s2 = copy.deepcopy(state)
-    move_block(move)
-    moves.append(move)
-    k = state.key()
-    if k in visited:
-        m2 = visited[k]
-        if len(moves) < m2:
-            del visited[k]
-    if k not in visited:
+    s2.move_block(move)
+
+    # ignore move, if the same state happened already, but with less moves
+    v = visited.get(s2.key())
+    if v and len(v.moves) < len(s2.moves):
+        return
+
+    # add state to visited dict and states queue
+    visited[s2.key()] = s2
+    states.append(s2)
+    
+def search(state):
+    states = [state]
+    visited[state.key()] = 0
+    while len(states):
+        state = states.pop(0)
         if state.game_won:
-            wons.append(copy.copy(moves))
+            wons.append(state.moves)
         else:
             if not state.game_over:
-                search(moves)
-    state = s2
-    del moves[-1]
-    
-def search(moves):
-    #print(moves_to_string(moves))
-    search_impl(Move.Left, moves)
-    search_impl(Move.Right, moves)
-    search_impl(Move.Up, moves)
-    search_impl(Move.Down, moves)
-    if state.splitMode:
-        search_impl(Move.SplitSwap, moves)
+                try_move(state, Move.Left, states)
+                try_move(state, Move.Right, states)
+                try_move(state, Move.Up, states)
+                try_move(state, Move.Down, states)
+                if state.splitMode:
+                    try_move(state, Move.SplitSwap, states)
 
 def moves_to_string(moves):
     result = ""
@@ -445,9 +450,9 @@ for level_number in ln:
     visited = dict()
     wons = []
 
-    #start_timing()
-    search([])
-    #end_timing()
+    start_timing()
+    search(state)
+    end_timing()
 
     min = 1e9
     for i in wons:
@@ -462,8 +467,6 @@ for level_number in ln:
         print("level %i: %s" % (level_number + 1, moves))
 
 # show result with Tk
-state = State()
-state.init_by_level()
+#moves = "ruluuuurrluluurur"
+Solver().run()
 
-solver = Solver()
-solver.run()
