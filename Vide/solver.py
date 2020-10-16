@@ -396,6 +396,7 @@ class Solver:
             draw_field(self.state)
             self.tk.update()
             if len(moves) > 0:
+                print(moves[0])
                 move = moves[0]
                 if move == "l":
                     move = Move.Left
@@ -408,31 +409,24 @@ class Solver:
                 elif move == "s":
                     move = Move.SplitSwap
                 #print(move)
-                state.move_block(move)
+                self.move(move)
                 moves = moves[1:]
             #else:
                 #self.tk.destroy()
                 #break
 
-mlen = 0
 def try_move(state, move, states):
-    global mlen
-    l = len(state.moves)
-    if l > mlen:
-        print(moves_to_string(state.moves))
-        mlen = l
-
     # move
     s2 = copy.deepcopy(state)
     s2.move_block(move)
 
     # ignore move, if the same state happened already, but with less moves
     v = visited.get(s2.key())
-    if v and len(v.moves) < len(s2.moves):
+    if v and v < len(s2.moves):
         return
 
     # add state to visited dict and states queue
-    visited[s2.key()] = s2
+    visited[s2.key()] = len(s2.moves)
     states.append(s2)
     
 def search(state):
@@ -442,7 +436,8 @@ def search(state):
         state = states.pop(0)
         if state.game_won:
             wons.append(state.moves)
-            print("solution:", moves_to_string(state.moves))
+            return
+            #print("solution:", moves_to_string(state.moves))
         else:
             if not state.game_over:
                 try_move(state, Move.Left, states)
@@ -470,10 +465,10 @@ def moves_to_string(moves):
 pp = pprint.PrettyPrinter(indent=4)
 
 # solve levels
-#ln = [1]
-ln = [9]
-#for level_number in range(len(levels)):
-for level_number in ln:
+ln = [1]
+#ln = [9]
+for level_number in range(len(levels)):
+#for level_number in ln:
     level = levels[level_number]
     #level = levels[15]
 
@@ -484,9 +479,9 @@ for level_number in ln:
     visited = dict()
     wons = []
 
-    start_timing()
+#    start_timing()
     search(state)
-    end_timing()
+#    end_timing()
 
     min = 1e9
     for i in wons:
@@ -498,11 +493,11 @@ for level_number in ln:
         # pp.pprint(level)
     else:
         moves = moves_to_string(best)
-        print("level %i: best solution: %s" % (level_number + 1, moves))
+        print("level %i: %s" % (level_number + 1, moves))
 
 # show result with Tk
-#moves = "ruluuuurrluluurur"
-moves = ""
+moves = "uudlllullldlldddrdddlruuulusuulllullldlldururrrrddrdlddddd"
+#moves = ""
 level = levels[9]
 #pp.pprint(level)
 Solver().run()
