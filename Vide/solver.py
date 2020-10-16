@@ -214,7 +214,7 @@ class State:
                     endY = y
 
     def swatchSwitch(self, x, y):
-        if self.splitMode: return
+        #if self.splitMode: return
         swatches = level["swatches"]
         for swatch in swatches:
             xs = swatch["position"]["x"]
@@ -290,34 +290,43 @@ class State:
         f0 = getField(self.blockX, self.blockY)
         f1 = getField(self.blockX + 1, self.blockY)
         f2 = getField(self.blockX, self.blockY + 1)
-        if self.blockOrientation == BlockOrientation.Standing:
-            if not c0 or f0 == 'f':
+        if self.splitMode:
+            if not c0:
                 self.game_over = True
-        elif self.blockOrientation == BlockOrientation.Vertical:
-            if not c0 or not c2:
-                self.game_over = True
-        elif self.blockOrientation == BlockOrientation.Horizontal:
-            if not c0 or not c1:
-                self.game_over = True
+        else:
+            if self.blockOrientation == BlockOrientation.Standing:
+                if not c0 or f0 == 'f':
+                    self.game_over = True
+            elif self.blockOrientation == BlockOrientation.Vertical:
+                if not c0 or not c2:
+                    self.game_over = True
+            elif self.blockOrientation == BlockOrientation.Horizontal:
+                if not c0 or not c1:
+                    self.game_over = True
         
         # check for block at target
         if self.blockOrientation == BlockOrientation.Standing and self.blockX == endX and self.blockY == endY and not self.splitMode:
             self.game_won = True
 
         # check for swatch
-        if self.blockOrientation == BlockOrientation.Standing:
-            if f0 == 's' or f0 == 'h' or f0 == 'v':
-                self.swatchSwitch(self.blockX, self.blockY)
-        elif self.blockOrientation == BlockOrientation.Vertical:
+        #print(f0, self.blockX, self.blockY)
+        if self.splitMode:
             if f0 == 's':
                 self.swatchSwitch(self.blockX, self.blockY)
-            if f2 == 's':
-                self.swatchSwitch(self.blockX, self.blockY + 1)
-        elif self.blockOrientation == BlockOrientation.Horizontal:
-            if f0 == 's':
-                self.swatchSwitch(self.blockX, self.blockY)
-            if f1 == 's':
-                self.swatchSwitch(self.blockX + 1, self.blockY)
+        else:
+            if self.blockOrientation == BlockOrientation.Standing:
+                if f0 == 's' or f0 == 'h' or f0 == 'v':
+                    self.swatchSwitch(self.blockX, self.blockY)
+            elif self.blockOrientation == BlockOrientation.Vertical:
+                if f0 == 's':
+                    self.swatchSwitch(self.blockX, self.blockY)
+                if f2 == 's':
+                    self.swatchSwitch(self.blockX, self.blockY + 1)
+            elif self.blockOrientation == BlockOrientation.Horizontal:
+                if f0 == 's':
+                    self.swatchSwitch(self.blockX, self.blockY)
+                if f1 == 's':
+                    self.swatchSwitch(self.blockX + 1, self.blockY)
         
         # check for block merge in split mode
         if self.splitMode:
@@ -354,19 +363,37 @@ class State:
 class Solver:
     def __init__(self):
         global canvas, width, height
+
+        self.state = State()
+        self.state.init_by_level()
+
         self.tk = tk = Tk()
         self.canvas = canvas = Canvas(tk, width=800,height=600)
+
+        tk.bind('<Left>', lambda e: self.move(Move.Left))
+        tk.bind('<Right>', lambda e: self.move(Move.Right))
+        tk.bind('<Up>', lambda e: self.move(Move.Up))
+        tk.bind('<Down>', lambda e: self.move(Move.Down))
+        tk.bind('<space>', lambda e: self.move(Move.SplitSwap))
         canvas.pack()
         width, height = tk.getint(canvas['width']), tk.getint(canvas['height'])
     
+    def move(self, direction):
+        self.state.move_block(direction)
+        print(moves_to_string(self.state.moves))
+        if self.state.game_won:
+            print("won")
+        if self.state.game_over:
+            print("game over")
+            self.state = State()
+            self.state.init_by_level()
+
     def run(self):
         global moves
-        state = State()
-        state.init_by_level()
         while True:
-            self.tk.after(400)
+            self.tk.after(100)
             self.canvas.delete("all")
-            draw_field(state)
+            draw_field(self.state)
             self.tk.update()
             if len(moves) > 0:
                 move = moves[0]
@@ -383,12 +410,18 @@ class Solver:
                 #print(move)
                 state.move_block(move)
                 moves = moves[1:]
-            else:
-                self.tk.destroy()
-                break
+            #else:
+                #self.tk.destroy()
+                #break
 
+mlen = 0
 def try_move(state, move, states):
-    #print(moves_to_string(state.moves))
+    global mlen
+    l = len(state.moves)
+    if l > mlen:
+        print(moves_to_string(state.moves))
+        mlen = l
+
     # move
     s2 = copy.deepcopy(state)
     s2.move_block(move)
@@ -409,6 +442,7 @@ def search(state):
         state = states.pop(0)
         if state.game_won:
             wons.append(state.moves)
+            print("solution:", moves_to_string(state.moves))
         else:
             if not state.game_over:
                 try_move(state, Move.Left, states)
@@ -436,8 +470,8 @@ def moves_to_string(moves):
 pp = pprint.PrettyPrinter(indent=4)
 
 # solve levels
-ln = [1]
-#ln = [9]
+#ln = [1]
+ln = [9]
 #for level_number in range(len(levels)):
 for level_number in ln:
     level = levels[level_number]
@@ -464,9 +498,12 @@ for level_number in ln:
         # pp.pprint(level)
     else:
         moves = moves_to_string(best)
-        print("level %i: %s" % (level_number + 1, moves))
+        print("level %i: best solution: %s" % (level_number + 1, moves))
 
 # show result with Tk
 #moves = "ruluuuurrluluurur"
+moves = ""
+level = levels[9]
+#pp.pprint(level)
 Solver().run()
 
