@@ -208,7 +208,7 @@ class State:
             for x in range(0, LEVEL_WIDTH):
                 c0 = geometry[y][x]
                 if c0 == 'k' or c0 == 'q':
-                    state.swatchesOn[y][x] = True
+                    self.swatchesOn[y][x] = True
                 if c0 == 'e':
                     endX = x
                     endY = y
@@ -311,7 +311,7 @@ class State:
         # check for swatch
         #print(f0, self.blockX, self.blockY)
         if self.splitMode:
-            if f0 == 's':
+            if f0 == 's' or f0 == 'h':
                 self.swatchSwitch(self.blockX, self.blockY)
         else:
             if self.blockOrientation == BlockOrientation.Standing:
@@ -397,23 +397,41 @@ class Solver:
             self.tk.update()
             if len(moves) > 0:
                 print(moves[0])
-                move = moves[0]
-                if move == "l":
-                    move = Move.Left
-                elif move == "r":
-                    move = Move.Right
-                elif move == "u":
-                    move = Move.Up
-                elif move == "d":
-                    move = Move.Down
-                elif move == "s":
-                    move = Move.SplitSwap
+                move = string_to_move(moves[0])
                 #print(move)
                 self.move(move)
                 moves = moves[1:]
             #else:
                 #self.tk.destroy()
                 #break
+
+def moves_to_string(moves):
+    result = ""
+    for move in moves:
+        if move == Move.Left:
+            result = result + "l"
+        elif move == Move.Right:
+            result = result + "r"
+        elif move == Move.Up:
+            result = result + "u"
+        elif move == Move.Down:
+            result = result + "d"
+        elif move == Move.SplitSwap:
+            result = result + "s"
+    return result
+
+def string_to_move(move):
+    if move == "l":
+        return Move.Left
+    elif move == "r":
+        return Move.Right
+    elif move == "u":
+        return Move.Up
+    elif move == "d":
+        return Move.Down
+    elif move == "s":
+        return Move.SplitSwap
+    return None
 
 def try_move(state, move, states):
     # move
@@ -436,7 +454,6 @@ def search(state):
         state = states.pop(0)
         if state.game_won:
             wons.append(state.moves)
-            return
             #print("solution:", moves_to_string(state.moves))
         else:
             if not state.game_over:
@@ -447,35 +464,14 @@ def search(state):
                 if state.splitMode:
                     try_move(state, Move.SplitSwap, states)
 
-def moves_to_string(moves):
-    result = ""
-    for move in moves:
-        if move == Move.Left:
-            result = result + "l"
-        elif move == Move.Right:
-            result = result + "r"
-        elif move == Move.Up:
-            result = result + "u"
-        elif move == Move.Down:
-            result = result + "d"
-        elif move == Move.SplitSwap:
-            result = result + "s"
-    return result
-
-pp = pprint.PrettyPrinter(indent=4)
-
-# solve levels
-ln = [1]
-#ln = [9]
-for level_number in range(len(levels)):
-#for level_number in ln:
+# search for a solution and return the moves string, or None if no solution found
+def find_solution(level_number):
+    global level, visited, wons
     level = levels[level_number]
-    #level = levels[15]
-
     state = State()
     state.init_by_level()
 
-    # search for best moves
+    # search for a solution
     visited = dict()
     wons = []
 
@@ -489,16 +485,83 @@ for level_number in range(len(levels)):
             best = i
             min = len(i)
     if len(wons) == 0:
-        print("level %i: no solution found" % (level_number + 1))
-        # pp.pprint(level)
+        return None
     else:
-        moves = moves_to_string(best)
-        print("level %i: %s" % (level_number + 1, moves))
+        return moves_to_string(best)
 
-# show result with Tk
-moves = "uudlllullldlldddrdddlruuulusuulllullldlldururrrrddrdlddddd"
-#moves = ""
-level = levels[9]
-#pp.pprint(level)
+pp = pprint.PrettyPrinter(indent=4)
+
+# solve one level
+#ln = [1]
+
+# solve all levels
+ln = [x for x in range(len(levels))]
+
+solutions = []
+for level_number in ln:
+    solution = find_solution(level_number)
+    if solution:
+        print("solution found for level %d: %s" % (level_number, solution))
+    if not solution:
+        print("no solution found for level %d" % level_number)
+        break
+    solutions.append(solution)
+
+# test solutions
+solutions_all = [
+    "ulluulu",
+    "ruluuuurrluluurur",
+    "rdluruuuurruuulllur",
+    "rdruuruuuuuululllllurddddddl",
+    "dddudddddlulluuuuluuuuddddldddddd",
+    "uuullullulurdddrrdrrruuluurdlluullu",
+    "ldruuuuuludrdddddlululuuurruldrurruuulululdr",
+    "uulllllruru",
+    "uluuuuuuruldddddrsluuuuul",
+    "uudlllulllllddddrdddlruuuluuuslusrrurrrrddrdddddd",
+    "uuuurdllluuuldrdddrruruulurdddlldddrrurrdluruld",
+    "dluruldrurururuuullldrurrrddduuullldluruldrrruurldllldrurdrdddlld",
+    "rrdlululdrrrrdddddddlllurdlullulluruuuuurdldrr",
+    "uuuurddluuulllldddluruurrllddluluuddrddruuurrrrddddddruldddddlllulu",
+    "uuuurrsrrrrruuurruuululrrsdddddddldddlllldruluuuuuuu",
+    "uuuusulsursuuuu",
+    "llllldruuuuuruuudddlddddrrrrrruuuuluuuuldrulruldrrulddrulddddrddddlllllluuuuruuullrdrdddldddrrrdruuuuuluuu",
+    "ldruuuurrlldddlurddluruuullrrdddrdlurddlllluuddrrrruulurdllurdluruuuuulllurdllurdldru",
+    "uuuuuuuulurddddddluruuuuullllldddddldruuuuuurdldddddlllluuuddddddrr",
+    "ldluldrrurrdddlddrulldlldlrurrurruuuldlddddlllllsrdlsuuuul",
+    "uldrdluruuruuurdlllrrruldddlddldrulurdlurdlullulluuurrllddrdluuurrrruuu",
+    "uruuuulullldlrurrrdruldrdrddldddluruldlllulrdrrrurdlururuuuluuuur",
+    "ulluruuuuurdlurdddrrdsrlluullluuurur",
+    "lluurruruuuuulruuuu",
+    "ruldruldruuuurdrddrudluullddddluuruuurruuuruldrruldruld",
+    "rrdddldddluruurruuluuluurrsrrrddddddldddllllrrrruuuuulllluuusddrddddllllluud",
+    "uuuuuruuulurdddlddddddlurddluruuuuudruuuullldllldddldrrrruldddddddrdllurddlurrdluurdlluurddrulddruldurdlurlurdllurdlurd",
+    "dllluldrulluulluuurrrdrdrdrdluulululuuldlddrrrdrdrdrdddlruuuldrddldruuululululuddddllldddddrrdddlsdddddddrrdddr",
+    "uldrdlurulluuddrrdlurdldrdrrdduulluluruldrurruuddlllllluuddrrrrdddddduuuuldruuuuuudddddrdlllldddlurdlurd",
+    "lulluuruuluuuurlddddrdddlldruuuuurruruuurulllddldlurruldlddddrddlddrdldrurldluruluurdlldruuuuuuurdrrruuururdddddld",
+    "rdlddrrrrlllluuurdlurrrrurdllurdldddllldllrrurrrddddlurdllllldrudruluruuruuluuurdlurrrrruld",
+    "rrdlururuldurdldldruldrururulddllldlddrdluuurrrrruruurlddldlllllddddrudluuuurrrrruruurlddldllllldddruluurrruruurdldldlurddrdddddl",
+    "uuuurdlldrurruululurddrululluldlluurlddrrurdrrdrdlurdddllldlddldr"
+]
+for level_number in range(len(solutions)):
+    level = levels[level_number]
+    state = State()
+    state.init_by_level()
+    solution = solutions[level_number]
+    for move in solution:
+        move = string_to_move(move)
+        state.move_block(move)
+        if state.game_over:
+            print("level %d: failed, game over" % level_number)
+            break
+    if state.game_won:
+        print("level %d: won" % level_number)
+    else:
+        if not state.game_over:
+            print("level %d: failed, not won" % level_number)
+
+# show move and play with Tk
+moves = ""
+level = levels[27]
+pp.pprint(level)  # debug print of the current level
 Solver().run()
-
