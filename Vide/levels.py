@@ -607,6 +607,7 @@ for level in levels:
 #   h : x switch, can be switched only if the block hits the switch vertically
 #   l, r : if a switch is hit, these fields appear or disappear
 #   k, q : same as l and r, but initially on instead of off
+#   f : can be visited only in split mode, or not standing
 # start: x, y start coordinate of the block
 
 # rotate geometry by 90 deg

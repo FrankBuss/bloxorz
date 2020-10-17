@@ -727,3 +727,7 @@ const struct Level* const levels[] = {
     &level13,
     &level14,
 };
+
+const char* solutions[] = {
+    "ulluulu",
+};

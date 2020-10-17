@@ -638,6 +638,13 @@ _levels:
 	.word	_level12
 	.word	_level13
 	.word	_level14
+	.globl _solutions
+LC15:
+	.ascii "ulluulu\0"
+	.area .data
+_solutions:
+	.word	LC15
+	.area .text
 ___compound_literal.0:
 ;  action:
 	.byte	0

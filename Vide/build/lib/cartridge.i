@@ -1934,13 +1934,13 @@ static inline __attribute__((always_inline)) void Wait_Bound(void)
 
 struct cartridge_t
 {
- char copyright[11];
- const void* music;
- signed int title_height;
- unsigned int title_width;
- int title_y;
- int title_x;
- char title[9];
+    char copyright[11];
+    const void* music;
+    signed int title_height;
+    unsigned int title_width;
+    int title_y;
+    int title_x;
+    char title[9];
 };
 
 
@@ -1948,11 +1948,11 @@ struct cartridge_t
 
 const struct cartridge_t game_header __attribute__((section(".cartridge"), used)) =
 {
- .copyright = "g GCE 2019\x80",
- .music = &Vec_Music_1,
- .title_height = -8,
- .title_width = 80,
- .title_y = -16,
- .title_x = -72,
- .title = "BLOXORZ\x80"
+    .copyright = "g GCE 2019\x80",
+    .music = &Vec_Music_1,
+    .title_height = -8,
+    .title_width = 80,
+    .title_y = -16,
+    .title_x = -72,
+    .title = "BLOXORZ\x80"
 };

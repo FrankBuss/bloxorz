@@ -73,7 +73,6 @@ uint8_t isField(int8_t x, int8_t y)
 
 void swatchSwitch(int8_t x, int8_t y)
 {
-    if (splitMode) return;
     for (uint8_t i = 0; i < level->swatches_count; i++) {
         const struct Swatch* swatch = level->swatches[i];
         if (swatch->position.x == x && swatch->position.y == y) {

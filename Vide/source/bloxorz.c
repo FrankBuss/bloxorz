@@ -83,6 +83,9 @@ uint8_t arcadeMode;
 uint8_t arcadeSelection;
 uint8_t arcadeIndex;
 
+static uint8_t si = 0;
+extern const char* solutions[];
+
 static const uint8_t arcadeLevels[4][5] = {
     { 1, 2, 0 },
     { 4, 5, 6, 0 },
@@ -277,6 +280,7 @@ void startLevel()
         moveCount = 0;
         updateInfoText();
     }
+    si = 0;
 }
 
 void __attribute__((noinline)) drawField()
@@ -355,6 +359,34 @@ void blockWaiting()
         moveBlock(Up);
         gameState = BlockMoving;
     }
+
+#if 0
+    char move = solutions[levelNumber][si];
+    if (move == 0) {
+        si = 0;
+    } else {
+        if (move == 'l') {
+            moveBlock(Left);
+            gameState = BlockMoving;
+        } else if (move == 'r') {
+            moveBlock(Right);
+            gameState = BlockMoving;
+        } else if (move == 'd') {
+            moveBlock(Down);
+            gameState = BlockMoving;
+        } else if (move == 'u') {
+            moveBlock(Up);
+            gameState = BlockMoving;
+        }
+        if (move == 's') {
+            if (splitMode) {
+                swapSplit();
+            }
+        }
+        si++;
+    }
+#endif
+
     if (gameState == BlockMoving) {
         changeMusic(movingMusic);
         *vecx = 3;
@@ -366,6 +398,7 @@ void blockWaiting()
             swapSplit();
         }
     }
+
     if ((Vec_Buttons & 2) && !arcadeMode) {
         levelNumber++;
         if (levelNumber >= levelCount) {
@@ -394,6 +427,11 @@ void blockMoving()
     drawBlock(0);
     doBlockAnimation();
     if (!blockAnimating) {
+        // check for block merge in split mode
+        if (splitMode) {
+            testMerge();
+        }
+
         // check for out of field
         uint8_t c0 = isField(blockX, blockY);
         uint8_t c1 = isField(blockX + 1, blockY);
@@ -401,22 +439,28 @@ void blockMoving()
         char f0 = getField(blockX, blockY);
         char f1 = getField(blockX + 1, blockY);
         char f2 = getField(blockX, blockY + 1);
-        switch (blockOrientation) {
-        case Standing:
-            if (!c0 || f0 == 'f') {
+        if (splitMode) {
+            if (!c0) {
                 startBlockFalling();
             }
-            break;
-        case Vertical:
-            if (!c0 || !c2) {
-                startBlockFalling();
+        } else {
+            switch (blockOrientation) {
+            case Standing:
+                if (!c0 || f0 == 'f') {
+                    startBlockFalling();
+                }
+                break;
+            case Vertical:
+                if (!c0 || !c2) {
+                    startBlockFalling();
+                }
+                break;
+            case Horizontal:
+                if (!c0 || ! c1) {
+                    startBlockFalling();
+                }
+                break;
             }
-            break;
-        case Horizontal:
-            if (!c0 || ! c1) {
-                startBlockFalling();
-            }
-            break;
         }
 
         // check for block at target
@@ -433,33 +477,34 @@ void blockMoving()
         }
 
         // check for swatch
-        switch (blockOrientation) {
-        case Standing:
-            if (f0 == 's' || f0 == 'h' || f0 == 'v') {
-                swatchSwitch(blockX, blockY);
-            }
-            break;
-        case Vertical:
-            if (f0 == 's') {
-                swatchSwitch(blockX, blockY);
-            }
-            if (f2 == 's') {
-                swatchSwitch(blockX, blockY + 1);
-            }
-            break;
-        case Horizontal:
-            if (f0 == 's') {
-                swatchSwitch(blockX, blockY);
-            }
-            if (f1 == 's') {
-                swatchSwitch(blockX + 1, blockY);
-            }
-            break;
-        }
-
-        // check for block merge in split mode
         if (splitMode) {
-            testMerge();
+            if (f0 == 's') {
+                swatchSwitch(blockX, blockY);
+            }
+        } else {
+            switch (blockOrientation) {
+            case Standing:
+                if (f0 == 's' || f0 == 'h' || f0 == 'v') {
+                    swatchSwitch(blockX, blockY);
+                }
+                break;
+            case Vertical:
+                if (f0 == 's') {
+                    swatchSwitch(blockX, blockY);
+                }
+                if (f2 == 's') {
+                    swatchSwitch(blockX, blockY + 1);
+                }
+                break;
+            case Horizontal:
+                if (f0 == 's') {
+                    swatchSwitch(blockX, blockY);
+                }
+                if (f1 == 's') {
+                    swatchSwitch(blockX + 1, blockY);
+                }
+                break;
+            }
         }
     }
 }

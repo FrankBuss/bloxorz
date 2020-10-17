@@ -50,8 +50,8 @@
                              50 ;  fields_count:
    0006 02                   51 	.byte	2
                              52 ;  fields:
-   0007 0A 27                53 	.word	___compound_literal.0
-   0009 0A 2A                54 	.word	___compound_literal.1
+   0007 0A 2F                53 	.word	___compound_literal.0
+   0009 0A 32                54 	.word	___compound_literal.1
                              55 	.globl _swatch_1_1
    000B                      56 _swatch_1_1:
                              57 ;  type:
@@ -64,8 +64,8 @@
                              64 ;  fields_count:
    000E 02                   65 	.byte	2
                              66 ;  fields:
-   000F 0A 2D                67 	.word	___compound_literal.2
-   0011 0A 30                68 	.word	___compound_literal.3
+   000F 0A 35                67 	.word	___compound_literal.2
+   0011 0A 38                68 	.word	___compound_literal.3
                              69 	.globl _swatch_4_0
    0013                      70 _swatch_4_0:
                              71 ;  type:
@@ -78,8 +78,8 @@
                              78 ;  fields_count:
    0016 02                   79 	.byte	2
                              80 ;  fields:
-   0017 0A 33                81 	.word	___compound_literal.4
-   0019 0A 36                82 	.word	___compound_literal.5
+   0017 0A 3B                81 	.word	___compound_literal.4
+   0019 0A 3E                82 	.word	___compound_literal.5
                              83 	.globl _swatch_4_1
    001B                      84 _swatch_4_1:
                              85 ;  type:
@@ -92,8 +92,8 @@
                              92 ;  fields_count:
    001E 02                   93 	.byte	2
                              94 ;  fields:
-   001F 0A 39                95 	.word	___compound_literal.6
-   0021 0A 3C                96 	.word	___compound_literal.7
+   001F 0A 41                95 	.word	___compound_literal.6
+   0021 0A 44                96 	.word	___compound_literal.7
                              97 	.globl _swatch_4_2
    0023                      98 _swatch_4_2:
                              99 ;  type:
@@ -106,8 +106,8 @@
                             106 ;  fields_count:
    0026 02                  107 	.byte	2
                             108 ;  fields:
-   0027 0A 3F               109 	.word	___compound_literal.8
-   0029 0A 42               110 	.word	___compound_literal.9
+   0027 0A 47               109 	.word	___compound_literal.8
+   0029 0A 4A               110 	.word	___compound_literal.9
                             111 	.globl _swatch_4_3
    002B                     112 _swatch_4_3:
                             113 ;  type:
@@ -120,8 +120,8 @@
                             120 ;  fields_count:
    002E 02                  121 	.byte	2
                             122 ;  fields:
-   002F 0A 45               123 	.word	___compound_literal.10
-   0031 0A 48               124 	.word	___compound_literal.11
+   002F 0A 4D               123 	.word	___compound_literal.10
+   0031 0A 50               124 	.word	___compound_literal.11
                             125 	.globl _swatch_6_0
    0033                     126 _swatch_6_0:
                             127 ;  type:
@@ -134,7 +134,7 @@
                             134 ;  fields_count:
    0036 01                  135 	.byte	1
                             136 ;  fields:
-   0037 0A 4B               137 	.word	___compound_literal.12
+   0037 0A 53               137 	.word	___compound_literal.12
                             138 	.globl _swatch_7_0
    0039                     139 _swatch_7_0:
                             140 ;  type:
@@ -147,8 +147,8 @@
                             147 ;  fields_count:
    003C 02                  148 	.byte	2
                             149 ;  fields:
-   003D 0A 4E               150 	.word	___compound_literal.13
-   003F 0A 51               151 	.word	___compound_literal.14
+   003D 0A 56               150 	.word	___compound_literal.13
+   003F 0A 59               151 	.word	___compound_literal.14
                             152 	.globl _swatch_8_0
    0041                     153 _swatch_8_0:
                             154 ;  type:
@@ -161,8 +161,8 @@
                             161 ;  fields_count:
    0044 02                  162 	.byte	2
                             163 ;  fields:
-   0045 0A 54               164 	.word	___compound_literal.15
-   0047 0A 57               165 	.word	___compound_literal.16
+   0045 0A 5C               164 	.word	___compound_literal.15
+   0047 0A 5F               165 	.word	___compound_literal.16
                             166 	.globl _swatch_9_0
    0049                     167 _swatch_9_0:
                             168 ;  type:
@@ -175,8 +175,8 @@
                             175 ;  fields_count:
    004C 02                  176 	.byte	2
                             177 ;  fields:
-   004D 0A 5A               178 	.word	___compound_literal.17
-   004F 0A 5D               179 	.word	___compound_literal.18
+   004D 0A 62               178 	.word	___compound_literal.17
+   004F 0A 65               179 	.word	___compound_literal.18
                             180 	.globl _swatch_9_1
    0051                     181 _swatch_9_1:
                             182 ;  type:
@@ -189,8 +189,8 @@
                             189 ;  fields_count:
    0054 02                  190 	.byte	2
                             191 ;  fields:
-   0055 0A 60               192 	.word	___compound_literal.19
-   0057 0A 63               193 	.word	___compound_literal.20
+   0055 0A 68               192 	.word	___compound_literal.19
+   0057 0A 6B               193 	.word	___compound_literal.20
                             194 	.globl _swatch_9_2
    0059                     195 _swatch_9_2:
                             196 ;  type:
@@ -203,10 +203,10 @@
                             203 ;  fields_count:
    005C 04                  204 	.byte	4
                             205 ;  fields:
-   005D 0A 66               206 	.word	___compound_literal.21
-   005F 0A 69               207 	.word	___compound_literal.22
-   0061 0A 6C               208 	.word	___compound_literal.23
-   0063 0A 6F               209 	.word	___compound_literal.24
+   005D 0A 6E               206 	.word	___compound_literal.21
+   005F 0A 71               207 	.word	___compound_literal.22
+   0061 0A 74               208 	.word	___compound_literal.23
+   0063 0A 77               209 	.word	___compound_literal.24
                             210 	.globl _swatch_10_0
    0065                     211 _swatch_10_0:
                             212 ;  type:
@@ -219,8 +219,8 @@
                             219 ;  fields_count:
    0068 02                  220 	.byte	2
                             221 ;  fields:
-   0069 0A 72               222 	.word	___compound_literal.25
-   006B 0A 75               223 	.word	___compound_literal.26
+   0069 0A 7A               222 	.word	___compound_literal.25
+   006B 0A 7D               223 	.word	___compound_literal.26
                             224 	.globl _swatch_11_0
    006D                     225 _swatch_11_0:
                             226 ;  type:
@@ -233,7 +233,7 @@
                             233 ;  fields_count:
    0070 01                  234 	.byte	1
                             235 ;  fields:
-   0071 0A 78               236 	.word	___compound_literal.27
+   0071 0A 80               236 	.word	___compound_literal.27
                             237 	.globl _swatch_11_1
    0073                     238 _swatch_11_1:
                             239 ;  type:
@@ -246,7 +246,7 @@
                             246 ;  fields_count:
    0076 01                  247 	.byte	1
                             248 ;  fields:
-   0077 0A 7B               249 	.word	___compound_literal.28
+   0077 0A 83               249 	.word	___compound_literal.28
                             250 	.globl _swatch_13_0
    0079                     251 _swatch_13_0:
                             252 ;  type:
@@ -259,8 +259,8 @@
                             259 ;  fields_count:
    007C 02                  260 	.byte	2
                             261 ;  fields:
-   007D 0A 7E               262 	.word	___compound_literal.29
-   007F 0A 81               263 	.word	___compound_literal.30
+   007D 0A 86               262 	.word	___compound_literal.29
+   007F 0A 89               263 	.word	___compound_literal.30
                             264 	.globl _swatch_13_1
    0081                     265 _swatch_13_1:
                             266 ;  type:
@@ -273,8 +273,8 @@
                             273 ;  fields_count:
    0084 02                  274 	.byte	2
                             275 ;  fields:
-   0085 0A 84               276 	.word	___compound_literal.31
-   0087 0A 87               277 	.word	___compound_literal.32
+   0085 0A 8C               276 	.word	___compound_literal.31
+   0087 0A 8F               277 	.word	___compound_literal.32
                             278 	.globl _swatch_14_0
    0089                     279 _swatch_14_0:
                             280 ;  type:
@@ -287,10 +287,10 @@
                             287 ;  fields_count:
    008C 04                  288 	.byte	4
                             289 ;  fields:
-   008D 0A 8A               290 	.word	___compound_literal.33
-   008F 0A 8D               291 	.word	___compound_literal.34
-   0091 0A 90               292 	.word	___compound_literal.35
-   0093 0A 93               293 	.word	___compound_literal.36
+   008D 0A 92               290 	.word	___compound_literal.33
+   008F 0A 95               291 	.word	___compound_literal.34
+   0091 0A 98               292 	.word	___compound_literal.35
+   0093 0A 9B               293 	.word	___compound_literal.36
                             294 	.globl _swatch_14_1
    0095                     295 _swatch_14_1:
                             296 ;  type:
@@ -303,10 +303,10 @@
                             303 ;  fields_count:
    0098 04                  304 	.byte	4
                             305 ;  fields:
-   0099 0A 96               306 	.word	___compound_literal.37
-   009B 0A 99               307 	.word	___compound_literal.38
-   009D 0A 9C               308 	.word	___compound_literal.39
-   009F 0A 9F               309 	.word	___compound_literal.40
+   0099 0A 9E               306 	.word	___compound_literal.37
+   009B 0A A1               307 	.word	___compound_literal.38
+   009D 0A A4               308 	.word	___compound_literal.39
+   009F 0A A7               309 	.word	___compound_literal.40
                             310 	.globl _swatch_14_2
    00A1                     311 _swatch_14_2:
                             312 ;  type:
@@ -319,8 +319,8 @@
                             319 ;  fields_count:
    00A4 02                  320 	.byte	2
                             321 ;  fields:
-   00A5 0A A2               322 	.word	___compound_literal.41
-   00A7 0A A5               323 	.word	___compound_literal.42
+   00A5 0A AA               322 	.word	___compound_literal.41
+   00A7 0A AD               323 	.word	___compound_literal.42
                             324 	.globl _swatch_14_3
    00A9                     325 _swatch_14_3:
                             326 ;  type:
@@ -333,8 +333,8 @@
                             333 ;  fields_count:
    00AC 02                  334 	.byte	2
                             335 ;  fields:
-   00AD 0A A8               336 	.word	___compound_literal.43
-   00AF 0A AB               337 	.word	___compound_literal.44
+   00AD 0A B0               336 	.word	___compound_literal.43
+   00AF 0A B3               337 	.word	___compound_literal.44
                             338 	.globl _swatch_14_4
    00B1                     339 _swatch_14_4:
                             340 ;  type:
@@ -347,8 +347,8 @@
                             347 ;  fields_count:
    00B4 02                  348 	.byte	2
                             349 ;  fields:
-   00B5 0A AE               350 	.word	___compound_literal.45
-   00B7 0A B1               351 	.word	___compound_literal.46
+   00B5 0A B6               350 	.word	___compound_literal.45
+   00B7 0A B9               351 	.word	___compound_literal.46
                             352 	.globl _level0
    00B9                     353 LC0:
    00B9 20 20 20 20 20 20   354 	.ascii "                         bbb      bbbb      bbbb"
@@ -968,382 +968,390 @@
    0A21 08 BE               638 	.word	_level12
    0A23 09 5A               639 	.word	_level13
    0A25 09 FA               640 	.word	_level14
-   0A27                     641 ___compound_literal.0:
-                            642 ;  action:
-   0A27 00                  643 	.byte	0
-                            644 ;  position:
-                            645 ;  x:
-   0A28 04                  646 	.byte	4
-                            647 ;  y:
-   0A29 0A                  648 	.byte	10
-   0A2A                     649 ___compound_literal.1:
-                            650 ;  action:
-   0A2A 00                  651 	.byte	0
-                            652 ;  position:
-                            653 ;  x:
-   0A2B 04                  654 	.byte	4
-                            655 ;  y:
-   0A2C 0B                  656 	.byte	11
-   0A2D                     657 ___compound_literal.2:
-                            658 ;  action:
-   0A2D 00                  659 	.byte	0
-                            660 ;  position:
-                            661 ;  x:
-   0A2E 04                  662 	.byte	4
-                            663 ;  y:
-   0A2F 04                  664 	.byte	4
-   0A30                     665 ___compound_literal.3:
-                            666 ;  action:
-   0A30 00                  667 	.byte	0
-                            668 ;  position:
-                            669 ;  x:
-   0A31 04                  670 	.byte	4
-                            671 ;  y:
-   0A32 05                  672 	.byte	5
-   0A33                     673 ___compound_literal.4:
-                            674 ;  action:
-   0A33 00                  675 	.byte	0
-                            676 ;  position:
-                            677 ;  x:
-   0A34 08                  678 	.byte	8
-                            679 ;  y:
-   0A35 06                  680 	.byte	6
-   0A36                     681 ___compound_literal.5:
-                            682 ;  action:
-   0A36 00                  683 	.byte	0
-                            684 ;  position:
-                            685 ;  x:
-   0A37 08                  686 	.byte	8
-                            687 ;  y:
-   0A38 05                  688 	.byte	5
-   0A39                     689 ___compound_literal.6:
-                            690 ;  action:
-   0A39 01                  691 	.byte	1
-                            692 ;  position:
-                            693 ;  x:
-   0A3A 01                  694 	.byte	1
-                            695 ;  y:
-   0A3B 05                  696 	.byte	5
-   0A3C                     697 ___compound_literal.7:
-                            698 ;  action:
-   0A3C 01                  699 	.byte	1
-                            700 ;  position:
-                            701 ;  x:
-   0A3D 01                  702 	.byte	1
-                            703 ;  y:
-   0A3E 06                  704 	.byte	6
-   0A3F                     705 ___compound_literal.8:
-                            706 ;  action:
-   0A3F 02                  707 	.byte	2
-                            708 ;  position:
-                            709 ;  x:
-   0A40 01                  710 	.byte	1
-                            711 ;  y:
-   0A41 05                  712 	.byte	5
-   0A42                     713 ___compound_literal.9:
-                            714 ;  action:
-   0A42 02                  715 	.byte	2
-                            716 ;  position:
-                            717 ;  x:
-   0A43 01                  718 	.byte	1
-                            719 ;  y:
-   0A44 06                  720 	.byte	6
-   0A45                     721 ___compound_literal.10:
-                            722 ;  action:
-   0A45 00                  723 	.byte	0
-                            724 ;  position:
-                            725 ;  x:
-   0A46 01                  726 	.byte	1
-                            727 ;  y:
-   0A47 05                  728 	.byte	5
-   0A48                     729 ___compound_literal.11:
-                            730 ;  action:
-   0A48 00                  731 	.byte	0
-                            732 ;  position:
-                            733 ;  x:
-   0A49 01                  734 	.byte	1
-                            735 ;  y:
-   0A4A 06                  736 	.byte	6
-   0A4B                     737 ___compound_literal.12:
-                            738 ;  action:
-   0A4B 00                  739 	.byte	0
-                            740 ;  position:
-                            741 ;  x:
-   0A4C 02                  742 	.byte	2
-                            743 ;  y:
-   0A4D 03                  744 	.byte	3
-   0A4E                     745 ___compound_literal.13:
-                            746 ;  action:
-   0A4E 03                  747 	.byte	3
-                            748 ;  position:
-                            749 ;  x:
-   0A4F 08                  750 	.byte	8
-                            751 ;  y:
-   0A50 0A                  752 	.byte	10
-   0A51                     753 ___compound_literal.14:
-                            754 ;  action:
-   0A51 04                  755 	.byte	4
-                            756 ;  position:
-                            757 ;  x:
-   0A52 02                  758 	.byte	2
-                            759 ;  y:
-   0A53 0A                  760 	.byte	10
-   0A54                     761 ___compound_literal.15:
-                            762 ;  action:
-   0A54 03                  763 	.byte	3
-                            764 ;  position:
-                            765 ;  x:
-   0A55 05                  766 	.byte	5
-                            767 ;  y:
-   0A56 0C                  768 	.byte	12
-   0A57                     769 ___compound_literal.16:
-                            770 ;  action:
-   0A57 04                  771 	.byte	4
-                            772 ;  position:
-                            773 ;  x:
-   0A58 05                  774 	.byte	5
-                            775 ;  y:
-   0A59 02                  776 	.byte	2
-   0A5A                     777 ___compound_literal.17:
-                            778 ;  action:
-   0A5A 03                  779 	.byte	3
-                            780 ;  position:
-                            781 ;  x:
-   0A5B 08                  782 	.byte	8
-                            783 ;  y:
-   0A5C 0D                  784 	.byte	13
-   0A5D                     785 ___compound_literal.18:
-                            786 ;  action:
-   0A5D 04                  787 	.byte	4
-                            788 ;  position:
-                            789 ;  x:
-   0A5E 08                  790 	.byte	8
-                            791 ;  y:
-   0A5F 0A                  792 	.byte	10
-   0A60                     793 ___compound_literal.19:
-                            794 ;  action:
-   0A60 00                  795 	.byte	0
-                            796 ;  position:
-                            797 ;  x:
-   0A61 08                  798 	.byte	8
-                            799 ;  y:
-   0A62 04                  800 	.byte	4
-   0A63                     801 ___compound_literal.20:
-                            802 ;  action:
-   0A63 00                  803 	.byte	0
-                            804 ;  position:
-                            805 ;  x:
-   0A64 08                  806 	.byte	8
-                            807 ;  y:
-   0A65 05                  808 	.byte	5
-   0A66                     809 ___compound_literal.21:
-                            810 ;  action:
-   0A66 00                  811 	.byte	0
-                            812 ;  position:
-                            813 ;  x:
-   0A67 08                  814 	.byte	8
-                            815 ;  y:
-   0A68 07                  816 	.byte	7
-   0A69                     817 ___compound_literal.22:
-                            818 ;  action:
-   0A69 00                  819 	.byte	0
-                            820 ;  position:
-                            821 ;  x:
-   0A6A 08                  822 	.byte	8
-                            823 ;  y:
-   0A6B 08                  824 	.byte	8
-   0A6C                     825 ___compound_literal.23:
-                            826 ;  action:
-   0A6C 00                  827 	.byte	0
-                            828 ;  position:
-                            829 ;  x:
-   0A6D 07                  830 	.byte	7
-                            831 ;  y:
-   0A6E 0D                  832 	.byte	13
-   0A6F                     833 ___compound_literal.24:
-                            834 ;  action:
-   0A6F 00                  835 	.byte	0
-                            836 ;  position:
-                            837 ;  x:
-   0A70 06                  838 	.byte	6
-                            839 ;  y:
-   0A71 0D                  840 	.byte	13
-   0A72                     841 ___compound_literal.25:
-                            842 ;  action:
-   0A72 02                  843 	.byte	2
-                            844 ;  position:
-                            845 ;  x:
-   0A73 09                  846 	.byte	9
-                            847 ;  y:
-   0A74 06                  848 	.byte	6
-   0A75                     849 ___compound_literal.26:
-                            850 ;  action:
-   0A75 02                  851 	.byte	2
-                            852 ;  position:
-                            853 ;  x:
-   0A76 08                  854 	.byte	8
-                            855 ;  y:
-   0A77 06                  856 	.byte	6
-   0A78                     857 ___compound_literal.27:
-                            858 ;  action:
-   0A78 00                  859 	.byte	0
-                            860 ;  position:
-                            861 ;  x:
-   0A79 05                  862 	.byte	5
-                            863 ;  y:
-   0A7A 07                  864 	.byte	7
-   0A7B                     865 ___compound_literal.28:
-                            866 ;  action:
-   0A7B 00                  867 	.byte	0
-                            868 ;  position:
-                            869 ;  x:
-   0A7C 07                  870 	.byte	7
-                            871 ;  y:
-   0A7D 0D                  872 	.byte	13
-   0A7E                     873 ___compound_literal.29:
-                            874 ;  action:
-   0A7E 00                  875 	.byte	0
-                            876 ;  position:
-                            877 ;  x:
-   0A7F 07                  878 	.byte	7
-                            879 ;  y:
-   0A80 01                  880 	.byte	1
-   0A81                     881 ___compound_literal.30:
-                            882 ;  action:
-   0A81 00                  883 	.byte	0
-                            884 ;  position:
-                            885 ;  x:
-   0A82 07                  886 	.byte	7
-                            887 ;  y:
-   0A83 02                  888 	.byte	2
-   0A84                     889 ___compound_literal.31:
-                            890 ;  action:
-   0A84 00                  891 	.byte	0
-                            892 ;  position:
-                            893 ;  x:
-   0A85 06                  894 	.byte	6
-                            895 ;  y:
-   0A86 01                  896 	.byte	1
-   0A87                     897 ___compound_literal.32:
-                            898 ;  action:
-   0A87 00                  899 	.byte	0
-                            900 ;  position:
-                            901 ;  x:
-   0A88 06                  902 	.byte	6
-                            903 ;  y:
-   0A89 02                  904 	.byte	2
-   0A8A                     905 ___compound_literal.33:
-                            906 ;  action:
-   0A8A 00                  907 	.byte	0
-                            908 ;  position:
-                            909 ;  x:
-   0A8B 07                  910 	.byte	7
-                            911 ;  y:
-   0A8C 02                  912 	.byte	2
-   0A8D                     913 ___compound_literal.34:
-                            914 ;  action:
-   0A8D 00                  915 	.byte	0
-                            916 ;  position:
-                            917 ;  x:
-   0A8E 07                  918 	.byte	7
-                            919 ;  y:
-   0A8F 03                  920 	.byte	3
-   0A90                     921 ___compound_literal.35:
-                            922 ;  action:
-   0A90 00                  923 	.byte	0
-                            924 ;  position:
-                            925 ;  x:
-   0A91 08                  926 	.byte	8
-                            927 ;  y:
-   0A92 05                  928 	.byte	5
-   0A93                     929 ___compound_literal.36:
-                            930 ;  action:
-   0A93 00                  931 	.byte	0
-                            932 ;  position:
-                            933 ;  x:
-   0A94 08                  934 	.byte	8
-                            935 ;  y:
-   0A95 06                  936 	.byte	6
-   0A96                     937 ___compound_literal.37:
-                            938 ;  action:
-   0A96 00                  939 	.byte	0
-                            940 ;  position:
-                            941 ;  x:
-   0A97 08                  942 	.byte	8
-                            943 ;  y:
-   0A98 05                  944 	.byte	5
-   0A99                     945 ___compound_literal.38:
-                            946 ;  action:
-   0A99 00                  947 	.byte	0
-                            948 ;  position:
-                            949 ;  x:
-   0A9A 08                  950 	.byte	8
-                            951 ;  y:
-   0A9B 06                  952 	.byte	6
-   0A9C                     953 ___compound_literal.39:
-                            954 ;  action:
-   0A9C 00                  955 	.byte	0
-                            956 ;  position:
-                            957 ;  x:
-   0A9D 08                  958 	.byte	8
-                            959 ;  y:
-   0A9E 0A                  960 	.byte	10
-   0A9F                     961 ___compound_literal.40:
-                            962 ;  action:
-   0A9F 00                  963 	.byte	0
-                            964 ;  position:
-                            965 ;  x:
-   0AA0 08                  966 	.byte	8
-                            967 ;  y:
-   0AA1 0B                  968 	.byte	11
-   0AA2                     969 ___compound_literal.41:
-                            970 ;  action:
-   0AA2 03                  971 	.byte	3
-                            972 ;  position:
-                            973 ;  x:
-   0AA3 08                  974 	.byte	8
-                            975 ;  y:
-   0AA4 0D                  976 	.byte	13
-   0AA5                     977 ___compound_literal.42:
-                            978 ;  action:
-   0AA5 04                  979 	.byte	4
-                            980 ;  position:
-                            981 ;  x:
-   0AA6 01                  982 	.byte	1
-                            983 ;  y:
-   0AA7 01                  984 	.byte	1
-   0AA8                     985 ___compound_literal.43:
-                            986 ;  action:
-   0AA8 02                  987 	.byte	2
-                            988 ;  position:
-                            989 ;  x:
-   0AA9 01                  990 	.byte	1
-                            991 ;  y:
-   0AAA 09                  992 	.byte	9
-   0AAB                     993 ___compound_literal.44:
-                            994 ;  action:
-   0AAB 02                  995 	.byte	2
-                            996 ;  position:
-                            997 ;  x:
-   0AAC 01                  998 	.byte	1
-                            999 ;  y:
-   0AAD 0A                 1000 	.byte	10
-   0AAE                    1001 ___compound_literal.45:
-                           1002 ;  action:
-   0AAE 02                 1003 	.byte	2
-                           1004 ;  position:
-                           1005 ;  x:
-   0AAF 01                 1006 	.byte	1
-                           1007 ;  y:
-   0AB0 09                 1008 	.byte	9
-   0AB1                    1009 ___compound_literal.46:
-                           1010 ;  action:
-   0AB1 02                 1011 	.byte	2
-                           1012 ;  position:
-                           1013 ;  x:
-   0AB2 01                 1014 	.byte	1
-                           1015 ;  y:
-   0AB3 0A                 1016 	.byte	10
+                            641 	.globl _solutions
+   0A27                     642 LC15:
+   0A27 75 6C 6C 75 75 6C   643 	.ascii "ulluulu\0"
+        75 00
+                            644 	.area .data
+   0000                     645 _solutions:
+   0000 0A 27               646 	.word	LC15
+                            647 	.area .text
+   0A2F                     648 ___compound_literal.0:
+                            649 ;  action:
+   0A2F 00                  650 	.byte	0
+                            651 ;  position:
+                            652 ;  x:
+   0A30 04                  653 	.byte	4
+                            654 ;  y:
+   0A31 0A                  655 	.byte	10
+   0A32                     656 ___compound_literal.1:
+                            657 ;  action:
+   0A32 00                  658 	.byte	0
+                            659 ;  position:
+                            660 ;  x:
+   0A33 04                  661 	.byte	4
+                            662 ;  y:
+   0A34 0B                  663 	.byte	11
+   0A35                     664 ___compound_literal.2:
+                            665 ;  action:
+   0A35 00                  666 	.byte	0
+                            667 ;  position:
+                            668 ;  x:
+   0A36 04                  669 	.byte	4
+                            670 ;  y:
+   0A37 04                  671 	.byte	4
+   0A38                     672 ___compound_literal.3:
+                            673 ;  action:
+   0A38 00                  674 	.byte	0
+                            675 ;  position:
+                            676 ;  x:
+   0A39 04                  677 	.byte	4
+                            678 ;  y:
+   0A3A 05                  679 	.byte	5
+   0A3B                     680 ___compound_literal.4:
+                            681 ;  action:
+   0A3B 00                  682 	.byte	0
+                            683 ;  position:
+                            684 ;  x:
+   0A3C 08                  685 	.byte	8
+                            686 ;  y:
+   0A3D 06                  687 	.byte	6
+   0A3E                     688 ___compound_literal.5:
+                            689 ;  action:
+   0A3E 00                  690 	.byte	0
+                            691 ;  position:
+                            692 ;  x:
+   0A3F 08                  693 	.byte	8
+                            694 ;  y:
+   0A40 05                  695 	.byte	5
+   0A41                     696 ___compound_literal.6:
+                            697 ;  action:
+   0A41 01                  698 	.byte	1
+                            699 ;  position:
+                            700 ;  x:
+   0A42 01                  701 	.byte	1
+                            702 ;  y:
+   0A43 05                  703 	.byte	5
+   0A44                     704 ___compound_literal.7:
+                            705 ;  action:
+   0A44 01                  706 	.byte	1
+                            707 ;  position:
+                            708 ;  x:
+   0A45 01                  709 	.byte	1
+                            710 ;  y:
+   0A46 06                  711 	.byte	6
+   0A47                     712 ___compound_literal.8:
+                            713 ;  action:
+   0A47 02                  714 	.byte	2
+                            715 ;  position:
+                            716 ;  x:
+   0A48 01                  717 	.byte	1
+                            718 ;  y:
+   0A49 05                  719 	.byte	5
+   0A4A                     720 ___compound_literal.9:
+                            721 ;  action:
+   0A4A 02                  722 	.byte	2
+                            723 ;  position:
+                            724 ;  x:
+   0A4B 01                  725 	.byte	1
+                            726 ;  y:
+   0A4C 06                  727 	.byte	6
+   0A4D                     728 ___compound_literal.10:
+                            729 ;  action:
+   0A4D 00                  730 	.byte	0
+                            731 ;  position:
+                            732 ;  x:
+   0A4E 01                  733 	.byte	1
+                            734 ;  y:
+   0A4F 05                  735 	.byte	5
+   0A50                     736 ___compound_literal.11:
+                            737 ;  action:
+   0A50 00                  738 	.byte	0
+                            739 ;  position:
+                            740 ;  x:
+   0A51 01                  741 	.byte	1
+                            742 ;  y:
+   0A52 06                  743 	.byte	6
+   0A53                     744 ___compound_literal.12:
+                            745 ;  action:
+   0A53 00                  746 	.byte	0
+                            747 ;  position:
+                            748 ;  x:
+   0A54 02                  749 	.byte	2
+                            750 ;  y:
+   0A55 03                  751 	.byte	3
+   0A56                     752 ___compound_literal.13:
+                            753 ;  action:
+   0A56 03                  754 	.byte	3
+                            755 ;  position:
+                            756 ;  x:
+   0A57 08                  757 	.byte	8
+                            758 ;  y:
+   0A58 0A                  759 	.byte	10
+   0A59                     760 ___compound_literal.14:
+                            761 ;  action:
+   0A59 04                  762 	.byte	4
+                            763 ;  position:
+                            764 ;  x:
+   0A5A 02                  765 	.byte	2
+                            766 ;  y:
+   0A5B 0A                  767 	.byte	10
+   0A5C                     768 ___compound_literal.15:
+                            769 ;  action:
+   0A5C 03                  770 	.byte	3
+                            771 ;  position:
+                            772 ;  x:
+   0A5D 05                  773 	.byte	5
+                            774 ;  y:
+   0A5E 0C                  775 	.byte	12
+   0A5F                     776 ___compound_literal.16:
+                            777 ;  action:
+   0A5F 04                  778 	.byte	4
+                            779 ;  position:
+                            780 ;  x:
+   0A60 05                  781 	.byte	5
+                            782 ;  y:
+   0A61 02                  783 	.byte	2
+   0A62                     784 ___compound_literal.17:
+                            785 ;  action:
+   0A62 03                  786 	.byte	3
+                            787 ;  position:
+                            788 ;  x:
+   0A63 08                  789 	.byte	8
+                            790 ;  y:
+   0A64 0D                  791 	.byte	13
+   0A65                     792 ___compound_literal.18:
+                            793 ;  action:
+   0A65 04                  794 	.byte	4
+                            795 ;  position:
+                            796 ;  x:
+   0A66 08                  797 	.byte	8
+                            798 ;  y:
+   0A67 0A                  799 	.byte	10
+   0A68                     800 ___compound_literal.19:
+                            801 ;  action:
+   0A68 00                  802 	.byte	0
+                            803 ;  position:
+                            804 ;  x:
+   0A69 08                  805 	.byte	8
+                            806 ;  y:
+   0A6A 04                  807 	.byte	4
+   0A6B                     808 ___compound_literal.20:
+                            809 ;  action:
+   0A6B 00                  810 	.byte	0
+                            811 ;  position:
+                            812 ;  x:
+   0A6C 08                  813 	.byte	8
+                            814 ;  y:
+   0A6D 05                  815 	.byte	5
+   0A6E                     816 ___compound_literal.21:
+                            817 ;  action:
+   0A6E 00                  818 	.byte	0
+                            819 ;  position:
+                            820 ;  x:
+   0A6F 08                  821 	.byte	8
+                            822 ;  y:
+   0A70 07                  823 	.byte	7
+   0A71                     824 ___compound_literal.22:
+                            825 ;  action:
+   0A71 00                  826 	.byte	0
+                            827 ;  position:
+                            828 ;  x:
+   0A72 08                  829 	.byte	8
+                            830 ;  y:
+   0A73 08                  831 	.byte	8
+   0A74                     832 ___compound_literal.23:
+                            833 ;  action:
+   0A74 00                  834 	.byte	0
+                            835 ;  position:
+                            836 ;  x:
+   0A75 07                  837 	.byte	7
+                            838 ;  y:
+   0A76 0D                  839 	.byte	13
+   0A77                     840 ___compound_literal.24:
+                            841 ;  action:
+   0A77 00                  842 	.byte	0
+                            843 ;  position:
+                            844 ;  x:
+   0A78 06                  845 	.byte	6
+                            846 ;  y:
+   0A79 0D                  847 	.byte	13
+   0A7A                     848 ___compound_literal.25:
+                            849 ;  action:
+   0A7A 02                  850 	.byte	2
+                            851 ;  position:
+                            852 ;  x:
+   0A7B 09                  853 	.byte	9
+                            854 ;  y:
+   0A7C 06                  855 	.byte	6
+   0A7D                     856 ___compound_literal.26:
+                            857 ;  action:
+   0A7D 02                  858 	.byte	2
+                            859 ;  position:
+                            860 ;  x:
+   0A7E 08                  861 	.byte	8
+                            862 ;  y:
+   0A7F 06                  863 	.byte	6
+   0A80                     864 ___compound_literal.27:
+                            865 ;  action:
+   0A80 00                  866 	.byte	0
+                            867 ;  position:
+                            868 ;  x:
+   0A81 05                  869 	.byte	5
+                            870 ;  y:
+   0A82 07                  871 	.byte	7
+   0A83                     872 ___compound_literal.28:
+                            873 ;  action:
+   0A83 00                  874 	.byte	0
+                            875 ;  position:
+                            876 ;  x:
+   0A84 07                  877 	.byte	7
+                            878 ;  y:
+   0A85 0D                  879 	.byte	13
+   0A86                     880 ___compound_literal.29:
+                            881 ;  action:
+   0A86 00                  882 	.byte	0
+                            883 ;  position:
+                            884 ;  x:
+   0A87 07                  885 	.byte	7
+                            886 ;  y:
+   0A88 01                  887 	.byte	1
+   0A89                     888 ___compound_literal.30:
+                            889 ;  action:
+   0A89 00                  890 	.byte	0
+                            891 ;  position:
+                            892 ;  x:
+   0A8A 07                  893 	.byte	7
+                            894 ;  y:
+   0A8B 02                  895 	.byte	2
+   0A8C                     896 ___compound_literal.31:
+                            897 ;  action:
+   0A8C 00                  898 	.byte	0
+                            899 ;  position:
+                            900 ;  x:
+   0A8D 06                  901 	.byte	6
+                            902 ;  y:
+   0A8E 01                  903 	.byte	1
+   0A8F                     904 ___compound_literal.32:
+                            905 ;  action:
+   0A8F 00                  906 	.byte	0
+                            907 ;  position:
+                            908 ;  x:
+   0A90 06                  909 	.byte	6
+                            910 ;  y:
+   0A91 02                  911 	.byte	2
+   0A92                     912 ___compound_literal.33:
+                            913 ;  action:
+   0A92 00                  914 	.byte	0
+                            915 ;  position:
+                            916 ;  x:
+   0A93 07                  917 	.byte	7
+                            918 ;  y:
+   0A94 02                  919 	.byte	2
+   0A95                     920 ___compound_literal.34:
+                            921 ;  action:
+   0A95 00                  922 	.byte	0
+                            923 ;  position:
+                            924 ;  x:
+   0A96 07                  925 	.byte	7
+                            926 ;  y:
+   0A97 03                  927 	.byte	3
+   0A98                     928 ___compound_literal.35:
+                            929 ;  action:
+   0A98 00                  930 	.byte	0
+                            931 ;  position:
+                            932 ;  x:
+   0A99 08                  933 	.byte	8
+                            934 ;  y:
+   0A9A 05                  935 	.byte	5
+   0A9B                     936 ___compound_literal.36:
+                            937 ;  action:
+   0A9B 00                  938 	.byte	0
+                            939 ;  position:
+                            940 ;  x:
+   0A9C 08                  941 	.byte	8
+                            942 ;  y:
+   0A9D 06                  943 	.byte	6
+   0A9E                     944 ___compound_literal.37:
+                            945 ;  action:
+   0A9E 00                  946 	.byte	0
+                            947 ;  position:
+                            948 ;  x:
+   0A9F 08                  949 	.byte	8
+                            950 ;  y:
+   0AA0 05                  951 	.byte	5
+   0AA1                     952 ___compound_literal.38:
+                            953 ;  action:
+   0AA1 00                  954 	.byte	0
+                            955 ;  position:
+                            956 ;  x:
+   0AA2 08                  957 	.byte	8
+                            958 ;  y:
+   0AA3 06                  959 	.byte	6
+   0AA4                     960 ___compound_literal.39:
+                            961 ;  action:
+   0AA4 00                  962 	.byte	0
+                            963 ;  position:
+                            964 ;  x:
+   0AA5 08                  965 	.byte	8
+                            966 ;  y:
+   0AA6 0A                  967 	.byte	10
+   0AA7                     968 ___compound_literal.40:
+                            969 ;  action:
+   0AA7 00                  970 	.byte	0
+                            971 ;  position:
+                            972 ;  x:
+   0AA8 08                  973 	.byte	8
+                            974 ;  y:
+   0AA9 0B                  975 	.byte	11
+   0AAA                     976 ___compound_literal.41:
+                            977 ;  action:
+   0AAA 03                  978 	.byte	3
+                            979 ;  position:
+                            980 ;  x:
+   0AAB 08                  981 	.byte	8
+                            982 ;  y:
+   0AAC 0D                  983 	.byte	13
+   0AAD                     984 ___compound_literal.42:
+                            985 ;  action:
+   0AAD 04                  986 	.byte	4
+                            987 ;  position:
+                            988 ;  x:
+   0AAE 01                  989 	.byte	1
+                            990 ;  y:
+   0AAF 01                  991 	.byte	1
+   0AB0                     992 ___compound_literal.43:
+                            993 ;  action:
+   0AB0 02                  994 	.byte	2
+                            995 ;  position:
+                            996 ;  x:
+   0AB1 01                  997 	.byte	1
+                            998 ;  y:
+   0AB2 09                  999 	.byte	9
+   0AB3                    1000 ___compound_literal.44:
+                           1001 ;  action:
+   0AB3 02                 1002 	.byte	2
+                           1003 ;  position:
+                           1004 ;  x:
+   0AB4 01                 1005 	.byte	1
+                           1006 ;  y:
+   0AB5 0A                 1007 	.byte	10
+   0AB6                    1008 ___compound_literal.45:
+                           1009 ;  action:
+   0AB6 02                 1010 	.byte	2
+                           1011 ;  position:
+                           1012 ;  x:
+   0AB7 01                 1013 	.byte	1
+                           1014 ;  y:
+   0AB8 09                 1015 	.byte	9
+   0AB9                    1016 ___compound_literal.46:
+                           1017 ;  action:
+   0AB9 02                 1018 	.byte	2
+                           1019 ;  position:
+                           1020 ;  x:
+   0ABA 01                 1021 	.byte	1
+                           1022 ;  y:
+   0ABB 0A                 1023 	.byte	10
 ASxxxx Assembler V05.00  (Motorola 6809), page 1.
 Hexidecimal [16-Bits]
 
@@ -1354,44 +1362,45 @@ Symbol Table
   2 LC0                00B9 R   |   2 LC1                0155 R
   2 LC10               06E9 R   |   2 LC11               0787 R
   2 LC12               0827 R   |   2 LC13               08C3 R
-  2 LC14               0963 R   |   2 LC2                01F5 R
-  2 LC3                0291 R   |   2 LC4                032D R
-  2 LC5                03D1 R   |   2 LC6                046D R
-  2 LC7                050B R   |   2 LC8                05A9 R
-  2 LC9                0647 R   |   2 ___compound_li     0A27 R
-  2 ___compound_li     0A2A R   |   2 ___compound_li     0A45 R
-  2 ___compound_li     0A48 R   |   2 ___compound_li     0A4B R
-  2 ___compound_li     0A4E R   |   2 ___compound_li     0A51 R
-  2 ___compound_li     0A54 R   |   2 ___compound_li     0A57 R
-  2 ___compound_li     0A5A R   |   2 ___compound_li     0A5D R
-  2 ___compound_li     0A60 R   |   2 ___compound_li     0A2D R
-  2 ___compound_li     0A63 R   |   2 ___compound_li     0A66 R
-  2 ___compound_li     0A69 R   |   2 ___compound_li     0A6C R
-  2 ___compound_li     0A6F R   |   2 ___compound_li     0A72 R
-  2 ___compound_li     0A75 R   |   2 ___compound_li     0A78 R
-  2 ___compound_li     0A7B R   |   2 ___compound_li     0A7E R
-  2 ___compound_li     0A30 R   |   2 ___compound_li     0A81 R
-  2 ___compound_li     0A84 R   |   2 ___compound_li     0A87 R
-  2 ___compound_li     0A8A R   |   2 ___compound_li     0A8D R
-  2 ___compound_li     0A90 R   |   2 ___compound_li     0A93 R
-  2 ___compound_li     0A96 R   |   2 ___compound_li     0A99 R
-  2 ___compound_li     0A9C R   |   2 ___compound_li     0A33 R
-  2 ___compound_li     0A9F R   |   2 ___compound_li     0AA2 R
-  2 ___compound_li     0AA5 R   |   2 ___compound_li     0AA8 R
-  2 ___compound_li     0AAB R   |   2 ___compound_li     0AAE R
-  2 ___compound_li     0AB1 R   |   2 ___compound_li     0A36 R
-  2 ___compound_li     0A39 R   |   2 ___compound_li     0A3C R
-  2 ___compound_li     0A3F R   |   2 ___compound_li     0A42 R
-  2 _level0            0150 GR  |   2 _level1            01EC GR
-  2 _level10           0780 GR  |   2 _level11           081E GR
-  2 _level12           08BE GR  |   2 _level13           095A GR
-  2 _level14           09FA GR  |   2 _level2            028C GR
-  2 _level3            0328 GR  |   2 _level4            03C4 GR
-  2 _level5            0468 GR  |   2 _level6            0504 GR
-  2 _level7            05A2 GR  |   2 _level8            0640 GR
-  2 _level9            06DE GR  |   2 _levelCount        0000 GR
-  2 _levelOffset       0001 GR  |   2 _levels            0A09 GR
-  2 _nextBank          0002 GR  |   2 _swatch_10_0       0065 GR
+  2 LC14               0963 R   |   2 LC15               0A27 R
+  2 LC2                01F5 R   |   2 LC3                0291 R
+  2 LC4                032D R   |   2 LC5                03D1 R
+  2 LC6                046D R   |   2 LC7                050B R
+  2 LC8                05A9 R   |   2 LC9                0647 R
+  2 ___compound_li     0A2F R   |   2 ___compound_li     0A32 R
+  2 ___compound_li     0A4D R   |   2 ___compound_li     0A50 R
+  2 ___compound_li     0A53 R   |   2 ___compound_li     0A56 R
+  2 ___compound_li     0A59 R   |   2 ___compound_li     0A5C R
+  2 ___compound_li     0A5F R   |   2 ___compound_li     0A62 R
+  2 ___compound_li     0A65 R   |   2 ___compound_li     0A68 R
+  2 ___compound_li     0A35 R   |   2 ___compound_li     0A6B R
+  2 ___compound_li     0A6E R   |   2 ___compound_li     0A71 R
+  2 ___compound_li     0A74 R   |   2 ___compound_li     0A77 R
+  2 ___compound_li     0A7A R   |   2 ___compound_li     0A7D R
+  2 ___compound_li     0A80 R   |   2 ___compound_li     0A83 R
+  2 ___compound_li     0A86 R   |   2 ___compound_li     0A38 R
+  2 ___compound_li     0A89 R   |   2 ___compound_li     0A8C R
+  2 ___compound_li     0A8F R   |   2 ___compound_li     0A92 R
+  2 ___compound_li     0A95 R   |   2 ___compound_li     0A98 R
+  2 ___compound_li     0A9B R   |   2 ___compound_li     0A9E R
+  2 ___compound_li     0AA1 R   |   2 ___compound_li     0AA4 R
+  2 ___compound_li     0A3B R   |   2 ___compound_li     0AA7 R
+  2 ___compound_li     0AAA R   |   2 ___compound_li     0AAD R
+  2 ___compound_li     0AB0 R   |   2 ___compound_li     0AB3 R
+  2 ___compound_li     0AB6 R   |   2 ___compound_li     0AB9 R
+  2 ___compound_li     0A3E R   |   2 ___compound_li     0A41 R
+  2 ___compound_li     0A44 R   |   2 ___compound_li     0A47 R
+  2 ___compound_li     0A4A R   |   2 _level0            0150 GR
+  2 _level1            01EC GR  |   2 _level10           0780 GR
+  2 _level11           081E GR  |   2 _level12           08BE GR
+  2 _level13           095A GR  |   2 _level14           09FA GR
+  2 _level2            028C GR  |   2 _level3            0328 GR
+  2 _level4            03C4 GR  |   2 _level5            0468 GR
+  2 _level6            0504 GR  |   2 _level7            05A2 GR
+  2 _level8            0640 GR  |   2 _level9            06DE GR
+  2 _levelCount        0000 GR  |   2 _levelOffset       0001 GR
+  2 _levels            0A09 GR  |   2 _nextBank          0002 GR
+  3 _solutions         0000 GR  |   2 _swatch_10_0       0065 GR
   2 _swatch_11_0       006D GR  |   2 _swatch_11_1       0073 GR
   2 _swatch_13_0       0079 GR  |   2 _swatch_13_1       0081 GR
   2 _swatch_14_0       0089 GR  |   2 _swatch_14_1       0095 GR
@@ -1411,7 +1420,8 @@ Area Table
 
 [_CSEG]
    0 _CODE            size    0   flags C080
-   2 .text            size  AB4   flags  100
+   2 .text            size  ABC   flags  100
+   3 .data            size    2   flags  100
 [_DSEG]
    1 _DATA            size    0   flags C0C0
 
