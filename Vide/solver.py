@@ -46,7 +46,7 @@ def y3d(x, y, z):
     # b * d * x + a * y + b * c * z
     y = y - int(LEVEL_HEIGHT / 2)
     return 3 * x + 13 * y + 8 * z
-    
+
 def draw_line(x0, y0, x1, y1, color="black"):
     global canvas, width, height
     s = 2
@@ -187,15 +187,24 @@ class State:
 
         self.blockX2 = 0
         self.blockY2 = 0
-        
+
         self.splitMode = False
         self.swatchesOn = []
-        
+
         self.game_over = False
         self.game_won = False
 
         self.moves = []
- 
+
+    def getTuple(self):
+        return (self.blockOrientation, self.blockX, self.blockY, self.blockX2, self.blockY2, self.splitMode, self.game_over, self.game_won, tuple(tuple(i) for i in self.swatchesOn))
+
+    def __eq__(self, other):
+        return self.getTuple() == other.getTuple()
+
+    def __hash__(self):
+        return hash(self.getTuple())
+
     def init_by_level(self):
         global endX, endY
         self.blockX = level['start']['x']
@@ -279,10 +288,10 @@ class State:
                 self.blockY = self.blockY + 1
             if move == Move.Down:
                 self.blockY = self.blockY - 1
-        
+
         if self.splitMode and move == Move.SplitSwap:
             self.blockX, self.blockY, self.blockX2, self.blockY2 = self.blockX2, self.blockY2, self.blockX, self.blockY
-        
+
         # check for out of field
         c0 = isField(self, self.blockX, self.blockY)
         c1 = isField(self, self.blockX + 1, self.blockY)
@@ -303,7 +312,7 @@ class State:
             elif self.blockOrientation == BlockOrientation.Horizontal:
                 if not c0 or not c1:
                     self.game_over = True
-        
+
         # check for block at target
         if self.blockOrientation == BlockOrientation.Standing and self.blockX == endX and self.blockY == endY and not self.splitMode:
             self.game_won = True
@@ -327,7 +336,7 @@ class State:
                     self.swatchSwitch(self.blockX, self.blockY)
                 if f1 == 's':
                     self.swatchSwitch(self.blockX + 1, self.blockY)
-        
+
         # check for block merge in split mode
         if self.splitMode:
             if self.blockY == self.blockY2:
@@ -377,7 +386,7 @@ class Solver:
         tk.bind('<space>', lambda e: self.move(Move.SplitSwap))
         canvas.pack()
         width, height = tk.getint(canvas['width']), tk.getint(canvas['height'])
-    
+
     def move(self, direction):
         self.state.move_block(direction)
         print(moves_to_string(self.state.moves))
@@ -446,7 +455,7 @@ def try_move(state, move, states):
     # add state to visited dict and states queue
     visited[s2.key()] = len(s2.moves)
     states.append(s2)
-    
+
 def search(state):
     states = [state]
     visited[state.key()] = 0
@@ -464,6 +473,44 @@ def search(state):
                 if state.splitMode:
                     try_move(state, Move.SplitSwap, states)
 
+def bfs_move(state, move, q):
+    # move
+    s2 = copy.deepcopy(state)
+    s2.move_block(move)
+
+    # ignore move, if the same state happened already, but with less moves
+    v = visited.get(s2.key())
+    if v and v < len(s2.moves):
+        return
+
+    # add state to visited dict and states queue
+    visited[s2.key()] = len(s2.moves)
+    q.put(s2)
+
+
+from queue import Queue
+def bfs(state):
+    q = Queue()
+    q.put(state)
+    visited = {}
+    while q.qsize() > 0:
+        state = q.get()
+        if state in visited:
+            continue
+        visited[state] = 0
+        if state.game_won:
+            wons.append(state.moves)
+            #print("solution:", moves_to_string(state.moves))
+        else:
+            if not state.game_over:
+                bfs_move(state, Move.Left, q)
+                bfs_move(state, Move.Right, q)
+                bfs_move(state, Move.Up, q)
+                bfs_move(state, Move.Down, q)
+                if state.splitMode:
+                    bfs_move(state, Move.SplitSwap, q)
+
+
 # search for a solution and return the moves string, or None if no solution found
 def find_solution(level_number):
     global level, visited, wons
@@ -476,7 +523,8 @@ def find_solution(level_number):
     wons = []
 
 #    start_timing()
-    search(state)
+    #search(state)
+    bfs(state)
 #    end_timing()
 
     min = 1e9
