@@ -292,6 +292,32 @@ class State:
         if self.splitMode and move == Move.SplitSwap:
             self.blockX, self.blockY, self.blockX2, self.blockY2 = self.blockX2, self.blockY2, self.blockX, self.blockY
 
+        # don't do other checks when changing the blocks in split mode, because it is not a block movement
+        if move == Move.SplitSwap:
+            return
+
+        # check for block merge in split mode
+        if self.splitMode:
+            if self.blockY == self.blockY2:
+                if self.blockX == self.blockX2 + 1:
+                    self.blockOrientation = BlockOrientation.Horizontal
+                    self.blockX = self.blockX - 1
+                    self.splitMode = False
+                elif self.blockX == self.blockX2 - 1:
+                    self.blockOrientation = BlockOrientation.Horizontal
+                    self.splitMode = False
+            elif self.blockX == self.blockX2:
+                if self.blockY == self.blockY2 + 1:
+                    self.blockOrientation = BlockOrientation.Vertical
+                    self.blockY = self.blockY - 1
+                    self.splitMode = False
+                elif self.blockY == self.blockY2 - 1:
+                    self.blockOrientation = BlockOrientation.Vertical
+                    self.splitMode = False
+            if not self.splitMode:
+                self.blockX2 = 0
+                self.blockY2 = 0
+
         # check for out of field
         c0 = isField(self, self.blockX, self.blockY)
         c1 = isField(self, self.blockX + 1, self.blockY)
@@ -320,7 +346,7 @@ class State:
         # check for swatch
         #print(f0, self.blockX, self.blockY)
         if self.splitMode:
-            if f0 == 's' or f0 == 'h':
+            if f0 == 's':
                 self.swatchSwitch(self.blockX, self.blockY)
         else:
             if self.blockOrientation == BlockOrientation.Standing:
@@ -336,28 +362,6 @@ class State:
                     self.swatchSwitch(self.blockX, self.blockY)
                 if f1 == 's':
                     self.swatchSwitch(self.blockX + 1, self.blockY)
-
-        # check for block merge in split mode
-        if self.splitMode:
-            if self.blockY == self.blockY2:
-                if self.blockX == self.blockX2 + 1:
-                    self.blockOrientation = BlockOrientation.Horizontal
-                    self.blockX = self.blockX - 1
-                    self.splitMode = False
-                elif self.blockX == self.blockX2 - 1:
-                    self.blockOrientation = BlockOrientation.Horizontal
-                    self.splitMode = False
-            elif self.blockX == self.blockX2:
-                if self.blockY == self.blockY2 + 1:
-                    self.blockOrientation = BlockOrientation.Vertical
-                    self.blockY = self.blockY - 1
-                    self.splitMode = False
-                elif self.blockY == self.blockY2 - 1:
-                    self.blockOrientation = BlockOrientation.Vertical
-                    self.splitMode = False
-            if not self.splitMode:
-                self.blockX2 = 0
-                self.blockY2 = 0
 
     def key(self):
         flat = [j for sub in self.swatchesOn for j in sub]
@@ -545,71 +549,16 @@ pp = pprint.PrettyPrinter(indent=4)
 # solve all levels
 ln = [x for x in range(len(levels))]
 
-solutions = []
 for level_number in ln:
     solution = find_solution(level_number)
     if solution:
-        print("solution found for level %d: %s" % (level_number, solution))
+        print("level %d: %s" % (level_number + 1, solution))
     if not solution:
-        print("no solution found for level %d" % level_number)
+        print("no solution found for level %d" % (level_number + 1))
         break
-    solutions.append(solution)
-
-# test solutions
-solutions_all = [
-    "ulluulu",
-    "ruluuuurrluluurur",
-    "rdluruuuurruuulllur",
-    "rdruuruuuuuululllllurddddddl",
-    "dddudddddlulluuuuluuuuddddldddddd",
-    "uuullullulurdddrrdrrruuluurdlluullu",
-    "ldruuuuuludrdddddlululuuurruldrurruuulululdr",
-    "uulllllruru",
-    "uluuuuuuruldddddrsluuuuul",
-    "uudlllulllllddddrdddlruuuluuuslusrrurrrrddrdddddd",
-    "uuuurdllluuuldrdddrruruulurdddlldddrrurrdluruld",
-    "dluruldrurururuuullldrurrrddduuullldluruldrrruurldllldrurdrdddlld",
-    "rrdlululdrrrrdddddddlllurdlullulluruuuuurdldrr",
-    "uuuurddluuulllldddluruurrllddluluuddrddruuurrrrddddddruldddddlllulu",
-    "uuuurrsrrrrruuurruuululrrsdddddddldddlllldruluuuuuuu",
-    "uuuusulsursuuuu",
-    "llllldruuuuuruuudddlddddrrrrrruuuuluuuuldrulruldrrulddrulddddrddddlllllluuuuruuullrdrdddldddrrrdruuuuuluuu",
-    "ldruuuurrlldddlurddluruuullrrdddrdlurddlllluuddrrrruulurdllurdluruuuuulllurdllurdldru",
-    "uuuuuuuulurddddddluruuuuullllldddddldruuuuuurdldddddlllluuuddddddrr",
-    "ldluldrrurrdddlddrulldlldlrurrurruuuldlddddlllllsrdlsuuuul",
-    "uldrdluruuruuurdlllrrruldddlddldrulurdlurdlullulluuurrllddrdluuurrrruuu",
-    "uruuuulullldlrurrrdruldrdrddldddluruldlllulrdrrrurdlururuuuluuuur",
-    "ulluruuuuurdlurdddrrdsrlluullluuurur",
-    "lluurruruuuuulruuuu",
-    "ruldruldruuuurdrddrudluullddddluuruuurruuuruldrruldruld",
-    "rrdddldddluruurruuluuluurrsrrrddddddldddllllrrrruuuuulllluuusddrddddllllluud",
-    "uuuuuruuulurdddlddddddlurddluruuuuudruuuullldllldddldrrrruldddddddrdllurddlurrdluurdlluurddrulddruldurdlurlurdllurdlurd",
-    "dllluldrulluulluuurrrdrdrdrdluulululuuldlddrrrdrdrdrdddlruuuldrddldruuululululuddddllldddddrrdddlsdddddddrrdddr",
-    "uldrdlurulluuddrrdlurdldrdrrdduulluluruldrurruuddlllllluuddrrrrdddddduuuuldruuuuuudddddrdlllldddlurdlurd",
-    "lulluuruuluuuurlddddrdddlldruuuuurruruuurulllddldlurruldlddddrddlddrdldrurldluruluurdlldruuuuuuurdrrruuururdddddld",
-    "rdlddrrrrlllluuurdlurrrrurdllurdldddllldllrrurrrddddlurdllllldrudruluruuruuluuurdlurrrrruld",
-    "rrdlururuldurdldldruldrururulddllldlddrdluuurrrrruruurlddldlllllddddrudluuuurrrrruruurlddldllllldddruluurrruruurdldldlurddrdddddl",
-    "uuuurdlldrurruululurddrululluldlluurlddrrurdrrdrdlurdddllldlddldr"
-]
-for level_number in range(len(solutions)):
-    level = levels[level_number]
-    state = State()
-    state.init_by_level()
-    solution = solutions[level_number]
-    for move in solution:
-        move = string_to_move(move)
-        state.move_block(move)
-        if state.game_over:
-            print("level %d: failed, game over" % level_number)
-            break
-    if state.game_won:
-        print("level %d: won" % level_number)
-    else:
-        if not state.game_over:
-            print("level %d: failed, not won" % level_number)
 
 # show move and play with Tk
-moves = ""
-level = levels[27]
-pp.pprint(level)  # debug print of the current level
-Solver().run()
+#pp.pprint(level)  # debug print of the current level
+#moves = ""
+#level = levels[14]
+#Solver().run()
