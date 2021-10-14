@@ -1,5 +1,12 @@
+
 /* BLOXORZ by Frank Buss
    Original homepage and more information can be found at: http://www.frank-buss.de/vectrex/
+
+block.i - Factor
+block.c ->void drawBlock(int8_t yofs)
+level.c -> line implementation
+bloxorz.c -> drawField()
+
 
    Frank gave permission to include the sources in Vide as an example of "C" programming.
 
@@ -266,6 +273,11 @@ void startLevel()
         levelHighscore |= ((uint16_t) readEeprom((uint8_t) (levelNumber * 2 + 1))) << 8;
         if (levelHighscore == 0) levelHighscore = 999;
     }
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+// levelNumber = 11;
+// levelNumber = 14;
+//////////////////////////////////////////////
     level = levels[levelNumber];
     initSwatches();
     initLevel();
@@ -283,52 +295,272 @@ void startLevel()
     si = 0;
 }
 
+
+#define ADD_WAITS \
+asm("	    pshs u,x,y,d,dp    ; 14") ; \
+asm("	    puls u,x,y,d,dp    ; 14 ");
+
 void __attribute__((noinline)) drawField()
 {
+    // this might look 
+    // complicated - but rather is not.
+    // it consists of several
+    // MOVE 
+    // and 
+    // DRAW
+    // implementations
+    // several because there are different move options
+    // a) ZERO and MOVE
+    // b) DELTA MOVE
+    // c) DRAW
+    // and the combination of those
+    // it saves a few cycles to respect the "combionations" and not do
+    // a "general" routine
+    
+    // instead of the variable "lineCount"
+    // we end, when both y,x of the position are 0,0
 
-    // set high intensity and beam position
-    intens(0x35);
+    // while we are in assembler mode anyway - might as well save 28 cycles
+    // and set the intensity ourselfs
+    asm("LDA     #0x35");
+    asm("STA     *0xd001     ;Store intensity in D/A");
+    asm("LDD     #0x0504          ;mux disabled channel 2");
+    asm("STA     *0xd000");
+    asm("STB     *0xd000     ;mux enabled channel 2");
+    asm("STB     *0xd000     ;do it again just because");
+    asm("LDB     #0x01");
+    asm("STB     *0xd000     ;turn off mux");
 
-    // draw field lines
-    /*
-    for (int i = 0; i < lineCount; i++) {
-    	zergnd();
-    	positd(lineX0[i], lineY0[i]);
-    	int8_t dx = lineX1[i] - lineX0[i];
-    	int8_t dy = lineY1[i] - lineY0[i];
-    	diffab( dy, dx);
-    }
-    */
 
+    // upon enter Zero is active!
     // hand optimized assembler of the previous C code
-    asm("	pshs a, b, dp, x, u");
-    asm("	lda #0xd0");
-    asm("	tfr a, dp");
-    asm("	ldx #0");
-    asm("	ldb _lineCount");
-    asm("drawFieldLoop:");
-    asm("	pshs b");
-    asm("	pshs x");
-    asm("	jsr 0xf354");  // _zergnd
-    asm("	puls x");
-    asm("	lda _lineY0,x");
-    asm("	ldb _lineX0,x");
-    asm("	pshs x");
-    asm("	jsr 0xf2fc");  // positd
-    asm("	puls x");
-    asm("	lda _lineY1,x");
-    asm("	ldb _lineX1,x");
-    asm("	suba _lineY0,x");
-    asm("	subb _lineX0,x");
-    asm("	pshs x");
-    asm("	jsr 0xf3df");  // diffab
-    asm("	puls x");
-    asm("	lda ,x+");
-    asm("	puls b");
-    asm("	decb");
-    asm("	bne drawFieldLoop");
-    asm("	puls a, b, dp, x, u");
+    asm("	pshs u");
+    asm("	ldx #_lineYX_yx_s_dy_dx");
+    asm("	ldu #0x98ce");      // prepare U register for later usage that does not spill A/B, this here is UNZERO
+    asm("	ldd ,x");           // load current coordinates (move)
 
+    asm("drawFieldLoop1:");
+/*
+    asm("pshs d");
+    asm("LDD     #0x0302");
+    asm("CLR     *0xd001     ;clear D/A register");
+    asm("STA     *0xd000     ;mux=1, disable mux");
+    asm("STB     *0xd000     ;mux=1, enable mux");
+    asm("STB     *0xd000     ;do it again");
+    asm("LDB     #0x01");
+    asm("STB     *0xd000    ;disable mux");
+    asm("puls d");
+
+    asm("	    nop ");
+*/
+// wait for zeroing to settle completely
+    asm("	    nop ");
+    asm("	    nop ");
+    asm("	    nop ");
+    asm("	    nop ");
+
+    // full 0x7f move
+    // MOVE BLOCK START
+    asm("                    STA      *0xd001                  ;Store Y in D/A register ");
+    asm("                    CLRA     ");
+    asm("                    STA      *0xd000                  ;Enable mux ");
+    asm("                    INCA ");
+    // do not place the STU nearer to the timer start!
+    asm("                    STU      *0xd00B                    ; ");
+    asm("                    STD      *0xd000                  ;Store X in D/A register ");
+    asm("                    DECA ");
+    asm("                    STA      *0xd005               ;enable timer ");
+    // MOVE BLOCK END - left todo is to wait for move to finish
+
+    asm("	leax 2,x ; 5");
+    asm("	lda ,x+ ; 6");
+    asm("bmi scale_negative_7f; 3 - negative means, the next line is in offset to this line, not from 0,0");
+    asm("	sta *0xd004 ; 4");
+    asm("	ldu #0xff98 ; 3");
+    asm("	ldd ,x ; 5");
+
+    // this instead of a WAIT loop
+    // this saves a couple of cycles and does not really need that much space
+    // but we are talking about 100 moves per draw
+    // so saving 10 cycles -> saves already 1000 cycles for a full board...
+    // 26 cycles passed - 101 todo
+    asm("	    pshs u,x,y,d,dp    ; 14") ;
+    asm("	    puls u,x,y,d,dp    ; 14 ");
+    asm("	    pshs u,x,y,d,dp    ; 14") ;
+    asm("	    puls u,x,y,d,dp    ; 14 ");
+    asm("	    pshs u,x,y,d,dp    ; 14") ;
+    asm("	    puls u,x,y,d,dp    ; 14 ");
+    asm("	    pshs u    ; 7 ");
+    asm("	    puls u    ; 7 ");
+    // 26 + 98 = 124 done, 3 todo - these might be in the followin STA
+
+    // additional waits for the move to settle
+    asm("	    nop ");
+    asm("	    nop ");
+
+    // DRAW BLOCK START
+    asm("                    STA      *0xd001                  ;Store Y in D/A register ");
+    asm("                    CLRA     ");
+    asm("                    STA      *0xd000                  ;Enable mux ");
+    asm("                    INCA ");
+    asm("                    STD      *0xd000                  ;Store X in D/A register ");
+    asm("                    DECA ");
+    asm("                    stu      *0xd00a               ;unclear shift regigster ");
+    asm("                    STA      *0xd005               ;enable timer ");
+
+    asm("leax 2,x");
+    asm("	ldb #0x7f");
+    asm("	stb *0xd004");
+    asm("	ldu #0x98ce");
+    asm("	LDd     #0x40CC");
+    // wait loop following
+    asm("LF33D2_1:           BITA     *0xD00D               ;  ");
+    asm("                    BEQ      LF33D2_1                        ;  ");
+    asm("                    clra ");
+    asm("                    sta      *0xd00a               ;clear shift regigster ");
+    // DRAW BLOCK END
+
+    asm("	STB *0xd00C ; reset 0" );
+    asm("	ldd ,x");           // load current coordinates (move)
+    asm("	bne drawFieldLoop1");
+    asm("	puls u, pc"); // EXIT
+
+// alternate MOVE wait
+// we alreaady know that the NEXT move will not be with full 
+// scale -> so no testing is needed later...
+// and we can skip the zeroing after the draw...
+////////////////////////////////////////////////
+    asm("scale_negative_7f:");
+    asm("anda #0x7f ; 2");
+    asm("	sta *0xd004 ; 4");
+    asm("	ldu #0xff98 ; 4");
+    asm("	ldd ,x ; 5");
+    // 29 cycles passed - 100 todo
+
+    asm("	    pshs u,x,y,d,dp    ; 14") ;
+    asm("	    puls u,x,y,d,dp    ; 14 ");
+    asm("	    pshs u,x,y,d,dp    ; 14") ;
+    asm("	    puls u,x,y,d,dp    ; 14 ");
+    asm("	    pshs u,x,y,d,dp    ; 14") ;
+    asm("	    puls u,x,y,d,dp    ; 14 ");
+    asm("	    tfr a,a    ; 6 ");
+    asm("	    tfr a,a    ; 6 ");
+    asm("	    brn   scale_negative_7f ; 3 ");
+    // 29 + 95 = 124 done, 3 todo - these might be in the followin STA
+    // 4 additional waits for the move to settle
+
+    // DRAW BLOCK START
+    asm("	not_full_cont:");
+    asm("                    STA      *0xd001                  ;Store Y in D/A register ");
+    asm("                    CLRA     ");
+    asm("                    STA      *0xd000                  ;Enable mux ");
+    asm("                    INCA ");
+    asm("                    STD      *0xd000                  ;Store X in D/A register ");
+    asm("                    DECA ");
+    asm("                    stu      *0xd00a               ;unclear shift regigster ");
+    asm("                    STA      *0xd005               ;enable timer ");
+
+    asm("	not_full_cont_after:");
+    asm("leax 2,x");
+    asm("	ldu #0x98ce");
+
+    // stupid waits - but otherwise the timer seems to break to early, and some lines have a gap
+    asm("nop");
+    asm("brn LF33D2_3");
+    // wait loop following
+    // we do not really wait how long we draw ... because of that we have to check with the timer
+    asm("                    LDb      #0x40                         ;  ");
+    asm("LF33D2_3:           BITb     *0xD00D               ;  ");
+    asm("                    BEQ      LF33D2_3                        ;  ");
+    asm("                    sta      *0xd00a               ;clear shift regigster, a is still zero ");
+    // DRAW BLOCK END
+    // continue move with same scale without zeroing
+    // also this NOT a 0x7f move
+
+    asm("	ldd ,x");           // load current coordinates (move)
+
+    // NOT full 0x7f move
+    // MOVE BLOCK START
+    asm("                    STA      *0xd001                  ;Store Y in D/A register ");
+    asm("                    CLRA     ");
+    asm("                    STA      *0xd000                  ;Enable mux ");
+    asm("                    INCA ");
+    asm("                    STD      *0xd000                  ;Store X in D/A register ");
+    asm("                    DECA ");
+    asm("                    STA      *0xd005               ;enable timer ");
+    // MOVE BLOCK END - left todo is to wait for move to finish
+
+    asm("	leax 2,x ; 5");
+    asm("	lda ,x+ ; 6");
+    asm("bmi scale_negative; next is also no full move");
+    asm("	sta *0xd004 ; 4");
+    asm("	ldu #0xff98 ; 4");
+
+    // here we know, that the next move will be a "full 0x7f" move
+    // zeroing and 0x7f loading will be done in the following 
+
+    // wait loop following
+    asm("                    LDa      #0x40                         ;  ");
+    asm("LF33D2_4:           BITa     *0xD00D               ;  ");
+    asm("                    BEQ      LF33D2_4                        ;  ");
+    // Wait END
+
+    // DRAW BLOCK START
+    asm("	ldd ,x ; 4");
+    asm("                    STA      *0xd001                  ;Store Y in D/A register ");
+    asm("                    CLRA     ");
+    asm("                    STA      *0xd000                  ;Enable mux ");
+    asm("                    INCA ");
+    asm("                    STD      *0xd000                  ;Store X in D/A register ");
+    asm("                    DECA ");
+    asm("                    stu      *0xd00a               ;unclear shift regigster ");
+    asm("                    STA      *0xd005               ;enable timer ");
+
+    asm("leax 2,x");
+    asm("	ldb #0x7f");
+
+    asm("	stb *0xd004");
+    asm("	ldu #0x98ce");
+    asm("	LDd #0x40CC");
+    asm("LF33D2_5:           BITA     *0xD00D               ;  ");
+    asm("                    BEQ      LF33D2_5                        ;  ");
+    asm("                    clra ");
+    asm("                    sta      *0xd00a               ;clear shift regigster ");
+    // DRAW BLOCK END
+
+    asm("	STB *0xd00C ; reset 0" );
+    asm("	ldd ,x");           // load current coordinates (move)
+    asm("	lbne drawFieldLoop1");
+    asm("	puls u, pc");    // exit
+
+    // next move will also be relative
+    asm("scale_negative:");
+    asm("anda #0x7f ; 2");
+    asm("	sta *0xd004 ; 4");
+    asm("	ldu #0xff98 ; 4");
+
+    // wait loop following
+    asm("                    LDA      #0x40                         ;  ");
+    asm("LF33D2_6:           BITA     *0xD00D               ;  ");
+    asm("                    BEQ      LF33D2_6                        ;  ");
+    asm("	ldd ,x ; 5");
+
+    // DRAW BLOCK START
+    asm("                    STA      *0xd001                  ;Store Y in D/A register ");
+    asm("                    CLRA     ");
+    asm("                    STA      *0xd000                  ;Enable mux ");
+    asm("                    INCA ");
+    asm("                    STD      *0xd000                  ;Store X in D/A register ");
+    asm("                    DECA ");
+    asm("                    stu      *0xd00a               ;unclear shift regigster ");
+    asm("                    STA      *0xd005               ;enable timer ");
+    asm(" bra not_full_cont_after"); // save space and jump (the draw will be ended there)
+
+    // we never reach the regular function end.
+    // but the stack is clean, since we return with RTS (or rather "puls pc")
+    // U register is also saved by us
+    // y register is not used!
+    // and no local variables need cleaning up!
 }
 
 void blockMovingToStart()

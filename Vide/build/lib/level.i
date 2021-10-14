@@ -132,10 +132,9 @@ void swapSplit();
 
 
 uint8_t swatchesOn[19];
-int8_t lineX0[120];
-int8_t lineY0[120];
-int8_t lineX1[120];
-int8_t lineY1[120];
+# 24 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/level.c"
+int8_t lineYX_yx_s_dy_dx[((int16_t)110)*5];
+
 uint8_t lineCount = 0;
 int8_t endX = 0;
 int8_t endY = 0;
@@ -248,42 +247,202 @@ int8_t y3d(int8_t x, int8_t y, int8_t z)
     y -= 15 / 2;
     return 3 * x + 13 * y + 8 * z;
 }
+# 170 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/level.c"
+int8_t last_x=-1;
+int8_t last_y=-1;
+int8_t last_s=-1;
+
+
+
+
+
+
+
+const int8_t useHalfling[40] =
+{
+    0,
+    0,
+    0,
+    0,
+    3,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2,
+    0,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    3,
+    0,
+    0,
+    0,
+    3,
+    0,
+    1,
+    3,
+    1,
+    0,
+    1,
+    0,
+};
+
+
+
+void checkHalfling()
+{
+    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+2)] = (0x7f);
+
+    if (useHalfling[levelOffset + levelNumber] == 0)
+    {
+        last_x = -1;
+        last_y = -1;
+        last_s = -1;
+        return;
+    }
+
+
+    int8_t this_x = lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+1)]+lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+4)];
+    int8_t this_y = lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+0)]+lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+3)];
+
+    if (( (((int16_t) (( ((int8_t)(lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+3)])) )>0)?((int8_t)(lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+3)])):(-((int8_t)(lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+3)]))))<((int16_t)((levelNumber==14)?64:40))) && (((int16_t) (( ((int8_t)(lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+4)])) )>0)?((int8_t)(lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+4)])):(-((int8_t)(lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+4)]))))<((int16_t)((levelNumber==14)?64:40))))) { lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+3)] = (lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+3)] << 1); lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+4)] = (lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+4)] << 1); lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+2)] = (lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+2)] >> 1)+(((int8_t)(0))); }
+    if (( (((int16_t) (( ((int8_t)(lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+3)])) )>0)?((int8_t)(lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+3)])):(-((int8_t)(lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+3)]))))<((int16_t)((levelNumber==14)?64:40))) && (((int16_t) (( ((int8_t)(lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+4)])) )>0)?((int8_t)(lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+4)])):(-((int8_t)(lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+4)]))))<((int16_t)((levelNumber==14)?64:40))))) { lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+3)] = (lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+3)] << 1); lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+4)] = (lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+4)] << 1); lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+2)] = (lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+2)] >> 1)+(((int8_t)(0))); }
+    if (( (((int16_t) (( ((int8_t)(lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+3)])) )>0)?((int8_t)(lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+3)])):(-((int8_t)(lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+3)]))))<((int16_t)((levelNumber==14)?64:40))) && (((int16_t) (( ((int8_t)(lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+4)])) )>0)?((int8_t)(lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+4)])):(-((int8_t)(lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+4)]))))<((int16_t)((levelNumber==14)?64:40))))) { lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+3)] = (lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+3)] << 1); lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+4)] = (lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+4)] << 1); lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+2)] = (lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+2)] >> 1)+(((int8_t)(0))); }
+
+    if (last_s != -1)
+    {
+
+
+
+        int oldSacle = lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount-1)*5+2)];
+
+        if ((oldSacle == ( ((int8_t) (((0x7f))>>1))+((int8_t)(0)))) && (useHalfling[levelOffset + levelNumber] > 0) )
+        {
+            int16_t dy = lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+0)]-last_y;
+            int16_t dx = lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+1)]-last_x;
+            dy = dy <<1;
+            dx = dx <<1;
+            if (((((dy) >0)? (dy) : (-(dy))) < ((int16_t)((levelNumber==14)?64:40))*2) && ((((dx) >0)? (dx) : (-(dx))) < ((int16_t)((levelNumber==14)?64:40))*2))
+            {
+
+
+
+
+                lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount-1)*5+2)] = (int8_t) (((uint8_t)oldSacle) | 0x80);
+
+
+                lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+0)] = (int8_t)dy;
+                lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+1)] = (int8_t)dx;
+
+            }
+        }
+        else
+        if ((oldSacle == ( ((int8_t) (((( ((int8_t) (((0x7f))>>1))+((int8_t)(0))))>>1)))+((int8_t)(0)))) && (useHalfling[levelOffset + levelNumber] > 1) )
+        {
+            int16_t dy = lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+0)]-last_y;
+            int16_t dx = lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+1)]-last_x;
+            dy = dy <<1;
+            dx = dx <<1;
+            dy = dy <<1;
+            dx = dx <<1;
+            if (((((dy) >0)? (dy) : (-(dy))) < ((int16_t)((levelNumber==14)?64:40))*2) && ((((dx) >0)? (dx) : (-(dx))) < ((int16_t)((levelNumber==14)?64:40))*2))
+            {
+
+
+
+
+                lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount-1)*5+2)] = (int8_t) (((uint8_t)oldSacle) | 0x80);
+
+
+                lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+0)] = (int8_t)dy;
+                lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+1)] = (int8_t)dx;
+
+            }
+        }
+        else
+        if ((oldSacle == ( ((int8_t) (((( ((int8_t) (((( ((int8_t) (((0x7f))>>1))+((int8_t)(0))))>>1)))+((int8_t)(0))))>>1)))+((int8_t)(0)))) && (useHalfling[levelOffset + levelNumber] > 2) )
+        {
+            int16_t dy = lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+0)]-last_y;
+            int16_t dx = lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+1)]-last_x;
+            dy = dy <<1;
+            dx = dx <<1;
+            dy = dy <<1;
+            dx = dx <<1;
+            dy = dy <<1;
+            dx = dx <<1;
+            if (((((dy) >0)? (dy) : (-(dy))) < ((int16_t)((levelNumber==14)?64:40))*2) && ((((dx) >0)? (dx) : (-(dx))) < ((int16_t)((levelNumber==14)?64:40))*2))
+            {
+
+
+
+
+                lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount-1)*5+2)] = (int8_t) (((uint8_t)oldSacle) | 0x80);
+
+
+                lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+0)] = (int8_t)dy;
+                lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+1)] = (int8_t)dx;
+
+            }
+        }
+    }
+
+    last_x = this_x;
+    last_y = this_y;
+    last_s = lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+2)];
+}
+
 
 void addLineImpl(int8_t x0, int8_t y0, int8_t x1, int8_t y1, uint8_t half)
 {
-    lineX0[lineCount] = x3d(x0, y0);
-    lineY0[lineCount] = y3d(x0, 0, y0);
-    lineX1[lineCount] = x3d(x1, y1);
-    lineY1[lineCount] = y3d(x1, 0, y1);
-    if (half) {
-        lineX0[lineCount] -= 1;
-        lineY0[lineCount] += 4;
-        lineX1[lineCount] -= 6;
-        lineY1[lineCount] += 3;
+    if (half)
+    {
+        lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+0)] = y3d(x0, 0, y0)+4;
+        lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+1)] = x3d(x0, y0) -1;
+        lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+3)] = y3d(x1, 0, y1)+3- (y3d(x0, 0, y0)+4);
+        lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+4)] = x3d(x1, y1)-6- (x3d(x0, y0)-1);
     }
+    else
+    {
+        lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+0)] = y3d(x0, 0, y0);
+        lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+1)] = x3d(x0, y0);
+        lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+3)] = y3d(x1, 0, y1)- y3d(x0, 0, y0);
+        lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+4)] = x3d(x1, y1)- x3d(x0, y0);
+    }
+    checkHalfling();
 
     lineCount++;
-    if (lineCount >= 120) {
+    if (lineCount >= 110) {
         runtimeError("TOO MANY LINES\x80");
     }
 }
 
 void addSplit(int8_t x0, int8_t y0)
 {
-    lineX0[lineCount] = x3d(x0, y0) + 6;
-    lineY0[lineCount] = y3d(x0, 0, y0) + 3;
-    lineX1[lineCount] = x3d(x0, y0 + 1) + 8;
-    lineY1[lineCount] = y3d(x0, 0, y0 + 1) + 0;
+    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+0)] = y3d(x0, 0, y0) + 3;
+    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+1)] = x3d(x0, y0) + 6;
+    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+3)] = y3d(x0, 0, y0 + 1)+0- (y3d(x0, 0, y0)+3);
+    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+4)] = x3d(x0, y0 + 1)+8- (x3d(x0, y0)+6);
 
+    checkHalfling();
     lineCount++;
-    if (lineCount >= 120) {
+    if (lineCount >= 110) {
         runtimeError("TOO MANY LINES\x80");
     }
 }
 
 void addLine(int8_t x0, int8_t y0, int8_t x1, int8_t y1, uint8_t half)
 {
-    int test = 5;
+    int test = 8;
     while (x1 - x0 > test) {
         addLineImpl(x0, y0, x0 + test, y1, half);
         x0 += test;
@@ -297,19 +456,25 @@ void addLine(int8_t x0, int8_t y0, int8_t x1, int8_t y1, uint8_t half)
 
 void addTarget(int8_t x, int8_t y)
 {
-    lineX0[lineCount] = x3d(x, y);
-    lineY0[lineCount] = y3d(x, 0, y);
-    lineX1[lineCount] = x3d(x + 1, y + 1);
-    lineY1[lineCount] = y3d(x + 1, 0, y + 1);
+
+    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+0)] = y3d(x, 0, y);
+    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+1)] = x3d(x, y) ;
+    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+3)] = y3d(x+1, 0, y+1)- (y3d(x, 0, y));
+    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+4)] = x3d(x+1, y+1)- (x3d(x, y)) ;
+    checkHalfling();
+
     lineCount++;
 
-    lineX0[lineCount] = x3d(x + 1, y);
-    lineY0[lineCount] = y3d(x + 1, 0, y);
-    lineX1[lineCount] = x3d(x, y + 1);
-    lineY1[lineCount] = y3d(x, 0, y + 1);
+
+    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+0)] = y3d(x+1, 0, y);
+    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+1)] = x3d(x+1, y) ;
+    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+3)] = y3d(x, 0, y+1)- (y3d(x+1, 0, y));
+    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+4)] = x3d(x, y+1)- (x3d(x+1, y)) ;
+    checkHalfling();
+
     lineCount++;
 }
-# 191 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/level.c"
+# 404 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/level.c"
 void setupX()
 {
     long int index;
@@ -395,7 +560,17 @@ void initSwatches()
 
 void initLevel()
 {
+    last_x=-1;
+    last_y=-1;
+    last_s=-1;
     lineCount = 0;
     setupX();
+    last_x=-1;
+    last_y=-1;
+    last_s=-1;
+
+
     setupY();
+    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+1)]=0;
+    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+0)]=0;
 }

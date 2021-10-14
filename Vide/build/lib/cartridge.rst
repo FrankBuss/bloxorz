@@ -40,8 +40,8 @@
    0005 20                   40 	.byte	0x20
    0006 32                   41 	.byte	0x32
    0007 30                   42 	.byte	0x30
-   0008 31                   43 	.byte	0x31
-   0009 39                   44 	.byte	0x39
+   0008 32                   43 	.byte	0x32
+   0009 31                   44 	.byte	0x31
    000A 80                   45 	.byte	0x80
                              46 ;  music:
    000B FD 0D                47 	.word	_Vec_Music_1

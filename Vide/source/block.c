@@ -159,22 +159,98 @@ void moveBlockImpl(enum BlockDirection_t move)
     }
 }
 
+void Draw_VLpo(void* const x)
+{
+    (void) x;
+    asm("                    LDD      1,X                          ;Get next coordinate pair  ");
+    asm("shiftOff1:  ");
+    asm("                    STA      *0xd001                  ;Send Y to A/D  ");
+    asm("                    CLR      *0xd000                  ;Enable mux  ");
+    asm("                    LDA      ,X                           ;Get pattern byte  ");
+    asm("                    INC      *0xd000                  ;Disable mux  ");
+    asm("                    STB      *0xd001                  ;Send X to A/D  ");
+    asm("                    ldb      #0  ");
+    asm("                    STA      *0xd00a               ;Store pattern in shift register  ");
+    asm("                    STB      *0xd005               ;Clear T1H  ");
+
+    asm("                    LEAX     3,X                          ;Advance to next point in list  ");
+
+    asm("	    tfr a,a    ; 6 ");
+    asm("	    tfr a,a    ; 6 ");
+    asm("	    tfr a,a    ; 6 ");
+    asm("	    tfr a,a    ; 6 ");
+
+    asm("                    LDA      ,X                           ;Get next pattern byte  ");
+
+    asm("                    bgt      macroEnd2  ");
+//    asm("                    STB      *0xd00a               ;Clear shift register (blank output)  ");
+    asm("                    LDD      1,X                          ;Get next coordinate pair  ");
+    asm("shiftOn1:  ");
+    asm("                    STA      *0xd001                  ;Send Y to A/D  ");
+    asm("                    CLR      *0xd000                  ;Enable mux  ");
+    asm("                    LDA      ,X                           ;Get pattern byte  ");
+    asm("                    INC      *0xd000                  ;Disable mux  ");
+    asm("                    STB      *0xd001                  ;Send X to A/D  ");
+    asm("                    ldb      #0  ");
+    asm("                    STA      *0xd00a               ;Store pattern in shift register  ");
+    asm("                    STB      *0xd005               ;Clear T1H  ");
+    asm("                    LEAX     3,X                          ;Advance to next point in list  ");
+
+    asm("                    LDD      1,X                          ;Get next coordinate pair  ");
+    asm("	    tfr a,a    ; 6 ");
+    asm("	    tfr a,a    ; 6 ");
+    asm("	    tfr a,a    ; 6 ");
+    asm("	    nop    ; 6 ");
+
+    asm("                    tst      ,X  ");
+    asm("                    beq      shiftOff1  ");
+    asm("                    bmi      shiftOn1  ");
+    asm("	    tfr a,a    ; 6 ");
+    asm("                    ldb      #0  ");
+    asm("                    STB      *0xd00a               ;Clear shift register (blank output)  ");
+    asm("macroEnd2:  ");
+}
+
 void drawBlock(int8_t yofs)
 {
-    zergnd();
+//    zergnd(); // filed draw is exited with zero
     intens(0x63);
-    positd(0, yofs);
+    int8_t yy = y3d(blockX, 0, blockY);
 
-    positd(x3d(blockX, blockY), y3d(blockX, 0, blockY));
-    pack1x((void*)(blockAnimation[blockAnimationStep]));
+    if (yofs < -30)
+    {
+        positd(0, yofs);
+        positd(x3d(blockX, blockY), yy);
+    }
+    else
+    {
+        positd(x3d(blockX, blockY), yy+yofs);
+    }
+
+	dp_VIA_t1_cnt_lo = 0x7f/FACTOR; // scale
+//    pack1x((void*)(blockAnimation[blockAnimationStep]));
+    Draw_VLpo((void*)(blockAnimation[blockAnimationStep]));
 
     // inactive block in split mode
     if (splitMode) {
         zergnd();
         intens(0x35);
-        positd(0, yofs);
-        positd(x3d(blockX2, blockY2), y3d(blockX2, 0, blockY2));
-        pack1x((void*)(height1FallingLeft[0]));
+        yy = y3d(blockX2, 0, blockY2);
+
+        if (yofs < -50)
+        {
+            positd(0, yofs);
+            positd(x3d(blockX2, blockY2),yy );
+        }
+        else
+        {
+            positd(x3d(blockX2, blockY2),yy+yofs );
+        }
+
+
+	dp_VIA_t1_cnt_lo = 0x7f/FACTOR; // scale
+//        pack1x((void*)(height1FallingLeft[0]));
+    Draw_VLpo((void*)(height1FallingLeft[0]));
     }
 }
 

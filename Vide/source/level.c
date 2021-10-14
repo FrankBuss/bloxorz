@@ -1,12 +1,28 @@
 #include "level.h"
 #include "block.h"
 
-#define MAX_LINES 120
+#define MAX_LINES 110
 uint8_t swatchesOn[19];
+/*
 int8_t lineX0[MAX_LINES];
 int8_t lineY0[MAX_LINES];
 int8_t lineX1[MAX_LINES];
 int8_t lineY1[MAX_LINES];
+*/
+
+// 5 bytes per line
+//
+// list changed from absolut points to
+// Y,X starting move (or delta)
+// scale of the draw
+// delta for the draw
+//
+// also if "scale" is negative, than the
+// next draw of the list will not be reached via
+// zeroing and move
+// but with a delta move from the last draw end (and the scale) the draw was done with
+int8_t lineYX_yx_s_dy_dx[((int16_t)MAX_LINES)*5];
+
 uint8_t lineCount = 0;
 int8_t endX = 0;
 int8_t endY = 0;
@@ -119,19 +135,209 @@ int8_t y3d(int8_t x, int8_t y, int8_t z)
     y -= LEVEL_HEIGHT / 2;
     return 3 * x + 13 * y + 8 * z;
 }
+#define MAX_SPLIT ((int16_t)((levelNumber==14)?64:40)) // optimimum would be 64 - but cranky vectrex don't like that!
+
+#define ABS16(a) (((a) >0)? (a) : (-(a)))
+#define ABS(a)  ((int16_t)  ((  ((int8_t)(a)) )>0)?((int8_t)(a)):(-((int8_t)(a))))
+#define OK_TO_HALF \
+(\
+    (ABS(lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+3)])<MAX_SPLIT)\
+    &&\
+    (ABS(lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+4)])<MAX_SPLIT)\
+)
+#define HALF_IF_POSSIBLE(c) \
+    if (OK_TO_HALF) \
+    { \
+        lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+3)] = (lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+3)] << 1); \
+        lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+4)] = (lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+4)] << 1); \
+        lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+2)] = (lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+2)] >> 1)+(c); \
+    } 
+#define USED_BOARD_SCALE (0x7f)
+/*
+#define REDUX1 (-1) 
+#define REDUX2 (-1) 
+#define REDUX3 (0) 
+*/
+
+#define REDUX1 ((int8_t)(0))
+#define REDUX2 ((int8_t)(0))
+#define REDUX3 ((int8_t)(0))
+
+#define HALF_1 ( ((int8_t) ((USED_BOARD_SCALE)>>1))+REDUX1)
+#define HALF_2 ( ((int8_t) (((HALF_1)>>1)))+REDUX2)
+#define HALF_3 ( ((int8_t) (((HALF_2)>>1)))+REDUX3)
+
+int8_t last_x=-1;
+int8_t last_y=-1;
+int8_t last_s=-1;
+
+// this checks whether
+// the move to this starting point
+// instead of a zero ref and a move
+// can be done instead with:
+// - the same scale the last line was drawn with
+// - and from the position the drawing ended (no zeroing than)
+const int8_t useHalfling[40] =
+{
+    0, // 0 none
+    0, // 1 none
+    0, // 2 none
+    0, // 3 none
+    3, // 4 none
+    1, // 5 none
+    0, // 6 none
+    0, // 7 none
+    0, // 8 none
+    0, // 9 none
+    0, // 10 none
+    0, // 11 none
+    0, // 12 none
+    2, // 13 none
+    0, // 14 none
+    1, // 15 none
+    0, // 16 none
+    1, // 17 none
+    1, // 18 none
+    1, // 19 none
+    1, // 20 none
+    1, // 21 none
+    1, // 22 none
+    3, // 23 none
+    0, // 24 none
+    0, // 25 none
+    0, // 26 none
+    3, // 27 none
+    0, // 28 none
+    1, // 29 none
+    3, // 30 none
+    1, // 31 none
+    0, // 32 none
+    1, // 33 none
+    0, // 34 none
+};
+
+
+
+void checkHalfling()
+{
+    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+2)] = USED_BOARD_SCALE;
+
+    if (useHalfling[levelOffset + levelNumber] == 0) 
+    {
+        last_x = -1;
+        last_y = -1;
+        last_s = -1;
+        return;
+    }
+
+    // save before scale changes
+    int8_t this_x = lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+1)]+lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+4)];
+    int8_t this_y = lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+0)]+lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+3)];
+
+    HALF_IF_POSSIBLE(REDUX1)
+    HALF_IF_POSSIBLE(REDUX2)
+    HALF_IF_POSSIBLE(REDUX3)
+
+    if (last_s != -1)
+    {
+        // check the scale of the last drawn line
+        // if smaller than 0x7f - than check if our
+        // new start is also reachable with that scale
+        int oldSacle = lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount-1)*5+2)];
+
+        if ((oldSacle ==  HALF_1) && (useHalfling[levelOffset + levelNumber] > 0) )
+        {
+            int16_t dy = lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+0)]-last_y;
+            int16_t dx = lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+1)]-last_x;
+            dy = dy <<1;
+            dx = dx <<1;
+            if ((ABS16(dy) < MAX_SPLIT*2) && (ABS16(dx) < MAX_SPLIT*2))
+            {
+                // yes, we can reach our next start point with
+                // the scale of the last draw
+
+                // old scale "negative"
+                lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount-1)*5+2)] = (int8_t) (((uint8_t)oldSacle) | 0x80);
+                
+                // move as delta
+                lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+0)] = (int8_t)dy;
+                lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+1)] = (int8_t)dx;
+
+            }
+        }
+        else
+        if ((oldSacle ==  HALF_2) && (useHalfling[levelOffset + levelNumber] > 1) )
+        {
+            int16_t dy = lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+0)]-last_y;
+            int16_t dx = lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+1)]-last_x;
+            dy = dy <<1;
+            dx = dx <<1;
+            dy = dy <<1;
+            dx = dx <<1;
+            if ((ABS16(dy) < MAX_SPLIT*2) && (ABS16(dx) < MAX_SPLIT*2))
+            {
+                // yes, we can reach our next start point with
+                // the scale of the last draw
+
+                // old scale "negative"
+                lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount-1)*5+2)] = (int8_t) (((uint8_t)oldSacle) | 0x80);
+                
+                // move as delta
+                lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+0)] = (int8_t)dy;
+                lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+1)] = (int8_t)dx;
+
+            }
+        }
+        else
+        if ((oldSacle ==  HALF_3) && (useHalfling[levelOffset + levelNumber] > 2) )
+        {
+            int16_t dy = lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+0)]-last_y;
+            int16_t dx = lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+1)]-last_x;
+            dy = dy <<1;
+            dx = dx <<1;
+            dy = dy <<1;
+            dx = dx <<1;
+            dy = dy <<1;
+            dx = dx <<1;
+            if ((ABS16(dy) < MAX_SPLIT*2) && (ABS16(dx) < MAX_SPLIT*2))
+            {
+                // yes, we can reach our next start point with
+                // the scale of the last draw
+
+                // old scale "negative"
+                lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount-1)*5+2)] = (int8_t) (((uint8_t)oldSacle) | 0x80);
+                
+                // move as delta
+                lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+0)] = (int8_t)dy;
+                lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+1)] = (int8_t)dx;
+
+            }
+        }
+    }
+    // scale saved after scale changes
+    last_x = this_x;
+    last_y = this_y;
+    last_s = lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+2)];
+}
+
 
 void addLineImpl(int8_t x0, int8_t y0, int8_t x1, int8_t y1, uint8_t half)
 {
-    lineX0[lineCount] = x3d(x0, y0);
-    lineY0[lineCount] = y3d(x0, 0, y0);
-    lineX1[lineCount] = x3d(x1, y1);
-    lineY1[lineCount] = y3d(x1, 0, y1);
-    if (half) {
-        lineX0[lineCount] -= 1;
-        lineY0[lineCount] += 4;
-        lineX1[lineCount] -= 6;
-        lineY1[lineCount] += 3;
+    if (half) 
+    {
+        lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+0)] = y3d(x0, 0, y0)+4;
+        lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+1)] = x3d(x0, y0)  -1;
+        lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+3)] = y3d(x1, 0, y1)+3- (y3d(x0, 0, y0)+4);
+        lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+4)] = x3d(x1, y1)-6- (x3d(x0, y0)-1);
     }
+    else
+    {
+        lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+0)] = y3d(x0, 0, y0);
+        lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+1)] = x3d(x0, y0);
+        lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+3)] = y3d(x1, 0, y1)- y3d(x0, 0, y0);
+        lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+4)] = x3d(x1, y1)- x3d(x0, y0);
+    }
+    checkHalfling();
 
     lineCount++;
     if (lineCount >= MAX_LINES) {
@@ -141,11 +347,12 @@ void addLineImpl(int8_t x0, int8_t y0, int8_t x1, int8_t y1, uint8_t half)
 
 void addSplit(int8_t x0, int8_t y0)
 {
-    lineX0[lineCount] = x3d(x0, y0) + 6;
-    lineY0[lineCount] = y3d(x0, 0, y0) + 3;
-    lineX1[lineCount] = x3d(x0, y0 + 1) + 8;
-    lineY1[lineCount] = y3d(x0, 0, y0 + 1) + 0;
+    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+0)] = y3d(x0, 0, y0) + 3;
+    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+1)] = x3d(x0, y0) + 6;
+    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+3)] = y3d(x0, 0, y0 + 1)+0- (y3d(x0, 0, y0)+3);
+    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+4)] = x3d(x0, y0 + 1)+8- (x3d(x0, y0)+6);
 
+    checkHalfling();
     lineCount++;
     if (lineCount >= MAX_LINES) {
         runtimeError("TOO MANY LINES\x80");
@@ -154,7 +361,7 @@ void addSplit(int8_t x0, int8_t y0)
 
 void addLine(int8_t x0, int8_t y0, int8_t x1, int8_t y1, uint8_t half)
 {
-    int test = 5;
+    int test = 8; // 9 is ok, 10 is too wide!
     while (x1 - x0 > test) {
         addLineImpl(x0, y0, x0 + test, y1, half);
         x0 += test;
@@ -168,16 +375,22 @@ void addLine(int8_t x0, int8_t y0, int8_t x1, int8_t y1, uint8_t half)
 
 void addTarget(int8_t x, int8_t y)
 {
-    lineX0[lineCount] = x3d(x, y);
-    lineY0[lineCount] = y3d(x, 0, y);
-    lineX1[lineCount] = x3d(x + 1, y + 1);
-    lineY1[lineCount] = y3d(x + 1, 0, y + 1);
+
+    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+0)] = y3d(x, 0, y);
+    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+1)] = x3d(x, y) ;
+    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+3)] = y3d(x+1, 0, y+1)- (y3d(x, 0, y));
+    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+4)] = x3d(x+1, y+1)- (x3d(x, y)) ;
+    checkHalfling();
+
     lineCount++;
 
-    lineX0[lineCount] = x3d(x + 1, y);
-    lineY0[lineCount] = y3d(x + 1, 0, y);
-    lineX1[lineCount] = x3d(x, y + 1);
-    lineY1[lineCount] = y3d(x, 0, y + 1);
+
+    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+0)] = y3d(x+1, 0, y);
+    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+1)] = x3d(x+1, y) ;
+    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+3)] = y3d(x, 0, y+1)- (y3d(x+1, 0, y));
+    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+4)] = x3d(x, y+1)- (x3d(x+1, y))  ;
+    checkHalfling();
+
     lineCount++;
 }
 
@@ -273,7 +486,17 @@ void initSwatches()
 
 void initLevel()
 {
+    last_x=-1;
+    last_y=-1;
+    last_s=-1;
     lineCount = 0;
     setupX();
+    last_x=-1;
+    last_y=-1;
+    last_s=-1;
+
+
     setupY();
+    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+1)]=0;
+    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+0)]=0;
 }

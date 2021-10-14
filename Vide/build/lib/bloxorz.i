@@ -2,7 +2,7 @@
 # 1 "<built-in>"
 # 1 "<command-line>"
 # 1 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c"
-# 26 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c"
+# 33 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c"
 # 1 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/stdint.h" 1
 
 
@@ -11,7 +11,7 @@ typedef unsigned long uint16_t;
 typedef signed char int8_t;
 typedef long int16_t;
 typedef unsigned char uint8_t;
-# 27 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c" 2
+# 34 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c" 2
 # 1 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/hardware.h" 1
 
 
@@ -1953,7 +1953,7 @@ static inline __attribute__((always_inline)) void Draw_VLp_80(void* const x)
     dp_VIA_t1_cnt_lo = 0x80;
     Draw_VLp(x);
 }
-# 28 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c" 2
+# 35 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c" 2
 # 1 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/level.h" 1
 # 13 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/level.h"
 enum SwatchType {
@@ -2019,7 +2019,7 @@ void initLevel();
 int8_t x3d(int8_t x, int8_t z);
 
 int8_t y3d(int8_t x, int8_t y, int8_t z);
-# 29 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c" 2
+# 36 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c" 2
 # 1 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/block.h" 1
 
 
@@ -2068,10 +2068,10 @@ void setSplitMode();
 void testMerge();
 
 void swapSplit();
-# 30 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c" 2
-# 38 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c"
+# 37 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c" 2
+# 45 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c"
 extern void* memcpy (void* dest, const void* src, long unsigned int len);
-# 66 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c"
+# 73 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c"
 extern void picWrite(uint8_t b);
 extern uint8_t picRead();
 extern void delay10ms();
@@ -2275,6 +2275,11 @@ void startLevel()
         levelHighscore |= ((uint16_t) readEeprom((uint8_t) (levelNumber * 2 + 1))) << 8;
         if (levelHighscore == 0) levelHighscore = 999;
     }
+
+
+
+
+
     level = levels[levelNumber];
     initSwatches();
     initLevel();
@@ -2292,39 +2297,239 @@ void startLevel()
     si = 0;
 }
 
+
+
+
+
+
 void __attribute__((noinline)) drawField()
 {
+# 325 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c"
+    asm("LDA     #0x35");
+    asm("STA     *0xd001     ;Store intensity in D/A");
+    asm("LDD     #0x0504          ;mux disabled channel 2");
+    asm("STA     *0xd000");
+    asm("STB     *0xd000     ;mux enabled channel 2");
+    asm("STB     *0xd000     ;do it again just because");
+    asm("LDB     #0x01");
+    asm("STB     *0xd000     ;turn off mux");
 
 
-    Intensity_a(0x35);
-# 304 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c"
-    asm("	pshs a, b, dp, x, u");
-    asm("	lda #0xd0");
-    asm("	tfr a, dp");
-    asm("	ldx #0");
-    asm("	ldb _lineCount");
-    asm("drawFieldLoop:");
-    asm("	pshs b");
-    asm("	pshs x");
-    asm("	jsr 0xf354");
-    asm("	puls x");
-    asm("	lda _lineY0,x");
-    asm("	ldb _lineX0,x");
-    asm("	pshs x");
-    asm("	jsr 0xf2fc");
-    asm("	puls x");
-    asm("	lda _lineY1,x");
-    asm("	ldb _lineX1,x");
-    asm("	suba _lineY0,x");
-    asm("	subb _lineX0,x");
-    asm("	pshs x");
-    asm("	jsr 0xf3df");
-    asm("	puls x");
-    asm("	lda ,x+");
-    asm("	puls b");
-    asm("	decb");
-    asm("	bne drawFieldLoop");
-    asm("	puls a, b, dp, x, u");
+
+
+    asm("	pshs u");
+    asm("	ldx #_lineYX_yx_s_dy_dx");
+    asm("	ldu #0x98ce");
+    asm("	ldd ,x");
+
+    asm("drawFieldLoop1:");
+# 357 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c"
+    asm("	    nop ");
+    asm("	    nop ");
+    asm("	    nop ");
+    asm("	    nop ");
+
+
+
+    asm("                    STA      *0xd001                  ;Store Y in D/A register ");
+    asm("                    CLRA     ");
+    asm("                    STA      *0xd000                  ;Enable mux ");
+    asm("                    INCA ");
+
+    asm("                    STU      *0xd00B                    ; ");
+    asm("                    STD      *0xd000                  ;Store X in D/A register ");
+    asm("                    DECA ");
+    asm("                    STA      *0xd005               ;enable timer ");
+
+
+    asm("	leax 2,x ; 5");
+    asm("	lda ,x+ ; 6");
+    asm("bmi scale_negative_7f; 3 - negative means, the next line is in offset to this line, not from 0,0");
+    asm("	sta *0xd004 ; 4");
+    asm("	ldu #0xff98 ; 3");
+    asm("	ldd ,x ; 5");
+
+
+
+
+
+
+    asm("	    pshs u,x,y,d,dp    ; 14") ;
+    asm("	    puls u,x,y,d,dp    ; 14 ");
+    asm("	    pshs u,x,y,d,dp    ; 14") ;
+    asm("	    puls u,x,y,d,dp    ; 14 ");
+    asm("	    pshs u,x,y,d,dp    ; 14") ;
+    asm("	    puls u,x,y,d,dp    ; 14 ");
+    asm("	    pshs u    ; 7 ");
+    asm("	    puls u    ; 7 ");
+
+
+
+    asm("	    nop ");
+    asm("	    nop ");
+
+
+    asm("                    STA      *0xd001                  ;Store Y in D/A register ");
+    asm("                    CLRA     ");
+    asm("                    STA      *0xd000                  ;Enable mux ");
+    asm("                    INCA ");
+    asm("                    STD      *0xd000                  ;Store X in D/A register ");
+    asm("                    DECA ");
+    asm("                    stu      *0xd00a               ;unclear shift regigster ");
+    asm("                    STA      *0xd005               ;enable timer ");
+
+    asm("leax 2,x");
+    asm("	ldb #0x7f");
+    asm("	stb *0xd004");
+    asm("	ldu #0x98ce");
+    asm("	LDd     #0x40CC");
+
+    asm("LF33D2_1:           BITA     *0xD00D               ;  ");
+    asm("                    BEQ      LF33D2_1                        ;  ");
+    asm("                    clra ");
+    asm("                    sta      *0xd00a               ;clear shift regigster ");
+
+
+    asm("	STB *0xd00C ; reset 0" );
+    asm("	ldd ,x");
+    asm("	bne drawFieldLoop1");
+    asm("	puls u, pc");
+
+
+
+
+
+
+    asm("scale_negative_7f:");
+    asm("anda #0x7f ; 2");
+    asm("	sta *0xd004 ; 4");
+    asm("	ldu #0xff98 ; 4");
+    asm("	ldd ,x ; 5");
+
+
+    asm("	    pshs u,x,y,d,dp    ; 14") ;
+    asm("	    puls u,x,y,d,dp    ; 14 ");
+    asm("	    pshs u,x,y,d,dp    ; 14") ;
+    asm("	    puls u,x,y,d,dp    ; 14 ");
+    asm("	    pshs u,x,y,d,dp    ; 14") ;
+    asm("	    puls u,x,y,d,dp    ; 14 ");
+    asm("	    tfr a,a    ; 6 ");
+    asm("	    tfr a,a    ; 6 ");
+    asm("	    brn   scale_negative_7f ; 3 ");
+
+
+
+
+    asm("	not_full_cont:");
+    asm("                    STA      *0xd001                  ;Store Y in D/A register ");
+    asm("                    CLRA     ");
+    asm("                    STA      *0xd000                  ;Enable mux ");
+    asm("                    INCA ");
+    asm("                    STD      *0xd000                  ;Store X in D/A register ");
+    asm("                    DECA ");
+    asm("                    stu      *0xd00a               ;unclear shift regigster ");
+    asm("                    STA      *0xd005               ;enable timer ");
+
+    asm("	not_full_cont_after:");
+    asm("leax 2,x");
+    asm("	ldu #0x98ce");
+
+
+    asm("nop");
+    asm("brn LF33D2_3");
+
+
+    asm("                    LDb      #0x40                         ;  ");
+    asm("LF33D2_3:           BITb     *0xD00D               ;  ");
+    asm("                    BEQ      LF33D2_3                        ;  ");
+    asm("                    sta      *0xd00a               ;clear shift regigster, a is still zero ");
+
+
+
+
+    asm("	ldd ,x");
+
+
+
+    asm("                    STA      *0xd001                  ;Store Y in D/A register ");
+    asm("                    CLRA     ");
+    asm("                    STA      *0xd000                  ;Enable mux ");
+    asm("                    INCA ");
+    asm("                    STD      *0xd000                  ;Store X in D/A register ");
+    asm("                    DECA ");
+    asm("                    STA      *0xd005               ;enable timer ");
+
+
+    asm("	leax 2,x ; 5");
+    asm("	lda ,x+ ; 6");
+    asm("bmi scale_negative; next is also no full move");
+    asm("	sta *0xd004 ; 4");
+    asm("	ldu #0xff98 ; 4");
+
+
+
+
+
+    asm("                    LDa      #0x40                         ;  ");
+    asm("LF33D2_4:           BITa     *0xD00D               ;  ");
+    asm("                    BEQ      LF33D2_4                        ;  ");
+
+
+
+    asm("	ldd ,x ; 4");
+    asm("                    STA      *0xd001                  ;Store Y in D/A register ");
+    asm("                    CLRA     ");
+    asm("                    STA      *0xd000                  ;Enable mux ");
+    asm("                    INCA ");
+    asm("                    STD      *0xd000                  ;Store X in D/A register ");
+    asm("                    DECA ");
+    asm("                    stu      *0xd00a               ;unclear shift regigster ");
+    asm("                    STA      *0xd005               ;enable timer ");
+
+    asm("leax 2,x");
+    asm("	ldb #0x7f");
+
+    asm("	stb *0xd004");
+    asm("	ldu #0x98ce");
+    asm("	LDd #0x40CC");
+    asm("LF33D2_5:           BITA     *0xD00D               ;  ");
+    asm("                    BEQ      LF33D2_5                        ;  ");
+    asm("                    clra ");
+    asm("                    sta      *0xd00a               ;clear shift regigster ");
+
+
+    asm("	STB *0xd00C ; reset 0" );
+    asm("	ldd ,x");
+    asm("	lbne drawFieldLoop1");
+    asm("	puls u, pc");
+
+
+    asm("scale_negative:");
+    asm("anda #0x7f ; 2");
+    asm("	sta *0xd004 ; 4");
+    asm("	ldu #0xff98 ; 4");
+
+
+    asm("                    LDA      #0x40                         ;  ");
+    asm("LF33D2_6:           BITA     *0xD00D               ;  ");
+    asm("                    BEQ      LF33D2_6                        ;  ");
+    asm("	ldd ,x ; 5");
+
+
+    asm("                    STA      *0xd001                  ;Store Y in D/A register ");
+    asm("                    CLRA     ");
+    asm("                    STA      *0xd000                  ;Enable mux ");
+    asm("                    INCA ");
+    asm("                    STD      *0xd000                  ;Store X in D/A register ");
+    asm("                    DECA ");
+    asm("                    stu      *0xd00a               ;unclear shift regigster ");
+    asm("                    STA      *0xd005               ;enable timer ");
+    asm(" bra not_full_cont_after");
+
+
+
+
+
 
 }
 
@@ -2356,7 +2561,7 @@ void blockWaiting()
         moveBlock(Up);
         gameState = BlockMoving;
     }
-# 390 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c"
+# 622 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c"
     if (gameState == BlockMoving) {
         changeMusic(movingMusic);
         *vecx = 3;

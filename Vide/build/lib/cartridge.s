@@ -40,8 +40,8 @@ _game_header:
 	.byte	0x20
 	.byte	0x32
 	.byte	0x30
+	.byte	0x32
 	.byte	0x31
-	.byte	0x39
 	.byte	0x80
 ;  music:
 	.word	_Vec_Music_1
