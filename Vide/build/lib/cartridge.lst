@@ -1,16 +1,16 @@
-                              1 ;;; gcc for m6809 : Sep 13 2017 10:25:42
+                              1 ;;; gcc for m6809 : Feb 15 2016 21:40:10
                               2 ;;; 4.3.6 (gcc6809)
                               3 ;;; ABI version 1
                               4 ;;; -mint8
                               5 	.module	cartridge.enr.c
                               6 ;  GNU C (GCC) version 4.3.6 (gcc6809) (m6809-unknown-none)
-                              7 ; 	compiled by GNU C version 5.4.0 20160609, GMP version 4.3.2, MPFR version 2.4.2.
+                              7 ; 	compiled by GNU C version 4.8.1, GMP version 5.1.2, MPFR version 3.1.2.
                               8 ;  GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
                               9 ;  options passed:  -O1 -fverbose-asm -W -Wall -Wextra -Wconversion -Werror
                              10 ;  -fomit-frame-pointer -mint8 -msoft-reg-count=0 -std=gnu99
-                             11 ;  -fno-time-report -I/home/frank/bin/Vide/C/PeerC/vectrex/include
-                             12 ;  -D__RUM_INLINE=1 -DOMMIT_FRAMEPOINTER=1
-                             13 ;  /home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/cartridge.enr.c
+                             11 ;  -fno-time-report -IC:\data\vide\C\PeerC\vectrex\include -D__RUM_INLINE=1
+                             12 ;  -DOMMIT_FRAMEPOINTER=1
+                             13 ;  C:\data\vide\..\bloxorz\Vide\source\cartridge.enr.c
                              14 ;  options enabled:  -falign-loops -fargument-alias -fauto-inc-dec
                              15 ;  -fbranch-count-reg -fcommon -fcprop-registers -fdefer-pop
                              16 ;  -fearly-inlining -feliminate-unused-debug-types -ffunction-cse -fgcse-lm
@@ -27,7 +27,7 @@
                              27 ;  -ftree-reassoc -ftree-salias -ftree-scev-cprop -ftree-sink -ftree-sra
                              28 ;  -ftree-ter -ftree-vect-loop-version -funit-at-a-time -fverbose-asm
                              29 ;  -fzero-initialized-in-bss
-                             30 ;  Compiler executable checksum: 2c98d3c5ec6c12badb1abdde57df156f
+                             30 ;  Compiler executable checksum: c38122f302f7072aed6a431d27122065
                              31 	.globl _game_header
                              32 	.area	.cartridge
    0000                      33 _game_header:
@@ -41,7 +41,7 @@
    0006 32                   41 	.byte	0x32
    0007 30                   42 	.byte	0x30
    0008 32                   43 	.byte	0x32
-   0009 31                   44 	.byte	0x31
+   0009 33                   44 	.byte	0x33
    000A 80                   45 	.byte	0x80
                              46 ;  music:
    000B 00 00                47 	.word	_Vec_Music_1

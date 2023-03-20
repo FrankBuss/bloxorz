@@ -49,7 +49,7 @@ struct Level {
 };
 
 extern const struct Level* level;
-extern uint8_t levelNumber;
+extern volatile uint8_t levelNumber;
 extern int8_t startX;
 extern int8_t startY;
 extern int8_t endX;

@@ -1,16 +1,16 @@
-;;; gcc for m6809 : Sep 13 2017 10:25:42
+;;; gcc for m6809 : Feb 15 2016 21:40:10
 ;;; 4.3.6 (gcc6809)
 ;;; ABI version 1
 ;;; -mint8
 	.module	cartridge.enr.c
 ;  GNU C (GCC) version 4.3.6 (gcc6809) (m6809-unknown-none)
-; 	compiled by GNU C version 5.4.0 20160609, GMP version 4.3.2, MPFR version 2.4.2.
+; 	compiled by GNU C version 4.8.1, GMP version 5.1.2, MPFR version 3.1.2.
 ;  GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 ;  options passed:  -O1 -fverbose-asm -W -Wall -Wextra -Wconversion -Werror
 ;  -fomit-frame-pointer -mint8 -msoft-reg-count=0 -std=gnu99
-;  -fno-time-report -I/home/frank/bin/Vide/C/PeerC/vectrex/include
-;  -D__RUM_INLINE=1 -DOMMIT_FRAMEPOINTER=1
-;  /home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/cartridge.enr.c
+;  -fno-time-report -IC:\data\vide\C\PeerC\vectrex\include -D__RUM_INLINE=1
+;  -DOMMIT_FRAMEPOINTER=1
+;  C:\data\vide\..\bloxorz\Vide\source\cartridge.enr.c
 ;  options enabled:  -falign-loops -fargument-alias -fauto-inc-dec
 ;  -fbranch-count-reg -fcommon -fcprop-registers -fdefer-pop
 ;  -fearly-inlining -feliminate-unused-debug-types -ffunction-cse -fgcse-lm
@@ -27,7 +27,7 @@
 ;  -ftree-reassoc -ftree-salias -ftree-scev-cprop -ftree-sink -ftree-sra
 ;  -ftree-ter -ftree-vect-loop-version -funit-at-a-time -fverbose-asm
 ;  -fzero-initialized-in-bss
-;  Compiler executable checksum: 2c98d3c5ec6c12badb1abdde57df156f
+;  Compiler executable checksum: c38122f302f7072aed6a431d27122065
 	.globl _game_header
 	.area	.cartridge
 _game_header:
@@ -41,7 +41,7 @@ _game_header:
 	.byte	0x32
 	.byte	0x30
 	.byte	0x32
-	.byte	0x31
+	.byte	0x33
 	.byte	0x80
 ;  music:
 	.word	_Vec_Music_1

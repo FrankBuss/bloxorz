@@ -1,12 +1,12 @@
-# 1 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/level.c"
+# 1 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\level.c"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/level.c"
-# 1 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/level.h" 1
+# 1 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\level.c"
+# 1 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\/level.h" 1
 
 
 
-# 1 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/stdint.h" 1
+# 1 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\/stdint.h" 1
 
 
 
@@ -14,8 +14,8 @@ typedef unsigned long uint16_t;
 typedef signed char int8_t;
 typedef long int16_t;
 typedef unsigned char uint8_t;
-# 5 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/level.h" 2
-# 13 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/level.h"
+# 5 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\/level.h" 2
+# 13 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\/level.h"
 enum SwatchType {
     SWATCH_TYPE_S,
     SWATCH_TYPE_H,
@@ -55,7 +55,7 @@ struct Level {
 };
 
 extern const struct Level* level;
-extern uint8_t levelNumber;
+extern volatile uint8_t levelNumber;
 extern int8_t startX;
 extern int8_t startY;
 extern int8_t endX;
@@ -79,8 +79,8 @@ void initLevel();
 int8_t x3d(int8_t x, int8_t z);
 
 int8_t y3d(int8_t x, int8_t y, int8_t z);
-# 2 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/level.c" 2
-# 1 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/block.h" 1
+# 2 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\level.c" 2
+# 1 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\/block.h" 1
 
 
 
@@ -128,11 +128,11 @@ void setSplitMode();
 void testMerge();
 
 void swapSplit();
-# 3 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/level.c" 2
+# 3 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\level.c" 2
 
 
 uint8_t swatchesOn[19];
-# 24 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/level.c"
+# 24 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\level.c"
 int8_t lineYX_yx_s_dy_dx[((int16_t)110)*5];
 
 uint8_t lineCount = 0;
@@ -140,7 +140,7 @@ int8_t endX = 0;
 int8_t endY = 0;
 
 const struct Level* level;
-uint8_t levelNumber = 0;
+volatile uint8_t levelNumber = 0;
 
 extern void runtimeError(char* msg);
 
@@ -247,7 +247,7 @@ int8_t y3d(int8_t x, int8_t y, int8_t z)
     y -= 15 / 2;
     return 3 * x + 13 * y + 8 * z;
 }
-# 170 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/level.c"
+# 170 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\level.c"
 int8_t last_x=-1;
 int8_t last_y=-1;
 int8_t last_s=-1;
@@ -474,7 +474,7 @@ void addTarget(int8_t x, int8_t y)
 
     lineCount++;
 }
-# 404 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/level.c"
+# 404 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\level.c"
 void setupX()
 {
     long int index;

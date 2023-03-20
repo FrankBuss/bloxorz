@@ -28,7 +28,7 @@ int8_t endX = 0;
 int8_t endY = 0;
 
 const struct Level* level;
-uint8_t levelNumber = 0;
+volatile uint8_t levelNumber = 0;
 
 extern void runtimeError(char* msg);
 

@@ -1,9 +1,9 @@
-# 1 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c"
+# 1 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\bloxorz.c"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c"
-# 33 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c"
-# 1 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/stdint.h" 1
+# 1 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\bloxorz.c"
+# 33 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\bloxorz.c"
+# 1 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\/stdint.h" 1
 
 
 
@@ -11,26 +11,27 @@ typedef unsigned long uint16_t;
 typedef signed char int8_t;
 typedef long int16_t;
 typedef unsigned char uint8_t;
-# 34 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c" 2
-# 1 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/hardware.h" 1
+# 34 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\bloxorz.c" 2
+# 1 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\/hardware.h" 1
 
 
 
-
-# 1 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vectrex.h" 1
-# 37 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vectrex.h"
+# 1 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\/stdint.h" 1
+# 5 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\/hardware.h" 2
+# 1 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vectrex.h" 1
+# 37 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vectrex.h"
        
 
 
 
-# 1 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_ram.h" 1
-# 38 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_ram.h"
+# 1 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_ram.h" 1
+# 38 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_ram.h"
        
 
-# 1 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_ram_0x.h" 1
-# 38 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_ram_0x.h"
+# 1 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_ram_0x.h" 1
+# 38 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_ram_0x.h"
        
-# 48 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_ram_0x.h"
+# 48 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_ram_0x.h"
 extern int Vec_Snd_Shadow __attribute__((section(".dpc8")));
 extern int Vec_Snd_shadow[15] __attribute__((section(".dpc8")));
 extern unsigned int Vec_Btn_State __attribute__((section(".dpc8")));
@@ -172,7 +173,7 @@ extern long unsigned int Vec_Cold_Flag __attribute__((section(".dpcb")));
 
 extern volatile int VIA_port_b __attribute__((section(".dpd0")));
 extern volatile int VIA_port_a __attribute__((section(".dpd0")));
-# 197 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_ram_0x.h"
+# 197 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_ram_0x.h"
 extern volatile unsigned int VIA_DDR_b __attribute__((section(".dpd0")));
 extern volatile unsigned int VIA_DDR_a __attribute__((section(".dpd0")));
 extern volatile unsigned long int VIA_t1_cnt __attribute__((section(".dpd0")));
@@ -186,19 +187,19 @@ extern volatile unsigned int VIA_t2_lo __attribute__((section(".dpd0")));
 extern volatile unsigned int VIA_t2_hi __attribute__((section(".dpd0")));
 extern volatile unsigned int VIA_shift_reg __attribute__((section(".dpd0")));
 extern volatile unsigned int VIA_aux_cntl __attribute__((section(".dpd0")));
-# 218 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_ram_0x.h"
+# 218 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_ram_0x.h"
 extern volatile unsigned int VIA_cntl __attribute__((section(".dpd0")));
-# 227 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_ram_0x.h"
+# 227 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_ram_0x.h"
 extern volatile unsigned int VIA_int_flags __attribute__((section(".dpd0")));
-# 237 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_ram_0x.h"
+# 237 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_ram_0x.h"
 extern volatile unsigned int VIA_int_enable __attribute__((section(".dpd0")));
-# 246 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_ram_0x.h"
+# 246 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_ram_0x.h"
 extern volatile unsigned int VIA_port_a_nohs __attribute__((section(".dpd0")));
-# 41 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_ram.h" 2
-# 1 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_ram_dp.h" 1
-# 38 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_ram_dp.h"
+# 41 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_ram.h" 2
+# 1 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_ram_dp.h" 1
+# 38 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_ram_dp.h"
        
-# 48 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_ram_dp.h"
+# 48 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_ram_dp.h"
 extern int dp_Vec_Snd_Shadow __attribute__((section("direct")));
 extern int dp_Vec_Snd_shadow[15] __attribute__((section("direct")));
 extern unsigned int dp_Vec_Btn_State __attribute__((section("direct")));
@@ -357,14 +358,14 @@ extern volatile unsigned int dp_VIA_cntl __attribute__((section("direct")));
 extern volatile unsigned int dp_VIA_int_flags __attribute__((section("direct")));
 extern volatile unsigned int dp_VIA_int_enable __attribute__((section("direct")));
 extern volatile unsigned int dp_VIA_port_a_nohs __attribute__((section("direct")));
-# 42 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_ram.h" 2
-# 42 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vectrex.h" 2
-# 1 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rom.h" 1
-# 38 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rom.h"
+# 42 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_ram.h" 2
+# 42 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vectrex.h" 2
+# 1 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rom.h" 1
+# 38 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rom.h"
        
 
-# 1 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rom_0x.h" 1
-# 38 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rom_0x.h"
+# 1 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rom_0x.h" 1
+# 38 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rom_0x.h"
        
 
 
@@ -410,9 +411,9 @@ extern const unsigned int Vec_ADSR_FADE12 __attribute__((section(".dpfd")));
 extern const unsigned int Vec_TWANG_VIBE0 __attribute__((section(".dpfd")));
 extern const unsigned int Vec_TWANG_VIBEHL __attribute__((section(".dpfe")));
 extern const unsigned int Vec_TWANG_VIBENL __attribute__((section(".dpfe")));
-# 41 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rom.h" 2
-# 1 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rom_dp.h" 1
-# 38 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rom_dp.h"
+# 41 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rom.h" 2
+# 1 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rom_dp.h" 1
+# 38 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rom_dp.h"
        
 
 
@@ -458,21 +459,21 @@ extern const unsigned int dp_Vec_ADSR_FADE12 __attribute__((section("direct")));
 extern const unsigned int dp_Vec_TWANG_VIBE0 __attribute__((section("direct")));
 extern const unsigned int dp_Vec_TWANG_VIBEHL __attribute__((section("direct")));
 extern const unsigned int dp_Vec_TWANG_VIBENL __attribute__((section("direct")));
-# 42 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rom.h" 2
-# 43 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vectrex.h" 2
-# 1 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum.h" 1
-# 38 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum.h"
+# 42 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rom.h" 2
+# 43 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vectrex.h" 2
+# 1 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum.h" 1
+# 38 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum.h"
        
-# 48 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum.h"
-# 1 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 1
-# 38 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 48 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum.h"
+# 1 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h" 1
+# 38 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
        
 
-# 1 "/home/frank/bin/Vide/C/PeerC/vectrex/include/macro.h" 1
-# 38 "/home/frank/bin/Vide/C/PeerC/vectrex/include/macro.h"
+# 1 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/macro.h" 1
+# 38 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/macro.h"
        
-# 41 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h" 2
-# 95 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 41 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h" 2
+# 95 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Wait_Recal(void)
 {
  asm volatile(
@@ -480,7 +481,7 @@ static inline __attribute__((always_inline)) void Wait_Recal(void)
   ::
   : "memory", "cc", "dp", "d", "x");
 }
-# 126 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 126 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Recalibrate(void)
 {
  asm volatile(
@@ -488,7 +489,7 @@ static inline __attribute__((always_inline)) void Recalibrate(void)
   ::
   : "memory", "cc", "dp", "d", "x");
 }
-# 144 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 144 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Reset0Ref_D0(void)
 {
  asm volatile(
@@ -496,7 +497,7 @@ static inline __attribute__((always_inline)) void Reset0Ref_D0(void)
   ::
   : "memory", "cc", "dp", "d");
 }
-# 163 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 163 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Check0Ref(void)
 {
  asm volatile(
@@ -504,7 +505,7 @@ static inline __attribute__((always_inline)) void Check0Ref(void)
   ::
   : "memory", "cc", "d");
 }
-# 179 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 179 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Reset0Ref(void)
 {
  asm volatile(
@@ -512,7 +513,7 @@ static inline __attribute__((always_inline)) void Reset0Ref(void)
   ::
   : "memory", "cc", "d");
 }
-# 198 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 198 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Reset_Pen(void)
 {
  asm volatile(
@@ -520,7 +521,7 @@ static inline __attribute__((always_inline)) void Reset_Pen(void)
   ::
   : "memory", "cc", "d");
 }
-# 214 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 214 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Reset0Int(void)
 {
  asm volatile(
@@ -528,7 +529,7 @@ static inline __attribute__((always_inline)) void Reset0Int(void)
   ::
   : "memory", "cc", "d");
 }
-# 239 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 239 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Dec_3_Counters(void)
 {
  asm volatile(
@@ -536,7 +537,7 @@ static inline __attribute__((always_inline)) void Dec_3_Counters(void)
   ::
   : "memory", "cc", "b", "x");
 }
-# 257 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 257 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Dec_6_Counters(void)
 {
  asm volatile(
@@ -544,7 +545,7 @@ static inline __attribute__((always_inline)) void Dec_6_Counters(void)
   ::
   : "memory", "cc", "b", "x");
 }
-# 274 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 274 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Dec_Counters(const unsigned int b, void* const x)
 {
  asm volatile(
@@ -554,7 +555,7 @@ static inline __attribute__((always_inline)) void Dec_Counters(const unsigned in
   :: [B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "b", "x");
 }
-# 298 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 298 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void DP_to_D0(void)
 {
  asm volatile(
@@ -562,7 +563,7 @@ static inline __attribute__((always_inline)) void DP_to_D0(void)
   ::
   : "memory", "cc", "dp", "a");
 }
-# 314 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 314 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void DP_to_C8(void)
 {
  asm volatile(
@@ -570,7 +571,7 @@ static inline __attribute__((always_inline)) void DP_to_C8(void)
   ::
   : "memory", "cc", "dp", "a");
 }
-# 339 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 339 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Delay_3(void)
 {
  asm volatile(
@@ -578,7 +579,7 @@ static inline __attribute__((always_inline)) void Delay_3(void)
   ::
   : "memory", "cc", "b");
 }
-# 354 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 354 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Delay_2(void)
 {
  asm volatile(
@@ -586,7 +587,7 @@ static inline __attribute__((always_inline)) void Delay_2(void)
   ::
   : "memory", "cc", "b");
 }
-# 369 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 369 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Delay_1(void)
 {
  asm volatile(
@@ -594,7 +595,7 @@ static inline __attribute__((always_inline)) void Delay_1(void)
   ::
   : "memory", "cc", "b");
 }
-# 384 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 384 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Delay_0(void)
 {
  asm volatile(
@@ -602,7 +603,7 @@ static inline __attribute__((always_inline)) void Delay_0(void)
   ::
   : "memory", "cc", "b");
 }
-# 399 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 399 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Delay_b(const unsigned int b)
 {
  asm volatile(
@@ -624,7 +625,7 @@ static inline __attribute__((always_inline)) void Delay_RTS(void)
   ::
   : "memory", "cc");
 }
-# 447 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 447 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Dot_ix_b(const unsigned int b, void* const x)
 {
  asm volatile(
@@ -634,7 +635,7 @@ static inline __attribute__((always_inline)) void Dot_ix_b(const unsigned int b,
   :: [B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 471 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 471 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Dot_ix(void* const x)
 {
  asm volatile(
@@ -643,7 +644,7 @@ static inline __attribute__((always_inline)) void Dot_ix(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 492 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 492 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Dot_d(const int a, const int b)
 {
  asm volatile(
@@ -662,7 +663,7 @@ static inline __attribute__((always_inline)) void Dot_dd(const long int d)
   :: [D] "mi" (d)
   : "memory", "cc", "d");
 }
-# 520 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 520 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Dot_here(void)
 {
  asm volatile(
@@ -670,7 +671,7 @@ static inline __attribute__((always_inline)) void Dot_here(void)
   ::
   : "memory", "cc", "d");
 }
-# 546 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 546 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Dot_List(void* const x)
 {
  asm volatile(
@@ -679,7 +680,7 @@ static inline __attribute__((always_inline)) void Dot_List(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 574 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 574 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Dot_List_Reset(void* const x)
 {
  asm volatile(
@@ -688,7 +689,7 @@ static inline __attribute__((always_inline)) void Dot_List_Reset(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 613 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 613 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Print_Str_hwyx(void* const u)
 {
  asm volatile(
@@ -697,7 +698,7 @@ static inline __attribute__((always_inline)) void Print_Str_hwyx(void* const u)
   :: [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 638 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 638 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Print_Str_yx(volatile const void* const u)
 {
  asm volatile(
@@ -706,7 +707,7 @@ static inline __attribute__((always_inline)) void Print_Str_yx(volatile const vo
   :: [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 664 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 664 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Print_Str_d(const int a, const int b, void* const u)
 {
  asm volatile(
@@ -727,7 +728,7 @@ static inline __attribute__((always_inline)) void Print_Str_dd(const long int d,
   :: [D] "mi" (d), [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 703 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 703 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Print_List_hw(void* const u)
 {
  asm volatile(
@@ -736,7 +737,7 @@ static inline __attribute__((always_inline)) void Print_List_hw(void* const u)
   :: [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 731 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 731 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Print_List(void* const u)
 {
  asm volatile(
@@ -745,7 +746,7 @@ static inline __attribute__((always_inline)) void Print_List(void* const u)
   :: [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 758 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 758 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Print_List_chk(void* const u)
 {
  asm volatile(
@@ -754,7 +755,7 @@ static inline __attribute__((always_inline)) void Print_List_chk(void* const u)
   :: [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 783 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 783 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Print_Ships_x(const unsigned int a, const unsigned int b, void* const x)
 {
  asm volatile(
@@ -765,7 +766,7 @@ static inline __attribute__((always_inline)) void Print_Ships_x(const unsigned i
   :: [A] "mi" (a), [B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "d", "x", "u");
 }
-# 810 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 810 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Print_Ships(const unsigned int a, const unsigned int b, const unsigned long int x)
 {
  asm volatile(
@@ -776,7 +777,7 @@ static inline __attribute__((always_inline)) void Print_Ships(const unsigned int
   :: [A] "mi" (a), [B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "d", "x", "u");
 }
-# 836 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 836 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Print_Str(void* const u)
 {
  asm volatile(
@@ -785,7 +786,7 @@ static inline __attribute__((always_inline)) void Print_Str(void* const u)
   :: [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 860 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 860 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Print_MRast(void)
 {
  asm volatile(
@@ -793,7 +794,7 @@ static inline __attribute__((always_inline)) void Print_MRast(void)
   ::
   : "memory", "cc", "d", "x", "u");
 }
-# 925 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 925 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_Pat_VL_a(const unsigned int a, void* const x)
 {
  asm volatile(
@@ -803,7 +804,7 @@ static inline __attribute__((always_inline)) void Draw_Pat_VL_a(const unsigned i
   :: [A] "mi" (a), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 992 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 992 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_Pat_VL(void* const x)
 {
  asm volatile(
@@ -812,7 +813,7 @@ static inline __attribute__((always_inline)) void Draw_Pat_VL(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1037 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1037 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_Line_d(const int a, const int b)
 {
  asm volatile(
@@ -822,7 +823,7 @@ static inline __attribute__((always_inline)) void Draw_Line_d(const int a, const
   :: [A] "mi" (a), [B] "mi" (b)
   : "memory", "cc", "d", "x");
 }
-# 1066 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1066 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_VLc(void* const x)
 {
  asm volatile(
@@ -831,7 +832,7 @@ static inline __attribute__((always_inline)) void Draw_VLc(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1094 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1094 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_VL_ab(const unsigned int a, const unsigned int b, void* const x)
 {
  asm volatile(
@@ -842,7 +843,7 @@ static inline __attribute__((always_inline)) void Draw_VL_ab(const unsigned int 
   :: [A] "mi" (a), [B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1124 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1124 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_VL(void* const x)
 {
  asm volatile(
@@ -851,7 +852,7 @@ static inline __attribute__((always_inline)) void Draw_VL(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1152 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1152 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_VLcs(void* const x)
 {
  asm volatile(
@@ -860,7 +861,7 @@ static inline __attribute__((always_inline)) void Draw_VLcs(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1180 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1180 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_VL_b(const unsigned int b, void* const x)
 {
  asm volatile(
@@ -870,7 +871,7 @@ static inline __attribute__((always_inline)) void Draw_VL_b(const unsigned int b
   :: [B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1209 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1209 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_VL_a(const unsigned int a, void* const x)
 {
  asm volatile(
@@ -880,7 +881,7 @@ static inline __attribute__((always_inline)) void Draw_VL_a(const unsigned int a
   :: [A] "mi" (a), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1254 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1254 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Mov_Draw_VLc_a(void* const x)
 {
  asm volatile(
@@ -889,7 +890,7 @@ static inline __attribute__((always_inline)) void Mov_Draw_VLc_a(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1281 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1281 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Mov_Draw_VL_b(const unsigned int b, void* const x)
 {
  asm volatile(
@@ -899,7 +900,7 @@ static inline __attribute__((always_inline)) void Mov_Draw_VL_b(const unsigned i
   :: [B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1310 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1310 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Mov_Draw_VLcs(void* const x)
 {
  asm volatile(
@@ -908,7 +909,7 @@ static inline __attribute__((always_inline)) void Mov_Draw_VLcs(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1338 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1338 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Mov_Draw_VL_ab(const unsigned int a, const unsigned int b, void* const x)
 {
  asm volatile(
@@ -919,7 +920,7 @@ static inline __attribute__((always_inline)) void Mov_Draw_VL_ab(const unsigned 
   :: [A] "mi" (a), [B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1368 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1368 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Mov_Draw_VL_a(const unsigned int a, void* const x)
 {
  asm volatile(
@@ -929,7 +930,7 @@ static inline __attribute__((always_inline)) void Mov_Draw_VL_a(const unsigned i
   :: [A] "mi" (a), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1397 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1397 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Mov_Draw_VL(void* const x)
 {
  asm volatile(
@@ -938,7 +939,7 @@ static inline __attribute__((always_inline)) void Mov_Draw_VL(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1422 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1422 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Mov_Draw_VL_d(const int a, const int b)
 {
  asm volatile(
@@ -948,7 +949,7 @@ static inline __attribute__((always_inline)) void Mov_Draw_VL_d(const int a, con
   :: [A] "mi" (a), [B] "mi" (b)
   : "memory", "cc", "d", "x");
 }
-# 1484 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1484 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_VL_mode(void* const x)
 {
  asm volatile(
@@ -957,7 +958,7 @@ static inline __attribute__((always_inline)) void Draw_VL_mode(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1515 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1515 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_VLp_7F(void* const x)
 {
  asm volatile(
@@ -966,7 +967,7 @@ static inline __attribute__((always_inline)) void Draw_VLp_7F(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1547 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1547 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_VLp_FF(void* const x)
 {
  asm volatile(
@@ -975,7 +976,7 @@ static inline __attribute__((always_inline)) void Draw_VLp_FF(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1577 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1577 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_VLp_b(const unsigned int b, void* const x)
 {
  asm volatile(
@@ -985,7 +986,7 @@ static inline __attribute__((always_inline)) void Draw_VLp_b(const unsigned int 
   ::[B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1608 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1608 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_VLp(void (* const x))
 {
  asm volatile(
@@ -994,7 +995,7 @@ static inline __attribute__((always_inline)) void Draw_VLp(void (* const x))
   :: [X] "im" (x)
   : "memory", "cc", "d", "x");
 }
-# 1638 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1638 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_VLp_scale(void* const x)
 {
  asm volatile(
@@ -1003,7 +1004,7 @@ static inline __attribute__((always_inline)) void Draw_VLp_scale(void* const x)
   :: [X] "im" (x)
   : "memory", "cc", "d", "x");
 }
-# 1665 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1665 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Rot_VL_Mode(const unsigned int a, void* const x, volatile void* volatile const u)
 {
  asm volatile(
@@ -1014,7 +1015,7 @@ static inline __attribute__((always_inline)) void Rot_VL_Mode(const unsigned int
   :: [A] "mi" (a), [X] "mi" (x), [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 1694 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1694 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Rot_VL_Pack(void* const x, void* const u)
 {
  asm volatile(
@@ -1024,7 +1025,7 @@ static inline __attribute__((always_inline)) void Rot_VL_Pack(void* const x, voi
   :: [X] "mi" (x), [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 1722 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1722 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Rot_VL_M_dft(void* const x, void* const u)
 {
  asm volatile(
@@ -1034,7 +1035,7 @@ static inline __attribute__((always_inline)) void Rot_VL_M_dft(void* const x, vo
   :: [X] "mi" (x), [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 1778 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1778 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) unsigned int Random_3(void)
 {
  unsigned int rnd;
@@ -1046,7 +1047,7 @@ static inline __attribute__((always_inline)) unsigned int Random_3(void)
   : "memory", "cc", "a");
  return rnd;
 }
-# 1798 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1798 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) unsigned int Random(void)
 {
  unsigned int rnd;
@@ -1058,7 +1059,7 @@ static inline __attribute__((always_inline)) unsigned int Random(void)
   : "memory", "cc", "a");
  return rnd;
 }
-# 1827 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1827 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) unsigned int Bitmask_a(const unsigned int a)
 {
  unsigned int r;
@@ -1071,7 +1072,7 @@ static inline __attribute__((always_inline)) unsigned int Bitmask_a(const unsign
   : "memory", "cc", "a", "x");
  return r;
 }
-# 1851 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1851 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) long unsigned int Abs_a_b(const int a, const int b)
 {
  long unsigned int r;
@@ -1085,7 +1086,7 @@ static inline __attribute__((always_inline)) long unsigned int Abs_a_b(const int
   : "memory", "cc", "d");
  return r;
 }
-# 1874 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1874 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) int Abs_b(const int b)
 {
  int r;
@@ -1098,7 +1099,7 @@ static inline __attribute__((always_inline)) int Abs_b(const int b)
   : "memory", "cc", "b");
  return r;
 }
-# 1898 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1898 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) long unsigned int Rise_Run_Angle(const int a, const int b)
 {
  long unsigned int r;
@@ -1112,7 +1113,7 @@ static inline __attribute__((always_inline)) long unsigned int Rise_Run_Angle(co
   : "memory", "cc", "d");
  return r;
 }
-# 1921 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1921 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) long unsigned int Get_Rise_Idx(const int a)
 {
  long unsigned int r;
@@ -1125,7 +1126,7 @@ static inline __attribute__((always_inline)) long unsigned int Get_Rise_Idx(cons
   : "memory", "cc", "d", "x");
  return r;
 }
-# 1943 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1943 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) int Xform_Sin(const int a)
 {
  int r;
@@ -1138,7 +1139,7 @@ static inline __attribute__((always_inline)) int Xform_Sin(const int a)
   : "memory", "cc", "d", "x");
  return r;
 }
-# 1966 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1966 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) long unsigned int Get_Rise_Run(void)
 {
  long unsigned int r;
@@ -1150,7 +1151,7 @@ static inline __attribute__((always_inline)) long unsigned int Get_Rise_Run(void
   : "memory", "cc", "d");
  return r;
 }
-# 1989 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 1989 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) long unsigned int Xform_Run_a(const int a)
 {
  long unsigned int r;
@@ -1163,7 +1164,7 @@ static inline __attribute__((always_inline)) long unsigned int Xform_Run_a(const
   : "memory", "cc", "d");
  return r;
 }
-# 2012 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2012 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) long unsigned int Xform_Run(void)
 {
  unsigned int r;
@@ -1175,7 +1176,7 @@ static inline __attribute__((always_inline)) long unsigned int Xform_Run(void)
   : "memory", "cc", "d");
  return r;
 }
-# 2035 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2035 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) long unsigned int Xform_Rise_a(const int a)
 {
  long unsigned int r;
@@ -1188,7 +1189,7 @@ static inline __attribute__((always_inline)) long unsigned int Xform_Rise_a(cons
   : "memory", "cc", "d");
  return r;
 }
-# 2058 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2058 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) long unsigned int Xform_Rise(void)
 {
  long unsigned int r;
@@ -1200,7 +1201,7 @@ static inline __attribute__((always_inline)) long unsigned int Xform_Rise(void)
   : "memory", "cc", "d");
  return r;
 }
-# 2087 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2087 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Clear_x_b(const unsigned int b, void* const x)
 {
  asm volatile(
@@ -1211,7 +1212,7 @@ static inline __attribute__((always_inline)) void Clear_x_b(const unsigned int b
   : [B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 2106 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2106 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Clear_C8_RAM(void)
 {
  asm volatile(
@@ -1220,7 +1221,7 @@ static inline __attribute__((always_inline)) void Clear_C8_RAM(void)
   :
   : "memory", "cc", "d", "x");
 }
-# 2122 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2122 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Clear_x_256(void* const x)
 {
  asm volatile(
@@ -1230,7 +1231,7 @@ static inline __attribute__((always_inline)) void Clear_x_256(void* const x)
   : [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 2140 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2140 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Clear_x_d(const long unsigned int d, void* const x)
 {
  asm volatile(
@@ -1241,7 +1242,7 @@ static inline __attribute__((always_inline)) void Clear_x_d(const long unsigned 
   : [D] "mi" (d), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 2167 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2167 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Move_Mem_a_1(const unsigned int a, void* const x, void* const u)
 {
  asm volatile(
@@ -1253,7 +1254,7 @@ static inline __attribute__((always_inline)) void Move_Mem_a_1(const unsigned in
   : [A] "mi" (a), [X] "mi" (x), [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 2189 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2189 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Move_Mem_a(const unsigned int a, void* const x, void* const u)
 {
  asm volatile(
@@ -1265,7 +1266,7 @@ static inline __attribute__((always_inline)) void Move_Mem_a(const unsigned int 
   : [A] "mi" (a), [X] "mi" (x), [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 2216 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2216 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Clear_x_b_80(const int b, void* const x)
 {
  asm volatile(
@@ -1276,7 +1277,7 @@ static inline __attribute__((always_inline)) void Clear_x_b_80(const int b, void
   : [B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 2235 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2235 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Clear_x_b_a(const unsigned int a, const unsigned int b, void* const x)
 {
  asm volatile(
@@ -1288,7 +1289,7 @@ static inline __attribute__((always_inline)) void Clear_x_b_a(const unsigned int
   : [A] "mi" (a), [B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 2265 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2265 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Read_Btns_Mask(const unsigned int a)
 {
  asm volatile(
@@ -1298,7 +1299,7 @@ static inline __attribute__((always_inline)) void Read_Btns_Mask(const unsigned 
   : [A] "mi" (a)
   : "memory", "cc", "d", "x");
 }
-# 2284 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2284 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Read_Btns(void)
 {
  asm volatile(
@@ -1306,7 +1307,7 @@ static inline __attribute__((always_inline)) void Read_Btns(void)
   ::
   : "memory", "cc", "d", "x");
 }
-# 2320 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2320 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Joy_Analog(void)
 {
  asm volatile(
@@ -1314,7 +1315,7 @@ static inline __attribute__((always_inline)) void Joy_Analog(void)
   ::
   : "memory", "cc", "d", "x");
 }
-# 2352 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2352 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Joy_Digital(void)
 {
  asm volatile(
@@ -1322,7 +1323,7 @@ static inline __attribute__((always_inline)) void Joy_Digital(void)
   ::
   : "memory", "cc", "d", "x");
 }
-# 2418 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2418 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Select_Game(const unsigned int a, const unsigned int b)
 {
  asm volatile(
@@ -1332,7 +1333,7 @@ static inline __attribute__((always_inline)) void Select_Game(const unsigned int
   :: [A] "mi" (a), [B] "mi" (b)
   : "memory", "cc", "d", "x", "y", "u");
 }
-# 2440 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2440 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Display_Option(const unsigned int a, const void* const y)
 {
  asm volatile(
@@ -1342,7 +1343,7 @@ static inline __attribute__((always_inline)) void Display_Option(const unsigned 
   :: [A] "mi" (a), [Y] "mi" (y)
   : "memory", "cc", "d", "x", "y", "u");
 }
-# 2460 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2460 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Reset(void)
 {
  asm volatile(
@@ -1350,7 +1351,7 @@ static inline __attribute__((always_inline)) void Reset(void)
   ::
   : "memory", "cc");
 }
-# 2481 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2481 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Init_VIA(void)
 {
  asm volatile(
@@ -1358,7 +1359,7 @@ static inline __attribute__((always_inline)) void Init_VIA(void)
   ::
   : "memory", "cc", "d", "x");
 }
-# 2508 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2508 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Init_OS_RAM(void)
 {
  asm volatile(
@@ -1366,7 +1367,7 @@ static inline __attribute__((always_inline)) void Init_OS_RAM(void)
   ::
   : "memory", "cc", "d", "x");
 }
-# 2537 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2537 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Init_OS(void)
 {
  asm volatile(
@@ -1374,7 +1375,7 @@ static inline __attribute__((always_inline)) void Init_OS(void)
   ::
   : "memory", "cc", "d", "x");
 }
-# 2556 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2556 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Init_Music_Buf(void)
 {
  asm volatile(
@@ -1382,7 +1383,7 @@ static inline __attribute__((always_inline)) void Init_Music_Buf(void)
   ::
   : "memory", "cc", "d", "x");
 }
-# 2602 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2602 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Clear_Score(void* const x)
 {
  asm volatile(
@@ -1391,7 +1392,7 @@ static inline __attribute__((always_inline)) void Clear_Score(void* const x)
   :: [X] "mins" (x)
   : "memory", "cc", "d", "x");
 }
-# 2630 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2630 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Add_Score_a(const unsigned int a, void* const x)
 {
  asm volatile(
@@ -1401,7 +1402,7 @@ static inline __attribute__((always_inline)) void Add_Score_a(const unsigned int
   :: [A] "mins" (a), [X] "mins" (x)
   : "memory", "cc", "d", "x", "u");
 }
-# 2658 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2658 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Add_Score_d(const long unsigned int d, void* const x)
 {
  asm volatile(
@@ -1411,7 +1412,7 @@ static inline __attribute__((always_inline)) void Add_Score_d(const long unsigne
   :: [D] "mi" (d), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 2710 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2710 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) unsigned int Compare_Score(void* const x, void* const u)
 {
  unsigned int r;
@@ -1425,7 +1426,7 @@ static inline __attribute__((always_inline)) unsigned int Compare_Score(void* co
   : "memory", "cc", "d", "x", "u");
  return r;
 }
-# 2743 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2743 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void New_High_Score(void* const x, void* const u)
 {
  asm volatile(
@@ -1435,7 +1436,7 @@ static inline __attribute__((always_inline)) void New_High_Score(void* const x, 
   :: [X] "mi" (x), [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 2780 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2780 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Sound_Byte(const unsigned int a, const unsigned int b)
 {
  asm volatile(
@@ -1445,7 +1446,7 @@ static inline __attribute__((always_inline)) void Sound_Byte(const unsigned int 
   :: [A] "mi" (a), [B] "mi" (b)
   : "memory", "cc", "d", "x");
 }
-# 2800 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2800 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Sound_Byte_x(const unsigned int a, const unsigned int b, void* const x)
 {
  asm volatile(
@@ -1456,7 +1457,7 @@ static inline __attribute__((always_inline)) void Sound_Byte_x(const unsigned in
   :: [A] "mi" (a), [B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 2820 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2820 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Clear_Sound(void)
 {
  asm volatile(
@@ -1464,7 +1465,7 @@ static inline __attribute__((always_inline)) void Clear_Sound(void)
   ::
   : "memory", "cc", "d", "x");
 }
-# 2838 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2838 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Sound_Bytes(void* const u)
 {
  asm volatile(
@@ -1473,7 +1474,7 @@ static inline __attribute__((always_inline)) void Sound_Bytes(void* const u)
   :: [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 2857 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2857 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Sound_Bytes_x(void* const x, void* const u)
 {
  asm volatile(
@@ -1483,7 +1484,7 @@ static inline __attribute__((always_inline)) void Sound_Bytes_x(void* const x, v
   :: [X] "mi" (x), [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 2878 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2878 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Do_Sound(void)
 {
  asm volatile(
@@ -1491,7 +1492,7 @@ static inline __attribute__((always_inline)) void Do_Sound(void)
   ::
   : "memory", "cc", "d", "x", "u");
 }
-# 2915 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2915 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Init_Music_chk(const void* const u)
 {
  asm volatile(
@@ -1500,7 +1501,7 @@ static inline __attribute__((always_inline)) void Init_Music_chk(const void* con
   :: [U] "mi" (u)
   : "memory", "cc", "d", "x", "y", "u");
 }
-# 2964 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2964 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Init_Music(void* const u)
 {
  asm volatile(
@@ -1509,7 +1510,7 @@ static inline __attribute__((always_inline)) void Init_Music(void* const u)
   :: [U] "mi" (u)
   : "memory", "cc", "d", "x", "y", "u");
 }
-# 2997 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 2997 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Init_Music_a(void* const x, void* const u)
 {
  asm volatile(
@@ -1519,7 +1520,7 @@ static inline __attribute__((always_inline)) void Init_Music_a(void* const x, vo
   :: [X] "mi" (x), [U] "mi" (u)
   : "memory", "cc", "d", "x", "y", "u");
 }
-# 3031 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3031 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Init_Music_x(void* const u)
 {
  asm volatile(
@@ -1528,7 +1529,7 @@ static inline __attribute__((always_inline)) void Init_Music_x(void* const u)
   :: [U] "mi" (u)
   : "memory", "cc", "d", "x", "y", "u");
 }
-# 3050 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3050 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Stop_Sound(void)
 {
  asm volatile(
@@ -1536,7 +1537,7 @@ static inline __attribute__((always_inline)) void Stop_Sound(void)
   ::
   : "memory", "cc", "d", "x");
 }
-# 3088 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3088 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Explosion_Snd(const void* const u)
 {
  asm volatile(
@@ -1545,7 +1546,7 @@ static inline __attribute__((always_inline)) void Explosion_Snd(const void* cons
   :: [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 3107 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3107 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Set_Amp(const unsigned int b)
 {
  asm volatile(
@@ -1554,7 +1555,7 @@ static inline __attribute__((always_inline)) void Set_Amp(const unsigned int b)
   :: [B] "mi" (b)
   : "memory", "cc", "d", "x");
 }
-# 3169 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3169 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Moveto_x_7F(void* const x)
 {
  asm volatile(
@@ -1563,7 +1564,7 @@ static inline __attribute__((always_inline)) void Moveto_x_7F(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 3188 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3188 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Moveto_d_7F(const int a, const int b)
 {
  asm volatile(
@@ -1582,7 +1583,7 @@ static inline __attribute__((always_inline)) void Moveto_dd_7F(const long int d)
   :: [D] "mi" (d)
   : "memory", "cc", "d");
 }
-# 3221 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3221 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Moveto_ix_FF(void* const x)
 {
  asm volatile(
@@ -1591,7 +1592,7 @@ static inline __attribute__((always_inline)) void Moveto_ix_FF(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 3244 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3244 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Moveto_ix_7F(void* const x)
 {
  asm volatile(
@@ -1600,7 +1601,7 @@ static inline __attribute__((always_inline)) void Moveto_ix_7F(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 3268 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3268 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Moveto_ix_b(const unsigned int b, void* const x)
 {
  asm volatile(
@@ -1610,7 +1611,7 @@ static inline __attribute__((always_inline)) void Moveto_ix_b(const unsigned int
   :: [B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 3291 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3291 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Moveto_ix(void* const x)
 {
  asm volatile(
@@ -1619,7 +1620,7 @@ static inline __attribute__((always_inline)) void Moveto_ix(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 3313 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3313 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Moveto_d(const int a, const int b)
 {
  asm volatile(
@@ -1638,7 +1639,7 @@ static inline __attribute__((always_inline)) void Moveto_dd(const long int d)
   :: [D] "mi" (d)
   : "memory", "cc", "d");
 }
-# 3351 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3351 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Intensity_1F(void)
 {
  asm volatile(
@@ -1646,7 +1647,7 @@ static inline __attribute__((always_inline)) void Intensity_1F(void)
   ::
   : "memory", "cc", "d");
 }
-# 3369 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3369 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Intensity_3F(void)
 {
  asm volatile(
@@ -1654,7 +1655,7 @@ static inline __attribute__((always_inline)) void Intensity_3F(void)
   ::
   : "memory", "cc", "d");
 }
-# 3387 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3387 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Intensity_5F(void)
 {
  asm volatile(
@@ -1662,7 +1663,7 @@ static inline __attribute__((always_inline)) void Intensity_5F(void)
   ::
   : "memory", "cc", "d");
 }
-# 3405 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3405 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Intensity_7F(void)
 {
  asm volatile(
@@ -1670,7 +1671,7 @@ static inline __attribute__((always_inline)) void Intensity_7F(void)
   ::
   : "memory", "cc", "d");
 }
-# 3425 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3425 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Intensity_a(const unsigned int a)
 {
  asm volatile(
@@ -1679,7 +1680,7 @@ static inline __attribute__((always_inline)) void Intensity_a(const unsigned int
   :: [A] "mi" (a)
   : "memory", "cc", "d");
 }
-# 3452 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3452 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) unsigned int Obj_Will_Hit_u(const int a, const int b, const long int x, const long int y, const long int u)
 {
  unsigned int hit;
@@ -1698,7 +1699,7 @@ static inline __attribute__((always_inline)) unsigned int Obj_Will_Hit_u(const i
   : "memory", "cc", "d", "x", "y", "u");
  return hit;
 }
-# 3482 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3482 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) unsigned int Obj_Will_Hit(const int a, const int b, const long int x, const long int y, const long int* u)
 {
  unsigned int hit;
@@ -1717,7 +1718,7 @@ static inline __attribute__((always_inline)) unsigned int Obj_Will_Hit(const int
   : "memory", "cc", "d", "x", "y", "u");
  return hit;
 }
-# 3511 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3511 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) unsigned int Obj_Hit(const int a, const int b, const long int x, const long int y)
 {
  unsigned int hit;
@@ -1735,7 +1736,7 @@ static inline __attribute__((always_inline)) unsigned int Obj_Hit(const int a, c
   : "memory", "cc", "d", "x", "y");
  return hit;
 }
-# 3551 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3551 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) long unsigned int Rise_Run_X(const int a, const int b)
 {
  unsigned long int d;
@@ -1749,7 +1750,7 @@ static inline __attribute__((always_inline)) long unsigned int Rise_Run_X(const 
   : "memory", "cc", "d");
  return d;
 }
-# 3575 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3575 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) long unsigned int Rise_Run_Y(const int a, const int b)
 {
  unsigned long int d;
@@ -1763,7 +1764,7 @@ static inline __attribute__((always_inline)) long unsigned int Rise_Run_Y(const 
   : "memory", "cc", "d");
  return d;
 }
-# 3599 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3599 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) unsigned long int Rise_Run_Len(const int a)
 {
  unsigned long int d;
@@ -1776,7 +1777,7 @@ static inline __attribute__((always_inline)) unsigned long int Rise_Run_Len(cons
   : "memory", "cc", "d");
  return d;
 }
-# 3630 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3630 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Rot_VL_ab(const unsigned int a, const unsigned int b, void* const x, void* const u)
 {
  asm volatile(
@@ -1788,7 +1789,7 @@ static inline __attribute__((always_inline)) void Rot_VL_ab(const unsigned int a
   :: [A] "mi" (a), [B] "mi" (b), [X] "mi" (x), [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 3659 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3659 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Rot_VL_Diff(const unsigned int b, void* const x, void* const u)
 {
  asm volatile(
@@ -1799,7 +1800,7 @@ static inline __attribute__((always_inline)) void Rot_VL_Diff(const unsigned int
   :: [B] "mi" (b), [X] "mi" (x), [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 3688 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3688 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Rot_VL(void* const x, void* const u)
 {
  asm volatile(
@@ -1809,7 +1810,7 @@ static inline __attribute__((always_inline)) void Rot_VL(void* const x, void* co
   :: [X] "mi" (x), [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 3748 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3748 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Dot_y(const long int y)
 {
  asm volatile(
@@ -1818,7 +1819,7 @@ static inline __attribute__((always_inline)) void Dot_y(const long int y)
   :: [Y] "mi" (y)
   : "memory", "cc", "y");
 }
-# 3766 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3766 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Dot_py(void* const y)
 {
  asm volatile(
@@ -1827,7 +1828,7 @@ static inline __attribute__((always_inline)) void Dot_py(void* const y)
   :: [Y] "mi" (y)
   : "memory", "cc", "y");
 }
-# 3795 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3795 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_Pack(const unsigned int b, void* const x, const long int y)
 {
  asm volatile(
@@ -1838,7 +1839,7 @@ static inline __attribute__((always_inline)) void Draw_Pack(const unsigned int b
   :: [B] "mi" (b), [X] "mi" (x), [Y] "mi" (y)
   : "memory", "cc", "b", "x", "y");
 }
-# 3824 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3824 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_Pack_py(const unsigned int b, void* const x, void* const y)
 {
  asm volatile(
@@ -1849,7 +1850,7 @@ static inline __attribute__((always_inline)) void Draw_Pack_py(const unsigned in
   :: [B] "mi" (b), [X] "mi" (x), [Y] "mi" (y)
   : "memory", "cc", "b", "x", "y");
 }
-# 3848 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3848 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Print_Msg(void* const y, void* const u)
 {
  asm volatile(
@@ -1859,7 +1860,7 @@ static inline __attribute__((always_inline)) void Print_Msg(void* const y, void*
   :: [Y] "mi" (y), [U] "mi" (u)
   : "memory", "cc", "y", "u");
 }
-# 3865 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3865 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) unsigned int Rnd_Cone(void)
 {
  unsigned int b;
@@ -1871,7 +1872,7 @@ static inline __attribute__((always_inline)) unsigned int Rnd_Cone(void)
   : "memory", "cc", "b");
  return b;
 }
-# 3887 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3887 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) long unsigned int Displ8_xy(const unsigned int a, const unsigned int b)
 {
  unsigned long int x;
@@ -1887,7 +1888,7 @@ static inline __attribute__((always_inline)) long unsigned int Displ8_xy(const u
   : "memory", "cc", "d", "x", "y");
  return x;
 }
-# 3913 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3913 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) long unsigned int Displ16_xy(const unsigned int a, const unsigned int b)
 {
  unsigned long int x;
@@ -1903,7 +1904,7 @@ static inline __attribute__((always_inline)) long unsigned int Displ16_xy(const 
   : "memory", "cc", "d", "x", "y");
  return x;
 }
-# 3938 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3938 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) long unsigned int Ranpos(void)
 {
  unsigned long int d;
@@ -1915,7 +1916,7 @@ static inline __attribute__((always_inline)) long unsigned int Ranpos(void)
   : "memory", "cc", "d");
  return d;
 }
-# 3971 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 3971 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_Scores(void)
 {
  asm volatile(
@@ -1923,7 +1924,7 @@ static inline __attribute__((always_inline)) void Draw_Scores(void)
   ::
   : "memory", "cc", "d", "y", "u");
 }
-# 4000 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 4000 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_Score(void)
 {
  asm volatile(
@@ -1931,7 +1932,7 @@ static inline __attribute__((always_inline)) void Draw_Score(void)
   ::
   : "memory", "cc", "d", "y", "u");
 }
-# 4027 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum_inl.h"
+# 4027 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Wait_Bound(void)
 {
  asm volatile(
@@ -1939,10 +1940,10 @@ static inline __attribute__((always_inline)) void Wait_Bound(void)
   ::
   : "memory", "cc", "d", "x", "y", "u");
 }
-# 49 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vec_rum.h" 2
-# 44 "/home/frank/bin/Vide/C/PeerC/vectrex/include/vectrex.h" 2
-# 6 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/hardware.h" 2
-# 15 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/hardware.h"
+# 49 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum.h" 2
+# 44 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vectrex.h" 2
+# 6 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\/hardware.h" 2
+# 15 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\/hardware.h"
 static inline __attribute__((always_inline)) void positd (int8_t x, int8_t y)
 {
     dp_VIA_t1_cnt_lo = 0x80;
@@ -1953,9 +1954,9 @@ static inline __attribute__((always_inline)) void Draw_VLp_80(void* const x)
     dp_VIA_t1_cnt_lo = 0x80;
     Draw_VLp(x);
 }
-# 35 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c" 2
-# 1 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/level.h" 1
-# 13 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/level.h"
+# 35 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\bloxorz.c" 2
+# 1 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\/level.h" 1
+# 13 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\/level.h"
 enum SwatchType {
     SWATCH_TYPE_S,
     SWATCH_TYPE_H,
@@ -1995,7 +1996,7 @@ struct Level {
 };
 
 extern const struct Level* level;
-extern uint8_t levelNumber;
+extern volatile uint8_t levelNumber;
 extern int8_t startX;
 extern int8_t startY;
 extern int8_t endX;
@@ -2019,8 +2020,8 @@ void initLevel();
 int8_t x3d(int8_t x, int8_t z);
 
 int8_t y3d(int8_t x, int8_t y, int8_t z);
-# 36 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c" 2
-# 1 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/block.h" 1
+# 36 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\bloxorz.c" 2
+# 1 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\/block.h" 1
 
 
 
@@ -2068,10 +2069,10 @@ void setSplitMode();
 void testMerge();
 
 void swapSplit();
-# 37 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c" 2
-# 45 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c"
+# 37 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\bloxorz.c" 2
+# 45 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\bloxorz.c"
 extern void* memcpy (void* dest, const void* src, long unsigned int len);
-# 73 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c"
+# 73 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\bloxorz.c"
 extern void picWrite(uint8_t b);
 extern uint8_t picRead();
 extern void delay10ms();
@@ -2093,7 +2094,7 @@ uint8_t arcadeSelection;
 uint8_t arcadeIndex;
 
 static uint8_t si = 0;
-extern const char* solutions[];
+extern const char* const solutions[];
 
 static const uint8_t arcadeLevels[4][5] = {
     { 1, 2, 0 },
@@ -2271,15 +2272,10 @@ void startLevel()
     if (arcadeMode) {
         levelNumber = arcadeLevels[arcadeSelection][arcadeIndex] - 1;
     } else {
-        levelHighscore = readEeprom((uint8_t) (levelNumber * 2));
-        levelHighscore |= ((uint16_t) readEeprom((uint8_t) (levelNumber * 2 + 1))) << 8;
+        levelHighscore = readEeprom((uint8_t) (levelOffset + levelNumber * 2));
+        levelHighscore |= ((uint16_t) readEeprom((uint8_t) (levelOffset + levelNumber * 2 + 1))) << 8;
         if (levelHighscore == 0) levelHighscore = 999;
     }
-
-
-
-
-
     level = levels[levelNumber];
     initSwatches();
     initLevel();
@@ -2304,7 +2300,7 @@ void startLevel()
 
 void __attribute__((noinline)) drawField()
 {
-# 325 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c"
+# 320 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\bloxorz.c"
     asm("LDA     #0x35");
     asm("STA     *0xd001     ;Store intensity in D/A");
     asm("LDD     #0x0504          ;mux disabled channel 2");
@@ -2323,7 +2319,7 @@ void __attribute__((noinline)) drawField()
     asm("	ldd ,x");
 
     asm("drawFieldLoop1:");
-# 357 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c"
+# 352 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\bloxorz.c"
     asm("	    nop ");
     asm("	    nop ");
     asm("	    nop ");
@@ -2543,6 +2539,16 @@ void blockMovingToStart()
     }
 }
 
+void nextLevel()
+{
+    levelNumber++;
+    if (levelNumber >= levelCount) {
+        levelNumber = 0;
+        setBank(nextBank);
+    }
+    startLevel();
+}
+
 void blockWaiting()
 {
     drawField();
@@ -2561,7 +2567,7 @@ void blockWaiting()
         moveBlock(Up);
         gameState = BlockMoving;
     }
-# 622 "/home/frank/bin/Vide/../../data/projects/bloxorz/Vide/source/bloxorz.c"
+# 627 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\bloxorz.c"
     if (gameState == BlockMoving) {
         changeMusic(movingMusic);
         *vecx = 3;
@@ -2575,19 +2581,14 @@ void blockWaiting()
     }
 
     if ((Vec_Buttons & 2) && !arcadeMode) {
-        levelNumber++;
-        if (levelNumber >= levelCount) {
-            levelNumber = 0;
-            setBank(nextBank);
-        }
-        startLevel();
+  nextLevel();
     }
     if ((Vec_Buttons & 4) && !arcadeMode) {
         if (levelNumber > 0) {
             levelNumber--;
         } else {
-            levelNumber = levelCount - 1;
             setBank(nextBank);
+            levelNumber = levelCount - 1;
         }
         startLevel();
     }
@@ -2704,8 +2705,8 @@ void blockMovingAtEnd()
     blockYOfs++;
     if (blockYOfs == 30) {
         if (moveCount < levelHighscore) {
-            writeEeprom((uint8_t) (2 * levelNumber), (uint8_t) (moveCount & 0xff));
-            writeEeprom((uint8_t) (2 * levelNumber + 1), (uint8_t) (moveCount >> 8));
+            writeEeprom((uint8_t) (levelOffset + 2 * levelNumber), (uint8_t) (moveCount & 0xff));
+            writeEeprom((uint8_t) (levelOffset + 2 * levelNumber + 1), (uint8_t) (moveCount >> 8));
         }
         if (arcadeMode) {
             arcadeIndex++;
@@ -2719,9 +2720,7 @@ void blockMovingAtEnd()
                 startLevel();
             }
         } else {
-            levelNumber++;
-            if (levelNumber >= levelCount) levelNumber = 0;
-            startLevel();
+     nextLevel();
         }
     }
 }

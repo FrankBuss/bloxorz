@@ -91,7 +91,7 @@ uint8_t arcadeSelection;
 uint8_t arcadeIndex;
 
 static uint8_t si = 0;
-extern const char* solutions[];
+extern const char* const solutions[];
 
 static const uint8_t arcadeLevels[4][5] = {
     { 1, 2, 0 },
@@ -269,15 +269,10 @@ void startLevel()
     if (arcadeMode) {
         levelNumber = arcadeLevels[arcadeSelection][arcadeIndex] - 1;
     } else {
-        levelHighscore = readEeprom((uint8_t) (levelNumber * 2));
-        levelHighscore |= ((uint16_t) readEeprom((uint8_t) (levelNumber * 2 + 1))) << 8;
+        levelHighscore = readEeprom((uint8_t) (levelOffset + levelNumber * 2));
+        levelHighscore |= ((uint16_t) readEeprom((uint8_t) (levelOffset + levelNumber * 2 + 1))) << 8;
         if (levelHighscore == 0) levelHighscore = 999;
     }
-//////////////////////////////////////////////
-//////////////////////////////////////////////
-// levelNumber = 11;
-// levelNumber = 14;
-//////////////////////////////////////////////
     level = levels[levelNumber];
     initSwatches();
     initLevel();
@@ -573,6 +568,16 @@ void blockMovingToStart()
     }
 }
 
+void nextLevel()
+{
+    levelNumber++;
+    if (levelNumber >= levelCount) {
+        levelNumber = 0;
+        setBank(nextBank);
+    }
+    startLevel();
+}
+
 void blockWaiting()
 {
     drawField();
@@ -632,19 +637,14 @@ void blockWaiting()
     }
 
     if ((Vec_Buttons & 2) && !arcadeMode) {
-        levelNumber++;
-        if (levelNumber >= levelCount) {
-            levelNumber = 0;
-            setBank(nextBank);
-        }
-        startLevel();
+		nextLevel();
     }
     if ((Vec_Buttons & 4) && !arcadeMode) {
         if (levelNumber > 0) {
             levelNumber--;
         } else {
-            levelNumber = levelCount - 1;
             setBank(nextBank);
+            levelNumber = levelCount - 1;
         }
         startLevel();
     }
@@ -761,8 +761,8 @@ void blockMovingAtEnd()
     blockYOfs++;
     if (blockYOfs == 30) {
         if (moveCount < levelHighscore) {
-            writeEeprom((uint8_t) (2 * levelNumber), (uint8_t) (moveCount & 0xff));
-            writeEeprom((uint8_t) (2 * levelNumber + 1), (uint8_t) (moveCount >> 8));
+            writeEeprom((uint8_t) (levelOffset + 2 * levelNumber), (uint8_t) (moveCount & 0xff));
+            writeEeprom((uint8_t) (levelOffset + 2 * levelNumber + 1), (uint8_t) (moveCount >> 8));
         }
         if (arcadeMode) {
             arcadeIndex++;
@@ -776,9 +776,7 @@ void blockMovingAtEnd()
                 startLevel();
             }
         } else {
-            levelNumber++;
-            if (levelNumber >= levelCount) levelNumber = 0;
-            startLevel();
+		   nextLevel();
         }
     }
 }

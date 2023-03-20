@@ -1,1 +1,1 @@
-copy /y bloxorz.bin  ..\MonoGame\Bloxorz\Content\Bloxorz.bin
+copy /y bloxorz.bin  ..\unity\Bloxorz\Assets\Resources\Bloxorz.bin.bytes

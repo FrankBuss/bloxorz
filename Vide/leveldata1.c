@@ -1879,5 +1879,5 @@ const struct Level* const levels[] = {
     &level17,
 };
 
-const char* solutions[] = {
+const char* const solutions[] = {
 };
