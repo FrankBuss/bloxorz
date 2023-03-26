@@ -1249,7 +1249,7 @@
    09EE E7 E2         [ 6] 1249 	stb	,-s	; ,
    09F0 6F E2         [ 8] 1250 	clr	,-s	; 
    09F2 F6 C8 E7      [ 5] 1251 	ldb	_blockX	; , blockX
-   09F5 BD 43 80      [ 8] 1252 	jsr	_y3d	; 
+   09F5 BD 43 EC      [ 8] 1252 	jsr	_y3d	; 
    09F8 E7 65         [ 5] 1253 	stb	5,s	; , yy
                            1254 ;----- asm -----
                            1255 ;  346 "C:\data\vide\..\bloxorz\Vide\source\block.enr.c" 1
@@ -1283,7 +1283,7 @@
    0A13 F6 C8 E8      [ 5] 1283 	ldb	_blockY	; , blockY
    0A16 E7 E2         [ 6] 1284 	stb	,-s	; ,
    0A18 F6 C8 E7      [ 5] 1285 	ldb	_blockX	; , blockX
-   0A1B BD 43 5F      [ 8] 1286 	jsr	_x3d	; 
+   0A1B BD 43 CB      [ 8] 1286 	jsr	_x3d	; 
    0A1E E7 67         [ 5] 1287 	stb	7,s	; , b
    0A20 C6 80         [ 2] 1288 	ldb	#-128	; ,
    0A22 D7 04         [ 4] 1289 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo
@@ -1307,7 +1307,7 @@
    0A33 F6 C8 E8      [ 5] 1307 	ldb	_blockY	; , blockY
    0A36 E7 E2         [ 6] 1308 	stb	,-s	; ,
    0A38 F6 C8 E7      [ 5] 1309 	ldb	_blockX	; , blockX
-   0A3B BD 43 5F      [ 8] 1310 	jsr	_x3d	; 
+   0A3B BD 43 CB      [ 8] 1310 	jsr	_x3d	; 
    0A3E E7 66         [ 5] 1311 	stb	6,s	; , b
    0A40 C6 80         [ 2] 1312 	ldb	#-128	; ,
    0A42 D7 04         [ 4] 1313 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo
@@ -1377,7 +1377,7 @@
    0A7F E7 E2         [ 6] 1377 	stb	,-s	; ,
    0A81 6F E2         [ 8] 1378 	clr	,-s	; 
    0A83 F6 C8 E9      [ 5] 1379 	ldb	_blockX2	; , blockX2
-   0A86 BD 43 80      [ 8] 1380 	jsr	_y3d	; 
+   0A86 BD 43 EC      [ 8] 1380 	jsr	_y3d	; 
    0A89 E7 66         [ 5] 1381 	stb	6,s	; , yy.133
                            1382 ;----- asm -----
                            1383 ;  376 "C:\data\vide\..\bloxorz\Vide\source\block.enr.c" 1
@@ -1411,7 +1411,7 @@
    0AA4 F6 C8 EA      [ 5] 1411 	ldb	_blockY2	; , blockY2
    0AA7 E7 E2         [ 6] 1412 	stb	,-s	; ,
    0AA9 F6 C8 E9      [ 5] 1413 	ldb	_blockX2	; , blockX2
-   0AAC BD 43 5F      [ 8] 1414 	jsr	_x3d	; 
+   0AAC BD 43 CB      [ 8] 1414 	jsr	_x3d	; 
    0AAF E7 66         [ 5] 1415 	stb	6,s	; , b
    0AB1 C6 80         [ 2] 1416 	ldb	#-128	; ,
    0AB3 D7 04         [ 4] 1417 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo
@@ -1435,7 +1435,7 @@
    0AC4 F6 C8 EA      [ 5] 1435 	ldb	_blockY2	; , blockY2
    0AC7 E7 E2         [ 6] 1436 	stb	,-s	; ,
    0AC9 F6 C8 E9      [ 5] 1437 	ldb	_blockX2	; , blockX2
-   0ACC BD 43 5F      [ 8] 1438 	jsr	_x3d	; 
+   0ACC BD 43 CB      [ 8] 1438 	jsr	_x3d	; 
    0ACF E7 67         [ 5] 1439 	stb	7,s	; , b
    0AD1 C6 80         [ 2] 1440 	ldb	#-128	; ,
    0AD3 D7 04         [ 4] 1441 	stb	*_dp_VIA_t1_cnt_lo	; , dp_VIA_t1_cnt_lo

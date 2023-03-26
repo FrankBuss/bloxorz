@@ -77,12 +77,14 @@ extern void delay10ms();
 extern void musicInit();
 extern void musicPlay();
 
-char infoText[20];
+static char infoText[20];
+static char highscoreText[10];
+static uint8_t highscoreDisplayCounter;
 
 uint16_t moveCount;
 uint16_t frames;
 
-uint16_t levelHighscore;
+static uint16_t levelHighscore;
 
 uint8_t picAvailable;
 
@@ -171,22 +173,53 @@ enum GameState_t {
     BlockMovingAtEnd,
 } gameState;
 
-uint8_t* vecx = (uint8_t*) 0x8000;
+// index into the memory at 0x8000
+enum {
+    VECX_MUSIC = 0,
+    VECX_PIC_RW = 1
+};
 
-uint8_t sendCommand(uint8_t cmd, uint8_t arg)
+// possible values for VECX_MUSIC
+enum {
+    VECX_FALLING_MUSIC = 0,
+    VECX_LEVEL_END_MUSIC = 1,
+    VECX_START_MUSIC = 2,
+    VECX_MOVING_MUSIC = 3,
+    VECX_TITLE_MUSIC = 4,
+};
+
+static uint8_t* volatile vecx = (uint8_t*) 0x8000;
+
+static uint8_t sendPicCommand(uint8_t cmd, uint8_t arg)
 {
-    uint8_t result;
     picWrite('V');
     picWrite(cmd);
     picWrite(arg);
-    result = picRead();
+    return picRead();
+}
+
+static uint8_t sendVecxCommand(uint8_t cmd, uint8_t arg)
+{
+    vecx[VECX_PIC_RW] = 'V';
+    vecx[VECX_PIC_RW] = cmd;
+    vecx[VECX_PIC_RW] = arg;
+    return vecx[VECX_PIC_RW];
+}
+
+static uint8_t sendCommand(uint8_t cmd, uint8_t arg)
+{
+	uint8_t result = 0;
+	if (picAvailable) {
+        result = sendPicCommand(cmd, arg);
+    } else {
+        result = sendVecxCommand(cmd, arg);
+    }
     delay10ms();
     return result;
 }
 
-void setBank(uint8_t bank)
+static void setBank(uint8_t bank)
 {
-    *vecx = 16 + bank;
     sendCommand(CMD_SET_BANK, bank);
 }
 
@@ -202,23 +235,17 @@ void runtimeError(char* msg)
 
 void writeEeprom(uint8_t address, uint8_t data)
 {
-    if (picAvailable) {
-        sendCommand(CMD_SET_EEPROM_ADR, address);
-        sendCommand(CMD_EEPROM_WRITE, data);
-    }
+    sendCommand(CMD_SET_EEPROM_ADR, address);
+    sendCommand(CMD_EEPROM_WRITE, data);
 }
 
 uint8_t readEeprom(uint8_t address)
 {
-    if (picAvailable) {
-        return sendCommand(CMD_EEPROM_READ, address);
-    } else {
-        return 0xff;
-    }
+    return sendCommand(CMD_EEPROM_READ, address);
 }
 
 
-// converts a number to 4 digits and stores it in text, with leading zeros
+// converts a number to 3 digits and stores it in text, with leading zeros
 void itoa(uint16_t number, char* text)
 {
     uint16_t muls[] = { 100, 10, 1 };
@@ -261,7 +288,7 @@ void startBlockFalling()
     blockYOfs = 0;
     moveBlock(lastBlockDirection);
     changeMusic(fallingMusic);
-    *vecx = 0;
+    vecx[VECX_MUSIC] = VECX_FALLING_MUSIC;
 }
 
 void startLevel()
@@ -269,9 +296,16 @@ void startLevel()
     if (arcadeMode) {
         levelNumber = arcadeLevels[arcadeSelection][arcadeIndex] - 1;
     } else {
-        levelHighscore = readEeprom((uint8_t) (levelOffset + levelNumber * 2));
-        levelHighscore |= ((uint16_t) readEeprom((uint8_t) (levelOffset + levelNumber * 2 + 1))) << 8;
+        // get highscore from EEPROM
+        uint8_t index = (uint8_t) (levelOffset + levelNumber * 2);
+        levelHighscore = readEeprom(index);
+        levelHighscore |= ((uint16_t) readEeprom(index + 1)) << 8;
         if (levelHighscore == 0) levelHighscore = 999;
+
+        // init text and update counter
+        memcpy(highscoreText, "BEST  999\x80", 10);
+        itoa(levelHighscore, &highscoreText[6]);
+        highscoreDisplayCounter = 0;
     }
     level = levels[levelNumber];
     initSwatches();
@@ -282,7 +316,7 @@ void startLevel()
     blockYOfs = -30;
     gameState = BlockMovingToStart;
     changeMusic(startMusic);
-    *vecx = 2;
+    vecx[VECX_MUSIC] = VECX_START_MUSIC;
     if (!arcadeMode) {
         moveCount = 0;
         updateInfoText();
@@ -626,7 +660,7 @@ void blockWaiting()
 
     if (gameState == BlockMoving) {
         changeMusic(movingMusic);
-        *vecx = 3;
+        vecx[VECX_MUSIC] = VECX_MOVING_MUSIC;
     }
 
     Read_Btns();
@@ -700,7 +734,7 @@ void blockMoving()
             blockYOfs = 0;
             gameState = BlockMovingAtEnd;
             changeMusic(levelEndMusic);
-            *vecx = 1;
+            vecx[VECX_MUSIC] = VECX_LEVEL_END_MUSIC;
         } else {
             // if not falling, wait for next joystick movement
             if (gameState != BlockFalling) {
@@ -920,25 +954,33 @@ void showInfo()
 {
     Intensity_a(0x5f);
     Vec_Text_Width = 100;
-    Print_Str_d(100, -70, infoText);
+    if (highscoreDisplayCounter > 180) {
+        Print_Str_d(100, -70, highscoreText);
+    } else {
+        Print_Str_d(100, -70, infoText);
+    }
+    highscoreDisplayCounter++;
+    if (highscoreDisplayCounter > 240) {
+        highscoreDisplayCounter = 0;
+    }
 }
 
 int main()
 {
+    // check if PIC is available
+    picAvailable = 0;
+    sendPicCommand(CMD_VERSION, 0);
+    sendPicCommand(CMD_VERSION, 0);
+    if (sendPicCommand(CMD_VERSION, 0) == 4) {
+        picAvailable = 1;
+    }
+
     // on reset, switch back to bank 0
     // for same code locations, switch to bank 0 when in bank 0 as well
     setBank(0);
 
     // start title music in emulator
-    *vecx = 4;
-
-    // check if PIC is available
-    picAvailable = 0;
-    sendCommand(CMD_VERSION, 0);
-    sendCommand(CMD_VERSION, 0);
-    if (sendCommand(CMD_VERSION, 0) == 4) {
-        picAvailable = 1;
-    }
+    vecx[VECX_MUSIC] = VECX_TITLE_MUSIC;
 
     // setup joystick read function to read only joystick 1
     epot0 = 1;

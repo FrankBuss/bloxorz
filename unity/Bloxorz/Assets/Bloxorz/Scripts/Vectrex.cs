@@ -156,6 +156,29 @@ namespace Bloxorz
 
         private bool alternate = true;
 
+        // PIC command evaluation
+        private enum CommandState
+        {
+            IDLE,
+            GET_CMD,
+            GET_ARG,
+        };
+        private enum PIC_Command
+        {
+            VERSION=1,
+            SET_EEPROM_ADR=2,
+            EEPROM_WRITE=3,
+            EEPROM_READ=4,
+            SET_BANK=5,
+        };
+        private static int VECX_MUSIC = 0x8000;
+        private static int VECX_PIC_RW = 0x8001;
+        private byte cmd;
+        private CommandState cmdState = CommandState.IDLE;
+        private byte cmdResult;
+        private byte eepromAddress;
+        private byte[] eeprom = new byte[256];
+
         private void Start()
         {
             gameOver = gameObject.AddComponent<AudioSource>();
@@ -302,166 +325,196 @@ namespace Bloxorz
                 lines.Clear();
             }
 
-            if ((address & 0xe000) == 0xe000)
+            // return command result for simulate PIC
+            if (address == VECX_PIC_RW)
             {
-                /* rom */
-                data = rom[address & 0x1fff];
-            }
-            else if ((address & 0xe000) == 0xc000)
-            {
-                if ((address & 0x800) != 0)
-                {
-                    /* ram */
-                    data = ram[address & 0x3ff];
-                }
-                else if ((address & 0x1000) != 0)
-                {
-                    /* io */
-                    switch (address & 0xf)
-                    {
-                        case 0x0:
-                            /* compare signal is an input so the value does not come from
-                             * via_orb.
-                             */
-                            if ((via_acr & 0x80) != 0)
-                            {
-                                /* timer 1 has control of bit 7 */
-                                data = (byte)((via_orb & 0x5f) | via_t1pb7 | alg_compare);
-                            }
-                            else
-                            {
-                                /* bit 7 is being driven by via_orb */
-                                data = (byte)((via_orb & 0xdf) | alg_compare);
-                            }
-
-                            break;
-                        case 0x1:
-                            /* register 1 also performs handshakes if necessary */
-                            if ((via_pcr & 0x0e) == 0x08)
-                            {
-                                /* if ca2 is in pulse mode or handshake mode, then it
-                                 * goes low whenever ira is read.
-                                 */
-                                via_ca2 = 0;
-                            }
-
-                            /* fall through */ //can't fall through
-                            if ((via_orb & 0x18) == 0x08)
-                            {
-                                /* the snd chip is driving port a */
-                                data = (byte)snd_regs[snd_select];
-                            }
-                            else
-                            {
-                                data = (byte)via_ora;
-                            }
-
-                            break;
-
-                        case 0xf:
-                            if ((via_orb & 0x18) == 0x08)
-                            {
-                                /* the snd chip is driving port a */
-                                data = (byte)snd_regs[snd_select];
-                            }
-                            else
-                            {
-                                data = (byte)via_ora;
-                            }
-
-                            break;
-                        case 0x2:
-                            data = (byte)via_ddrb;
-                            break;
-                        case 0x3:
-                            data = (byte)via_ddra;
-                            break;
-                        case 0x4:
-                            /* T1 low order counter */
-                            data = (byte)via_t1c;
-                            via_ifr &= 0xbf; /* remove timer 1 interrupt flag */
-
-                            via_t1on = 0; /* timer 1 is stopped */
-                            via_t1int = 0;
-                            via_t1pb7 = 0x80;
-
-                            int_update();
-
-                            break;
-                        case 0x5:
-                            /* T1 high order counter */
-                            data = (byte)(via_t1c >> 8);
-
-                            break;
-                        case 0x6:
-                            /* T1 low order latch */
-                            data = (byte)via_t1ll;
-                            break;
-                        case 0x7:
-                            /* T1 high order latch */
-                            data = (byte)via_t1lh;
-                            break;
-                        case 0x8:
-                            /* T2 low order counter */
-                            data = (byte)via_t2c;
-                            via_ifr &= 0xdf; /* remove timer 2 interrupt flag */
-
-                            via_t2on = 0; /* timer 2 is stopped */
-                            via_t2int = 0;
-
-                            int_update();
-
-                            break;
-                        case 0x9:
-                            /* T2 high order counter */
-                            data = (byte)(via_t2c >> 8);
-                            break;
-                        case 0xa:
-                            alternate = true;
-                            data = (byte)via_sr;
-                            via_ifr &= 0xfb; /* remove shift register interrupt flag */
-                            via_srb = 0;
-                            via_srclk = 1;
-
-                            int_update();
-
-                            break;
-                        case 0xb:
-                            data = (byte)via_acr;
-                            break;
-                        case 0xc:
-                            data = (byte)via_pcr;
-                            break;
-                        case 0xd:
-                            /* interrupt flag register */
-                            data = (byte)via_ifr;
-                            break;
-                        case 0xe:
-                            /* interrupt enable register */
-                            data = (byte)(via_ier | 0x80);
-                            break;
-                    }
-                }
-            }
-            else if (address < 0x8000)
-            {
-                /* cartridge */
-                data = cart[address + bank * 0x8000];
+                data = cmdResult;
             }
             else
             {
-                data = 0xff;
+                // normal Vectrex memory
+                if ((address & 0xe000) == 0xe000)
+                {
+                    /* rom */
+                    data = rom[address & 0x1fff];
+                }
+                else if ((address & 0xe000) == 0xc000)
+                {
+                    if ((address & 0x800) != 0)
+                    {
+                        /* ram */
+                        data = ram[address & 0x3ff];
+                    }
+                    else if ((address & 0x1000) != 0)
+                    {
+                        /* io */
+                        switch (address & 0xf)
+                        {
+                            case 0x0:
+                                /* compare signal is an input so the value does not come from
+                                 * via_orb.
+                                 */
+                                if ((via_acr & 0x80) != 0)
+                                {
+                                    /* timer 1 has control of bit 7 */
+                                    data = (byte)((via_orb & 0x5f) | via_t1pb7 | alg_compare);
+                                }
+                                else
+                                {
+                                    /* bit 7 is being driven by via_orb */
+                                    data = (byte)((via_orb & 0xdf) | alg_compare);
+                                }
+
+                                break;
+                            case 0x1:
+                                /* register 1 also performs handshakes if necessary */
+                                if ((via_pcr & 0x0e) == 0x08)
+                                {
+                                    /* if ca2 is in pulse mode or handshake mode, then it
+                                     * goes low whenever ira is read.
+                                     */
+                                    via_ca2 = 0;
+                                }
+
+                                /* fall through */ //can't fall through
+                                if ((via_orb & 0x18) == 0x08)
+                                {
+                                    /* the snd chip is driving port a */
+                                    data = (byte)snd_regs[snd_select];
+                                }
+                                else
+                                {
+                                    data = (byte)via_ora;
+                                }
+
+                                break;
+
+                            case 0xf:
+                                if ((via_orb & 0x18) == 0x08)
+                                {
+                                    /* the snd chip is driving port a */
+                                    data = (byte)snd_regs[snd_select];
+                                }
+                                else
+                                {
+                                    data = (byte)via_ora;
+                                }
+
+                                break;
+                            case 0x2:
+                                data = (byte)via_ddrb;
+                                break;
+                            case 0x3:
+                                data = (byte)via_ddra;
+                                break;
+                            case 0x4:
+                                /* T1 low order counter */
+                                data = (byte)via_t1c;
+                                via_ifr &= 0xbf; /* remove timer 1 interrupt flag */
+
+                                via_t1on = 0; /* timer 1 is stopped */
+                                via_t1int = 0;
+                                via_t1pb7 = 0x80;
+
+                                int_update();
+
+                                break;
+                            case 0x5:
+                                /* T1 high order counter */
+                                data = (byte)(via_t1c >> 8);
+
+                                break;
+                            case 0x6:
+                                /* T1 low order latch */
+                                data = (byte)via_t1ll;
+                                break;
+                            case 0x7:
+                                /* T1 high order latch */
+                                data = (byte)via_t1lh;
+                                break;
+                            case 0x8:
+                                /* T2 low order counter */
+                                data = (byte)via_t2c;
+                                via_ifr &= 0xdf; /* remove timer 2 interrupt flag */
+
+                                via_t2on = 0; /* timer 2 is stopped */
+                                via_t2int = 0;
+
+                                int_update();
+
+                                break;
+                            case 0x9:
+                                /* T2 high order counter */
+                                data = (byte)(via_t2c >> 8);
+                                break;
+                            case 0xa:
+                                alternate = true;
+                                data = (byte)via_sr;
+                                via_ifr &= 0xfb; /* remove shift register interrupt flag */
+                                via_srb = 0;
+                                via_srclk = 1;
+
+                                int_update();
+
+                                break;
+                            case 0xb:
+                                data = (byte)via_acr;
+                                break;
+                            case 0xc:
+                                data = (byte)via_pcr;
+                                break;
+                            case 0xd:
+                                /* interrupt flag register */
+                                data = (byte)via_ifr;
+                                break;
+                            case 0xe:
+                                /* interrupt enable register */
+                                data = (byte)(via_ier | 0x80);
+                                break;
+                        }
+                    }
+                }
+                else if (address < 0x8000)
+                {
+                    /* cartridge */
+                    data = cart[address + bank * 0x8000];
+                }
+                else
+                {
+                    data = 0xff;
+                }
             }
 
             return data;
         }
 
+        private byte picCommand(byte cmd, byte arg)
+        {
+            switch ((PIC_Command)cmd)
+            {
+                case PIC_Command.VERSION:
+                    return 4;
+                case PIC_Command.SET_EEPROM_ADR:
+                    eepromAddress = arg;
+                    return 0;
+                case PIC_Command.EEPROM_WRITE:
+                    eeprom[eepromAddress] = arg;
+                    return 0;
+                case PIC_Command.EEPROM_READ:
+                    return eeprom[arg];
+                case PIC_Command.SET_BANK:
+                    bank = arg;
+                    return 0;
+                default:
+                    return 0;
+            }
+        }
+
         public void write8(ushort address, byte data)
         {
-            // here's a place where sfx can be played.
-            if (address == 0x8000)
-            { // complete level (maybe other stuff too??)
-                Console.WriteLine("wrote CBCA " + data);
+            // play sound
+            if (address == VECX_MUSIC)
+            {
                 gameOver.Stop();
                 levelEnd.Stop();
                 levelStart.Stop();
@@ -472,7 +525,31 @@ namespace Bloxorz
                 if (data == 2) levelStart.Play();
                 if (data == 3) move.Play();
                 if (data == 4) music.Play();
-                if (data >= 16) bank = data & 15;
+            }
+
+            // detect command
+            if (address == VECX_PIC_RW)
+            {
+                byte arg;
+                switch (cmdState)
+                {
+                    case CommandState.IDLE:
+                        if (data == 'V')
+                        {
+                            cmdState = CommandState.GET_CMD;
+                        }
+                        break;
+                    case CommandState.GET_CMD:
+                        cmd = data;
+                        cmdState = CommandState.GET_ARG;
+                        break;
+                    case CommandState.GET_ARG:
+                        arg = data;
+                        cmdResult = picCommand(cmd, arg);
+                        //Debug.Log("command: " + cmd + ", arg: " + arg + ", result: " + cmdResult);
+                        cmdState = CommandState.IDLE;
+                        break;
+                }
             }
 
             if ((address & 0xe000) == 0xe000)
