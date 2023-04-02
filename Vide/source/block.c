@@ -15,8 +15,8 @@ int8_t blockY2;
 
 uint8_t splitMode;
 
-const int8_t** blockAnimation;
-const int8_t** nextBlockAnimation;
+const int8_t **blockAnimation;
+const int8_t **nextBlockAnimation;
 int8_t blockAnimationStep;
 int8_t blockAnimating;
 int8_t nextBlockX;
@@ -28,10 +28,13 @@ void moveBlockImpl(enum BlockDirection_t move)
 {
     blockAnimating = 1;
     lastBlockDirection = move;
-    if (splitMode) {
-        switch (blockOrientation) {
+    if (splitMode)
+    {
+        switch (blockOrientation)
+        {
         case Standing:
-            switch (move) {
+            switch (move)
+            {
             case Left:
                 blockAnimation = height1FallingLeft;
                 nextBlockAnimation = height1FallingLeft;
@@ -61,10 +64,14 @@ void moveBlockImpl(enum BlockDirection_t move)
         default:
             break;
         }
-    } else {
-        switch (blockOrientation) {
+    }
+    else
+    {
+        switch (blockOrientation)
+        {
         case Standing:
-            switch (move) {
+            switch (move)
+            {
             case Left:
                 blockAnimation = height2FallingLeft;
                 nextBlockAnimation = width2RollingFront;
@@ -96,7 +103,8 @@ void moveBlockImpl(enum BlockDirection_t move)
             }
             break;
         case Vertical:
-            switch (move) {
+            switch (move)
+            {
             case Left:
                 blockAnimation = depth2RollingLeft;
                 nextBlockAnimation = depth2RollingLeft;
@@ -126,7 +134,8 @@ void moveBlockImpl(enum BlockDirection_t move)
             }
             break;
         case Horizontal:
-            switch (move) {
+            switch (move)
+            {
             case Left:
                 blockAnimation = height2RisingLeft;
                 nextBlockAnimation = height2FallingRight;
@@ -159,9 +168,9 @@ void moveBlockImpl(enum BlockDirection_t move)
     }
 }
 
-void Draw_VLpo(void* const x)
+void Draw_VLpo(void *const x)
 {
-    (void) x;
+    (void)x;
     asm("                    LDD      1,X                          ;Get next coordinate pair  ");
     asm("shiftOff1:  ");
     asm("                    STA      *0xd001                  ;Send Y to A/D  ");
@@ -183,7 +192,7 @@ void Draw_VLpo(void* const x)
     asm("                    LDA      ,X                           ;Get next pattern byte  ");
 
     asm("                    bgt      macroEnd2  ");
-//    asm("                    STB      *0xd00a               ;Clear shift register (blank output)  ");
+    //    asm("                    STB      *0xd00a               ;Clear shift register (blank output)  ");
     asm("                    LDD      1,X                          ;Get next coordinate pair  ");
     asm("shiftOn1:  ");
     asm("                    STA      *0xd001                  ;Send Y to A/D  ");
@@ -213,7 +222,7 @@ void Draw_VLpo(void* const x)
 
 void drawBlock(int8_t yofs)
 {
-//    zergnd(); // filed draw is exited with zero
+    //    zergnd(); // filed draw is exited with zero
     intens(0x63);
     int8_t yy = y3d(blockX, 0, blockY);
 
@@ -224,15 +233,16 @@ void drawBlock(int8_t yofs)
     }
     else
     {
-        positd(x3d(blockX, blockY), yy+yofs);
+        positd(x3d(blockX, blockY), yy + yofs);
     }
 
-	dp_VIA_t1_cnt_lo = 0x7f/FACTOR; // scale
-//    pack1x((void*)(blockAnimation[blockAnimationStep]));
-    Draw_VLpo((void*)(blockAnimation[blockAnimationStep]));
+    dp_VIA_t1_cnt_lo = 0x7f / FACTOR; // scale
+                                      //    pack1x((void*)(blockAnimation[blockAnimationStep]));
+    Draw_VLpo((void *)(blockAnimation[blockAnimationStep]));
 
     // inactive block in split mode
-    if (splitMode) {
+    if (splitMode)
+    {
         zergnd();
         intens(0x35);
         yy = y3d(blockX2, 0, blockY2);
@@ -240,24 +250,25 @@ void drawBlock(int8_t yofs)
         if (yofs < -50)
         {
             positd(0, yofs);
-            positd(x3d(blockX2, blockY2),yy );
+            positd(x3d(blockX2, blockY2), yy);
         }
         else
         {
-            positd(x3d(blockX2, blockY2),yy+yofs );
+            positd(x3d(blockX2, blockY2), yy + yofs);
         }
 
-
-	dp_VIA_t1_cnt_lo = 0x7f/FACTOR; // scale
-//        pack1x((void*)(height1FallingLeft[0]));
-    Draw_VLpo((void*)(height1FallingLeft[0]));
+        dp_VIA_t1_cnt_lo = 0x7f / FACTOR; // scale
+                                          //        pack1x((void*)(height1FallingLeft[0]));
+        Draw_VLpo((void *)(height1FallingLeft[0]));
     }
 }
 
 void doBlockAnimation()
 {
-    if (blockAnimating) {
-        if (++blockAnimationStep == BLOCK_STEPS_COUNT) {
+    if (blockAnimating)
+    {
+        if (++blockAnimationStep == BLOCK_STEPS_COUNT)
+        {
             blockX = nextBlockX;
             blockY = nextBlockY;
             blockAnimationStep = 0;
@@ -285,26 +296,36 @@ void setSplitMode()
 
 void testMerge()
 {
-    if (blockY == blockY2) {
-        if (blockX == blockX2 + 1) {
+    if (blockY == blockY2)
+    {
+        if (blockX == blockX2 + 1)
+        {
             blockAnimation = width2RollingFront;
             blockOrientation = Horizontal;
             blockX--;
             splitMode = 0;
-        } else if (blockX == blockX2 - 1) {
+        }
+        else if (blockX == blockX2 - 1)
+        {
             blockAnimation = width2RollingFront;
             blockOrientation = Horizontal;
             splitMode = 0;
         }
-    } else if (blockX == blockX2) {
-        if (blockY == blockY2 + 1) {
+    }
+    else if (blockX == blockX2)
+    {
+        if (blockY == blockY2 + 1)
+        {
             blockAnimation = depth2RollingLeft;
             blockOrientation = Vertical;
             blockY--;
             splitMode = 0;
-        } else if (blockY == blockY2 - 1) {
+        }
+        else if (blockY == blockY2 - 1)
+        {
             blockAnimation = depth2RollingLeft;
-            blockOrientation = Vertical;;
+            blockOrientation = Vertical;
+            ;
             splitMode = 0;
         }
     }

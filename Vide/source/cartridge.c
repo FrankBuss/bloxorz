@@ -20,27 +20,27 @@
 
 struct cartridge_t
 {
-    char copyright[11];			// copyright string, must start with "g GCE" and must end with "\x80"
-    const void* music;			// 16 bit memory adress of title music data
-    signed int title_height;	// signed 8 bit value, height of game title letters
-    unsigned int title_width;	// unsigned 8 bit value, width of game title letters
-    int title_y;				// signed 8 bit value, y coordinate of game title
-    int title_x;				// signed 8 bit value, x coordinate of game title
-    char title[9]; 				// game title string, must end with "\x80\x00"
+    char copyright[11];       // copyright string, must start with "g GCE" and must end with "\x80"
+    const void *music;        // 16 bit memory adress of title music data
+    signed int title_height;  // signed 8 bit value, height of game title letters
+    unsigned int title_width; // unsigned 8 bit value, width of game title letters
+    int title_y;              // signed 8 bit value, y coordinate of game title
+    int title_x;              // signed 8 bit value, x coordinate of game title
+    char title[9];            // game title string, must end with "\x80\x00"
 };
 
 // ---------------------------------------------------------------------------
 // edit here to set game title
 
 const struct cartridge_t game_header __attribute__((section(".cartridge"), used)) =
-{
-    .copyright 		= "g GCE 2023\x80",	// change year if neccessary, do not change "g GCE"
-    .music 			= &Vec_Music_1,		// taken from included headers
-    .title_height 	= -8,
-    .title_width 	= 80,
-    .title_y 		= -16,
-    .title_x 		= -72,
-    .title 			= "BLOXORZ\x80"	// note that \x00 is automatically appended!
+    {
+        .copyright = "g GCE 2023\x80", // change year if neccessary, do not change "g GCE"
+        .music = &Vec_Music_1,         // taken from included headers
+        .title_height = -8,
+        .title_width = 80,
+        .title_y = -16,
+        .title_x = -72,
+        .title = "BLOXORZ\x80" // note that \x00 is automatically appended!
 };
 
 // ***************************************************************************

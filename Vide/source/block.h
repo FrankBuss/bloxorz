@@ -3,7 +3,8 @@
 
 #include "stdint.h"
 
-enum BlockOrientation_t {
+enum BlockOrientation_t
+{
     Standing,
     Vertical,
     Horizontal
@@ -26,8 +27,12 @@ extern int8_t blockY;
 extern int8_t blockX2;
 extern int8_t blockY2;
 
-enum BlockDirection_t {
-    Left, Up, Right, Down
+enum BlockDirection_t
+{
+    Left,
+    Up,
+    Right,
+    Down
 };
 
 void moveBlockImpl(enum BlockDirection_t move);
