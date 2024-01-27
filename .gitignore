@@ -1,3 +1,6 @@
 Vide/bin
 Vide/build
 Vide/bloxorz.bin
+
+!Vide/bin/emptyfile
+!Vide/build/emptyfile
