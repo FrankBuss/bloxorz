@@ -253,7 +253,7 @@ uint8_t readEeprom(uint8_t address)
 }
 
 // converts a number to 3 digits and stores it in text, with leading zeros
-void itoa(uint16_t number, char *text)
+void itoa3(uint16_t number, char *text)
 {
     uint16_t muls[] = {100, 10, 1};
     if (number > 999)
@@ -270,11 +270,45 @@ void itoa(uint16_t number, char *text)
     }
 }
 
+// converts a number to int, up to 99,999, without leading zeros
+void itoa(uint16_t number, char *text)
+{
+    uint16_t muls[] = {10000, 1000, 100, 10, 1};
+    uint8_t pos = 0;
+    uint8_t started = 0;
+    for (uint8_t i = 0; i < 5; i++)
+    {
+        uint8_t d = 0;
+        while (number >= muls[i])
+        {
+            d++;
+            number -= muls[i];
+        }
+        if (d > 0)
+        {
+            started = 1;
+        }
+        if (started)
+        {
+            text[pos++] = d + '0';
+        }
+    }
+}
+
 void updateInfoText()
 {
     memcpy(infoText, "001 - 999\x80", 10);
-    itoa(moveCount, &infoText[0]);
-    itoa(levelNumber + levelOffset, &infoText[6]);
+    itoa3(moveCount, &infoText[0]);
+    itoa3(levelNumber + levelOffset, &infoText[6]);
+}
+
+void onArcadeGameOver()
+{
+    uint16_t score = 12345;
+    memcpy(infoText, "SCORE:      \x80", 13);
+    itoa(score, &infoText[7]);
+    arcadeMode = 0;
+    gameState = ArcadeEnd;
 }
 
 void changeMusic(const uint8_t *music)
@@ -320,7 +354,7 @@ void startLevel()
 
         // init text and update counter
         memcpy(highscoreText, "BEST  999\x80", 10);
-        itoa(levelHighscore, &highscoreText[6]);
+        itoa3(levelHighscore, &highscoreText[6]);
         highscoreDisplayCounter = 0;
     }
     level = levels[levelNumber];
@@ -867,7 +901,7 @@ void blockMovingAtEnd()
             {
                 gameState = ArcadeEnd;
                 memcpy(infoText, "TIME: 000 SECONDS\x80", 18);
-                itoa(moveCount, &infoText[6]);
+                itoa3(moveCount, &infoText[6]);
                 arcadeMode = 0;
             }
             else
@@ -949,7 +983,7 @@ void arcadeEnd()
     Intensity_a(0x5f);
     Vec_Text_Width = 90;
     Print_Str_d(100, -70, "GAME OVER\x80");
-    Print_Str_d(50, -110, infoText);
+    Print_Str_d(50, -90, infoText);
     if (Vec_Buttons & 1)
     {
         gameState = MainMenu;
@@ -1142,7 +1176,7 @@ int main()
                     moveCount--;
                     updateInfoText();
                 } else {
-                    gameState = ArcadeEnd;
+                    onArcadeGameOver();
                 }
             }
         }
