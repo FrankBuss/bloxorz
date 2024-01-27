@@ -1,6 +1,6 @@
 #include "stdint.h"
 #include "hardware.h"
-#include "block.i"
+#include "blockAnims.h"
 #include "block.h"
 
 extern int8_t x3d(int8_t x, int8_t z);

@@ -35,6 +35,9 @@ bloxorz.c -> drawField()
 #include "level.h"
 #include "block.h"
 
+// time in seconds for arcade mode
+#define ARCADE_MODE_TIME 3
+
 // PIC commands
 #define CMD_VERSION 1
 #define CMD_SET_EEPROM_ADR 2
@@ -333,8 +336,8 @@ void startLevel()
     if (!arcadeMode)
     {
         moveCount = 0;
-        updateInfoText();
     }
+    updateInfoText();
     si = 0;
 }
 
@@ -897,7 +900,7 @@ void mainMenu()
     if (Vec_Buttons & 2)
     {
         frames = 0;
-        moveCount = 0;
+        moveCount = ARCADE_MODE_TIME;
         arcadeMode = 1;
         arcadeIndex = 0;
         gameState = ArcadeMenu;
@@ -1031,7 +1034,7 @@ void showInfo()
 {
     Intensity_a(0x5f);
     Vec_Text_Width = 100;
-    if (highscoreDisplayCounter > 180)
+    if (highscoreDisplayCounter > 180 && !arcadeMode)
     {
         Print_Str_d(100, -70, highscoreText);
     }
@@ -1134,10 +1137,12 @@ int main()
             if (frames == 50)
             {
                 frames = 0;
-                if (moveCount < 999)
+                if (moveCount > 0)
                 {
-                    moveCount++;
+                    moveCount--;
                     updateInfoText();
+                } else {
+                    gameState = ArcadeEnd;
                 }
             }
         }
