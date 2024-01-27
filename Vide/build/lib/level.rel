@@ -1,4 +1,4 @@
-;!FILE C:\data\vide\..\bloxorz\Vide\build\lib\level.s
+;!FILE C:\data\Vide\..\bloxorz\Vide\build\lib\level.s
 XH2
 H 5 areas 5EC global symbols 2 banks 1 modes
 M level.enr.c

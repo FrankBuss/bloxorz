@@ -1,8 +1,8 @@
-# 1 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\block.c"
+# 1 "C:\\data\\Vide\\..\\bloxorz\\Vide\\source\\block.c"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\block.c"
-# 1 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\/stdint.h" 1
+# 1 "C:\\data\\Vide\\..\\bloxorz\\Vide\\source\\block.c"
+# 1 "C:\\data\\Vide\\..\\bloxorz\\Vide\\source\\/stdint.h" 1
 
 
 
@@ -10,27 +10,27 @@ typedef unsigned long uint16_t;
 typedef signed char int8_t;
 typedef long int16_t;
 typedef unsigned char uint8_t;
-# 2 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\block.c" 2
-# 1 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\/hardware.h" 1
+# 2 "C:\\data\\Vide\\..\\bloxorz\\Vide\\source\\block.c" 2
+# 1 "C:\\data\\Vide\\..\\bloxorz\\Vide\\source\\/hardware.h" 1
 
 
 
-# 1 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\/stdint.h" 1
-# 5 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\/hardware.h" 2
-# 1 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vectrex.h" 1
-# 37 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vectrex.h"
+# 1 "C:\\data\\Vide\\..\\bloxorz\\Vide\\source\\/stdint.h" 1
+# 5 "C:\\data\\Vide\\..\\bloxorz\\Vide\\source\\/hardware.h" 2
+# 1 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vectrex.h" 1
+# 37 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vectrex.h"
        
 
 
 
-# 1 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_ram.h" 1
-# 38 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_ram.h"
+# 1 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_ram.h" 1
+# 38 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_ram.h"
        
 
-# 1 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_ram_0x.h" 1
-# 38 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_ram_0x.h"
+# 1 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_ram_0x.h" 1
+# 38 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_ram_0x.h"
        
-# 48 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_ram_0x.h"
+# 48 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_ram_0x.h"
 extern int Vec_Snd_Shadow __attribute__((section(".dpc8")));
 extern int Vec_Snd_shadow[15] __attribute__((section(".dpc8")));
 extern unsigned int Vec_Btn_State __attribute__((section(".dpc8")));
@@ -172,7 +172,7 @@ extern long unsigned int Vec_Cold_Flag __attribute__((section(".dpcb")));
 
 extern volatile int VIA_port_b __attribute__((section(".dpd0")));
 extern volatile int VIA_port_a __attribute__((section(".dpd0")));
-# 197 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_ram_0x.h"
+# 197 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_ram_0x.h"
 extern volatile unsigned int VIA_DDR_b __attribute__((section(".dpd0")));
 extern volatile unsigned int VIA_DDR_a __attribute__((section(".dpd0")));
 extern volatile unsigned long int VIA_t1_cnt __attribute__((section(".dpd0")));
@@ -186,19 +186,19 @@ extern volatile unsigned int VIA_t2_lo __attribute__((section(".dpd0")));
 extern volatile unsigned int VIA_t2_hi __attribute__((section(".dpd0")));
 extern volatile unsigned int VIA_shift_reg __attribute__((section(".dpd0")));
 extern volatile unsigned int VIA_aux_cntl __attribute__((section(".dpd0")));
-# 218 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_ram_0x.h"
+# 218 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_ram_0x.h"
 extern volatile unsigned int VIA_cntl __attribute__((section(".dpd0")));
-# 227 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_ram_0x.h"
+# 227 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_ram_0x.h"
 extern volatile unsigned int VIA_int_flags __attribute__((section(".dpd0")));
-# 237 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_ram_0x.h"
+# 237 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_ram_0x.h"
 extern volatile unsigned int VIA_int_enable __attribute__((section(".dpd0")));
-# 246 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_ram_0x.h"
+# 246 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_ram_0x.h"
 extern volatile unsigned int VIA_port_a_nohs __attribute__((section(".dpd0")));
-# 41 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_ram.h" 2
-# 1 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_ram_dp.h" 1
-# 38 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_ram_dp.h"
+# 41 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_ram.h" 2
+# 1 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_ram_dp.h" 1
+# 38 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_ram_dp.h"
        
-# 48 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_ram_dp.h"
+# 48 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_ram_dp.h"
 extern int dp_Vec_Snd_Shadow __attribute__((section("direct")));
 extern int dp_Vec_Snd_shadow[15] __attribute__((section("direct")));
 extern unsigned int dp_Vec_Btn_State __attribute__((section("direct")));
@@ -357,14 +357,14 @@ extern volatile unsigned int dp_VIA_cntl __attribute__((section("direct")));
 extern volatile unsigned int dp_VIA_int_flags __attribute__((section("direct")));
 extern volatile unsigned int dp_VIA_int_enable __attribute__((section("direct")));
 extern volatile unsigned int dp_VIA_port_a_nohs __attribute__((section("direct")));
-# 42 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_ram.h" 2
-# 42 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vectrex.h" 2
-# 1 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rom.h" 1
-# 38 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rom.h"
+# 42 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_ram.h" 2
+# 42 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vectrex.h" 2
+# 1 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rom.h" 1
+# 38 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rom.h"
        
 
-# 1 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rom_0x.h" 1
-# 38 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rom_0x.h"
+# 1 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rom_0x.h" 1
+# 38 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rom_0x.h"
        
 
 
@@ -410,9 +410,9 @@ extern const unsigned int Vec_ADSR_FADE12 __attribute__((section(".dpfd")));
 extern const unsigned int Vec_TWANG_VIBE0 __attribute__((section(".dpfd")));
 extern const unsigned int Vec_TWANG_VIBEHL __attribute__((section(".dpfe")));
 extern const unsigned int Vec_TWANG_VIBENL __attribute__((section(".dpfe")));
-# 41 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rom.h" 2
-# 1 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rom_dp.h" 1
-# 38 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rom_dp.h"
+# 41 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rom.h" 2
+# 1 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rom_dp.h" 1
+# 38 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rom_dp.h"
        
 
 
@@ -458,21 +458,21 @@ extern const unsigned int dp_Vec_ADSR_FADE12 __attribute__((section("direct")));
 extern const unsigned int dp_Vec_TWANG_VIBE0 __attribute__((section("direct")));
 extern const unsigned int dp_Vec_TWANG_VIBEHL __attribute__((section("direct")));
 extern const unsigned int dp_Vec_TWANG_VIBENL __attribute__((section("direct")));
-# 42 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rom.h" 2
-# 43 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vectrex.h" 2
-# 1 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum.h" 1
-# 38 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum.h"
+# 42 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rom.h" 2
+# 43 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vectrex.h" 2
+# 1 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum.h" 1
+# 38 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum.h"
        
-# 48 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum.h"
-# 1 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h" 1
-# 38 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 48 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum.h"
+# 1 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h" 1
+# 38 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
        
 
-# 1 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/macro.h" 1
-# 38 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/macro.h"
+# 1 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/macro.h" 1
+# 38 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/macro.h"
        
-# 41 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h" 2
-# 95 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 41 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h" 2
+# 95 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Wait_Recal(void)
 {
  asm volatile(
@@ -480,7 +480,7 @@ static inline __attribute__((always_inline)) void Wait_Recal(void)
   ::
   : "memory", "cc", "dp", "d", "x");
 }
-# 126 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 126 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Recalibrate(void)
 {
  asm volatile(
@@ -488,7 +488,7 @@ static inline __attribute__((always_inline)) void Recalibrate(void)
   ::
   : "memory", "cc", "dp", "d", "x");
 }
-# 144 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 144 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Reset0Ref_D0(void)
 {
  asm volatile(
@@ -496,7 +496,7 @@ static inline __attribute__((always_inline)) void Reset0Ref_D0(void)
   ::
   : "memory", "cc", "dp", "d");
 }
-# 163 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 163 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Check0Ref(void)
 {
  asm volatile(
@@ -504,7 +504,7 @@ static inline __attribute__((always_inline)) void Check0Ref(void)
   ::
   : "memory", "cc", "d");
 }
-# 179 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 179 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Reset0Ref(void)
 {
  asm volatile(
@@ -512,7 +512,7 @@ static inline __attribute__((always_inline)) void Reset0Ref(void)
   ::
   : "memory", "cc", "d");
 }
-# 198 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 198 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Reset_Pen(void)
 {
  asm volatile(
@@ -520,7 +520,7 @@ static inline __attribute__((always_inline)) void Reset_Pen(void)
   ::
   : "memory", "cc", "d");
 }
-# 214 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 214 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Reset0Int(void)
 {
  asm volatile(
@@ -528,7 +528,7 @@ static inline __attribute__((always_inline)) void Reset0Int(void)
   ::
   : "memory", "cc", "d");
 }
-# 239 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 239 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Dec_3_Counters(void)
 {
  asm volatile(
@@ -536,7 +536,7 @@ static inline __attribute__((always_inline)) void Dec_3_Counters(void)
   ::
   : "memory", "cc", "b", "x");
 }
-# 257 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 257 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Dec_6_Counters(void)
 {
  asm volatile(
@@ -544,7 +544,7 @@ static inline __attribute__((always_inline)) void Dec_6_Counters(void)
   ::
   : "memory", "cc", "b", "x");
 }
-# 274 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 274 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Dec_Counters(const unsigned int b, void* const x)
 {
  asm volatile(
@@ -554,7 +554,7 @@ static inline __attribute__((always_inline)) void Dec_Counters(const unsigned in
   :: [B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "b", "x");
 }
-# 298 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 298 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void DP_to_D0(void)
 {
  asm volatile(
@@ -562,7 +562,7 @@ static inline __attribute__((always_inline)) void DP_to_D0(void)
   ::
   : "memory", "cc", "dp", "a");
 }
-# 314 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 314 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void DP_to_C8(void)
 {
  asm volatile(
@@ -570,7 +570,7 @@ static inline __attribute__((always_inline)) void DP_to_C8(void)
   ::
   : "memory", "cc", "dp", "a");
 }
-# 339 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 339 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Delay_3(void)
 {
  asm volatile(
@@ -578,7 +578,7 @@ static inline __attribute__((always_inline)) void Delay_3(void)
   ::
   : "memory", "cc", "b");
 }
-# 354 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 354 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Delay_2(void)
 {
  asm volatile(
@@ -586,7 +586,7 @@ static inline __attribute__((always_inline)) void Delay_2(void)
   ::
   : "memory", "cc", "b");
 }
-# 369 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 369 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Delay_1(void)
 {
  asm volatile(
@@ -594,7 +594,7 @@ static inline __attribute__((always_inline)) void Delay_1(void)
   ::
   : "memory", "cc", "b");
 }
-# 384 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 384 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Delay_0(void)
 {
  asm volatile(
@@ -602,7 +602,7 @@ static inline __attribute__((always_inline)) void Delay_0(void)
   ::
   : "memory", "cc", "b");
 }
-# 399 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 399 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Delay_b(const unsigned int b)
 {
  asm volatile(
@@ -624,7 +624,7 @@ static inline __attribute__((always_inline)) void Delay_RTS(void)
   ::
   : "memory", "cc");
 }
-# 447 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 447 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Dot_ix_b(const unsigned int b, void* const x)
 {
  asm volatile(
@@ -634,7 +634,7 @@ static inline __attribute__((always_inline)) void Dot_ix_b(const unsigned int b,
   :: [B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 471 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 471 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Dot_ix(void* const x)
 {
  asm volatile(
@@ -643,7 +643,7 @@ static inline __attribute__((always_inline)) void Dot_ix(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 492 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 492 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Dot_d(const int a, const int b)
 {
  asm volatile(
@@ -662,7 +662,7 @@ static inline __attribute__((always_inline)) void Dot_dd(const long int d)
   :: [D] "mi" (d)
   : "memory", "cc", "d");
 }
-# 520 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 520 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Dot_here(void)
 {
  asm volatile(
@@ -670,7 +670,7 @@ static inline __attribute__((always_inline)) void Dot_here(void)
   ::
   : "memory", "cc", "d");
 }
-# 546 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 546 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Dot_List(void* const x)
 {
  asm volatile(
@@ -679,7 +679,7 @@ static inline __attribute__((always_inline)) void Dot_List(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 574 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 574 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Dot_List_Reset(void* const x)
 {
  asm volatile(
@@ -688,7 +688,7 @@ static inline __attribute__((always_inline)) void Dot_List_Reset(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 613 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 613 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Print_Str_hwyx(void* const u)
 {
  asm volatile(
@@ -697,7 +697,7 @@ static inline __attribute__((always_inline)) void Print_Str_hwyx(void* const u)
   :: [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 638 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 638 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Print_Str_yx(volatile const void* const u)
 {
  asm volatile(
@@ -706,7 +706,7 @@ static inline __attribute__((always_inline)) void Print_Str_yx(volatile const vo
   :: [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 664 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 664 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Print_Str_d(const int a, const int b, void* const u)
 {
  asm volatile(
@@ -727,7 +727,7 @@ static inline __attribute__((always_inline)) void Print_Str_dd(const long int d,
   :: [D] "mi" (d), [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 703 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 703 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Print_List_hw(void* const u)
 {
  asm volatile(
@@ -736,7 +736,7 @@ static inline __attribute__((always_inline)) void Print_List_hw(void* const u)
   :: [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 731 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 731 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Print_List(void* const u)
 {
  asm volatile(
@@ -745,7 +745,7 @@ static inline __attribute__((always_inline)) void Print_List(void* const u)
   :: [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 758 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 758 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Print_List_chk(void* const u)
 {
  asm volatile(
@@ -754,7 +754,7 @@ static inline __attribute__((always_inline)) void Print_List_chk(void* const u)
   :: [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 783 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 783 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Print_Ships_x(const unsigned int a, const unsigned int b, void* const x)
 {
  asm volatile(
@@ -765,7 +765,7 @@ static inline __attribute__((always_inline)) void Print_Ships_x(const unsigned i
   :: [A] "mi" (a), [B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "d", "x", "u");
 }
-# 810 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 810 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Print_Ships(const unsigned int a, const unsigned int b, const unsigned long int x)
 {
  asm volatile(
@@ -776,7 +776,7 @@ static inline __attribute__((always_inline)) void Print_Ships(const unsigned int
   :: [A] "mi" (a), [B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "d", "x", "u");
 }
-# 836 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 836 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Print_Str(void* const u)
 {
  asm volatile(
@@ -785,7 +785,7 @@ static inline __attribute__((always_inline)) void Print_Str(void* const u)
   :: [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 860 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 860 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Print_MRast(void)
 {
  asm volatile(
@@ -793,7 +793,7 @@ static inline __attribute__((always_inline)) void Print_MRast(void)
   ::
   : "memory", "cc", "d", "x", "u");
 }
-# 925 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 925 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_Pat_VL_a(const unsigned int a, void* const x)
 {
  asm volatile(
@@ -803,7 +803,7 @@ static inline __attribute__((always_inline)) void Draw_Pat_VL_a(const unsigned i
   :: [A] "mi" (a), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 992 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 992 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_Pat_VL(void* const x)
 {
  asm volatile(
@@ -812,7 +812,7 @@ static inline __attribute__((always_inline)) void Draw_Pat_VL(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1037 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 1037 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_Line_d(const int a, const int b)
 {
  asm volatile(
@@ -822,7 +822,7 @@ static inline __attribute__((always_inline)) void Draw_Line_d(const int a, const
   :: [A] "mi" (a), [B] "mi" (b)
   : "memory", "cc", "d", "x");
 }
-# 1066 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 1066 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_VLc(void* const x)
 {
  asm volatile(
@@ -831,7 +831,7 @@ static inline __attribute__((always_inline)) void Draw_VLc(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1094 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 1094 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_VL_ab(const unsigned int a, const unsigned int b, void* const x)
 {
  asm volatile(
@@ -842,7 +842,7 @@ static inline __attribute__((always_inline)) void Draw_VL_ab(const unsigned int 
   :: [A] "mi" (a), [B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1124 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 1124 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_VL(void* const x)
 {
  asm volatile(
@@ -851,7 +851,7 @@ static inline __attribute__((always_inline)) void Draw_VL(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1152 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 1152 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_VLcs(void* const x)
 {
  asm volatile(
@@ -860,7 +860,7 @@ static inline __attribute__((always_inline)) void Draw_VLcs(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1180 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 1180 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_VL_b(const unsigned int b, void* const x)
 {
  asm volatile(
@@ -870,7 +870,7 @@ static inline __attribute__((always_inline)) void Draw_VL_b(const unsigned int b
   :: [B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1209 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 1209 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_VL_a(const unsigned int a, void* const x)
 {
  asm volatile(
@@ -880,7 +880,7 @@ static inline __attribute__((always_inline)) void Draw_VL_a(const unsigned int a
   :: [A] "mi" (a), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1254 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 1254 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Mov_Draw_VLc_a(void* const x)
 {
  asm volatile(
@@ -889,7 +889,7 @@ static inline __attribute__((always_inline)) void Mov_Draw_VLc_a(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1281 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 1281 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Mov_Draw_VL_b(const unsigned int b, void* const x)
 {
  asm volatile(
@@ -899,7 +899,7 @@ static inline __attribute__((always_inline)) void Mov_Draw_VL_b(const unsigned i
   :: [B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1310 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 1310 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Mov_Draw_VLcs(void* const x)
 {
  asm volatile(
@@ -908,7 +908,7 @@ static inline __attribute__((always_inline)) void Mov_Draw_VLcs(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1338 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 1338 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Mov_Draw_VL_ab(const unsigned int a, const unsigned int b, void* const x)
 {
  asm volatile(
@@ -919,7 +919,7 @@ static inline __attribute__((always_inline)) void Mov_Draw_VL_ab(const unsigned 
   :: [A] "mi" (a), [B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1368 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 1368 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Mov_Draw_VL_a(const unsigned int a, void* const x)
 {
  asm volatile(
@@ -929,7 +929,7 @@ static inline __attribute__((always_inline)) void Mov_Draw_VL_a(const unsigned i
   :: [A] "mi" (a), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1397 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 1397 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Mov_Draw_VL(void* const x)
 {
  asm volatile(
@@ -938,7 +938,7 @@ static inline __attribute__((always_inline)) void Mov_Draw_VL(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1422 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 1422 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Mov_Draw_VL_d(const int a, const int b)
 {
  asm volatile(
@@ -948,7 +948,7 @@ static inline __attribute__((always_inline)) void Mov_Draw_VL_d(const int a, con
   :: [A] "mi" (a), [B] "mi" (b)
   : "memory", "cc", "d", "x");
 }
-# 1484 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 1484 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_VL_mode(void* const x)
 {
  asm volatile(
@@ -957,7 +957,7 @@ static inline __attribute__((always_inline)) void Draw_VL_mode(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1515 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 1515 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_VLp_7F(void* const x)
 {
  asm volatile(
@@ -966,7 +966,7 @@ static inline __attribute__((always_inline)) void Draw_VLp_7F(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1547 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 1547 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_VLp_FF(void* const x)
 {
  asm volatile(
@@ -975,7 +975,7 @@ static inline __attribute__((always_inline)) void Draw_VLp_FF(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1577 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 1577 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_VLp_b(const unsigned int b, void* const x)
 {
  asm volatile(
@@ -985,7 +985,7 @@ static inline __attribute__((always_inline)) void Draw_VLp_b(const unsigned int 
   ::[B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 1608 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 1608 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_VLp(void (* const x))
 {
  asm volatile(
@@ -994,7 +994,7 @@ static inline __attribute__((always_inline)) void Draw_VLp(void (* const x))
   :: [X] "im" (x)
   : "memory", "cc", "d", "x");
 }
-# 1638 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 1638 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_VLp_scale(void* const x)
 {
  asm volatile(
@@ -1003,7 +1003,7 @@ static inline __attribute__((always_inline)) void Draw_VLp_scale(void* const x)
   :: [X] "im" (x)
   : "memory", "cc", "d", "x");
 }
-# 1665 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 1665 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Rot_VL_Mode(const unsigned int a, void* const x, volatile void* volatile const u)
 {
  asm volatile(
@@ -1014,7 +1014,7 @@ static inline __attribute__((always_inline)) void Rot_VL_Mode(const unsigned int
   :: [A] "mi" (a), [X] "mi" (x), [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 1694 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 1694 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Rot_VL_Pack(void* const x, void* const u)
 {
  asm volatile(
@@ -1024,7 +1024,7 @@ static inline __attribute__((always_inline)) void Rot_VL_Pack(void* const x, voi
   :: [X] "mi" (x), [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 1722 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 1722 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Rot_VL_M_dft(void* const x, void* const u)
 {
  asm volatile(
@@ -1034,7 +1034,7 @@ static inline __attribute__((always_inline)) void Rot_VL_M_dft(void* const x, vo
   :: [X] "mi" (x), [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 1778 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 1778 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) unsigned int Random_3(void)
 {
  unsigned int rnd;
@@ -1046,7 +1046,7 @@ static inline __attribute__((always_inline)) unsigned int Random_3(void)
   : "memory", "cc", "a");
  return rnd;
 }
-# 1798 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 1798 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) unsigned int Random(void)
 {
  unsigned int rnd;
@@ -1058,7 +1058,7 @@ static inline __attribute__((always_inline)) unsigned int Random(void)
   : "memory", "cc", "a");
  return rnd;
 }
-# 1827 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 1827 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) unsigned int Bitmask_a(const unsigned int a)
 {
  unsigned int r;
@@ -1071,7 +1071,7 @@ static inline __attribute__((always_inline)) unsigned int Bitmask_a(const unsign
   : "memory", "cc", "a", "x");
  return r;
 }
-# 1851 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 1851 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) long unsigned int Abs_a_b(const int a, const int b)
 {
  long unsigned int r;
@@ -1085,7 +1085,7 @@ static inline __attribute__((always_inline)) long unsigned int Abs_a_b(const int
   : "memory", "cc", "d");
  return r;
 }
-# 1874 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 1874 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) int Abs_b(const int b)
 {
  int r;
@@ -1098,7 +1098,7 @@ static inline __attribute__((always_inline)) int Abs_b(const int b)
   : "memory", "cc", "b");
  return r;
 }
-# 1898 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 1898 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) long unsigned int Rise_Run_Angle(const int a, const int b)
 {
  long unsigned int r;
@@ -1112,7 +1112,7 @@ static inline __attribute__((always_inline)) long unsigned int Rise_Run_Angle(co
   : "memory", "cc", "d");
  return r;
 }
-# 1921 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 1921 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) long unsigned int Get_Rise_Idx(const int a)
 {
  long unsigned int r;
@@ -1125,7 +1125,7 @@ static inline __attribute__((always_inline)) long unsigned int Get_Rise_Idx(cons
   : "memory", "cc", "d", "x");
  return r;
 }
-# 1943 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 1943 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) int Xform_Sin(const int a)
 {
  int r;
@@ -1138,7 +1138,7 @@ static inline __attribute__((always_inline)) int Xform_Sin(const int a)
   : "memory", "cc", "d", "x");
  return r;
 }
-# 1966 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 1966 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) long unsigned int Get_Rise_Run(void)
 {
  long unsigned int r;
@@ -1150,7 +1150,7 @@ static inline __attribute__((always_inline)) long unsigned int Get_Rise_Run(void
   : "memory", "cc", "d");
  return r;
 }
-# 1989 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 1989 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) long unsigned int Xform_Run_a(const int a)
 {
  long unsigned int r;
@@ -1163,7 +1163,7 @@ static inline __attribute__((always_inline)) long unsigned int Xform_Run_a(const
   : "memory", "cc", "d");
  return r;
 }
-# 2012 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 2012 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) long unsigned int Xform_Run(void)
 {
  unsigned int r;
@@ -1175,7 +1175,7 @@ static inline __attribute__((always_inline)) long unsigned int Xform_Run(void)
   : "memory", "cc", "d");
  return r;
 }
-# 2035 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 2035 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) long unsigned int Xform_Rise_a(const int a)
 {
  long unsigned int r;
@@ -1188,7 +1188,7 @@ static inline __attribute__((always_inline)) long unsigned int Xform_Rise_a(cons
   : "memory", "cc", "d");
  return r;
 }
-# 2058 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 2058 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) long unsigned int Xform_Rise(void)
 {
  long unsigned int r;
@@ -1200,7 +1200,7 @@ static inline __attribute__((always_inline)) long unsigned int Xform_Rise(void)
   : "memory", "cc", "d");
  return r;
 }
-# 2087 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 2087 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Clear_x_b(const unsigned int b, void* const x)
 {
  asm volatile(
@@ -1211,7 +1211,7 @@ static inline __attribute__((always_inline)) void Clear_x_b(const unsigned int b
   : [B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 2106 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 2106 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Clear_C8_RAM(void)
 {
  asm volatile(
@@ -1220,7 +1220,7 @@ static inline __attribute__((always_inline)) void Clear_C8_RAM(void)
   :
   : "memory", "cc", "d", "x");
 }
-# 2122 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 2122 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Clear_x_256(void* const x)
 {
  asm volatile(
@@ -1230,7 +1230,7 @@ static inline __attribute__((always_inline)) void Clear_x_256(void* const x)
   : [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 2140 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 2140 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Clear_x_d(const long unsigned int d, void* const x)
 {
  asm volatile(
@@ -1241,7 +1241,7 @@ static inline __attribute__((always_inline)) void Clear_x_d(const long unsigned 
   : [D] "mi" (d), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 2167 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 2167 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Move_Mem_a_1(const unsigned int a, void* const x, void* const u)
 {
  asm volatile(
@@ -1253,7 +1253,7 @@ static inline __attribute__((always_inline)) void Move_Mem_a_1(const unsigned in
   : [A] "mi" (a), [X] "mi" (x), [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 2189 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 2189 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Move_Mem_a(const unsigned int a, void* const x, void* const u)
 {
  asm volatile(
@@ -1265,7 +1265,7 @@ static inline __attribute__((always_inline)) void Move_Mem_a(const unsigned int 
   : [A] "mi" (a), [X] "mi" (x), [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 2216 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 2216 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Clear_x_b_80(const int b, void* const x)
 {
  asm volatile(
@@ -1276,7 +1276,7 @@ static inline __attribute__((always_inline)) void Clear_x_b_80(const int b, void
   : [B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 2235 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 2235 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Clear_x_b_a(const unsigned int a, const unsigned int b, void* const x)
 {
  asm volatile(
@@ -1288,7 +1288,7 @@ static inline __attribute__((always_inline)) void Clear_x_b_a(const unsigned int
   : [A] "mi" (a), [B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 2265 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 2265 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Read_Btns_Mask(const unsigned int a)
 {
  asm volatile(
@@ -1298,7 +1298,7 @@ static inline __attribute__((always_inline)) void Read_Btns_Mask(const unsigned 
   : [A] "mi" (a)
   : "memory", "cc", "d", "x");
 }
-# 2284 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 2284 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Read_Btns(void)
 {
  asm volatile(
@@ -1306,7 +1306,7 @@ static inline __attribute__((always_inline)) void Read_Btns(void)
   ::
   : "memory", "cc", "d", "x");
 }
-# 2320 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 2320 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Joy_Analog(void)
 {
  asm volatile(
@@ -1314,7 +1314,7 @@ static inline __attribute__((always_inline)) void Joy_Analog(void)
   ::
   : "memory", "cc", "d", "x");
 }
-# 2352 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 2352 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Joy_Digital(void)
 {
  asm volatile(
@@ -1322,7 +1322,7 @@ static inline __attribute__((always_inline)) void Joy_Digital(void)
   ::
   : "memory", "cc", "d", "x");
 }
-# 2418 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 2418 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Select_Game(const unsigned int a, const unsigned int b)
 {
  asm volatile(
@@ -1332,7 +1332,7 @@ static inline __attribute__((always_inline)) void Select_Game(const unsigned int
   :: [A] "mi" (a), [B] "mi" (b)
   : "memory", "cc", "d", "x", "y", "u");
 }
-# 2440 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 2440 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Display_Option(const unsigned int a, const void* const y)
 {
  asm volatile(
@@ -1342,7 +1342,7 @@ static inline __attribute__((always_inline)) void Display_Option(const unsigned 
   :: [A] "mi" (a), [Y] "mi" (y)
   : "memory", "cc", "d", "x", "y", "u");
 }
-# 2460 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 2460 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Reset(void)
 {
  asm volatile(
@@ -1350,7 +1350,7 @@ static inline __attribute__((always_inline)) void Reset(void)
   ::
   : "memory", "cc");
 }
-# 2481 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 2481 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Init_VIA(void)
 {
  asm volatile(
@@ -1358,7 +1358,7 @@ static inline __attribute__((always_inline)) void Init_VIA(void)
   ::
   : "memory", "cc", "d", "x");
 }
-# 2508 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 2508 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Init_OS_RAM(void)
 {
  asm volatile(
@@ -1366,7 +1366,7 @@ static inline __attribute__((always_inline)) void Init_OS_RAM(void)
   ::
   : "memory", "cc", "d", "x");
 }
-# 2537 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 2537 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Init_OS(void)
 {
  asm volatile(
@@ -1374,7 +1374,7 @@ static inline __attribute__((always_inline)) void Init_OS(void)
   ::
   : "memory", "cc", "d", "x");
 }
-# 2556 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 2556 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Init_Music_Buf(void)
 {
  asm volatile(
@@ -1382,7 +1382,7 @@ static inline __attribute__((always_inline)) void Init_Music_Buf(void)
   ::
   : "memory", "cc", "d", "x");
 }
-# 2602 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 2602 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Clear_Score(void* const x)
 {
  asm volatile(
@@ -1391,7 +1391,7 @@ static inline __attribute__((always_inline)) void Clear_Score(void* const x)
   :: [X] "mins" (x)
   : "memory", "cc", "d", "x");
 }
-# 2630 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 2630 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Add_Score_a(const unsigned int a, void* const x)
 {
  asm volatile(
@@ -1401,7 +1401,7 @@ static inline __attribute__((always_inline)) void Add_Score_a(const unsigned int
   :: [A] "mins" (a), [X] "mins" (x)
   : "memory", "cc", "d", "x", "u");
 }
-# 2658 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 2658 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Add_Score_d(const long unsigned int d, void* const x)
 {
  asm volatile(
@@ -1411,7 +1411,7 @@ static inline __attribute__((always_inline)) void Add_Score_d(const long unsigne
   :: [D] "mi" (d), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 2710 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 2710 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) unsigned int Compare_Score(void* const x, void* const u)
 {
  unsigned int r;
@@ -1425,7 +1425,7 @@ static inline __attribute__((always_inline)) unsigned int Compare_Score(void* co
   : "memory", "cc", "d", "x", "u");
  return r;
 }
-# 2743 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 2743 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void New_High_Score(void* const x, void* const u)
 {
  asm volatile(
@@ -1435,7 +1435,7 @@ static inline __attribute__((always_inline)) void New_High_Score(void* const x, 
   :: [X] "mi" (x), [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 2780 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 2780 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Sound_Byte(const unsigned int a, const unsigned int b)
 {
  asm volatile(
@@ -1445,7 +1445,7 @@ static inline __attribute__((always_inline)) void Sound_Byte(const unsigned int 
   :: [A] "mi" (a), [B] "mi" (b)
   : "memory", "cc", "d", "x");
 }
-# 2800 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 2800 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Sound_Byte_x(const unsigned int a, const unsigned int b, void* const x)
 {
  asm volatile(
@@ -1456,7 +1456,7 @@ static inline __attribute__((always_inline)) void Sound_Byte_x(const unsigned in
   :: [A] "mi" (a), [B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 2820 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 2820 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Clear_Sound(void)
 {
  asm volatile(
@@ -1464,7 +1464,7 @@ static inline __attribute__((always_inline)) void Clear_Sound(void)
   ::
   : "memory", "cc", "d", "x");
 }
-# 2838 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 2838 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Sound_Bytes(void* const u)
 {
  asm volatile(
@@ -1473,7 +1473,7 @@ static inline __attribute__((always_inline)) void Sound_Bytes(void* const u)
   :: [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 2857 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 2857 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Sound_Bytes_x(void* const x, void* const u)
 {
  asm volatile(
@@ -1483,7 +1483,7 @@ static inline __attribute__((always_inline)) void Sound_Bytes_x(void* const x, v
   :: [X] "mi" (x), [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 2878 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 2878 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Do_Sound(void)
 {
  asm volatile(
@@ -1491,7 +1491,7 @@ static inline __attribute__((always_inline)) void Do_Sound(void)
   ::
   : "memory", "cc", "d", "x", "u");
 }
-# 2915 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 2915 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Init_Music_chk(const void* const u)
 {
  asm volatile(
@@ -1500,7 +1500,7 @@ static inline __attribute__((always_inline)) void Init_Music_chk(const void* con
   :: [U] "mi" (u)
   : "memory", "cc", "d", "x", "y", "u");
 }
-# 2964 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 2964 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Init_Music(void* const u)
 {
  asm volatile(
@@ -1509,7 +1509,7 @@ static inline __attribute__((always_inline)) void Init_Music(void* const u)
   :: [U] "mi" (u)
   : "memory", "cc", "d", "x", "y", "u");
 }
-# 2997 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 2997 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Init_Music_a(void* const x, void* const u)
 {
  asm volatile(
@@ -1519,7 +1519,7 @@ static inline __attribute__((always_inline)) void Init_Music_a(void* const x, vo
   :: [X] "mi" (x), [U] "mi" (u)
   : "memory", "cc", "d", "x", "y", "u");
 }
-# 3031 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 3031 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Init_Music_x(void* const u)
 {
  asm volatile(
@@ -1528,7 +1528,7 @@ static inline __attribute__((always_inline)) void Init_Music_x(void* const u)
   :: [U] "mi" (u)
   : "memory", "cc", "d", "x", "y", "u");
 }
-# 3050 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 3050 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Stop_Sound(void)
 {
  asm volatile(
@@ -1536,7 +1536,7 @@ static inline __attribute__((always_inline)) void Stop_Sound(void)
   ::
   : "memory", "cc", "d", "x");
 }
-# 3088 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 3088 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Explosion_Snd(const void* const u)
 {
  asm volatile(
@@ -1545,7 +1545,7 @@ static inline __attribute__((always_inline)) void Explosion_Snd(const void* cons
   :: [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 3107 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 3107 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Set_Amp(const unsigned int b)
 {
  asm volatile(
@@ -1554,7 +1554,7 @@ static inline __attribute__((always_inline)) void Set_Amp(const unsigned int b)
   :: [B] "mi" (b)
   : "memory", "cc", "d", "x");
 }
-# 3169 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 3169 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Moveto_x_7F(void* const x)
 {
  asm volatile(
@@ -1563,7 +1563,7 @@ static inline __attribute__((always_inline)) void Moveto_x_7F(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 3188 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 3188 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Moveto_d_7F(const int a, const int b)
 {
  asm volatile(
@@ -1582,7 +1582,7 @@ static inline __attribute__((always_inline)) void Moveto_dd_7F(const long int d)
   :: [D] "mi" (d)
   : "memory", "cc", "d");
 }
-# 3221 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 3221 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Moveto_ix_FF(void* const x)
 {
  asm volatile(
@@ -1591,7 +1591,7 @@ static inline __attribute__((always_inline)) void Moveto_ix_FF(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 3244 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 3244 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Moveto_ix_7F(void* const x)
 {
  asm volatile(
@@ -1600,7 +1600,7 @@ static inline __attribute__((always_inline)) void Moveto_ix_7F(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 3268 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 3268 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Moveto_ix_b(const unsigned int b, void* const x)
 {
  asm volatile(
@@ -1610,7 +1610,7 @@ static inline __attribute__((always_inline)) void Moveto_ix_b(const unsigned int
   :: [B] "mi" (b), [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 3291 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 3291 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Moveto_ix(void* const x)
 {
  asm volatile(
@@ -1619,7 +1619,7 @@ static inline __attribute__((always_inline)) void Moveto_ix(void* const x)
   :: [X] "mi" (x)
   : "memory", "cc", "d", "x");
 }
-# 3313 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 3313 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Moveto_d(const int a, const int b)
 {
  asm volatile(
@@ -1638,7 +1638,7 @@ static inline __attribute__((always_inline)) void Moveto_dd(const long int d)
   :: [D] "mi" (d)
   : "memory", "cc", "d");
 }
-# 3351 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 3351 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Intensity_1F(void)
 {
  asm volatile(
@@ -1646,7 +1646,7 @@ static inline __attribute__((always_inline)) void Intensity_1F(void)
   ::
   : "memory", "cc", "d");
 }
-# 3369 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 3369 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Intensity_3F(void)
 {
  asm volatile(
@@ -1654,7 +1654,7 @@ static inline __attribute__((always_inline)) void Intensity_3F(void)
   ::
   : "memory", "cc", "d");
 }
-# 3387 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 3387 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Intensity_5F(void)
 {
  asm volatile(
@@ -1662,7 +1662,7 @@ static inline __attribute__((always_inline)) void Intensity_5F(void)
   ::
   : "memory", "cc", "d");
 }
-# 3405 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 3405 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Intensity_7F(void)
 {
  asm volatile(
@@ -1670,7 +1670,7 @@ static inline __attribute__((always_inline)) void Intensity_7F(void)
   ::
   : "memory", "cc", "d");
 }
-# 3425 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 3425 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Intensity_a(const unsigned int a)
 {
  asm volatile(
@@ -1679,7 +1679,7 @@ static inline __attribute__((always_inline)) void Intensity_a(const unsigned int
   :: [A] "mi" (a)
   : "memory", "cc", "d");
 }
-# 3452 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 3452 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) unsigned int Obj_Will_Hit_u(const int a, const int b, const long int x, const long int y, const long int u)
 {
  unsigned int hit;
@@ -1698,7 +1698,7 @@ static inline __attribute__((always_inline)) unsigned int Obj_Will_Hit_u(const i
   : "memory", "cc", "d", "x", "y", "u");
  return hit;
 }
-# 3482 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 3482 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) unsigned int Obj_Will_Hit(const int a, const int b, const long int x, const long int y, const long int* u)
 {
  unsigned int hit;
@@ -1717,7 +1717,7 @@ static inline __attribute__((always_inline)) unsigned int Obj_Will_Hit(const int
   : "memory", "cc", "d", "x", "y", "u");
  return hit;
 }
-# 3511 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 3511 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) unsigned int Obj_Hit(const int a, const int b, const long int x, const long int y)
 {
  unsigned int hit;
@@ -1735,7 +1735,7 @@ static inline __attribute__((always_inline)) unsigned int Obj_Hit(const int a, c
   : "memory", "cc", "d", "x", "y");
  return hit;
 }
-# 3551 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 3551 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) long unsigned int Rise_Run_X(const int a, const int b)
 {
  unsigned long int d;
@@ -1749,7 +1749,7 @@ static inline __attribute__((always_inline)) long unsigned int Rise_Run_X(const 
   : "memory", "cc", "d");
  return d;
 }
-# 3575 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 3575 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) long unsigned int Rise_Run_Y(const int a, const int b)
 {
  unsigned long int d;
@@ -1763,7 +1763,7 @@ static inline __attribute__((always_inline)) long unsigned int Rise_Run_Y(const 
   : "memory", "cc", "d");
  return d;
 }
-# 3599 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 3599 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) unsigned long int Rise_Run_Len(const int a)
 {
  unsigned long int d;
@@ -1776,7 +1776,7 @@ static inline __attribute__((always_inline)) unsigned long int Rise_Run_Len(cons
   : "memory", "cc", "d");
  return d;
 }
-# 3630 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 3630 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Rot_VL_ab(const unsigned int a, const unsigned int b, void* const x, void* const u)
 {
  asm volatile(
@@ -1788,7 +1788,7 @@ static inline __attribute__((always_inline)) void Rot_VL_ab(const unsigned int a
   :: [A] "mi" (a), [B] "mi" (b), [X] "mi" (x), [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 3659 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 3659 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Rot_VL_Diff(const unsigned int b, void* const x, void* const u)
 {
  asm volatile(
@@ -1799,7 +1799,7 @@ static inline __attribute__((always_inline)) void Rot_VL_Diff(const unsigned int
   :: [B] "mi" (b), [X] "mi" (x), [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 3688 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 3688 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Rot_VL(void* const x, void* const u)
 {
  asm volatile(
@@ -1809,7 +1809,7 @@ static inline __attribute__((always_inline)) void Rot_VL(void* const x, void* co
   :: [X] "mi" (x), [U] "mi" (u)
   : "memory", "cc", "d", "x", "u");
 }
-# 3748 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 3748 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Dot_y(const long int y)
 {
  asm volatile(
@@ -1818,7 +1818,7 @@ static inline __attribute__((always_inline)) void Dot_y(const long int y)
   :: [Y] "mi" (y)
   : "memory", "cc", "y");
 }
-# 3766 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 3766 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Dot_py(void* const y)
 {
  asm volatile(
@@ -1827,7 +1827,7 @@ static inline __attribute__((always_inline)) void Dot_py(void* const y)
   :: [Y] "mi" (y)
   : "memory", "cc", "y");
 }
-# 3795 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 3795 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_Pack(const unsigned int b, void* const x, const long int y)
 {
  asm volatile(
@@ -1838,7 +1838,7 @@ static inline __attribute__((always_inline)) void Draw_Pack(const unsigned int b
   :: [B] "mi" (b), [X] "mi" (x), [Y] "mi" (y)
   : "memory", "cc", "b", "x", "y");
 }
-# 3824 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 3824 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_Pack_py(const unsigned int b, void* const x, void* const y)
 {
  asm volatile(
@@ -1849,7 +1849,7 @@ static inline __attribute__((always_inline)) void Draw_Pack_py(const unsigned in
   :: [B] "mi" (b), [X] "mi" (x), [Y] "mi" (y)
   : "memory", "cc", "b", "x", "y");
 }
-# 3848 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 3848 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Print_Msg(void* const y, void* const u)
 {
  asm volatile(
@@ -1859,7 +1859,7 @@ static inline __attribute__((always_inline)) void Print_Msg(void* const y, void*
   :: [Y] "mi" (y), [U] "mi" (u)
   : "memory", "cc", "y", "u");
 }
-# 3865 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 3865 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) unsigned int Rnd_Cone(void)
 {
  unsigned int b;
@@ -1871,7 +1871,7 @@ static inline __attribute__((always_inline)) unsigned int Rnd_Cone(void)
   : "memory", "cc", "b");
  return b;
 }
-# 3887 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 3887 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) long unsigned int Displ8_xy(const unsigned int a, const unsigned int b)
 {
  unsigned long int x;
@@ -1887,7 +1887,7 @@ static inline __attribute__((always_inline)) long unsigned int Displ8_xy(const u
   : "memory", "cc", "d", "x", "y");
  return x;
 }
-# 3913 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 3913 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) long unsigned int Displ16_xy(const unsigned int a, const unsigned int b)
 {
  unsigned long int x;
@@ -1903,7 +1903,7 @@ static inline __attribute__((always_inline)) long unsigned int Displ16_xy(const 
   : "memory", "cc", "d", "x", "y");
  return x;
 }
-# 3938 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 3938 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) long unsigned int Ranpos(void)
 {
  unsigned long int d;
@@ -1915,7 +1915,7 @@ static inline __attribute__((always_inline)) long unsigned int Ranpos(void)
   : "memory", "cc", "d");
  return d;
 }
-# 3971 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 3971 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_Scores(void)
 {
  asm volatile(
@@ -1923,7 +1923,7 @@ static inline __attribute__((always_inline)) void Draw_Scores(void)
   ::
   : "memory", "cc", "d", "y", "u");
 }
-# 4000 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 4000 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Draw_Score(void)
 {
  asm volatile(
@@ -1931,7 +1931,7 @@ static inline __attribute__((always_inline)) void Draw_Score(void)
   ::
   : "memory", "cc", "d", "y", "u");
 }
-# 4027 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
+# 4027 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum_inl.h"
 static inline __attribute__((always_inline)) void Wait_Bound(void)
 {
  asm volatile(
@@ -1939,4101 +1939,3893 @@ static inline __attribute__((always_inline)) void Wait_Bound(void)
   ::
   : "memory", "cc", "d", "x", "y", "u");
 }
-# 49 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vec_rum.h" 2
-# 44 "C:\\data\\vide\\C\\PeerC\\vectrex\\include/vectrex.h" 2
-# 6 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\/hardware.h" 2
-# 15 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\/hardware.h"
-static inline __attribute__((always_inline)) void positd (int8_t x, int8_t y)
+# 49 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vec_rum.h" 2
+# 44 "C:\\data\\Vide\\C\\PeerC\\vectrex\\include/vectrex.h" 2
+# 6 "C:\\data\\Vide\\..\\bloxorz\\Vide\\source\\/hardware.h" 2
+# 15 "C:\\data\\Vide\\..\\bloxorz\\Vide\\source\\/hardware.h"
+static inline __attribute__((always_inline)) void positd(int8_t x, int8_t y)
 {
     dp_VIA_t1_cnt_lo = 0x80;
-    Moveto_d(y,x);
+    Moveto_d(y, x);
 }
-static inline __attribute__((always_inline)) void Draw_VLp_80(void* const x)
+static inline __attribute__((always_inline)) void Draw_VLp_80(void *const x)
 {
     dp_VIA_t1_cnt_lo = 0x80;
     Draw_VLp(x);
 }
-# 3 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\block.c" 2
-# 1 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\/block.i" 1
+# 3 "C:\\data\\Vide\\..\\bloxorz\\Vide\\source\\block.c" 2
+# 1 "C:\\data\\Vide\\..\\bloxorz\\Vide\\source\\/block.i" 1
 
 
 const int8_t height2FallingLeft0[] = {
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*26, 3*0,
- 0, 3*-23, 3*14,
- (int8_t) 255, 3*26, 3*0,
- 0, 3*-18, 3*-6,
- (int8_t) 255, 3*26, 3*0,
- 0, 3*-29, 3*-13,
- (int8_t) 255, 3*26, 3*0,
- 0, 3*-8, 3*5,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-8, 3*5,
- 1
-};
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 26, 3 * 0,
+ 0, 3 * -23, 3 * 14,
+ (int8_t)255, 3 * 26, 3 * 0,
+ 0, 3 * -18, 3 * -6,
+ (int8_t)255, 3 * 26, 3 * 0,
+ 0, 3 * -29, 3 * -13,
+ (int8_t)255, 3 * 26, 3 * 0,
+ 0, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -8, 3 * 5,
+ 1};
 const int8_t height2RisingRight0[] = {
- 0, 3*6, 3*28,
- (int8_t) 255, 3*13, 3*2,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-13, 3*-2,
- (int8_t) 255, 3*-8, 3*6,
- (int8_t) 255, 3*-3, 3*-28,
- 0, 3*16, 3*30,
- (int8_t) 255, 3*-2, 3*-28,
- 0, 3*10, 3*22,
- (int8_t) 255, 3*-2, 3*-27,
- 0, 3*-11, 3*25,
- (int8_t) 255, 3*-3, 3*-27,
- 0, 3*-8, 3*5,
- (int8_t) 255, 3*14, 3*2,
- (int8_t) 255, 3*8, 3*-5,
- (int8_t) 255, 3*-14, 3*-2,
- (int8_t) 255, 3*-8, 3*5,
- 1
-};
+ 0, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 13, 3 * 2,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -13, 3 * -2,
+ (int8_t)255, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * -3, 3 * -28,
+ 0, 3 * 16, 3 * 30,
+ (int8_t)255, 3 * -2, 3 * -28,
+ 0, 3 * 10, 3 * 22,
+ (int8_t)255, 3 * -2, 3 * -27,
+ 0, 3 * -11, 3 * 25,
+ (int8_t)255, 3 * -3, 3 * -27,
+ 0, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 14, 3 * 2,
+ (int8_t)255, 3 * 8, 3 * -5,
+ (int8_t)255, 3 * -14, 3 * -2,
+ (int8_t)255, 3 * -8, 3 * 5,
+ 1};
 const int8_t height2FallingRight0[] = {
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*26, 3*0,
- 0, 3*-23, 3*14,
- (int8_t) 255, 3*26, 3*0,
- 0, 3*-18, 3*-6,
- (int8_t) 255, 3*26, 3*0,
- 0, 3*-29, 3*-13,
- (int8_t) 255, 3*26, 3*0,
- 0, 3*-8, 3*5,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-8, 3*5,
- 1
-};
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 26, 3 * 0,
+ 0, 3 * -23, 3 * 14,
+ (int8_t)255, 3 * 26, 3 * 0,
+ 0, 3 * -18, 3 * -6,
+ (int8_t)255, 3 * 26, 3 * 0,
+ 0, 3 * -29, 3 * -13,
+ (int8_t)255, 3 * 26, 3 * 0,
+ 0, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -8, 3 * 5,
+ 1};
 const int8_t height2RisingLeft0[] = {
- 0, 3*12, 3*-1,
- (int8_t) 255, 3*-12, 3*1,
- (int8_t) 255, 3*8, 3*-5,
- (int8_t) 255, 3*12, 3*-2,
- (int8_t) 255, 3*-8, 3*6,
- (int8_t) 255, 3*10, 3*27,
- 0, 3*-22, 3*-26,
- (int8_t) 255, 3*9, 3*28,
- 0, 3*-1, 3*-33,
- (int8_t) 255, 3*9, 3*27,
- 0, 3*3, 3*-29,
- (int8_t) 255, 3*10, 3*27,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*-13, 3*2,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*13, 3*-2,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 12, 3 * -1,
+ (int8_t)255, 3 * -12, 3 * 1,
+ (int8_t)255, 3 * 8, 3 * -5,
+ (int8_t)255, 3 * 12, 3 * -2,
+ (int8_t)255, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 10, 3 * 27,
+ 0, 3 * -22, 3 * -26,
+ (int8_t)255, 3 * 9, 3 * 28,
+ 0, 3 * -1, 3 * -33,
+ (int8_t)255, 3 * 9, 3 * 27,
+ 0, 3 * 3, 3 * -29,
+ (int8_t)255, 3 * 10, 3 * 27,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * -13, 3 * 2,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 13, 3 * -2,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2FallingBack0[] = {
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*26, 3*0,
- 0, 3*-23, 3*14,
- (int8_t) 255, 3*26, 3*0,
- 0, 3*-18, 3*-6,
- (int8_t) 255, 3*26, 3*0,
- 0, 3*-29, 3*-13,
- (int8_t) 255, 3*26, 3*0,
- 0, 3*-8, 3*5,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-8, 3*5,
- 1
-};
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 26, 3 * 0,
+ 0, 3 * -23, 3 * 14,
+ (int8_t)255, 3 * 26, 3 * 0,
+ 0, 3 * -18, 3 * -6,
+ (int8_t)255, 3 * 26, 3 * 0,
+ 0, 3 * -29, 3 * -13,
+ (int8_t)255, 3 * 26, 3 * 0,
+ 0, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -8, 3 * 5,
+ 1};
 const int8_t height2RisingFront0[] = {
- 0, 3*12, 3*1,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*-12, 3*-1,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*12, 3*1,
- (int8_t) 255, 3*19, 3*-11,
- 0, 3*-16, 3*25,
- (int8_t) 255, 3*19, 3*-12,
- 0, 3*-31, 3*11,
- (int8_t) 255, 3*19, 3*-12,
- 0, 3*-22, 3*-2,
- (int8_t) 255, 3*19, 3*-11,
- 0, 3*12, 3*1,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*-12, 3*-1,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*12, 3*1,
- 1
-};
+ 0, 3 * 12, 3 * 1,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * -12, 3 * -1,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * 12, 3 * 1,
+ (int8_t)255, 3 * 19, 3 * -11,
+ 0, 3 * -16, 3 * 25,
+ (int8_t)255, 3 * 19, 3 * -12,
+ 0, 3 * -31, 3 * 11,
+ (int8_t)255, 3 * 19, 3 * -12,
+ 0, 3 * -22, 3 * -2,
+ (int8_t)255, 3 * 19, 3 * -11,
+ 0, 3 * 12, 3 * 1,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * -12, 3 * -1,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * 12, 3 * 1,
+ 1};
 const int8_t height2FallingFront0[] = {
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*26, 3*0,
- 0, 3*-23, 3*14,
- (int8_t) 255, 3*26, 3*0,
- 0, 3*-18, 3*-6,
- (int8_t) 255, 3*26, 3*0,
- 0, 3*-29, 3*-13,
- (int8_t) 255, 3*26, 3*0,
- 0, 3*-8, 3*5,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-8, 3*5,
- 1
-};
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 26, 3 * 0,
+ 0, 3 * -23, 3 * 14,
+ (int8_t)255, 3 * 26, 3 * 0,
+ 0, 3 * -18, 3 * -6,
+ (int8_t)255, 3 * 26, 3 * 0,
+ 0, 3 * -29, 3 * -13,
+ (int8_t)255, 3 * 26, 3 * 0,
+ 0, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -8, 3 * 5,
+ 1};
 const int8_t height2RisingBack0[] = {
- 0, 3*16, 3*-11,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*14, 3*-1,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-14, 3*1,
- (int8_t) 255, 3*-12, 3*11,
- 0, 3*15, 3*2,
- (int8_t) 255, 3*-12, 3*12,
- 0, 3*26, 3*-13,
- (int8_t) 255, 3*-13, 3*12,
- 0, 3*10, 3*-25,
- (int8_t) 255, 3*-13, 3*12,
- 0, 3*-13, 3*0,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*13, 3*-1,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-13, 3*0,
- 1
-};
+ 0, 3 * 16, 3 * -11,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * 14, 3 * -1,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -14, 3 * 1,
+ (int8_t)255, 3 * -12, 3 * 11,
+ 0, 3 * 15, 3 * 2,
+ (int8_t)255, 3 * -12, 3 * 12,
+ 0, 3 * 26, 3 * -13,
+ (int8_t)255, 3 * -13, 3 * 12,
+ 0, 3 * 10, 3 * -25,
+ (int8_t)255, 3 * -13, 3 * 12,
+ 0, 3 * -13, 3 * 0,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 13, 3 * -1,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -13, 3 * 0,
+ 1};
 const int8_t depth2RollingLeft0[] = {
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*16, 3*-12,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-16, 3*11,
- (int8_t) 255, 3*13, 3*0,
- 0, 3*-10, 3*14,
- (int8_t) 255, 3*13, 3*0,
- 0, 3*3, 3*-12,
- (int8_t) 255, 3*13, 3*0,
- 0, 3*-16, 3*-13,
- (int8_t) 255, 3*13, 3*0,
- 0, 3*-16, 3*11,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*16, 3*-12,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-16, 3*11,
- 1
-};
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -16, 3 * 11,
+ (int8_t)255, 3 * 13, 3 * 0,
+ 0, 3 * -10, 3 * 14,
+ (int8_t)255, 3 * 13, 3 * 0,
+ 0, 3 * 3, 3 * -12,
+ (int8_t)255, 3 * 13, 3 * 0,
+ 0, 3 * -16, 3 * -13,
+ (int8_t)255, 3 * 13, 3 * 0,
+ 0, 3 * -16, 3 * 11,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -16, 3 * 11,
+ 1};
 const int8_t depth2RollingRight0[] = {
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*16, 3*-12,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-16, 3*11,
- (int8_t) 255, 3*13, 3*0,
- 0, 3*-10, 3*14,
- (int8_t) 255, 3*13, 3*0,
- 0, 3*3, 3*-12,
- (int8_t) 255, 3*13, 3*0,
- 0, 3*-16, 3*-13,
- (int8_t) 255, 3*13, 3*0,
- 0, 3*-16, 3*11,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*16, 3*-12,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-16, 3*11,
- 1
-};
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -16, 3 * 11,
+ (int8_t)255, 3 * 13, 3 * 0,
+ 0, 3 * -10, 3 * 14,
+ (int8_t)255, 3 * 13, 3 * 0,
+ 0, 3 * 3, 3 * -12,
+ (int8_t)255, 3 * 13, 3 * 0,
+ 0, 3 * -16, 3 * -13,
+ (int8_t)255, 3 * 13, 3 * 0,
+ 0, 3 * -16, 3 * 11,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -16, 3 * 11,
+ 1};
 const int8_t width2RollingFront0[] = {
- (int8_t) 255, 3*6, 3*28,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*13, 3*0,
- 0, 3*-7, 3*28,
- (int8_t) 255, 3*13, 3*0,
- 0, 3*-5, 3*-6,
- (int8_t) 255, 3*13, 3*0,
- 0, 3*-19, 3*-27,
- (int8_t) 255, 3*13, 3*0,
- 0, 3*-8, 3*5,
- (int8_t) 255, 3*6, 3*28,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*-8, 3*5,
- 1
-};
+ (int8_t)255, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 13, 3 * 0,
+ 0, 3 * -7, 3 * 28,
+ (int8_t)255, 3 * 13, 3 * 0,
+ 0, 3 * -5, 3 * -6,
+ (int8_t)255, 3 * 13, 3 * 0,
+ 0, 3 * -19, 3 * -27,
+ (int8_t)255, 3 * 13, 3 * 0,
+ 0, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * -8, 3 * 5,
+ 1};
 const int8_t width2RollingBack0[] = {
- (int8_t) 255, 3*6, 3*28,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*13, 3*0,
- 0, 3*-7, 3*28,
- (int8_t) 255, 3*13, 3*0,
- 0, 3*-5, 3*-6,
- (int8_t) 255, 3*13, 3*0,
- 0, 3*-19, 3*-27,
- (int8_t) 255, 3*13, 3*0,
- 0, 3*-8, 3*5,
- (int8_t) 255, 3*6, 3*28,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*-8, 3*5,
- 1
-};
+ (int8_t)255, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 13, 3 * 0,
+ 0, 3 * -7, 3 * 28,
+ (int8_t)255, 3 * 13, 3 * 0,
+ 0, 3 * -5, 3 * -6,
+ (int8_t)255, 3 * 13, 3 * 0,
+ 0, 3 * -19, 3 * -27,
+ (int8_t)255, 3 * 13, 3 * 0,
+ 0, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * -8, 3 * 5,
+ 1};
 const int8_t height1FallingLeft0[] = {
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*13, 3*0,
- 0, 3*-10, 3*14,
- (int8_t) 255, 3*13, 3*0,
- 0, 3*-5, 3*-6,
- (int8_t) 255, 3*13, 3*0,
- 0, 3*-16, 3*-13,
- (int8_t) 255, 3*13, 3*0,
- 0, 3*-8, 3*5,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-8, 3*5,
- 1
-};
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 13, 3 * 0,
+ 0, 3 * -10, 3 * 14,
+ (int8_t)255, 3 * 13, 3 * 0,
+ 0, 3 * -5, 3 * -6,
+ (int8_t)255, 3 * 13, 3 * 0,
+ 0, 3 * -16, 3 * -13,
+ (int8_t)255, 3 * 13, 3 * 0,
+ 0, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -8, 3 * 5,
+ 1};
 const int8_t height1FallingRight0[] = {
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*13, 3*0,
- 0, 3*-10, 3*14,
- (int8_t) 255, 3*13, 3*0,
- 0, 3*-5, 3*-6,
- (int8_t) 255, 3*13, 3*0,
- 0, 3*-16, 3*-13,
- (int8_t) 255, 3*13, 3*0,
- 0, 3*-8, 3*5,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-8, 3*5,
- 1
-};
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 13, 3 * 0,
+ 0, 3 * -10, 3 * 14,
+ (int8_t)255, 3 * 13, 3 * 0,
+ 0, 3 * -5, 3 * -6,
+ (int8_t)255, 3 * 13, 3 * 0,
+ 0, 3 * -16, 3 * -13,
+ (int8_t)255, 3 * 13, 3 * 0,
+ 0, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -8, 3 * 5,
+ 1};
 const int8_t height1FallingBack0[] = {
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*13, 3*0,
- 0, 3*-10, 3*14,
- (int8_t) 255, 3*13, 3*0,
- 0, 3*-5, 3*-6,
- (int8_t) 255, 3*13, 3*0,
- 0, 3*-16, 3*-13,
- (int8_t) 255, 3*13, 3*0,
- 0, 3*-8, 3*5,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-8, 3*5,
- 1
-};
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 13, 3 * 0,
+ 0, 3 * -10, 3 * 14,
+ (int8_t)255, 3 * 13, 3 * 0,
+ 0, 3 * -5, 3 * -6,
+ (int8_t)255, 3 * 13, 3 * 0,
+ 0, 3 * -16, 3 * -13,
+ (int8_t)255, 3 * 13, 3 * 0,
+ 0, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -8, 3 * 5,
+ 1};
 const int8_t height1FallingFront0[] = {
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*13, 3*0,
- 0, 3*-10, 3*14,
- (int8_t) 255, 3*13, 3*0,
- 0, 3*-5, 3*-6,
- (int8_t) 255, 3*13, 3*0,
- 0, 3*-16, 3*-13,
- (int8_t) 255, 3*13, 3*0,
- 0, 3*-8, 3*5,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-8, 3*5,
- 1
-};
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 13, 3 * 0,
+ 0, 3 * -10, 3 * 14,
+ (int8_t)255, 3 * 13, 3 * 0,
+ 0, 3 * -5, 3 * -6,
+ (int8_t)255, 3 * 13, 3 * 0,
+ 0, 3 * -16, 3 * -13,
+ (int8_t)255, 3 * 13, 3 * 0,
+ 0, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -8, 3 * 5,
+ 1};
 const int8_t height2FallingLeft1[] = {
- (int8_t) 255, 3*5, 3*14,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-5, 3*-13,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*25, 3*-3,
- 0, 3*-20, 3*17,
- (int8_t) 255, 3*25, 3*-4,
- 0, 3*-17, 3*-2,
- (int8_t) 255, 3*25, 3*-4,
- 0, 3*-30, 3*-9,
- (int8_t) 255, 3*25, 3*-4,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*5, 3*13,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-5, 3*-13,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ (int8_t)255, 3 * 5, 3 * 14,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -5, 3 * -13,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 25, 3 * -3,
+ 0, 3 * -20, 3 * 17,
+ (int8_t)255, 3 * 25, 3 * -4,
+ 0, 3 * -17, 3 * -2,
+ (int8_t)255, 3 * 25, 3 * -4,
+ 0, 3 * -30, 3 * -9,
+ (int8_t)255, 3 * 25, 3 * -4,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 5, 3 * 13,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -5, 3 * -13,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2RisingRight1[] = {
- 0, 3*6, 3*28,
- (int8_t) 255, 3*13, 3*4,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-13, 3*-4,
- (int8_t) 255, 3*-8, 3*6,
- (int8_t) 255, 3*1, 3*-27,
- 0, 3*12, 3*31,
- (int8_t) 255, 3*1, 3*-27,
- 0, 3*7, 3*21,
- (int8_t) 255, 3*1, 3*-26,
- 0, 3*-14, 3*22,
- (int8_t) 255, 3*1, 3*-26,
- 0, 3*-8, 3*5,
- (int8_t) 255, 3*13, 3*4,
- (int8_t) 255, 3*8, 3*-5,
- (int8_t) 255, 3*-13, 3*-4,
- (int8_t) 255, 3*-8, 3*5,
- 1
-};
+ 0, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 13, 3 * 4,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -13, 3 * -4,
+ (int8_t)255, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 1, 3 * -27,
+ 0, 3 * 12, 3 * 31,
+ (int8_t)255, 3 * 1, 3 * -27,
+ 0, 3 * 7, 3 * 21,
+ (int8_t)255, 3 * 1, 3 * -26,
+ 0, 3 * -14, 3 * 22,
+ (int8_t)255, 3 * 1, 3 * -26,
+ 0, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 13, 3 * 4,
+ (int8_t)255, 3 * 8, 3 * -5,
+ (int8_t)255, 3 * -13, 3 * -4,
+ (int8_t)255, 3 * -8, 3 * 5,
+ 1};
 const int8_t height2FallingRight1[] = {
- 0, 3*2, 3*0,
- (int8_t) 255, 3*1, 3*14,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-1, 3*-13,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*26, 3*4,
- 0, 3*-25, 3*10,
- (int8_t) 255, 3*27, 3*4,
- 0, 3*-19, 3*-10,
- (int8_t) 255, 3*27, 3*4,
- 0, 3*-28, 3*-17,
- (int8_t) 255, 3*26, 3*4,
- 0, 3*-8, 3*5,
- (int8_t) 255, 3*2, 3*14,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-2, 3*-13,
- (int8_t) 255, 3*-8, 3*5,
- 1
-};
+ 0, 3 * 2, 3 * 0,
+ (int8_t)255, 3 * 1, 3 * 14,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -1, 3 * -13,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 26, 3 * 4,
+ 0, 3 * -25, 3 * 10,
+ (int8_t)255, 3 * 27, 3 * 4,
+ 0, 3 * -19, 3 * -10,
+ (int8_t)255, 3 * 27, 3 * 4,
+ 0, 3 * -28, 3 * -17,
+ (int8_t)255, 3 * 26, 3 * 4,
+ 0, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 2, 3 * 14,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -2, 3 * -13,
+ (int8_t)255, 3 * -8, 3 * 5,
+ 1};
 const int8_t height2RisingLeft1[] = {
- 0, 3*12, 3*-3,
- (int8_t) 255, 3*-12, 3*3,
- (int8_t) 255, 3*8, 3*-5,
- (int8_t) 255, 3*12, 3*-4,
- (int8_t) 255, 3*-8, 3*6,
- (int8_t) 255, 3*12, 3*26,
- 0, 3*-24, 3*-23,
- (int8_t) 255, 3*13, 3*27,
- 0, 3*-5, 3*-32,
- (int8_t) 255, 3*13, 3*26,
- 0, 3*-1, 3*-30,
- (int8_t) 255, 3*12, 3*26,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*-11, 3*4,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*11, 3*-4,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 12, 3 * -3,
+ (int8_t)255, 3 * -12, 3 * 3,
+ (int8_t)255, 3 * 8, 3 * -5,
+ (int8_t)255, 3 * 12, 3 * -4,
+ (int8_t)255, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 12, 3 * 26,
+ 0, 3 * -24, 3 * -23,
+ (int8_t)255, 3 * 13, 3 * 27,
+ 0, 3 * -5, 3 * -32,
+ (int8_t)255, 3 * 13, 3 * 26,
+ 0, 3 * -1, 3 * -30,
+ (int8_t)255, 3 * 12, 3 * 26,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * -11, 3 * 4,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 11, 3 * -4,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2FallingBack1[] = {
- 0, 3*2, 3*0,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*6, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-6, 3*5,
- (int8_t) 255, 3*28, 3*-1,
- 0, 3*-25, 3*15,
- (int8_t) 255, 3*28, 3*-2,
- 0, 3*-22, 3*-4,
- (int8_t) 255, 3*28, 3*-2,
- 0, 3*-31, 3*-11,
- (int8_t) 255, 3*28, 3*-2,
- 0, 3*-6, 3*6,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*6, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-6, 3*6,
- 1
-};
+ 0, 3 * 2, 3 * 0,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 6, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -6, 3 * 5,
+ (int8_t)255, 3 * 28, 3 * -1,
+ 0, 3 * -25, 3 * 15,
+ (int8_t)255, 3 * 28, 3 * -2,
+ 0, 3 * -22, 3 * -4,
+ (int8_t)255, 3 * 28, 3 * -2,
+ 0, 3 * -31, 3 * -11,
+ (int8_t)255, 3 * 28, 3 * -2,
+ 0, 3 * -6, 3 * 6,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * 6, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -6, 3 * 6,
+ 1};
 const int8_t height2RisingFront1[] = {
- 0, 3*10, 3*2,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*-10, 3*-2,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*10, 3*2,
- (int8_t) 255, 3*23, 3*-11,
- 0, 3*-20, 3*25,
- (int8_t) 255, 3*23, 3*-12,
- 0, 3*-33, 3*10,
- (int8_t) 255, 3*22, 3*-12,
- 0, 3*-25, 3*-2,
- (int8_t) 255, 3*22, 3*-11,
- 0, 3*11, 3*2,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*-11, 3*-2,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*11, 3*2,
- 1
-};
+ 0, 3 * 10, 3 * 2,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * -10, 3 * -2,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * 10, 3 * 2,
+ (int8_t)255, 3 * 23, 3 * -11,
+ 0, 3 * -20, 3 * 25,
+ (int8_t)255, 3 * 23, 3 * -12,
+ 0, 3 * -33, 3 * 10,
+ (int8_t)255, 3 * 22, 3 * -12,
+ 0, 3 * -25, 3 * -2,
+ (int8_t)255, 3 * 22, 3 * -11,
+ 0, 3 * 11, 3 * 2,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * -11, 3 * -2,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * 11, 3 * 2,
+ 1};
 const int8_t height2FallingFront1[] = {
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*10, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-10, 3*5,
- (int8_t) 255, 3*24, 3*2,
- 0, 3*-21, 3*12,
- (int8_t) 255, 3*24, 3*2,
- 0, 3*-14, 3*-8,
- (int8_t) 255, 3*23, 3*2,
- 0, 3*-26, 3*-15,
- (int8_t) 255, 3*23, 3*2,
- 0, 3*-9, 3*5,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*9, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-9, 3*5,
- 1
-};
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 10, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -10, 3 * 5,
+ (int8_t)255, 3 * 24, 3 * 2,
+ 0, 3 * -21, 3 * 12,
+ (int8_t)255, 3 * 24, 3 * 2,
+ 0, 3 * -14, 3 * -8,
+ (int8_t)255, 3 * 23, 3 * 2,
+ 0, 3 * -26, 3 * -15,
+ (int8_t)255, 3 * 23, 3 * 2,
+ 0, 3 * -9, 3 * 5,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 9, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -9, 3 * 5,
+ 1};
 const int8_t height2RisingBack1[] = {
- 0, 3*16, 3*-11,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*15, 3*-2,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-15, 3*2,
- (int8_t) 255, 3*-9, 3*11,
- 0, 3*12, 3*2,
- (int8_t) 255, 3*-9, 3*12,
- 0, 3*24, 3*-14,
- (int8_t) 255, 3*-9, 3*12,
- 0, 3*6, 3*-25,
- (int8_t) 255, 3*-9, 3*12,
- 0, 3*-15, 3*1,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*15, 3*-2,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-15, 3*1,
- 1
-};
+ 0, 3 * 16, 3 * -11,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * 15, 3 * -2,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -15, 3 * 2,
+ (int8_t)255, 3 * -9, 3 * 11,
+ 0, 3 * 12, 3 * 2,
+ (int8_t)255, 3 * -9, 3 * 12,
+ 0, 3 * 24, 3 * -14,
+ (int8_t)255, 3 * -9, 3 * 12,
+ 0, 3 * 6, 3 * -25,
+ (int8_t)255, 3 * -9, 3 * 12,
+ 0, 3 * -15, 3 * 1,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 15, 3 * -2,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -15, 3 * 1,
+ 1};
 const int8_t depth2RollingLeft1[] = {
- (int8_t) 255, 3*5, 3*14,
- (int8_t) 255, 3*16, 3*-12,
- (int8_t) 255, 3*-5, 3*-13,
- (int8_t) 255, 3*-16, 3*11,
- (int8_t) 255, 3*12, 3*-1,
- 0, 3*-7, 3*15,
- (int8_t) 255, 3*12, 3*-2,
- 0, 3*4, 3*-10,
- (int8_t) 255, 3*12, 3*-2,
- 0, 3*-17, 3*-11,
- (int8_t) 255, 3*12, 3*-2,
- 0, 3*-16, 3*12,
- (int8_t) 255, 3*5, 3*13,
- (int8_t) 255, 3*16, 3*-12,
- (int8_t) 255, 3*-5, 3*-13,
- (int8_t) 255, 3*-16, 3*12,
- 1
-};
+ (int8_t)255, 3 * 5, 3 * 14,
+ (int8_t)255, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * -5, 3 * -13,
+ (int8_t)255, 3 * -16, 3 * 11,
+ (int8_t)255, 3 * 12, 3 * -1,
+ 0, 3 * -7, 3 * 15,
+ (int8_t)255, 3 * 12, 3 * -2,
+ 0, 3 * 4, 3 * -10,
+ (int8_t)255, 3 * 12, 3 * -2,
+ 0, 3 * -17, 3 * -11,
+ (int8_t)255, 3 * 12, 3 * -2,
+ 0, 3 * -16, 3 * 12,
+ (int8_t)255, 3 * 5, 3 * 13,
+ (int8_t)255, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * -5, 3 * -13,
+ (int8_t)255, 3 * -16, 3 * 12,
+ 1};
 const int8_t depth2RollingRight1[] = {
- 0, 3*2, 3*0,
- (int8_t) 255, 3*1, 3*14,
- (int8_t) 255, 3*16, 3*-12,
- (int8_t) 255, 3*-1, 3*-13,
- (int8_t) 255, 3*-16, 3*11,
- (int8_t) 255, 3*13, 3*2,
- 0, 3*-12, 3*12,
- (int8_t) 255, 3*13, 3*2,
- 0, 3*3, 3*-14,
- (int8_t) 255, 3*13, 3*2,
- 0, 3*-14, 3*-15,
- (int8_t) 255, 3*13, 3*2,
- 0, 3*-16, 3*11,
- (int8_t) 255, 3*1, 3*14,
- (int8_t) 255, 3*16, 3*-12,
- (int8_t) 255, 3*-1, 3*-13,
- (int8_t) 255, 3*-16, 3*11,
- 1
-};
+ 0, 3 * 2, 3 * 0,
+ (int8_t)255, 3 * 1, 3 * 14,
+ (int8_t)255, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * -1, 3 * -13,
+ (int8_t)255, 3 * -16, 3 * 11,
+ (int8_t)255, 3 * 13, 3 * 2,
+ 0, 3 * -12, 3 * 12,
+ (int8_t)255, 3 * 13, 3 * 2,
+ 0, 3 * 3, 3 * -14,
+ (int8_t)255, 3 * 13, 3 * 2,
+ 0, 3 * -14, 3 * -15,
+ (int8_t)255, 3 * 13, 3 * 2,
+ 0, 3 * -16, 3 * 11,
+ (int8_t)255, 3 * 1, 3 * 14,
+ (int8_t)255, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * -1, 3 * -13,
+ (int8_t)255, 3 * -16, 3 * 11,
+ 1};
 const int8_t width2RollingFront1[] = {
- (int8_t) 255, 3*6, 3*28,
- (int8_t) 255, 3*10, 3*-6,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*-10, 3*5,
- (int8_t) 255, 3*12, 3*1,
- 0, 3*-6, 3*27,
- (int8_t) 255, 3*12, 3*1,
- 0, 3*-2, 3*-7,
- (int8_t) 255, 3*11, 3*1,
- 0, 3*-17, 3*-28,
- (int8_t) 255, 3*11, 3*1,
- 0, 3*-9, 3*5,
- (int8_t) 255, 3*6, 3*28,
- (int8_t) 255, 3*9, 3*-6,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*-9, 3*5,
- 1
-};
+ (int8_t)255, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 10, 3 * -6,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * -10, 3 * 5,
+ (int8_t)255, 3 * 12, 3 * 1,
+ 0, 3 * -6, 3 * 27,
+ (int8_t)255, 3 * 12, 3 * 1,
+ 0, 3 * -2, 3 * -7,
+ (int8_t)255, 3 * 11, 3 * 1,
+ 0, 3 * -17, 3 * -28,
+ (int8_t)255, 3 * 11, 3 * 1,
+ 0, 3 * -9, 3 * 5,
+ (int8_t)255, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 9, 3 * -6,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * -9, 3 * 5,
+ 1};
 const int8_t width2RollingBack1[] = {
- 0, 3*2, 3*0,
- (int8_t) 255, 3*6, 3*28,
- (int8_t) 255, 3*6, 3*-6,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*-6, 3*5,
- (int8_t) 255, 3*14, 3*0,
- 0, 3*-8, 3*28,
- (int8_t) 255, 3*14, 3*-1,
- 0, 3*-8, 3*-5,
- (int8_t) 255, 3*14, 3*-1,
- 0, 3*-20, 3*-26,
- (int8_t) 255, 3*14, 3*-1,
- 0, 3*-6, 3*6,
- (int8_t) 255, 3*6, 3*27,
- (int8_t) 255, 3*6, 3*-6,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*-6, 3*6,
- 1
-};
+ 0, 3 * 2, 3 * 0,
+ (int8_t)255, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 6, 3 * -6,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * -6, 3 * 5,
+ (int8_t)255, 3 * 14, 3 * 0,
+ 0, 3 * -8, 3 * 28,
+ (int8_t)255, 3 * 14, 3 * -1,
+ 0, 3 * -8, 3 * -5,
+ (int8_t)255, 3 * 14, 3 * -1,
+ 0, 3 * -20, 3 * -26,
+ (int8_t)255, 3 * 14, 3 * -1,
+ 0, 3 * -6, 3 * 6,
+ (int8_t)255, 3 * 6, 3 * 27,
+ (int8_t)255, 3 * 6, 3 * -6,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * -6, 3 * 6,
+ 1};
 const int8_t height1FallingLeft1[] = {
- (int8_t) 255, 3*5, 3*14,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-5, 3*-13,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*12, 3*-1,
- 0, 3*-7, 3*15,
- (int8_t) 255, 3*12, 3*-2,
- 0, 3*-4, 3*-4,
- (int8_t) 255, 3*12, 3*-2,
- 0, 3*-17, 3*-11,
- (int8_t) 255, 3*12, 3*-2,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*5, 3*13,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-5, 3*-13,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ (int8_t)255, 3 * 5, 3 * 14,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -5, 3 * -13,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 12, 3 * -1,
+ 0, 3 * -7, 3 * 15,
+ (int8_t)255, 3 * 12, 3 * -2,
+ 0, 3 * -4, 3 * -4,
+ (int8_t)255, 3 * 12, 3 * -2,
+ 0, 3 * -17, 3 * -11,
+ (int8_t)255, 3 * 12, 3 * -2,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 5, 3 * 13,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -5, 3 * -13,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height1FallingRight1[] = {
- 0, 3*2, 3*0,
- (int8_t) 255, 3*1, 3*14,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-1, 3*-13,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*13, 3*2,
- 0, 3*-12, 3*12,
- (int8_t) 255, 3*13, 3*2,
- 0, 3*-5, 3*-8,
- (int8_t) 255, 3*13, 3*2,
- 0, 3*-14, 3*-15,
- (int8_t) 255, 3*13, 3*2,
- 0, 3*-8, 3*5,
- (int8_t) 255, 3*1, 3*14,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-1, 3*-13,
- (int8_t) 255, 3*-8, 3*5,
- 1
-};
+ 0, 3 * 2, 3 * 0,
+ (int8_t)255, 3 * 1, 3 * 14,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -1, 3 * -13,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 13, 3 * 2,
+ 0, 3 * -12, 3 * 12,
+ (int8_t)255, 3 * 13, 3 * 2,
+ 0, 3 * -5, 3 * -8,
+ (int8_t)255, 3 * 13, 3 * 2,
+ 0, 3 * -14, 3 * -15,
+ (int8_t)255, 3 * 13, 3 * 2,
+ 0, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 1, 3 * 14,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -1, 3 * -13,
+ (int8_t)255, 3 * -8, 3 * 5,
+ 1};
 const int8_t height1FallingBack1[] = {
- 0, 3*2, 3*0,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*6, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-6, 3*5,
- (int8_t) 255, 3*14, 3*0,
- 0, 3*-11, 3*14,
- (int8_t) 255, 3*14, 3*-1,
- 0, 3*-8, 3*-5,
- (int8_t) 255, 3*14, 3*-1,
- 0, 3*-17, 3*-12,
- (int8_t) 255, 3*14, 3*-1,
- 0, 3*-6, 3*6,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*6, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-6, 3*6,
- 1
-};
+ 0, 3 * 2, 3 * 0,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 6, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -6, 3 * 5,
+ (int8_t)255, 3 * 14, 3 * 0,
+ 0, 3 * -11, 3 * 14,
+ (int8_t)255, 3 * 14, 3 * -1,
+ 0, 3 * -8, 3 * -5,
+ (int8_t)255, 3 * 14, 3 * -1,
+ 0, 3 * -17, 3 * -12,
+ (int8_t)255, 3 * 14, 3 * -1,
+ 0, 3 * -6, 3 * 6,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * 6, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -6, 3 * 6,
+ 1};
 const int8_t height1FallingFront1[] = {
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*10, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-10, 3*5,
- (int8_t) 255, 3*12, 3*1,
- 0, 3*-9, 3*13,
- (int8_t) 255, 3*12, 3*1,
- 0, 3*-2, 3*-7,
- (int8_t) 255, 3*11, 3*1,
- 0, 3*-14, 3*-14,
- (int8_t) 255, 3*11, 3*1,
- 0, 3*-9, 3*5,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*9, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-9, 3*5,
- 1
-};
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 10, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -10, 3 * 5,
+ (int8_t)255, 3 * 12, 3 * 1,
+ 0, 3 * -9, 3 * 13,
+ (int8_t)255, 3 * 12, 3 * 1,
+ 0, 3 * -2, 3 * -7,
+ (int8_t)255, 3 * 11, 3 * 1,
+ 0, 3 * -14, 3 * -14,
+ (int8_t)255, 3 * 11, 3 * 1,
+ 0, 3 * -9, 3 * 5,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 9, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -9, 3 * 5,
+ 1};
 const int8_t height2FallingLeft2[] = {
- (int8_t) 255, 3*6, 3*14,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-6, 3*-13,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*24, 3*-6,
- 0, 3*-18, 3*20,
- (int8_t) 255, 3*24, 3*-8,
- 0, 3*-16, 3*2,
- (int8_t) 255, 3*24, 3*-8,
- 0, 3*-30, 3*-5,
- (int8_t) 255, 3*24, 3*-7,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*6, 3*12,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-6, 3*-12,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ (int8_t)255, 3 * 6, 3 * 14,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -6, 3 * -13,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 24, 3 * -6,
+ 0, 3 * -18, 3 * 20,
+ (int8_t)255, 3 * 24, 3 * -8,
+ 0, 3 * -16, 3 * 2,
+ (int8_t)255, 3 * 24, 3 * -8,
+ 0, 3 * -30, 3 * -5,
+ (int8_t)255, 3 * 24, 3 * -7,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 6, 3 * 12,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -6, 3 * -12,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2RisingRight2[] = {
- 0, 3*6, 3*28,
- (int8_t) 255, 3*13, 3*5,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-13, 3*-5,
- (int8_t) 255, 3*-8, 3*6,
- (int8_t) 255, 3*4, 3*-26,
- 0, 3*9, 3*31,
- (int8_t) 255, 3*5, 3*-26,
- 0, 3*3, 3*20,
- (int8_t) 255, 3*5, 3*-26,
- 0, 3*-18, 3*21,
- (int8_t) 255, 3*4, 3*-25,
- 0, 3*-8, 3*5,
- (int8_t) 255, 3*14, 3*5,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-14, 3*-4,
- (int8_t) 255, 3*-8, 3*5,
- 1
-};
+ 0, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 13, 3 * 5,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -13, 3 * -5,
+ (int8_t)255, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 4, 3 * -26,
+ 0, 3 * 9, 3 * 31,
+ (int8_t)255, 3 * 5, 3 * -26,
+ 0, 3 * 3, 3 * 20,
+ (int8_t)255, 3 * 5, 3 * -26,
+ 0, 3 * -18, 3 * 21,
+ (int8_t)255, 3 * 4, 3 * -25,
+ 0, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 14, 3 * 5,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -14, 3 * -4,
+ (int8_t)255, 3 * -8, 3 * 5,
+ 1};
 const int8_t height2FallingRight2[] = {
- 0, 3*3, 3*0,
- (int8_t) 255, 3*0, 3*14,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*0, 3*-13,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*27, 3*8,
- 0, 3*-27, 3*6,
- (int8_t) 255, 3*27, 3*7,
- 0, 3*-19, 3*-13,
- (int8_t) 255, 3*27, 3*7,
- 0, 3*-27, 3*-20,
- (int8_t) 255, 3*27, 3*7,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*0, 3*13,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*0, 3*-13,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 3, 3 * 0,
+ (int8_t)255, 3 * 0, 3 * 14,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 0, 3 * -13,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 27, 3 * 8,
+ 0, 3 * -27, 3 * 6,
+ (int8_t)255, 3 * 27, 3 * 7,
+ 0, 3 * -19, 3 * -13,
+ (int8_t)255, 3 * 27, 3 * 7,
+ 0, 3 * -27, 3 * -20,
+ (int8_t)255, 3 * 27, 3 * 7,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 0, 3 * 13,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 0, 3 * -13,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2RisingLeft2[] = {
- 0, 3*11, 3*-4,
- (int8_t) 255, 3*-11, 3*4,
- (int8_t) 255, 3*8, 3*-5,
- (int8_t) 255, 3*11, 3*-5,
- (int8_t) 255, 3*-8, 3*6,
- (int8_t) 255, 3*15, 3*25,
- 0, 3*-26, 3*-21,
- (int8_t) 255, 3*15, 3*26,
- 0, 3*-7, 3*-31,
- (int8_t) 255, 3*15, 3*25,
- 0, 3*-4, 3*-30,
- (int8_t) 255, 3*15, 3*25,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*-11, 3*5,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*11, 3*-5,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 11, 3 * -4,
+ (int8_t)255, 3 * -11, 3 * 4,
+ (int8_t)255, 3 * 8, 3 * -5,
+ (int8_t)255, 3 * 11, 3 * -5,
+ (int8_t)255, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 15, 3 * 25,
+ 0, 3 * -26, 3 * -21,
+ (int8_t)255, 3 * 15, 3 * 26,
+ 0, 3 * -7, 3 * -31,
+ (int8_t)255, 3 * 15, 3 * 25,
+ 0, 3 * -4, 3 * -30,
+ (int8_t)255, 3 * 15, 3 * 25,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * -11, 3 * 5,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 11, 3 * -5,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2FallingBack2[] = {
- 0, 3*4, 3*0,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*4, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-4, 3*5,
- (int8_t) 255, 3*29, 3*-2,
- 0, 3*-26, 3*16,
- (int8_t) 255, 3*29, 3*-3,
- 0, 3*-25, 3*-3,
- (int8_t) 255, 3*29, 3*-3,
- 0, 3*-32, 3*-10,
- (int8_t) 255, 3*29, 3*-3,
- 0, 3*-4, 3*6,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*4, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-4, 3*6,
- 1
-};
+ 0, 3 * 4, 3 * 0,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 4, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -4, 3 * 5,
+ (int8_t)255, 3 * 29, 3 * -2,
+ 0, 3 * -26, 3 * 16,
+ (int8_t)255, 3 * 29, 3 * -3,
+ 0, 3 * -25, 3 * -3,
+ (int8_t)255, 3 * 29, 3 * -3,
+ 0, 3 * -32, 3 * -10,
+ (int8_t)255, 3 * 29, 3 * -3,
+ 0, 3 * -4, 3 * 6,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * 4, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -4, 3 * 6,
+ 1};
 const int8_t height2RisingFront2[] = {
- 0, 3*9, 3*2,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*-9, 3*-2,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*9, 3*2,
- (int8_t) 255, 3*25, 3*-10,
- 0, 3*-22, 3*24,
- (int8_t) 255, 3*25, 3*-11,
- 0, 3*-34, 3*9,
- (int8_t) 255, 3*25, 3*-11,
- 0, 3*-28, 3*-3,
- (int8_t) 255, 3*25, 3*-10,
- 0, 3*9, 3*2,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*-9, 3*-2,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*9, 3*2,
- 1
-};
+ 0, 3 * 9, 3 * 2,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * -9, 3 * -2,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * 9, 3 * 2,
+ (int8_t)255, 3 * 25, 3 * -10,
+ 0, 3 * -22, 3 * 24,
+ (int8_t)255, 3 * 25, 3 * -11,
+ 0, 3 * -34, 3 * 9,
+ (int8_t)255, 3 * 25, 3 * -11,
+ 0, 3 * -28, 3 * -3,
+ (int8_t)255, 3 * 25, 3 * -10,
+ 0, 3 * 9, 3 * 2,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * -9, 3 * -2,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * 9, 3 * 2,
+ 1};
 const int8_t height2FallingFront2[] = {
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*11, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-11, 3*5,
- (int8_t) 255, 3*21, 3*3,
- 0, 3*-18, 3*11,
- (int8_t) 255, 3*21, 3*3,
- 0, 3*-10, 3*-9,
- (int8_t) 255, 3*21, 3*3,
- 0, 3*-24, 3*-16,
- (int8_t) 255, 3*21, 3*3,
- 0, 3*-11, 3*5,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*11, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-11, 3*5,
- 1
-};
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 11, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -11, 3 * 5,
+ (int8_t)255, 3 * 21, 3 * 3,
+ 0, 3 * -18, 3 * 11,
+ (int8_t)255, 3 * 21, 3 * 3,
+ 0, 3 * -10, 3 * -9,
+ (int8_t)255, 3 * 21, 3 * 3,
+ 0, 3 * -24, 3 * -16,
+ (int8_t)255, 3 * 21, 3 * 3,
+ 0, 3 * -11, 3 * 5,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 11, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -11, 3 * 5,
+ 1};
 const int8_t height2RisingBack2[] = {
- 0, 3*16, 3*-11,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*15, 3*-2,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-15, 3*2,
- (int8_t) 255, 3*-5, 3*11,
- 0, 3*8, 3*2,
- (int8_t) 255, 3*-5, 3*11,
- 0, 3*20, 3*-13,
- (int8_t) 255, 3*-5, 3*11,
- 0, 3*2, 3*-24,
- (int8_t) 255, 3*-5, 3*11,
- 0, 3*-15, 3*2,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*15, 3*-2,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-15, 3*2,
- 1
-};
+ 0, 3 * 16, 3 * -11,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * 15, 3 * -2,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -15, 3 * 2,
+ (int8_t)255, 3 * -5, 3 * 11,
+ 0, 3 * 8, 3 * 2,
+ (int8_t)255, 3 * -5, 3 * 11,
+ 0, 3 * 20, 3 * -13,
+ (int8_t)255, 3 * -5, 3 * 11,
+ 0, 3 * 2, 3 * -24,
+ (int8_t)255, 3 * -5, 3 * 11,
+ 0, 3 * -15, 3 * 2,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * 15, 3 * -2,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -15, 3 * 2,
+ 1};
 const int8_t depth2RollingLeft2[] = {
- (int8_t) 255, 3*6, 3*14,
- (int8_t) 255, 3*16, 3*-12,
- (int8_t) 255, 3*-6, 3*-13,
- (int8_t) 255, 3*-16, 3*11,
- (int8_t) 255, 3*12, 3*-3,
- 0, 3*-6, 3*17,
- (int8_t) 255, 3*12, 3*-4,
- 0, 3*4, 3*-8,
- (int8_t) 255, 3*12, 3*-3,
- 0, 3*-18, 3*-10,
- (int8_t) 255, 3*12, 3*-4,
- 0, 3*-16, 3*12,
- (int8_t) 255, 3*6, 3*13,
- (int8_t) 255, 3*16, 3*-11,
- (int8_t) 255, 3*-6, 3*-14,
- (int8_t) 255, 3*-16, 3*12,
- 1
-};
+ (int8_t)255, 3 * 6, 3 * 14,
+ (int8_t)255, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * -6, 3 * -13,
+ (int8_t)255, 3 * -16, 3 * 11,
+ (int8_t)255, 3 * 12, 3 * -3,
+ 0, 3 * -6, 3 * 17,
+ (int8_t)255, 3 * 12, 3 * -4,
+ 0, 3 * 4, 3 * -8,
+ (int8_t)255, 3 * 12, 3 * -3,
+ 0, 3 * -18, 3 * -10,
+ (int8_t)255, 3 * 12, 3 * -4,
+ 0, 3 * -16, 3 * 12,
+ (int8_t)255, 3 * 6, 3 * 13,
+ (int8_t)255, 3 * 16, 3 * -11,
+ (int8_t)255, 3 * -6, 3 * -14,
+ (int8_t)255, 3 * -16, 3 * 12,
+ 1};
 const int8_t depth2RollingRight2[] = {
- 0, 3*3, 3*0,
- (int8_t) 255, 3*0, 3*14,
- (int8_t) 255, 3*16, 3*-12,
- (int8_t) 255, 3*0, 3*-13,
- (int8_t) 255, 3*-16, 3*11,
- (int8_t) 255, 3*14, 3*4,
- 0, 3*-14, 3*10,
- (int8_t) 255, 3*13, 3*4,
- 0, 3*3, 3*-16,
- (int8_t) 255, 3*13, 3*4,
- 0, 3*-13, 3*-17,
- (int8_t) 255, 3*14, 3*4,
- 0, 3*-16, 3*11,
- (int8_t) 255, 3*-1, 3*14,
- (int8_t) 255, 3*16, 3*-12,
- (int8_t) 255, 3*1, 3*-13,
- (int8_t) 255, 3*-16, 3*11,
- 1
-};
+ 0, 3 * 3, 3 * 0,
+ (int8_t)255, 3 * 0, 3 * 14,
+ (int8_t)255, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * 0, 3 * -13,
+ (int8_t)255, 3 * -16, 3 * 11,
+ (int8_t)255, 3 * 14, 3 * 4,
+ 0, 3 * -14, 3 * 10,
+ (int8_t)255, 3 * 13, 3 * 4,
+ 0, 3 * 3, 3 * -16,
+ (int8_t)255, 3 * 13, 3 * 4,
+ 0, 3 * -13, 3 * -17,
+ (int8_t)255, 3 * 14, 3 * 4,
+ 0, 3 * -16, 3 * 11,
+ (int8_t)255, 3 * -1, 3 * 14,
+ (int8_t)255, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * 1, 3 * -13,
+ (int8_t)255, 3 * -16, 3 * 11,
+ 1};
 const int8_t width2RollingFront2[] = {
- (int8_t) 255, 3*6, 3*28,
- (int8_t) 255, 3*11, 3*-6,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*-11, 3*5,
- (int8_t) 255, 3*10, 3*2,
- 0, 3*-4, 3*26,
- (int8_t) 255, 3*10, 3*2,
- 0, 3*1, 3*-8,
- (int8_t) 255, 3*11, 3*2,
- 0, 3*-17, 3*-29,
- (int8_t) 255, 3*11, 3*2,
- 0, 3*-12, 3*5,
- (int8_t) 255, 3*6, 3*28,
- (int8_t) 255, 3*12, 3*-6,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*-12, 3*5,
- 1
-};
+ (int8_t)255, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 11, 3 * -6,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * -11, 3 * 5,
+ (int8_t)255, 3 * 10, 3 * 2,
+ 0, 3 * -4, 3 * 26,
+ (int8_t)255, 3 * 10, 3 * 2,
+ 0, 3 * 1, 3 * -8,
+ (int8_t)255, 3 * 11, 3 * 2,
+ 0, 3 * -17, 3 * -29,
+ (int8_t)255, 3 * 11, 3 * 2,
+ 0, 3 * -12, 3 * 5,
+ (int8_t)255, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 12, 3 * -6,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * -12, 3 * 5,
+ 1};
 const int8_t width2RollingBack2[] = {
- 0, 3*4, 3*0,
- (int8_t) 255, 3*6, 3*28,
- (int8_t) 255, 3*4, 3*-6,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*-4, 3*5,
- (int8_t) 255, 3*14, 3*-1,
- 0, 3*-8, 3*29,
- (int8_t) 255, 3*14, 3*-2,
- 0, 3*-10, 3*-4,
- (int8_t) 255, 3*15, 3*-2,
- 0, 3*-21, 3*-25,
- (int8_t) 255, 3*15, 3*-2,
- 0, 3*-5, 3*6,
- (int8_t) 255, 3*6, 3*27,
- (int8_t) 255, 3*5, 3*-6,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*-5, 3*6,
- 1
-};
+ 0, 3 * 4, 3 * 0,
+ (int8_t)255, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 4, 3 * -6,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * -4, 3 * 5,
+ (int8_t)255, 3 * 14, 3 * -1,
+ 0, 3 * -8, 3 * 29,
+ (int8_t)255, 3 * 14, 3 * -2,
+ 0, 3 * -10, 3 * -4,
+ (int8_t)255, 3 * 15, 3 * -2,
+ 0, 3 * -21, 3 * -25,
+ (int8_t)255, 3 * 15, 3 * -2,
+ 0, 3 * -5, 3 * 6,
+ (int8_t)255, 3 * 6, 3 * 27,
+ (int8_t)255, 3 * 5, 3 * -6,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * -5, 3 * 6,
+ 1};
 const int8_t height1FallingLeft2[] = {
- (int8_t) 255, 3*6, 3*14,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-6, 3*-13,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*12, 3*-3,
- 0, 3*-6, 3*17,
- (int8_t) 255, 3*12, 3*-4,
- 0, 3*-4, 3*-2,
- (int8_t) 255, 3*12, 3*-4,
- 0, 3*-18, 3*-9,
- (int8_t) 255, 3*12, 3*-4,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*6, 3*13,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-6, 3*-13,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ (int8_t)255, 3 * 6, 3 * 14,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -6, 3 * -13,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 12, 3 * -3,
+ 0, 3 * -6, 3 * 17,
+ (int8_t)255, 3 * 12, 3 * -4,
+ 0, 3 * -4, 3 * -2,
+ (int8_t)255, 3 * 12, 3 * -4,
+ 0, 3 * -18, 3 * -9,
+ (int8_t)255, 3 * 12, 3 * -4,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 6, 3 * 13,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -6, 3 * -13,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height1FallingRight2[] = {
- 0, 3*3, 3*0,
- (int8_t) 255, 3*0, 3*14,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*0, 3*-13,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*14, 3*4,
- 0, 3*-14, 3*10,
- (int8_t) 255, 3*13, 3*4,
- 0, 3*-5, 3*-10,
- (int8_t) 255, 3*13, 3*4,
- 0, 3*-13, 3*-17,
- (int8_t) 255, 3*14, 3*4,
- 0, 3*-8, 3*5,
- (int8_t) 255, 3*-1, 3*14,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*1, 3*-13,
- (int8_t) 255, 3*-8, 3*5,
- 1
-};
+ 0, 3 * 3, 3 * 0,
+ (int8_t)255, 3 * 0, 3 * 14,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 0, 3 * -13,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 14, 3 * 4,
+ 0, 3 * -14, 3 * 10,
+ (int8_t)255, 3 * 13, 3 * 4,
+ 0, 3 * -5, 3 * -10,
+ (int8_t)255, 3 * 13, 3 * 4,
+ 0, 3 * -13, 3 * -17,
+ (int8_t)255, 3 * 14, 3 * 4,
+ 0, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * -1, 3 * 14,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 1, 3 * -13,
+ (int8_t)255, 3 * -8, 3 * 5,
+ 1};
 const int8_t height1FallingBack2[] = {
- 0, 3*4, 3*0,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*4, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-4, 3*5,
- (int8_t) 255, 3*14, 3*-1,
- 0, 3*-11, 3*15,
- (int8_t) 255, 3*14, 3*-2,
- 0, 3*-10, 3*-4,
- (int8_t) 255, 3*15, 3*-2,
- 0, 3*-18, 3*-11,
- (int8_t) 255, 3*15, 3*-2,
- 0, 3*-5, 3*6,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*5, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-5, 3*6,
- 1
-};
+ 0, 3 * 4, 3 * 0,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 4, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -4, 3 * 5,
+ (int8_t)255, 3 * 14, 3 * -1,
+ 0, 3 * -11, 3 * 15,
+ (int8_t)255, 3 * 14, 3 * -2,
+ 0, 3 * -10, 3 * -4,
+ (int8_t)255, 3 * 15, 3 * -2,
+ 0, 3 * -18, 3 * -11,
+ (int8_t)255, 3 * 15, 3 * -2,
+ 0, 3 * -5, 3 * 6,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * 5, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -5, 3 * 6,
+ 1};
 const int8_t height1FallingFront2[] = {
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*11, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-11, 3*5,
- (int8_t) 255, 3*10, 3*2,
- 0, 3*-7, 3*12,
- (int8_t) 255, 3*10, 3*2,
- 0, 3*1, 3*-8,
- (int8_t) 255, 3*11, 3*2,
- 0, 3*-14, 3*-15,
- (int8_t) 255, 3*11, 3*2,
- 0, 3*-12, 3*5,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*12, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-12, 3*5,
- 1
-};
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 11, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -11, 3 * 5,
+ (int8_t)255, 3 * 10, 3 * 2,
+ 0, 3 * -7, 3 * 12,
+ (int8_t)255, 3 * 10, 3 * 2,
+ 0, 3 * 1, 3 * -8,
+ (int8_t)255, 3 * 11, 3 * 2,
+ 0, 3 * -14, 3 * -15,
+ (int8_t)255, 3 * 11, 3 * 2,
+ 0, 3 * -12, 3 * 5,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 12, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -12, 3 * 5,
+ 1};
 const int8_t height2FallingLeft3[] = {
- (int8_t) 255, 3*8, 3*13,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-8, 3*-12,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*22, 3*-10,
- 0, 3*-14, 3*23,
- (int8_t) 255, 3*21, 3*-11,
- 0, 3*-13, 3*5,
- (int8_t) 255, 3*21, 3*-10,
- 0, 3*-29, 3*-2,
- (int8_t) 255, 3*22, 3*-11,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*7, 3*12,
- (int8_t) 255, 3*8, 3*-5,
- (int8_t) 255, 3*-7, 3*-13,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ (int8_t)255, 3 * 8, 3 * 13,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -8, 3 * -12,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 22, 3 * -10,
+ 0, 3 * -14, 3 * 23,
+ (int8_t)255, 3 * 21, 3 * -11,
+ 0, 3 * -13, 3 * 5,
+ (int8_t)255, 3 * 21, 3 * -10,
+ 0, 3 * -29, 3 * -2,
+ (int8_t)255, 3 * 22, 3 * -11,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 7, 3 * 12,
+ (int8_t)255, 3 * 8, 3 * -5,
+ (int8_t)255, 3 * -7, 3 * -13,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2RisingRight3[] = {
- 0, 3*6, 3*28,
- (int8_t) 255, 3*13, 3*7,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-13, 3*-7,
- (int8_t) 255, 3*-8, 3*6,
- (int8_t) 255, 3*8, 3*-24,
- 0, 3*5, 3*31,
- (int8_t) 255, 3*8, 3*-24,
- 0, 3*0, 3*18,
- (int8_t) 255, 3*8, 3*-24,
- 0, 3*-21, 3*17,
- (int8_t) 255, 3*8, 3*-23,
- 0, 3*-8, 3*5,
- (int8_t) 255, 3*13, 3*7,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-13, 3*-6,
- (int8_t) 255, 3*-8, 3*5,
- 1
-};
+ 0, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 13, 3 * 7,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -13, 3 * -7,
+ (int8_t)255, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 8, 3 * -24,
+ 0, 3 * 5, 3 * 31,
+ (int8_t)255, 3 * 8, 3 * -24,
+ 0, 3 * 0, 3 * 18,
+ (int8_t)255, 3 * 8, 3 * -24,
+ 0, 3 * -21, 3 * 17,
+ (int8_t)255, 3 * 8, 3 * -23,
+ 0, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 13, 3 * 7,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -13, 3 * -6,
+ (int8_t)255, 3 * -8, 3 * 5,
+ 1};
 const int8_t height2FallingRight3[] = {
- 0, 3*5, 3*1,
- (int8_t) 255, 3*-2, 3*13,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*2, 3*-12,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*27, 3*11,
- 0, 3*-29, 3*2,
- (int8_t) 255, 3*26, 3*11,
- 0, 3*-18, 3*-17,
- (int8_t) 255, 3*26, 3*11,
- 0, 3*-24, 3*-23,
- (int8_t) 255, 3*27, 3*10,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*-3, 3*13,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*3, 3*-13,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 5, 3 * 1,
+ (int8_t)255, 3 * -2, 3 * 13,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 2, 3 * -12,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 27, 3 * 11,
+ 0, 3 * -29, 3 * 2,
+ (int8_t)255, 3 * 26, 3 * 11,
+ 0, 3 * -18, 3 * -17,
+ (int8_t)255, 3 * 26, 3 * 11,
+ 0, 3 * -24, 3 * -23,
+ (int8_t)255, 3 * 27, 3 * 10,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * -3, 3 * 13,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 3, 3 * -13,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2RisingLeft3[] = {
- 0, 3*10, 3*-6,
- (int8_t) 255, 3*-10, 3*6,
- (int8_t) 255, 3*8, 3*-5,
- (int8_t) 255, 3*10, 3*-7,
- (int8_t) 255, 3*-8, 3*6,
- (int8_t) 255, 3*18, 3*23,
- 0, 3*-28, 3*-17,
- (int8_t) 255, 3*18, 3*24,
- 0, 3*-10, 3*-29,
- (int8_t) 255, 3*18, 3*23,
- 0, 3*-8, 3*-30,
- (int8_t) 255, 3*18, 3*23,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*-10, 3*7,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*10, 3*-7,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 10, 3 * -6,
+ (int8_t)255, 3 * -10, 3 * 6,
+ (int8_t)255, 3 * 8, 3 * -5,
+ (int8_t)255, 3 * 10, 3 * -7,
+ (int8_t)255, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 18, 3 * 23,
+ 0, 3 * -28, 3 * -17,
+ (int8_t)255, 3 * 18, 3 * 24,
+ 0, 3 * -10, 3 * -29,
+ (int8_t)255, 3 * 18, 3 * 23,
+ 0, 3 * -8, 3 * -30,
+ (int8_t)255, 3 * 18, 3 * 23,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * -10, 3 * 7,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 10, 3 * -7,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2FallingBack3[] = {
- 0, 3*6, 3*0,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*2, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-2, 3*5,
- (int8_t) 255, 3*30, 3*-4,
- 0, 3*-27, 3*18,
- (int8_t) 255, 3*30, 3*-5,
- 0, 3*-28, 3*-1,
- (int8_t) 255, 3*30, 3*-5,
- 0, 3*-33, 3*-8,
- (int8_t) 255, 3*30, 3*-5,
- 0, 3*-2, 3*6,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*2, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-2, 3*6,
- 1
-};
+ 0, 3 * 6, 3 * 0,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 2, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -2, 3 * 5,
+ (int8_t)255, 3 * 30, 3 * -4,
+ 0, 3 * -27, 3 * 18,
+ (int8_t)255, 3 * 30, 3 * -5,
+ 0, 3 * -28, 3 * -1,
+ (int8_t)255, 3 * 30, 3 * -5,
+ 0, 3 * -33, 3 * -8,
+ (int8_t)255, 3 * 30, 3 * -5,
+ 0, 3 * -2, 3 * 6,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * 2, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -2, 3 * 6,
+ 1};
 const int8_t height2RisingFront3[] = {
- 0, 3*7, 3*3,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*-7, 3*-3,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*7, 3*3,
- (int8_t) 255, 3*27, 3*-9,
- 0, 3*-24, 3*23,
- (int8_t) 255, 3*27, 3*-10,
- 0, 3*-34, 3*7,
- (int8_t) 255, 3*27, 3*-10,
- 0, 3*-30, 3*-4,
- (int8_t) 255, 3*27, 3*-9,
- 0, 3*7, 3*3,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*-7, 3*-3,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*7, 3*3,
- 1
-};
+ 0, 3 * 7, 3 * 3,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * -7, 3 * -3,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * 7, 3 * 3,
+ (int8_t)255, 3 * 27, 3 * -9,
+ 0, 3 * -24, 3 * 23,
+ (int8_t)255, 3 * 27, 3 * -10,
+ 0, 3 * -34, 3 * 7,
+ (int8_t)255, 3 * 27, 3 * -10,
+ 0, 3 * -30, 3 * -4,
+ (int8_t)255, 3 * 27, 3 * -9,
+ 0, 3 * 7, 3 * 3,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * -7, 3 * -3,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * 7, 3 * 3,
+ 1};
 const int8_t height2FallingFront3[] = {
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*12, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-12, 3*5,
- (int8_t) 255, 3*18, 3*5,
- 0, 3*-15, 3*9,
- (int8_t) 255, 3*18, 3*5,
- 0, 3*-6, 3*-11,
- (int8_t) 255, 3*18, 3*5,
- 0, 3*-21, 3*-18,
- (int8_t) 255, 3*18, 3*5,
- 0, 3*-12, 3*5,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*12, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-12, 3*5,
- 1
-};
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 12, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -12, 3 * 5,
+ (int8_t)255, 3 * 18, 3 * 5,
+ 0, 3 * -15, 3 * 9,
+ (int8_t)255, 3 * 18, 3 * 5,
+ 0, 3 * -6, 3 * -11,
+ (int8_t)255, 3 * 18, 3 * 5,
+ 0, 3 * -21, 3 * -18,
+ (int8_t)255, 3 * 18, 3 * 5,
+ 0, 3 * -12, 3 * 5,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 12, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -12, 3 * 5,
+ 1};
 const int8_t height2RisingBack3[] = {
- 0, 3*16, 3*-11,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*15, 3*-2,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-15, 3*3,
- (int8_t) 255, 3*-1, 3*10,
- 0, 3*4, 3*3,
- (int8_t) 255, 3*-1, 3*10,
- 0, 3*16, 3*-12,
- (int8_t) 255, 3*-1, 3*9,
- 0, 3*-2, 3*-23,
- (int8_t) 255, 3*-1, 3*10,
- 0, 3*-15, 3*3,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*15, 3*-3,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-15, 3*3,
- 1
-};
+ 0, 3 * 16, 3 * -11,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * 15, 3 * -2,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -15, 3 * 3,
+ (int8_t)255, 3 * -1, 3 * 10,
+ 0, 3 * 4, 3 * 3,
+ (int8_t)255, 3 * -1, 3 * 10,
+ 0, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * -1, 3 * 9,
+ 0, 3 * -2, 3 * -23,
+ (int8_t)255, 3 * -1, 3 * 10,
+ 0, 3 * -15, 3 * 3,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * 15, 3 * -3,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -15, 3 * 3,
+ 1};
 const int8_t depth2RollingLeft3[] = {
- (int8_t) 255, 3*8, 3*13,
- (int8_t) 255, 3*16, 3*-12,
- (int8_t) 255, 3*-8, 3*-12,
- (int8_t) 255, 3*-16, 3*11,
- (int8_t) 255, 3*11, 3*-4,
- 0, 3*-3, 3*17,
- (int8_t) 255, 3*11, 3*-5,
- 0, 3*5, 3*-7,
- (int8_t) 255, 3*11, 3*-4,
- 0, 3*-19, 3*-8,
- (int8_t) 255, 3*11, 3*-5,
- 0, 3*-16, 3*12,
- (int8_t) 255, 3*8, 3*12,
- (int8_t) 255, 3*16, 3*-11,
- (int8_t) 255, 3*-8, 3*-13,
- (int8_t) 255, 3*-16, 3*12,
- 1
-};
+ (int8_t)255, 3 * 8, 3 * 13,
+ (int8_t)255, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * -8, 3 * -12,
+ (int8_t)255, 3 * -16, 3 * 11,
+ (int8_t)255, 3 * 11, 3 * -4,
+ 0, 3 * -3, 3 * 17,
+ (int8_t)255, 3 * 11, 3 * -5,
+ 0, 3 * 5, 3 * -7,
+ (int8_t)255, 3 * 11, 3 * -4,
+ 0, 3 * -19, 3 * -8,
+ (int8_t)255, 3 * 11, 3 * -5,
+ 0, 3 * -16, 3 * 12,
+ (int8_t)255, 3 * 8, 3 * 12,
+ (int8_t)255, 3 * 16, 3 * -11,
+ (int8_t)255, 3 * -8, 3 * -13,
+ (int8_t)255, 3 * -16, 3 * 12,
+ 1};
 const int8_t depth2RollingRight3[] = {
- 0, 3*5, 3*1,
- (int8_t) 255, 3*-2, 3*13,
- (int8_t) 255, 3*16, 3*-12,
- (int8_t) 255, 3*2, 3*-12,
- (int8_t) 255, 3*-16, 3*11,
- (int8_t) 255, 3*13, 3*5,
- 0, 3*-15, 3*8,
- (int8_t) 255, 3*13, 3*5,
- 0, 3*3, 3*-17,
- (int8_t) 255, 3*13, 3*5,
- 0, 3*-11, 3*-17,
- (int8_t) 255, 3*13, 3*5,
- 0, 3*-16, 3*11,
- (int8_t) 255, 3*-2, 3*13,
- (int8_t) 255, 3*16, 3*-12,
- (int8_t) 255, 3*2, 3*-12,
- (int8_t) 255, 3*-16, 3*11,
- 1
-};
+ 0, 3 * 5, 3 * 1,
+ (int8_t)255, 3 * -2, 3 * 13,
+ (int8_t)255, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * 2, 3 * -12,
+ (int8_t)255, 3 * -16, 3 * 11,
+ (int8_t)255, 3 * 13, 3 * 5,
+ 0, 3 * -15, 3 * 8,
+ (int8_t)255, 3 * 13, 3 * 5,
+ 0, 3 * 3, 3 * -17,
+ (int8_t)255, 3 * 13, 3 * 5,
+ 0, 3 * -11, 3 * -17,
+ (int8_t)255, 3 * 13, 3 * 5,
+ 0, 3 * -16, 3 * 11,
+ (int8_t)255, 3 * -2, 3 * 13,
+ (int8_t)255, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * 2, 3 * -12,
+ (int8_t)255, 3 * -16, 3 * 11,
+ 1};
 const int8_t width2RollingFront3[] = {
- (int8_t) 255, 3*6, 3*28,
- (int8_t) 255, 3*12, 3*-6,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*-12, 3*5,
- (int8_t) 255, 3*9, 3*2,
- 0, 3*-3, 3*26,
- (int8_t) 255, 3*9, 3*2,
- 0, 3*3, 3*-8,
- (int8_t) 255, 3*9, 3*3,
- 0, 3*-15, 3*-30,
- (int8_t) 255, 3*9, 3*3,
- 0, 3*-12, 3*4,
- (int8_t) 255, 3*6, 3*28,
- (int8_t) 255, 3*12, 3*-5,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*-12, 3*4,
- 1
-};
+ (int8_t)255, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 12, 3 * -6,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * -12, 3 * 5,
+ (int8_t)255, 3 * 9, 3 * 2,
+ 0, 3 * -3, 3 * 26,
+ (int8_t)255, 3 * 9, 3 * 2,
+ 0, 3 * 3, 3 * -8,
+ (int8_t)255, 3 * 9, 3 * 3,
+ 0, 3 * -15, 3 * -30,
+ (int8_t)255, 3 * 9, 3 * 3,
+ 0, 3 * -12, 3 * 4,
+ (int8_t)255, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 12, 3 * -5,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * -12, 3 * 4,
+ 1};
 const int8_t width2RollingBack3[] = {
- 0, 3*6, 3*0,
- (int8_t) 255, 3*6, 3*28,
- (int8_t) 255, 3*2, 3*-6,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*-2, 3*5,
- (int8_t) 255, 3*15, 3*-2,
- 0, 3*-9, 3*30,
- (int8_t) 255, 3*15, 3*-3,
- 0, 3*-13, 3*-3,
- (int8_t) 255, 3*15, 3*-2,
- 0, 3*-21, 3*-25,
- (int8_t) 255, 3*15, 3*-2,
- 0, 3*-2, 3*5,
- (int8_t) 255, 3*6, 3*27,
- (int8_t) 255, 3*2, 3*-5,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*-2, 3*5,
- 1
-};
+ 0, 3 * 6, 3 * 0,
+ (int8_t)255, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 2, 3 * -6,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * -2, 3 * 5,
+ (int8_t)255, 3 * 15, 3 * -2,
+ 0, 3 * -9, 3 * 30,
+ (int8_t)255, 3 * 15, 3 * -3,
+ 0, 3 * -13, 3 * -3,
+ (int8_t)255, 3 * 15, 3 * -2,
+ 0, 3 * -21, 3 * -25,
+ (int8_t)255, 3 * 15, 3 * -2,
+ 0, 3 * -2, 3 * 5,
+ (int8_t)255, 3 * 6, 3 * 27,
+ (int8_t)255, 3 * 2, 3 * -5,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * -2, 3 * 5,
+ 1};
 const int8_t height1FallingLeft3[] = {
- (int8_t) 255, 3*8, 3*13,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-8, 3*-12,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*11, 3*-4,
- 0, 3*-3, 3*17,
- (int8_t) 255, 3*11, 3*-5,
- 0, 3*-3, 3*-1,
- (int8_t) 255, 3*11, 3*-5,
- 0, 3*-19, 3*-7,
- (int8_t) 255, 3*11, 3*-5,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*8, 3*12,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-8, 3*-12,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ (int8_t)255, 3 * 8, 3 * 13,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -8, 3 * -12,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 11, 3 * -4,
+ 0, 3 * -3, 3 * 17,
+ (int8_t)255, 3 * 11, 3 * -5,
+ 0, 3 * -3, 3 * -1,
+ (int8_t)255, 3 * 11, 3 * -5,
+ 0, 3 * -19, 3 * -7,
+ (int8_t)255, 3 * 11, 3 * -5,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 8, 3 * 12,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -8, 3 * -12,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height1FallingRight3[] = {
- 0, 3*5, 3*1,
- (int8_t) 255, 3*-2, 3*13,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*2, 3*-12,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*13, 3*5,
- 0, 3*-15, 3*8,
- (int8_t) 255, 3*13, 3*5,
- 0, 3*-5, 3*-11,
- (int8_t) 255, 3*13, 3*5,
- 0, 3*-11, 3*-17,
- (int8_t) 255, 3*13, 3*4,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*-2, 3*13,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*2, 3*-13,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 5, 3 * 1,
+ (int8_t)255, 3 * -2, 3 * 13,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 2, 3 * -12,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 13, 3 * 5,
+ 0, 3 * -15, 3 * 8,
+ (int8_t)255, 3 * 13, 3 * 5,
+ 0, 3 * -5, 3 * -11,
+ (int8_t)255, 3 * 13, 3 * 5,
+ 0, 3 * -11, 3 * -17,
+ (int8_t)255, 3 * 13, 3 * 4,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * -2, 3 * 13,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 2, 3 * -13,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height1FallingBack3[] = {
- 0, 3*6, 3*0,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*2, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-2, 3*5,
- (int8_t) 255, 3*15, 3*-2,
- 0, 3*-12, 3*16,
- (int8_t) 255, 3*15, 3*-3,
- 0, 3*-13, 3*-3,
- (int8_t) 255, 3*15, 3*-2,
- 0, 3*-18, 3*-11,
- (int8_t) 255, 3*15, 3*-2,
- 0, 3*-2, 3*5,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*2, 3*-5,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-2, 3*5,
- 1
-};
+ 0, 3 * 6, 3 * 0,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 2, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -2, 3 * 5,
+ (int8_t)255, 3 * 15, 3 * -2,
+ 0, 3 * -12, 3 * 16,
+ (int8_t)255, 3 * 15, 3 * -3,
+ 0, 3 * -13, 3 * -3,
+ (int8_t)255, 3 * 15, 3 * -2,
+ 0, 3 * -18, 3 * -11,
+ (int8_t)255, 3 * 15, 3 * -2,
+ 0, 3 * -2, 3 * 5,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * 2, 3 * -5,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -2, 3 * 5,
+ 1};
 const int8_t height1FallingFront3[] = {
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*12, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-12, 3*5,
- (int8_t) 255, 3*9, 3*2,
- 0, 3*-6, 3*12,
- (int8_t) 255, 3*9, 3*2,
- 0, 3*3, 3*-8,
- (int8_t) 255, 3*9, 3*3,
- 0, 3*-12, 3*-16,
- (int8_t) 255, 3*9, 3*3,
- 0, 3*-12, 3*4,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*12, 3*-5,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-12, 3*4,
- 1
-};
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 12, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -12, 3 * 5,
+ (int8_t)255, 3 * 9, 3 * 2,
+ 0, 3 * -6, 3 * 12,
+ (int8_t)255, 3 * 9, 3 * 2,
+ 0, 3 * 3, 3 * -8,
+ (int8_t)255, 3 * 9, 3 * 3,
+ 0, 3 * -12, 3 * -16,
+ (int8_t)255, 3 * 9, 3 * 3,
+ 0, 3 * -12, 3 * 4,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 12, 3 * -5,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -12, 3 * 4,
+ 1};
 const int8_t height2FallingLeft4[] = {
- (int8_t) 255, 3*9, 3*12,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-9, 3*-11,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*20, 3*-13,
- 0, 3*-11, 3*25,
- (int8_t) 255, 3*20, 3*-13,
- 0, 3*-12, 3*7,
- (int8_t) 255, 3*20, 3*-13,
- 0, 3*-29, 3*2,
- (int8_t) 255, 3*20, 3*-14,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*9, 3*12,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-9, 3*-12,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ (int8_t)255, 3 * 9, 3 * 12,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -9, 3 * -11,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 20, 3 * -13,
+ 0, 3 * -11, 3 * 25,
+ (int8_t)255, 3 * 20, 3 * -13,
+ 0, 3 * -12, 3 * 7,
+ (int8_t)255, 3 * 20, 3 * -13,
+ 0, 3 * -29, 3 * 2,
+ (int8_t)255, 3 * 20, 3 * -14,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 9, 3 * 12,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -9, 3 * -12,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2RisingRight4[] = {
- 0, 3*6, 3*28,
- (int8_t) 255, 3*12, 3*9,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-12, 3*-9,
- (int8_t) 255, 3*-8, 3*6,
- (int8_t) 255, 3*11, 3*-22,
- 0, 3*1, 3*31,
- (int8_t) 255, 3*11, 3*-23,
- 0, 3*-3, 3*17,
- (int8_t) 255, 3*11, 3*-23,
- 0, 3*-23, 3*14,
- (int8_t) 255, 3*11, 3*-22,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*12, 3*8,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-12, 3*-8,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 12, 3 * 9,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -12, 3 * -9,
+ (int8_t)255, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 11, 3 * -22,
+ 0, 3 * 1, 3 * 31,
+ (int8_t)255, 3 * 11, 3 * -23,
+ 0, 3 * -3, 3 * 17,
+ (int8_t)255, 3 * 11, 3 * -23,
+ 0, 3 * -23, 3 * 14,
+ (int8_t)255, 3 * 11, 3 * -22,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 12, 3 * 8,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -12, 3 * -8,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2FallingRight4[] = {
- 0, 3*7, 3*2,
- (int8_t) 255, 3*-4, 3*12,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*4, 3*-11,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*25, 3*14,
- 0, 3*-29, 3*-2,
- (int8_t) 255, 3*26, 3*14,
- 0, 3*-18, 3*-20,
- (int8_t) 255, 3*26, 3*14,
- 0, 3*-22, 3*-25,
- (int8_t) 255, 3*25, 3*13,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*-3, 3*12,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*3, 3*-12,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 7, 3 * 2,
+ (int8_t)255, 3 * -4, 3 * 12,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 4, 3 * -11,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 25, 3 * 14,
+ 0, 3 * -29, 3 * -2,
+ (int8_t)255, 3 * 26, 3 * 14,
+ 0, 3 * -18, 3 * -20,
+ (int8_t)255, 3 * 26, 3 * 14,
+ 0, 3 * -22, 3 * -25,
+ (int8_t)255, 3 * 25, 3 * 13,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * -3, 3 * 12,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 3, 3 * -12,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2RisingLeft4[] = {
- 0, 3*8, 3*-8,
- (int8_t) 255, 3*-8, 3*8,
- (int8_t) 255, 3*8, 3*-5,
- (int8_t) 255, 3*8, 3*-9,
- (int8_t) 255, 3*-8, 3*6,
- (int8_t) 255, 3*21, 3*22,
- 0, 3*-29, 3*-14,
- (int8_t) 255, 3*21, 3*22,
- 0, 3*-13, 3*-27,
- (int8_t) 255, 3*21, 3*21,
- 0, 3*-13, 3*-30,
- (int8_t) 255, 3*21, 3*22,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*-8, 3*8,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*8, 3*-8,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 8, 3 * -8,
+ (int8_t)255, 3 * -8, 3 * 8,
+ (int8_t)255, 3 * 8, 3 * -5,
+ (int8_t)255, 3 * 8, 3 * -9,
+ (int8_t)255, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 21, 3 * 22,
+ 0, 3 * -29, 3 * -14,
+ (int8_t)255, 3 * 21, 3 * 22,
+ 0, 3 * -13, 3 * -27,
+ (int8_t)255, 3 * 21, 3 * 21,
+ 0, 3 * -13, 3 * -30,
+ (int8_t)255, 3 * 21, 3 * 22,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * -8, 3 * 8,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 8, 3 * -8,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2FallingBack4[] = {
- 0, 3*8, 3*0,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*0, 3*-5,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*0, 3*5,
- (int8_t) 255, 3*30, 3*-6,
- 0, 3*-27, 3*19,
- (int8_t) 255, 3*30, 3*-6,
- 0, 3*-30, 3*1,
- (int8_t) 255, 3*31, 3*-6,
- 0, 3*-34, 3*-7,
- (int8_t) 255, 3*31, 3*-6,
- 0, 3*-1, 3*5,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*1, 3*-5,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-1, 3*5,
- 1
-};
+ 0, 3 * 8, 3 * 0,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * 0, 3 * -5,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * 0, 3 * 5,
+ (int8_t)255, 3 * 30, 3 * -6,
+ 0, 3 * -27, 3 * 19,
+ (int8_t)255, 3 * 30, 3 * -6,
+ 0, 3 * -30, 3 * 1,
+ (int8_t)255, 3 * 31, 3 * -6,
+ 0, 3 * -34, 3 * -7,
+ (int8_t)255, 3 * 31, 3 * -6,
+ 0, 3 * -1, 3 * 5,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * 1, 3 * -5,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -1, 3 * 5,
+ 1};
 const int8_t height2RisingFront4[] = {
- 0, 3*5, 3*4,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*-5, 3*-4,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*5, 3*4,
- (int8_t) 255, 3*29, 3*-9,
- 0, 3*-26, 3*23,
- (int8_t) 255, 3*29, 3*-10,
- 0, 3*-34, 3*6,
- (int8_t) 255, 3*29, 3*-10,
- 0, 3*-32, 3*-4,
- (int8_t) 255, 3*29, 3*-9,
- 0, 3*5, 3*4,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*-5, 3*-4,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*5, 3*4,
- 1
-};
+ 0, 3 * 5, 3 * 4,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * -5, 3 * -4,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * 5, 3 * 4,
+ (int8_t)255, 3 * 29, 3 * -9,
+ 0, 3 * -26, 3 * 23,
+ (int8_t)255, 3 * 29, 3 * -10,
+ 0, 3 * -34, 3 * 6,
+ (int8_t)255, 3 * 29, 3 * -10,
+ 0, 3 * -32, 3 * -4,
+ (int8_t)255, 3 * 29, 3 * -9,
+ 0, 3 * 5, 3 * 4,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * -5, 3 * -4,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * 5, 3 * 4,
+ 1};
 const int8_t height2FallingFront4[] = {
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*13, 3*-5,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-13, 3*4,
- (int8_t) 255, 3*15, 3*6,
- 0, 3*-12, 3*8,
- (int8_t) 255, 3*15, 3*6,
- 0, 3*-2, 3*-11,
- (int8_t) 255, 3*15, 3*6,
- 0, 3*-18, 3*-19,
- (int8_t) 255, 3*15, 3*5,
- 0, 3*-13, 3*5,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*13, 3*-5,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-13, 3*5,
- 1
-};
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 13, 3 * -5,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -13, 3 * 4,
+ (int8_t)255, 3 * 15, 3 * 6,
+ 0, 3 * -12, 3 * 8,
+ (int8_t)255, 3 * 15, 3 * 6,
+ 0, 3 * -2, 3 * -11,
+ (int8_t)255, 3 * 15, 3 * 6,
+ 0, 3 * -18, 3 * -19,
+ (int8_t)255, 3 * 15, 3 * 5,
+ 0, 3 * -13, 3 * 5,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 13, 3 * -5,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -13, 3 * 5,
+ 1};
 const int8_t height2RisingBack4[] = {
- 0, 3*16, 3*-11,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*15, 3*-3,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-15, 3*4,
- (int8_t) 255, 3*3, 3*10,
- 0, 3*0, 3*3,
- (int8_t) 255, 3*3, 3*10,
- 0, 3*12, 3*-13,
- (int8_t) 255, 3*3, 3*9,
- 0, 3*-6, 3*-23,
- (int8_t) 255, 3*3, 3*10,
- 0, 3*-15, 3*4,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*15, 3*-4,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-15, 3*4,
- 1
-};
+ 0, 3 * 16, 3 * -11,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * 15, 3 * -3,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -15, 3 * 4,
+ (int8_t)255, 3 * 3, 3 * 10,
+ 0, 3 * 0, 3 * 3,
+ (int8_t)255, 3 * 3, 3 * 10,
+ 0, 3 * 12, 3 * -13,
+ (int8_t)255, 3 * 3, 3 * 9,
+ 0, 3 * -6, 3 * -23,
+ (int8_t)255, 3 * 3, 3 * 10,
+ 0, 3 * -15, 3 * 4,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * 15, 3 * -4,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -15, 3 * 4,
+ 1};
 const int8_t depth2RollingLeft4[] = {
- (int8_t) 255, 3*9, 3*12,
- (int8_t) 255, 3*16, 3*-12,
- (int8_t) 255, 3*-9, 3*-11,
- (int8_t) 255, 3*-16, 3*11,
- (int8_t) 255, 3*10, 3*-6,
- 0, 3*-1, 3*18,
- (int8_t) 255, 3*10, 3*-7,
- 0, 3*6, 3*-5,
- (int8_t) 255, 3*10, 3*-6,
- 0, 3*-19, 3*-5,
- (int8_t) 255, 3*10, 3*-7,
- 0, 3*-16, 3*12,
- (int8_t) 255, 3*9, 3*11,
- (int8_t) 255, 3*16, 3*-11,
- (int8_t) 255, 3*-9, 3*-12,
- (int8_t) 255, 3*-16, 3*12,
- 1
-};
+ (int8_t)255, 3 * 9, 3 * 12,
+ (int8_t)255, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * -9, 3 * -11,
+ (int8_t)255, 3 * -16, 3 * 11,
+ (int8_t)255, 3 * 10, 3 * -6,
+ 0, 3 * -1, 3 * 18,
+ (int8_t)255, 3 * 10, 3 * -7,
+ 0, 3 * 6, 3 * -5,
+ (int8_t)255, 3 * 10, 3 * -6,
+ 0, 3 * -19, 3 * -5,
+ (int8_t)255, 3 * 10, 3 * -7,
+ 0, 3 * -16, 3 * 12,
+ (int8_t)255, 3 * 9, 3 * 11,
+ (int8_t)255, 3 * 16, 3 * -11,
+ (int8_t)255, 3 * -9, 3 * -12,
+ (int8_t)255, 3 * -16, 3 * 12,
+ 1};
 const int8_t depth2RollingRight4[] = {
- 0, 3*7, 3*2,
- (int8_t) 255, 3*-4, 3*12,
- (int8_t) 255, 3*16, 3*-12,
- (int8_t) 255, 3*4, 3*-11,
- (int8_t) 255, 3*-16, 3*11,
- (int8_t) 255, 3*13, 3*7,
- 0, 3*-17, 3*5,
- (int8_t) 255, 3*13, 3*7,
- 0, 3*3, 3*-19,
- (int8_t) 255, 3*13, 3*7,
- 0, 3*-9, 3*-18,
- (int8_t) 255, 3*13, 3*7,
- 0, 3*-16, 3*11,
- (int8_t) 255, 3*-4, 3*12,
- (int8_t) 255, 3*16, 3*-12,
- (int8_t) 255, 3*4, 3*-11,
- (int8_t) 255, 3*-16, 3*11,
- 1
-};
+ 0, 3 * 7, 3 * 2,
+ (int8_t)255, 3 * -4, 3 * 12,
+ (int8_t)255, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * 4, 3 * -11,
+ (int8_t)255, 3 * -16, 3 * 11,
+ (int8_t)255, 3 * 13, 3 * 7,
+ 0, 3 * -17, 3 * 5,
+ (int8_t)255, 3 * 13, 3 * 7,
+ 0, 3 * 3, 3 * -19,
+ (int8_t)255, 3 * 13, 3 * 7,
+ 0, 3 * -9, 3 * -18,
+ (int8_t)255, 3 * 13, 3 * 7,
+ 0, 3 * -16, 3 * 11,
+ (int8_t)255, 3 * -4, 3 * 12,
+ (int8_t)255, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * 4, 3 * -11,
+ (int8_t)255, 3 * -16, 3 * 11,
+ 1};
 const int8_t width2RollingFront4[] = {
- (int8_t) 255, 3*6, 3*28,
- (int8_t) 255, 3*13, 3*-5,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*-13, 3*4,
- (int8_t) 255, 3*7, 3*3,
- 0, 3*-1, 3*25,
- (int8_t) 255, 3*7, 3*3,
- 0, 3*6, 3*-8,
- (int8_t) 255, 3*8, 3*3,
- 0, 3*-14, 3*-30,
- (int8_t) 255, 3*8, 3*3,
- 0, 3*-14, 3*4,
- (int8_t) 255, 3*6, 3*28,
- (int8_t) 255, 3*14, 3*-5,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*-14, 3*4,
- 1
-};
+ (int8_t)255, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 13, 3 * -5,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * -13, 3 * 4,
+ (int8_t)255, 3 * 7, 3 * 3,
+ 0, 3 * -1, 3 * 25,
+ (int8_t)255, 3 * 7, 3 * 3,
+ 0, 3 * 6, 3 * -8,
+ (int8_t)255, 3 * 8, 3 * 3,
+ 0, 3 * -14, 3 * -30,
+ (int8_t)255, 3 * 8, 3 * 3,
+ 0, 3 * -14, 3 * 4,
+ (int8_t)255, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 14, 3 * -5,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * -14, 3 * 4,
+ 1};
 const int8_t width2RollingBack4[] = {
- 0, 3*8, 3*0,
- (int8_t) 255, 3*6, 3*27,
- (int8_t) 255, 3*0, 3*-5,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*0, 3*5,
- (int8_t) 255, 3*15, 3*-3,
- 0, 3*-9, 3*30,
- (int8_t) 255, 3*15, 3*-3,
- 0, 3*-15, 3*-2,
- (int8_t) 255, 3*15, 3*-3,
- 0, 3*-21, 3*-24,
- (int8_t) 255, 3*15, 3*-3,
- 0, 3*0, 3*5,
- (int8_t) 255, 3*6, 3*27,
- (int8_t) 255, 3*0, 3*-5,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*0, 3*5,
- 1
-};
+ 0, 3 * 8, 3 * 0,
+ (int8_t)255, 3 * 6, 3 * 27,
+ (int8_t)255, 3 * 0, 3 * -5,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * 0, 3 * 5,
+ (int8_t)255, 3 * 15, 3 * -3,
+ 0, 3 * -9, 3 * 30,
+ (int8_t)255, 3 * 15, 3 * -3,
+ 0, 3 * -15, 3 * -2,
+ (int8_t)255, 3 * 15, 3 * -3,
+ 0, 3 * -21, 3 * -24,
+ (int8_t)255, 3 * 15, 3 * -3,
+ 0, 3 * 0, 3 * 5,
+ (int8_t)255, 3 * 6, 3 * 27,
+ (int8_t)255, 3 * 0, 3 * -5,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * 0, 3 * 5,
+ 1};
 const int8_t height1FallingLeft4[] = {
- (int8_t) 255, 3*9, 3*12,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-9, 3*-11,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*10, 3*-6,
- 0, 3*-1, 3*18,
- (int8_t) 255, 3*10, 3*-7,
- 0, 3*-2, 3*1,
- (int8_t) 255, 3*10, 3*-6,
- 0, 3*-19, 3*-5,
- (int8_t) 255, 3*10, 3*-7,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*9, 3*11,
- (int8_t) 255, 3*8, 3*-5,
- (int8_t) 255, 3*-9, 3*-12,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ (int8_t)255, 3 * 9, 3 * 12,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -9, 3 * -11,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 10, 3 * -6,
+ 0, 3 * -1, 3 * 18,
+ (int8_t)255, 3 * 10, 3 * -7,
+ 0, 3 * -2, 3 * 1,
+ (int8_t)255, 3 * 10, 3 * -6,
+ 0, 3 * -19, 3 * -5,
+ (int8_t)255, 3 * 10, 3 * -7,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 9, 3 * 11,
+ (int8_t)255, 3 * 8, 3 * -5,
+ (int8_t)255, 3 * -9, 3 * -12,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height1FallingRight4[] = {
- 0, 3*7, 3*2,
- (int8_t) 255, 3*-4, 3*12,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*4, 3*-11,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*13, 3*7,
- 0, 3*-17, 3*5,
- (int8_t) 255, 3*13, 3*7,
- 0, 3*-5, 3*-13,
- (int8_t) 255, 3*13, 3*7,
- 0, 3*-9, 3*-18,
- (int8_t) 255, 3*13, 3*6,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*-4, 3*12,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*4, 3*-12,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 7, 3 * 2,
+ (int8_t)255, 3 * -4, 3 * 12,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 4, 3 * -11,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 13, 3 * 7,
+ 0, 3 * -17, 3 * 5,
+ (int8_t)255, 3 * 13, 3 * 7,
+ 0, 3 * -5, 3 * -13,
+ (int8_t)255, 3 * 13, 3 * 7,
+ 0, 3 * -9, 3 * -18,
+ (int8_t)255, 3 * 13, 3 * 6,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * -4, 3 * 12,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 4, 3 * -12,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height1FallingBack4[] = {
- 0, 3*8, 3*0,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*0, 3*-5,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*0, 3*5,
- (int8_t) 255, 3*15, 3*-3,
- 0, 3*-12, 3*16,
- (int8_t) 255, 3*15, 3*-3,
- 0, 3*-15, 3*-2,
- (int8_t) 255, 3*15, 3*-3,
- 0, 3*-18, 3*-10,
- (int8_t) 255, 3*15, 3*-3,
- 0, 3*0, 3*5,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*0, 3*-5,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*0, 3*5,
- 1
-};
+ 0, 3 * 8, 3 * 0,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * 0, 3 * -5,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * 0, 3 * 5,
+ (int8_t)255, 3 * 15, 3 * -3,
+ 0, 3 * -12, 3 * 16,
+ (int8_t)255, 3 * 15, 3 * -3,
+ 0, 3 * -15, 3 * -2,
+ (int8_t)255, 3 * 15, 3 * -3,
+ 0, 3 * -18, 3 * -10,
+ (int8_t)255, 3 * 15, 3 * -3,
+ 0, 3 * 0, 3 * 5,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * 0, 3 * -5,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * 0, 3 * 5,
+ 1};
 const int8_t height1FallingFront4[] = {
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*13, 3*-5,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-13, 3*4,
- (int8_t) 255, 3*7, 3*3,
- 0, 3*-4, 3*11,
- (int8_t) 255, 3*7, 3*3,
- 0, 3*6, 3*-8,
- (int8_t) 255, 3*8, 3*3,
- 0, 3*-11, 3*-16,
- (int8_t) 255, 3*8, 3*3,
- 0, 3*-14, 3*4,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*14, 3*-5,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-14, 3*4,
- 1
-};
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 13, 3 * -5,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -13, 3 * 4,
+ (int8_t)255, 3 * 7, 3 * 3,
+ 0, 3 * -4, 3 * 11,
+ (int8_t)255, 3 * 7, 3 * 3,
+ 0, 3 * 6, 3 * -8,
+ (int8_t)255, 3 * 8, 3 * 3,
+ 0, 3 * -11, 3 * -16,
+ (int8_t)255, 3 * 8, 3 * 3,
+ 0, 3 * -14, 3 * 4,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 14, 3 * -5,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -14, 3 * 4,
+ 1};
 const int8_t height2FallingLeft5[] = {
- (int8_t) 255, 3*10, 3*11,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-10, 3*-10,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*17, 3*-16,
- 0, 3*-7, 3*27,
- (int8_t) 255, 3*17, 3*-16,
- 0, 3*-9, 3*10,
- (int8_t) 255, 3*17, 3*-16,
- 0, 3*-27, 3*6,
- (int8_t) 255, 3*17, 3*-17,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*10, 3*11,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-10, 3*-11,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ (int8_t)255, 3 * 10, 3 * 11,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -10, 3 * -10,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 17, 3 * -16,
+ 0, 3 * -7, 3 * 27,
+ (int8_t)255, 3 * 17, 3 * -16,
+ 0, 3 * -9, 3 * 10,
+ (int8_t)255, 3 * 17, 3 * -16,
+ 0, 3 * -27, 3 * 6,
+ (int8_t)255, 3 * 17, 3 * -17,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 10, 3 * 11,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -10, 3 * -11,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2RisingRight5[] = {
- 0, 3*6, 3*28,
- (int8_t) 255, 3*11, 3*10,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-11, 3*-10,
- (int8_t) 255, 3*-8, 3*6,
- (int8_t) 255, 3*14, 3*-20,
- 0, 3*-3, 3*30,
- (int8_t) 255, 3*14, 3*-20,
- 0, 3*-6, 3*14,
- (int8_t) 255, 3*14, 3*-20,
- 0, 3*-25, 3*10,
- (int8_t) 255, 3*14, 3*-20,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*11, 3*10,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-11, 3*-10,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 11, 3 * 10,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -11, 3 * -10,
+ (int8_t)255, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 14, 3 * -20,
+ 0, 3 * -3, 3 * 30,
+ (int8_t)255, 3 * 14, 3 * -20,
+ 0, 3 * -6, 3 * 14,
+ (int8_t)255, 3 * 14, 3 * -20,
+ 0, 3 * -25, 3 * 10,
+ (int8_t)255, 3 * 14, 3 * -20,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 11, 3 * 10,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -11, 3 * -10,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2FallingRight5[] = {
- 0, 3*9, 3*3,
- (int8_t) 255, 3*-6, 3*11,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*6, 3*-10,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*24, 3*17,
- 0, 3*-30, 3*-6,
- (int8_t) 255, 3*24, 3*17,
- 0, 3*-16, 3*-23,
- (int8_t) 255, 3*24, 3*17,
- 0, 3*-18, 3*-27,
- (int8_t) 255, 3*24, 3*16,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*-6, 3*11,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*6, 3*-11,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 9, 3 * 3,
+ (int8_t)255, 3 * -6, 3 * 11,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 6, 3 * -10,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 24, 3 * 17,
+ 0, 3 * -30, 3 * -6,
+ (int8_t)255, 3 * 24, 3 * 17,
+ 0, 3 * -16, 3 * -23,
+ (int8_t)255, 3 * 24, 3 * 17,
+ 0, 3 * -18, 3 * -27,
+ (int8_t)255, 3 * 24, 3 * 16,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * -6, 3 * 11,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 6, 3 * -11,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2RisingLeft5[] = {
- 0, 3*7, 3*-9,
- (int8_t) 255, 3*-7, 3*9,
- (int8_t) 255, 3*8, 3*-5,
- (int8_t) 255, 3*7, 3*-10,
- (int8_t) 255, 3*-8, 3*6,
- (int8_t) 255, 3*23, 3*19,
- 0, 3*-30, 3*-10,
- (int8_t) 255, 3*23, 3*20,
- 0, 3*-15, 3*-25,
- (int8_t) 255, 3*23, 3*19,
- 0, 3*-16, 3*-29,
- (int8_t) 255, 3*23, 3*19,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*-7, 3*10,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*7, 3*-10,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 7, 3 * -9,
+ (int8_t)255, 3 * -7, 3 * 9,
+ (int8_t)255, 3 * 8, 3 * -5,
+ (int8_t)255, 3 * 7, 3 * -10,
+ (int8_t)255, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 23, 3 * 19,
+ 0, 3 * -30, 3 * -10,
+ (int8_t)255, 3 * 23, 3 * 20,
+ 0, 3 * -15, 3 * -25,
+ (int8_t)255, 3 * 23, 3 * 19,
+ 0, 3 * -16, 3 * -29,
+ (int8_t)255, 3 * 23, 3 * 19,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * -7, 3 * 10,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 7, 3 * -10,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2FallingBack5[] = {
- 0, 3*10, 3*0,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*-2, 3*-5,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*2, 3*5,
- (int8_t) 255, 3*30, 3*-8,
- 0, 3*-27, 3*21,
- (int8_t) 255, 3*30, 3*-8,
- 0, 3*-32, 3*3,
- (int8_t) 255, 3*30, 3*-7,
- 0, 3*-33, 3*-6,
- (int8_t) 255, 3*30, 3*-7,
- 0, 3*2, 3*4,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*-2, 3*-4,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*2, 3*4,
- 1
-};
+ 0, 3 * 10, 3 * 0,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * -2, 3 * -5,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * 2, 3 * 5,
+ (int8_t)255, 3 * 30, 3 * -8,
+ 0, 3 * -27, 3 * 21,
+ (int8_t)255, 3 * 30, 3 * -8,
+ 0, 3 * -32, 3 * 3,
+ (int8_t)255, 3 * 30, 3 * -7,
+ 0, 3 * -33, 3 * -6,
+ (int8_t)255, 3 * 30, 3 * -7,
+ 0, 3 * 2, 3 * 4,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * -2, 3 * -4,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * 2, 3 * 4,
+ 1};
 const int8_t height2RisingFront5[] = {
- 0, 3*4, 3*4,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*-4, 3*-4,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*4, 3*4,
- (int8_t) 255, 3*29, 3*-7,
- 0, 3*-26, 3*21,
- (int8_t) 255, 3*29, 3*-8,
- 0, 3*-33, 3*4,
- (int8_t) 255, 3*30, 3*-8,
- 0, 3*-33, 3*-6,
- (int8_t) 255, 3*30, 3*-7,
- 0, 3*3, 3*4,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*-3, 3*-4,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*3, 3*4,
- 1
-};
+ 0, 3 * 4, 3 * 4,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * -4, 3 * -4,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * 4, 3 * 4,
+ (int8_t)255, 3 * 29, 3 * -7,
+ 0, 3 * -26, 3 * 21,
+ (int8_t)255, 3 * 29, 3 * -8,
+ 0, 3 * -33, 3 * 4,
+ (int8_t)255, 3 * 30, 3 * -8,
+ 0, 3 * -33, 3 * -6,
+ (int8_t)255, 3 * 30, 3 * -7,
+ 0, 3 * 3, 3 * 4,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * -3, 3 * -4,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * 3, 3 * 4,
+ 1};
 const int8_t height2FallingFront5[] = {
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*14, 3*-5,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-14, 3*4,
- (int8_t) 255, 3*11, 3*7,
- 0, 3*-8, 3*7,
- (int8_t) 255, 3*11, 3*7,
- 0, 3*3, 3*-12,
- (int8_t) 255, 3*11, 3*8,
- 0, 3*-14, 3*-21,
- (int8_t) 255, 3*11, 3*7,
- 0, 3*-14, 3*4,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*14, 3*-4,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-14, 3*4,
- 1
-};
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 14, 3 * -5,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -14, 3 * 4,
+ (int8_t)255, 3 * 11, 3 * 7,
+ 0, 3 * -8, 3 * 7,
+ (int8_t)255, 3 * 11, 3 * 7,
+ 0, 3 * 3, 3 * -12,
+ (int8_t)255, 3 * 11, 3 * 8,
+ 0, 3 * -14, 3 * -21,
+ (int8_t)255, 3 * 11, 3 * 7,
+ 0, 3 * -14, 3 * 4,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 14, 3 * -4,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -14, 3 * 4,
+ 1};
 const int8_t height2RisingBack5[] = {
- 0, 3*16, 3*-11,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*15, 3*-3,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-15, 3*4,
- (int8_t) 255, 3*7, 3*8,
- 0, 3*-4, 3*5,
- (int8_t) 255, 3*7, 3*8,
- 0, 3*8, 3*-11,
- (int8_t) 255, 3*7, 3*7,
- 0, 3*-10, 3*-21,
- (int8_t) 255, 3*7, 3*8,
- 0, 3*-15, 3*4,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*15, 3*-4,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-15, 3*4,
- 1
-};
+ 0, 3 * 16, 3 * -11,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * 15, 3 * -3,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -15, 3 * 4,
+ (int8_t)255, 3 * 7, 3 * 8,
+ 0, 3 * -4, 3 * 5,
+ (int8_t)255, 3 * 7, 3 * 8,
+ 0, 3 * 8, 3 * -11,
+ (int8_t)255, 3 * 7, 3 * 7,
+ 0, 3 * -10, 3 * -21,
+ (int8_t)255, 3 * 7, 3 * 8,
+ 0, 3 * -15, 3 * 4,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * 15, 3 * -4,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -15, 3 * 4,
+ 1};
 const int8_t depth2RollingLeft5[] = {
- (int8_t) 255, 3*10, 3*11,
- (int8_t) 255, 3*16, 3*-11,
- (int8_t) 255, 3*-10, 3*-11,
- (int8_t) 255, 3*-16, 3*11,
- (int8_t) 255, 3*8, 3*-8,
- 0, 3*2, 3*19,
- (int8_t) 255, 3*9, 3*-8,
- 0, 3*7, 3*-3,
- (int8_t) 255, 3*9, 3*-8,
- 0, 3*-19, 3*-3,
- (int8_t) 255, 3*8, 3*-9,
- 0, 3*-16, 3*12,
- (int8_t) 255, 3*11, 3*11,
- (int8_t) 255, 3*16, 3*-11,
- (int8_t) 255, 3*-11, 3*-12,
- (int8_t) 255, 3*-16, 3*12,
- 1
-};
+ (int8_t)255, 3 * 10, 3 * 11,
+ (int8_t)255, 3 * 16, 3 * -11,
+ (int8_t)255, 3 * -10, 3 * -11,
+ (int8_t)255, 3 * -16, 3 * 11,
+ (int8_t)255, 3 * 8, 3 * -8,
+ 0, 3 * 2, 3 * 19,
+ (int8_t)255, 3 * 9, 3 * -8,
+ 0, 3 * 7, 3 * -3,
+ (int8_t)255, 3 * 9, 3 * -8,
+ 0, 3 * -19, 3 * -3,
+ (int8_t)255, 3 * 8, 3 * -9,
+ 0, 3 * -16, 3 * 12,
+ (int8_t)255, 3 * 11, 3 * 11,
+ (int8_t)255, 3 * 16, 3 * -11,
+ (int8_t)255, 3 * -11, 3 * -12,
+ (int8_t)255, 3 * -16, 3 * 12,
+ 1};
 const int8_t depth2RollingRight5[] = {
- 0, 3*9, 3*3,
- (int8_t) 255, 3*-6, 3*11,
- (int8_t) 255, 3*16, 3*-12,
- (int8_t) 255, 3*6, 3*-10,
- (int8_t) 255, 3*-16, 3*11,
- (int8_t) 255, 3*12, 3*8,
- 0, 3*-18, 3*3,
- (int8_t) 255, 3*12, 3*9,
- 0, 3*4, 3*-21,
- (int8_t) 255, 3*12, 3*9,
- 0, 3*-6, 3*-19,
- (int8_t) 255, 3*12, 3*8,
- 0, 3*-16, 3*11,
- (int8_t) 255, 3*-6, 3*12,
- (int8_t) 255, 3*16, 3*-12,
- (int8_t) 255, 3*6, 3*-11,
- (int8_t) 255, 3*-16, 3*11,
- 1
-};
+ 0, 3 * 9, 3 * 3,
+ (int8_t)255, 3 * -6, 3 * 11,
+ (int8_t)255, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * 6, 3 * -10,
+ (int8_t)255, 3 * -16, 3 * 11,
+ (int8_t)255, 3 * 12, 3 * 8,
+ 0, 3 * -18, 3 * 3,
+ (int8_t)255, 3 * 12, 3 * 9,
+ 0, 3 * 4, 3 * -21,
+ (int8_t)255, 3 * 12, 3 * 9,
+ 0, 3 * -6, 3 * -19,
+ (int8_t)255, 3 * 12, 3 * 8,
+ 0, 3 * -16, 3 * 11,
+ (int8_t)255, 3 * -6, 3 * 12,
+ (int8_t)255, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * 6, 3 * -11,
+ (int8_t)255, 3 * -16, 3 * 11,
+ 1};
 const int8_t width2RollingFront5[] = {
- (int8_t) 255, 3*6, 3*28,
- (int8_t) 255, 3*14, 3*-5,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*-14, 3*4,
- (int8_t) 255, 3*5, 3*4,
- 0, 3*1, 3*24,
- (int8_t) 255, 3*5, 3*4,
- 0, 3*9, 3*-9,
- (int8_t) 255, 3*6, 3*4,
- 0, 3*-12, 3*-31,
- (int8_t) 255, 3*6, 3*4,
- 0, 3*-15, 3*4,
- (int8_t) 255, 3*6, 3*28,
- (int8_t) 255, 3*15, 3*-5,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*-15, 3*4,
- 1
-};
+ (int8_t)255, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 14, 3 * -5,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * -14, 3 * 4,
+ (int8_t)255, 3 * 5, 3 * 4,
+ 0, 3 * 1, 3 * 24,
+ (int8_t)255, 3 * 5, 3 * 4,
+ 0, 3 * 9, 3 * -9,
+ (int8_t)255, 3 * 6, 3 * 4,
+ 0, 3 * -12, 3 * -31,
+ (int8_t)255, 3 * 6, 3 * 4,
+ 0, 3 * -15, 3 * 4,
+ (int8_t)255, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 15, 3 * -5,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * -15, 3 * 4,
+ 1};
 const int8_t width2RollingBack5[] = {
- 0, 3*10, 3*0,
- (int8_t) 255, 3*6, 3*27,
- (int8_t) 255, 3*-2, 3*-5,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*2, 3*5,
- (int8_t) 255, 3*15, 3*-4,
- 0, 3*-9, 3*31,
- (int8_t) 255, 3*15, 3*-4,
- 0, 3*-17, 3*-1,
- (int8_t) 255, 3*15, 3*-4,
- 0, 3*-21, 3*-23,
- (int8_t) 255, 3*15, 3*-4,
- 0, 3*2, 3*5,
- (int8_t) 255, 3*6, 3*27,
- (int8_t) 255, 3*-2, 3*-5,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*2, 3*5,
- 1
-};
+ 0, 3 * 10, 3 * 0,
+ (int8_t)255, 3 * 6, 3 * 27,
+ (int8_t)255, 3 * -2, 3 * -5,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * 2, 3 * 5,
+ (int8_t)255, 3 * 15, 3 * -4,
+ 0, 3 * -9, 3 * 31,
+ (int8_t)255, 3 * 15, 3 * -4,
+ 0, 3 * -17, 3 * -1,
+ (int8_t)255, 3 * 15, 3 * -4,
+ 0, 3 * -21, 3 * -23,
+ (int8_t)255, 3 * 15, 3 * -4,
+ 0, 3 * 2, 3 * 5,
+ (int8_t)255, 3 * 6, 3 * 27,
+ (int8_t)255, 3 * -2, 3 * -5,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * 2, 3 * 5,
+ 1};
 const int8_t height1FallingLeft5[] = {
- (int8_t) 255, 3*10, 3*11,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-10, 3*-10,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*8, 3*-8,
- 0, 3*2, 3*19,
- (int8_t) 255, 3*9, 3*-8,
- 0, 3*-1, 3*2,
- (int8_t) 255, 3*9, 3*-7,
- 0, 3*-19, 3*-3,
- (int8_t) 255, 3*8, 3*-9,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*11, 3*11,
- (int8_t) 255, 3*8, 3*-5,
- (int8_t) 255, 3*-11, 3*-12,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ (int8_t)255, 3 * 10, 3 * 11,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -10, 3 * -10,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 8, 3 * -8,
+ 0, 3 * 2, 3 * 19,
+ (int8_t)255, 3 * 9, 3 * -8,
+ 0, 3 * -1, 3 * 2,
+ (int8_t)255, 3 * 9, 3 * -7,
+ 0, 3 * -19, 3 * -3,
+ (int8_t)255, 3 * 8, 3 * -9,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 11, 3 * 11,
+ (int8_t)255, 3 * 8, 3 * -5,
+ (int8_t)255, 3 * -11, 3 * -12,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height1FallingRight5[] = {
- 0, 3*9, 3*3,
- (int8_t) 255, 3*-6, 3*11,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*6, 3*-10,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*12, 3*8,
- 0, 3*-18, 3*3,
- (int8_t) 255, 3*12, 3*9,
- 0, 3*-4, 3*-15,
- (int8_t) 255, 3*12, 3*9,
- 0, 3*-6, 3*-19,
- (int8_t) 255, 3*12, 3*7,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*-6, 3*12,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*6, 3*-12,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 9, 3 * 3,
+ (int8_t)255, 3 * -6, 3 * 11,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 6, 3 * -10,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 12, 3 * 8,
+ 0, 3 * -18, 3 * 3,
+ (int8_t)255, 3 * 12, 3 * 9,
+ 0, 3 * -4, 3 * -15,
+ (int8_t)255, 3 * 12, 3 * 9,
+ 0, 3 * -6, 3 * -19,
+ (int8_t)255, 3 * 12, 3 * 7,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * -6, 3 * 12,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 6, 3 * -12,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height1FallingBack5[] = {
- 0, 3*10, 3*0,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*-2, 3*-5,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*2, 3*5,
- (int8_t) 255, 3*15, 3*-4,
- 0, 3*-12, 3*17,
- (int8_t) 255, 3*15, 3*-4,
- 0, 3*-17, 3*-1,
- (int8_t) 255, 3*15, 3*-4,
- 0, 3*-18, 3*-9,
- (int8_t) 255, 3*15, 3*-4,
- 0, 3*2, 3*5,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*-2, 3*-5,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*2, 3*5,
- 1
-};
+ 0, 3 * 10, 3 * 0,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * -2, 3 * -5,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * 2, 3 * 5,
+ (int8_t)255, 3 * 15, 3 * -4,
+ 0, 3 * -12, 3 * 17,
+ (int8_t)255, 3 * 15, 3 * -4,
+ 0, 3 * -17, 3 * -1,
+ (int8_t)255, 3 * 15, 3 * -4,
+ 0, 3 * -18, 3 * -9,
+ (int8_t)255, 3 * 15, 3 * -4,
+ 0, 3 * 2, 3 * 5,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * -2, 3 * -5,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * 2, 3 * 5,
+ 1};
 const int8_t height1FallingFront5[] = {
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*14, 3*-5,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-14, 3*4,
- (int8_t) 255, 3*5, 3*4,
- 0, 3*-2, 3*10,
- (int8_t) 255, 3*5, 3*4,
- 0, 3*9, 3*-9,
- (int8_t) 255, 3*6, 3*4,
- 0, 3*-9, 3*-17,
- (int8_t) 255, 3*6, 3*4,
- 0, 3*-15, 3*4,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*15, 3*-5,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-15, 3*4,
- 1
-};
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 14, 3 * -5,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -14, 3 * 4,
+ (int8_t)255, 3 * 5, 3 * 4,
+ 0, 3 * -2, 3 * 10,
+ (int8_t)255, 3 * 5, 3 * 4,
+ 0, 3 * 9, 3 * -9,
+ (int8_t)255, 3 * 6, 3 * 4,
+ 0, 3 * -9, 3 * -17,
+ (int8_t)255, 3 * 6, 3 * 4,
+ 0, 3 * -15, 3 * 4,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 15, 3 * -5,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -15, 3 * 4,
+ 1};
 const int8_t height2FallingLeft6[] = {
- (int8_t) 255, 3*11, 3*10,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-11, 3*-9,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*14, 3*-19,
- 0, 3*-3, 3*29,
- (int8_t) 255, 3*14, 3*-19,
- 0, 3*-6, 3*13,
- (int8_t) 255, 3*14, 3*-19,
- 0, 3*-25, 3*10,
- (int8_t) 255, 3*14, 3*-20,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*11, 3*10,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-11, 3*-10,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ (int8_t)255, 3 * 11, 3 * 10,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -11, 3 * -9,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 14, 3 * -19,
+ 0, 3 * -3, 3 * 29,
+ (int8_t)255, 3 * 14, 3 * -19,
+ 0, 3 * -6, 3 * 13,
+ (int8_t)255, 3 * 14, 3 * -19,
+ 0, 3 * -25, 3 * 10,
+ (int8_t)255, 3 * 14, 3 * -20,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 11, 3 * 10,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -11, 3 * -10,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2RisingRight6[] = {
- 0, 3*6, 3*28,
- (int8_t) 255, 3*10, 3*11,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-10, 3*-11,
- (int8_t) 255, 3*-8, 3*6,
- (int8_t) 255, 3*17, 3*-17,
- 0, 3*-7, 3*28,
- (int8_t) 255, 3*17, 3*-17,
- 0, 3*-9, 3*11,
- (int8_t) 255, 3*17, 3*-17,
- 0, 3*-27, 3*6,
- (int8_t) 255, 3*17, 3*-17,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*10, 3*11,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-10, 3*-11,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 10, 3 * 11,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -10, 3 * -11,
+ (int8_t)255, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 17, 3 * -17,
+ 0, 3 * -7, 3 * 28,
+ (int8_t)255, 3 * 17, 3 * -17,
+ 0, 3 * -9, 3 * 11,
+ (int8_t)255, 3 * 17, 3 * -17,
+ 0, 3 * -27, 3 * 6,
+ (int8_t)255, 3 * 17, 3 * -17,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 10, 3 * 11,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -10, 3 * -11,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2FallingRight6[] = {
- 0, 3*10, 3*4,
- (int8_t) 255, 3*-7, 3*10,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*7, 3*-9,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*23, 3*20,
- 0, 3*-30, 3*-10,
- (int8_t) 255, 3*23, 3*20,
- 0, 3*-15, 3*-26,
- (int8_t) 255, 3*23, 3*20,
- 0, 3*-16, 3*-29,
- (int8_t) 255, 3*23, 3*19,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*-7, 3*10,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*7, 3*-10,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 10, 3 * 4,
+ (int8_t)255, 3 * -7, 3 * 10,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 7, 3 * -9,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 23, 3 * 20,
+ 0, 3 * -30, 3 * -10,
+ (int8_t)255, 3 * 23, 3 * 20,
+ 0, 3 * -15, 3 * -26,
+ (int8_t)255, 3 * 23, 3 * 20,
+ 0, 3 * -16, 3 * -29,
+ (int8_t)255, 3 * 23, 3 * 19,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * -7, 3 * 10,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 7, 3 * -10,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2RisingLeft6[] = {
- 0, 3*6, 3*-10,
- (int8_t) 255, 3*-6, 3*10,
- (int8_t) 255, 3*8, 3*-5,
- (int8_t) 255, 3*6, 3*-11,
- (int8_t) 255, 3*-8, 3*6,
- (int8_t) 255, 3*24, 3*16,
- 0, 3*-30, 3*-6,
- (int8_t) 255, 3*24, 3*17,
- 0, 3*-16, 3*-22,
- (int8_t) 255, 3*24, 3*16,
- 0, 3*-18, 3*-27,
- (int8_t) 255, 3*24, 3*16,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*-6, 3*11,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*6, 3*-11,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 6, 3 * -10,
+ (int8_t)255, 3 * -6, 3 * 10,
+ (int8_t)255, 3 * 8, 3 * -5,
+ (int8_t)255, 3 * 6, 3 * -11,
+ (int8_t)255, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 24, 3 * 16,
+ 0, 3 * -30, 3 * -6,
+ (int8_t)255, 3 * 24, 3 * 17,
+ 0, 3 * -16, 3 * -22,
+ (int8_t)255, 3 * 24, 3 * 16,
+ 0, 3 * -18, 3 * -27,
+ (int8_t)255, 3 * 24, 3 * 16,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * -6, 3 * 11,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 6, 3 * -11,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2FallingBack6[] = {
- 0, 3*12, 3*-1,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*-4, 3*-4,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*4, 3*4,
- (int8_t) 255, 3*29, 3*-8,
- 0, 3*-26, 3*21,
- (int8_t) 255, 3*29, 3*-8,
- 0, 3*-33, 3*4,
- (int8_t) 255, 3*30, 3*-8,
- 0, 3*-33, 3*-5,
- (int8_t) 255, 3*30, 3*-8,
- 0, 3*3, 3*4,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*-3, 3*-4,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*3, 3*4,
- 1
-};
+ 0, 3 * 12, 3 * -1,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * -4, 3 * -4,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * 4, 3 * 4,
+ (int8_t)255, 3 * 29, 3 * -8,
+ 0, 3 * -26, 3 * 21,
+ (int8_t)255, 3 * 29, 3 * -8,
+ 0, 3 * -33, 3 * 4,
+ (int8_t)255, 3 * 30, 3 * -8,
+ 0, 3 * -33, 3 * -5,
+ (int8_t)255, 3 * 30, 3 * -8,
+ 0, 3 * 3, 3 * 4,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * -3, 3 * -4,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * 3, 3 * 4,
+ 1};
 const int8_t height2RisingFront6[] = {
- 0, 3*2, 3*5,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*-2, 3*-5,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*2, 3*5,
- (int8_t) 255, 3*30, 3*-7,
- 0, 3*-27, 3*21,
- (int8_t) 255, 3*30, 3*-8,
- 0, 3*-32, 3*3,
- (int8_t) 255, 3*30, 3*-7,
- 0, 3*-33, 3*-7,
- (int8_t) 255, 3*30, 3*-6,
- 0, 3*2, 3*4,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*-2, 3*-4,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*2, 3*4,
- 1
-};
+ 0, 3 * 2, 3 * 5,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * -2, 3 * -5,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * 2, 3 * 5,
+ (int8_t)255, 3 * 30, 3 * -7,
+ 0, 3 * -27, 3 * 21,
+ (int8_t)255, 3 * 30, 3 * -8,
+ 0, 3 * -32, 3 * 3,
+ (int8_t)255, 3 * 30, 3 * -7,
+ 0, 3 * -33, 3 * -7,
+ (int8_t)255, 3 * 30, 3 * -6,
+ 0, 3 * 2, 3 * 4,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * -2, 3 * -4,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * 2, 3 * 4,
+ 1};
 const int8_t height2FallingFront6[] = {
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*15, 3*-4,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-15, 3*3,
- (int8_t) 255, 3*7, 3*8,
- 0, 3*-4, 3*6,
- (int8_t) 255, 3*7, 3*8,
- 0, 3*8, 3*-12,
- (int8_t) 255, 3*7, 3*8,
- 0, 3*-10, 3*-21,
- (int8_t) 255, 3*7, 3*7,
- 0, 3*-15, 3*4,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*15, 3*-4,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-15, 3*4,
- 1
-};
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 15, 3 * -4,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -15, 3 * 3,
+ (int8_t)255, 3 * 7, 3 * 8,
+ 0, 3 * -4, 3 * 6,
+ (int8_t)255, 3 * 7, 3 * 8,
+ 0, 3 * 8, 3 * -12,
+ (int8_t)255, 3 * 7, 3 * 8,
+ 0, 3 * -10, 3 * -21,
+ (int8_t)255, 3 * 7, 3 * 7,
+ 0, 3 * -15, 3 * 4,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 15, 3 * -4,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -15, 3 * 4,
+ 1};
 const int8_t height2RisingBack6[] = {
- 0, 3*16, 3*-11,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*14, 3*-4,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-14, 3*5,
- (int8_t) 255, 3*11, 3*7,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*11, 3*7,
- 0, 3*3, 3*-11,
- (int8_t) 255, 3*11, 3*7,
- 0, 3*-14, 3*-21,
- (int8_t) 255, 3*11, 3*8,
- 0, 3*-14, 3*4,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*14, 3*-4,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-14, 3*4,
- 1
-};
+ 0, 3 * 16, 3 * -11,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * 14, 3 * -4,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -14, 3 * 5,
+ (int8_t)255, 3 * 11, 3 * 7,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 11, 3 * 7,
+ 0, 3 * 3, 3 * -11,
+ (int8_t)255, 3 * 11, 3 * 7,
+ 0, 3 * -14, 3 * -21,
+ (int8_t)255, 3 * 11, 3 * 8,
+ 0, 3 * -14, 3 * 4,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * 14, 3 * -4,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -14, 3 * 4,
+ 1};
 const int8_t depth2RollingLeft6[] = {
- (int8_t) 255, 3*11, 3*10,
- (int8_t) 255, 3*16, 3*-11,
- (int8_t) 255, 3*-11, 3*-10,
- (int8_t) 255, 3*-16, 3*11,
- (int8_t) 255, 3*7, 3*-9,
- 0, 3*4, 3*19,
- (int8_t) 255, 3*7, 3*-10,
- 0, 3*9, 3*-1,
- (int8_t) 255, 3*7, 3*-10,
- 0, 3*-18, 3*0,
- (int8_t) 255, 3*7, 3*-10,
- 0, 3*-16, 3*12,
- (int8_t) 255, 3*11, 3*9,
- (int8_t) 255, 3*16, 3*-11,
- (int8_t) 255, 3*-11, 3*-10,
- (int8_t) 255, 3*-16, 3*12,
- 1
-};
+ (int8_t)255, 3 * 11, 3 * 10,
+ (int8_t)255, 3 * 16, 3 * -11,
+ (int8_t)255, 3 * -11, 3 * -10,
+ (int8_t)255, 3 * -16, 3 * 11,
+ (int8_t)255, 3 * 7, 3 * -9,
+ 0, 3 * 4, 3 * 19,
+ (int8_t)255, 3 * 7, 3 * -10,
+ 0, 3 * 9, 3 * -1,
+ (int8_t)255, 3 * 7, 3 * -10,
+ 0, 3 * -18, 3 * 0,
+ (int8_t)255, 3 * 7, 3 * -10,
+ 0, 3 * -16, 3 * 12,
+ (int8_t)255, 3 * 11, 3 * 9,
+ (int8_t)255, 3 * 16, 3 * -11,
+ (int8_t)255, 3 * -11, 3 * -10,
+ (int8_t)255, 3 * -16, 3 * 12,
+ 1};
 const int8_t depth2RollingRight6[] = {
- 0, 3*10, 3*4,
- (int8_t) 255, 3*-7, 3*10,
- (int8_t) 255, 3*16, 3*-12,
- (int8_t) 255, 3*7, 3*-9,
- (int8_t) 255, 3*-16, 3*11,
- (int8_t) 255, 3*11, 3*10,
- 0, 3*-18, 3*0,
- (int8_t) 255, 3*11, 3*10,
- 0, 3*5, 3*-22,
- (int8_t) 255, 3*11, 3*10,
- 0, 3*-4, 3*-19,
- (int8_t) 255, 3*11, 3*9,
- 0, 3*-16, 3*12,
- (int8_t) 255, 3*-7, 3*10,
- (int8_t) 255, 3*16, 3*-12,
- (int8_t) 255, 3*7, 3*-10,
- (int8_t) 255, 3*-16, 3*12,
- 1
-};
+ 0, 3 * 10, 3 * 4,
+ (int8_t)255, 3 * -7, 3 * 10,
+ (int8_t)255, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * 7, 3 * -9,
+ (int8_t)255, 3 * -16, 3 * 11,
+ (int8_t)255, 3 * 11, 3 * 10,
+ 0, 3 * -18, 3 * 0,
+ (int8_t)255, 3 * 11, 3 * 10,
+ 0, 3 * 5, 3 * -22,
+ (int8_t)255, 3 * 11, 3 * 10,
+ 0, 3 * -4, 3 * -19,
+ (int8_t)255, 3 * 11, 3 * 9,
+ 0, 3 * -16, 3 * 12,
+ (int8_t)255, 3 * -7, 3 * 10,
+ (int8_t)255, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * 7, 3 * -10,
+ (int8_t)255, 3 * -16, 3 * 12,
+ 1};
 const int8_t width2RollingFront6[] = {
- (int8_t) 255, 3*6, 3*28,
- (int8_t) 255, 3*15, 3*-4,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*-15, 3*3,
- (int8_t) 255, 3*4, 3*4,
- 0, 3*2, 3*24,
- (int8_t) 255, 3*4, 3*4,
- 0, 3*11, 3*-8,
- (int8_t) 255, 3*3, 3*4,
- 0, 3*-9, 3*-31,
- (int8_t) 255, 3*3, 3*3,
- 0, 3*-14, 3*4,
- (int8_t) 255, 3*6, 3*28,
- (int8_t) 255, 3*14, 3*-4,
- (int8_t) 255, 3*-6, 3*-28,
- (int8_t) 255, 3*-14, 3*4,
- 1
-};
+ (int8_t)255, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 15, 3 * -4,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * -15, 3 * 3,
+ (int8_t)255, 3 * 4, 3 * 4,
+ 0, 3 * 2, 3 * 24,
+ (int8_t)255, 3 * 4, 3 * 4,
+ 0, 3 * 11, 3 * -8,
+ (int8_t)255, 3 * 3, 3 * 4,
+ 0, 3 * -9, 3 * -31,
+ (int8_t)255, 3 * 3, 3 * 3,
+ 0, 3 * -14, 3 * 4,
+ (int8_t)255, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 14, 3 * -4,
+ (int8_t)255, 3 * -6, 3 * -28,
+ (int8_t)255, 3 * -14, 3 * 4,
+ 1};
 const int8_t width2RollingBack6[] = {
- 0, 3*12, 3*-1,
- (int8_t) 255, 3*6, 3*27,
- (int8_t) 255, 3*-4, 3*-4,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*4, 3*4,
- (int8_t) 255, 3*14, 3*-4,
- 0, 3*-8, 3*31,
- (int8_t) 255, 3*14, 3*-4,
- 0, 3*-18, 3*0,
- (int8_t) 255, 3*15, 3*-4,
- 0, 3*-21, 3*-23,
- (int8_t) 255, 3*15, 3*-4,
- 0, 3*3, 3*4,
- (int8_t) 255, 3*6, 3*27,
- (int8_t) 255, 3*-3, 3*-4,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*3, 3*4,
- 1
-};
+ 0, 3 * 12, 3 * -1,
+ (int8_t)255, 3 * 6, 3 * 27,
+ (int8_t)255, 3 * -4, 3 * -4,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * 4, 3 * 4,
+ (int8_t)255, 3 * 14, 3 * -4,
+ 0, 3 * -8, 3 * 31,
+ (int8_t)255, 3 * 14, 3 * -4,
+ 0, 3 * -18, 3 * 0,
+ (int8_t)255, 3 * 15, 3 * -4,
+ 0, 3 * -21, 3 * -23,
+ (int8_t)255, 3 * 15, 3 * -4,
+ 0, 3 * 3, 3 * 4,
+ (int8_t)255, 3 * 6, 3 * 27,
+ (int8_t)255, 3 * -3, 3 * -4,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * 3, 3 * 4,
+ 1};
 const int8_t height1FallingLeft6[] = {
- (int8_t) 255, 3*11, 3*10,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-11, 3*-9,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*7, 3*-9,
- 0, 3*4, 3*19,
- (int8_t) 255, 3*7, 3*-10,
- 0, 3*1, 3*4,
- (int8_t) 255, 3*7, 3*-9,
- 0, 3*-18, 3*0,
- (int8_t) 255, 3*7, 3*-10,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*11, 3*9,
- (int8_t) 255, 3*8, 3*-5,
- (int8_t) 255, 3*-11, 3*-10,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ (int8_t)255, 3 * 11, 3 * 10,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -11, 3 * -9,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 7, 3 * -9,
+ 0, 3 * 4, 3 * 19,
+ (int8_t)255, 3 * 7, 3 * -10,
+ 0, 3 * 1, 3 * 4,
+ (int8_t)255, 3 * 7, 3 * -9,
+ 0, 3 * -18, 3 * 0,
+ (int8_t)255, 3 * 7, 3 * -10,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 11, 3 * 9,
+ (int8_t)255, 3 * 8, 3 * -5,
+ (int8_t)255, 3 * -11, 3 * -10,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height1FallingRight6[] = {
- 0, 3*10, 3*4,
- (int8_t) 255, 3*-7, 3*10,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*7, 3*-9,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*11, 3*10,
- 0, 3*-18, 3*0,
- (int8_t) 255, 3*11, 3*10,
- 0, 3*-3, 3*-16,
- (int8_t) 255, 3*11, 3*10,
- 0, 3*-4, 3*-19,
- (int8_t) 255, 3*11, 3*9,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*-7, 3*10,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*7, 3*-10,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 10, 3 * 4,
+ (int8_t)255, 3 * -7, 3 * 10,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 7, 3 * -9,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 11, 3 * 10,
+ 0, 3 * -18, 3 * 0,
+ (int8_t)255, 3 * 11, 3 * 10,
+ 0, 3 * -3, 3 * -16,
+ (int8_t)255, 3 * 11, 3 * 10,
+ 0, 3 * -4, 3 * -19,
+ (int8_t)255, 3 * 11, 3 * 9,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * -7, 3 * 10,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 7, 3 * -10,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height1FallingBack6[] = {
- 0, 3*12, 3*-1,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*-4, 3*-4,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*4, 3*4,
- (int8_t) 255, 3*14, 3*-4,
- 0, 3*-11, 3*17,
- (int8_t) 255, 3*14, 3*-4,
- 0, 3*-18, 3*0,
- (int8_t) 255, 3*15, 3*-4,
- 0, 3*-18, 3*-9,
- (int8_t) 255, 3*15, 3*-4,
- 0, 3*3, 3*4,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*-3, 3*-4,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*3, 3*4,
- 1
-};
+ 0, 3 * 12, 3 * -1,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * -4, 3 * -4,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * 4, 3 * 4,
+ (int8_t)255, 3 * 14, 3 * -4,
+ 0, 3 * -11, 3 * 17,
+ (int8_t)255, 3 * 14, 3 * -4,
+ 0, 3 * -18, 3 * 0,
+ (int8_t)255, 3 * 15, 3 * -4,
+ 0, 3 * -18, 3 * -9,
+ (int8_t)255, 3 * 15, 3 * -4,
+ 0, 3 * 3, 3 * 4,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * -3, 3 * -4,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * 3, 3 * 4,
+ 1};
 const int8_t height1FallingFront6[] = {
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*15, 3*-4,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-15, 3*3,
- (int8_t) 255, 3*4, 3*4,
- 0, 3*-1, 3*10,
- (int8_t) 255, 3*4, 3*4,
- 0, 3*11, 3*-8,
- (int8_t) 255, 3*3, 3*4,
- 0, 3*-6, 3*-17,
- (int8_t) 255, 3*3, 3*3,
- 0, 3*-14, 3*4,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*14, 3*-4,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-14, 3*4,
- 1
-};
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 15, 3 * -4,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -15, 3 * 3,
+ (int8_t)255, 3 * 4, 3 * 4,
+ 0, 3 * -1, 3 * 10,
+ (int8_t)255, 3 * 4, 3 * 4,
+ 0, 3 * 11, 3 * -8,
+ (int8_t)255, 3 * 3, 3 * 4,
+ 0, 3 * -6, 3 * -17,
+ (int8_t)255, 3 * 3, 3 * 3,
+ 0, 3 * -14, 3 * 4,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 14, 3 * -4,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -14, 3 * 4,
+ 1};
 const int8_t height2FallingLeft7[] = {
- (int8_t) 255, 3*12, 3*9,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-12, 3*-8,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*11, 3*-21,
- 0, 3*1, 3*30,
- (int8_t) 255, 3*11, 3*-22,
- 0, 3*-3, 3*16,
- (int8_t) 255, 3*11, 3*-22,
- 0, 3*-23, 3*14,
- (int8_t) 255, 3*11, 3*-22,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*12, 3*8,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-12, 3*-8,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ (int8_t)255, 3 * 12, 3 * 9,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -12, 3 * -8,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 11, 3 * -21,
+ 0, 3 * 1, 3 * 30,
+ (int8_t)255, 3 * 11, 3 * -22,
+ 0, 3 * -3, 3 * 16,
+ (int8_t)255, 3 * 11, 3 * -22,
+ 0, 3 * -23, 3 * 14,
+ (int8_t)255, 3 * 11, 3 * -22,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 12, 3 * 8,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -12, 3 * -8,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2RisingRight7[] = {
- 0, 3*6, 3*28,
- (int8_t) 255, 3*9, 3*12,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-9, 3*-12,
- (int8_t) 255, 3*-8, 3*6,
- (int8_t) 255, 3*20, 3*-14,
- 0, 3*-11, 3*26,
- (int8_t) 255, 3*20, 3*-14,
- 0, 3*-12, 3*8,
- (int8_t) 255, 3*20, 3*-14,
- 0, 3*-29, 3*2,
- (int8_t) 255, 3*20, 3*-14,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*9, 3*12,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-9, 3*-12,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 9, 3 * 12,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -9, 3 * -12,
+ (int8_t)255, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 20, 3 * -14,
+ 0, 3 * -11, 3 * 26,
+ (int8_t)255, 3 * 20, 3 * -14,
+ 0, 3 * -12, 3 * 8,
+ (int8_t)255, 3 * 20, 3 * -14,
+ 0, 3 * -29, 3 * 2,
+ (int8_t)255, 3 * 20, 3 * -14,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 9, 3 * 12,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -9, 3 * -12,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2FallingRight7[] = {
- 0, 3*11, 3*5,
- (int8_t) 255, 3*-8, 3*9,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*8, 3*-8,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*21, 3*23,
- 0, 3*-29, 3*-14,
- (int8_t) 255, 3*21, 3*22,
- 0, 3*-13, 3*-28,
- (int8_t) 255, 3*21, 3*22,
- 0, 3*-13, 3*-30,
- (int8_t) 255, 3*21, 3*22,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*-8, 3*8,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*8, 3*-8,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 11, 3 * 5,
+ (int8_t)255, 3 * -8, 3 * 9,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 8, 3 * -8,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 21, 3 * 23,
+ 0, 3 * -29, 3 * -14,
+ (int8_t)255, 3 * 21, 3 * 22,
+ 0, 3 * -13, 3 * -28,
+ (int8_t)255, 3 * 21, 3 * 22,
+ 0, 3 * -13, 3 * -30,
+ (int8_t)255, 3 * 21, 3 * 22,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * -8, 3 * 8,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 8, 3 * -8,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2RisingLeft7[] = {
- 0, 3*4, 3*-11,
- (int8_t) 255, 3*-4, 3*11,
- (int8_t) 255, 3*8, 3*-5,
- (int8_t) 255, 3*4, 3*-12,
- (int8_t) 255, 3*-8, 3*6,
- (int8_t) 255, 3*25, 3*13,
- 0, 3*-29, 3*-2,
- (int8_t) 255, 3*26, 3*14,
- 0, 3*-18, 3*-19,
- (int8_t) 255, 3*26, 3*13,
- 0, 3*-22, 3*-25,
- (int8_t) 255, 3*25, 3*14,
- 0, 3*-8, 3*5,
- (int8_t) 255, 3*-3, 3*12,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*3, 3*-11,
- (int8_t) 255, 3*-8, 3*5,
- 1
-};
+ 0, 3 * 4, 3 * -11,
+ (int8_t)255, 3 * -4, 3 * 11,
+ (int8_t)255, 3 * 8, 3 * -5,
+ (int8_t)255, 3 * 4, 3 * -12,
+ (int8_t)255, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 25, 3 * 13,
+ 0, 3 * -29, 3 * -2,
+ (int8_t)255, 3 * 26, 3 * 14,
+ 0, 3 * -18, 3 * -19,
+ (int8_t)255, 3 * 26, 3 * 13,
+ 0, 3 * -22, 3 * -25,
+ (int8_t)255, 3 * 25, 3 * 14,
+ 0, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * -3, 3 * 12,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 3, 3 * -11,
+ (int8_t)255, 3 * -8, 3 * 5,
+ 1};
 const int8_t height2FallingBack7[] = {
- 0, 3*13, 3*-1,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*-5, 3*-4,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*5, 3*4,
- (int8_t) 255, 3*29, 3*-10,
- 0, 3*-26, 3*23,
- (int8_t) 255, 3*29, 3*-10,
- 0, 3*-34, 3*6,
- (int8_t) 255, 3*29, 3*-9,
- 0, 3*-32, 3*-4,
- (int8_t) 255, 3*29, 3*-10,
- 0, 3*5, 3*4,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*-5, 3*-3,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*5, 3*4,
- 1
-};
+ 0, 3 * 13, 3 * -1,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * -5, 3 * -4,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * 5, 3 * 4,
+ (int8_t)255, 3 * 29, 3 * -10,
+ 0, 3 * -26, 3 * 23,
+ (int8_t)255, 3 * 29, 3 * -10,
+ 0, 3 * -34, 3 * 6,
+ (int8_t)255, 3 * 29, 3 * -9,
+ 0, 3 * -32, 3 * -4,
+ (int8_t)255, 3 * 29, 3 * -10,
+ 0, 3 * 5, 3 * 4,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * -5, 3 * -3,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * 5, 3 * 4,
+ 1};
 const int8_t height2RisingFront7[] = {
- 0, 3*0, 3*5,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*0, 3*-5,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*0, 3*5,
- (int8_t) 255, 3*30, 3*-5,
- 0, 3*-27, 3*19,
- (int8_t) 255, 3*30, 3*-6,
- 0, 3*-30, 3*1,
- (int8_t) 255, 3*31, 3*-6,
- 0, 3*-34, 3*-8,
- (int8_t) 255, 3*31, 3*-5,
- 0, 3*-1, 3*5,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*1, 3*-5,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-1, 3*5,
- 1
-};
+ 0, 3 * 0, 3 * 5,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 0, 3 * -5,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * 0, 3 * 5,
+ (int8_t)255, 3 * 30, 3 * -5,
+ 0, 3 * -27, 3 * 19,
+ (int8_t)255, 3 * 30, 3 * -6,
+ 0, 3 * -30, 3 * 1,
+ (int8_t)255, 3 * 31, 3 * -6,
+ 0, 3 * -34, 3 * -8,
+ (int8_t)255, 3 * 31, 3 * -5,
+ 0, 3 * -1, 3 * 5,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * 1, 3 * -5,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -1, 3 * 5,
+ 1};
 const int8_t height2FallingFront7[] = {
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*15, 3*-4,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-15, 3*3,
- (int8_t) 255, 3*3, 3*10,
- 0, 3*0, 3*4,
- (int8_t) 255, 3*3, 3*10,
- 0, 3*12, 3*-14,
- (int8_t) 255, 3*3, 3*10,
- 0, 3*-6, 3*-23,
- (int8_t) 255, 3*3, 3*9,
- 0, 3*-15, 3*4,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*15, 3*-4,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-15, 3*4,
- 1
-};
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 15, 3 * -4,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -15, 3 * 3,
+ (int8_t)255, 3 * 3, 3 * 10,
+ 0, 3 * 0, 3 * 4,
+ (int8_t)255, 3 * 3, 3 * 10,
+ 0, 3 * 12, 3 * -14,
+ (int8_t)255, 3 * 3, 3 * 10,
+ 0, 3 * -6, 3 * -23,
+ (int8_t)255, 3 * 3, 3 * 9,
+ 0, 3 * -15, 3 * 4,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 15, 3 * -4,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -15, 3 * 4,
+ 1};
 const int8_t height2RisingBack7[] = {
- 0, 3*16, 3*-11,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*13, 3*-4,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-13, 3*5,
- (int8_t) 255, 3*15, 3*6,
- 0, 3*-12, 3*7,
- (int8_t) 255, 3*15, 3*6,
- 0, 3*-2, 3*-10,
- (int8_t) 255, 3*15, 3*5,
- 0, 3*-18, 3*-19,
- (int8_t) 255, 3*15, 3*6,
- 0, 3*-13, 3*5,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*13, 3*-5,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-13, 3*5,
- 1
-};
+ 0, 3 * 16, 3 * -11,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * 13, 3 * -4,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -13, 3 * 5,
+ (int8_t)255, 3 * 15, 3 * 6,
+ 0, 3 * -12, 3 * 7,
+ (int8_t)255, 3 * 15, 3 * 6,
+ 0, 3 * -2, 3 * -10,
+ (int8_t)255, 3 * 15, 3 * 5,
+ 0, 3 * -18, 3 * -19,
+ (int8_t)255, 3 * 15, 3 * 6,
+ 0, 3 * -13, 3 * 5,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * 13, 3 * -5,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -13, 3 * 5,
+ 1};
 const int8_t depth2RollingLeft7[] = {
- (int8_t) 255, 3*12, 3*9,
- (int8_t) 255, 3*16, 3*-11,
- (int8_t) 255, 3*-12, 3*-9,
- (int8_t) 255, 3*-16, 3*11,
- (int8_t) 255, 3*6, 3*-10,
- 0, 3*6, 3*19,
- (int8_t) 255, 3*6, 3*-11,
- 0, 3*10, 3*0,
- (int8_t) 255, 3*6, 3*-12,
- 0, 3*-18, 3*3,
- (int8_t) 255, 3*6, 3*-11,
- 0, 3*-16, 3*12,
- (int8_t) 255, 3*12, 3*8,
- (int8_t) 255, 3*16, 3*-12,
- (int8_t) 255, 3*-12, 3*-8,
- (int8_t) 255, 3*-16, 3*12,
- 1
-};
+ (int8_t)255, 3 * 12, 3 * 9,
+ (int8_t)255, 3 * 16, 3 * -11,
+ (int8_t)255, 3 * -12, 3 * -9,
+ (int8_t)255, 3 * -16, 3 * 11,
+ (int8_t)255, 3 * 6, 3 * -10,
+ 0, 3 * 6, 3 * 19,
+ (int8_t)255, 3 * 6, 3 * -11,
+ 0, 3 * 10, 3 * 0,
+ (int8_t)255, 3 * 6, 3 * -12,
+ 0, 3 * -18, 3 * 3,
+ (int8_t)255, 3 * 6, 3 * -11,
+ 0, 3 * -16, 3 * 12,
+ (int8_t)255, 3 * 12, 3 * 8,
+ (int8_t)255, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * -12, 3 * -8,
+ (int8_t)255, 3 * -16, 3 * 12,
+ 1};
 const int8_t depth2RollingRight7[] = {
- 0, 3*11, 3*5,
- (int8_t) 255, 3*-8, 3*9,
- (int8_t) 255, 3*16, 3*-12,
- (int8_t) 255, 3*8, 3*-8,
- (int8_t) 255, 3*-16, 3*11,
- (int8_t) 255, 3*11, 3*12,
- 0, 3*-19, 3*-3,
- (int8_t) 255, 3*10, 3*11,
- 0, 3*6, 3*-23,
- (int8_t) 255, 3*10, 3*11,
- 0, 3*-2, 3*-19,
- (int8_t) 255, 3*11, 3*11,
- 0, 3*-16, 3*12,
- (int8_t) 255, 3*-9, 3*8,
- (int8_t) 255, 3*16, 3*-12,
- (int8_t) 255, 3*9, 3*-8,
- (int8_t) 255, 3*-16, 3*12,
- 1
-};
+ 0, 3 * 11, 3 * 5,
+ (int8_t)255, 3 * -8, 3 * 9,
+ (int8_t)255, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * 8, 3 * -8,
+ (int8_t)255, 3 * -16, 3 * 11,
+ (int8_t)255, 3 * 11, 3 * 12,
+ 0, 3 * -19, 3 * -3,
+ (int8_t)255, 3 * 10, 3 * 11,
+ 0, 3 * 6, 3 * -23,
+ (int8_t)255, 3 * 10, 3 * 11,
+ 0, 3 * -2, 3 * -19,
+ (int8_t)255, 3 * 11, 3 * 11,
+ 0, 3 * -16, 3 * 12,
+ (int8_t)255, 3 * -9, 3 * 8,
+ (int8_t)255, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * 9, 3 * -8,
+ (int8_t)255, 3 * -16, 3 * 12,
+ 1};
 const int8_t width2RollingFront7[] = {
- (int8_t) 255, 3*6, 3*28,
- (int8_t) 255, 3*15, 3*-4,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*-15, 3*3,
- (int8_t) 255, 3*2, 3*5,
- 0, 3*4, 3*23,
- (int8_t) 255, 3*2, 3*5,
- 0, 3*13, 3*-9,
- (int8_t) 255, 3*2, 3*5,
- 0, 3*-8, 3*-32,
- (int8_t) 255, 3*2, 3*4,
- 0, 3*-15, 3*4,
- (int8_t) 255, 3*6, 3*28,
- (int8_t) 255, 3*15, 3*-4,
- (int8_t) 255, 3*-6, 3*-28,
- (int8_t) 255, 3*-15, 3*4,
- 1
-};
+ (int8_t)255, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 15, 3 * -4,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * -15, 3 * 3,
+ (int8_t)255, 3 * 2, 3 * 5,
+ 0, 3 * 4, 3 * 23,
+ (int8_t)255, 3 * 2, 3 * 5,
+ 0, 3 * 13, 3 * -9,
+ (int8_t)255, 3 * 2, 3 * 5,
+ 0, 3 * -8, 3 * -32,
+ (int8_t)255, 3 * 2, 3 * 4,
+ 0, 3 * -15, 3 * 4,
+ (int8_t)255, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 15, 3 * -4,
+ (int8_t)255, 3 * -6, 3 * -28,
+ (int8_t)255, 3 * -15, 3 * 4,
+ 1};
 const int8_t width2RollingBack7[] = {
- 0, 3*13, 3*-1,
- (int8_t) 255, 3*6, 3*27,
- (int8_t) 255, 3*-5, 3*-4,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*5, 3*4,
- (int8_t) 255, 3*15, 3*-5,
- 0, 3*-9, 3*32,
- (int8_t) 255, 3*15, 3*-5,
- 0, 3*-20, 3*1,
- (int8_t) 255, 3*14, 3*-5,
- 0, 3*-20, 3*-22,
- (int8_t) 255, 3*14, 3*-5,
- 0, 3*6, 3*4,
- (int8_t) 255, 3*6, 3*27,
- (int8_t) 255, 3*-6, 3*-4,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*6, 3*4,
- 1
-};
+ 0, 3 * 13, 3 * -1,
+ (int8_t)255, 3 * 6, 3 * 27,
+ (int8_t)255, 3 * -5, 3 * -4,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * 5, 3 * 4,
+ (int8_t)255, 3 * 15, 3 * -5,
+ 0, 3 * -9, 3 * 32,
+ (int8_t)255, 3 * 15, 3 * -5,
+ 0, 3 * -20, 3 * 1,
+ (int8_t)255, 3 * 14, 3 * -5,
+ 0, 3 * -20, 3 * -22,
+ (int8_t)255, 3 * 14, 3 * -5,
+ 0, 3 * 6, 3 * 4,
+ (int8_t)255, 3 * 6, 3 * 27,
+ (int8_t)255, 3 * -6, 3 * -4,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * 6, 3 * 4,
+ 1};
 const int8_t height1FallingLeft7[] = {
- (int8_t) 255, 3*12, 3*9,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-12, 3*-8,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*6, 3*-10,
- 0, 3*6, 3*19,
- (int8_t) 255, 3*6, 3*-11,
- 0, 3*2, 3*5,
- (int8_t) 255, 3*6, 3*-11,
- 0, 3*-18, 3*3,
- (int8_t) 255, 3*6, 3*-11,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*12, 3*8,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-12, 3*-8,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ (int8_t)255, 3 * 12, 3 * 9,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -12, 3 * -8,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 6, 3 * -10,
+ 0, 3 * 6, 3 * 19,
+ (int8_t)255, 3 * 6, 3 * -11,
+ 0, 3 * 2, 3 * 5,
+ (int8_t)255, 3 * 6, 3 * -11,
+ 0, 3 * -18, 3 * 3,
+ (int8_t)255, 3 * 6, 3 * -11,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 12, 3 * 8,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -12, 3 * -8,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height1FallingRight7[] = {
- 0, 3*11, 3*5,
- (int8_t) 255, 3*-8, 3*9,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*8, 3*-8,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*11, 3*12,
- 0, 3*-19, 3*-3,
- (int8_t) 255, 3*10, 3*11,
- 0, 3*-2, 3*-17,
- (int8_t) 255, 3*10, 3*11,
- 0, 3*-2, 3*-19,
- (int8_t) 255, 3*11, 3*11,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*-9, 3*8,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*9, 3*-8,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 11, 3 * 5,
+ (int8_t)255, 3 * -8, 3 * 9,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 8, 3 * -8,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 11, 3 * 12,
+ 0, 3 * -19, 3 * -3,
+ (int8_t)255, 3 * 10, 3 * 11,
+ 0, 3 * -2, 3 * -17,
+ (int8_t)255, 3 * 10, 3 * 11,
+ 0, 3 * -2, 3 * -19,
+ (int8_t)255, 3 * 11, 3 * 11,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * -9, 3 * 8,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 9, 3 * -8,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height1FallingBack7[] = {
- 0, 3*13, 3*-1,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*-5, 3*-4,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*5, 3*4,
- (int8_t) 255, 3*15, 3*-5,
- 0, 3*-12, 3*18,
- (int8_t) 255, 3*15, 3*-5,
- 0, 3*-20, 3*1,
- (int8_t) 255, 3*14, 3*-5,
- 0, 3*-17, 3*-8,
- (int8_t) 255, 3*14, 3*-5,
- 0, 3*6, 3*4,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*-6, 3*-4,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*6, 3*4,
- 1
-};
+ 0, 3 * 13, 3 * -1,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * -5, 3 * -4,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * 5, 3 * 4,
+ (int8_t)255, 3 * 15, 3 * -5,
+ 0, 3 * -12, 3 * 18,
+ (int8_t)255, 3 * 15, 3 * -5,
+ 0, 3 * -20, 3 * 1,
+ (int8_t)255, 3 * 14, 3 * -5,
+ 0, 3 * -17, 3 * -8,
+ (int8_t)255, 3 * 14, 3 * -5,
+ 0, 3 * 6, 3 * 4,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * -6, 3 * -4,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * 6, 3 * 4,
+ 1};
 const int8_t height1FallingFront7[] = {
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*15, 3*-4,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-15, 3*3,
- (int8_t) 255, 3*2, 3*5,
- 0, 3*1, 3*9,
- (int8_t) 255, 3*2, 3*5,
- 0, 3*13, 3*-9,
- (int8_t) 255, 3*2, 3*5,
- 0, 3*-5, 3*-18,
- (int8_t) 255, 3*2, 3*4,
- 0, 3*-15, 3*4,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*15, 3*-4,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-15, 3*4,
- 1
-};
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 15, 3 * -4,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -15, 3 * 3,
+ (int8_t)255, 3 * 2, 3 * 5,
+ 0, 3 * 1, 3 * 9,
+ (int8_t)255, 3 * 2, 3 * 5,
+ 0, 3 * 13, 3 * -9,
+ (int8_t)255, 3 * 2, 3 * 5,
+ 0, 3 * -5, 3 * -18,
+ (int8_t)255, 3 * 2, 3 * 4,
+ 0, 3 * -15, 3 * 4,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 15, 3 * -4,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -15, 3 * 4,
+ 1};
 const int8_t height2FallingLeft8[] = {
- (int8_t) 255, 3*13, 3*7,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-13, 3*-6,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*8, 3*-23,
- 0, 3*5, 3*30,
- (int8_t) 255, 3*8, 3*-23,
- 0, 3*0, 3*17,
- (int8_t) 255, 3*8, 3*-23,
- 0, 3*-21, 3*17,
- (int8_t) 255, 3*8, 3*-24,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*13, 3*7,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-13, 3*-7,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ (int8_t)255, 3 * 13, 3 * 7,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -13, 3 * -6,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 8, 3 * -23,
+ 0, 3 * 5, 3 * 30,
+ (int8_t)255, 3 * 8, 3 * -23,
+ 0, 3 * 0, 3 * 17,
+ (int8_t)255, 3 * 8, 3 * -23,
+ 0, 3 * -21, 3 * 17,
+ (int8_t)255, 3 * 8, 3 * -24,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 13, 3 * 7,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -13, 3 * -7,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2RisingRight8[] = {
- 0, 3*6, 3*28,
- (int8_t) 255, 3*8, 3*13,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-8, 3*-13,
- (int8_t) 255, 3*-8, 3*6,
- (int8_t) 255, 3*22, 3*-11,
- 0, 3*-14, 3*24,
- (int8_t) 255, 3*21, 3*-11,
- 0, 3*-13, 3*5,
- (int8_t) 255, 3*21, 3*-11,
- 0, 3*-29, 3*-2,
- (int8_t) 255, 3*22, 3*-11,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*7, 3*13,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-7, 3*-13,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 8, 3 * 13,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -8, 3 * -13,
+ (int8_t)255, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 22, 3 * -11,
+ 0, 3 * -14, 3 * 24,
+ (int8_t)255, 3 * 21, 3 * -11,
+ 0, 3 * -13, 3 * 5,
+ (int8_t)255, 3 * 21, 3 * -11,
+ 0, 3 * -29, 3 * -2,
+ (int8_t)255, 3 * 22, 3 * -11,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 7, 3 * 13,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -7, 3 * -13,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2FallingRight8[] = {
- 0, 3*13, 3*7,
- (int8_t) 255, 3*-10, 3*7,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*10, 3*-7,
- (int8_t) 255, 3*-8, 3*6,
- (int8_t) 255, 3*18, 3*24,
- 0, 3*-28, 3*-17,
- (int8_t) 255, 3*18, 3*24,
- 0, 3*-10, 3*-30,
- (int8_t) 255, 3*18, 3*24,
- 0, 3*-8, 3*-31,
- (int8_t) 255, 3*18, 3*24,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*-10, 3*7,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*10, 3*-7,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 13, 3 * 7,
+ (int8_t)255, 3 * -10, 3 * 7,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 10, 3 * -7,
+ (int8_t)255, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 18, 3 * 24,
+ 0, 3 * -28, 3 * -17,
+ (int8_t)255, 3 * 18, 3 * 24,
+ 0, 3 * -10, 3 * -30,
+ (int8_t)255, 3 * 18, 3 * 24,
+ 0, 3 * -8, 3 * -31,
+ (int8_t)255, 3 * 18, 3 * 24,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * -10, 3 * 7,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 10, 3 * -7,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2RisingLeft8[] = {
- 0, 3*2, 3*-12,
- (int8_t) 255, 3*-2, 3*12,
- (int8_t) 255, 3*8, 3*-5,
- (int8_t) 255, 3*2, 3*-13,
- (int8_t) 255, 3*-8, 3*6,
- (int8_t) 255, 3*27, 3*11,
- 0, 3*-29, 3*1,
- (int8_t) 255, 3*26, 3*11,
- 0, 3*-18, 3*-16,
- (int8_t) 255, 3*26, 3*10,
- 0, 3*-24, 3*-23,
- (int8_t) 255, 3*27, 3*11,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*-3, 3*12,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*3, 3*-12,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 2, 3 * -12,
+ (int8_t)255, 3 * -2, 3 * 12,
+ (int8_t)255, 3 * 8, 3 * -5,
+ (int8_t)255, 3 * 2, 3 * -13,
+ (int8_t)255, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 27, 3 * 11,
+ 0, 3 * -29, 3 * 1,
+ (int8_t)255, 3 * 26, 3 * 11,
+ 0, 3 * -18, 3 * -16,
+ (int8_t)255, 3 * 26, 3 * 10,
+ 0, 3 * -24, 3 * -23,
+ (int8_t)255, 3 * 27, 3 * 11,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * -3, 3 * 12,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 3, 3 * -12,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2FallingBack8[] = {
- 0, 3*15, 3*-2,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*-7, 3*-3,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*7, 3*3,
- (int8_t) 255, 3*27, 3*-10,
- 0, 3*-24, 3*23,
- (int8_t) 255, 3*27, 3*-10,
- 0, 3*-34, 3*7,
- (int8_t) 255, 3*27, 3*-9,
- 0, 3*-30, 3*-4,
- (int8_t) 255, 3*27, 3*-10,
- 0, 3*7, 3*3,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*-7, 3*-2,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*7, 3*3,
- 1
-};
+ 0, 3 * 15, 3 * -2,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * -7, 3 * -3,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * 7, 3 * 3,
+ (int8_t)255, 3 * 27, 3 * -10,
+ 0, 3 * -24, 3 * 23,
+ (int8_t)255, 3 * 27, 3 * -10,
+ 0, 3 * -34, 3 * 7,
+ (int8_t)255, 3 * 27, 3 * -9,
+ 0, 3 * -30, 3 * -4,
+ (int8_t)255, 3 * 27, 3 * -10,
+ 0, 3 * 7, 3 * 3,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * -7, 3 * -2,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * 7, 3 * 3,
+ 1};
 const int8_t height2RisingFront8[] = {
- 0, 3*-1, 3*6,
- (int8_t) 255, 3*2, 3*14,
- (int8_t) 255, 3*2, 3*-6,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-1, 3*6,
- (int8_t) 255, 3*29, 3*-5,
- 0, 3*-27, 3*19,
- (int8_t) 255, 3*30, 3*-5,
- 0, 3*-28, 3*-1,
- (int8_t) 255, 3*30, 3*-5,
- 0, 3*-33, 3*-9,
- (int8_t) 255, 3*30, 3*-4,
- 0, 3*-2, 3*5,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*2, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-2, 3*5,
- 1
-};
+ 0, 3 * -1, 3 * 6,
+ (int8_t)255, 3 * 2, 3 * 14,
+ (int8_t)255, 3 * 2, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -1, 3 * 6,
+ (int8_t)255, 3 * 29, 3 * -5,
+ 0, 3 * -27, 3 * 19,
+ (int8_t)255, 3 * 30, 3 * -5,
+ 0, 3 * -28, 3 * -1,
+ (int8_t)255, 3 * 30, 3 * -5,
+ 0, 3 * -33, 3 * -9,
+ (int8_t)255, 3 * 30, 3 * -4,
+ 0, 3 * -2, 3 * 5,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 2, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -2, 3 * 5,
+ 1};
 const int8_t height2FallingFront8[] = {
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*15, 3*-3,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-15, 3*2,
- (int8_t) 255, 3*0, 3*10,
- 0, 3*3, 3*4,
- (int8_t) 255, 3*-1, 3*10,
- 0, 3*16, 3*-13,
- (int8_t) 255, 3*-1, 3*10,
- 0, 3*-2, 3*-23,
- (int8_t) 255, 3*-1, 3*9,
- 0, 3*-14, 3*3,
- (int8_t) 255, 3*2, 3*14,
- (int8_t) 255, 3*15, 3*-3,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-14, 3*3,
- 1
-};
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 15, 3 * -3,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -15, 3 * 2,
+ (int8_t)255, 3 * 0, 3 * 10,
+ 0, 3 * 3, 3 * 4,
+ (int8_t)255, 3 * -1, 3 * 10,
+ 0, 3 * 16, 3 * -13,
+ (int8_t)255, 3 * -1, 3 * 10,
+ 0, 3 * -2, 3 * -23,
+ (int8_t)255, 3 * -1, 3 * 9,
+ 0, 3 * -14, 3 * 3,
+ (int8_t)255, 3 * 2, 3 * 14,
+ (int8_t)255, 3 * 15, 3 * -3,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -14, 3 * 3,
+ 1};
 const int8_t height2RisingBack8[] = {
- 0, 3*16, 3*-11,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*12, 3*-5,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-12, 3*6,
- (int8_t) 255, 3*18, 3*5,
- 0, 3*-15, 3*8,
- (int8_t) 255, 3*18, 3*5,
- 0, 3*-6, 3*-10,
- (int8_t) 255, 3*18, 3*4,
- 0, 3*-21, 3*-18,
- (int8_t) 255, 3*18, 3*5,
- 0, 3*-12, 3*6,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*12, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-12, 3*6,
- 1
-};
+ 0, 3 * 16, 3 * -11,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * 12, 3 * -5,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -12, 3 * 6,
+ (int8_t)255, 3 * 18, 3 * 5,
+ 0, 3 * -15, 3 * 8,
+ (int8_t)255, 3 * 18, 3 * 5,
+ 0, 3 * -6, 3 * -10,
+ (int8_t)255, 3 * 18, 3 * 4,
+ 0, 3 * -21, 3 * -18,
+ (int8_t)255, 3 * 18, 3 * 5,
+ 0, 3 * -12, 3 * 6,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * 12, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -12, 3 * 6,
+ 1};
 const int8_t depth2RollingLeft8[] = {
- (int8_t) 255, 3*13, 3*7,
- (int8_t) 255, 3*16, 3*-11,
- (int8_t) 255, 3*-13, 3*-7,
- (int8_t) 255, 3*-16, 3*11,
- (int8_t) 255, 3*4, 3*-11,
- 0, 3*9, 3*18,
- (int8_t) 255, 3*4, 3*-11,
- 0, 3*12, 3*0,
- (int8_t) 255, 3*4, 3*-12,
- 0, 3*-17, 3*5,
- (int8_t) 255, 3*4, 3*-12,
- 0, 3*-16, 3*12,
- (int8_t) 255, 3*13, 3*7,
- (int8_t) 255, 3*16, 3*-12,
- (int8_t) 255, 3*-13, 3*-7,
- (int8_t) 255, 3*-16, 3*12,
- 1
-};
+ (int8_t)255, 3 * 13, 3 * 7,
+ (int8_t)255, 3 * 16, 3 * -11,
+ (int8_t)255, 3 * -13, 3 * -7,
+ (int8_t)255, 3 * -16, 3 * 11,
+ (int8_t)255, 3 * 4, 3 * -11,
+ 0, 3 * 9, 3 * 18,
+ (int8_t)255, 3 * 4, 3 * -11,
+ 0, 3 * 12, 3 * 0,
+ (int8_t)255, 3 * 4, 3 * -12,
+ 0, 3 * -17, 3 * 5,
+ (int8_t)255, 3 * 4, 3 * -12,
+ 0, 3 * -16, 3 * 12,
+ (int8_t)255, 3 * 13, 3 * 7,
+ (int8_t)255, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * -13, 3 * -7,
+ (int8_t)255, 3 * -16, 3 * 12,
+ 1};
 const int8_t depth2RollingRight8[] = {
- 0, 3*13, 3*7,
- (int8_t) 255, 3*-10, 3*7,
- (int8_t) 255, 3*16, 3*-12,
- (int8_t) 255, 3*10, 3*-6,
- (int8_t) 255, 3*-16, 3*11,
- (int8_t) 255, 3*9, 3*12,
- 0, 3*-19, 3*-5,
- (int8_t) 255, 3*9, 3*12,
- 0, 3*7, 3*-24,
- (int8_t) 255, 3*9, 3*12,
- 0, 3*1, 3*-18,
- (int8_t) 255, 3*9, 3*11,
- 0, 3*-16, 3*12,
- (int8_t) 255, 3*-10, 3*7,
- (int8_t) 255, 3*16, 3*-12,
- (int8_t) 255, 3*10, 3*-7,
- (int8_t) 255, 3*-16, 3*12,
- 1
-};
+ 0, 3 * 13, 3 * 7,
+ (int8_t)255, 3 * -10, 3 * 7,
+ (int8_t)255, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * 10, 3 * -6,
+ (int8_t)255, 3 * -16, 3 * 11,
+ (int8_t)255, 3 * 9, 3 * 12,
+ 0, 3 * -19, 3 * -5,
+ (int8_t)255, 3 * 9, 3 * 12,
+ 0, 3 * 7, 3 * -24,
+ (int8_t)255, 3 * 9, 3 * 12,
+ 0, 3 * 1, 3 * -18,
+ (int8_t)255, 3 * 9, 3 * 11,
+ 0, 3 * -16, 3 * 12,
+ (int8_t)255, 3 * -10, 3 * 7,
+ (int8_t)255, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * 10, 3 * -7,
+ (int8_t)255, 3 * -16, 3 * 12,
+ 1};
 const int8_t width2RollingFront8[] = {
- (int8_t) 255, 3*6, 3*28,
- (int8_t) 255, 3*15, 3*-3,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*-15, 3*2,
- (int8_t) 255, 3*0, 3*5,
- 0, 3*6, 3*23,
- (int8_t) 255, 3*0, 3*5,
- 0, 3*15, 3*-8,
- (int8_t) 255, 3*0, 3*5,
- 0, 3*-6, 3*-32,
- (int8_t) 255, 3*0, 3*4,
- 0, 3*-15, 3*3,
- (int8_t) 255, 3*6, 3*28,
- (int8_t) 255, 3*15, 3*-3,
- (int8_t) 255, 3*-6, 3*-28,
- (int8_t) 255, 3*-15, 3*3,
- 1
-};
+ (int8_t)255, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 15, 3 * -3,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * -15, 3 * 2,
+ (int8_t)255, 3 * 0, 3 * 5,
+ 0, 3 * 6, 3 * 23,
+ (int8_t)255, 3 * 0, 3 * 5,
+ 0, 3 * 15, 3 * -8,
+ (int8_t)255, 3 * 0, 3 * 5,
+ 0, 3 * -6, 3 * -32,
+ (int8_t)255, 3 * 0, 3 * 4,
+ 0, 3 * -15, 3 * 3,
+ (int8_t)255, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 15, 3 * -3,
+ (int8_t)255, 3 * -6, 3 * -28,
+ (int8_t)255, 3 * -15, 3 * 3,
+ 1};
 const int8_t width2RollingBack8[] = {
- 0, 3*15, 3*-2,
- (int8_t) 255, 3*6, 3*27,
- (int8_t) 255, 3*-7, 3*-3,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*7, 3*3,
- (int8_t) 255, 3*14, 3*-5,
- 0, 3*-8, 3*32,
- (int8_t) 255, 3*14, 3*-5,
- 0, 3*-21, 3*2,
- (int8_t) 255, 3*13, 3*-5,
- 0, 3*-19, 3*-22,
- (int8_t) 255, 3*13, 3*-5,
- 0, 3*8, 3*3,
- (int8_t) 255, 3*6, 3*27,
- (int8_t) 255, 3*-8, 3*-3,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*8, 3*3,
- 1
-};
+ 0, 3 * 15, 3 * -2,
+ (int8_t)255, 3 * 6, 3 * 27,
+ (int8_t)255, 3 * -7, 3 * -3,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * 7, 3 * 3,
+ (int8_t)255, 3 * 14, 3 * -5,
+ 0, 3 * -8, 3 * 32,
+ (int8_t)255, 3 * 14, 3 * -5,
+ 0, 3 * -21, 3 * 2,
+ (int8_t)255, 3 * 13, 3 * -5,
+ 0, 3 * -19, 3 * -22,
+ (int8_t)255, 3 * 13, 3 * -5,
+ 0, 3 * 8, 3 * 3,
+ (int8_t)255, 3 * 6, 3 * 27,
+ (int8_t)255, 3 * -8, 3 * -3,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * 8, 3 * 3,
+ 1};
 const int8_t height1FallingLeft8[] = {
- (int8_t) 255, 3*13, 3*7,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-13, 3*-6,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*4, 3*-11,
- 0, 3*9, 3*18,
- (int8_t) 255, 3*4, 3*-11,
- 0, 3*4, 3*5,
- (int8_t) 255, 3*4, 3*-11,
- 0, 3*-17, 3*5,
- (int8_t) 255, 3*4, 3*-12,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*13, 3*7,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-13, 3*-7,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ (int8_t)255, 3 * 13, 3 * 7,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -13, 3 * -6,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 4, 3 * -11,
+ 0, 3 * 9, 3 * 18,
+ (int8_t)255, 3 * 4, 3 * -11,
+ 0, 3 * 4, 3 * 5,
+ (int8_t)255, 3 * 4, 3 * -11,
+ 0, 3 * -17, 3 * 5,
+ (int8_t)255, 3 * 4, 3 * -12,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 13, 3 * 7,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -13, 3 * -7,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height1FallingRight8[] = {
- 0, 3*13, 3*7,
- (int8_t) 255, 3*-10, 3*7,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*10, 3*-7,
- (int8_t) 255, 3*-8, 3*6,
- (int8_t) 255, 3*9, 3*12,
- 0, 3*-19, 3*-5,
- (int8_t) 255, 3*9, 3*12,
- 0, 3*-1, 3*-18,
- (int8_t) 255, 3*9, 3*12,
- 0, 3*1, 3*-19,
- (int8_t) 255, 3*9, 3*12,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*-10, 3*7,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*10, 3*-7,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 13, 3 * 7,
+ (int8_t)255, 3 * -10, 3 * 7,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 10, 3 * -7,
+ (int8_t)255, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 9, 3 * 12,
+ 0, 3 * -19, 3 * -5,
+ (int8_t)255, 3 * 9, 3 * 12,
+ 0, 3 * -1, 3 * -18,
+ (int8_t)255, 3 * 9, 3 * 12,
+ 0, 3 * 1, 3 * -19,
+ (int8_t)255, 3 * 9, 3 * 12,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * -10, 3 * 7,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 10, 3 * -7,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height1FallingBack8[] = {
- 0, 3*15, 3*-2,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*-7, 3*-3,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*7, 3*3,
- (int8_t) 255, 3*14, 3*-5,
- 0, 3*-11, 3*18,
- (int8_t) 255, 3*14, 3*-5,
- 0, 3*-21, 3*2,
- (int8_t) 255, 3*13, 3*-5,
- 0, 3*-16, 3*-8,
- (int8_t) 255, 3*13, 3*-5,
- 0, 3*8, 3*3,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*-8, 3*-3,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*8, 3*3,
- 1
-};
+ 0, 3 * 15, 3 * -2,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * -7, 3 * -3,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * 7, 3 * 3,
+ (int8_t)255, 3 * 14, 3 * -5,
+ 0, 3 * -11, 3 * 18,
+ (int8_t)255, 3 * 14, 3 * -5,
+ 0, 3 * -21, 3 * 2,
+ (int8_t)255, 3 * 13, 3 * -5,
+ 0, 3 * -16, 3 * -8,
+ (int8_t)255, 3 * 13, 3 * -5,
+ 0, 3 * 8, 3 * 3,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * -8, 3 * -3,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * 8, 3 * 3,
+ 1};
 const int8_t height1FallingFront8[] = {
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*15, 3*-3,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-15, 3*2,
- (int8_t) 255, 3*0, 3*5,
- 0, 3*3, 3*9,
- (int8_t) 255, 3*0, 3*5,
- 0, 3*15, 3*-8,
- (int8_t) 255, 3*0, 3*5,
- 0, 3*-3, 3*-18,
- (int8_t) 255, 3*0, 3*4,
- 0, 3*-15, 3*3,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*15, 3*-3,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-15, 3*3,
- 1
-};
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 15, 3 * -3,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -15, 3 * 2,
+ (int8_t)255, 3 * 0, 3 * 5,
+ 0, 3 * 3, 3 * 9,
+ (int8_t)255, 3 * 0, 3 * 5,
+ 0, 3 * 15, 3 * -8,
+ (int8_t)255, 3 * 0, 3 * 5,
+ 0, 3 * -3, 3 * -18,
+ (int8_t)255, 3 * 0, 3 * 4,
+ 0, 3 * -15, 3 * 3,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 15, 3 * -3,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -15, 3 * 3,
+ 1};
 const int8_t height2FallingLeft9[] = {
- (int8_t) 255, 3*13, 3*5,
- (int8_t) 255, 3*8, 3*-5,
- (int8_t) 255, 3*-13, 3*-5,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*4, 3*-25,
- 0, 3*9, 3*30,
- (int8_t) 255, 3*5, 3*-25,
- 0, 3*3, 3*20,
- (int8_t) 255, 3*5, 3*-26,
- 0, 3*-18, 3*21,
- (int8_t) 255, 3*4, 3*-26,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*14, 3*5,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-14, 3*-5,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ (int8_t)255, 3 * 13, 3 * 5,
+ (int8_t)255, 3 * 8, 3 * -5,
+ (int8_t)255, 3 * -13, 3 * -5,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 4, 3 * -25,
+ 0, 3 * 9, 3 * 30,
+ (int8_t)255, 3 * 5, 3 * -25,
+ 0, 3 * 3, 3 * 20,
+ (int8_t)255, 3 * 5, 3 * -26,
+ 0, 3 * -18, 3 * 21,
+ (int8_t)255, 3 * 4, 3 * -26,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 14, 3 * 5,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -14, 3 * -5,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2RisingRight9[] = {
- 0, 3*6, 3*28,
- (int8_t) 255, 3*6, 3*14,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-6, 3*-14,
- (int8_t) 255, 3*-8, 3*6,
- (int8_t) 255, 3*24, 3*-7,
- 0, 3*-18, 3*21,
- (int8_t) 255, 3*24, 3*-8,
- 0, 3*-16, 3*2,
- (int8_t) 255, 3*24, 3*-8,
- 0, 3*-30, 3*-6,
- (int8_t) 255, 3*24, 3*-7,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*6, 3*13,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-6, 3*-13,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 6, 3 * 14,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -6, 3 * -14,
+ (int8_t)255, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 24, 3 * -7,
+ 0, 3 * -18, 3 * 21,
+ (int8_t)255, 3 * 24, 3 * -8,
+ 0, 3 * -16, 3 * 2,
+ (int8_t)255, 3 * 24, 3 * -8,
+ 0, 3 * -30, 3 * -6,
+ (int8_t)255, 3 * 24, 3 * -7,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 6, 3 * 13,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -6, 3 * -13,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2FallingRight9[] = {
- 0, 3*14, 3*9,
- (int8_t) 255, 3*-11, 3*5,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*11, 3*-5,
- (int8_t) 255, 3*-8, 3*6,
- (int8_t) 255, 3*15, 3*26,
- 0, 3*-26, 3*-21,
- (int8_t) 255, 3*15, 3*26,
- 0, 3*-7, 3*-32,
- (int8_t) 255, 3*15, 3*26,
- 0, 3*-4, 3*-31,
- (int8_t) 255, 3*15, 3*26,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*-11, 3*5,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*11, 3*-5,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 14, 3 * 9,
+ (int8_t)255, 3 * -11, 3 * 5,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 11, 3 * -5,
+ (int8_t)255, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 15, 3 * 26,
+ 0, 3 * -26, 3 * -21,
+ (int8_t)255, 3 * 15, 3 * 26,
+ 0, 3 * -7, 3 * -32,
+ (int8_t)255, 3 * 15, 3 * 26,
+ 0, 3 * -4, 3 * -31,
+ (int8_t)255, 3 * 15, 3 * 26,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * -11, 3 * 5,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 11, 3 * -5,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2RisingLeft9[] = {
- 0, 3*0, 3*-13,
- (int8_t) 255, 3*0, 3*13,
- (int8_t) 255, 3*8, 3*-5,
- (int8_t) 255, 3*0, 3*-14,
- (int8_t) 255, 3*-8, 3*6,
- (int8_t) 255, 3*27, 3*8,
- 0, 3*-27, 3*5,
- (int8_t) 255, 3*27, 3*7,
- 0, 3*-19, 3*-12,
- (int8_t) 255, 3*27, 3*6,
- 0, 3*-27, 3*-20,
- (int8_t) 255, 3*27, 3*8,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*0, 3*12,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*0, 3*-12,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 0, 3 * -13,
+ (int8_t)255, 3 * 0, 3 * 13,
+ (int8_t)255, 3 * 8, 3 * -5,
+ (int8_t)255, 3 * 0, 3 * -14,
+ (int8_t)255, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 27, 3 * 8,
+ 0, 3 * -27, 3 * 5,
+ (int8_t)255, 3 * 27, 3 * 7,
+ 0, 3 * -19, 3 * -12,
+ (int8_t)255, 3 * 27, 3 * 6,
+ 0, 3 * -27, 3 * -20,
+ (int8_t)255, 3 * 27, 3 * 8,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 0, 3 * 12,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 0, 3 * -12,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2FallingBack9[] = {
- 0, 3*17, 3*-3,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*-9, 3*-2,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*9, 3*2,
- (int8_t) 255, 3*25, 3*-11,
- 0, 3*-22, 3*24,
- (int8_t) 255, 3*25, 3*-10,
- 0, 3*-34, 3*8,
- (int8_t) 255, 3*25, 3*-10,
- 0, 3*-28, 3*-3,
- (int8_t) 255, 3*25, 3*-11,
- 0, 3*9, 3*2,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*-9, 3*-2,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*9, 3*2,
- 1
-};
+ 0, 3 * 17, 3 * -3,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * -9, 3 * -2,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * 9, 3 * 2,
+ (int8_t)255, 3 * 25, 3 * -11,
+ 0, 3 * -22, 3 * 24,
+ (int8_t)255, 3 * 25, 3 * -10,
+ 0, 3 * -34, 3 * 8,
+ (int8_t)255, 3 * 25, 3 * -10,
+ 0, 3 * -28, 3 * -3,
+ (int8_t)255, 3 * 25, 3 * -11,
+ 0, 3 * 9, 3 * 2,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * -9, 3 * -2,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * 9, 3 * 2,
+ 1};
 const int8_t height2RisingFront9[] = {
- 0, 3*-3, 3*6,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*3, 3*-6,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-3, 3*6,
- (int8_t) 255, 3*28, 3*-3,
- 0, 3*-25, 3*17,
- (int8_t) 255, 3*28, 3*-3,
- 0, 3*-25, 3*-3,
- (int8_t) 255, 3*29, 3*-3,
- 0, 3*-32, 3*-11,
- (int8_t) 255, 3*29, 3*-2,
- 0, 3*-4, 3*5,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*4, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-4, 3*5,
- 1
-};
+ 0, 3 * -3, 3 * 6,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 3, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -3, 3 * 6,
+ (int8_t)255, 3 * 28, 3 * -3,
+ 0, 3 * -25, 3 * 17,
+ (int8_t)255, 3 * 28, 3 * -3,
+ 0, 3 * -25, 3 * -3,
+ (int8_t)255, 3 * 29, 3 * -3,
+ 0, 3 * -32, 3 * -11,
+ (int8_t)255, 3 * 29, 3 * -2,
+ 0, 3 * -4, 3 * 5,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 4, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -4, 3 * 5,
+ 1};
 const int8_t height2FallingFront9[] = {
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*15, 3*-2,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-15, 3*1,
- (int8_t) 255, 3*-4, 3*11,
- 0, 3*7, 3*3,
- (int8_t) 255, 3*-4, 3*11,
- 0, 3*19, 3*-13,
- (int8_t) 255, 3*-5, 3*11,
- 0, 3*2, 3*-24,
- (int8_t) 255, 3*-5, 3*10,
- 0, 3*-14, 3*2,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*14, 3*-2,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-14, 3*2,
- 1
-};
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 15, 3 * -2,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -15, 3 * 1,
+ (int8_t)255, 3 * -4, 3 * 11,
+ 0, 3 * 7, 3 * 3,
+ (int8_t)255, 3 * -4, 3 * 11,
+ 0, 3 * 19, 3 * -13,
+ (int8_t)255, 3 * -5, 3 * 11,
+ 0, 3 * 2, 3 * -24,
+ (int8_t)255, 3 * -5, 3 * 10,
+ 0, 3 * -14, 3 * 2,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 14, 3 * -2,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -14, 3 * 2,
+ 1};
 const int8_t height2RisingBack9[] = {
- 0, 3*16, 3*-11,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*11, 3*-5,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-11, 3*6,
- (int8_t) 255, 3*21, 3*3,
- 0, 3*-18, 3*10,
- (int8_t) 255, 3*21, 3*3,
- 0, 3*-10, 3*-8,
- (int8_t) 255, 3*21, 3*3,
- 0, 3*-24, 3*-17,
- (int8_t) 255, 3*21, 3*3,
- 0, 3*-11, 3*6,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*11, 3*-5,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-11, 3*6,
- 1
-};
+ 0, 3 * 16, 3 * -11,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * 11, 3 * -5,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -11, 3 * 6,
+ (int8_t)255, 3 * 21, 3 * 3,
+ 0, 3 * -18, 3 * 10,
+ (int8_t)255, 3 * 21, 3 * 3,
+ 0, 3 * -10, 3 * -8,
+ (int8_t)255, 3 * 21, 3 * 3,
+ 0, 3 * -24, 3 * -17,
+ (int8_t)255, 3 * 21, 3 * 3,
+ 0, 3 * -11, 3 * 6,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * 11, 3 * -5,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -11, 3 * 6,
+ 1};
 const int8_t depth2RollingLeft9[] = {
- (int8_t) 255, 3*13, 3*5,
- (int8_t) 255, 3*16, 3*-11,
- (int8_t) 255, 3*-13, 3*-5,
- (int8_t) 255, 3*-16, 3*11,
- (int8_t) 255, 3*2, 3*-12,
- 0, 3*11, 3*17,
- (int8_t) 255, 3*2, 3*-12,
- 0, 3*14, 3*1,
- (int8_t) 255, 3*2, 3*-13,
- 0, 3*-15, 3*8,
- (int8_t) 255, 3*2, 3*-13,
- 0, 3*-16, 3*12,
- (int8_t) 255, 3*13, 3*5,
- (int8_t) 255, 3*16, 3*-12,
- (int8_t) 255, 3*-13, 3*-5,
- (int8_t) 255, 3*-16, 3*12,
- 1
-};
+ (int8_t)255, 3 * 13, 3 * 5,
+ (int8_t)255, 3 * 16, 3 * -11,
+ (int8_t)255, 3 * -13, 3 * -5,
+ (int8_t)255, 3 * -16, 3 * 11,
+ (int8_t)255, 3 * 2, 3 * -12,
+ 0, 3 * 11, 3 * 17,
+ (int8_t)255, 3 * 2, 3 * -12,
+ 0, 3 * 14, 3 * 1,
+ (int8_t)255, 3 * 2, 3 * -13,
+ 0, 3 * -15, 3 * 8,
+ (int8_t)255, 3 * 2, 3 * -13,
+ 0, 3 * -16, 3 * 12,
+ (int8_t)255, 3 * 13, 3 * 5,
+ (int8_t)255, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * -13, 3 * -5,
+ (int8_t)255, 3 * -16, 3 * 12,
+ 1};
 const int8_t depth2RollingRight9[] = {
- 0, 3*14, 3*9,
- (int8_t) 255, 3*-11, 3*5,
- (int8_t) 255, 3*16, 3*-12,
- (int8_t) 255, 3*11, 3*-4,
- (int8_t) 255, 3*-16, 3*11,
- (int8_t) 255, 3*8, 3*13,
- 0, 3*-19, 3*-8,
- (int8_t) 255, 3*8, 3*13,
- 0, 3*8, 3*-25,
- (int8_t) 255, 3*8, 3*13,
- 0, 3*3, 3*-17,
- (int8_t) 255, 3*8, 3*12,
- 0, 3*-16, 3*12,
- (int8_t) 255, 3*-11, 3*5,
- (int8_t) 255, 3*16, 3*-12,
- (int8_t) 255, 3*11, 3*-5,
- (int8_t) 255, 3*-16, 3*12,
- 1
-};
+ 0, 3 * 14, 3 * 9,
+ (int8_t)255, 3 * -11, 3 * 5,
+ (int8_t)255, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * 11, 3 * -4,
+ (int8_t)255, 3 * -16, 3 * 11,
+ (int8_t)255, 3 * 8, 3 * 13,
+ 0, 3 * -19, 3 * -8,
+ (int8_t)255, 3 * 8, 3 * 13,
+ 0, 3 * 8, 3 * -25,
+ (int8_t)255, 3 * 8, 3 * 13,
+ 0, 3 * 3, 3 * -17,
+ (int8_t)255, 3 * 8, 3 * 12,
+ 0, 3 * -16, 3 * 12,
+ (int8_t)255, 3 * -11, 3 * 5,
+ (int8_t)255, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * 11, 3 * -5,
+ (int8_t)255, 3 * -16, 3 * 12,
+ 1};
 const int8_t width2RollingFront9[] = {
- (int8_t) 255, 3*6, 3*28,
- (int8_t) 255, 3*15, 3*-2,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*-15, 3*1,
- (int8_t) 255, 3*-1, 3*6,
- 0, 3*7, 3*22,
- (int8_t) 255, 3*-2, 3*6,
- 0, 3*17, 3*-8,
- (int8_t) 255, 3*-2, 3*5,
- 0, 3*-4, 3*-32,
- (int8_t) 255, 3*-2, 3*4,
- 0, 3*-14, 3*3,
- (int8_t) 255, 3*5, 3*28,
- (int8_t) 255, 3*15, 3*-3,
- (int8_t) 255, 3*-6, 3*-28,
- (int8_t) 255, 3*-14, 3*3,
- 1
-};
+ (int8_t)255, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 15, 3 * -2,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * -15, 3 * 1,
+ (int8_t)255, 3 * -1, 3 * 6,
+ 0, 3 * 7, 3 * 22,
+ (int8_t)255, 3 * -2, 3 * 6,
+ 0, 3 * 17, 3 * -8,
+ (int8_t)255, 3 * -2, 3 * 5,
+ 0, 3 * -4, 3 * -32,
+ (int8_t)255, 3 * -2, 3 * 4,
+ 0, 3 * -14, 3 * 3,
+ (int8_t)255, 3 * 5, 3 * 28,
+ (int8_t)255, 3 * 15, 3 * -3,
+ (int8_t)255, 3 * -6, 3 * -28,
+ (int8_t)255, 3 * -14, 3 * 3,
+ 1};
 const int8_t width2RollingBack9[] = {
- 0, 3*17, 3*-3,
- (int8_t) 255, 3*6, 3*27,
- (int8_t) 255, 3*-9, 3*-2,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*9, 3*2,
- (int8_t) 255, 3*12, 3*-5,
- 0, 3*-6, 3*32,
- (int8_t) 255, 3*12, 3*-5,
- 0, 3*-21, 3*3,
- (int8_t) 255, 3*12, 3*-6,
- 0, 3*-18, 3*-21,
- (int8_t) 255, 3*12, 3*-6,
- 0, 3*9, 3*3,
- (int8_t) 255, 3*6, 3*27,
- (int8_t) 255, 3*-9, 3*-3,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*9, 3*3,
- 1
-};
+ 0, 3 * 17, 3 * -3,
+ (int8_t)255, 3 * 6, 3 * 27,
+ (int8_t)255, 3 * -9, 3 * -2,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * 9, 3 * 2,
+ (int8_t)255, 3 * 12, 3 * -5,
+ 0, 3 * -6, 3 * 32,
+ (int8_t)255, 3 * 12, 3 * -5,
+ 0, 3 * -21, 3 * 3,
+ (int8_t)255, 3 * 12, 3 * -6,
+ 0, 3 * -18, 3 * -21,
+ (int8_t)255, 3 * 12, 3 * -6,
+ 0, 3 * 9, 3 * 3,
+ (int8_t)255, 3 * 6, 3 * 27,
+ (int8_t)255, 3 * -9, 3 * -3,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * 9, 3 * 3,
+ 1};
 const int8_t height1FallingLeft9[] = {
- (int8_t) 255, 3*13, 3*5,
- (int8_t) 255, 3*8, 3*-5,
- (int8_t) 255, 3*-13, 3*-5,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*2, 3*-12,
- 0, 3*11, 3*17,
- (int8_t) 255, 3*2, 3*-12,
- 0, 3*6, 3*7,
- (int8_t) 255, 3*2, 3*-13,
- 0, 3*-15, 3*8,
- (int8_t) 255, 3*2, 3*-13,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*13, 3*5,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-13, 3*-5,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ (int8_t)255, 3 * 13, 3 * 5,
+ (int8_t)255, 3 * 8, 3 * -5,
+ (int8_t)255, 3 * -13, 3 * -5,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 2, 3 * -12,
+ 0, 3 * 11, 3 * 17,
+ (int8_t)255, 3 * 2, 3 * -12,
+ 0, 3 * 6, 3 * 7,
+ (int8_t)255, 3 * 2, 3 * -13,
+ 0, 3 * -15, 3 * 8,
+ (int8_t)255, 3 * 2, 3 * -13,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 13, 3 * 5,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -13, 3 * -5,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height1FallingRight9[] = {
- 0, 3*14, 3*9,
- (int8_t) 255, 3*-11, 3*5,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*11, 3*-5,
- (int8_t) 255, 3*-8, 3*6,
- (int8_t) 255, 3*8, 3*13,
- 0, 3*-19, 3*-8,
- (int8_t) 255, 3*8, 3*13,
- 0, 3*0, 3*-19,
- (int8_t) 255, 3*8, 3*13,
- 0, 3*3, 3*-18,
- (int8_t) 255, 3*8, 3*13,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*-11, 3*5,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*11, 3*-5,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 14, 3 * 9,
+ (int8_t)255, 3 * -11, 3 * 5,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 11, 3 * -5,
+ (int8_t)255, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 8, 3 * 13,
+ 0, 3 * -19, 3 * -8,
+ (int8_t)255, 3 * 8, 3 * 13,
+ 0, 3 * 0, 3 * -19,
+ (int8_t)255, 3 * 8, 3 * 13,
+ 0, 3 * 3, 3 * -18,
+ (int8_t)255, 3 * 8, 3 * 13,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * -11, 3 * 5,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 11, 3 * -5,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height1FallingBack9[] = {
- 0, 3*17, 3*-3,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*-9, 3*-2,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*9, 3*2,
- (int8_t) 255, 3*12, 3*-5,
- 0, 3*-9, 3*18,
- (int8_t) 255, 3*12, 3*-5,
- 0, 3*-21, 3*3,
- (int8_t) 255, 3*12, 3*-6,
- 0, 3*-15, 3*-7,
- (int8_t) 255, 3*12, 3*-6,
- 0, 3*9, 3*3,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*-9, 3*-3,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*9, 3*3,
- 1
-};
+ 0, 3 * 17, 3 * -3,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * -9, 3 * -2,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * 9, 3 * 2,
+ (int8_t)255, 3 * 12, 3 * -5,
+ 0, 3 * -9, 3 * 18,
+ (int8_t)255, 3 * 12, 3 * -5,
+ 0, 3 * -21, 3 * 3,
+ (int8_t)255, 3 * 12, 3 * -6,
+ 0, 3 * -15, 3 * -7,
+ (int8_t)255, 3 * 12, 3 * -6,
+ 0, 3 * 9, 3 * 3,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * -9, 3 * -3,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * 9, 3 * 3,
+ 1};
 const int8_t height1FallingFront9[] = {
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*15, 3*-2,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-15, 3*1,
- (int8_t) 255, 3*-1, 3*6,
- 0, 3*4, 3*8,
- (int8_t) 255, 3*-2, 3*6,
- 0, 3*17, 3*-8,
- (int8_t) 255, 3*-2, 3*5,
- 0, 3*-1, 3*-18,
- (int8_t) 255, 3*-2, 3*4,
- 0, 3*-14, 3*3,
- (int8_t) 255, 3*2, 3*14,
- (int8_t) 255, 3*15, 3*-3,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-14, 3*3,
- 1
-};
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 15, 3 * -2,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -15, 3 * 1,
+ (int8_t)255, 3 * -1, 3 * 6,
+ 0, 3 * 4, 3 * 8,
+ (int8_t)255, 3 * -2, 3 * 6,
+ 0, 3 * 17, 3 * -8,
+ (int8_t)255, 3 * -2, 3 * 5,
+ 0, 3 * -1, 3 * -18,
+ (int8_t)255, 3 * -2, 3 * 4,
+ 0, 3 * -14, 3 * 3,
+ (int8_t)255, 3 * 2, 3 * 14,
+ (int8_t)255, 3 * 15, 3 * -3,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -14, 3 * 3,
+ 1};
 const int8_t height2FallingLeft10[] = {
- (int8_t) 255, 3*13, 3*4,
- (int8_t) 255, 3*8, 3*-5,
- (int8_t) 255, 3*-13, 3*-4,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*1, 3*-26,
- 0, 3*12, 3*30,
- (int8_t) 255, 3*1, 3*-26,
- 0, 3*7, 3*21,
- (int8_t) 255, 3*1, 3*-27,
- 0, 3*-14, 3*23,
- (int8_t) 255, 3*1, 3*-27,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*13, 3*4,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-13, 3*-4,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ (int8_t)255, 3 * 13, 3 * 4,
+ (int8_t)255, 3 * 8, 3 * -5,
+ (int8_t)255, 3 * -13, 3 * -4,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 1, 3 * -26,
+ 0, 3 * 12, 3 * 30,
+ (int8_t)255, 3 * 1, 3 * -26,
+ 0, 3 * 7, 3 * 21,
+ (int8_t)255, 3 * 1, 3 * -27,
+ 0, 3 * -14, 3 * 23,
+ (int8_t)255, 3 * 1, 3 * -27,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 13, 3 * 4,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -13, 3 * -4,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2RisingRight10[] = {
- 0, 3*6, 3*28,
- (int8_t) 255, 3*5, 3*14,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-5, 3*-14,
- (int8_t) 255, 3*-8, 3*6,
- (int8_t) 255, 3*25, 3*-4,
- 0, 3*-20, 3*18,
- (int8_t) 255, 3*25, 3*-4,
- 0, 3*-17, 3*-2,
- (int8_t) 255, 3*25, 3*-4,
- 0, 3*-30, 3*-10,
- (int8_t) 255, 3*25, 3*-4,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*5, 3*14,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-5, 3*-14,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 5, 3 * 14,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -5, 3 * -14,
+ (int8_t)255, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 25, 3 * -4,
+ 0, 3 * -20, 3 * 18,
+ (int8_t)255, 3 * 25, 3 * -4,
+ 0, 3 * -17, 3 * -2,
+ (int8_t)255, 3 * 25, 3 * -4,
+ 0, 3 * -30, 3 * -10,
+ (int8_t)255, 3 * 25, 3 * -4,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 5, 3 * 14,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -5, 3 * -14,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2FallingRight10[] = {
- 0, 3*15, 3*10,
- (int8_t) 255, 3*-12, 3*4,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*12, 3*-4,
- (int8_t) 255, 3*-8, 3*6,
- (int8_t) 255, 3*12, 3*27,
- 0, 3*-24, 3*-23,
- (int8_t) 255, 3*13, 3*27,
- 0, 3*-5, 3*-33,
- (int8_t) 255, 3*13, 3*27,
- 0, 3*-1, 3*-31,
- (int8_t) 255, 3*12, 3*27,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*-11, 3*4,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*11, 3*-4,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 15, 3 * 10,
+ (int8_t)255, 3 * -12, 3 * 4,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 12, 3 * -4,
+ (int8_t)255, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 12, 3 * 27,
+ 0, 3 * -24, 3 * -23,
+ (int8_t)255, 3 * 13, 3 * 27,
+ 0, 3 * -5, 3 * -33,
+ (int8_t)255, 3 * 13, 3 * 27,
+ 0, 3 * -1, 3 * -31,
+ (int8_t)255, 3 * 12, 3 * 27,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * -11, 3 * 4,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 11, 3 * -4,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2RisingLeft10[] = {
- 0, 3*0, 3*-13,
- (int8_t) 255, 3*0, 3*13,
- (int8_t) 255, 3*8, 3*-5,
- (int8_t) 255, 3*-1, 3*-14,
- (int8_t) 255, 3*-7, 3*6,
- (int8_t) 255, 3*25, 3*4,
- 0, 3*-25, 3*9,
- (int8_t) 255, 3*27, 3*4,
- 0, 3*-19, 3*-9,
- (int8_t) 255, 3*27, 3*4,
- 0, 3*-28, 3*-18,
- (int8_t) 255, 3*26, 3*4,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*2, 3*13,
- (int8_t) 255, 3*8, 3*-5,
- (int8_t) 255, 3*-2, 3*-14,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 0, 3 * -13,
+ (int8_t)255, 3 * 0, 3 * 13,
+ (int8_t)255, 3 * 8, 3 * -5,
+ (int8_t)255, 3 * -1, 3 * -14,
+ (int8_t)255, 3 * -7, 3 * 6,
+ (int8_t)255, 3 * 25, 3 * 4,
+ 0, 3 * -25, 3 * 9,
+ (int8_t)255, 3 * 27, 3 * 4,
+ 0, 3 * -19, 3 * -9,
+ (int8_t)255, 3 * 27, 3 * 4,
+ 0, 3 * -28, 3 * -18,
+ (int8_t)255, 3 * 26, 3 * 4,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 2, 3 * 13,
+ (int8_t)255, 3 * 8, 3 * -5,
+ (int8_t)255, 3 * -2, 3 * -14,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2FallingBack10[] = {
- 0, 3*18, 3*-3,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*-10, 3*-2,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*10, 3*2,
- (int8_t) 255, 3*23, 3*-12,
- 0, 3*-20, 3*25,
- (int8_t) 255, 3*23, 3*-11,
- 0, 3*-33, 3*9,
- (int8_t) 255, 3*22, 3*-11,
- 0, 3*-25, 3*-2,
- (int8_t) 255, 3*22, 3*-12,
- 0, 3*11, 3*2,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*-11, 3*-2,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*11, 3*2,
- 1
-};
+ 0, 3 * 18, 3 * -3,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * -10, 3 * -2,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * 10, 3 * 2,
+ (int8_t)255, 3 * 23, 3 * -12,
+ 0, 3 * -20, 3 * 25,
+ (int8_t)255, 3 * 23, 3 * -11,
+ 0, 3 * -33, 3 * 9,
+ (int8_t)255, 3 * 22, 3 * -11,
+ 0, 3 * -25, 3 * -2,
+ (int8_t)255, 3 * 22, 3 * -12,
+ 0, 3 * 11, 3 * 2,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * -11, 3 * -2,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * 11, 3 * 2,
+ 1};
 const int8_t height2RisingFront10[] = {
- 0, 3*-5, 3*6,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*5, 3*-6,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-5, 3*6,
- (int8_t) 255, 3*27, 3*-2,
- 0, 3*-24, 3*16,
- (int8_t) 255, 3*27, 3*-2,
- 0, 3*-22, 3*-4,
- (int8_t) 255, 3*28, 3*-2,
- 0, 3*-31, 3*-12,
- (int8_t) 255, 3*28, 3*-1,
- 0, 3*-6, 3*5,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*6, 3*-6,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-6, 3*5,
- 1
-};
+ 0, 3 * -5, 3 * 6,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 5, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -5, 3 * 6,
+ (int8_t)255, 3 * 27, 3 * -2,
+ 0, 3 * -24, 3 * 16,
+ (int8_t)255, 3 * 27, 3 * -2,
+ 0, 3 * -22, 3 * -4,
+ (int8_t)255, 3 * 28, 3 * -2,
+ 0, 3 * -31, 3 * -12,
+ (int8_t)255, 3 * 28, 3 * -1,
+ 0, 3 * -6, 3 * 5,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 6, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -6, 3 * 5,
+ 1};
 const int8_t height2FallingFront10[] = {
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*15, 3*-2,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-15, 3*1,
- (int8_t) 255, 3*-8, 3*12,
- 0, 3*11, 3*2,
- (int8_t) 255, 3*-8, 3*12,
- 0, 3*23, 3*-14,
- (int8_t) 255, 3*-9, 3*12,
- 0, 3*6, 3*-25,
- (int8_t) 255, 3*-9, 3*11,
- 0, 3*-14, 3*2,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*14, 3*-2,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-14, 3*2,
- 1
-};
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 15, 3 * -2,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -15, 3 * 1,
+ (int8_t)255, 3 * -8, 3 * 12,
+ 0, 3 * 11, 3 * 2,
+ (int8_t)255, 3 * -8, 3 * 12,
+ 0, 3 * 23, 3 * -14,
+ (int8_t)255, 3 * -9, 3 * 12,
+ 0, 3 * 6, 3 * -25,
+ (int8_t)255, 3 * -9, 3 * 11,
+ 0, 3 * -14, 3 * 2,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 14, 3 * -2,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -14, 3 * 2,
+ 1};
 const int8_t height2RisingBack10[] = {
- 0, 3*16, 3*-11,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*10, 3*-5,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-10, 3*6,
- (int8_t) 255, 3*24, 3*2,
- 0, 3*-21, 3*11,
- (int8_t) 255, 3*24, 3*2,
- 0, 3*-14, 3*-7,
- (int8_t) 255, 3*23, 3*2,
- 0, 3*-26, 3*-16,
- (int8_t) 255, 3*23, 3*2,
- 0, 3*-9, 3*6,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*9, 3*-5,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-9, 3*6,
- 1
-};
+ 0, 3 * 16, 3 * -11,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * 10, 3 * -5,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -10, 3 * 6,
+ (int8_t)255, 3 * 24, 3 * 2,
+ 0, 3 * -21, 3 * 11,
+ (int8_t)255, 3 * 24, 3 * 2,
+ 0, 3 * -14, 3 * -7,
+ (int8_t)255, 3 * 23, 3 * 2,
+ 0, 3 * -26, 3 * -16,
+ (int8_t)255, 3 * 23, 3 * 2,
+ 0, 3 * -9, 3 * 6,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * 9, 3 * -5,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -9, 3 * 6,
+ 1};
 const int8_t depth2RollingLeft10[] = {
- (int8_t) 255, 3*13, 3*4,
- (int8_t) 255, 3*16, 3*-11,
- (int8_t) 255, 3*-13, 3*-4,
- (int8_t) 255, 3*-16, 3*11,
- (int8_t) 255, 3*0, 3*-13,
- 0, 3*13, 3*17,
- (int8_t) 255, 3*1, 3*-13,
- 0, 3*15, 3*2,
- (int8_t) 255, 3*1, 3*-14,
- 0, 3*-14, 3*10,
- (int8_t) 255, 3*0, 3*-14,
- 0, 3*-16, 3*12,
- (int8_t) 255, 3*14, 3*4,
- (int8_t) 255, 3*16, 3*-12,
- (int8_t) 255, 3*-14, 3*-4,
- (int8_t) 255, 3*-16, 3*12,
- 1
-};
+ (int8_t)255, 3 * 13, 3 * 4,
+ (int8_t)255, 3 * 16, 3 * -11,
+ (int8_t)255, 3 * -13, 3 * -4,
+ (int8_t)255, 3 * -16, 3 * 11,
+ (int8_t)255, 3 * 0, 3 * -13,
+ 0, 3 * 13, 3 * 17,
+ (int8_t)255, 3 * 1, 3 * -13,
+ 0, 3 * 15, 3 * 2,
+ (int8_t)255, 3 * 1, 3 * -14,
+ 0, 3 * -14, 3 * 10,
+ (int8_t)255, 3 * 0, 3 * -14,
+ 0, 3 * -16, 3 * 12,
+ (int8_t)255, 3 * 14, 3 * 4,
+ (int8_t)255, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * -14, 3 * -4,
+ (int8_t)255, 3 * -16, 3 * 12,
+ 1};
 const int8_t depth2RollingRight10[] = {
- 0, 3*15, 3*10,
- (int8_t) 255, 3*-12, 3*4,
- (int8_t) 255, 3*16, 3*-12,
- (int8_t) 255, 3*12, 3*-3,
- (int8_t) 255, 3*-16, 3*11,
- (int8_t) 255, 3*6, 3*14,
- 0, 3*-18, 3*-10,
- (int8_t) 255, 3*6, 3*14,
- 0, 3*10, 3*-26,
- (int8_t) 255, 3*6, 3*14,
- 0, 3*6, 3*-17,
- (int8_t) 255, 3*6, 3*13,
- 0, 3*-16, 3*12,
- (int8_t) 255, 3*-12, 3*4,
- (int8_t) 255, 3*16, 3*-12,
- (int8_t) 255, 3*12, 3*-4,
- (int8_t) 255, 3*-16, 3*12,
- 1
-};
+ 0, 3 * 15, 3 * 10,
+ (int8_t)255, 3 * -12, 3 * 4,
+ (int8_t)255, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * 12, 3 * -3,
+ (int8_t)255, 3 * -16, 3 * 11,
+ (int8_t)255, 3 * 6, 3 * 14,
+ 0, 3 * -18, 3 * -10,
+ (int8_t)255, 3 * 6, 3 * 14,
+ 0, 3 * 10, 3 * -26,
+ (int8_t)255, 3 * 6, 3 * 14,
+ 0, 3 * 6, 3 * -17,
+ (int8_t)255, 3 * 6, 3 * 13,
+ 0, 3 * -16, 3 * 12,
+ (int8_t)255, 3 * -12, 3 * 4,
+ (int8_t)255, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * 12, 3 * -4,
+ (int8_t)255, 3 * -16, 3 * 12,
+ 1};
 const int8_t width2RollingFront10[] = {
- (int8_t) 255, 3*6, 3*28,
- (int8_t) 255, 3*15, 3*-2,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*-15, 3*1,
- (int8_t) 255, 3*-3, 3*6,
- 0, 3*9, 3*22,
- (int8_t) 255, 3*-4, 3*6,
- 0, 3*19, 3*-8,
- (int8_t) 255, 3*-5, 3*6,
- 0, 3*-1, 3*-33,
- (int8_t) 255, 3*-5, 3*5,
- 0, 3*-13, 3*2,
- (int8_t) 255, 3*5, 3*28,
- (int8_t) 255, 3*14, 3*-2,
- (int8_t) 255, 3*-6, 3*-28,
- (int8_t) 255, 3*-13, 3*2,
- 1
-};
+ (int8_t)255, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 15, 3 * -2,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * -15, 3 * 1,
+ (int8_t)255, 3 * -3, 3 * 6,
+ 0, 3 * 9, 3 * 22,
+ (int8_t)255, 3 * -4, 3 * 6,
+ 0, 3 * 19, 3 * -8,
+ (int8_t)255, 3 * -5, 3 * 6,
+ 0, 3 * -1, 3 * -33,
+ (int8_t)255, 3 * -5, 3 * 5,
+ 0, 3 * -13, 3 * 2,
+ (int8_t)255, 3 * 5, 3 * 28,
+ (int8_t)255, 3 * 14, 3 * -2,
+ (int8_t)255, 3 * -6, 3 * -28,
+ (int8_t)255, 3 * -13, 3 * 2,
+ 1};
 const int8_t width2RollingBack10[] = {
- 0, 3*18, 3*-3,
- (int8_t) 255, 3*6, 3*27,
- (int8_t) 255, 3*-10, 3*-2,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*10, 3*2,
- (int8_t) 255, 3*12, 3*-6,
- 0, 3*-6, 3*33,
- (int8_t) 255, 3*12, 3*-6,
- 0, 3*-22, 3*4,
- (int8_t) 255, 3*11, 3*-6,
- 0, 3*-17, 3*-21,
- (int8_t) 255, 3*11, 3*-6,
- 0, 3*11, 3*2,
- (int8_t) 255, 3*6, 3*27,
- (int8_t) 255, 3*-11, 3*-2,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*11, 3*2,
- 1
-};
+ 0, 3 * 18, 3 * -3,
+ (int8_t)255, 3 * 6, 3 * 27,
+ (int8_t)255, 3 * -10, 3 * -2,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * 10, 3 * 2,
+ (int8_t)255, 3 * 12, 3 * -6,
+ 0, 3 * -6, 3 * 33,
+ (int8_t)255, 3 * 12, 3 * -6,
+ 0, 3 * -22, 3 * 4,
+ (int8_t)255, 3 * 11, 3 * -6,
+ 0, 3 * -17, 3 * -21,
+ (int8_t)255, 3 * 11, 3 * -6,
+ 0, 3 * 11, 3 * 2,
+ (int8_t)255, 3 * 6, 3 * 27,
+ (int8_t)255, 3 * -11, 3 * -2,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * 11, 3 * 2,
+ 1};
 const int8_t height1FallingLeft10[] = {
- (int8_t) 255, 3*13, 3*4,
- (int8_t) 255, 3*8, 3*-5,
- (int8_t) 255, 3*-13, 3*-4,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*0, 3*-13,
- 0, 3*13, 3*17,
- (int8_t) 255, 3*1, 3*-13,
- 0, 3*7, 3*8,
- (int8_t) 255, 3*1, 3*-14,
- 0, 3*-14, 3*10,
- (int8_t) 255, 3*0, 3*-14,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*14, 3*4,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-14, 3*-4,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ (int8_t)255, 3 * 13, 3 * 4,
+ (int8_t)255, 3 * 8, 3 * -5,
+ (int8_t)255, 3 * -13, 3 * -4,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 0, 3 * -13,
+ 0, 3 * 13, 3 * 17,
+ (int8_t)255, 3 * 1, 3 * -13,
+ 0, 3 * 7, 3 * 8,
+ (int8_t)255, 3 * 1, 3 * -14,
+ 0, 3 * -14, 3 * 10,
+ (int8_t)255, 3 * 0, 3 * -14,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 14, 3 * 4,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -14, 3 * -4,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height1FallingRight10[] = {
- 0, 3*15, 3*10,
- (int8_t) 255, 3*-12, 3*4,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*12, 3*-4,
- (int8_t) 255, 3*-8, 3*6,
- (int8_t) 255, 3*6, 3*14,
- 0, 3*-18, 3*-10,
- (int8_t) 255, 3*6, 3*14,
- 0, 3*2, 3*-20,
- (int8_t) 255, 3*6, 3*14,
- 0, 3*6, 3*-18,
- (int8_t) 255, 3*6, 3*14,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*-12, 3*4,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*12, 3*-4,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 15, 3 * 10,
+ (int8_t)255, 3 * -12, 3 * 4,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 12, 3 * -4,
+ (int8_t)255, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 6, 3 * 14,
+ 0, 3 * -18, 3 * -10,
+ (int8_t)255, 3 * 6, 3 * 14,
+ 0, 3 * 2, 3 * -20,
+ (int8_t)255, 3 * 6, 3 * 14,
+ 0, 3 * 6, 3 * -18,
+ (int8_t)255, 3 * 6, 3 * 14,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * -12, 3 * 4,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 12, 3 * -4,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height1FallingBack10[] = {
- 0, 3*18, 3*-3,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*-10, 3*-2,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*10, 3*2,
- (int8_t) 255, 3*12, 3*-6,
- 0, 3*-9, 3*19,
- (int8_t) 255, 3*12, 3*-6,
- 0, 3*-22, 3*4,
- (int8_t) 255, 3*11, 3*-6,
- 0, 3*-14, 3*-7,
- (int8_t) 255, 3*11, 3*-6,
- 0, 3*11, 3*2,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*-11, 3*-2,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*11, 3*2,
- 1
-};
+ 0, 3 * 18, 3 * -3,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * -10, 3 * -2,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * 10, 3 * 2,
+ (int8_t)255, 3 * 12, 3 * -6,
+ 0, 3 * -9, 3 * 19,
+ (int8_t)255, 3 * 12, 3 * -6,
+ 0, 3 * -22, 3 * 4,
+ (int8_t)255, 3 * 11, 3 * -6,
+ 0, 3 * -14, 3 * -7,
+ (int8_t)255, 3 * 11, 3 * -6,
+ 0, 3 * 11, 3 * 2,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * -11, 3 * -2,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * 11, 3 * 2,
+ 1};
 const int8_t height1FallingFront10[] = {
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*15, 3*-2,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-15, 3*1,
- (int8_t) 255, 3*-3, 3*6,
- 0, 3*6, 3*8,
- (int8_t) 255, 3*-3, 3*6,
- 0, 3*18, 3*-8,
- (int8_t) 255, 3*-5, 3*6,
- 0, 3*2, 3*-19,
- (int8_t) 255, 3*-5, 3*5,
- 0, 3*-13, 3*2,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*13, 3*-2,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-13, 3*2,
- 1
-};
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 15, 3 * -2,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -15, 3 * 1,
+ (int8_t)255, 3 * -3, 3 * 6,
+ 0, 3 * 6, 3 * 8,
+ (int8_t)255, 3 * -3, 3 * 6,
+ 0, 3 * 18, 3 * -8,
+ (int8_t)255, 3 * -5, 3 * 6,
+ 0, 3 * 2, 3 * -19,
+ (int8_t)255, 3 * -5, 3 * 5,
+ 0, 3 * -13, 3 * 2,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 13, 3 * -2,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -13, 3 * 2,
+ 1};
 const int8_t height2FallingLeft11[] = {
- (int8_t) 255, 3*13, 3*2,
- (int8_t) 255, 3*8, 3*-5,
- (int8_t) 255, 3*-13, 3*-2,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*-2, 3*-27,
- 0, 3*15, 3*29,
- (int8_t) 255, 3*-2, 3*-27,
- 0, 3*10, 3*22,
- (int8_t) 255, 3*-2, 3*-28,
- 0, 3*-11, 3*26,
- (int8_t) 255, 3*-3, 3*-28,
- 0, 3*-7, 3*6,
- (int8_t) 255, 3*13, 3*2,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-14, 3*-2,
- (int8_t) 255, 3*-7, 3*6,
- 1
-};
+ (int8_t)255, 3 * 13, 3 * 2,
+ (int8_t)255, 3 * 8, 3 * -5,
+ (int8_t)255, 3 * -13, 3 * -2,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * -2, 3 * -27,
+ 0, 3 * 15, 3 * 29,
+ (int8_t)255, 3 * -2, 3 * -27,
+ 0, 3 * 10, 3 * 22,
+ (int8_t)255, 3 * -2, 3 * -28,
+ 0, 3 * -11, 3 * 26,
+ (int8_t)255, 3 * -3, 3 * -28,
+ 0, 3 * -7, 3 * 6,
+ (int8_t)255, 3 * 13, 3 * 2,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -14, 3 * -2,
+ (int8_t)255, 3 * -7, 3 * 6,
+ 1};
 const int8_t height2RisingRight11[] = {
- 0, 3*6, 3*28,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-8, 3*6,
- (int8_t) 255, 3*26, 3*0,
- 0, 3*-23, 3*14,
- (int8_t) 255, 3*26, 3*0,
- 0, 3*-18, 3*-6,
- (int8_t) 255, 3*26, 3*0,
- 0, 3*-29, 3*-14,
- (int8_t) 255, 3*26, 3*0,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 26, 3 * 0,
+ 0, 3 * -23, 3 * 14,
+ (int8_t)255, 3 * 26, 3 * 0,
+ 0, 3 * -18, 3 * -6,
+ (int8_t)255, 3 * 26, 3 * 0,
+ 0, 3 * -29, 3 * -14,
+ (int8_t)255, 3 * 26, 3 * 0,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2FallingRight11[] = {
- 0, 3*15, 3*12,
- (int8_t) 255, 3*-12, 3*2,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*12, 3*-2,
- (int8_t) 255, 3*-8, 3*6,
- (int8_t) 255, 3*10, 3*28,
- 0, 3*-22, 3*-26,
- (int8_t) 255, 3*9, 3*28,
- 0, 3*-1, 3*-34,
- (int8_t) 255, 3*9, 3*28,
- 0, 3*3, 3*-30,
- (int8_t) 255, 3*10, 3*28,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*-13, 3*2,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*13, 3*-2,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 15, 3 * 12,
+ (int8_t)255, 3 * -12, 3 * 2,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 12, 3 * -2,
+ (int8_t)255, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 10, 3 * 28,
+ 0, 3 * -22, 3 * -26,
+ (int8_t)255, 3 * 9, 3 * 28,
+ 0, 3 * -1, 3 * -34,
+ (int8_t)255, 3 * 9, 3 * 28,
+ 0, 3 * 3, 3 * -30,
+ (int8_t)255, 3 * 10, 3 * 28,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * -13, 3 * 2,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 13, 3 * -2,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2RisingLeft11[] = {
- 0, 3*-2, 3*-13,
- (int8_t) 255, 3*2, 3*13,
- (int8_t) 255, 3*8, 3*-5,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-7, 3*6,
- (int8_t) 255, 3*25, 3*0,
- 0, 3*-23, 3*13,
- (int8_t) 255, 3*26, 3*0,
- 0, 3*-18, 3*-5,
- (int8_t) 255, 3*26, 3*0,
- 0, 3*-29, 3*-14,
- (int8_t) 255, 3*26, 3*0,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*8, 3*-5,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * -2, 3 * -13,
+ (int8_t)255, 3 * 2, 3 * 13,
+ (int8_t)255, 3 * 8, 3 * -5,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -7, 3 * 6,
+ (int8_t)255, 3 * 25, 3 * 0,
+ 0, 3 * -23, 3 * 13,
+ (int8_t)255, 3 * 26, 3 * 0,
+ 0, 3 * -18, 3 * -5,
+ (int8_t)255, 3 * 26, 3 * 0,
+ 0, 3 * -29, 3 * -14,
+ (int8_t)255, 3 * 26, 3 * 0,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * 8, 3 * -5,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2FallingBack11[] = {
- 0, 3*20, 3*-4,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*-12, 3*-1,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*12, 3*1,
- (int8_t) 255, 3*19, 3*-12,
- 0, 3*-16, 3*25,
- (int8_t) 255, 3*19, 3*-11,
- 0, 3*-31, 3*10,
- (int8_t) 255, 3*19, 3*-11,
- 0, 3*-22, 3*-2,
- (int8_t) 255, 3*19, 3*-12,
- 0, 3*12, 3*1,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*-12, 3*-1,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*12, 3*1,
- 1
-};
+ 0, 3 * 20, 3 * -4,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * -12, 3 * -1,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * 12, 3 * 1,
+ (int8_t)255, 3 * 19, 3 * -12,
+ 0, 3 * -16, 3 * 25,
+ (int8_t)255, 3 * 19, 3 * -11,
+ 0, 3 * -31, 3 * 10,
+ (int8_t)255, 3 * 19, 3 * -11,
+ 0, 3 * -22, 3 * -2,
+ (int8_t)255, 3 * 19, 3 * -12,
+ 0, 3 * 12, 3 * 1,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * -12, 3 * -1,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * 12, 3 * 1,
+ 1};
 const int8_t height2RisingFront11[] = {
- 0, 3*-7, 3*6,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*7, 3*-6,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-7, 3*6,
- (int8_t) 255, 3*25, 3*0,
- 0, 3*-22, 3*14,
- (int8_t) 255, 3*25, 3*0,
- 0, 3*-18, 3*-6,
- (int8_t) 255, 3*26, 3*0,
- 0, 3*-29, 3*-14,
- (int8_t) 255, 3*26, 3*0,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * -7, 3 * 6,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 7, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -7, 3 * 6,
+ (int8_t)255, 3 * 25, 3 * 0,
+ 0, 3 * -22, 3 * 14,
+ (int8_t)255, 3 * 25, 3 * 0,
+ 0, 3 * -18, 3 * -6,
+ (int8_t)255, 3 * 26, 3 * 0,
+ 0, 3 * -29, 3 * -14,
+ (int8_t)255, 3 * 26, 3 * 0,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2FallingFront11[] = {
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*14, 3*-1,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-14, 3*0,
- (int8_t) 255, 3*-11, 3*12,
- 0, 3*14, 3*2,
- (int8_t) 255, 3*-11, 3*12,
- 0, 3*25, 3*-13,
- (int8_t) 255, 3*-13, 3*12,
- 0, 3*10, 3*-25,
- (int8_t) 255, 3*-13, 3*11,
- 0, 3*-12, 3*1,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*12, 3*-1,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-12, 3*1,
- 1
-};
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 14, 3 * -1,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -14, 3 * 0,
+ (int8_t)255, 3 * -11, 3 * 12,
+ 0, 3 * 14, 3 * 2,
+ (int8_t)255, 3 * -11, 3 * 12,
+ 0, 3 * 25, 3 * -13,
+ (int8_t)255, 3 * -13, 3 * 12,
+ 0, 3 * 10, 3 * -25,
+ (int8_t)255, 3 * -13, 3 * 11,
+ 0, 3 * -12, 3 * 1,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 12, 3 * -1,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -12, 3 * 1,
+ 1};
 const int8_t height2RisingBack11[] = {
- 0, 3*16, 3*-11,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*8, 3*-5,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-8, 3*6,
- (int8_t) 255, 3*26, 3*0,
- 0, 3*-23, 3*13,
- (int8_t) 255, 3*26, 3*0,
- 0, 3*-18, 3*-5,
- (int8_t) 255, 3*26, 3*0,
- 0, 3*-29, 3*-14,
- (int8_t) 255, 3*26, 3*0,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*8, 3*-5,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 16, 3 * -11,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * 8, 3 * -5,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 26, 3 * 0,
+ 0, 3 * -23, 3 * 13,
+ (int8_t)255, 3 * 26, 3 * 0,
+ 0, 3 * -18, 3 * -5,
+ (int8_t)255, 3 * 26, 3 * 0,
+ 0, 3 * -29, 3 * -14,
+ (int8_t)255, 3 * 26, 3 * 0,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * 8, 3 * -5,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t depth2RollingLeft11[] = {
- (int8_t) 255, 3*13, 3*2,
- (int8_t) 255, 3*16, 3*-11,
- (int8_t) 255, 3*-13, 3*-2,
- (int8_t) 255, 3*-16, 3*11,
- (int8_t) 255, 3*0, 3*-13,
- 0, 3*13, 3*15,
- (int8_t) 255, 3*-1, 3*-13,
- 0, 3*17, 3*2,
- (int8_t) 255, 3*-1, 3*-14,
- 0, 3*-12, 3*12,
- (int8_t) 255, 3*-1, 3*-14,
- 0, 3*-15, 3*12,
- (int8_t) 255, 3*12, 3*2,
- (int8_t) 255, 3*16, 3*-12,
- (int8_t) 255, 3*-13, 3*-2,
- (int8_t) 255, 3*-15, 3*12,
- 1
-};
+ (int8_t)255, 3 * 13, 3 * 2,
+ (int8_t)255, 3 * 16, 3 * -11,
+ (int8_t)255, 3 * -13, 3 * -2,
+ (int8_t)255, 3 * -16, 3 * 11,
+ (int8_t)255, 3 * 0, 3 * -13,
+ 0, 3 * 13, 3 * 15,
+ (int8_t)255, 3 * -1, 3 * -13,
+ 0, 3 * 17, 3 * 2,
+ (int8_t)255, 3 * -1, 3 * -14,
+ 0, 3 * -12, 3 * 12,
+ (int8_t)255, 3 * -1, 3 * -14,
+ 0, 3 * -15, 3 * 12,
+ (int8_t)255, 3 * 12, 3 * 2,
+ (int8_t)255, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * -13, 3 * -2,
+ (int8_t)255, 3 * -15, 3 * 12,
+ 1};
 const int8_t depth2RollingRight11[] = {
- 0, 3*15, 3*12,
- (int8_t) 255, 3*-12, 3*2,
- (int8_t) 255, 3*16, 3*-12,
- (int8_t) 255, 3*12, 3*-2,
- (int8_t) 255, 3*-16, 3*12,
- (int8_t) 255, 3*5, 3*14,
- 0, 3*-17, 3*-12,
- (int8_t) 255, 3*5, 3*14,
- 0, 3*11, 3*-26,
- (int8_t) 255, 3*5, 3*14,
- 0, 3*7, 3*-16,
- (int8_t) 255, 3*5, 3*14,
- 0, 3*-16, 3*12,
- (int8_t) 255, 3*-12, 3*2,
- (int8_t) 255, 3*16, 3*-12,
- (int8_t) 255, 3*12, 3*-2,
- (int8_t) 255, 3*-16, 3*12,
- 1
-};
+ 0, 3 * 15, 3 * 12,
+ (int8_t)255, 3 * -12, 3 * 2,
+ (int8_t)255, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * 12, 3 * -2,
+ (int8_t)255, 3 * -16, 3 * 12,
+ (int8_t)255, 3 * 5, 3 * 14,
+ 0, 3 * -17, 3 * -12,
+ (int8_t)255, 3 * 5, 3 * 14,
+ 0, 3 * 11, 3 * -26,
+ (int8_t)255, 3 * 5, 3 * 14,
+ 0, 3 * 7, 3 * -16,
+ (int8_t)255, 3 * 5, 3 * 14,
+ 0, 3 * -16, 3 * 12,
+ (int8_t)255, 3 * -12, 3 * 2,
+ (int8_t)255, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * 12, 3 * -2,
+ (int8_t)255, 3 * -16, 3 * 12,
+ 1};
 const int8_t width2RollingFront11[] = {
- (int8_t) 255, 3*6, 3*28,
- (int8_t) 255, 3*14, 3*-1,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*-14, 3*0,
- (int8_t) 255, 3*-5, 3*6,
- 0, 3*11, 3*22,
- (int8_t) 255, 3*-6, 3*6,
- 0, 3*20, 3*-7,
- (int8_t) 255, 3*-6, 3*6,
- 0, 3*0, 3*-33,
- (int8_t) 255, 3*-6, 3*5,
- 0, 3*-13, 3*1,
- (int8_t) 255, 3*5, 3*28,
- (int8_t) 255, 3*14, 3*-1,
- (int8_t) 255, 3*-6, 3*-28,
- (int8_t) 255, 3*-13, 3*1,
- 1
-};
+ (int8_t)255, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 14, 3 * -1,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * -14, 3 * 0,
+ (int8_t)255, 3 * -5, 3 * 6,
+ 0, 3 * 11, 3 * 22,
+ (int8_t)255, 3 * -6, 3 * 6,
+ 0, 3 * 20, 3 * -7,
+ (int8_t)255, 3 * -6, 3 * 6,
+ 0, 3 * 0, 3 * -33,
+ (int8_t)255, 3 * -6, 3 * 5,
+ 0, 3 * -13, 3 * 1,
+ (int8_t)255, 3 * 5, 3 * 28,
+ (int8_t)255, 3 * 14, 3 * -1,
+ (int8_t)255, 3 * -6, 3 * -28,
+ (int8_t)255, 3 * -13, 3 * 1,
+ 1};
 const int8_t width2RollingBack11[] = {
- 0, 3*20, 3*-4,
- (int8_t) 255, 3*6, 3*27,
- (int8_t) 255, 3*-12, 3*-1,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*12, 3*1,
- (int8_t) 255, 3*9, 3*-6,
- 0, 3*-3, 3*33,
- (int8_t) 255, 3*9, 3*-6,
- 0, 3*-21, 3*5,
- (int8_t) 255, 3*10, 3*-6,
- 0, 3*-16, 3*-21,
- (int8_t) 255, 3*10, 3*-6,
- 0, 3*11, 3*1,
- (int8_t) 255, 3*6, 3*27,
- (int8_t) 255, 3*-11, 3*-1,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*11, 3*1,
- 1
-};
+ 0, 3 * 20, 3 * -4,
+ (int8_t)255, 3 * 6, 3 * 27,
+ (int8_t)255, 3 * -12, 3 * -1,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * 12, 3 * 1,
+ (int8_t)255, 3 * 9, 3 * -6,
+ 0, 3 * -3, 3 * 33,
+ (int8_t)255, 3 * 9, 3 * -6,
+ 0, 3 * -21, 3 * 5,
+ (int8_t)255, 3 * 10, 3 * -6,
+ 0, 3 * -16, 3 * -21,
+ (int8_t)255, 3 * 10, 3 * -6,
+ 0, 3 * 11, 3 * 1,
+ (int8_t)255, 3 * 6, 3 * 27,
+ (int8_t)255, 3 * -11, 3 * -1,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * 11, 3 * 1,
+ 1};
 const int8_t height1FallingLeft11[] = {
- (int8_t) 255, 3*13, 3*2,
- (int8_t) 255, 3*8, 3*-5,
- (int8_t) 255, 3*-13, 3*-2,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*0, 3*-13,
- 0, 3*13, 3*15,
- (int8_t) 255, 3*-1, 3*-13,
- 0, 3*9, 3*8,
- (int8_t) 255, 3*-1, 3*-14,
- 0, 3*-12, 3*12,
- (int8_t) 255, 3*-1, 3*-14,
- 0, 3*-7, 3*6,
- (int8_t) 255, 3*12, 3*2,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-13, 3*-2,
- (int8_t) 255, 3*-7, 3*6,
- 1
-};
+ (int8_t)255, 3 * 13, 3 * 2,
+ (int8_t)255, 3 * 8, 3 * -5,
+ (int8_t)255, 3 * -13, 3 * -2,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * 0, 3 * -13,
+ 0, 3 * 13, 3 * 15,
+ (int8_t)255, 3 * -1, 3 * -13,
+ 0, 3 * 9, 3 * 8,
+ (int8_t)255, 3 * -1, 3 * -14,
+ 0, 3 * -12, 3 * 12,
+ (int8_t)255, 3 * -1, 3 * -14,
+ 0, 3 * -7, 3 * 6,
+ (int8_t)255, 3 * 12, 3 * 2,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -13, 3 * -2,
+ (int8_t)255, 3 * -7, 3 * 6,
+ 1};
 const int8_t height1FallingRight11[] = {
- 0, 3*15, 3*12,
- (int8_t) 255, 3*-12, 3*2,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*12, 3*-2,
- (int8_t) 255, 3*-8, 3*6,
- (int8_t) 255, 3*5, 3*14,
- 0, 3*-17, 3*-12,
- (int8_t) 255, 3*5, 3*14,
- 0, 3*3, 3*-20,
- (int8_t) 255, 3*5, 3*14,
- 0, 3*7, 3*-16,
- (int8_t) 255, 3*5, 3*14,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*-12, 3*2,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*12, 3*-2,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 15, 3 * 12,
+ (int8_t)255, 3 * -12, 3 * 2,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 12, 3 * -2,
+ (int8_t)255, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 5, 3 * 14,
+ 0, 3 * -17, 3 * -12,
+ (int8_t)255, 3 * 5, 3 * 14,
+ 0, 3 * 3, 3 * -20,
+ (int8_t)255, 3 * 5, 3 * 14,
+ 0, 3 * 7, 3 * -16,
+ (int8_t)255, 3 * 5, 3 * 14,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * -12, 3 * 2,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 12, 3 * -2,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height1FallingBack11[] = {
- 0, 3*20, 3*-4,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*-12, 3*-1,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*12, 3*1,
- (int8_t) 255, 3*9, 3*-6,
- 0, 3*-6, 3*19,
- (int8_t) 255, 3*9, 3*-6,
- 0, 3*-21, 3*5,
- (int8_t) 255, 3*10, 3*-6,
- 0, 3*-13, 3*-7,
- (int8_t) 255, 3*10, 3*-6,
- 0, 3*11, 3*1,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*-11, 3*-1,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*11, 3*1,
- 1
-};
+ 0, 3 * 20, 3 * -4,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * -12, 3 * -1,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * 12, 3 * 1,
+ (int8_t)255, 3 * 9, 3 * -6,
+ 0, 3 * -6, 3 * 19,
+ (int8_t)255, 3 * 9, 3 * -6,
+ 0, 3 * -21, 3 * 5,
+ (int8_t)255, 3 * 10, 3 * -6,
+ 0, 3 * -13, 3 * -7,
+ (int8_t)255, 3 * 10, 3 * -6,
+ 0, 3 * 11, 3 * 1,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * -11, 3 * -1,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * 11, 3 * 1,
+ 1};
 const int8_t height1FallingFront11[] = {
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*14, 3*-1,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*-14, 3*0,
- (int8_t) 255, 3*-5, 3*6,
- 0, 3*8, 3*8,
- (int8_t) 255, 3*-5, 3*6,
- 0, 3*19, 3*-7,
- (int8_t) 255, 3*-6, 3*6,
- 0, 3*3, 3*-19,
- (int8_t) 255, 3*-6, 3*5,
- 0, 3*-13, 3*1,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*13, 3*-1,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-13, 3*1,
- 1
-};
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 14, 3 * -1,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * -14, 3 * 0,
+ (int8_t)255, 3 * -5, 3 * 6,
+ 0, 3 * 8, 3 * 8,
+ (int8_t)255, 3 * -5, 3 * 6,
+ 0, 3 * 19, 3 * -7,
+ (int8_t)255, 3 * -6, 3 * 6,
+ 0, 3 * 3, 3 * -19,
+ (int8_t)255, 3 * -6, 3 * 5,
+ 0, 3 * -13, 3 * 1,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 13, 3 * -1,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -13, 3 * 1,
+ 1};
 const int8_t height2FallingLeft12[] = {
- (int8_t) 255, 3*13, 3*0,
- (int8_t) 255, 3*8, 3*-5,
- (int8_t) 255, 3*-13, 3*0,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*-5, 3*-27,
- 0, 3*18, 3*27,
- (int8_t) 255, 3*-6, 3*-27,
- 0, 3*14, 3*22,
- (int8_t) 255, 3*-6, 3*-28,
- 0, 3*-7, 3*28,
- (int8_t) 255, 3*-6, 3*-28,
- 0, 3*-7, 3*6,
- (int8_t) 255, 3*12, 3*0,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-13, 3*0,
- (int8_t) 255, 3*-7, 3*6,
- 1
-};
+ (int8_t)255, 3 * 13, 3 * 0,
+ (int8_t)255, 3 * 8, 3 * -5,
+ (int8_t)255, 3 * -13, 3 * 0,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * -5, 3 * -27,
+ 0, 3 * 18, 3 * 27,
+ (int8_t)255, 3 * -6, 3 * -27,
+ 0, 3 * 14, 3 * 22,
+ (int8_t)255, 3 * -6, 3 * -28,
+ 0, 3 * -7, 3 * 28,
+ (int8_t)255, 3 * -6, 3 * -28,
+ 0, 3 * -7, 3 * 6,
+ (int8_t)255, 3 * 12, 3 * 0,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -13, 3 * 0,
+ (int8_t)255, 3 * -7, 3 * 6,
+ 1};
 const int8_t height2RisingRight12[] = {
- 0, 3*6, 3*28,
- (int8_t) 255, 3*1, 3*14,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-1, 3*-14,
- (int8_t) 255, 3*-8, 3*6,
- (int8_t) 255, 3*27, 3*4,
- 0, 3*-26, 3*10,
- (int8_t) 255, 3*27, 3*4,
- 0, 3*-19, 3*-10,
- (int8_t) 255, 3*27, 3*4,
- 0, 3*-28, 3*-18,
- (int8_t) 255, 3*27, 3*4,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*1, 3*14,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-1, 3*-14,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 1, 3 * 14,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -1, 3 * -14,
+ (int8_t)255, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 27, 3 * 4,
+ 0, 3 * -26, 3 * 10,
+ (int8_t)255, 3 * 27, 3 * 4,
+ 0, 3 * -19, 3 * -10,
+ (int8_t)255, 3 * 27, 3 * 4,
+ 0, 3 * -28, 3 * -18,
+ (int8_t)255, 3 * 27, 3 * 4,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 1, 3 * 14,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -1, 3 * -14,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2FallingRight12[] = {
- 0, 3*16, 3*14,
- (int8_t) 255, 3*-13, 3*0,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*13, 3*0,
- (int8_t) 255, 3*-8, 3*6,
- (int8_t) 255, 3*6, 3*28,
- 0, 3*-19, 3*-28,
- (int8_t) 255, 3*6, 3*28,
- 0, 3*2, 3*-34,
- (int8_t) 255, 3*6, 3*28,
- 0, 3*7, 3*-28,
- (int8_t) 255, 3*6, 3*28,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*-13, 3*0,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*13, 3*0,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 16, 3 * 14,
+ (int8_t)255, 3 * -13, 3 * 0,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 13, 3 * 0,
+ (int8_t)255, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 6, 3 * 28,
+ 0, 3 * -19, 3 * -28,
+ (int8_t)255, 3 * 6, 3 * 28,
+ 0, 3 * 2, 3 * -34,
+ (int8_t)255, 3 * 6, 3 * 28,
+ 0, 3 * 7, 3 * -28,
+ (int8_t)255, 3 * 6, 3 * 28,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * -13, 3 * 0,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 13, 3 * 0,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2RisingLeft12[] = {
- 0, 3*-4, 3*-13,
- (int8_t) 255, 3*4, 3*13,
- (int8_t) 255, 3*8, 3*-5,
- (int8_t) 255, 3*-5, 3*-14,
- (int8_t) 255, 3*-7, 3*6,
- (int8_t) 255, 3*24, 3*-4,
- 0, 3*-20, 3*17,
- (int8_t) 255, 3*25, 3*-3,
- 0, 3*-17, 3*-2,
- (int8_t) 255, 3*25, 3*-4,
- 0, 3*-30, 3*-10,
- (int8_t) 255, 3*25, 3*-4,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*5, 3*14,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-5, 3*-14,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * -4, 3 * -13,
+ (int8_t)255, 3 * 4, 3 * 13,
+ (int8_t)255, 3 * 8, 3 * -5,
+ (int8_t)255, 3 * -5, 3 * -14,
+ (int8_t)255, 3 * -7, 3 * 6,
+ (int8_t)255, 3 * 24, 3 * -4,
+ 0, 3 * -20, 3 * 17,
+ (int8_t)255, 3 * 25, 3 * -3,
+ 0, 3 * -17, 3 * -2,
+ (int8_t)255, 3 * 25, 3 * -4,
+ 0, 3 * -30, 3 * -10,
+ (int8_t)255, 3 * 25, 3 * -4,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 5, 3 * 14,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -5, 3 * -14,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height2FallingBack12[] = {
- 0, 3*21, 3*-5,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*-13, 3*0,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*13, 3*0,
- (int8_t) 255, 3*16, 3*-12,
- 0, 3*-13, 3*25,
- (int8_t) 255, 3*16, 3*-11,
- 0, 3*-29, 3*11,
- (int8_t) 255, 3*16, 3*-11,
- 0, 3*-19, 3*-2,
- (int8_t) 255, 3*16, 3*-12,
- 0, 3*13, 3*0,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*-13, 3*0,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*13, 3*0,
- 1
-};
+ 0, 3 * 21, 3 * -5,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * -13, 3 * 0,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * 13, 3 * 0,
+ (int8_t)255, 3 * 16, 3 * -12,
+ 0, 3 * -13, 3 * 25,
+ (int8_t)255, 3 * 16, 3 * -11,
+ 0, 3 * -29, 3 * 11,
+ (int8_t)255, 3 * 16, 3 * -11,
+ 0, 3 * -19, 3 * -2,
+ (int8_t)255, 3 * 16, 3 * -12,
+ 0, 3 * 13, 3 * 0,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * -13, 3 * 0,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * 13, 3 * 0,
+ 1};
 const int8_t height2RisingFront12[] = {
- 0, 3*-9, 3*6,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*9, 3*-6,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-9, 3*6,
- (int8_t) 255, 3*23, 3*2,
- 0, 3*-20, 3*12,
- (int8_t) 255, 3*23, 3*2,
- 0, 3*-14, 3*-8,
- (int8_t) 255, 3*24, 3*2,
- 0, 3*-27, 3*-16,
- (int8_t) 255, 3*24, 3*2,
- 0, 3*-10, 3*6,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*10, 3*-6,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-10, 3*6,
- 1
-};
+ 0, 3 * -9, 3 * 6,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 9, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -9, 3 * 6,
+ (int8_t)255, 3 * 23, 3 * 2,
+ 0, 3 * -20, 3 * 12,
+ (int8_t)255, 3 * 23, 3 * 2,
+ 0, 3 * -14, 3 * -8,
+ (int8_t)255, 3 * 24, 3 * 2,
+ 0, 3 * -27, 3 * -16,
+ (int8_t)255, 3 * 24, 3 * 2,
+ 0, 3 * -10, 3 * 6,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 10, 3 * -6,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -10, 3 * 6,
+ 1};
 const int8_t height2FallingFront12[] = {
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*13, 3*0,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-13, 3*0,
- (int8_t) 255, 3*-15, 3*12,
- 0, 3*18, 3*2,
- (int8_t) 255, 3*-15, 3*12,
- 0, 3*28, 3*-12,
- (int8_t) 255, 3*-16, 3*12,
- 0, 3*13, 3*-26,
- (int8_t) 255, 3*-15, 3*12,
- 0, 3*-13, 3*0,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*12, 3*0,
- (int8_t) 255, 3*-2, 3*-14,
- (int8_t) 255, 3*-13, 3*0,
- 1
-};
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 13, 3 * 0,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -13, 3 * 0,
+ (int8_t)255, 3 * -15, 3 * 12,
+ 0, 3 * 18, 3 * 2,
+ (int8_t)255, 3 * -15, 3 * 12,
+ 0, 3 * 28, 3 * -12,
+ (int8_t)255, 3 * -16, 3 * 12,
+ 0, 3 * 13, 3 * -26,
+ (int8_t)255, 3 * -15, 3 * 12,
+ 0, 3 * -13, 3 * 0,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 12, 3 * 0,
+ (int8_t)255, 3 * -2, 3 * -14,
+ (int8_t)255, 3 * -13, 3 * 0,
+ 1};
 const int8_t height2RisingBack12[] = {
- 0, 3*16, 3*-11,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*6, 3*-5,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-6, 3*6,
- (int8_t) 255, 3*28, 3*-2,
- 0, 3*-25, 3*15,
- (int8_t) 255, 3*28, 3*-2,
- 0, 3*-22, 3*-3,
- (int8_t) 255, 3*28, 3*-2,
- 0, 3*-31, 3*-12,
- (int8_t) 255, 3*28, 3*-2,
- 0, 3*-6, 3*6,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*6, 3*-5,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-6, 3*6,
- 1
-};
+ 0, 3 * 16, 3 * -11,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * 6, 3 * -5,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -6, 3 * 6,
+ (int8_t)255, 3 * 28, 3 * -2,
+ 0, 3 * -25, 3 * 15,
+ (int8_t)255, 3 * 28, 3 * -2,
+ 0, 3 * -22, 3 * -3,
+ (int8_t)255, 3 * 28, 3 * -2,
+ 0, 3 * -31, 3 * -12,
+ (int8_t)255, 3 * 28, 3 * -2,
+ 0, 3 * -6, 3 * 6,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * 6, 3 * -5,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -6, 3 * 6,
+ 1};
 const int8_t depth2RollingLeft12[] = {
- (int8_t) 255, 3*13, 3*0,
- (int8_t) 255, 3*16, 3*-11,
- (int8_t) 255, 3*-13, 3*0,
- (int8_t) 255, 3*-16, 3*11,
- (int8_t) 255, 3*-2, 3*-13,
- 0, 3*15, 3*13,
- (int8_t) 255, 3*-3, 3*-13,
- 0, 3*19, 3*2,
- (int8_t) 255, 3*-3, 3*-14,
- 0, 3*-10, 3*14,
- (int8_t) 255, 3*-3, 3*-14,
- 0, 3*-15, 3*12,
- (int8_t) 255, 3*12, 3*0,
- (int8_t) 255, 3*16, 3*-12,
- (int8_t) 255, 3*-13, 3*0,
- (int8_t) 255, 3*-15, 3*12,
- 1
-};
+ (int8_t)255, 3 * 13, 3 * 0,
+ (int8_t)255, 3 * 16, 3 * -11,
+ (int8_t)255, 3 * -13, 3 * 0,
+ (int8_t)255, 3 * -16, 3 * 11,
+ (int8_t)255, 3 * -2, 3 * -13,
+ 0, 3 * 15, 3 * 13,
+ (int8_t)255, 3 * -3, 3 * -13,
+ 0, 3 * 19, 3 * 2,
+ (int8_t)255, 3 * -3, 3 * -14,
+ 0, 3 * -10, 3 * 14,
+ (int8_t)255, 3 * -3, 3 * -14,
+ 0, 3 * -15, 3 * 12,
+ (int8_t)255, 3 * 12, 3 * 0,
+ (int8_t)255, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * -13, 3 * 0,
+ (int8_t)255, 3 * -15, 3 * 12,
+ 1};
 const int8_t depth2RollingRight12[] = {
- 0, 3*16, 3*14,
- (int8_t) 255, 3*-13, 3*0,
- (int8_t) 255, 3*16, 3*-12,
- (int8_t) 255, 3*13, 3*0,
- (int8_t) 255, 3*-16, 3*12,
- (int8_t) 255, 3*3, 3*14,
- 0, 3*-16, 3*-14,
- (int8_t) 255, 3*3, 3*14,
- 0, 3*13, 3*-26,
- (int8_t) 255, 3*3, 3*14,
- 0, 3*10, 3*-14,
- (int8_t) 255, 3*3, 3*14,
- 0, 3*-16, 3*12,
- (int8_t) 255, 3*-13, 3*0,
- (int8_t) 255, 3*16, 3*-12,
- (int8_t) 255, 3*13, 3*0,
- (int8_t) 255, 3*-16, 3*12,
- 1
-};
+ 0, 3 * 16, 3 * 14,
+ (int8_t)255, 3 * -13, 3 * 0,
+ (int8_t)255, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * 13, 3 * 0,
+ (int8_t)255, 3 * -16, 3 * 12,
+ (int8_t)255, 3 * 3, 3 * 14,
+ 0, 3 * -16, 3 * -14,
+ (int8_t)255, 3 * 3, 3 * 14,
+ 0, 3 * 13, 3 * -26,
+ (int8_t)255, 3 * 3, 3 * 14,
+ 0, 3 * 10, 3 * -14,
+ (int8_t)255, 3 * 3, 3 * 14,
+ 0, 3 * -16, 3 * 12,
+ (int8_t)255, 3 * -13, 3 * 0,
+ (int8_t)255, 3 * 16, 3 * -12,
+ (int8_t)255, 3 * 13, 3 * 0,
+ (int8_t)255, 3 * -16, 3 * 12,
+ 1};
 const int8_t width2RollingFront12[] = {
- (int8_t) 255, 3*6, 3*28,
- (int8_t) 255, 3*13, 3*0,
- (int8_t) 255, 3*-6, 3*-28,
- (int8_t) 255, 3*-13, 3*0,
- (int8_t) 255, 3*-7, 3*6,
- 0, 3*13, 3*22,
- (int8_t) 255, 3*-7, 3*6,
- 0, 3*20, 3*-6,
- (int8_t) 255, 3*-8, 3*6,
- 0, 3*2, 3*-34,
- (int8_t) 255, 3*-8, 3*6,
- 0, 3*-12, 3*0,
- (int8_t) 255, 3*6, 3*28,
- (int8_t) 255, 3*12, 3*0,
- (int8_t) 255, 3*-6, 3*-28,
- (int8_t) 255, 3*-12, 3*0,
- 1
-};
+ (int8_t)255, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 13, 3 * 0,
+ (int8_t)255, 3 * -6, 3 * -28,
+ (int8_t)255, 3 * -13, 3 * 0,
+ (int8_t)255, 3 * -7, 3 * 6,
+ 0, 3 * 13, 3 * 22,
+ (int8_t)255, 3 * -7, 3 * 6,
+ 0, 3 * 20, 3 * -6,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 0, 3 * 2, 3 * -34,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 0, 3 * -12, 3 * 0,
+ (int8_t)255, 3 * 6, 3 * 28,
+ (int8_t)255, 3 * 12, 3 * 0,
+ (int8_t)255, 3 * -6, 3 * -28,
+ (int8_t)255, 3 * -12, 3 * 0,
+ 1};
 const int8_t width2RollingBack12[] = {
- 0, 3*21, 3*-5,
- (int8_t) 255, 3*6, 3*27,
- (int8_t) 255, 3*-13, 3*0,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*13, 3*0,
- (int8_t) 255, 3*8, 3*-6,
- 0, 3*-2, 3*33,
- (int8_t) 255, 3*8, 3*-6,
- 0, 3*-21, 3*6,
- (int8_t) 255, 3*8, 3*-6,
- 0, 3*-14, 3*-21,
- (int8_t) 255, 3*8, 3*-6,
- 0, 3*13, 3*0,
- (int8_t) 255, 3*6, 3*27,
- (int8_t) 255, 3*-13, 3*0,
- (int8_t) 255, 3*-6, 3*-27,
- (int8_t) 255, 3*13, 3*0,
- 1
-};
+ 0, 3 * 21, 3 * -5,
+ (int8_t)255, 3 * 6, 3 * 27,
+ (int8_t)255, 3 * -13, 3 * 0,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * 13, 3 * 0,
+ (int8_t)255, 3 * 8, 3 * -6,
+ 0, 3 * -2, 3 * 33,
+ (int8_t)255, 3 * 8, 3 * -6,
+ 0, 3 * -21, 3 * 6,
+ (int8_t)255, 3 * 8, 3 * -6,
+ 0, 3 * -14, 3 * -21,
+ (int8_t)255, 3 * 8, 3 * -6,
+ 0, 3 * 13, 3 * 0,
+ (int8_t)255, 3 * 6, 3 * 27,
+ (int8_t)255, 3 * -13, 3 * 0,
+ (int8_t)255, 3 * -6, 3 * -27,
+ (int8_t)255, 3 * 13, 3 * 0,
+ 1};
 const int8_t height1FallingLeft12[] = {
- (int8_t) 255, 3*13, 3*0,
- (int8_t) 255, 3*8, 3*-5,
- (int8_t) 255, 3*-13, 3*0,
- (int8_t) 255, 3*-8, 3*5,
- (int8_t) 255, 3*-2, 3*-13,
- 0, 3*15, 3*13,
- (int8_t) 255, 3*-3, 3*-13,
- 0, 3*11, 3*8,
- (int8_t) 255, 3*-3, 3*-14,
- 0, 3*-10, 3*14,
- (int8_t) 255, 3*-3, 3*-14,
- 0, 3*-7, 3*6,
- (int8_t) 255, 3*12, 3*0,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*-13, 3*0,
- (int8_t) 255, 3*-7, 3*6,
- 1
-};
+ (int8_t)255, 3 * 13, 3 * 0,
+ (int8_t)255, 3 * 8, 3 * -5,
+ (int8_t)255, 3 * -13, 3 * 0,
+ (int8_t)255, 3 * -8, 3 * 5,
+ (int8_t)255, 3 * -2, 3 * -13,
+ 0, 3 * 15, 3 * 13,
+ (int8_t)255, 3 * -3, 3 * -13,
+ 0, 3 * 11, 3 * 8,
+ (int8_t)255, 3 * -3, 3 * -14,
+ 0, 3 * -10, 3 * 14,
+ (int8_t)255, 3 * -3, 3 * -14,
+ 0, 3 * -7, 3 * 6,
+ (int8_t)255, 3 * 12, 3 * 0,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * -13, 3 * 0,
+ (int8_t)255, 3 * -7, 3 * 6,
+ 1};
 const int8_t height1FallingRight12[] = {
- 0, 3*16, 3*14,
- (int8_t) 255, 3*-13, 3*0,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*13, 3*0,
- (int8_t) 255, 3*-8, 3*6,
- (int8_t) 255, 3*3, 3*14,
- 0, 3*-16, 3*-14,
- (int8_t) 255, 3*3, 3*14,
- 0, 3*5, 3*-20,
- (int8_t) 255, 3*3, 3*14,
- 0, 3*10, 3*-14,
- (int8_t) 255, 3*3, 3*14,
- 0, 3*-8, 3*6,
- (int8_t) 255, 3*-13, 3*0,
- (int8_t) 255, 3*8, 3*-6,
- (int8_t) 255, 3*13, 3*0,
- (int8_t) 255, 3*-8, 3*6,
- 1
-};
+ 0, 3 * 16, 3 * 14,
+ (int8_t)255, 3 * -13, 3 * 0,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 13, 3 * 0,
+ (int8_t)255, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * 3, 3 * 14,
+ 0, 3 * -16, 3 * -14,
+ (int8_t)255, 3 * 3, 3 * 14,
+ 0, 3 * 5, 3 * -20,
+ (int8_t)255, 3 * 3, 3 * 14,
+ 0, 3 * 10, 3 * -14,
+ (int8_t)255, 3 * 3, 3 * 14,
+ 0, 3 * -8, 3 * 6,
+ (int8_t)255, 3 * -13, 3 * 0,
+ (int8_t)255, 3 * 8, 3 * -6,
+ (int8_t)255, 3 * 13, 3 * 0,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 1};
 const int8_t height1FallingBack12[] = {
- 0, 3*21, 3*-5,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*-13, 3*0,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*13, 3*0,
- (int8_t) 255, 3*8, 3*-6,
- 0, 3*-5, 3*19,
- (int8_t) 255, 3*8, 3*-6,
- 0, 3*-21, 3*6,
- (int8_t) 255, 3*8, 3*-6,
- 0, 3*-11, 3*-7,
- (int8_t) 255, 3*8, 3*-6,
- 0, 3*13, 3*0,
- (int8_t) 255, 3*3, 3*13,
- (int8_t) 255, 3*-13, 3*0,
- (int8_t) 255, 3*-3, 3*-13,
- (int8_t) 255, 3*13, 3*0,
- 1
-};
+ 0, 3 * 21, 3 * -5,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * -13, 3 * 0,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * 13, 3 * 0,
+ (int8_t)255, 3 * 8, 3 * -6,
+ 0, 3 * -5, 3 * 19,
+ (int8_t)255, 3 * 8, 3 * -6,
+ 0, 3 * -21, 3 * 6,
+ (int8_t)255, 3 * 8, 3 * -6,
+ 0, 3 * -11, 3 * -7,
+ (int8_t)255, 3 * 8, 3 * -6,
+ 0, 3 * 13, 3 * 0,
+ (int8_t)255, 3 * 3, 3 * 13,
+ (int8_t)255, 3 * -13, 3 * 0,
+ (int8_t)255, 3 * -3, 3 * -13,
+ (int8_t)255, 3 * 13, 3 * 0,
+ 1};
 const int8_t height1FallingFront12[] = {
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*13, 3*0,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-13, 3*0,
- (int8_t) 255, 3*-7, 3*6,
- 0, 3*10, 3*8,
- (int8_t) 255, 3*-7, 3*6,
- 0, 3*20, 3*-6,
- (int8_t) 255, 3*-8, 3*6,
- 0, 3*5, 3*-20,
- (int8_t) 255, 3*-8, 3*6,
- 0, 3*-12, 3*0,
- (int8_t) 255, 3*3, 3*14,
- (int8_t) 255, 3*12, 3*0,
- (int8_t) 255, 3*-3, 3*-14,
- (int8_t) 255, 3*-12, 3*0,
- 1
-};
-const int8_t* height2FallingLeft[] __attribute__ ((section(".text"))) = {
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 13, 3 * 0,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -13, 3 * 0,
+ (int8_t)255, 3 * -7, 3 * 6,
+ 0, 3 * 10, 3 * 8,
+ (int8_t)255, 3 * -7, 3 * 6,
+ 0, 3 * 20, 3 * -6,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 0, 3 * 5, 3 * -20,
+ (int8_t)255, 3 * -8, 3 * 6,
+ 0, 3 * -12, 3 * 0,
+ (int8_t)255, 3 * 3, 3 * 14,
+ (int8_t)255, 3 * 12, 3 * 0,
+ (int8_t)255, 3 * -3, 3 * -14,
+ (int8_t)255, 3 * -12, 3 * 0,
+ 1};
+const int8_t *height2FallingLeft[] __attribute__((section(".text"))) = {
  height2FallingLeft0,
  height2FallingLeft1,
  height2FallingLeft2,
@@ -6047,7 +5839,7 @@ const int8_t* height2FallingLeft[] __attribute__ ((section(".text"))) = {
  height2FallingLeft10,
  height2FallingLeft11,
 };
-const int8_t* height2RisingRight[] __attribute__ ((section(".text"))) = {
+const int8_t *height2RisingRight[] __attribute__((section(".text"))) = {
  height2RisingRight0,
  height2RisingRight1,
  height2RisingRight2,
@@ -6061,7 +5853,7 @@ const int8_t* height2RisingRight[] __attribute__ ((section(".text"))) = {
  height2RisingRight10,
  height2RisingRight11,
 };
-const int8_t* height2FallingRight[] __attribute__ ((section(".text"))) = {
+const int8_t *height2FallingRight[] __attribute__((section(".text"))) = {
  height2FallingRight0,
  height2FallingRight1,
  height2FallingRight2,
@@ -6075,7 +5867,7 @@ const int8_t* height2FallingRight[] __attribute__ ((section(".text"))) = {
  height2FallingRight10,
  height2FallingRight11,
 };
-const int8_t* height2RisingLeft[] __attribute__ ((section(".text"))) = {
+const int8_t *height2RisingLeft[] __attribute__((section(".text"))) = {
  height2RisingLeft0,
  height2RisingLeft1,
  height2RisingLeft2,
@@ -6089,7 +5881,7 @@ const int8_t* height2RisingLeft[] __attribute__ ((section(".text"))) = {
  height2RisingLeft10,
  height2RisingLeft11,
 };
-const int8_t* height2FallingBack[] __attribute__ ((section(".text"))) = {
+const int8_t *height2FallingBack[] __attribute__((section(".text"))) = {
  height2FallingBack0,
  height2FallingBack1,
  height2FallingBack2,
@@ -6103,7 +5895,7 @@ const int8_t* height2FallingBack[] __attribute__ ((section(".text"))) = {
  height2FallingBack10,
  height2FallingBack11,
 };
-const int8_t* height2RisingFront[] __attribute__ ((section(".text"))) = {
+const int8_t *height2RisingFront[] __attribute__((section(".text"))) = {
  height2RisingFront0,
  height2RisingFront1,
  height2RisingFront2,
@@ -6117,7 +5909,7 @@ const int8_t* height2RisingFront[] __attribute__ ((section(".text"))) = {
  height2RisingFront10,
  height2RisingFront11,
 };
-const int8_t* height2FallingFront[] __attribute__ ((section(".text"))) = {
+const int8_t *height2FallingFront[] __attribute__((section(".text"))) = {
  height2FallingFront0,
  height2FallingFront1,
  height2FallingFront2,
@@ -6131,7 +5923,7 @@ const int8_t* height2FallingFront[] __attribute__ ((section(".text"))) = {
  height2FallingFront10,
  height2FallingFront11,
 };
-const int8_t* height2RisingBack[] __attribute__ ((section(".text"))) = {
+const int8_t *height2RisingBack[] __attribute__((section(".text"))) = {
  height2RisingBack0,
  height2RisingBack1,
  height2RisingBack2,
@@ -6145,7 +5937,7 @@ const int8_t* height2RisingBack[] __attribute__ ((section(".text"))) = {
  height2RisingBack10,
  height2RisingBack11,
 };
-const int8_t* depth2RollingLeft[] __attribute__ ((section(".text"))) = {
+const int8_t *depth2RollingLeft[] __attribute__((section(".text"))) = {
  depth2RollingLeft0,
  depth2RollingLeft1,
  depth2RollingLeft2,
@@ -6159,7 +5951,7 @@ const int8_t* depth2RollingLeft[] __attribute__ ((section(".text"))) = {
  depth2RollingLeft10,
  depth2RollingLeft11,
 };
-const int8_t* depth2RollingRight[] __attribute__ ((section(".text"))) = {
+const int8_t *depth2RollingRight[] __attribute__((section(".text"))) = {
  depth2RollingRight0,
  depth2RollingRight1,
  depth2RollingRight2,
@@ -6173,7 +5965,7 @@ const int8_t* depth2RollingRight[] __attribute__ ((section(".text"))) = {
  depth2RollingRight10,
  depth2RollingRight11,
 };
-const int8_t* width2RollingFront[] __attribute__ ((section(".text"))) = {
+const int8_t *width2RollingFront[] __attribute__((section(".text"))) = {
  width2RollingFront0,
  width2RollingFront1,
  width2RollingFront2,
@@ -6187,7 +5979,7 @@ const int8_t* width2RollingFront[] __attribute__ ((section(".text"))) = {
  width2RollingFront10,
  width2RollingFront11,
 };
-const int8_t* width2RollingBack[] __attribute__ ((section(".text"))) = {
+const int8_t *width2RollingBack[] __attribute__((section(".text"))) = {
  width2RollingBack0,
  width2RollingBack1,
  width2RollingBack2,
@@ -6201,7 +5993,7 @@ const int8_t* width2RollingBack[] __attribute__ ((section(".text"))) = {
  width2RollingBack10,
  width2RollingBack11,
 };
-const int8_t* height1FallingLeft[] __attribute__ ((section(".text"))) = {
+const int8_t *height1FallingLeft[] __attribute__((section(".text"))) = {
  height1FallingLeft0,
  height1FallingLeft1,
  height1FallingLeft2,
@@ -6215,7 +6007,7 @@ const int8_t* height1FallingLeft[] __attribute__ ((section(".text"))) = {
  height1FallingLeft10,
  height1FallingLeft11,
 };
-const int8_t* height1FallingRight[] __attribute__ ((section(".text"))) = {
+const int8_t *height1FallingRight[] __attribute__((section(".text"))) = {
  height1FallingRight0,
  height1FallingRight1,
  height1FallingRight2,
@@ -6229,7 +6021,7 @@ const int8_t* height1FallingRight[] __attribute__ ((section(".text"))) = {
  height1FallingRight10,
  height1FallingRight11,
 };
-const int8_t* height1FallingBack[] __attribute__ ((section(".text"))) = {
+const int8_t *height1FallingBack[] __attribute__((section(".text"))) = {
  height1FallingBack0,
  height1FallingBack1,
  height1FallingBack2,
@@ -6243,7 +6035,7 @@ const int8_t* height1FallingBack[] __attribute__ ((section(".text"))) = {
  height1FallingBack10,
  height1FallingBack11,
 };
-const int8_t* height1FallingFront[] __attribute__ ((section(".text"))) = {
+const int8_t *height1FallingFront[] __attribute__((section(".text"))) = {
  height1FallingFront0,
  height1FallingFront1,
  height1FallingFront2,
@@ -6257,14 +6049,15 @@ const int8_t* height1FallingFront[] __attribute__ ((section(".text"))) = {
  height1FallingFront10,
  height1FallingFront11,
 };
-# 4 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\block.c" 2
-# 1 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\/block.h" 1
+# 4 "C:\\data\\Vide\\..\\bloxorz\\Vide\\source\\block.c" 2
+# 1 "C:\\data\\Vide\\..\\bloxorz\\Vide\\source\\/block.h" 1
 
 
 
 
 
-enum BlockOrientation_t {
+enum BlockOrientation_t
+{
     Standing,
     Vertical,
     Horizontal
@@ -6287,8 +6080,12 @@ extern int8_t blockY;
 extern int8_t blockX2;
 extern int8_t blockY2;
 
-enum BlockDirection_t {
-    Left, Up, Right, Down
+enum BlockDirection_t
+{
+    Left,
+    Up,
+    Right,
+    Down
 };
 
 void moveBlockImpl(enum BlockDirection_t move);
@@ -6306,7 +6103,7 @@ void setSplitMode();
 void testMerge();
 
 void swapSplit();
-# 5 "C:\\data\\vide\\..\\bloxorz\\Vide\\source\\block.c" 2
+# 5 "C:\\data\\Vide\\..\\bloxorz\\Vide\\source\\block.c" 2
 
 extern int8_t x3d(int8_t x, int8_t z);
 extern int8_t y3d(int8_t x, int8_t y, int8_t z);
@@ -6320,8 +6117,8 @@ int8_t blockY2;
 
 uint8_t splitMode;
 
-const int8_t** blockAnimation;
-const int8_t** nextBlockAnimation;
+const int8_t **blockAnimation;
+const int8_t **nextBlockAnimation;
 int8_t blockAnimationStep;
 int8_t blockAnimating;
 int8_t nextBlockX;
@@ -6333,10 +6130,13 @@ void moveBlockImpl(enum BlockDirection_t move)
 {
     blockAnimating = 1;
     lastBlockDirection = move;
-    if (splitMode) {
-        switch (blockOrientation) {
+    if (splitMode)
+    {
+        switch (blockOrientation)
+        {
         case Standing:
-            switch (move) {
+            switch (move)
+            {
             case Left:
                 blockAnimation = height1FallingLeft;
                 nextBlockAnimation = height1FallingLeft;
@@ -6366,10 +6166,14 @@ void moveBlockImpl(enum BlockDirection_t move)
         default:
             break;
         }
-    } else {
-        switch (blockOrientation) {
+    }
+    else
+    {
+        switch (blockOrientation)
+        {
         case Standing:
-            switch (move) {
+            switch (move)
+            {
             case Left:
                 blockAnimation = height2FallingLeft;
                 nextBlockAnimation = width2RollingFront;
@@ -6401,7 +6205,8 @@ void moveBlockImpl(enum BlockDirection_t move)
             }
             break;
         case Vertical:
-            switch (move) {
+            switch (move)
+            {
             case Left:
                 blockAnimation = depth2RollingLeft;
                 nextBlockAnimation = depth2RollingLeft;
@@ -6431,7 +6236,8 @@ void moveBlockImpl(enum BlockDirection_t move)
             }
             break;
         case Horizontal:
-            switch (move) {
+            switch (move)
+            {
             case Left:
                 blockAnimation = height2RisingLeft;
                 nextBlockAnimation = height2FallingRight;
@@ -6464,9 +6270,9 @@ void moveBlockImpl(enum BlockDirection_t move)
     }
 }
 
-void Draw_VLpo(void* const x)
+void Draw_VLpo(void *const x)
 {
-    (void) x;
+    (void)x;
     asm("                    LDD      1,X                          ;Get next coordinate pair  ");
     asm("shiftOff1:  ");
     asm("                    STA      *0xd001                  ;Send Y to A/D  ");
@@ -6529,15 +6335,16 @@ void drawBlock(int8_t yofs)
     }
     else
     {
-        positd(x3d(blockX, blockY), yy+yofs);
+        positd(x3d(blockX, blockY), yy + yofs);
     }
 
- dp_VIA_t1_cnt_lo = 0x7f/3;
+    dp_VIA_t1_cnt_lo = 0x7f / 3;
 
-    Draw_VLpo((void*)(blockAnimation[blockAnimationStep]));
+    Draw_VLpo((void *)(blockAnimation[blockAnimationStep]));
 
 
-    if (splitMode) {
+    if (splitMode)
+    {
         Reset0Ref();
         Intensity_a(0x35);
         yy = y3d(blockX2, 0, blockY2);
@@ -6545,24 +6352,25 @@ void drawBlock(int8_t yofs)
         if (yofs < -50)
         {
             positd(0, yofs);
-            positd(x3d(blockX2, blockY2),yy );
+            positd(x3d(blockX2, blockY2), yy);
         }
         else
         {
-            positd(x3d(blockX2, blockY2),yy+yofs );
+            positd(x3d(blockX2, blockY2), yy + yofs);
         }
 
+        dp_VIA_t1_cnt_lo = 0x7f / 3;
 
- dp_VIA_t1_cnt_lo = 0x7f/3;
-
-    Draw_VLpo((void*)(height1FallingLeft[0]));
+        Draw_VLpo((void *)(height1FallingLeft[0]));
     }
 }
 
 void doBlockAnimation()
 {
-    if (blockAnimating) {
-        if (++blockAnimationStep == 12) {
+    if (blockAnimating)
+    {
+        if (++blockAnimationStep == 12)
+        {
             blockX = nextBlockX;
             blockY = nextBlockY;
             blockAnimationStep = 0;
@@ -6590,26 +6398,36 @@ void setSplitMode()
 
 void testMerge()
 {
-    if (blockY == blockY2) {
-        if (blockX == blockX2 + 1) {
+    if (blockY == blockY2)
+    {
+        if (blockX == blockX2 + 1)
+        {
             blockAnimation = width2RollingFront;
             blockOrientation = Horizontal;
             blockX--;
             splitMode = 0;
-        } else if (blockX == blockX2 - 1) {
+        }
+        else if (blockX == blockX2 - 1)
+        {
             blockAnimation = width2RollingFront;
             blockOrientation = Horizontal;
             splitMode = 0;
         }
-    } else if (blockX == blockX2) {
-        if (blockY == blockY2 + 1) {
+    }
+    else if (blockX == blockX2)
+    {
+        if (blockY == blockY2 + 1)
+        {
             blockAnimation = depth2RollingLeft;
             blockOrientation = Vertical;
             blockY--;
             splitMode = 0;
-        } else if (blockY == blockY2 - 1) {
+        }
+        else if (blockY == blockY2 - 1)
+        {
             blockAnimation = depth2RollingLeft;
-            blockOrientation = Vertical;;
+            blockOrientation = Vertical;
+            ;
             splitMode = 0;
         }
     }

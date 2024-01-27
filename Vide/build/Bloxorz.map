@@ -1044,13 +1044,13 @@ Area                       Addr        Size        Decimal Bytes (Attributes)
           09A9  A$block$1163                       block.enr.c
           09AC  A$block$1169                       block.enr.c
           09AE  A$block$1170                       block.enr.c
-          09B1  A$block$1176                       block.enr.c
-          09B4  A$block$1178                       block.enr.c
-          09B6  A$block$1179                       block.enr.c
-          09B7  A$block$1182                       block.enr.c
+          09B1  A$block$1179                       block.enr.c
+          09B4  A$block$1181                       block.enr.c
+          09B6  A$block$1182                       block.enr.c
+          09B7  A$block$1185                       block.enr.c
           09B7  _swapSplit                         block.enr.c
-          09B9  A$block$1188                       block.enr.c
-          09BC  A$block$1189                       block.enr.c
+          09B9  A$block$1191                       block.enr.c
+          09BC  A$block$1192                       block.enr.c
 ASxxxx Linker V05.00,  page 20.
 Hexidecimal  [16-Bits]
 [ Bank == rom ]
@@ -1061,56 +1061,56 @@ Area                       Addr        Size        Decimal Bytes (Attributes)
 
          Value  Global                             Global Defined In Module
          -----  --------------------------------   ------------------------
-          09BE  A$block$1195                       block.enr.c
-          09C1  A$block$1196                       block.enr.c
-          09C3  A$block$1202                       block.enr.c
-          09C6  A$block$1203                       block.enr.c
-          09C9  A$block$1209                       block.enr.c
-          09CC  A$block$1210                       block.enr.c
-          09CF  A$block$1216                       block.enr.c
-          09D1  A$block$1217                       block.enr.c
-          09D4  A$block$1223                       block.enr.c
-          09D6  A$block$1224                       block.enr.c
-          09D9  A$block$1225                       block.enr.c
-          09DB  A$block$1226                       block.enr.c
-          09DC  A$block$1229                       block.enr.c
+          09BE  A$block$1198                       block.enr.c
+          09C1  A$block$1199                       block.enr.c
+          09C3  A$block$1205                       block.enr.c
+          09C6  A$block$1206                       block.enr.c
+          09C9  A$block$1212                       block.enr.c
+          09CC  A$block$1213                       block.enr.c
+          09CF  A$block$1219                       block.enr.c
+          09D1  A$block$1220                       block.enr.c
+          09D4  A$block$1226                       block.enr.c
+          09D6  A$block$1227                       block.enr.c
+          09D9  A$block$1228                       block.enr.c
+          09DB  A$block$1229                       block.enr.c
+          09DC  A$block$1232                       block.enr.c
           09DC  _drawBlock                         block.enr.c
-          09DE  A$block$1230                       block.enr.c
-          09E0  A$block$1231                       block.enr.c
-          09E2  A$block$1237                       block.enr.c
-          09E4  A$block$1238                       block.enr.c
-          09E6  A$block$1241                       block.enr.c
-          09E8  A$block$1242                       block.enr.c
-          09EB  A$block$1248                       block.enr.c
-          09EE  A$block$1249                       block.enr.c
-          09F0  A$block$1250                       block.enr.c
-          09F2  A$block$1251                       block.enr.c
-          09F5  A$block$1252                       block.enr.c
-          09F8  A$block$1253                       block.enr.c
-          09FA  A$block$1259                       block.enr.c
-          09FC  A$block$1260                       block.enr.c
-          09FE  A$block$1261                       block.enr.c
-          0A00  A$block$1262                       block.enr.c
-          0A02  A$block$1268                       block.enr.c
-          0A04  A$block$1269                       block.enr.c
-          0A06  A$block$1270                       block.enr.c
-          0A08  A$block$1271                       block.enr.c
-          0A0A  A$block$1272                       block.enr.c
-          0A0C  A$block$1275                       block.enr.c
-          0A0E  A$block$1276                       block.enr.c
-          0A10  A$block$1277                       block.enr.c
-          0A13  A$block$1283                       block.enr.c
-          0A16  A$block$1284                       block.enr.c
-          0A18  A$block$1285                       block.enr.c
-          0A1B  A$block$1286                       block.enr.c
-          0A1E  A$block$1287                       block.enr.c
-          0A20  A$block$1288                       block.enr.c
-          0A22  A$block$1289                       block.enr.c
-          0A24  A$block$1290                       block.enr.c
-          0A26  A$block$1291                       block.enr.c
-          0A28  A$block$1294                       block.enr.c
-          0A2A  A$block$1295                       block.enr.c
-          0A2C  A$block$1296                       block.enr.c
+          09DE  A$block$1233                       block.enr.c
+          09E0  A$block$1234                       block.enr.c
+          09E2  A$block$1240                       block.enr.c
+          09E4  A$block$1241                       block.enr.c
+          09E6  A$block$1244                       block.enr.c
+          09E8  A$block$1245                       block.enr.c
+          09EB  A$block$1251                       block.enr.c
+          09EE  A$block$1252                       block.enr.c
+          09F0  A$block$1253                       block.enr.c
+          09F2  A$block$1254                       block.enr.c
+          09F5  A$block$1255                       block.enr.c
+          09F8  A$block$1256                       block.enr.c
+          09FA  A$block$1262                       block.enr.c
+          09FC  A$block$1263                       block.enr.c
+          09FE  A$block$1264                       block.enr.c
+          0A00  A$block$1265                       block.enr.c
+          0A02  A$block$1271                       block.enr.c
+          0A04  A$block$1272                       block.enr.c
+          0A06  A$block$1273                       block.enr.c
+          0A08  A$block$1274                       block.enr.c
+          0A0A  A$block$1275                       block.enr.c
+          0A0C  A$block$1278                       block.enr.c
+          0A0E  A$block$1279                       block.enr.c
+          0A10  A$block$1280                       block.enr.c
+          0A13  A$block$1286                       block.enr.c
+          0A16  A$block$1287                       block.enr.c
+          0A18  A$block$1288                       block.enr.c
+          0A1B  A$block$1289                       block.enr.c
+          0A1E  A$block$1290                       block.enr.c
+          0A20  A$block$1291                       block.enr.c
+          0A22  A$block$1292                       block.enr.c
+          0A24  A$block$1293                       block.enr.c
+          0A26  A$block$1294                       block.enr.c
+          0A28  A$block$1297                       block.enr.c
+          0A2A  A$block$1298                       block.enr.c
+          0A2C  A$block$1299                       block.enr.c
 ASxxxx Linker V05.00,  page 21.
 Hexidecimal  [16-Bits]
 [ Bank == rom ]
@@ -1121,56 +1121,56 @@ Area                       Addr        Size        Decimal Bytes (Attributes)
 
          Value  Global                             Global Defined In Module
          -----  --------------------------------   ------------------------
-          0A2F  A$block$1299                       block.enr.c
-          0A31  A$block$1300                       block.enr.c
-          0A33  A$block$1307                       block.enr.c
-          0A36  A$block$1308                       block.enr.c
-          0A38  A$block$1309                       block.enr.c
-          0A3B  A$block$1310                       block.enr.c
-          0A3E  A$block$1311                       block.enr.c
-          0A40  A$block$1312                       block.enr.c
-          0A42  A$block$1313                       block.enr.c
-          0A44  A$block$1314                       block.enr.c
-          0A46  A$block$1315                       block.enr.c
-          0A48  A$block$1316                       block.enr.c
-          0A4A  A$block$1319                       block.enr.c
-          0A4C  A$block$1320                       block.enr.c
-          0A4E  A$block$1321                       block.enr.c
-          0A51  A$block$1324                       block.enr.c
-          0A53  A$block$1331                       block.enr.c
-          0A55  A$block$1332                       block.enr.c
-          0A57  A$block$1338                       block.enr.c
-          0A5A  A$block$1339                       block.enr.c
-          0A5B  A$block$1340                       block.enr.c
-          0A5D  A$block$1341                       block.enr.c
-          0A5E  A$block$1342                       block.enr.c
-          0A5F  A$block$1343                       block.enr.c
-          0A62  A$block$1344                       block.enr.c
-          0A64  A$block$1345                       block.enr.c
-          0A66  A$block$1346                       block.enr.c
-          0A69  A$block$1352                       block.enr.c
-          0A6C  A$block$1353                       block.enr.c
-          0A70  A$block$1359                       block.enr.c
-          0A73  A$block$1365                       block.enr.c
-          0A75  A$block$1366                       block.enr.c
-          0A77  A$block$1369                       block.enr.c
-          0A79  A$block$1370                       block.enr.c
-          0A7C  A$block$1376                       block.enr.c
-          0A7F  A$block$1377                       block.enr.c
-          0A81  A$block$1378                       block.enr.c
-          0A83  A$block$1379                       block.enr.c
-          0A86  A$block$1380                       block.enr.c
-          0A89  A$block$1381                       block.enr.c
-          0A8B  A$block$1387                       block.enr.c
-          0A8D  A$block$1388                       block.enr.c
-          0A8F  A$block$1389                       block.enr.c
-          0A91  A$block$1390                       block.enr.c
-          0A93  A$block$1396                       block.enr.c
-          0A95  A$block$1397                       block.enr.c
-          0A97  A$block$1398                       block.enr.c
-          0A99  A$block$1399                       block.enr.c
-          0A9B  A$block$1400                       block.enr.c
-          0A9D  A$block$1403                       block.enr.c
+          0A2F  A$block$1302                       block.enr.c
+          0A31  A$block$1303                       block.enr.c
+          0A33  A$block$1310                       block.enr.c
+          0A36  A$block$1311                       block.enr.c
+          0A38  A$block$1312                       block.enr.c
+          0A3B  A$block$1313                       block.enr.c
+          0A3E  A$block$1314                       block.enr.c
+          0A40  A$block$1315                       block.enr.c
+          0A42  A$block$1316                       block.enr.c
+          0A44  A$block$1317                       block.enr.c
+          0A46  A$block$1318                       block.enr.c
+          0A48  A$block$1319                       block.enr.c
+          0A4A  A$block$1322                       block.enr.c
+          0A4C  A$block$1323                       block.enr.c
+          0A4E  A$block$1324                       block.enr.c
+          0A51  A$block$1327                       block.enr.c
+          0A53  A$block$1334                       block.enr.c
+          0A55  A$block$1335                       block.enr.c
+          0A57  A$block$1341                       block.enr.c
+          0A5A  A$block$1342                       block.enr.c
+          0A5B  A$block$1343                       block.enr.c
+          0A5D  A$block$1344                       block.enr.c
+          0A5E  A$block$1345                       block.enr.c
+          0A5F  A$block$1346                       block.enr.c
+          0A62  A$block$1347                       block.enr.c
+          0A64  A$block$1348                       block.enr.c
+          0A66  A$block$1349                       block.enr.c
+          0A69  A$block$1355                       block.enr.c
+          0A6C  A$block$1356                       block.enr.c
+          0A70  A$block$1362                       block.enr.c
+          0A73  A$block$1368                       block.enr.c
+          0A75  A$block$1369                       block.enr.c
+          0A77  A$block$1372                       block.enr.c
+          0A79  A$block$1373                       block.enr.c
+          0A7C  A$block$1379                       block.enr.c
+          0A7F  A$block$1380                       block.enr.c
+          0A81  A$block$1381                       block.enr.c
+          0A83  A$block$1382                       block.enr.c
+          0A86  A$block$1383                       block.enr.c
+          0A89  A$block$1384                       block.enr.c
+          0A8B  A$block$1390                       block.enr.c
+          0A8D  A$block$1391                       block.enr.c
+          0A8F  A$block$1392                       block.enr.c
+          0A91  A$block$1393                       block.enr.c
+          0A93  A$block$1399                       block.enr.c
+          0A95  A$block$1400                       block.enr.c
+          0A97  A$block$1401                       block.enr.c
+          0A99  A$block$1402                       block.enr.c
+          0A9B  A$block$1403                       block.enr.c
+          0A9D  A$block$1406                       block.enr.c
 ASxxxx Linker V05.00,  page 22.
 Hexidecimal  [16-Bits]
 [ Bank == rom ]
@@ -1181,42 +1181,42 @@ Area                       Addr        Size        Decimal Bytes (Attributes)
 
          Value  Global                             Global Defined In Module
          -----  --------------------------------   ------------------------
-          0A9F  A$block$1404                       block.enr.c
-          0AA1  A$block$1405                       block.enr.c
-          0AA4  A$block$1411                       block.enr.c
-          0AA7  A$block$1412                       block.enr.c
-          0AA9  A$block$1413                       block.enr.c
-          0AAC  A$block$1414                       block.enr.c
-          0AAF  A$block$1415                       block.enr.c
-          0AB1  A$block$1416                       block.enr.c
-          0AB3  A$block$1417                       block.enr.c
-          0AB5  A$block$1418                       block.enr.c
-          0AB7  A$block$1419                       block.enr.c
-          0AB9  A$block$1422                       block.enr.c
-          0ABB  A$block$1423                       block.enr.c
-          0ABD  A$block$1424                       block.enr.c
-          0AC0  A$block$1427                       block.enr.c
-          0AC2  A$block$1428                       block.enr.c
-          0AC4  A$block$1435                       block.enr.c
-          0AC7  A$block$1436                       block.enr.c
-          0AC9  A$block$1437                       block.enr.c
-          0ACC  A$block$1438                       block.enr.c
-          0ACF  A$block$1439                       block.enr.c
-          0AD1  A$block$1440                       block.enr.c
-          0AD3  A$block$1441                       block.enr.c
-          0AD5  A$block$1442                       block.enr.c
-          0AD7  A$block$1443                       block.enr.c
-          0AD9  A$block$1444                       block.enr.c
-          0ADB  A$block$1447                       block.enr.c
-          0ADD  A$block$1448                       block.enr.c
-          0ADF  A$block$1449                       block.enr.c
-          0AE2  A$block$1452                       block.enr.c
-          0AE4  A$block$1459                       block.enr.c
-          0AE6  A$block$1460                       block.enr.c
-          0AE8  A$block$1466                       block.enr.c
-          0AEB  A$block$1467                       block.enr.c
-          0AEE  A$block$1469                       block.enr.c
-          0AF0  A$block$1470                       block.enr.c
+          0A9F  A$block$1407                       block.enr.c
+          0AA1  A$block$1408                       block.enr.c
+          0AA4  A$block$1414                       block.enr.c
+          0AA7  A$block$1415                       block.enr.c
+          0AA9  A$block$1416                       block.enr.c
+          0AAC  A$block$1417                       block.enr.c
+          0AAF  A$block$1418                       block.enr.c
+          0AB1  A$block$1419                       block.enr.c
+          0AB3  A$block$1420                       block.enr.c
+          0AB5  A$block$1421                       block.enr.c
+          0AB7  A$block$1422                       block.enr.c
+          0AB9  A$block$1425                       block.enr.c
+          0ABB  A$block$1426                       block.enr.c
+          0ABD  A$block$1427                       block.enr.c
+          0AC0  A$block$1430                       block.enr.c
+          0AC2  A$block$1431                       block.enr.c
+          0AC4  A$block$1438                       block.enr.c
+          0AC7  A$block$1439                       block.enr.c
+          0AC9  A$block$1440                       block.enr.c
+          0ACC  A$block$1441                       block.enr.c
+          0ACF  A$block$1442                       block.enr.c
+          0AD1  A$block$1443                       block.enr.c
+          0AD3  A$block$1444                       block.enr.c
+          0AD5  A$block$1445                       block.enr.c
+          0AD7  A$block$1446                       block.enr.c
+          0AD9  A$block$1447                       block.enr.c
+          0ADB  A$block$1450                       block.enr.c
+          0ADD  A$block$1451                       block.enr.c
+          0ADF  A$block$1452                       block.enr.c
+          0AE2  A$block$1455                       block.enr.c
+          0AE4  A$block$1462                       block.enr.c
+          0AE6  A$block$1463                       block.enr.c
+          0AE8  A$block$1469                       block.enr.c
+          0AEB  A$block$1470                       block.enr.c
+          0AEE  A$block$1472                       block.enr.c
+          0AF0  A$block$1473                       block.enr.c
           0AF2  _height2FallingLeft0               block.enr.c
           0B23  _height2RisingRight0               block.enr.c
           0B57  _height2FallingRight0              block.enr.c
@@ -6019,430 +6019,430 @@ Area                       Addr        Size        Decimal Bytes (Attributes)
 
 Files Linked                              [ module(s) ]
 
-C:\data\vide\C\PeerC\vectrex\lib\crt0.re  [ crt0.c ]
-C:\data\vide\C\PeerC\vectrex\lib\gcc.rel  [ gcc.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_ram  [ vec_ram_0xc8_0.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_ram  [ vec_ram_0xc8_1.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_ram  [ vec_ram_0xc8_2.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_ram  [ vec_ram_0xcb_0.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_ram  [ vec_ram_0xcb_1.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_ram  [ vec_ram_0xcb_2.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_ram  [ vec_ram_0xcb_3.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_ram  [ vec_ram_0xd0_0.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_ram  [ vec_ram_0xd0_1.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_ram  [ vec_ram_dpc8_0.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_ram  [ vec_ram_dpc8_1.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_ram  [ vec_ram_dpc8_2.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_ram  [ vec_ram_dpcb_0.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_ram  [ vec_ram_dpcb_1.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_ram  [ vec_ram_dpcb_2.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_ram  [ vec_ram_dpcb_3.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_ram  [ vec_ram_dpd0_0.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_ram  [ vec_ram_dpd0_1.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_rom  [ vec_rom_0xed_0.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_rom  [ vec_rom_0xfc_0.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_rom  [ vec_rom_0xfd_0.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_rom  [ vec_rom_0xfe_0.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_rom  [ vec_rom_0xfe_1.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_rom  [ vec_rom_0xff_0.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_rom  [ vec_rom_dped_0.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_rom  [ vec_rom_dpfc_0.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_rom  [ vec_rom_dpfd_0.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_rom  [ vec_rom_dpfe_0.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_rom  [ vec_rom_dpfe_1.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_rom  [ vec_rom_dpff_0.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_rum  [ vec_rum_0xe7.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_rum  [ vec_rum_0xe9.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_rum  [ vec_rum_0xea.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_rum  [ vec_rum_0xf0.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_rum  [ vec_rum_0xf1.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_rum  [ vec_rum_0xf2.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_rum  [ vec_rum_0xf3.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_rum  [ vec_rum_0xf4.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_rum  [ vec_rum_0xf5.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_rum  [ vec_rum_0xf6.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_rum  [ vec_rum_0xf7.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_rum  [ vec_rum_0xf8.c ]
-C:\data\vide\C\PeerC\vectrex\lib\vec_rum  [ vec_rum_0xf9.c ]
-C:\data\vide\..\bloxorz\Vide\build\lib\a  [  ]
-C:\data\vide\..\bloxorz\Vide\build\lib\b  [ block.enr.c ]
-C:\data\vide\..\bloxorz\Vide\build\lib\b  [ bloxorz.enr.c ]
-C:\data\vide\..\bloxorz\Vide\build\lib\c  [ cartridge.enr.c ]
-C:\data\vide\..\bloxorz\Vide\build\lib\d  [  ]
-C:\data\vide\..\bloxorz\Vide\build\lib\l  [ level.enr.c ]
-C:\data\vide\..\bloxorz\Vide\build\lib\l  [ leveldata.enr.c ]
-C:\data\vide\..\bloxorz\Vide\build\lib\m  [  ]
-C:\data\vide\..\bloxorz\Vide\build\lib\m  [  ]
-C:\data\vide\..\bloxorz\Vide\build\lib\p  [  ]
+C:\data\Vide\C\PeerC\vectrex\lib\crt0.re  [ crt0.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\gcc.rel  [ gcc.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_ram  [ vec_ram_0xc8_0.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_ram  [ vec_ram_0xc8_1.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_ram  [ vec_ram_0xc8_2.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_ram  [ vec_ram_0xcb_0.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_ram  [ vec_ram_0xcb_1.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_ram  [ vec_ram_0xcb_2.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_ram  [ vec_ram_0xcb_3.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_ram  [ vec_ram_0xd0_0.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_ram  [ vec_ram_0xd0_1.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_ram  [ vec_ram_dpc8_0.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_ram  [ vec_ram_dpc8_1.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_ram  [ vec_ram_dpc8_2.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_ram  [ vec_ram_dpcb_0.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_ram  [ vec_ram_dpcb_1.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_ram  [ vec_ram_dpcb_2.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_ram  [ vec_ram_dpcb_3.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_ram  [ vec_ram_dpd0_0.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_ram  [ vec_ram_dpd0_1.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_rom  [ vec_rom_0xed_0.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_rom  [ vec_rom_0xfc_0.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_rom  [ vec_rom_0xfd_0.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_rom  [ vec_rom_0xfe_0.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_rom  [ vec_rom_0xfe_1.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_rom  [ vec_rom_0xff_0.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_rom  [ vec_rom_dped_0.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_rom  [ vec_rom_dpfc_0.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_rom  [ vec_rom_dpfd_0.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_rom  [ vec_rom_dpfe_0.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_rom  [ vec_rom_dpfe_1.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_rom  [ vec_rom_dpff_0.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_rum  [ vec_rum_0xe7.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_rum  [ vec_rum_0xe9.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_rum  [ vec_rum_0xea.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_rum  [ vec_rum_0xf0.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_rum  [ vec_rum_0xf1.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_rum  [ vec_rum_0xf2.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_rum  [ vec_rum_0xf3.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_rum  [ vec_rum_0xf4.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_rum  [ vec_rum_0xf5.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_rum  [ vec_rum_0xf6.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_rum  [ vec_rum_0xf7.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_rum  [ vec_rum_0xf8.c ]
+C:\data\Vide\C\PeerC\vectrex\lib\vec_rum  [ vec_rum_0xf9.c ]
+C:\data\Vide\..\bloxorz\Vide\build\lib\a  [  ]
+C:\data\Vide\..\bloxorz\Vide\build\lib\b  [ block.enr.c ]
+C:\data\Vide\..\bloxorz\Vide\build\lib\b  [ bloxorz.enr.c ]
+C:\data\Vide\..\bloxorz\Vide\build\lib\c  [ cartridge.enr.c ]
+C:\data\Vide\..\bloxorz\Vide\build\lib\d  [  ]
+C:\data\Vide\..\bloxorz\Vide\build\lib\l  [ level.enr.c ]
+C:\data\Vide\..\bloxorz\Vide\build\lib\l  [ leveldata.enr.c ]
+C:\data\Vide\..\bloxorz\Vide\build\lib\m  [  ]
+C:\data\Vide\..\bloxorz\Vide\build\lib\m  [  ]
+C:\data\Vide\..\bloxorz\Vide\build\lib\p  [  ]
 
 
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    block.enr.c       .text                    0260
-  Defin  C:\data\vide\.    block.enr.c       _DATA                    D001
+  Refby  C:\data\Vide\.    block.enr.c       .text                    0260
+  Defin  C:\data\Vide\.    block.enr.c       _DATA                    D001
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    block.enr.c       .text                    0262
-  Defin  C:\data\vide\.    block.enr.c       _DATA                    D000
+  Refby  C:\data\Vide\.    block.enr.c       .text                    0262
+  Defin  C:\data\Vide\.    block.enr.c       _DATA                    D000
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    block.enr.c       .text                    0266
-  Defin  C:\data\vide\.    block.enr.c       _DATA                    D000
+  Refby  C:\data\Vide\.    block.enr.c       .text                    0266
+  Defin  C:\data\Vide\.    block.enr.c       _DATA                    D000
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    block.enr.c       .text                    0268
-  Defin  C:\data\vide\.    block.enr.c       _DATA                    D001
+  Refby  C:\data\Vide\.    block.enr.c       .text                    0268
+  Defin  C:\data\Vide\.    block.enr.c       _DATA                    D001
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    block.enr.c       .text                    026C
-  Defin  C:\data\vide\.    block.enr.c       _DATA                    D00A
+  Refby  C:\data\Vide\.    block.enr.c       .text                    026C
+  Defin  C:\data\Vide\.    block.enr.c       _DATA                    D00A
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    block.enr.c       .text                    026E
-  Defin  C:\data\vide\.    block.enr.c       _DATA                    D005
+  Refby  C:\data\Vide\.    block.enr.c       .text                    026E
+  Defin  C:\data\Vide\.    block.enr.c       _DATA                    D005
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    block.enr.c       .text                    0280
-  Defin  C:\data\vide\.    block.enr.c       _DATA                    D001
+  Refby  C:\data\Vide\.    block.enr.c       .text                    0280
+  Defin  C:\data\Vide\.    block.enr.c       _DATA                    D001
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    block.enr.c       .text                    0282
-  Defin  C:\data\vide\.    block.enr.c       _DATA                    D000
+  Refby  C:\data\Vide\.    block.enr.c       .text                    0282
+  Defin  C:\data\Vide\.    block.enr.c       _DATA                    D000
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    block.enr.c       .text                    0286
-  Defin  C:\data\vide\.    block.enr.c       _DATA                    D000
+  Refby  C:\data\Vide\.    block.enr.c       .text                    0286
+  Defin  C:\data\Vide\.    block.enr.c       _DATA                    D000
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    block.enr.c       .text                    0288
-  Defin  C:\data\vide\.    block.enr.c       _DATA                    D001
+  Refby  C:\data\Vide\.    block.enr.c       .text                    0288
+  Defin  C:\data\Vide\.    block.enr.c       _DATA                    D001
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    block.enr.c       .text                    028C
-  Defin  C:\data\vide\.    block.enr.c       _DATA                    D00A
+  Refby  C:\data\Vide\.    block.enr.c       .text                    028C
+  Defin  C:\data\Vide\.    block.enr.c       _DATA                    D00A
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    block.enr.c       .text                    028E
-  Defin  C:\data\vide\.    block.enr.c       _DATA                    D005
+  Refby  C:\data\Vide\.    block.enr.c       .text                    028E
+  Defin  C:\data\Vide\.    block.enr.c       _DATA                    D005
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    block.enr.c       .text                    02A5
-  Defin  C:\data\vide\.    block.enr.c       _DATA                    D00A
+  Refby  C:\data\Vide\.    block.enr.c       .text                    02A5
+  Defin  C:\data\Vide\.    block.enr.c       _DATA                    D00A
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    00B9
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D001
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    00B9
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D001
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    00BE
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D000
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    00BE
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D000
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    00C0
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D000
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    00C0
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D000
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    00C2
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D000
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    00C2
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D000
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    00C6
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D000
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    00C6
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D000
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    00D6
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D001
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    00D6
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D001
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    00D9
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D000
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    00D9
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D000
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    00DC
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D00B
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    00DC
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D00B
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    00DE
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D000
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    00DE
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D000
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    00E1
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D005
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    00E1
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D005
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    00E9
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D004
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    00E9
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D004
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    0102
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D001
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    0102
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D001
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    0105
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D000
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    0105
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D000
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    0108
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D000
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    0108
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D000
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    010B
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D00A
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    010B
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D00A
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    010D
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D005
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    010D
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D005
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    0113
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D004
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    0113
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D004
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    011B
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D00D
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    011B
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D00D
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    0120
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D00A
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    0120
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D00A
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    0122
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D00C
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    0122
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D00C
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    012C
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D004
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    012C
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D004
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    0145
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D001
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    0145
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D001
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    0148
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D000
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    0148
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D000
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    014B
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D000
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    014B
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D000
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    014E
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D00A
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    014E
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D00A
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    0150
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D005
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    0150
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D005
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    015C
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D00D
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    015C
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D00D
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    0160
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D00A
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    0160
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D00A
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    0164
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D001
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    0164
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D001
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    0167
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D000
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    0167
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D000
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    016A
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D000
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    016A
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D000
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    016D
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D005
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    016D
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D005
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    0175
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D004
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    0175
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D004
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    017C
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D00D
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    017C
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D00D
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    0182
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D001
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    0182
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D001
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    0185
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D000
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    0185
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D000
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    0188
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D000
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    0188
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D000
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    018B
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D00A
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    018B
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D00A
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    018D
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D005
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    018D
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D005
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    0193
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D004
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    0193
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D004
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    019B
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D00D
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    019B
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D00D
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    01A0
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D00A
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    01A0
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D00A
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    01A2
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D00C
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    01A2
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D00C
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    01AE
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D004
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    01AE
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D004
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    01B5
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D00D
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    01B5
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D00D
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    01BB
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D001
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    01BB
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D001
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    01BE
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D000
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    01BE
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D000
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    01C1
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D000
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    01C1
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D000
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    01C4
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D00A
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    01C4
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D00A
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.    bloxorz.enr.c     .text                    01C6
-  Defin  C:\data\vide\.    bloxorz.enr.c     _DATA                    D005
+  Refby  C:\data\Vide\.    bloxorz.enr.c     .text                    01C6
+  Defin  C:\data\Vide\.    bloxorz.enr.c     _DATA                    D005
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.                      .text                    0013
-  Defin  C:\data\vide\.                      _DATA                    D002
+  Refby  C:\data\Vide\.                      .text                    0013
+  Defin  C:\data\Vide\.                      _DATA                    D002
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.                      .text                    0015
-  Defin  C:\data\vide\.                      _DATA                    D000
+  Refby  C:\data\Vide\.                      .text                    0015
+  Defin  C:\data\Vide\.                      _DATA                    D000
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.                      .text                    0019
-  Defin  C:\data\vide\.                      _DATA                    D000
+  Refby  C:\data\Vide\.                      .text                    0019
+  Defin  C:\data\Vide\.                      _DATA                    D000
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.                      .text                    0026
-  Defin  C:\data\vide\.                      _DATA                    D002
+  Refby  C:\data\Vide\.                      .text                    0026
+  Defin  C:\data\Vide\.                      _DATA                    D002
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.                      .text                    002E
-  Defin  C:\data\vide\.                      _DATA                    D002
+  Refby  C:\data\Vide\.                      .text                    002E
+  Defin  C:\data\Vide\.                      _DATA                    D002
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.                      .text                    0034
-  Defin  C:\data\vide\.                      _DATA                    D002
+  Refby  C:\data\Vide\.                      .text                    0034
+  Defin  C:\data\Vide\.                      _DATA                    D002
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.                      .text                    0038
-  Defin  C:\data\vide\.                      _DATA                    D002
+  Refby  C:\data\Vide\.                      .text                    0038
+  Defin  C:\data\Vide\.                      _DATA                    D002
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.                      .text                    0055
-  Defin  C:\data\vide\.                      _DATA                    D002
+  Refby  C:\data\Vide\.                      .text                    0055
+  Defin  C:\data\Vide\.                      _DATA                    D002
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.                      .text                    006D
-  Defin  C:\data\vide\.                      _DATA                    D000
+  Refby  C:\data\Vide\.                      .text                    006D
+  Defin  C:\data\Vide\.                      _DATA                    D000
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.                      .text                    007D
-  Defin  C:\data\vide\.                      _DATA                    D000
+  Refby  C:\data\Vide\.                      .text                    007D
+  Defin  C:\data\Vide\.                      _DATA                    D000
 
 ?ASlink-Warning-PageN relocation error
          file              module            area                   offset
-  Refby  C:\data\vide\.                      .text                    008B
-  Defin  C:\data\vide\.                      _DATA                    D000
+  Refby  C:\data\Vide\.                      .text                    008B
+  Defin  C:\data\Vide\.                      _DATA                    D000

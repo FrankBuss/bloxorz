@@ -3333,644 +3333,644 @@ COMMENT_LINE $41C8  asm volatile(
 COMMENT_LINE $41D0 // Set 6809 â€˜DPâ€™ register for I/O accesses ($D0)
 COMMENT_LINE $41D5  asm volatile(
 COMMENT_LINE $41D8 // DPRAM  0xF1AF  ---  Set direct register
-C_INFO_BLOCK $0637 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 28 "    blockAnimating = 1; " BKPOINT=0
-C_INFO_BLOCK $063C "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 29 "    lastBlockDirection = move; " BKPOINT=0
-C_INFO_BLOCK $0641 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 30 "    if (splitMode) { " BKPOINT=0
-C_INFO_BLOCK $0648 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 31 "        switch (blockOrientation) { " BKPOINT=0
-C_INFO_BLOCK $064F "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 33 "            switch (move) { " BKPOINT=0
-C_INFO_BLOCK $0666 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 35 "                blockAnimation = height1FallingLeft; " BKPOINT=0
-C_INFO_BLOCK $066C "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 36 "                nextBlockAnimation = height1FallingLeft; " BKPOINT=0
-C_INFO_BLOCK $066F "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 37 "                nextBlockX = blockX - 1; " BKPOINT=0
-C_INFO_BLOCK $0676 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 38 "                nextBlockY = blockY; " BKPOINT=0
-C_INFO_BLOCK $067C "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 39 "                break; " BKPOINT=0
-C_INFO_BLOCK $067F "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 41 "                blockAnimation = height1FallingRight; " BKPOINT=0
-C_INFO_BLOCK $0685 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 42 "                nextBlockAnimation = height1FallingRight; " BKPOINT=0
-C_INFO_BLOCK $0688 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 43 "                nextBlockX = blockX + 1; " BKPOINT=0
-C_INFO_BLOCK $068F "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 44 "                nextBlockY = blockY; " BKPOINT=0
-C_INFO_BLOCK $0695 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 45 "                break; " BKPOINT=0
-C_INFO_BLOCK $0698 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 47 "                blockAnimation = height1FallingBack; " BKPOINT=0
-C_INFO_BLOCK $069E "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 48 "                nextBlockAnimation = height1FallingBack; " BKPOINT=0
-C_INFO_BLOCK $06A1 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 49 "                nextBlockX = blockX; " BKPOINT=0
-C_INFO_BLOCK $06A7 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 50 "                nextBlockY = blockY + 1; " BKPOINT=0
-C_INFO_BLOCK $06AE "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 51 "                break; " BKPOINT=0
-C_INFO_BLOCK $06B0 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 53 "                blockAnimation = height1FallingFront; " BKPOINT=0
-C_INFO_BLOCK $06B6 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 54 "                nextBlockAnimation = height1FallingFront; " BKPOINT=0
-C_INFO_BLOCK $06B9 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 55 "                nextBlockX = blockX; " BKPOINT=0
-C_INFO_BLOCK $06BF "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 56 "                nextBlockY = blockY - 1; " BKPOINT=0
-C_INFO_BLOCK $06C6 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 57 "                break;            break; " BKPOINT=0
-C_INFO_BLOCK $06C9 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 61 "            break; " BKPOINT=0
-C_INFO_BLOCK $06CC "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 64 "        switch (blockOrientation) { " BKPOINT=0
-C_INFO_BLOCK $06E0 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 66 "            switch (move) { " BKPOINT=0
-C_INFO_BLOCK $06F7 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 68 "                blockAnimation = height2FallingLeft; " BKPOINT=0
-C_INFO_BLOCK $06FD "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 69 "                nextBlockAnimation = width2RollingFront; " BKPOINT=0
-C_INFO_BLOCK $0703 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 70 "                nextBlockX = blockX - 2; " BKPOINT=0
-C_INFO_BLOCK $070B "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 71 "                nextBlockY = blockY; " BKPOINT=0
-C_INFO_BLOCK $0711 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 72 "                blockOrientation = Horizontal; " BKPOINT=0
-C_INFO_BLOCK $0716 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 73 "                break; " BKPOINT=0
-C_INFO_BLOCK $0719 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 75 "                blockAnimation = height2FallingRight; " BKPOINT=0
-C_INFO_BLOCK $071F "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 76 "                nextBlockAnimation = width2RollingFront; " BKPOINT=0
-C_INFO_BLOCK $0725 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 77 "                nextBlockX = blockX + 1; " BKPOINT=0
-C_INFO_BLOCK $072C "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 78 "                nextBlockY = blockY; " BKPOINT=0
-C_INFO_BLOCK $0732 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 79 "                blockOrientation = Horizontal; " BKPOINT=0
-C_INFO_BLOCK $0737 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 80 "                break; " BKPOINT=0
-C_INFO_BLOCK $073A "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 82 "                blockAnimation = height2FallingBack; " BKPOINT=0
-C_INFO_BLOCK $0740 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 83 "                nextBlockAnimation = depth2RollingLeft; " BKPOINT=0
-C_INFO_BLOCK $0746 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 84 "                nextBlockX = blockX; " BKPOINT=0
-C_INFO_BLOCK $074C "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 85 "                nextBlockY = blockY + 1; " BKPOINT=0
-C_INFO_BLOCK $0753 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 86 "                blockOrientation = Vertical; " BKPOINT=0
-C_INFO_BLOCK $0758 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 87 "                break; " BKPOINT=0
-C_INFO_BLOCK $075A "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 89 "                blockAnimation = height2FallingFront; " BKPOINT=0
-C_INFO_BLOCK $0760 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 90 "                nextBlockAnimation = depth2RollingLeft; " BKPOINT=0
-C_INFO_BLOCK $0766 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 91 "                nextBlockX = blockX; " BKPOINT=0
-C_INFO_BLOCK $076C "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 92 "                nextBlockY = blockY - 2; " BKPOINT=0
-C_INFO_BLOCK $0774 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 93 "                blockOrientation = Vertical; " BKPOINT=0
-C_INFO_BLOCK $0779 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 94 "                break;            break; " BKPOINT=0
-C_INFO_BLOCK $077C "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 98 "            switch (move) { " BKPOINT=0
-C_INFO_BLOCK $0793 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 100 "                blockAnimation = depth2RollingLeft; " BKPOINT=0
-C_INFO_BLOCK $0799 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 101 "                nextBlockAnimation = depth2RollingLeft; " BKPOINT=0
-C_INFO_BLOCK $079C "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 102 "                nextBlockX = blockX - 1; " BKPOINT=0
-C_INFO_BLOCK $07A3 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 103 "                nextBlockY = blockY; " BKPOINT=0
-C_INFO_BLOCK $07A9 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 104 "                break; " BKPOINT=0
-C_INFO_BLOCK $07AC "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 106 "                blockAnimation = depth2RollingRight; " BKPOINT=0
-C_INFO_BLOCK $07B2 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 107 "                nextBlockAnimation = depth2RollingLeft; " BKPOINT=0
-C_INFO_BLOCK $07B8 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 108 "                nextBlockX = blockX + 1; " BKPOINT=0
-C_INFO_BLOCK $07BF "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 109 "                nextBlockY = blockY; " BKPOINT=0
-C_INFO_BLOCK $07C5 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 110 "                break; " BKPOINT=0
-C_INFO_BLOCK $07C8 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 112 "                blockAnimation = height2RisingBack; " BKPOINT=0
-C_INFO_BLOCK $07CE "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 113 "                nextBlockAnimation = height2FallingFront; " BKPOINT=0
-C_INFO_BLOCK $07D4 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 114 "                nextBlockX = blockX; " BKPOINT=0
-C_INFO_BLOCK $07DA "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 115 "                nextBlockY = blockY + 2; " BKPOINT=0
-C_INFO_BLOCK $07E2 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 116 "                blockOrientation = Standing; " BKPOINT=0
-C_INFO_BLOCK $07E5 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 117 "                break; " BKPOINT=0
-C_INFO_BLOCK $07E7 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 119 "                blockAnimation = height2RisingFront; " BKPOINT=0
-C_INFO_BLOCK $07ED "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 120 "                nextBlockAnimation = height2FallingFront; " BKPOINT=0
-C_INFO_BLOCK $07F3 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 121 "                nextBlockX = blockX; " BKPOINT=0
-C_INFO_BLOCK $07F9 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 122 "                nextBlockY = blockY - 1; " BKPOINT=0
-C_INFO_BLOCK $0800 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 123 "                blockOrientation = Standing; " BKPOINT=0
-C_INFO_BLOCK $0803 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 124 "                break;            break; " BKPOINT=0
-C_INFO_BLOCK $0806 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 128 "            switch (move) { " BKPOINT=0
-C_INFO_BLOCK $081D "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 130 "                blockAnimation = height2RisingLeft; " BKPOINT=0
-C_INFO_BLOCK $0823 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 131 "                nextBlockAnimation = height2FallingRight; " BKPOINT=0
-C_INFO_BLOCK $0829 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 132 "                nextBlockX = blockX - 1; " BKPOINT=0
-C_INFO_BLOCK $0830 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 133 "                nextBlockY = blockY; " BKPOINT=0
-C_INFO_BLOCK $0836 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 134 "                blockOrientation = Standing; " BKPOINT=0
-C_INFO_BLOCK $0839 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 135 "                break; " BKPOINT=0
-C_INFO_BLOCK $083C "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 137 "                blockAnimation = height2RisingRight; " BKPOINT=0
-C_INFO_BLOCK $0842 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 138 "                nextBlockAnimation = height2FallingLeft; " BKPOINT=0
-C_INFO_BLOCK $0848 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 139 "                nextBlockX = blockX + 2; " BKPOINT=0
-C_INFO_BLOCK $0850 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 140 "                nextBlockY = blockY; " BKPOINT=0
-C_INFO_BLOCK $0856 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 141 "                blockOrientation = Standing; " BKPOINT=0
-C_INFO_BLOCK $0859 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 142 "                break; " BKPOINT=0
-C_INFO_BLOCK $085C "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 144 "                blockAnimation = width2RollingBack; " BKPOINT=0
-C_INFO_BLOCK $0862 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 145 "                nextBlockAnimation = width2RollingBack; " BKPOINT=0
-C_INFO_BLOCK $0865 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 146 "                nextBlockX = blockX; " BKPOINT=0
-C_INFO_BLOCK $086B "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 147 "                nextBlockY = blockY + 1; " BKPOINT=0
-C_INFO_BLOCK $0872 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 148 "                break; " BKPOINT=0
-C_INFO_BLOCK $0874 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 150 "                blockAnimation = width2RollingFront; " BKPOINT=0
-C_INFO_BLOCK $087A "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 151 "                nextBlockAnimation = width2RollingBack; " BKPOINT=0
-C_INFO_BLOCK $0880 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 152 "                nextBlockX = blockX; " BKPOINT=0
-C_INFO_BLOCK $0886 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 153 "                nextBlockY = blockY - 1; " BKPOINT=0
-C_INFO_BLOCK $088D "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 154 "                break;            break; " BKPOINT=0
-C_INFO_BLOCK $0890 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 163 "    (void) x; " BKPOINT=0
-C_INFO_BLOCK $08DA "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 258 "    if (blockAnimating) { " BKPOINT=0
-C_INFO_BLOCK $08DF "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 259 "        if (++blockAnimationStep == BLOCK_STEPS_COUNT) { " BKPOINT=0
-C_INFO_BLOCK $08EA "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 260 "            blockX = nextBlockX; " BKPOINT=0
-C_INFO_BLOCK $08F0 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 261 "            blockY = nextBlockY; " BKPOINT=0
-C_INFO_BLOCK $08F6 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 262 "            blockAnimationStep = 0; " BKPOINT=0
-C_INFO_BLOCK $08F9 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 263 "            blockAnimation = nextBlockAnimation; " BKPOINT=0
-C_INFO_BLOCK $08FF "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 264 "            blockAnimating = 0; " BKPOINT=0
-C_INFO_BLOCK $0903 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 271 "    blockAnimation = height2FallingLeft; " BKPOINT=0
-C_INFO_BLOCK $0909 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 272 "    blockAnimationStep = 0; " BKPOINT=0
-C_INFO_BLOCK $090C "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 273 "    blockAnimating = 0; " BKPOINT=0
-C_INFO_BLOCK $090F "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 274 "    blockOrientation = Standing; " BKPOINT=0
-C_INFO_BLOCK $0912 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 275 "    splitMode = 0; " BKPOINT=0
-C_INFO_BLOCK $0916 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 280 "    blockAnimation = height1FallingLeft; " BKPOINT=0
-C_INFO_BLOCK $091C "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 281 "    blockOrientation = Standing; " BKPOINT=0
-C_INFO_BLOCK $091F "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 282 "    splitMode = 1; " BKPOINT=0
-C_INFO_BLOCK $0927 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 287 "    if (blockY == blockY2) { " BKPOINT=0
-C_INFO_BLOCK $0939 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 288 "        if (blockX == blockX2 + 1) { " BKPOINT=0
-C_INFO_BLOCK $094A "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 289 "            blockAnimation = width2RollingFront; " BKPOINT=0
-C_INFO_BLOCK $0950 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 290 "            blockOrientation = Horizontal; " BKPOINT=0
-C_INFO_BLOCK $0955 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 291 "            blockX--; " BKPOINT=0
-C_INFO_BLOCK $0958 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 292 "            splitMode = 0; " BKPOINT=0
-C_INFO_BLOCK $0967 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 294 "            blockAnimation = width2RollingFront; " BKPOINT=0
-C_INFO_BLOCK $096D "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 295 "            blockOrientation = Horizontal; " BKPOINT=0
-C_INFO_BLOCK $0972 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 296 "            splitMode = 0; " BKPOINT=0
-C_INFO_BLOCK $0982 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 299 "        if (blockY == blockY2 + 1) { " BKPOINT=0
-C_INFO_BLOCK $0989 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 300 "            blockAnimation = depth2RollingLeft; " BKPOINT=0
-C_INFO_BLOCK $098F "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 301 "            blockOrientation = Vertical; " BKPOINT=0
-C_INFO_BLOCK $0994 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 302 "            blockY--; " BKPOINT=0
-C_INFO_BLOCK $099A "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 303 "            splitMode = 0; " BKPOINT=0
-C_INFO_BLOCK $09A6 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 305 "            blockAnimation = depth2RollingLeft; " BKPOINT=0
-C_INFO_BLOCK $09AC "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 306 "            blockOrientation = Vertical;; " BKPOINT=0
-C_INFO_BLOCK $09B1 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 307 "            splitMode = 0; " BKPOINT=0
-C_INFO_BLOCK $09B9 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 314 "    int8_t xt = blockX; " BKPOINT=0
-C_INFO_BLOCK $09BE "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 315 "    int8_t yt = blockY; " BKPOINT=0
-C_INFO_BLOCK $09C3 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 316 "    blockX = blockX2; " BKPOINT=0
-C_INFO_BLOCK $09C9 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 317 "    blockY = blockY2; " BKPOINT=0
-C_INFO_BLOCK $09CF "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 318 "    blockX2 = xt; " BKPOINT=0
-C_INFO_BLOCK $09D4 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 319 "    blockY2 = yt; " BKPOINT=0
-C_INFO_BLOCK $09E2 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 216 "    intens(0x63); " BKPOINT=0
-C_INFO_BLOCK $09EB "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 217 "    int8_t yy = y3d(blockX, 0, blockY); " BKPOINT=0
-C_INFO_BLOCK $09FA "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 219 "    if (yofs < -30) " BKPOINT=0
-C_INFO_BLOCK $0A02 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 221 "        positd(0, yofs); " BKPOINT=0
-C_INFO_BLOCK $0A13 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 222 "        positd(x3d(blockX, blockY), yy); " BKPOINT=0
-C_INFO_BLOCK $0A33 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 226 "        positd(x3d(blockX, blockY), yy+yofs); " BKPOINT=0
-C_INFO_BLOCK $0A53 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 229 " dp_VIA_t1_cnt_lo = 0x7f/FACTOR; // scale " BKPOINT=0
-C_INFO_BLOCK $0A57 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 231 "    Draw_VLpo((void*)(blockAnimation[blockAnimationStep])); " BKPOINT=0
-C_INFO_BLOCK $0A69 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 234 "    if (splitMode) { " BKPOINT=0
-C_INFO_BLOCK $0A70 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 235 "        zergnd(); " BKPOINT=0
-C_INFO_BLOCK $0A73 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 236 "        intens(0x35); " BKPOINT=0
-C_INFO_BLOCK $0A7C "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 237 "        yy = y3d(blockX2, 0, blockY2); " BKPOINT=0
-C_INFO_BLOCK $0A8B "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 239 "        if (yofs < -50) " BKPOINT=0
-C_INFO_BLOCK $0A93 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 241 "            positd(0, yofs); " BKPOINT=0
-C_INFO_BLOCK $0AA4 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 242 "            positd(x3d(blockX2, blockY2),yy ); " BKPOINT=0
-C_INFO_BLOCK $0AC4 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 246 "            positd(x3d(blockX2, blockY2),yy+yofs ); " BKPOINT=0
-C_INFO_BLOCK $0AE4 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 250 " dp_VIA_t1_cnt_lo = 0x7f/FACTOR; // scale " BKPOINT=0
-C_INFO_BLOCK $0AE8 "C:\data\vide\..\bloxorz\Vide\source\block.c "FN_END 252 "    Draw_VLpo((void*)(height1FallingLeft[0])); " BKPOINT=0
-C_INFO_BLOCK $35BC "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 227 "    while (1) {        frwait(); " BKPOINT=0
-C_INFO_BLOCK $35BF "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 229 "        Intensity_a(0x5f); " BKPOINT=0
-C_INFO_BLOCK $35C8 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 230 "        Vec_Text_Width = 90; " BKPOINT=0
-C_INFO_BLOCK $35CD "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 231 "        Print_Str_d(-10, -110, msg); " BKPOINT=0
-C_INFO_BLOCK $35E8 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 250 "    uint16_t muls[] = { 100, 10, 1 }; " BKPOINT=0
-C_INFO_BLOCK $35F7 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 251 "    if (number > 999) number = 999; " BKPOINT=0
-C_INFO_BLOCK $3602 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 252 "    for (uint8_t i = 0; i < 3; i++) { " BKPOINT=0
-C_INFO_BLOCK $360B "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 254 "        uint8_t d = 0;,         while (number >= muls[i]) { " BKPOINT=0
-C_INFO_BLOCK $3627 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 255 "            d++; " BKPOINT=0
-C_INFO_BLOCK $3629 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 256 "            number -= muls[i]; " BKPOINT=0
-C_INFO_BLOCK $363E "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 258 "        text[i] = d + '0'; " BKPOINT=0
-C_INFO_BLOCK $3663 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 271 "    tstat = 1; " BKPOINT=0
-C_INFO_BLOCK $3668 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 272 "    currentMusic = music; " BKPOINT=0
-C_INFO_BLOCK $378F "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 873 "    Read_Btns(); " BKPOINT=0
-C_INFO_BLOCK $3792 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 874 "    Intensity_a(0x5f); " BKPOINT=0
-C_INFO_BLOCK $379B "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 875 "    Vec_Text_Width = 90; " BKPOINT=0
-C_INFO_BLOCK $37A0 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 876 "    Print_Str_d(100, -70, "GAME OVER€"); " BKPOINT=0
-C_INFO_BLOCK $37B6 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 877 "    Print_Str_d(50, -110, infoText); " BKPOINT=0
-C_INFO_BLOCK $37CC "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 878 "    if (Vec_Buttons & 1) { " BKPOINT=0
-C_INFO_BLOCK $37D3 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 879 "        gameState = MainMenu; " BKPOINT=0
-C_INFO_BLOCK $37D6 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 881 "    if (Vec_Buttons & 2) { " BKPOINT=0
-C_INFO_BLOCK $37DD "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 882 "        gameState = MainMenu; " BKPOINT=0
-C_INFO_BLOCK $37E0 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 884 "    if (Vec_Buttons & 4) { " BKPOINT=0
-C_INFO_BLOCK $37E7 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 885 "        gameState = MainMenu; " BKPOINT=0
-C_INFO_BLOCK $37EA "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 887 "    if (Vec_Buttons & 8) { " BKPOINT=0
-C_INFO_BLOCK $37F1 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 888 "        gameState = MainMenu; " BKPOINT=0
-C_INFO_BLOCK $37FC "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 924 "    zergnd(); " BKPOINT=0
-C_INFO_BLOCK $37FF "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 925 "    intens(0x50); " BKPOINT=0
-C_INFO_BLOCK $3808 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 927 "    zergnd(); " BKPOINT=0
-C_INFO_BLOCK $380B "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 928 "    positd(-50, 100); " BKPOINT=0
-C_INFO_BLOCK $381E "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 929 "    pack1x((void*)led8); " BKPOINT=0
-C_INFO_BLOCK $382E "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 931 "    zergnd(); " BKPOINT=0
-C_INFO_BLOCK $3831 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 932 "    positd(-40, 110); " BKPOINT=0
-C_INFO_BLOCK $3844 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 933 "    pack1x((void*)led8); " BKPOINT=0
-C_INFO_BLOCK $3850 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 935 "    zergnd(); " BKPOINT=0
-C_INFO_BLOCK $3853 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 936 "    positd(-30, 120); " BKPOINT=0
-C_INFO_BLOCK $3866 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 937 "    pack1x((void*)led8); " BKPOINT=0
-C_INFO_BLOCK $3872 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 939 "    zergnd(); " BKPOINT=0
-C_INFO_BLOCK $3875 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 940 "    positd(0, 120); " BKPOINT=0
-C_INFO_BLOCK $3886 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 941 "    pack1x((void*)led8); " BKPOINT=0
-C_INFO_BLOCK $3892 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 943 "    zergnd(); " BKPOINT=0
-C_INFO_BLOCK $3895 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 944 "    positd(10, 120); " BKPOINT=0
-C_INFO_BLOCK $38A8 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 945 "    pack1x((void*)led8); " BKPOINT=0
-C_INFO_BLOCK $38B4 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 947 "    zergnd(); " BKPOINT=0
-C_INFO_BLOCK $38B7 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 948 "    positd(20, 120); " BKPOINT=0
-C_INFO_BLOCK $38CA "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 949 "    pack1x((void*)led8); " BKPOINT=0
-C_INFO_BLOCK $38DE "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 954 "    Intensity_a(0x5f); " BKPOINT=0
-C_INFO_BLOCK $38E7 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 955 "    Vec_Text_Width = 100; " BKPOINT=0
-C_INFO_BLOCK $38EC "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 956 "    if (highscoreDisplayCounter > 180) { " BKPOINT=0
-C_INFO_BLOCK $38F3 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 957 "        Print_Str_d(100, -70, highscoreText); " BKPOINT=0
-C_INFO_BLOCK $390B "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 959 "        Print_Str_d(100, -70, infoText); " BKPOINT=0
-C_INFO_BLOCK $3921 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 961 "    highscoreDisplayCounter++; " BKPOINT=0
-C_INFO_BLOCK $3928 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 962 "    if (highscoreDisplayCounter > 240) { " BKPOINT=0
-C_INFO_BLOCK $392C "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 963 "        highscoreDisplayCounter = 0; " BKPOINT=0
-C_INFO_BLOCK $3937 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 194 "    picWrite('V'); " BKPOINT=0
-C_INFO_BLOCK $393C "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 195 "    picWrite(cmd); " BKPOINT=0
-C_INFO_BLOCK $3941 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 196 "    picWrite(arg); " BKPOINT=0
-C_INFO_BLOCK $3946 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 197 "    return picRead(); " BKPOINT=0
-C_INFO_BLOCK $3950 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 211 " uint8_t result = 0;,  if (picAvailable) { " BKPOINT=0
-C_INFO_BLOCK $3955 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 212 "        result = sendPicCommand(cmd, arg); " BKPOINT=0
-C_INFO_BLOCK $3964 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 202 "        result = sendVecxCommand(cmd, arg);,     vecx[VECX_PIC_RW] = 'V'; " BKPOINT=0
-C_INFO_BLOCK $396B "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 203 "    vecx[VECX_PIC_RW] = cmd; " BKPOINT=0
-C_INFO_BLOCK $3972 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 204 "    vecx[VECX_PIC_RW] = arg; " BKPOINT=0
-C_INFO_BLOCK $3979 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 205 "    return vecx[VECX_PIC_RW]; " BKPOINT=0
-C_INFO_BLOCK $3980 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 216 "    delay10ms(); " BKPOINT=0
-C_INFO_BLOCK $3983 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 217 "    return result; " BKPOINT=0
-C_INFO_BLOCK $3988 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 222 "    sendCommand(CMD_SET_BANK, bank); " BKPOINT=0
-C_INFO_BLOCK $3992 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 243 "    return sendCommand(CMD_EEPROM_READ, address); " BKPOINT=0
-C_INFO_BLOCK $399C "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 237 "    sendCommand(CMD_SET_EEPROM_ADR, address); " BKPOINT=0
-C_INFO_BLOCK $39A3 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 238 "    sendCommand(CMD_EEPROM_WRITE, data); " BKPOINT=0
-C_INFO_BLOCK $39CE "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 894 "    Read_Btns(); " BKPOINT=0
-C_INFO_BLOCK $39D1 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 895 "    Intensity_a(0x5f); " BKPOINT=0
-C_INFO_BLOCK $39DA "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 896 "    Vec_Text_Width = 90; " BKPOINT=0
-C_INFO_BLOCK $39DF "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 897 "    Print_Str_d(100, -80, "CLEAR SCORE?€"); " BKPOINT=0
-C_INFO_BLOCK $39F5 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 898 "    Print_Str_d(50, -110, "3 YES€"); " BKPOINT=0
-C_INFO_BLOCK $3A0B "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 899 "    Print_Str_d(20, -110, "4 NO€"); " BKPOINT=0
-C_INFO_BLOCK $3A21 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 900 "    if (Vec_Buttons & 4) { " BKPOINT=0
-C_INFO_BLOCK $3A28 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 901 "        for (uint8_t i = 0; i < 6; i++) { " BKPOINT=0
-C_INFO_BLOCK $3A2A "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 902 "            writeEeprom(i, 0xff); " BKPOINT=0
-C_INFO_BLOCK $3A3D "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 904 "        gameState = MainMenu; " BKPOINT=0
-C_INFO_BLOCK $3A40 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 906 "    if (Vec_Buttons & 8) { " BKPOINT=0
-C_INFO_BLOCK $3A47 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 907 "        gameState = MainMenu; " BKPOINT=0
-C_INFO_BLOCK $3A4E "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 596 "    drawField(); " BKPOINT=0
-C_INFO_BLOCK $3A51 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 597 "    drawBlock(blockYOfs); " BKPOINT=0
-C_INFO_BLOCK $3A57 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 598 "    blockYOfs++; " BKPOINT=0
-C_INFO_BLOCK $3A5E "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 599 "    if (blockYOfs == 0) { " BKPOINT=0
-C_INFO_BLOCK $3A61 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 600 "        gameState = BlockWaiting; " BKPOINT=0
-C_INFO_BLOCK $3A69 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 264 "    memcpy(infoText, "001 - 999€", 10); " BKPOINT=0
-C_INFO_BLOCK $3A89 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 265 "    itoa(moveCount, &infoText[0]); " BKPOINT=0
-C_INFO_BLOCK $3A91 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 266 "    itoa(levelNumber + levelOffset, &infoText[6]); " BKPOINT=0
-C_INFO_BLOCK $3AAA "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 295 "    if (arcadeMode) { " BKPOINT=0
-C_INFO_BLOCK $3AAF "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 296 "        levelNumber = arcadeLevels[arcadeSelection][arcadeIndex] - 1; " BKPOINT=0
-C_INFO_BLOCK $3AD4 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 299 "        uint8_t index = (uint8_t) (levelOffset + levelNumber * 2); " BKPOINT=0
-C_INFO_BLOCK $3ADD "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 300 "        levelHighscore = readEeprom(index); " BKPOINT=1
-C_INFO_BLOCK $3AE4 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 301 "        levelHighscore |= ((uint16_t) readEeprom(index + 1)) << 8; " BKPOINT=0
-C_INFO_BLOCK $3AF6 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 302 "        if (levelHighscore == 0) levelHighscore = 999; " BKPOINT=0
-C_INFO_BLOCK $3B02 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 305 "        memcpy(highscoreText, "BEST  999€", 10); " BKPOINT=0
-C_INFO_BLOCK $3B20 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 306 "        itoa(levelHighscore, &highscoreText[6]); " BKPOINT=0
-C_INFO_BLOCK $3B2B "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 307 "        highscoreDisplayCounter = 0; " BKPOINT=0
-C_INFO_BLOCK $3B30 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 309 "    level = levels[levelNumber]; " BKPOINT=0
-C_INFO_BLOCK $3B3F "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 310 "    initSwatches(); " BKPOINT=0
-C_INFO_BLOCK $3B42 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 311 "    initLevel(); " BKPOINT=0
-C_INFO_BLOCK $3B45 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 312 "    blockX = level->start.x; " BKPOINT=0
-C_INFO_BLOCK $3B4D "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 313 "    blockY = level->start.y; " BKPOINT=0
-C_INFO_BLOCK $3B52 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 314 "    blockStartLevel(); " BKPOINT=0
-C_INFO_BLOCK $3B55 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 315 "    blockYOfs = -30; " BKPOINT=0
-C_INFO_BLOCK $3B5A "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 316 "    gameState = BlockMovingToStart; " BKPOINT=0
-C_INFO_BLOCK $3B5F "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 317 "    changeMusic(startMusic); " BKPOINT=0
-C_INFO_BLOCK $3B65 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 318 "    vecx[VECX_MUSIC] = VECX_START_MUSIC; " BKPOINT=0
-C_INFO_BLOCK $3B6B "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 319 "    if (!arcadeMode) { " BKPOINT=0
-C_INFO_BLOCK $3B70 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 320 "        moveCount = 0; " BKPOINT=0
-C_INFO_BLOCK $3B76 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 321 "        updateInfoText(); " BKPOINT=0
-C_INFO_BLOCK $3B79 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 323 "    si = 0; " BKPOINT=0
-C_INFO_BLOCK $3BB5 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 845 "    Read_Btns(); " BKPOINT=0
-C_INFO_BLOCK $3BB8 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 846 "    Intensity_a(0x5f); " BKPOINT=0
-C_INFO_BLOCK $3BC1 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 847 "    Vec_Text_Width = 90; " BKPOINT=0
-C_INFO_BLOCK $3BC6 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 848 "    Print_Str_d(100, -70, "ARCADE MODE€"); " BKPOINT=0
-C_INFO_BLOCK $3BDC "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 849 "    Print_Str_d(50, -110, "1 SET 1€"); " BKPOINT=0
-C_INFO_BLOCK $3BF2 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 850 "    Print_Str_d(20, -110, "2 SET 2€"); " BKPOINT=0
-C_INFO_BLOCK $3C08 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 851 "    Print_Str_d(-10, -110, "3 SET 3€"); " BKPOINT=0
-C_INFO_BLOCK $3C1E "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 852 "    Print_Str_d(-40, -110, "4 SET 4€"); " BKPOINT=0
-C_INFO_BLOCK $3C34 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 853 "    if (Vec_Buttons & 1) { " BKPOINT=0
-C_INFO_BLOCK $3C3B "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 854 "        arcadeSelection = 0; " BKPOINT=0
-C_INFO_BLOCK $3C3E "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 855 "        startLevel(); " BKPOINT=0
-C_INFO_BLOCK $3C41 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 857 "    if (Vec_Buttons & 2) { " BKPOINT=0
-C_INFO_BLOCK $3C48 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 858 "        arcadeSelection = 1; " BKPOINT=0
-C_INFO_BLOCK $3C4D "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 859 "        startLevel(); " BKPOINT=0
-C_INFO_BLOCK $3C50 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 861 "    if (Vec_Buttons & 4) { " BKPOINT=0
-C_INFO_BLOCK $3C57 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 862 "        arcadeSelection = 2; " BKPOINT=0
-C_INFO_BLOCK $3C5C "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 863 "        startLevel(); " BKPOINT=0
-C_INFO_BLOCK $3C5F "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 865 "    if (Vec_Buttons & 8) { " BKPOINT=0
-C_INFO_BLOCK $3C66 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 866 "        arcadeSelection = 3; " BKPOINT=0
-C_INFO_BLOCK $3C6B "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 867 "        startLevel(); " BKPOINT=0
-C_INFO_BLOCK $3CB2 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 819 "    Read_Btns(); " BKPOINT=0
-C_INFO_BLOCK $3CB5 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 820 "    Intensity_a(0x5f); " BKPOINT=0
-C_INFO_BLOCK $3CBE "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 821 "    Vec_Text_Width = 90; " BKPOINT=0
-C_INFO_BLOCK $3CC3 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 822 "    Print_Str_d(100, -70, "MAIN MENU€"); " BKPOINT=0
-C_INFO_BLOCK $3CD9 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 823 "    Print_Str_d(50, -110, "1 PUZZLE MODE€"); " BKPOINT=0
-C_INFO_BLOCK $3CEF "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 824 "    Print_Str_d(20, -110, "2 ARCADE MODE€"); " BKPOINT=0
-C_INFO_BLOCK $3D05 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 825 "    Print_Str_d(-10, -110, "3 CLEAR HIGHSCORE€"); " BKPOINT=0
-C_INFO_BLOCK $3D1B "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 826 "    if (Vec_Buttons & 1) { " BKPOINT=0
-C_INFO_BLOCK $3D22 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 827 "        arcadeMode = 0; " BKPOINT=0
-C_INFO_BLOCK $3D25 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 828 "        levelNumber = 0; " BKPOINT=0
-C_INFO_BLOCK $3D28 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 829 "        startLevel(); " BKPOINT=0
-C_INFO_BLOCK $3D2B "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 831 "    if (Vec_Buttons & 2) { " BKPOINT=0
-C_INFO_BLOCK $3D32 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 832 "        frames = 0; " BKPOINT=0
-C_INFO_BLOCK $3D38 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 833 "        moveCount = 0; " BKPOINT=0
-C_INFO_BLOCK $3D3B "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 834 "        arcadeMode = 1; " BKPOINT=0
-C_INFO_BLOCK $3D40 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 835 "        arcadeIndex = 0; " BKPOINT=0
-C_INFO_BLOCK $3D43 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 836 "        gameState = ArcadeMenu; " BKPOINT=0
-C_INFO_BLOCK $3D46 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 838 "    if (Vec_Buttons & 4) { " BKPOINT=0
-C_INFO_BLOCK $3D4D "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 839 "        gameState = ClearMenu; " BKPOINT=0
-C_INFO_BLOCK $3D58 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 779 "    drawField(); " BKPOINT=0
-C_INFO_BLOCK $3D5B "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 780 "    blockYOfs++; " BKPOINT=0
-C_INFO_BLOCK $3D64 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 781 "    if (blockYOfs < 12) { " BKPOINT=0
-C_INFO_BLOCK $3D68 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 782 "        drawBlock(-blockYOfs*blockYOfs); " BKPOINT=0
-C_INFO_BLOCK $3D6F "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 783 "        doBlockAnimation(); " BKPOINT=0
-C_INFO_BLOCK $3D72 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 785 "    if (blockYOfs == 50) { " BKPOINT=0
-C_INFO_BLOCK $3D79 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 786 "        startLevel(); " BKPOINT=0
-C_INFO_BLOCK $3D7F "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 606 "    levelNumber++; " BKPOINT=0
-C_INFO_BLOCK $3D83 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 607 "    if (levelNumber >= levelCount) { " BKPOINT=0
-C_INFO_BLOCK $3D8B "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 608 "        levelNumber = 0; " BKPOINT=0
-C_INFO_BLOCK $3D8E "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 609 "        setBank(nextBank); " BKPOINT=0
-C_INFO_BLOCK $3D94 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 611 "    startLevel(); " BKPOINT=0
-C_INFO_BLOCK $3D9C "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 792 "    drawField(); " BKPOINT=0
-C_INFO_BLOCK $3D9F "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 793 "    drawBlock(blockYOfs); " BKPOINT=0
-C_INFO_BLOCK $3DA5 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 794 "    blockYOfs++; " BKPOINT=0
-C_INFO_BLOCK $3DAC "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 795 "    if (blockYOfs == 30) { " BKPOINT=0
-C_INFO_BLOCK $3DB2 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 796 "        if (moveCount < levelHighscore) { " BKPOINT=0
-C_INFO_BLOCK $3DBA "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 797 "            writeEeprom((uint8_t) (levelOffset + 2 * levelNumber), (uint8_t) (moveCount & 0xff)); " BKPOINT=0
-C_INFO_BLOCK $3DCC "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 798 "            writeEeprom((uint8_t) (levelOffset + 2 * levelNumber + 1), (uint8_t) (moveCount >> 8)); " BKPOINT=0
-C_INFO_BLOCK $3DED "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 800 "        if (arcadeMode) { " BKPOINT=0
-C_INFO_BLOCK $3DF4 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 801 "            arcadeIndex++; " BKPOINT=0
-C_INFO_BLOCK $3DFB "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 802 "            levelNumber = arcadeLevels[arcadeSelection][arcadeIndex]; " BKPOINT=0
-C_INFO_BLOCK $3E16 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 803 "            if (levelNumber == 0) { " BKPOINT=0
-C_INFO_BLOCK $3E1D "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 804 "                gameState = ArcadeEnd; " BKPOINT=0
-C_INFO_BLOCK $3E22 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 805 "                memcpy(infoText, "TIME: 000 SECONDS€", 18); " BKPOINT=0
-C_INFO_BLOCK $3E58 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 806 "                itoa(moveCount, &infoText[6]); " BKPOINT=0
-C_INFO_BLOCK $3E63 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 807 "                arcadeMode = 0; " BKPOINT=0
-C_INFO_BLOCK $3E6A "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 809 "                startLevel(); " BKPOINT=0
-C_INFO_BLOCK $3E6F "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 812 "     nextLevel(); " BKPOINT=0
-C_INFO_BLOCK $3E76 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 277 "    moveBlockImpl(move); " BKPOINT=0
-C_INFO_BLOCK $3E79 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 278 "    if (!arcadeMode) { " BKPOINT=0
-C_INFO_BLOCK $3E7E "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 279 "        if (moveCount < 999) moveCount++; " BKPOINT=0
-C_INFO_BLOCK $3E8B "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 280 "        updateInfoText(); " BKPOINT=0
-C_INFO_BLOCK $3E8F "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 616 "    drawField(); " BKPOINT=0
-C_INFO_BLOCK $3E92 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 617 "    drawBlock(0); " BKPOINT=0
-C_INFO_BLOCK $3E96 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 618 "    joybit(); " BKPOINT=0
-C_INFO_BLOCK $3E99 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 619 "    if (pot0 < -10) { " BKPOINT=0
-C_INFO_BLOCK $3EA0 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 620 "        moveBlock(Left); " BKPOINT=0
-C_INFO_BLOCK $3EA4 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 621 "        gameState = BlockMoving; " BKPOINT=0
-C_INFO_BLOCK $3EB3 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 623 "        moveBlock(Right); " BKPOINT=0
-C_INFO_BLOCK $3EB8 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 624 "        gameState = BlockMoving; " BKPOINT=0
-C_INFO_BLOCK $3EC6 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 626 "        moveBlock(Down); " BKPOINT=0
-C_INFO_BLOCK $3ECB "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 627 "        gameState = BlockMoving; " BKPOINT=0
-C_INFO_BLOCK $3ED9 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 629 "        moveBlock(Up); " BKPOINT=0
-C_INFO_BLOCK $3EDE "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 630 "        gameState = BlockMoving; " BKPOINT=0
-C_INFO_BLOCK $3EE3 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 660 "#if 0,     if (gameState == BlockMoving) { " BKPOINT=0
-C_INFO_BLOCK $3EEA "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 661 "        changeMusic(movingMusic); " BKPOINT=0
-C_INFO_BLOCK $3EF0 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 662 "        vecx[VECX_MUSIC] = VECX_MOVING_MUSIC; " BKPOINT=0
-C_INFO_BLOCK $3EF6 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 665 "    Read_Btns(); " BKPOINT=0
-C_INFO_BLOCK $3EF9 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 666 "    if (Vec_Buttons & 1) { " BKPOINT=0
-C_INFO_BLOCK $3F00 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 667 "        if (splitMode) { " BKPOINT=0
-C_INFO_BLOCK $3F05 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 668 "            swapSplit(); " BKPOINT=0
-C_INFO_BLOCK $3F08 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 672 "    if ((Vec_Buttons & 2) && !arcadeMode) { " BKPOINT=0
-C_INFO_BLOCK $3F14 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 673 "  nextLevel(); " BKPOINT=0
-C_INFO_BLOCK $3F17 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 675 "    if ((Vec_Buttons & 4) && !arcadeMode) { " BKPOINT=0
-C_INFO_BLOCK $3F23 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 676 "        if (levelNumber > 0) { " BKPOINT=0
-C_INFO_BLOCK $3F28 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 677 "            levelNumber--; " BKPOINT=0
-C_INFO_BLOCK $3F31 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 679 "            setBank(nextBank); " BKPOINT=0
-C_INFO_BLOCK $3F37 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 680 "            levelNumber = levelCount - 1; " BKPOINT=0
-C_INFO_BLOCK $3F3E "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 682 "        startLevel(); " BKPOINT=0
-C_INFO_BLOCK $3F41 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 684 "    if (Vec_Buttons & 8) { " BKPOINT=0
-C_INFO_BLOCK $3F48 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 685 "        gameState = MainMenu; " BKPOINT=0
-C_INFO_BLOCK $3F4C "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 286 "    gameState = BlockFalling; " BKPOINT=0
-C_INFO_BLOCK $3F51 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 287 "    blockYOfs = 0; " BKPOINT=0
-C_INFO_BLOCK $3F54 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 288 "    moveBlock(lastBlockDirection); " BKPOINT=0
-C_INFO_BLOCK $3F5A "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 289 "    changeMusic(fallingMusic); " BKPOINT=0
-C_INFO_BLOCK $3F60 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 290 "    vecx[VECX_MUSIC] = VECX_FALLING_MUSIC; " BKPOINT=0
-C_INFO_BLOCK $3F67 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 691 "    drawField(); " BKPOINT=0
-C_INFO_BLOCK $3F6A "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 692 "    drawBlock(0); " BKPOINT=0
-C_INFO_BLOCK $3F6E "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 693 "    doBlockAnimation(); " BKPOINT=0
-C_INFO_BLOCK $3F71 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 694 "    if (!blockAnimating) { " BKPOINT=0
-C_INFO_BLOCK $3F78 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 696 "        if (splitMode) { " BKPOINT=0
-C_INFO_BLOCK $3F7D "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 697 "            testMerge(); " BKPOINT=0
-C_INFO_BLOCK $3F80 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 701 "        uint8_t c0 = isField(blockX, blockY); " BKPOINT=0
-C_INFO_BLOCK $3F8D "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 702 "        uint8_t c1 = isField(blockX + 1, blockY); " BKPOINT=0
-C_INFO_BLOCK $3F9F "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 703 "        uint8_t c2 = isField(blockX, blockY + 1); " BKPOINT=0
-C_INFO_BLOCK $3FAD "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 704 "        char f0 = getField(blockX, blockY); " BKPOINT=0
-C_INFO_BLOCK $3FBA "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 705 "        char f1 = getField(blockX + 1, blockY); " BKPOINT=0
-C_INFO_BLOCK $3FCC "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 706 "        char f2 = getField(blockX, blockY + 1); " BKPOINT=0
-C_INFO_BLOCK $3FDA "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 707 "        if (splitMode) { " BKPOINT=0
-C_INFO_BLOCK $3FE1 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 708 "            if (!c0) { " BKPOINT=0
-C_INFO_BLOCK $3FE7 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 709 "                startBlockFalling(); " BKPOINT=0
-C_INFO_BLOCK $3FED "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 712 "            switch (blockOrientation) { " BKPOINT=0
-C_INFO_BLOCK $3FFE "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 714 "                if (!c0 || f0 == 'f') { " BKPOINT=0
-C_INFO_BLOCK $4008 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 715 "                    startBlockFalling(); " BKPOINT=0
-C_INFO_BLOCK $400B "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 717 "                break; " BKPOINT=0
-C_INFO_BLOCK $400D "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 719 "                if (!c0 || !c2) { " BKPOINT=0
-C_INFO_BLOCK $4015 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 720 "                    startBlockFalling(); " BKPOINT=0
-C_INFO_BLOCK $4018 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 722 "                break; " BKPOINT=0
-C_INFO_BLOCK $401A "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 724 "                if (!c0 || ! c1) { " BKPOINT=0
-C_INFO_BLOCK $4022 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 725 "                    startBlockFalling(); " BKPOINT=0
-C_INFO_BLOCK $4025 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 727 "                break;        if (blockOrientation == Standing && blockX == endX && blockY == endY && !splitMode) { " BKPOINT=0
-C_INFO_BLOCK $403F "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 733 "            blockYOfs = 0; " BKPOINT=0
-C_INFO_BLOCK $4042 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 734 "            gameState = BlockMovingAtEnd; " BKPOINT=0
-C_INFO_BLOCK $4047 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 735 "            changeMusic(levelEndMusic); " BKPOINT=0
-C_INFO_BLOCK $404D "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 736 "            vecx[VECX_MUSIC] = VECX_LEVEL_END_MUSIC; " BKPOINT=0
-C_INFO_BLOCK $4055 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 739 "            if (gameState != BlockFalling) { " BKPOINT=0
-C_INFO_BLOCK $405C "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 740 "                gameState = BlockWaiting; " BKPOINT=0
-C_INFO_BLOCK $4061 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 745 "        if (splitMode) { " BKPOINT=0
-C_INFO_BLOCK $4066 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 746 "            if (f0 == 's') { " BKPOINT=0
-C_INFO_BLOCK $406E "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 747 "                swatchSwitch(blockX, blockY); " BKPOINT=0
-C_INFO_BLOCK $407E "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 750 "            switch (blockOrientation) { " BKPOINT=0
-C_INFO_BLOCK $4090 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 752 "                if (f0 == 's' || f0 == 'h' || f0 == 'v') { " BKPOINT=0
-C_INFO_BLOCK $409E "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 753 "                    swatchSwitch(blockX, blockY); " BKPOINT=0
-C_INFO_BLOCK $40AB "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 755 "                break; " BKPOINT=0
-C_INFO_BLOCK $40AE "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 757 "                if (f0 == 's') { " BKPOINT=0
-C_INFO_BLOCK $40B4 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 758 "                    swatchSwitch(blockX, blockY); " BKPOINT=0
-C_INFO_BLOCK $40C1 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 760 "                if (f2 == 's') { " BKPOINT=0
-C_INFO_BLOCK $40C7 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 761 "                    swatchSwitch(blockX, blockY + 1); " BKPOINT=0
-C_INFO_BLOCK $40D5 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 763 "                break; " BKPOINT=0
-C_INFO_BLOCK $40D7 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 765 "                if (f0 == 's') { " BKPOINT=0
-C_INFO_BLOCK $40DD "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 766 "                    swatchSwitch(blockX, blockY); " BKPOINT=0
-C_INFO_BLOCK $40EA "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 768 "                if (f1 == 's') { " BKPOINT=0
-C_INFO_BLOCK $40F0 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 769 "                    swatchSwitch(blockX + 1, blockY); " BKPOINT=0
-C_INFO_BLOCK $4102 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 771 "                break; " BKPOINT=0
-C_INFO_BLOCK $4109 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 970 "    picAvailable = 0; " BKPOINT=0
-C_INFO_BLOCK $410C "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 971 "    sendPicCommand(CMD_VERSION, 0); " BKPOINT=0
-C_INFO_BLOCK $4113 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 972 "    sendPicCommand(CMD_VERSION, 0); " BKPOINT=0
-C_INFO_BLOCK $411A "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 973 "    if (sendPicCommand(CMD_VERSION, 0) == 4) { " BKPOINT=0
-C_INFO_BLOCK $4127 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 974 "        picAvailable = 1; " BKPOINT=0
-C_INFO_BLOCK $412C "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 979 "    setBank(0); " BKPOINT=0
-C_INFO_BLOCK $4130 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 982 "    vecx[VECX_MUSIC] = VECX_TITLE_MUSIC; " BKPOINT=0
-C_INFO_BLOCK $4136 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 985 "    epot0 = 1; " BKPOINT=0
-C_INFO_BLOCK $413B "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 986 "    epot1 = 3; " BKPOINT=0
-C_INFO_BLOCK $4140 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 987 "    epot2 = 0; " BKPOINT=0
-C_INFO_BLOCK $4143 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 988 "    epot3 = 0; " BKPOINT=0
-C_INFO_BLOCK $4146 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 990 "    gameState = MainMenu; " BKPOINT=0
-C_INFO_BLOCK $4149 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 991 "    musicInit(); " BKPOINT=0
-C_INFO_BLOCK $414C "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 993 "    while (1) {        frwait(); " BKPOINT=0
-C_INFO_BLOCK $414F "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 997 "        switch (gameState) { " BKPOINT=0
-C_INFO_BLOCK $4175 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 999 "            mainMenu(); " BKPOINT=0
-C_INFO_BLOCK $4178 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1000 "            musicPlay(); " BKPOINT=0
-C_INFO_BLOCK $417B "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1001 "            break; " BKPOINT=0
-C_INFO_BLOCK $417E "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1003 "            clearMenu(); " BKPOINT=0
-C_INFO_BLOCK $4181 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1004 "            musicPlay(); " BKPOINT=0
-C_INFO_BLOCK $4184 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1005 "            break; " BKPOINT=0
-C_INFO_BLOCK $4187 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1007 "            arcadeMenu(); " BKPOINT=0
-C_INFO_BLOCK $418A "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1008 "            musicPlay(); " BKPOINT=0
-C_INFO_BLOCK $418D "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1009 "            break; " BKPOINT=0
-C_INFO_BLOCK $4190 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1011 "            arcadeEnd(); " BKPOINT=0
-C_INFO_BLOCK $4193 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1012 "            musicPlay(); " BKPOINT=0
-C_INFO_BLOCK $4196 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1013 "            break; " BKPOINT=0
-C_INFO_BLOCK $4199 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1015 "            showInfo(); " BKPOINT=0
-C_INFO_BLOCK $419C "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1016 "            blockMovingToStart(); " BKPOINT=0
-C_INFO_BLOCK $419F "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1017 "            break; " BKPOINT=0
-C_INFO_BLOCK $41A2 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1019 "            showInfo(); " BKPOINT=0
-C_INFO_BLOCK $41A5 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1020 "            blockWaiting(); " BKPOINT=0
-C_INFO_BLOCK $41A8 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1021 "            break; " BKPOINT=0
-C_INFO_BLOCK $41AB "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1023 "            showInfo(); " BKPOINT=0
-C_INFO_BLOCK $41AE "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1024 "            blockMoving(); " BKPOINT=0
-C_INFO_BLOCK $41B1 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1025 "            break; " BKPOINT=0
-C_INFO_BLOCK $41B3 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1027 "            showInfo(); " BKPOINT=0
-C_INFO_BLOCK $41B6 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1028 "            blockFalling(); " BKPOINT=0
-C_INFO_BLOCK $41B9 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1029 "            break; " BKPOINT=0
-C_INFO_BLOCK $41BB "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1031 "            showInfo(); " BKPOINT=0
-C_INFO_BLOCK $41BE "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1032 "            blockMovingAtEnd(); " BKPOINT=0
-C_INFO_BLOCK $41C1 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1033 "            break;        if (gameState > ClearMenu) { " BKPOINT=0
-C_INFO_BLOCK $41C8 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1038 "            DP_to_C8(); " BKPOINT=0
-C_INFO_BLOCK $41CB "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1039 "            replay(currentMusic); " BKPOINT=0
-C_INFO_BLOCK $41D5 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1040 "            DP_to_D0(); " BKPOINT=0
-C_INFO_BLOCK $41D8 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1041 "            reqout(); " BKPOINT=0
-C_INFO_BLOCK $41DB "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1045 "        if (arcadeMode) { " BKPOINT=0
-C_INFO_BLOCK $41E2 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1046 "            frames++; " BKPOINT=0
-C_INFO_BLOCK $41EB "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1047 "            if (frames == 50) { " BKPOINT=0
-C_INFO_BLOCK $41F3 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1048 "                frames = 0; " BKPOINT=0
-C_INFO_BLOCK $41F9 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1049 "                if (moveCount < 999) { " BKPOINT=0
-C_INFO_BLOCK $4203 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1050 "                    moveCount++; " BKPOINT=0
-C_INFO_BLOCK $4208 "C:\data\vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1051 "                    updateInfoText(); " BKPOINT=0
-C_INFO_BLOCK $42DD "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 51 "    return shifts[bit]; " BKPOINT=0
-C_INFO_BLOCK $42EA "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 56 "    long int index = (long int) y*LEVEL_WIDTH + (long int)x; " BKPOINT=0
-C_INFO_BLOCK $42FA "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 59 "    uint8_t bit = (uint8_t) (index & 7);,     index >>= 3;,     return (swatchesOn[index] & getShifts(bit)) > 0; " BKPOINT=0
-C_INFO_BLOCK $4321 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 64 "    long int index = (long int) y*LEVEL_WIDTH + (long int)x; " BKPOINT=0
-C_INFO_BLOCK $432F "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 65 "    uint8_t bit = (uint8_t) (index & 7); " BKPOINT=0
-C_INFO_BLOCK $4335 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 66 "    index >>= 3; " BKPOINT=0
-C_INFO_BLOCK $433D "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 67 "    if (on) { " BKPOINT=0
-C_INFO_BLOCK $4341 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 68 "        swatchesOn[index] |= getShifts(bit); " BKPOINT=0
-C_INFO_BLOCK $4355 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 70 "        swatchesOn[index] &= ~getShifts(bit); " BKPOINT=0
-C_INFO_BLOCK $4370 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 76 "    char c = getField(x, y); " BKPOINT=0
-C_INFO_BLOCK $437D "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 79 "    if (c == 'l' || c == 'r' || c == 'k' || c == 'q') { " BKPOINT=0
-C_INFO_BLOCK $438D "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 80 "        if (isSwatchFieldOn(x, y)) { " BKPOINT=0
-C_INFO_BLOCK $439B "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 81 "            c = 'b'; " BKPOINT=0
-C_INFO_BLOCK $439F "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 86 "    return (uint8_t) (c == 'b' || c == 'e' || c == 's' || c == 'h' || c == 'f' || c == 'v'); " BKPOINT=0
-C_INFO_BLOCK $43D1 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 128 "    x -= LEVEL_WIDTH / 2 - 4;,     return 14 * x - 6 * z; " BKPOINT=0
-C_INFO_BLOCK $43F0 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 135 "    y -= LEVEL_HEIGHT / 2;,     return 3 * x + 13 * y + 8 * z; " BKPOINT=0
-C_INFO_BLOCK $4415 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 222 "    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+2)] = USED_BOARD_SCALE; " BKPOINT=0
-C_INFO_BLOCK $4429 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 224 "    if (useHalfling[levelOffset + levelNumber] == 0)  " BKPOINT=0
-C_INFO_BLOCK $4438 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 226 "        last_x = -1; " BKPOINT=0
-C_INFO_BLOCK $443D "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 227 "        last_y = -1; " BKPOINT=0
-C_INFO_BLOCK $4440 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 228 "        last_s = -1; " BKPOINT=0
-C_INFO_BLOCK $4443 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 229 "        return; " BKPOINT=0
-C_INFO_BLOCK $4446 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 233 "    int8_t this_x = lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+1)]+lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+4)]; " BKPOINT=0
-C_INFO_BLOCK $445E "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 234 "    int8_t this_y = lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+0)]+lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+3)]; " BKPOINT=0
-C_INFO_BLOCK $446C "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 236 "    HALF_IF_POSSIBLE(REDUX1) " BKPOINT=0
-C_INFO_BLOCK $44B5 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 237 "    HALF_IF_POSSIBLE(REDUX2) " BKPOINT=0
-C_INFO_BLOCK $4519 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 238 "    HALF_IF_POSSIBLE(REDUX3) " BKPOINT=0
-C_INFO_BLOCK $457D "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 240 "    if (last_s != -1) " BKPOINT=0
-C_INFO_BLOCK $4586 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 245 "        int oldSacle = lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount-1)*5+2)]; " BKPOINT=0
-C_INFO_BLOCK $459F "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 247 "        if ((oldSacle ==  HALF_1) && (useHalfling[levelOffset + levelNumber] > 0) ) " BKPOINT=0
-C_INFO_BLOCK $45B6 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 249 "            int16_t dy = lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+0)]-last_y; " BKPOINT=0
-C_INFO_BLOCK $45CA "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 250 "            int16_t dx = lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+1)]-last_x; " BKPOINT=0
-C_INFO_BLOCK $45D5 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 251 "            dy = dy <<1; " BKPOINT=0
-C_INFO_BLOCK $45DB "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 253 "            dx = dx <<1;,             if ((ABS16(dy) < MAX_SPLIT*2) && (ABS16(dx) < MAX_SPLIT*2)) " BKPOINT=0
-C_INFO_BLOCK $4636 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 259 "                lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount-1)*5+2)] = (int8_t) (((uint8_t)oldSacle) | 0x80); " BKPOINT=0
-C_INFO_BLOCK $463F "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 262 "                lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+0)] = (int8_t)dy; " BKPOINT=0
-C_INFO_BLOCK $4656 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 263 "                lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+1)] = (int8_t)dx; " BKPOINT=0
-C_INFO_BLOCK $4679 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 270 "            int16_t dy = lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+0)]-last_y; " BKPOINT=0
-C_INFO_BLOCK $468D "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 271 "            int16_t dx = lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+1)]-last_x; " BKPOINT=0
-C_INFO_BLOCK $4698 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 272 "            dy = dy <<1; " BKPOINT=0
-C_INFO_BLOCK $469C "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 274 "            dx = dx <<1;,             dy = dy <<1; " BKPOINT=0
-C_INFO_BLOCK $46A0 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 276 "            dx = dx <<1;,             if ((ABS16(dy) < MAX_SPLIT*2) && (ABS16(dx) < MAX_SPLIT*2)) " BKPOINT=0
-C_INFO_BLOCK $46FD "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 282 "                lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount-1)*5+2)] = (int8_t) (((uint8_t)oldSacle) | 0x80); " BKPOINT=0
-C_INFO_BLOCK $4706 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 285 "                lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+0)] = (int8_t)dy; " BKPOINT=0
-C_INFO_BLOCK $471D "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 286 "                lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+1)] = (int8_t)dx; " BKPOINT=0
-C_INFO_BLOCK $4740 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 293 "            int16_t dy = lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+0)]-last_y; " BKPOINT=0
-C_INFO_BLOCK $4754 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 294 "            int16_t dx = lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+1)]-last_x; " BKPOINT=0
-C_INFO_BLOCK $475F "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 295 "            dy = dy <<1; " BKPOINT=0
-C_INFO_BLOCK $4763 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 297 "            dx = dx <<1;,             dy = dy <<1; " BKPOINT=0
-C_INFO_BLOCK $4765 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 299 "            dx = dx <<1;,             dy = dy <<1; " BKPOINT=0
-C_INFO_BLOCK $4769 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 301 "            dx = dx <<1;,             if ((ABS16(dy) < MAX_SPLIT*2) && (ABS16(dx) < MAX_SPLIT*2)) " BKPOINT=0
-C_INFO_BLOCK $47C6 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 307 "                lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount-1)*5+2)] = (int8_t) (((uint8_t)oldSacle) | 0x80); " BKPOINT=0
-C_INFO_BLOCK $47CF "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 310 "                lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+0)] = (int8_t)dy; " BKPOINT=0
-C_INFO_BLOCK $47E6 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 311 "                lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+1)] = (int8_t)dx; " BKPOINT=0
-C_INFO_BLOCK $47EA "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 317 "    last_x = this_x; " BKPOINT=0
-C_INFO_BLOCK $47F1 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 318 "    last_y = this_y; " BKPOINT=0
-C_INFO_BLOCK $47F8 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 319 "    last_s = lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+2)]; " BKPOINT=0
-C_INFO_BLOCK $4818 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 378 "    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+0)] = y3d(x, 0, y); " BKPOINT=0
-C_INFO_BLOCK $4833 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 379 "    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+1)] = x3d(x, y) ; " BKPOINT=0
-C_INFO_BLOCK $4851 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 380 "    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+3)] = y3d(x+1, 0, y+1)- (y3d(x, 0, y)); " BKPOINT=0
-C_INFO_BLOCK $488B "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 381 "    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+4)] = x3d(x+1, y+1)- (x3d(x, y)) ; " BKPOINT=0
-C_INFO_BLOCK $48B8 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 382 "    checkHalfling(); " BKPOINT=0
-C_INFO_BLOCK $48BB "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 384 "    lineCount++; " BKPOINT=0
-C_INFO_BLOCK $48C4 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 387 "    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+0)] = y3d(x+1, 0, y); " BKPOINT=0
-C_INFO_BLOCK $48EA "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 388 "    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+1)] = x3d(x+1, y) ; " BKPOINT=0
-C_INFO_BLOCK $4908 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 389 "    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+3)] = y3d(x, 0, y+1)- (y3d(x+1, 0, y)); " BKPOINT=0
-C_INFO_BLOCK $4939 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 390 "    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+4)] = x3d(x, y+1)- (x3d(x+1, y))  ; " BKPOINT=0
-C_INFO_BLOCK $4966 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 391 "    checkHalfling(); " BKPOINT=0
-C_INFO_BLOCK $4969 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 393 "    lineCount++; " BKPOINT=0
-C_INFO_BLOCK $4974 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 467 "    for (uint8_t i = 0; i < sizeof(swatchesOn); i++) { " BKPOINT=0
-C_INFO_BLOCK $4977 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 468 "        swatchesOn[i] = 0; " BKPOINT=0
-C_INFO_BLOCK $497E "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 475 "    long int index;,     int8_t x = 0;,     int8_t y = 0;,     const char* geometry = level->geometry;,     for (y = 0; y < LEVEL_HEIGHT; y++) { " BKPOINT=0
-C_INFO_BLOCK $4985 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 476 "        for (x = 0; x < LEVEL_WIDTH; x++) { " BKPOINT=0
-C_INFO_BLOCK $4989 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 478 "            index = (long int) y*LEVEL_WIDTH + (long int)x;,             char c0 = geometry[index]; " BKPOINT=0
-C_INFO_BLOCK $498B "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 479 "            if (c0 == 'k' || c0 == 'q') { " BKPOINT=0
-C_INFO_BLOCK $4993 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 480 "                setSwatchField(x, y, 1); " BKPOINT=0
-C_INFO_BLOCK $49D2 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 349 "    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+0)] = y3d(x0, 0, y0) + 3; " BKPOINT=0
-C_INFO_BLOCK $49EE "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 350 "    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+1)] = x3d(x0, y0) + 6; " BKPOINT=0
-C_INFO_BLOCK $4A0D "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 351 "    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+3)] = y3d(x0, 0, y0 + 1)+0- (y3d(x0, 0, y0)+3); " BKPOINT=0
-C_INFO_BLOCK $4A41 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 352 "    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+4)] = x3d(x0, y0 + 1)+8- (x3d(x0, y0)+6); " BKPOINT=0
-C_INFO_BLOCK $4A6F "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 354 "    checkHalfling(); " BKPOINT=0
-C_INFO_BLOCK $4A72 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 355 "    lineCount++; " BKPOINT=0
-C_INFO_BLOCK $4A79 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 356 "    if (lineCount >= MAX_LINES) { " BKPOINT=0
-C_INFO_BLOCK $4A7F "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 357 "        runtimeError("TOO MANY LINES€"); " BKPOINT=0
-C_INFO_BLOCK $4A8F "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 325 "    if (half)  " BKPOINT=0
-C_INFO_BLOCK $4A95 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 327 "        lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+0)] = y3d(x0, 0, y0)+4; " BKPOINT=0
-C_INFO_BLOCK $4AB1 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 328 "        lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+1)] = x3d(x0, y0)  -1; " BKPOINT=0
-C_INFO_BLOCK $4ACF "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 329 "        lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+3)] = y3d(x1, 0, y1)+3- (y3d(x0, 0, y0)+4); " BKPOINT=0
-C_INFO_BLOCK $4B01 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 330 "        lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+4)] = x3d(x1, y1)-6- (x3d(x0, y0)-1); " BKPOINT=0
-C_INFO_BLOCK $4B36 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 334 "        lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+0)] = y3d(x0, 0, y0); " BKPOINT=0
-C_INFO_BLOCK $4B50 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 335 "        lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+1)] = x3d(x0, y0); " BKPOINT=0
-C_INFO_BLOCK $4B6D "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 336 "        lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+3)] = y3d(x1, 0, y1)- y3d(x0, 0, y0); " BKPOINT=0
-C_INFO_BLOCK $4B9E "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 337 "        lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+4)] = x3d(x1, y1)- x3d(x0, y0); " BKPOINT=0
-C_INFO_BLOCK $4BCE "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 339 "    checkHalfling(); " BKPOINT=0
-C_INFO_BLOCK $4BD1 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 341 "    lineCount++; " BKPOINT=0
-C_INFO_BLOCK $4BD8 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 342 "    if (lineCount >= MAX_LINES) { " BKPOINT=0
-C_INFO_BLOCK $4BDC "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 343 "        runtimeError("TOO MANY LINES€"); " BKPOINT=0
-C_INFO_BLOCK $4BEA "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 364 "    int test = 8; // 9 is ok, 10 is too wide!,     while (x1 - x0 > test) { " BKPOINT=0
-C_INFO_BLOCK $4BF4 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 365 "        addLineImpl(x0, y0, x0 + test, y1, half); " BKPOINT=0
-C_INFO_BLOCK $4C0F "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 366 "        x0 += test; " BKPOINT=0
-C_INFO_BLOCK $4C25 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 368 "    while (y1 - y0 > test) { " BKPOINT=0
-C_INFO_BLOCK $4C2F "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 369 "        addLineImpl(x0, y0, x1, y0 + test, half); " BKPOINT=0
-C_INFO_BLOCK $4C4A "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 370 "        y0 += test; " BKPOINT=0
-C_INFO_BLOCK $4C60 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 372 "    addLineImpl(x0, y0, x1, y1, half); " BKPOINT=0
-C_INFO_BLOCK $4C7A "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 448 "    int8_t x = 0;,     int8_t y = 0;,     for (x = -1; x < LEVEL_WIDTH; x++) { " BKPOINT=0
-C_INFO_BLOCK $4C7E "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 451 "        int8_t y0 = -1;,         int8_t y1 = -1;,         for (y = 0; y <= LEVEL_HEIGHT; y++) { " BKPOINT=0
-C_INFO_BLOCK $4C86 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 452 "            if (isField(x, y) || isField(x + 1, y)) { " BKPOINT=0
-C_INFO_BLOCK $4CA7 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 453 "                if (y0 < 0) y0 = y; " BKPOINT=0
-C_INFO_BLOCK $4CAF "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 454 "                y1 = y; " BKPOINT=0
-C_INFO_BLOCK $4CB5 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 456 "                if (y0 >= 0) { " BKPOINT=0
-C_INFO_BLOCK $4CB9 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 457 "                    addLine(x + 1, y0, x + 1, y1 + 1, 0); " BKPOINT=0
-C_INFO_BLOCK $4CCD "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 458 "                    y0 = -1; " BKPOINT=0
-C_INFO_BLOCK $4CEE "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 409 "    long int index;,     int8_t x = 0;,     int8_t y = 0;,     const char* geometry = level->geometry;,     for (y = -1; y < LEVEL_HEIGHT; y++) { " BKPOINT=0
-C_INFO_BLOCK $4CFB "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 412 "        int8_t x0 = -1;,         int8_t x1 = -1;,         for (x = 0; x <= LEVEL_WIDTH; x++) { " BKPOINT=0
-C_INFO_BLOCK $4D0C "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 415 "            char c0 = 0;,             index = (long int) y*LEVEL_WIDTH + (long int)x;,             if (y >= 0 && x < LEVEL_WIDTH) { " BKPOINT=0
-C_INFO_BLOCK $4D14 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 416 "                c0 = geometry[index]; " BKPOINT=0
-C_INFO_BLOCK $4D19 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 418 "            if (c0 == 'e') { " BKPOINT=0
-C_INFO_BLOCK $4D1D "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 419 "                addTarget(x, y); " BKPOINT=0
-C_INFO_BLOCK $4D26 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 420 "                endX = x; " BKPOINT=0
-C_INFO_BLOCK $4D2B "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 421 "                endY = y; " BKPOINT=0
-C_INFO_BLOCK $4D39 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 423 "                addSplit(x, y); " BKPOINT=0
-C_INFO_BLOCK $4D4B "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 425 "                addLine(x, y, x + 1, y + 1, 0); " BKPOINT=0
-C_INFO_BLOCK $4D66 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 427 "                addLine(x + 1, y, x, y + 1, 0); " BKPOINT=0
-C_INFO_BLOCK $4D81 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 429 "                addLine(x, y, x + 1, y, 1); " BKPOINT=0
-C_INFO_BLOCK $4D98 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 431 "            if (isField(x, y) || isField(x, y + 1)) { " BKPOINT=0
-C_INFO_BLOCK $4DB6 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 432 "                if (x0 < 0) x0 = x; " BKPOINT=0
-C_INFO_BLOCK $4DBE "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 433 "                x1 = x; " BKPOINT=0
-C_INFO_BLOCK $4DC4 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 435 "                if (x0 >= 0) { " BKPOINT=0
-C_INFO_BLOCK $4DC8 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 436 "                    addLine(x0, y + 1, x1 + 1, y + 1, 0); " BKPOINT=0
-C_INFO_BLOCK $4DDC "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 437 "                    x0 = -1; " BKPOINT=0
-C_INFO_BLOCK $4E00 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 488 "    last_x=-1; " BKPOINT=0
-C_INFO_BLOCK $4E05 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 489 "    last_y=-1; " BKPOINT=0
-C_INFO_BLOCK $4E08 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 490 "    last_s=-1; " BKPOINT=0
-C_INFO_BLOCK $4E0B "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 491 "    lineCount = 0; " BKPOINT=0
-C_INFO_BLOCK $4E0E "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 492 "    setupX(); " BKPOINT=0
-C_INFO_BLOCK $4E11 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 493 "    last_x=-1; " BKPOINT=0
-C_INFO_BLOCK $4E16 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 494 "    last_y=-1; " BKPOINT=0
-C_INFO_BLOCK $4E19 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 495 "    last_s=-1; " BKPOINT=0
-C_INFO_BLOCK $4E1C "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 498 "    setupY(); " BKPOINT=0
-C_INFO_BLOCK $4E1F "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 499 "    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+1)]=0; " BKPOINT=0
-C_INFO_BLOCK $4E2D "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 500 "    lineYX_yx_s_dy_dx[(uint16_t) ((uint16_t)(lineCount)*5+0)]=0; " BKPOINT=0
-C_INFO_BLOCK $4E37 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 91 "    for (uint8_t i = 0; i < level->swatches_count; i++) { " BKPOINT=0
-C_INFO_BLOCK $4E42 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 92 "        const struct Swatch* swatch = level->swatches[i]; " BKPOINT=0
-C_INFO_BLOCK $4E4D "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 93 "        if (swatch->position.x == x && swatch->position.y == y) { " BKPOINT=0
-C_INFO_BLOCK $4E5D "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 94 "            for (uint8_t j = 0; j < swatch->fields_count; j++) { " BKPOINT=0
-C_INFO_BLOCK $4E65 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 95 "                const struct SwatchField* field = swatch->fields[j]; " BKPOINT=0
-C_INFO_BLOCK $4E71 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 96 "                int8_t xf = field->position.x; " BKPOINT=0
-C_INFO_BLOCK $4E75 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 97 "                int8_t yf = field->position.y; " BKPOINT=0
-C_INFO_BLOCK $4E79 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 98 "                switch (field->action) { " BKPOINT=0
-C_INFO_BLOCK $4E96 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 100 "                    setSwatchField(xf, yf, !isSwatchFieldOn(xf, yf)); " BKPOINT=0
-C_INFO_BLOCK $4EB6 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 101 "                    break; " BKPOINT=0
-C_INFO_BLOCK $4EBB "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 103 "                    setSwatchField(xf, yf, 1); " BKPOINT=0
-C_INFO_BLOCK $4EC8 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 104 "                    break; " BKPOINT=0
-C_INFO_BLOCK $4ECD "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 106 "                    setSwatchField(xf, yf, 0); " BKPOINT=0
-C_INFO_BLOCK $4ED8 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 107 "                    break; " BKPOINT=0
-C_INFO_BLOCK $4EDC "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 109 "                    blockX = xf; " BKPOINT=0
-C_INFO_BLOCK $4EE1 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 110 "                    blockY = yf; " BKPOINT=0
-C_INFO_BLOCK $4EE6 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 111 "                    setSplitMode(); " BKPOINT=0
-C_INFO_BLOCK $4EE9 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 112 "                    break; " BKPOINT=0
-C_INFO_BLOCK $4EEB "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 114 "                    blockX2 = xf; " BKPOINT=0
-C_INFO_BLOCK $4EF0 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 115 "                    blockY2 = yf; " BKPOINT=0
-C_INFO_BLOCK $4EF5 "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 116 "                    break; " BKPOINT=0
-C_INFO_BLOCK $4F0C "C:\data\vide\..\bloxorz\Vide\source\level.c "FN_END 121 "    initLevel(); " BKPOINT=0
+C_INFO_BLOCK $0637 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 28 "    blockAnimating = 1; " BKPOINT=0
+C_INFO_BLOCK $063C "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 29 "    lastBlockDirection = move; " BKPOINT=0
+C_INFO_BLOCK $0641 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 30 "    if (splitMode) " BKPOINT=0
+C_INFO_BLOCK $0648 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 32 "        switch (blockOrientation) " BKPOINT=0
+C_INFO_BLOCK $064F "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 35 "            switch (move) " BKPOINT=0
+C_INFO_BLOCK $0666 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 38 "                blockAnimation = height1FallingLeft; " BKPOINT=0
+C_INFO_BLOCK $066C "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 39 "                nextBlockAnimation = height1FallingLeft; " BKPOINT=0
+C_INFO_BLOCK $066F "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 40 "                nextBlockX = blockX - 1; " BKPOINT=0
+C_INFO_BLOCK $0676 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 41 "                nextBlockY = blockY; " BKPOINT=0
+C_INFO_BLOCK $067C "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 42 "                break; " BKPOINT=0
+C_INFO_BLOCK $067F "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 44 "                blockAnimation = height1FallingRight; " BKPOINT=0
+C_INFO_BLOCK $0685 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 45 "                nextBlockAnimation = height1FallingRight; " BKPOINT=0
+C_INFO_BLOCK $0688 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 46 "                nextBlockX = blockX + 1; " BKPOINT=0
+C_INFO_BLOCK $068F "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 47 "                nextBlockY = blockY; " BKPOINT=0
+C_INFO_BLOCK $0695 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 48 "                break; " BKPOINT=0
+C_INFO_BLOCK $0698 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 50 "                blockAnimation = height1FallingBack; " BKPOINT=0
+C_INFO_BLOCK $069E "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 51 "                nextBlockAnimation = height1FallingBack; " BKPOINT=0
+C_INFO_BLOCK $06A1 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 52 "                nextBlockX = blockX; " BKPOINT=0
+C_INFO_BLOCK $06A7 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 53 "                nextBlockY = blockY + 1; " BKPOINT=0
+C_INFO_BLOCK $06AE "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 54 "                break; " BKPOINT=0
+C_INFO_BLOCK $06B0 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 56 "                blockAnimation = height1FallingFront; " BKPOINT=0
+C_INFO_BLOCK $06B6 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 57 "                nextBlockAnimation = height1FallingFront; " BKPOINT=0
+C_INFO_BLOCK $06B9 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 58 "                nextBlockX = blockX; " BKPOINT=0
+C_INFO_BLOCK $06BF "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 59 "                nextBlockY = blockY - 1; " BKPOINT=0
+C_INFO_BLOCK $06C6 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 60 "                break;            break; " BKPOINT=0
+C_INFO_BLOCK $06C9 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 64 "            break; " BKPOINT=0
+C_INFO_BLOCK $06CC "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 69 "        switch (blockOrientation) " BKPOINT=0
+C_INFO_BLOCK $06E0 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 72 "            switch (move) " BKPOINT=0
+C_INFO_BLOCK $06F7 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 75 "                blockAnimation = height2FallingLeft; " BKPOINT=0
+C_INFO_BLOCK $06FD "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 76 "                nextBlockAnimation = width2RollingFront; " BKPOINT=0
+C_INFO_BLOCK $0703 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 77 "                nextBlockX = blockX - 2; " BKPOINT=0
+C_INFO_BLOCK $070B "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 78 "                nextBlockY = blockY; " BKPOINT=0
+C_INFO_BLOCK $0711 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 79 "                blockOrientation = Horizontal; " BKPOINT=0
+C_INFO_BLOCK $0716 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 80 "                break; " BKPOINT=0
+C_INFO_BLOCK $0719 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 82 "                blockAnimation = height2FallingRight; " BKPOINT=0
+C_INFO_BLOCK $071F "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 83 "                nextBlockAnimation = width2RollingFront; " BKPOINT=0
+C_INFO_BLOCK $0725 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 84 "                nextBlockX = blockX + 1; " BKPOINT=0
+C_INFO_BLOCK $072C "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 85 "                nextBlockY = blockY; " BKPOINT=0
+C_INFO_BLOCK $0732 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 86 "                blockOrientation = Horizontal; " BKPOINT=0
+C_INFO_BLOCK $0737 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 87 "                break; " BKPOINT=0
+C_INFO_BLOCK $073A "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 89 "                blockAnimation = height2FallingBack; " BKPOINT=0
+C_INFO_BLOCK $0740 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 90 "                nextBlockAnimation = depth2RollingLeft; " BKPOINT=0
+C_INFO_BLOCK $0746 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 91 "                nextBlockX = blockX; " BKPOINT=0
+C_INFO_BLOCK $074C "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 92 "                nextBlockY = blockY + 1; " BKPOINT=0
+C_INFO_BLOCK $0753 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 93 "                blockOrientation = Vertical; " BKPOINT=0
+C_INFO_BLOCK $0758 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 94 "                break; " BKPOINT=0
+C_INFO_BLOCK $075A "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 96 "                blockAnimation = height2FallingFront; " BKPOINT=0
+C_INFO_BLOCK $0760 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 97 "                nextBlockAnimation = depth2RollingLeft; " BKPOINT=0
+C_INFO_BLOCK $0766 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 98 "                nextBlockX = blockX; " BKPOINT=0
+C_INFO_BLOCK $076C "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 99 "                nextBlockY = blockY - 2; " BKPOINT=0
+C_INFO_BLOCK $0774 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 100 "                blockOrientation = Vertical; " BKPOINT=0
+C_INFO_BLOCK $0779 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 101 "                break;            break; " BKPOINT=0
+C_INFO_BLOCK $077C "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 105 "            switch (move) " BKPOINT=0
+C_INFO_BLOCK $0793 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 108 "                blockAnimation = depth2RollingLeft; " BKPOINT=0
+C_INFO_BLOCK $0799 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 109 "                nextBlockAnimation = depth2RollingLeft; " BKPOINT=0
+C_INFO_BLOCK $079C "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 110 "                nextBlockX = blockX - 1; " BKPOINT=0
+C_INFO_BLOCK $07A3 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 111 "                nextBlockY = blockY; " BKPOINT=0
+C_INFO_BLOCK $07A9 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 112 "                break; " BKPOINT=0
+C_INFO_BLOCK $07AC "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 114 "                blockAnimation = depth2RollingRight; " BKPOINT=0
+C_INFO_BLOCK $07B2 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 115 "                nextBlockAnimation = depth2RollingLeft; " BKPOINT=0
+C_INFO_BLOCK $07B8 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 116 "                nextBlockX = blockX + 1; " BKPOINT=0
+C_INFO_BLOCK $07BF "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 117 "                nextBlockY = blockY; " BKPOINT=0
+C_INFO_BLOCK $07C5 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 118 "                break; " BKPOINT=0
+C_INFO_BLOCK $07C8 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 120 "                blockAnimation = height2RisingBack; " BKPOINT=0
+C_INFO_BLOCK $07CE "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 121 "                nextBlockAnimation = height2FallingFront; " BKPOINT=0
+C_INFO_BLOCK $07D4 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 122 "                nextBlockX = blockX; " BKPOINT=0
+C_INFO_BLOCK $07DA "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 123 "                nextBlockY = blockY + 2; " BKPOINT=0
+C_INFO_BLOCK $07E2 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 124 "                blockOrientation = Standing; " BKPOINT=0
+C_INFO_BLOCK $07E5 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 125 "                break; " BKPOINT=0
+C_INFO_BLOCK $07E7 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 127 "                blockAnimation = height2RisingFront; " BKPOINT=0
+C_INFO_BLOCK $07ED "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 128 "                nextBlockAnimation = height2FallingFront; " BKPOINT=0
+C_INFO_BLOCK $07F3 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 129 "                nextBlockX = blockX; " BKPOINT=0
+C_INFO_BLOCK $07F9 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 130 "                nextBlockY = blockY - 1; " BKPOINT=0
+C_INFO_BLOCK $0800 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 131 "                blockOrientation = Standing; " BKPOINT=0
+C_INFO_BLOCK $0803 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 132 "                break;            break; " BKPOINT=0
+C_INFO_BLOCK $0806 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 136 "            switch (move) " BKPOINT=0
+C_INFO_BLOCK $081D "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 139 "                blockAnimation = height2RisingLeft; " BKPOINT=0
+C_INFO_BLOCK $0823 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 140 "                nextBlockAnimation = height2FallingRight; " BKPOINT=0
+C_INFO_BLOCK $0829 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 141 "                nextBlockX = blockX - 1; " BKPOINT=0
+C_INFO_BLOCK $0830 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 142 "                nextBlockY = blockY; " BKPOINT=0
+C_INFO_BLOCK $0836 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 143 "                blockOrientation = Standing; " BKPOINT=0
+C_INFO_BLOCK $0839 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 144 "                break; " BKPOINT=0
+C_INFO_BLOCK $083C "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 146 "                blockAnimation = height2RisingRight; " BKPOINT=0
+C_INFO_BLOCK $0842 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 147 "                nextBlockAnimation = height2FallingLeft; " BKPOINT=0
+C_INFO_BLOCK $0848 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 148 "                nextBlockX = blockX + 2; " BKPOINT=0
+C_INFO_BLOCK $0850 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 149 "                nextBlockY = blockY; " BKPOINT=0
+C_INFO_BLOCK $0856 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 150 "                blockOrientation = Standing; " BKPOINT=0
+C_INFO_BLOCK $0859 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 151 "                break; " BKPOINT=0
+C_INFO_BLOCK $085C "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 153 "                blockAnimation = width2RollingBack; " BKPOINT=0
+C_INFO_BLOCK $0862 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 154 "                nextBlockAnimation = width2RollingBack; " BKPOINT=0
+C_INFO_BLOCK $0865 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 155 "                nextBlockX = blockX; " BKPOINT=0
+C_INFO_BLOCK $086B "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 156 "                nextBlockY = blockY + 1; " BKPOINT=0
+C_INFO_BLOCK $0872 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 157 "                break; " BKPOINT=0
+C_INFO_BLOCK $0874 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 159 "                blockAnimation = width2RollingFront; " BKPOINT=0
+C_INFO_BLOCK $087A "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 160 "                nextBlockAnimation = width2RollingBack; " BKPOINT=0
+C_INFO_BLOCK $0880 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 161 "                nextBlockX = blockX; " BKPOINT=0
+C_INFO_BLOCK $0886 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 162 "                nextBlockY = blockY - 1; " BKPOINT=0
+C_INFO_BLOCK $088D "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 163 "                break;            break; " BKPOINT=0
+C_INFO_BLOCK $0890 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 172 "    (void)x; " BKPOINT=0
+C_INFO_BLOCK $08DA "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 267 "    if (blockAnimating) " BKPOINT=0
+C_INFO_BLOCK $08DF "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 269 "        if (++blockAnimationStep == BLOCK_STEPS_COUNT) " BKPOINT=0
+C_INFO_BLOCK $08EA "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 271 "            blockX = nextBlockX; " BKPOINT=0
+C_INFO_BLOCK $08F0 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 272 "            blockY = nextBlockY; " BKPOINT=0
+C_INFO_BLOCK $08F6 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 273 "            blockAnimationStep = 0; " BKPOINT=0
+C_INFO_BLOCK $08F9 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 274 "            blockAnimation = nextBlockAnimation; " BKPOINT=0
+C_INFO_BLOCK $08FF "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 275 "            blockAnimating = 0; " BKPOINT=0
+C_INFO_BLOCK $0903 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 282 "    blockAnimation = height2FallingLeft; " BKPOINT=0
+C_INFO_BLOCK $0909 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 283 "    blockAnimationStep = 0; " BKPOINT=0
+C_INFO_BLOCK $090C "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 284 "    blockAnimating = 0; " BKPOINT=0
+C_INFO_BLOCK $090F "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 285 "    blockOrientation = Standing; " BKPOINT=0
+C_INFO_BLOCK $0912 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 286 "    splitMode = 0; " BKPOINT=0
+C_INFO_BLOCK $0916 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 291 "    blockAnimation = height1FallingLeft; " BKPOINT=0
+C_INFO_BLOCK $091C "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 292 "    blockOrientation = Standing; " BKPOINT=0
+C_INFO_BLOCK $091F "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 293 "    splitMode = 1; " BKPOINT=0
+C_INFO_BLOCK $0927 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 298 "    if (blockY == blockY2) " BKPOINT=0
+C_INFO_BLOCK $0939 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 300 "        if (blockX == blockX2 + 1) " BKPOINT=0
+C_INFO_BLOCK $094A "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 302 "            blockAnimation = width2RollingFront; " BKPOINT=0
+C_INFO_BLOCK $0950 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 303 "            blockOrientation = Horizontal; " BKPOINT=0
+C_INFO_BLOCK $0955 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 304 "            blockX--; " BKPOINT=0
+C_INFO_BLOCK $0958 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 305 "            splitMode = 0; " BKPOINT=0
+C_INFO_BLOCK $0967 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 309 "            blockAnimation = width2RollingFront; " BKPOINT=0
+C_INFO_BLOCK $096D "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 310 "            blockOrientation = Horizontal; " BKPOINT=0
+C_INFO_BLOCK $0972 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 311 "            splitMode = 0; " BKPOINT=0
+C_INFO_BLOCK $0982 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 316 "        if (blockY == blockY2 + 1) " BKPOINT=0
+C_INFO_BLOCK $0989 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 318 "            blockAnimation = depth2RollingLeft; " BKPOINT=0
+C_INFO_BLOCK $098F "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 319 "            blockOrientation = Vertical; " BKPOINT=0
+C_INFO_BLOCK $0994 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 320 "            blockY--; " BKPOINT=0
+C_INFO_BLOCK $099A "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 321 "            splitMode = 0; " BKPOINT=0
+C_INFO_BLOCK $09A6 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 325 "            blockAnimation = depth2RollingLeft; " BKPOINT=0
+C_INFO_BLOCK $09AC "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 326 "            blockOrientation = Vertical; " BKPOINT=0
+C_INFO_BLOCK $09B1 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 328 "            ;,             splitMode = 0; " BKPOINT=0
+C_INFO_BLOCK $09B9 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 335 "    int8_t xt = blockX; " BKPOINT=0
+C_INFO_BLOCK $09BE "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 336 "    int8_t yt = blockY; " BKPOINT=0
+C_INFO_BLOCK $09C3 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 337 "    blockX = blockX2; " BKPOINT=0
+C_INFO_BLOCK $09C9 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 338 "    blockY = blockY2; " BKPOINT=0
+C_INFO_BLOCK $09CF "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 339 "    blockX2 = xt; " BKPOINT=0
+C_INFO_BLOCK $09D4 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 340 "    blockY2 = yt; " BKPOINT=0
+C_INFO_BLOCK $09E2 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 225 "    intens(0x63); " BKPOINT=0
+C_INFO_BLOCK $09EB "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 226 "    int8_t yy = y3d(blockX, 0, blockY); " BKPOINT=0
+C_INFO_BLOCK $09FA "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 228 "    if (yofs < -30) " BKPOINT=0
+C_INFO_BLOCK $0A02 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 230 "        positd(0, yofs); " BKPOINT=0
+C_INFO_BLOCK $0A13 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 231 "        positd(x3d(blockX, blockY), yy); " BKPOINT=0
+C_INFO_BLOCK $0A33 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 235 "        positd(x3d(blockX, blockY), yy + yofs); " BKPOINT=0
+C_INFO_BLOCK $0A53 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 238 "    dp_VIA_t1_cnt_lo = 0x7f / FACTOR; // scale " BKPOINT=0
+C_INFO_BLOCK $0A57 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 240 "    Draw_VLpo((void *)(blockAnimation[blockAnimationStep])); " BKPOINT=0
+C_INFO_BLOCK $0A69 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 243 "    if (splitMode) " BKPOINT=0
+C_INFO_BLOCK $0A70 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 245 "        zergnd(); " BKPOINT=0
+C_INFO_BLOCK $0A73 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 246 "        intens(0x35); " BKPOINT=0
+C_INFO_BLOCK $0A7C "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 247 "        yy = y3d(blockX2, 0, blockY2); " BKPOINT=0
+C_INFO_BLOCK $0A8B "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 249 "        if (yofs < -50) " BKPOINT=0
+C_INFO_BLOCK $0A93 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 251 "            positd(0, yofs); " BKPOINT=0
+C_INFO_BLOCK $0AA4 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 252 "            positd(x3d(blockX2, blockY2), yy); " BKPOINT=0
+C_INFO_BLOCK $0AC4 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 256 "            positd(x3d(blockX2, blockY2), yy + yofs); " BKPOINT=0
+C_INFO_BLOCK $0AE4 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 259 "        dp_VIA_t1_cnt_lo = 0x7f / FACTOR; // scale " BKPOINT=0
+C_INFO_BLOCK $0AE8 "C:\data\Vide\..\bloxorz\Vide\source\block.c "FN_END 261 "        Draw_VLpo((void *)(height1FallingLeft[0])); " BKPOINT=0
+C_INFO_BLOCK $35BC "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 231 "    while (1)        frwait(); " BKPOINT=0
+C_INFO_BLOCK $35BF "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 234 "        Intensity_a(0x5f); " BKPOINT=0
+C_INFO_BLOCK $35C8 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 235 "        Vec_Text_Width = 90; " BKPOINT=0
+C_INFO_BLOCK $35CD "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 236 "        Print_Str_d(-10, -110, msg); " BKPOINT=0
+C_INFO_BLOCK $35E8 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 254 "    uint16_t muls[] = {100, 10, 1}; " BKPOINT=0
+C_INFO_BLOCK $35F7 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 255 "    if (number > 999) " BKPOINT=0
+C_INFO_BLOCK $3602 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 257 "    for (uint8_t i = 0; i < 3; i++) " BKPOINT=0
+C_INFO_BLOCK $360B "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 260 "        uint8_t d = 0;,         while (number >= muls[i]) " BKPOINT=0
+C_INFO_BLOCK $3627 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 262 "            d++; " BKPOINT=0
+C_INFO_BLOCK $3629 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 263 "            number -= muls[i]; " BKPOINT=0
+C_INFO_BLOCK $363E "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 265 "        text[i] = d + '0'; " BKPOINT=0
+C_INFO_BLOCK $3663 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 278 "    tstat = 1; " BKPOINT=0
+C_INFO_BLOCK $3668 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 279 "    currentMusic = music; " BKPOINT=0
+C_INFO_BLOCK $378F "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 944 "    Read_Btns(); " BKPOINT=0
+C_INFO_BLOCK $3792 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 945 "    Intensity_a(0x5f); " BKPOINT=0
+C_INFO_BLOCK $379B "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 946 "    Vec_Text_Width = 90; " BKPOINT=0
+C_INFO_BLOCK $37A0 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 947 "    Print_Str_d(100, -70, "GAME OVER€"); " BKPOINT=0
+C_INFO_BLOCK $37B6 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 948 "    Print_Str_d(50, -110, infoText); " BKPOINT=0
+C_INFO_BLOCK $37CC "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 949 "    if (Vec_Buttons & 1) " BKPOINT=0
+C_INFO_BLOCK $37D3 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 951 "        gameState = MainMenu; " BKPOINT=0
+C_INFO_BLOCK $37D6 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 953 "    if (Vec_Buttons & 2) " BKPOINT=0
+C_INFO_BLOCK $37DD "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 955 "        gameState = MainMenu; " BKPOINT=0
+C_INFO_BLOCK $37E0 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 957 "    if (Vec_Buttons & 4) " BKPOINT=0
+C_INFO_BLOCK $37E7 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 959 "        gameState = MainMenu; " BKPOINT=0
+C_INFO_BLOCK $37EA "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 961 "    if (Vec_Buttons & 8) " BKPOINT=0
+C_INFO_BLOCK $37F1 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 963 "        gameState = MainMenu; " BKPOINT=0
+C_INFO_BLOCK $37FC "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1001 "    zergnd(); " BKPOINT=0
+C_INFO_BLOCK $37FF "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1002 "    intens(0x50); " BKPOINT=0
+C_INFO_BLOCK $3808 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1004 "    zergnd(); " BKPOINT=0
+C_INFO_BLOCK $380B "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1005 "    positd(-50, 100); " BKPOINT=0
+C_INFO_BLOCK $381E "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1006 "    pack1x((void *)led8); " BKPOINT=0
+C_INFO_BLOCK $382E "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1008 "    zergnd(); " BKPOINT=0
+C_INFO_BLOCK $3831 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1009 "    positd(-40, 110); " BKPOINT=0
+C_INFO_BLOCK $3844 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1010 "    pack1x((void *)led8); " BKPOINT=0
+C_INFO_BLOCK $3850 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1012 "    zergnd(); " BKPOINT=0
+C_INFO_BLOCK $3853 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1013 "    positd(-30, 120); " BKPOINT=0
+C_INFO_BLOCK $3866 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1014 "    pack1x((void *)led8); " BKPOINT=0
+C_INFO_BLOCK $3872 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1016 "    zergnd(); " BKPOINT=0
+C_INFO_BLOCK $3875 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1017 "    positd(0, 120); " BKPOINT=0
+C_INFO_BLOCK $3886 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1018 "    pack1x((void *)led8); " BKPOINT=0
+C_INFO_BLOCK $3892 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1020 "    zergnd(); " BKPOINT=0
+C_INFO_BLOCK $3895 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1021 "    positd(10, 120); " BKPOINT=0
+C_INFO_BLOCK $38A8 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1022 "    pack1x((void *)led8); " BKPOINT=0
+C_INFO_BLOCK $38B4 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1024 "    zergnd(); " BKPOINT=0
+C_INFO_BLOCK $38B7 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1025 "    positd(20, 120); " BKPOINT=0
+C_INFO_BLOCK $38CA "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1026 "    pack1x((void *)led8); " BKPOINT=0
+C_INFO_BLOCK $38DE "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1031 "    Intensity_a(0x5f); " BKPOINT=0
+C_INFO_BLOCK $38E7 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1032 "    Vec_Text_Width = 100; " BKPOINT=0
+C_INFO_BLOCK $38EC "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1033 "    if (highscoreDisplayCounter > 180) " BKPOINT=0
+C_INFO_BLOCK $38F3 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1035 "        Print_Str_d(100, -70, highscoreText); " BKPOINT=0
+C_INFO_BLOCK $390B "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1039 "        Print_Str_d(100, -70, infoText); " BKPOINT=0
+C_INFO_BLOCK $3921 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1041 "    highscoreDisplayCounter++; " BKPOINT=0
+C_INFO_BLOCK $3928 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1042 "    if (highscoreDisplayCounter > 240) " BKPOINT=0
+C_INFO_BLOCK $392C "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1044 "        highscoreDisplayCounter = 0; " BKPOINT=0
+C_INFO_BLOCK $3937 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 195 "    picWrite('V'); " BKPOINT=0
+C_INFO_BLOCK $393C "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 196 "    picWrite(cmd); " BKPOINT=0
+C_INFO_BLOCK $3941 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 197 "    picWrite(arg); " BKPOINT=0
+C_INFO_BLOCK $3946 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 198 "    return picRead(); " BKPOINT=0
+C_INFO_BLOCK $3950 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 212 "    uint8_t result = 0;,     if (picAvailable) " BKPOINT=0
+C_INFO_BLOCK $3955 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 214 "        result = sendPicCommand(cmd, arg); " BKPOINT=0
+C_INFO_BLOCK $3964 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 203 "        result = sendVecxCommand(cmd, arg);,     vecx[VECX_PIC_RW] = 'V'; " BKPOINT=0
+C_INFO_BLOCK $396B "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 204 "    vecx[VECX_PIC_RW] = cmd; " BKPOINT=0
+C_INFO_BLOCK $3972 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 205 "    vecx[VECX_PIC_RW] = arg; " BKPOINT=0
+C_INFO_BLOCK $3979 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 206 "    return vecx[VECX_PIC_RW]; " BKPOINT=0
+C_INFO_BLOCK $3980 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 220 "    delay10ms(); " BKPOINT=0
+C_INFO_BLOCK $3983 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 221 "    return result; " BKPOINT=0
+C_INFO_BLOCK $3988 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 226 "    sendCommand(CMD_SET_BANK, bank); " BKPOINT=0
+C_INFO_BLOCK $3992 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 248 "    return sendCommand(CMD_EEPROM_READ, address); " BKPOINT=0
+C_INFO_BLOCK $399C "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 242 "    sendCommand(CMD_SET_EEPROM_ADR, address); " BKPOINT=0
+C_INFO_BLOCK $39A3 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 243 "    sendCommand(CMD_EEPROM_WRITE, data); " BKPOINT=0
+C_INFO_BLOCK $39CE "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 969 "    Read_Btns(); " BKPOINT=0
+C_INFO_BLOCK $39D1 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 970 "    Intensity_a(0x5f); " BKPOINT=0
+C_INFO_BLOCK $39DA "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 971 "    Vec_Text_Width = 90; " BKPOINT=0
+C_INFO_BLOCK $39DF "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 972 "    Print_Str_d(100, -80, "CLEAR SCORE?€"); " BKPOINT=0
+C_INFO_BLOCK $39F5 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 973 "    Print_Str_d(50, -110, "3 YES€"); " BKPOINT=0
+C_INFO_BLOCK $3A0B "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 974 "    Print_Str_d(20, -110, "4 NO€"); " BKPOINT=0
+C_INFO_BLOCK $3A21 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 975 "    if (Vec_Buttons & 4) " BKPOINT=0
+C_INFO_BLOCK $3A28 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 977 "        for (uint8_t i = 0; i < 6; i++) " BKPOINT=0
+C_INFO_BLOCK $3A2A "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 979 "            writeEeprom(i, 0xff); " BKPOINT=0
+C_INFO_BLOCK $3A3D "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 981 "        gameState = MainMenu; " BKPOINT=0
+C_INFO_BLOCK $3A40 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 983 "    if (Vec_Buttons & 8) " BKPOINT=0
+C_INFO_BLOCK $3A47 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 985 "        gameState = MainMenu; " BKPOINT=0
+C_INFO_BLOCK $3A4E "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 608 "    drawField(); " BKPOINT=0
+C_INFO_BLOCK $3A51 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 609 "    drawBlock(blockYOfs); " BKPOINT=0
+C_INFO_BLOCK $3A57 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 610 "    blockYOfs++; " BKPOINT=0
+C_INFO_BLOCK $3A5E "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 611 "    if (blockYOfs == 0) " BKPOINT=0
+C_INFO_BLOCK $3A61 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 613 "        gameState = BlockWaiting; " BKPOINT=0
+C_INFO_BLOCK $3A69 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 271 "    memcpy(infoText, "001 - 999€", 10); " BKPOINT=0
+C_INFO_BLOCK $3A89 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 272 "    itoa(moveCount, &infoText[0]); " BKPOINT=0
+C_INFO_BLOCK $3A91 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 273 "    itoa(levelNumber + levelOffset, &infoText[6]); " BKPOINT=0
+C_INFO_BLOCK $3AAA "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 304 "    if (arcadeMode) " BKPOINT=0
+C_INFO_BLOCK $3AAF "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 306 "        levelNumber = arcadeLevels[arcadeSelection][arcadeIndex] - 1; " BKPOINT=0
+C_INFO_BLOCK $3AD4 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 311 "        uint8_t index = (uint8_t)(levelOffset + levelNumber * 2); " BKPOINT=0
+C_INFO_BLOCK $3ADD "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 312 "        levelHighscore = readEeprom(index); " BKPOINT=0
+C_INFO_BLOCK $3AE4 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 313 "        levelHighscore |= ((uint16_t)readEeprom(index + 1)) << 8; " BKPOINT=0
+C_INFO_BLOCK $3AF6 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 314 "        if (levelHighscore == 0) " BKPOINT=0
+C_INFO_BLOCK $3B02 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 318 "        memcpy(highscoreText, "BEST  999€", 10); " BKPOINT=0
+C_INFO_BLOCK $3B20 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 319 "        itoa(levelHighscore, &highscoreText[6]); " BKPOINT=0
+C_INFO_BLOCK $3B2B "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 320 "        highscoreDisplayCounter = 0; " BKPOINT=0
+C_INFO_BLOCK $3B30 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 322 "    level = levels[levelNumber]; " BKPOINT=0
+C_INFO_BLOCK $3B3F "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 323 "    initSwatches(); " BKPOINT=0
+C_INFO_BLOCK $3B42 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 324 "    initLevel(); " BKPOINT=0
+C_INFO_BLOCK $3B45 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 325 "    blockX = level->start.x; " BKPOINT=0
+C_INFO_BLOCK $3B4D "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 326 "    blockY = level->start.y; " BKPOINT=0
+C_INFO_BLOCK $3B52 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 327 "    blockStartLevel(); " BKPOINT=0
+C_INFO_BLOCK $3B55 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 328 "    blockYOfs = -30; " BKPOINT=0
+C_INFO_BLOCK $3B5A "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 329 "    gameState = BlockMovingToStart; " BKPOINT=0
+C_INFO_BLOCK $3B5F "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 330 "    changeMusic(startMusic); " BKPOINT=0
+C_INFO_BLOCK $3B65 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 331 "    vecx[VECX_MUSIC] = VECX_START_MUSIC; " BKPOINT=0
+C_INFO_BLOCK $3B6B "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 332 "    if (!arcadeMode) " BKPOINT=0
+C_INFO_BLOCK $3B70 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 334 "        moveCount = 0; " BKPOINT=0
+C_INFO_BLOCK $3B76 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 335 "        updateInfoText(); " BKPOINT=0
+C_INFO_BLOCK $3B79 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 337 "    si = 0; " BKPOINT=0
+C_INFO_BLOCK $3BB5 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 912 "    Read_Btns(); " BKPOINT=0
+C_INFO_BLOCK $3BB8 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 913 "    Intensity_a(0x5f); " BKPOINT=0
+C_INFO_BLOCK $3BC1 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 914 "    Vec_Text_Width = 90; " BKPOINT=0
+C_INFO_BLOCK $3BC6 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 915 "    Print_Str_d(100, -70, "ARCADE MODE€"); " BKPOINT=0
+C_INFO_BLOCK $3BDC "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 916 "    Print_Str_d(50, -110, "1 SET 1€"); " BKPOINT=0
+C_INFO_BLOCK $3BF2 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 917 "    Print_Str_d(20, -110, "2 SET 2€"); " BKPOINT=0
+C_INFO_BLOCK $3C08 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 918 "    Print_Str_d(-10, -110, "3 SET 3€"); " BKPOINT=0
+C_INFO_BLOCK $3C1E "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 919 "    Print_Str_d(-40, -110, "4 SET 4€"); " BKPOINT=0
+C_INFO_BLOCK $3C34 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 920 "    if (Vec_Buttons & 1) " BKPOINT=0
+C_INFO_BLOCK $3C3B "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 922 "        arcadeSelection = 0; " BKPOINT=0
+C_INFO_BLOCK $3C3E "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 923 "        startLevel(); " BKPOINT=0
+C_INFO_BLOCK $3C41 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 925 "    if (Vec_Buttons & 2) " BKPOINT=0
+C_INFO_BLOCK $3C48 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 927 "        arcadeSelection = 1; " BKPOINT=0
+C_INFO_BLOCK $3C4D "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 928 "        startLevel(); " BKPOINT=0
+C_INFO_BLOCK $3C50 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 930 "    if (Vec_Buttons & 4) " BKPOINT=0
+C_INFO_BLOCK $3C57 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 932 "        arcadeSelection = 2; " BKPOINT=0
+C_INFO_BLOCK $3C5C "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 933 "        startLevel(); " BKPOINT=0
+C_INFO_BLOCK $3C5F "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 935 "    if (Vec_Buttons & 8) " BKPOINT=0
+C_INFO_BLOCK $3C66 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 937 "        arcadeSelection = 3; " BKPOINT=0
+C_INFO_BLOCK $3C6B "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 938 "        startLevel(); " BKPOINT=0
+C_INFO_BLOCK $3CB2 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 883 "    Read_Btns(); " BKPOINT=0
+C_INFO_BLOCK $3CB5 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 884 "    Intensity_a(0x5f); " BKPOINT=0
+C_INFO_BLOCK $3CBE "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 885 "    Vec_Text_Width = 90; " BKPOINT=0
+C_INFO_BLOCK $3CC3 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 886 "    Print_Str_d(100, -70, "MAIN MENU€"); " BKPOINT=0
+C_INFO_BLOCK $3CD9 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 887 "    Print_Str_d(50, -110, "1 PUZZLE MODE€"); " BKPOINT=0
+C_INFO_BLOCK $3CEF "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 888 "    Print_Str_d(20, -110, "2 ARCADE MODE€"); " BKPOINT=0
+C_INFO_BLOCK $3D05 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 889 "    Print_Str_d(-10, -110, "3 CLEAR HIGHSCORE€"); " BKPOINT=0
+C_INFO_BLOCK $3D1B "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 890 "    if (Vec_Buttons & 1) " BKPOINT=0
+C_INFO_BLOCK $3D22 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 892 "        arcadeMode = 0; " BKPOINT=0
+C_INFO_BLOCK $3D25 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 893 "        levelNumber = 0; " BKPOINT=0
+C_INFO_BLOCK $3D28 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 894 "        startLevel(); " BKPOINT=0
+C_INFO_BLOCK $3D2B "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 896 "    if (Vec_Buttons & 2) " BKPOINT=0
+C_INFO_BLOCK $3D32 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 898 "        frames = 0; " BKPOINT=0
+C_INFO_BLOCK $3D38 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 899 "        moveCount = 0; " BKPOINT=0
+C_INFO_BLOCK $3D3B "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 900 "        arcadeMode = 1; " BKPOINT=0
+C_INFO_BLOCK $3D40 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 901 "        arcadeIndex = 0; " BKPOINT=0
+C_INFO_BLOCK $3D43 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 902 "        gameState = ArcadeMenu; " BKPOINT=0
+C_INFO_BLOCK $3D46 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 904 "    if (Vec_Buttons & 4) " BKPOINT=0
+C_INFO_BLOCK $3D4D "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 906 "        gameState = ClearMenu; " BKPOINT=0
+C_INFO_BLOCK $3D58 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 833 "    drawField(); " BKPOINT=0
+C_INFO_BLOCK $3D5B "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 834 "    blockYOfs++; " BKPOINT=0
+C_INFO_BLOCK $3D64 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 835 "    if (blockYOfs < 12) " BKPOINT=0
+C_INFO_BLOCK $3D68 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 837 "        drawBlock(-blockYOfs * blockYOfs); " BKPOINT=0
+C_INFO_BLOCK $3D6F "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 838 "        doBlockAnimation(); " BKPOINT=0
+C_INFO_BLOCK $3D72 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 840 "    if (blockYOfs == 50) " BKPOINT=0
+C_INFO_BLOCK $3D79 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 842 "        startLevel(); " BKPOINT=0
+C_INFO_BLOCK $3D7F "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 619 "    levelNumber++; " BKPOINT=0
+C_INFO_BLOCK $3D83 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 620 "    if (levelNumber >= levelCount) " BKPOINT=0
+C_INFO_BLOCK $3D8B "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 622 "        levelNumber = 0; " BKPOINT=0
+C_INFO_BLOCK $3D8E "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 623 "        setBank(nextBank); " BKPOINT=0
+C_INFO_BLOCK $3D94 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 625 "    startLevel(); " BKPOINT=0
+C_INFO_BLOCK $3D9C "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 848 "    drawField(); " BKPOINT=0
+C_INFO_BLOCK $3D9F "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 849 "    drawBlock(blockYOfs); " BKPOINT=0
+C_INFO_BLOCK $3DA5 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 850 "    blockYOfs++; " BKPOINT=0
+C_INFO_BLOCK $3DAC "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 851 "    if (blockYOfs == 30) " BKPOINT=0
+C_INFO_BLOCK $3DB2 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 853 "        if (moveCount < levelHighscore) " BKPOINT=0
+C_INFO_BLOCK $3DBA "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 855 "            writeEeprom((uint8_t)(levelOffset + 2 * levelNumber), (uint8_t)(moveCount & 0xff)); " BKPOINT=0
+C_INFO_BLOCK $3DCC "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 856 "            writeEeprom((uint8_t)(levelOffset + 2 * levelNumber + 1), (uint8_t)(moveCount >> 8)); " BKPOINT=0
+C_INFO_BLOCK $3DED "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 858 "        if (arcadeMode) " BKPOINT=0
+C_INFO_BLOCK $3DF4 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 860 "            arcadeIndex++; " BKPOINT=0
+C_INFO_BLOCK $3DFB "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 861 "            levelNumber = arcadeLevels[arcadeSelection][arcadeIndex]; " BKPOINT=0
+C_INFO_BLOCK $3E16 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 862 "            if (levelNumber == 0) " BKPOINT=0
+C_INFO_BLOCK $3E1D "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 864 "                gameState = ArcadeEnd; " BKPOINT=0
+C_INFO_BLOCK $3E22 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 865 "                memcpy(infoText, "TIME: 000 SECONDS€", 18); " BKPOINT=0
+C_INFO_BLOCK $3E58 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 866 "                itoa(moveCount, &infoText[6]); " BKPOINT=0
+C_INFO_BLOCK $3E63 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 867 "                arcadeMode = 0; " BKPOINT=0
+C_INFO_BLOCK $3E6A "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 871 "                startLevel(); " BKPOINT=0
+C_INFO_BLOCK $3E6F "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 876 "            nextLevel(); " BKPOINT=0
+C_INFO_BLOCK $3E76 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 284 "    moveBlockImpl(move); " BKPOINT=0
+C_INFO_BLOCK $3E79 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 285 "    if (!arcadeMode) " BKPOINT=0
+C_INFO_BLOCK $3E7E "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 287 "        if (moveCount < 999) " BKPOINT=0
+C_INFO_BLOCK $3E8B "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 289 "        updateInfoText(); " BKPOINT=0
+C_INFO_BLOCK $3E8F "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 630 "    drawField(); " BKPOINT=0
+C_INFO_BLOCK $3E92 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 631 "    drawBlock(0); " BKPOINT=0
+C_INFO_BLOCK $3E96 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 632 "    joybit(); " BKPOINT=0
+C_INFO_BLOCK $3E99 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 633 "    if (pot0 < -10) " BKPOINT=0
+C_INFO_BLOCK $3EA0 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 635 "        moveBlock(Left); " BKPOINT=0
+C_INFO_BLOCK $3EA4 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 636 "        gameState = BlockMoving; " BKPOINT=0
+C_INFO_BLOCK $3EB3 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 640 "        moveBlock(Right); " BKPOINT=0
+C_INFO_BLOCK $3EB8 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 641 "        gameState = BlockMoving; " BKPOINT=0
+C_INFO_BLOCK $3EC6 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 645 "        moveBlock(Down); " BKPOINT=0
+C_INFO_BLOCK $3ECB "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 646 "        gameState = BlockMoving; " BKPOINT=0
+C_INFO_BLOCK $3ED9 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 650 "        moveBlock(Up); " BKPOINT=0
+C_INFO_BLOCK $3EDE "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 651 "        gameState = BlockMoving; " BKPOINT=0
+C_INFO_BLOCK $3EE3 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 681 "#if 0,     if (gameState == BlockMoving) " BKPOINT=0
+C_INFO_BLOCK $3EEA "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 683 "        changeMusic(movingMusic); " BKPOINT=0
+C_INFO_BLOCK $3EF0 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 684 "        vecx[VECX_MUSIC] = VECX_MOVING_MUSIC; " BKPOINT=0
+C_INFO_BLOCK $3EF6 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 687 "    Read_Btns(); " BKPOINT=0
+C_INFO_BLOCK $3EF9 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 688 "    if (Vec_Buttons & 1) " BKPOINT=0
+C_INFO_BLOCK $3F00 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 690 "        if (splitMode) " BKPOINT=0
+C_INFO_BLOCK $3F05 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 692 "            swapSplit(); " BKPOINT=0
+C_INFO_BLOCK $3F08 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 696 "    if ((Vec_Buttons & 2) && !arcadeMode) " BKPOINT=0
+C_INFO_BLOCK $3F14 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 698 "        nextLevel(); " BKPOINT=0
+C_INFO_BLOCK $3F17 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 700 "    if ((Vec_Buttons & 4) && !arcadeMode) " BKPOINT=0
+C_INFO_BLOCK $3F23 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 702 "        if (levelNumber > 0) " BKPOINT=0
+C_INFO_BLOCK $3F28 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 704 "            levelNumber--; " BKPOINT=0
+C_INFO_BLOCK $3F31 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 708 "            setBank(nextBank); " BKPOINT=0
+C_INFO_BLOCK $3F37 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 709 "            levelNumber = levelCount - 1; " BKPOINT=0
+C_INFO_BLOCK $3F3E "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 711 "        startLevel(); " BKPOINT=0
+C_INFO_BLOCK $3F41 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 713 "    if (Vec_Buttons & 8) " BKPOINT=0
+C_INFO_BLOCK $3F48 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 715 "        gameState = MainMenu; " BKPOINT=0
+C_INFO_BLOCK $3F4C "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 295 "    gameState = BlockFalling; " BKPOINT=0
+C_INFO_BLOCK $3F51 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 296 "    blockYOfs = 0; " BKPOINT=0
+C_INFO_BLOCK $3F54 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 297 "    moveBlock(lastBlockDirection); " BKPOINT=0
+C_INFO_BLOCK $3F5A "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 298 "    changeMusic(fallingMusic); " BKPOINT=0
+C_INFO_BLOCK $3F60 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 299 "    vecx[VECX_MUSIC] = VECX_FALLING_MUSIC; " BKPOINT=0
+C_INFO_BLOCK $3F67 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 721 "    drawField(); " BKPOINT=0
+C_INFO_BLOCK $3F6A "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 722 "    drawBlock(0); " BKPOINT=0
+C_INFO_BLOCK $3F6E "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 723 "    doBlockAnimation(); " BKPOINT=0
+C_INFO_BLOCK $3F71 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 724 "    if (!blockAnimating) " BKPOINT=0
+C_INFO_BLOCK $3F78 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 727 "        if (splitMode) " BKPOINT=0
+C_INFO_BLOCK $3F7D "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 729 "            testMerge(); " BKPOINT=0
+C_INFO_BLOCK $3F80 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 733 "        uint8_t c0 = isField(blockX, blockY); " BKPOINT=0
+C_INFO_BLOCK $3F8D "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 734 "        uint8_t c1 = isField(blockX + 1, blockY); " BKPOINT=0
+C_INFO_BLOCK $3F9F "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 735 "        uint8_t c2 = isField(blockX, blockY + 1); " BKPOINT=0
+C_INFO_BLOCK $3FAD "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 736 "        char f0 = getField(blockX, blockY); " BKPOINT=0
+C_INFO_BLOCK $3FBA "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 737 "        char f1 = getField(blockX + 1, blockY); " BKPOINT=0
+C_INFO_BLOCK $3FCC "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 738 "        char f2 = getField(blockX, blockY + 1); " BKPOINT=0
+C_INFO_BLOCK $3FDA "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 739 "        if (splitMode) " BKPOINT=0
+C_INFO_BLOCK $3FE1 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 741 "            if (!c0) " BKPOINT=0
+C_INFO_BLOCK $3FE7 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 743 "                startBlockFalling(); " BKPOINT=0
+C_INFO_BLOCK $3FED "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 748 "            switch (blockOrientation) " BKPOINT=0
+C_INFO_BLOCK $3FFE "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 751 "                if (!c0 || f0 == 'f') " BKPOINT=0
+C_INFO_BLOCK $4008 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 753 "                    startBlockFalling(); " BKPOINT=0
+C_INFO_BLOCK $400B "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 755 "                break; " BKPOINT=0
+C_INFO_BLOCK $400D "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 757 "                if (!c0 || !c2) " BKPOINT=0
+C_INFO_BLOCK $4015 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 759 "                    startBlockFalling(); " BKPOINT=0
+C_INFO_BLOCK $4018 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 761 "                break; " BKPOINT=0
+C_INFO_BLOCK $401A "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 763 "                if (!c0 || !c1) " BKPOINT=0
+C_INFO_BLOCK $4022 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 765 "                    startBlockFalling(); " BKPOINT=0
+C_INFO_BLOCK $4025 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 767 "                break;        if (blockOrientation == Standing && blockX == endX && blockY == endY && !splitMode) " BKPOINT=0
+C_INFO_BLOCK $403F "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 774 "            blockYOfs = 0; " BKPOINT=0
+C_INFO_BLOCK $4042 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 775 "            gameState = BlockMovingAtEnd; " BKPOINT=0
+C_INFO_BLOCK $4047 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 776 "            changeMusic(levelEndMusic); " BKPOINT=0
+C_INFO_BLOCK $404D "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 777 "            vecx[VECX_MUSIC] = VECX_LEVEL_END_MUSIC; " BKPOINT=0
+C_INFO_BLOCK $4055 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 782 "            if (gameState != BlockFalling) " BKPOINT=0
+C_INFO_BLOCK $405C "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 784 "                gameState = BlockWaiting; " BKPOINT=0
+C_INFO_BLOCK $4061 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 789 "        if (splitMode) " BKPOINT=0
+C_INFO_BLOCK $4066 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 791 "            if (f0 == 's') " BKPOINT=0
+C_INFO_BLOCK $406E "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 793 "                swatchSwitch(blockX, blockY); " BKPOINT=0
+C_INFO_BLOCK $407E "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 798 "            switch (blockOrientation) " BKPOINT=0
+C_INFO_BLOCK $4090 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 801 "                if (f0 == 's' || f0 == 'h' || f0 == 'v') " BKPOINT=0
+C_INFO_BLOCK $409E "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 803 "                    swatchSwitch(blockX, blockY); " BKPOINT=0
+C_INFO_BLOCK $40AB "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 805 "                break; " BKPOINT=0
+C_INFO_BLOCK $40AE "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 807 "                if (f0 == 's') " BKPOINT=0
+C_INFO_BLOCK $40B4 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 809 "                    swatchSwitch(blockX, blockY); " BKPOINT=0
+C_INFO_BLOCK $40C1 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 811 "                if (f2 == 's') " BKPOINT=0
+C_INFO_BLOCK $40C7 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 813 "                    swatchSwitch(blockX, blockY + 1); " BKPOINT=0
+C_INFO_BLOCK $40D5 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 815 "                break; " BKPOINT=0
+C_INFO_BLOCK $40D7 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 817 "                if (f0 == 's') " BKPOINT=0
+C_INFO_BLOCK $40DD "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 819 "                    swatchSwitch(blockX, blockY); " BKPOINT=0
+C_INFO_BLOCK $40EA "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 821 "                if (f1 == 's') " BKPOINT=0
+C_INFO_BLOCK $40F0 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 823 "                    swatchSwitch(blockX + 1, blockY); " BKPOINT=0
+C_INFO_BLOCK $4102 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 825 "                break; " BKPOINT=0
+C_INFO_BLOCK $4109 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1051 "    picAvailable = 0; " BKPOINT=0
+C_INFO_BLOCK $410C "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1052 "    sendPicCommand(CMD_VERSION, 0); " BKPOINT=0
+C_INFO_BLOCK $4113 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1053 "    sendPicCommand(CMD_VERSION, 0); " BKPOINT=0
+C_INFO_BLOCK $411A "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1054 "    if (sendPicCommand(CMD_VERSION, 0) == 4) " BKPOINT=0
+C_INFO_BLOCK $4127 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1056 "        picAvailable = 1; " BKPOINT=0
+C_INFO_BLOCK $412C "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1061 "    setBank(0); " BKPOINT=0
+C_INFO_BLOCK $4130 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1064 "    vecx[VECX_MUSIC] = VECX_TITLE_MUSIC; " BKPOINT=0
+C_INFO_BLOCK $4136 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1067 "    epot0 = 1; " BKPOINT=0
+C_INFO_BLOCK $413B "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1068 "    epot1 = 3; " BKPOINT=0
+C_INFO_BLOCK $4140 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1069 "    epot2 = 0; " BKPOINT=0
+C_INFO_BLOCK $4143 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1070 "    epot3 = 0; " BKPOINT=0
+C_INFO_BLOCK $4146 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1072 "    gameState = MainMenu; " BKPOINT=0
+C_INFO_BLOCK $4149 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1073 "    musicInit(); " BKPOINT=0
+C_INFO_BLOCK $414C "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1075 "    while (1)        frwait(); " BKPOINT=0
+C_INFO_BLOCK $414F "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1080 "        switch (gameState) " BKPOINT=0
+C_INFO_BLOCK $4175 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1083 "            mainMenu(); " BKPOINT=0
+C_INFO_BLOCK $4178 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1084 "            musicPlay(); " BKPOINT=0
+C_INFO_BLOCK $417B "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1085 "            break; " BKPOINT=0
+C_INFO_BLOCK $417E "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1087 "            clearMenu(); " BKPOINT=0
+C_INFO_BLOCK $4181 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1088 "            musicPlay(); " BKPOINT=0
+C_INFO_BLOCK $4184 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1089 "            break; " BKPOINT=0
+C_INFO_BLOCK $4187 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1091 "            arcadeMenu(); " BKPOINT=0
+C_INFO_BLOCK $418A "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1092 "            musicPlay(); " BKPOINT=0
+C_INFO_BLOCK $418D "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1093 "            break; " BKPOINT=0
+C_INFO_BLOCK $4190 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1095 "            arcadeEnd(); " BKPOINT=0
+C_INFO_BLOCK $4193 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1096 "            musicPlay(); " BKPOINT=0
+C_INFO_BLOCK $4196 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1097 "            break; " BKPOINT=0
+C_INFO_BLOCK $4199 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1099 "            showInfo(); " BKPOINT=0
+C_INFO_BLOCK $419C "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1100 "            blockMovingToStart(); " BKPOINT=0
+C_INFO_BLOCK $419F "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1101 "            break; " BKPOINT=0
+C_INFO_BLOCK $41A2 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1103 "            showInfo(); " BKPOINT=0
+C_INFO_BLOCK $41A5 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1104 "            blockWaiting(); " BKPOINT=0
+C_INFO_BLOCK $41A8 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1105 "            break; " BKPOINT=0
+C_INFO_BLOCK $41AB "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1107 "            showInfo(); " BKPOINT=0
+C_INFO_BLOCK $41AE "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1108 "            blockMoving(); " BKPOINT=0
+C_INFO_BLOCK $41B1 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1109 "            break; " BKPOINT=0
+C_INFO_BLOCK $41B3 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1111 "            showInfo(); " BKPOINT=0
+C_INFO_BLOCK $41B6 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1112 "            blockFalling(); " BKPOINT=0
+C_INFO_BLOCK $41B9 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1113 "            break; " BKPOINT=0
+C_INFO_BLOCK $41BB "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1115 "            showInfo(); " BKPOINT=0
+C_INFO_BLOCK $41BE "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1116 "            blockMovingAtEnd(); " BKPOINT=0
+C_INFO_BLOCK $41C1 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1117 "            break;        if (gameState > ClearMenu) " BKPOINT=0
+C_INFO_BLOCK $41C8 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1123 "            DP_to_C8(); " BKPOINT=0
+C_INFO_BLOCK $41CB "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1124 "            replay(currentMusic); " BKPOINT=0
+C_INFO_BLOCK $41D5 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1125 "            DP_to_D0(); " BKPOINT=0
+C_INFO_BLOCK $41D8 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1126 "            reqout(); " BKPOINT=0
+C_INFO_BLOCK $41DB "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1130 "        if (arcadeMode) " BKPOINT=0
+C_INFO_BLOCK $41E2 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1132 "            frames++; " BKPOINT=0
+C_INFO_BLOCK $41EB "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1133 "            if (frames == 50) " BKPOINT=0
+C_INFO_BLOCK $41F3 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1135 "                frames = 0; " BKPOINT=0
+C_INFO_BLOCK $41F9 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1136 "                if (moveCount < 999) " BKPOINT=0
+C_INFO_BLOCK $4203 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1138 "                    moveCount++; " BKPOINT=0
+C_INFO_BLOCK $4208 "C:\data\Vide\..\bloxorz\Vide\source\bloxorz.c "FN_END 1139 "                    updateInfoText(); " BKPOINT=0
+C_INFO_BLOCK $42DD "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 52 "    return shifts[bit]; " BKPOINT=0
+C_INFO_BLOCK $42EA "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 57 "    long int index = (long int)y * LEVEL_WIDTH + (long int)x; " BKPOINT=0
+C_INFO_BLOCK $42FA "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 60 "    uint8_t bit = (uint8_t)(index & 7);,     index >>= 3;,     return (swatchesOn[index] & getShifts(bit)) > 0; " BKPOINT=0
+C_INFO_BLOCK $4321 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 65 "    long int index = (long int)y * LEVEL_WIDTH + (long int)x; " BKPOINT=0
+C_INFO_BLOCK $432F "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 66 "    uint8_t bit = (uint8_t)(index & 7); " BKPOINT=0
+C_INFO_BLOCK $4335 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 67 "    index >>= 3; " BKPOINT=0
+C_INFO_BLOCK $433D "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 68 "    if (on) " BKPOINT=0
+C_INFO_BLOCK $4341 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 70 "        swatchesOn[index] |= getShifts(bit); " BKPOINT=0
+C_INFO_BLOCK $4355 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 74 "        swatchesOn[index] &= ~getShifts(bit); " BKPOINT=0
+C_INFO_BLOCK $4370 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 80 "    char c = getField(x, y); " BKPOINT=0
+C_INFO_BLOCK $437D "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 83 "    if (c == 'l' || c == 'r' || c == 'k' || c == 'q') " BKPOINT=0
+C_INFO_BLOCK $438D "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 85 "        if (isSwatchFieldOn(x, y)) " BKPOINT=0
+C_INFO_BLOCK $439B "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 87 "            c = 'b'; " BKPOINT=0
+C_INFO_BLOCK $439F "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 92 "    return (uint8_t)(c == 'b' || c == 'e' || c == 's' || c == 'h' || c == 'f' || c == 'v'); " BKPOINT=0
+C_INFO_BLOCK $43D1 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 138 "    x -= LEVEL_WIDTH / 2 - 4;,     return 14 * x - 6 * z; " BKPOINT=0
+C_INFO_BLOCK $43F0 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 145 "    y -= LEVEL_HEIGHT / 2;,     return 3 * x + 13 * y + 8 * z; " BKPOINT=0
+C_INFO_BLOCK $4415 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 228 "    lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 2)] = USED_BOARD_SCALE; " BKPOINT=0
+C_INFO_BLOCK $4429 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 230 "    if (useHalfling[levelOffset + levelNumber] == 0) " BKPOINT=0
+C_INFO_BLOCK $4438 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 232 "        last_x = -1; " BKPOINT=0
+C_INFO_BLOCK $443D "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 233 "        last_y = -1; " BKPOINT=0
+C_INFO_BLOCK $4440 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 234 "        last_s = -1; " BKPOINT=0
+C_INFO_BLOCK $4443 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 235 "        return; " BKPOINT=0
+C_INFO_BLOCK $4446 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 239 "    int8_t this_x = lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 1)] + lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 4)]; " BKPOINT=0
+C_INFO_BLOCK $445E "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 240 "    int8_t this_y = lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 0)] + lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 3)]; " BKPOINT=0
+C_INFO_BLOCK $446C "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 242 "    HALF_IF_POSSIBLE(REDUX1) " BKPOINT=0
+C_INFO_BLOCK $44B5 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 243 "    HALF_IF_POSSIBLE(REDUX2) " BKPOINT=0
+C_INFO_BLOCK $4519 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 244 "    HALF_IF_POSSIBLE(REDUX3) " BKPOINT=0
+C_INFO_BLOCK $457D "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 246 "    if (last_s != -1) " BKPOINT=0
+C_INFO_BLOCK $4586 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 251 "        int oldSacle = lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount - 1) * 5 + 2)]; " BKPOINT=0
+C_INFO_BLOCK $459F "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 253 "        if ((oldSacle == HALF_1) && (useHalfling[levelOffset + levelNumber] > 0)) " BKPOINT=0
+C_INFO_BLOCK $45B6 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 255 "            int16_t dy = lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 0)] - last_y; " BKPOINT=0
+C_INFO_BLOCK $45CA "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 256 "            int16_t dx = lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 1)] - last_x; " BKPOINT=0
+C_INFO_BLOCK $45D5 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 257 "            dy = dy << 1; " BKPOINT=0
+C_INFO_BLOCK $45DB "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 259 "            dx = dx << 1;,             if ((ABS16(dy) < MAX_SPLIT * 2) && (ABS16(dx) < MAX_SPLIT * 2)) " BKPOINT=0
+C_INFO_BLOCK $4636 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 265 "                lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount - 1) * 5 + 2)] = (int8_t)(((uint8_t)oldSacle) | 0x80); " BKPOINT=0
+C_INFO_BLOCK $463F "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 268 "                lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 0)] = (int8_t)dy; " BKPOINT=0
+C_INFO_BLOCK $4656 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 269 "                lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 1)] = (int8_t)dx; " BKPOINT=0
+C_INFO_BLOCK $4679 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 274 "            int16_t dy = lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 0)] - last_y; " BKPOINT=0
+C_INFO_BLOCK $468D "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 275 "            int16_t dx = lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 1)] - last_x; " BKPOINT=0
+C_INFO_BLOCK $4698 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 276 "            dy = dy << 1; " BKPOINT=0
+C_INFO_BLOCK $469C "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 278 "            dx = dx << 1;,             dy = dy << 1; " BKPOINT=0
+C_INFO_BLOCK $46A0 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 280 "            dx = dx << 1;,             if ((ABS16(dy) < MAX_SPLIT * 2) && (ABS16(dx) < MAX_SPLIT * 2)) " BKPOINT=0
+C_INFO_BLOCK $46FD "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 286 "                lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount - 1) * 5 + 2)] = (int8_t)(((uint8_t)oldSacle) | 0x80); " BKPOINT=0
+C_INFO_BLOCK $4706 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 289 "                lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 0)] = (int8_t)dy; " BKPOINT=0
+C_INFO_BLOCK $471D "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 290 "                lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 1)] = (int8_t)dx; " BKPOINT=0
+C_INFO_BLOCK $4740 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 295 "            int16_t dy = lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 0)] - last_y; " BKPOINT=0
+C_INFO_BLOCK $4754 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 296 "            int16_t dx = lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 1)] - last_x; " BKPOINT=0
+C_INFO_BLOCK $475F "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 297 "            dy = dy << 1; " BKPOINT=0
+C_INFO_BLOCK $4763 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 299 "            dx = dx << 1;,             dy = dy << 1; " BKPOINT=0
+C_INFO_BLOCK $4765 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 301 "            dx = dx << 1;,             dy = dy << 1; " BKPOINT=0
+C_INFO_BLOCK $4769 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 303 "            dx = dx << 1;,             if ((ABS16(dy) < MAX_SPLIT * 2) && (ABS16(dx) < MAX_SPLIT * 2)) " BKPOINT=0
+C_INFO_BLOCK $47C6 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 309 "                lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount - 1) * 5 + 2)] = (int8_t)(((uint8_t)oldSacle) | 0x80); " BKPOINT=0
+C_INFO_BLOCK $47CF "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 312 "                lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 0)] = (int8_t)dy; " BKPOINT=0
+C_INFO_BLOCK $47E6 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 313 "                lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 1)] = (int8_t)dx; " BKPOINT=0
+C_INFO_BLOCK $47EA "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 318 "    last_x = this_x; " BKPOINT=0
+C_INFO_BLOCK $47F1 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 319 "    last_y = this_y; " BKPOINT=0
+C_INFO_BLOCK $47F8 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 320 "    last_s = lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 2)]; " BKPOINT=0
+C_INFO_BLOCK $4818 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 382 "    lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 0)] = y3d(x, 0, y); " BKPOINT=0
+C_INFO_BLOCK $4833 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 383 "    lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 1)] = x3d(x, y); " BKPOINT=0
+C_INFO_BLOCK $4851 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 384 "    lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 3)] = y3d(x + 1, 0, y + 1) - (y3d(x, 0, y)); " BKPOINT=0
+C_INFO_BLOCK $488B "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 385 "    lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 4)] = x3d(x + 1, y + 1) - (x3d(x, y)); " BKPOINT=0
+C_INFO_BLOCK $48B8 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 386 "    checkHalfling(); " BKPOINT=0
+C_INFO_BLOCK $48BB "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 388 "    lineCount++; " BKPOINT=0
+C_INFO_BLOCK $48C4 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 390 "    lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 0)] = y3d(x + 1, 0, y); " BKPOINT=0
+C_INFO_BLOCK $48EA "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 391 "    lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 1)] = x3d(x + 1, y); " BKPOINT=0
+C_INFO_BLOCK $4908 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 392 "    lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 3)] = y3d(x, 0, y + 1) - (y3d(x + 1, 0, y)); " BKPOINT=0
+C_INFO_BLOCK $4939 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 393 "    lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 4)] = x3d(x, y + 1) - (x3d(x + 1, y)); " BKPOINT=0
+C_INFO_BLOCK $4966 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 394 "    checkHalfling(); " BKPOINT=0
+C_INFO_BLOCK $4969 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 396 "    lineCount++; " BKPOINT=0
+C_INFO_BLOCK $4974 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 494 "    for (uint8_t i = 0; i < sizeof(swatchesOn); i++) " BKPOINT=0
+C_INFO_BLOCK $4977 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 496 "        swatchesOn[i] = 0; " BKPOINT=0
+C_INFO_BLOCK $497E "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 503 "    long int index;,     int8_t x = 0;,     int8_t y = 0;,     const char *geometry = level->geometry;,     for (y = 0; y < LEVEL_HEIGHT; y++) " BKPOINT=0
+C_INFO_BLOCK $4985 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 505 "        for (x = 0; x < LEVEL_WIDTH; x++) " BKPOINT=0
+C_INFO_BLOCK $4989 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 508 "            index = (long int)y * LEVEL_WIDTH + (long int)x;,             char c0 = geometry[index]; " BKPOINT=0
+C_INFO_BLOCK $498B "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 509 "            if (c0 == 'k' || c0 == 'q') " BKPOINT=0
+C_INFO_BLOCK $4993 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 511 "                setSwatchField(x, y, 1); " BKPOINT=0
+C_INFO_BLOCK $49D2 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 350 "    lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 0)] = y3d(x0, 0, y0) + 3; " BKPOINT=0
+C_INFO_BLOCK $49EE "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 351 "    lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 1)] = x3d(x0, y0) + 6; " BKPOINT=0
+C_INFO_BLOCK $4A0D "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 352 "    lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 3)] = y3d(x0, 0, y0 + 1) + 0 - (y3d(x0, 0, y0) + 3); " BKPOINT=0
+C_INFO_BLOCK $4A41 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 353 "    lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 4)] = x3d(x0, y0 + 1) + 8 - (x3d(x0, y0) + 6); " BKPOINT=0
+C_INFO_BLOCK $4A6F "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 355 "    checkHalfling(); " BKPOINT=0
+C_INFO_BLOCK $4A72 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 356 "    lineCount++; " BKPOINT=0
+C_INFO_BLOCK $4A79 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 357 "    if (lineCount >= MAX_LINES) " BKPOINT=0
+C_INFO_BLOCK $4A7F "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 359 "        runtimeError("TOO MANY LINES€"); " BKPOINT=0
+C_INFO_BLOCK $4A8F "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 325 "    if (half) " BKPOINT=0
+C_INFO_BLOCK $4A95 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 327 "        lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 0)] = y3d(x0, 0, y0) + 4; " BKPOINT=0
+C_INFO_BLOCK $4AB1 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 328 "        lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 1)] = x3d(x0, y0) - 1; " BKPOINT=0
+C_INFO_BLOCK $4ACF "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 329 "        lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 3)] = y3d(x1, 0, y1) + 3 - (y3d(x0, 0, y0) + 4); " BKPOINT=0
+C_INFO_BLOCK $4B01 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 330 "        lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 4)] = x3d(x1, y1) - 6 - (x3d(x0, y0) - 1); " BKPOINT=0
+C_INFO_BLOCK $4B36 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 334 "        lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 0)] = y3d(x0, 0, y0); " BKPOINT=0
+C_INFO_BLOCK $4B50 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 335 "        lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 1)] = x3d(x0, y0); " BKPOINT=0
+C_INFO_BLOCK $4B6D "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 336 "        lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 3)] = y3d(x1, 0, y1) - y3d(x0, 0, y0); " BKPOINT=0
+C_INFO_BLOCK $4B9E "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 337 "        lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 4)] = x3d(x1, y1) - x3d(x0, y0); " BKPOINT=0
+C_INFO_BLOCK $4BCE "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 339 "    checkHalfling(); " BKPOINT=0
+C_INFO_BLOCK $4BD1 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 341 "    lineCount++; " BKPOINT=0
+C_INFO_BLOCK $4BD8 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 342 "    if (lineCount >= MAX_LINES) " BKPOINT=0
+C_INFO_BLOCK $4BDC "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 344 "        runtimeError("TOO MANY LINES€"); " BKPOINT=0
+C_INFO_BLOCK $4BEA "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 366 "    int test = 8; // 9 is ok, 10 is too wide!,     while (x1 - x0 > test) " BKPOINT=0
+C_INFO_BLOCK $4BF4 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 368 "        addLineImpl(x0, y0, x0 + test, y1, half); " BKPOINT=0
+C_INFO_BLOCK $4C0F "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 369 "        x0 += test; " BKPOINT=0
+C_INFO_BLOCK $4C25 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 371 "    while (y1 - y0 > test) " BKPOINT=0
+C_INFO_BLOCK $4C2F "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 373 "        addLineImpl(x0, y0, x1, y0 + test, half); " BKPOINT=0
+C_INFO_BLOCK $4C4A "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 374 "        y0 += test; " BKPOINT=0
+C_INFO_BLOCK $4C60 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 376 "    addLineImpl(x0, y0, x1, y1, half); " BKPOINT=0
+C_INFO_BLOCK $4C7A "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 468 "    int8_t x = 0;,     int8_t y = 0;,     for (x = -1; x < LEVEL_WIDTH; x++) " BKPOINT=0
+C_INFO_BLOCK $4C7E "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 472 "        int8_t y0 = -1;,         int8_t y1 = -1;,         for (y = 0; y <= LEVEL_HEIGHT; y++) " BKPOINT=0
+C_INFO_BLOCK $4C86 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 474 "            if (isField(x, y) || isField(x + 1, y)) " BKPOINT=0
+C_INFO_BLOCK $4CA7 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 476 "                if (y0 < 0) " BKPOINT=0
+C_INFO_BLOCK $4CAF "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 478 "                y1 = y; " BKPOINT=0
+C_INFO_BLOCK $4CB5 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 482 "                if (y0 >= 0) " BKPOINT=0
+C_INFO_BLOCK $4CB9 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 484 "                    addLine(x + 1, y0, x + 1, y1 + 1, 0); " BKPOINT=0
+C_INFO_BLOCK $4CCD "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 485 "                    y0 = -1; " BKPOINT=0
+C_INFO_BLOCK $4CEE "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 412 "    long int index;,     int8_t x = 0;,     int8_t y = 0;,     const char *geometry = level->geometry;,     for (y = -1; y < LEVEL_HEIGHT; y++) " BKPOINT=0
+C_INFO_BLOCK $4CFB "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 416 "        int8_t x0 = -1;,         int8_t x1 = -1;,         for (x = 0; x <= LEVEL_WIDTH; x++) " BKPOINT=0
+C_INFO_BLOCK $4D0C "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 420 "            char c0 = 0;,             index = (long int)y * LEVEL_WIDTH + (long int)x;,             if (y >= 0 && x < LEVEL_WIDTH) " BKPOINT=0
+C_INFO_BLOCK $4D14 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 422 "                c0 = geometry[index]; " BKPOINT=0
+C_INFO_BLOCK $4D19 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 424 "            if (c0 == 'e') " BKPOINT=0
+C_INFO_BLOCK $4D1D "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 426 "                addTarget(x, y); " BKPOINT=0
+C_INFO_BLOCK $4D26 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 427 "                endX = x; " BKPOINT=0
+C_INFO_BLOCK $4D2B "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 428 "                endY = y; " BKPOINT=0
+C_INFO_BLOCK $4D39 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 432 "                addSplit(x, y); " BKPOINT=0
+C_INFO_BLOCK $4D4B "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 436 "                addLine(x, y, x + 1, y + 1, 0); " BKPOINT=0
+C_INFO_BLOCK $4D66 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 440 "                addLine(x + 1, y, x, y + 1, 0); " BKPOINT=0
+C_INFO_BLOCK $4D81 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 444 "                addLine(x, y, x + 1, y, 1); " BKPOINT=0
+C_INFO_BLOCK $4D98 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 446 "            if (isField(x, y) || isField(x, y + 1)) " BKPOINT=0
+C_INFO_BLOCK $4DB6 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 448 "                if (x0 < 0) " BKPOINT=0
+C_INFO_BLOCK $4DBE "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 450 "                x1 = x; " BKPOINT=0
+C_INFO_BLOCK $4DC4 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 454 "                if (x0 >= 0) " BKPOINT=0
+C_INFO_BLOCK $4DC8 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 456 "                    addLine(x0, y + 1, x1 + 1, y + 1, 0); " BKPOINT=0
+C_INFO_BLOCK $4DDC "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 457 "                    x0 = -1; " BKPOINT=0
+C_INFO_BLOCK $4E00 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 519 "    last_x = -1; " BKPOINT=0
+C_INFO_BLOCK $4E05 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 520 "    last_y = -1; " BKPOINT=0
+C_INFO_BLOCK $4E08 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 521 "    last_s = -1; " BKPOINT=0
+C_INFO_BLOCK $4E0B "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 522 "    lineCount = 0; " BKPOINT=0
+C_INFO_BLOCK $4E0E "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 523 "    setupX(); " BKPOINT=0
+C_INFO_BLOCK $4E11 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 524 "    last_x = -1; " BKPOINT=0
+C_INFO_BLOCK $4E16 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 525 "    last_y = -1; " BKPOINT=0
+C_INFO_BLOCK $4E19 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 526 "    last_s = -1; " BKPOINT=0
+C_INFO_BLOCK $4E1C "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 528 "    setupY(); " BKPOINT=0
+C_INFO_BLOCK $4E1F "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 529 "    lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 1)] = 0; " BKPOINT=0
+C_INFO_BLOCK $4E2D "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 530 "    lineYX_yx_s_dy_dx[(uint16_t)((uint16_t)(lineCount)*5 + 0)] = 0; " BKPOINT=0
+C_INFO_BLOCK $4E37 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 97 "    for (uint8_t i = 0; i < level->swatches_count; i++) " BKPOINT=0
+C_INFO_BLOCK $4E42 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 99 "        const struct Swatch *swatch = level->swatches[i]; " BKPOINT=0
+C_INFO_BLOCK $4E4D "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 100 "        if (swatch->position.x == x && swatch->position.y == y) " BKPOINT=0
+C_INFO_BLOCK $4E5D "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 102 "            for (uint8_t j = 0; j < swatch->fields_count; j++) " BKPOINT=0
+C_INFO_BLOCK $4E65 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 104 "                const struct SwatchField *field = swatch->fields[j]; " BKPOINT=0
+C_INFO_BLOCK $4E71 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 105 "                int8_t xf = field->position.x; " BKPOINT=0
+C_INFO_BLOCK $4E75 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 106 "                int8_t yf = field->position.y; " BKPOINT=0
+C_INFO_BLOCK $4E79 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 107 "                switch (field->action) " BKPOINT=0
+C_INFO_BLOCK $4E96 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 110 "                    setSwatchField(xf, yf, !isSwatchFieldOn(xf, yf)); " BKPOINT=0
+C_INFO_BLOCK $4EB6 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 111 "                    break; " BKPOINT=0
+C_INFO_BLOCK $4EBB "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 113 "                    setSwatchField(xf, yf, 1); " BKPOINT=0
+C_INFO_BLOCK $4EC8 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 114 "                    break; " BKPOINT=0
+C_INFO_BLOCK $4ECD "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 116 "                    setSwatchField(xf, yf, 0); " BKPOINT=0
+C_INFO_BLOCK $4ED8 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 117 "                    break; " BKPOINT=0
+C_INFO_BLOCK $4EDC "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 119 "                    blockX = xf; " BKPOINT=0
+C_INFO_BLOCK $4EE1 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 120 "                    blockY = yf; " BKPOINT=0
+C_INFO_BLOCK $4EE6 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 121 "                    setSplitMode(); " BKPOINT=0
+C_INFO_BLOCK $4EE9 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 122 "                    break; " BKPOINT=0
+C_INFO_BLOCK $4EEB "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 124 "                    blockX2 = xf; " BKPOINT=0
+C_INFO_BLOCK $4EF0 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 125 "                    blockY2 = yf; " BKPOINT=0
+C_INFO_BLOCK $4EF5 "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 126 "                    break; " BKPOINT=0
+C_INFO_BLOCK $4F0C "C:\data\Vide\..\bloxorz\Vide\source\level.c "FN_END 131 "    initLevel(); " BKPOINT=0
 RANGE $0000-$000B DB_DATA 8
 RANGE $000B-$000D DW_DATA 4
 RANGE $000D-$001A DB_DATA 8

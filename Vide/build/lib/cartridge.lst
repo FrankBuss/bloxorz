@@ -8,9 +8,9 @@
                               8 ;  GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
                               9 ;  options passed:  -O1 -fverbose-asm -W -Wall -Wextra -Wconversion -Werror
                              10 ;  -fomit-frame-pointer -mint8 -msoft-reg-count=0 -std=gnu99
-                             11 ;  -fno-time-report -IC:\data\vide\C\PeerC\vectrex\include -D__RUM_INLINE=1
+                             11 ;  -fno-time-report -IC:\data\Vide\C\PeerC\vectrex\include -D__RUM_INLINE=1
                              12 ;  -DOMMIT_FRAMEPOINTER=1
-                             13 ;  C:\data\vide\..\bloxorz\Vide\source\cartridge.enr.c
+                             13 ;  C:\data\Vide\..\bloxorz\Vide\source\cartridge.enr.c
                              14 ;  options enabled:  -falign-loops -fargument-alias -fauto-inc-dec
                              15 ;  -fbranch-count-reg -fcommon -fcprop-registers -fdefer-pop
                              16 ;  -fearly-inlining -feliminate-unused-debug-types -ffunction-cse -fgcse-lm
