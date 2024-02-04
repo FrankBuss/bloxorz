@@ -36,7 +36,7 @@ bloxorz.c -> drawField()
 #include "block.h"
 
 // time in seconds for arcade mode
-#define ARCADE_MODE_TIME 3
+#define ARCADE_MODE_TIME 900
 
 // PIC commands
 #define CMD_VERSION 1
@@ -93,6 +93,8 @@ uint8_t picAvailable;
 uint8_t arcadeMode;
 uint8_t arcadeSelection;
 uint8_t arcadeIndex;
+uint16_t arcadeScore;
+uint16_t arcadeTime;
 
 static uint8_t si = 0;
 extern const char *const solutions[];
@@ -252,6 +254,24 @@ uint8_t readEeprom(uint8_t address)
     return sendCommand(CMD_EEPROM_READ, address);
 }
 
+// converts a number to 2 digits and stores it in text, with leading zeros
+void itoa2(uint16_t number, char *text)
+{
+    uint16_t muls[] = {10, 1};
+    if (number > 99)
+        number = 99;
+    for (uint8_t i = 0; i < 2; i++)
+    {
+        uint8_t d = 0;
+        while (number >= muls[i])
+        {
+            d++;
+            number -= muls[i];
+        }
+        text[i] = d + '0';
+    }
+}
+
 // converts a number to 3 digits and stores it in text, with leading zeros
 void itoa3(uint16_t number, char *text)
 {
@@ -297,16 +317,20 @@ void itoa(uint16_t number, char *text)
 
 void updateInfoText()
 {
-    memcpy(infoText, "001 - 999\x80", 10);
-    itoa3(moveCount, &infoText[0]);
-    itoa3(levelNumber + levelOffset, &infoText[6]);
+    if (arcadeMode) {
+        memcpy(infoText, "999 - 001\x80", 10);
+        itoa3(arcadeTime, &infoText[0]);
+        itoa3(moveCount, &infoText[6]);
+    } else {
+        memcpy(infoText, "001\x80", 4);
+        itoa3(moveCount, &infoText[0]);
+    }
 }
 
 void onArcadeGameOver()
 {
-    uint16_t score = 12345;
     memcpy(infoText, "SCORE:      \x80", 13);
-    itoa(score, &infoText[7]);
+    itoa(arcadeScore, &infoText[7]);
     arcadeMode = 0;
     gameState = ArcadeEnd;
 }
@@ -320,12 +344,9 @@ void changeMusic(const uint8_t *music)
 void moveBlock(enum BlockDirection_t move)
 {
     moveBlockImpl(move);
-    if (!arcadeMode)
-    {
-        if (moveCount < 999)
-            moveCount++;
-        updateInfoText();
-    }
+    if (moveCount < 999)
+        moveCount++;
+    updateInfoText();
 }
 
 void startBlockFalling()
@@ -337,25 +358,27 @@ void startBlockFalling()
     vecx[VECX_MUSIC] = VECX_FALLING_MUSIC;
 }
 
+void loadHighscore()
+{
+    // get highscore from EEPROM
+    uint8_t index = (uint8_t)(levelOffset + levelNumber * 2);
+    levelHighscore = readEeprom(index);
+    levelHighscore |= ((uint16_t)readEeprom(index + 1)) << 8;
+    if (levelHighscore == 0)
+        levelHighscore = 999;
+
+    // init text and update counter
+    memcpy(highscoreText, "00 - 999\x80", 9);
+    itoa2(levelNumber + levelOffset, &highscoreText[0]);
+    itoa3(levelHighscore, &highscoreText[5]);
+    highscoreDisplayCounter = 0;
+}
+
 void startLevel()
 {
     if (arcadeMode)
     {
         levelNumber = arcadeLevels[arcadeSelection][arcadeIndex] - 1;
-    }
-    else
-    {
-        // get highscore from EEPROM
-        uint8_t index = (uint8_t)(levelOffset + levelNumber * 2);
-        levelHighscore = readEeprom(index);
-        levelHighscore |= ((uint16_t)readEeprom(index + 1)) << 8;
-        if (levelHighscore == 0)
-            levelHighscore = 999;
-
-        // init text and update counter
-        memcpy(highscoreText, "BEST  999\x80", 10);
-        itoa3(levelHighscore, &highscoreText[6]);
-        highscoreDisplayCounter = 0;
     }
     level = levels[levelNumber];
     initSwatches();
@@ -367,11 +390,9 @@ void startLevel()
     gameState = BlockMovingToStart;
     changeMusic(startMusic);
     vecx[VECX_MUSIC] = VECX_START_MUSIC;
-    if (!arcadeMode)
-    {
-        moveCount = 0;
-    }
+    moveCount = 0;
     updateInfoText();
+    loadHighscore();
     si = 0;
 }
 
@@ -899,6 +920,7 @@ void blockMovingAtEnd()
             levelNumber = arcadeLevels[arcadeSelection][arcadeIndex];
             if (levelNumber == 0)
             {
+                // all levels of the selected set played
                 gameState = ArcadeEnd;
                 memcpy(infoText, "TIME: 000 SECONDS\x80", 18);
                 itoa3(moveCount, &infoText[6]);
@@ -934,7 +956,7 @@ void mainMenu()
     if (Vec_Buttons & 2)
     {
         frames = 0;
-        moveCount = ARCADE_MODE_TIME;
+        arcadeTime = ARCADE_MODE_TIME;
         arcadeMode = 1;
         arcadeIndex = 0;
         gameState = ArcadeMenu;
@@ -1068,13 +1090,17 @@ void showInfo()
 {
     Intensity_a(0x5f);
     Vec_Text_Width = 100;
-    if (highscoreDisplayCounter > 180 && !arcadeMode)
+    if (highscoreDisplayCounter > 60)
     {
-        Print_Str_d(100, -70, highscoreText);
+        if (arcadeMode) {
+            Print_Str_d(100, -70, infoText);
+        } else {
+            Print_Str_d(100, -25, infoText);
+        }
     }
     else
     {
-        Print_Str_d(100, -70, infoText);
+        Print_Str_d(100, -60, highscoreText);
     }
     highscoreDisplayCounter++;
     if (highscoreDisplayCounter > 240)
@@ -1164,16 +1190,15 @@ int main()
             reqout();
         }
 
-        // in arcade mode, moveCount is used for seconds
         if (arcadeMode)
         {
             frames++;
             if (frames == 50)
             {
                 frames = 0;
-                if (moveCount > 0)
+                if (arcadeTime > 0)
                 {
-                    moveCount--;
+                    arcadeTime--;
                     updateInfoText();
                 } else {
                     onArcadeGameOver();
