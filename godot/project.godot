@@ -86,5 +86,6 @@ vectrex_down={
 
 [rendering]
 
+textures/vram_compression/import_etc2_astc=true
 viewport/hdr_2d=true
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)

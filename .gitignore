@@ -11,6 +11,9 @@ Vide/Bloxorz_rom0.bin
 Vide/Bloxorz_rom1.bin
 Vide/solutions.txt
 
+# release builds of build.sh
+export/
+
 # KiCad backups and local view settings
 kicad/bloxorz-backups/
 kicad/rescue-backup/
