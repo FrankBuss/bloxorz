@@ -89,6 +89,22 @@ uint8_t picAvailable;
 static uint8_t si = 0;
 extern const char *const solutions[];
 
+// attract mode: logo and demo playback of the levels, until a button or the joystick is used
+static uint8_t attractMode;
+static uint16_t frameCounter;
+
+// level select
+static uint8_t selectedLevel;
+static uint16_t selectedHighscore;
+static uint8_t joystickDelay;
+
+// number of the last level, which is the last level of the other bank
+static uint8_t lastLevel;
+
+// level data of the current bank, read with volatile, because it changes after a bank switch
+#define currentLevelCount (*(volatile const uint8_t *)&levelCount)
+#define currentLevelOffset (*(volatile const uint8_t *)&levelOffset)
+
 const uint8_t startMusic[] = {
     0xFE, 0xE8, 0xFE, 0xB6, // ADSR and twang address tables, in Vectrex ROM
     1, 1,
@@ -148,9 +164,104 @@ const uint8_t movingMusic[] = {
 
 const uint8_t *currentMusic = startMusic;
 
+// BLOXORZ logo, from the VecFever version, one Draw_VL_mode vector list per letter
+#define LOGO_MOVE 0
+#define LOGO_DRAW 2
+#define LOGO_END 1
+#define LOGO_UNIT 14
+#define LOGO_HALF 7
+#define LOGO_SCALE 0x3f
+#define LOGO_Y 0
+
+const int8_t logoB[] = {
+    LOGO_MOVE, 0, 2 * LOGO_UNIT,
+    LOGO_DRAW, LOGO_UNIT, LOGO_UNIT,
+    LOGO_DRAW, LOGO_UNIT, 0,
+    LOGO_DRAW, LOGO_UNIT, -LOGO_UNIT,
+    LOGO_DRAW, LOGO_UNIT, LOGO_UNIT,
+    LOGO_DRAW, LOGO_UNIT, 0,
+    LOGO_DRAW, LOGO_UNIT, -LOGO_UNIT,
+    LOGO_DRAW, 0, -2 * LOGO_UNIT,
+    LOGO_MOVE, -LOGO_UNIT, LOGO_UNIT,
+    LOGO_DRAW, 0, LOGO_UNIT,
+    LOGO_DRAW, -LOGO_UNIT, 0,
+    LOGO_MOVE, -2 * LOGO_UNIT, -LOGO_UNIT,
+    LOGO_DRAW, 0, LOGO_UNIT,
+    LOGO_DRAW, -LOGO_UNIT, 0,
+    LOGO_END};
+
+const int8_t logoL[] = {
+    LOGO_MOVE, 0, 3 * LOGO_UNIT,
+    LOGO_DRAW, LOGO_UNIT, 0,
+    LOGO_DRAW, 0, -2 * LOGO_UNIT,
+    LOGO_DRAW, 5 * LOGO_UNIT, 0,
+    LOGO_DRAW, 0, -LOGO_UNIT,
+    LOGO_END};
+
+const int8_t logoO[] = {
+    LOGO_MOVE, 0, 3 * LOGO_UNIT,
+    LOGO_DRAW, 6 * LOGO_UNIT, 0,
+    LOGO_DRAW, 0, -3 * LOGO_UNIT,
+    LOGO_MOVE, -LOGO_UNIT, LOGO_UNIT,
+    LOGO_DRAW, 0, LOGO_UNIT,
+    LOGO_DRAW, -4 * LOGO_UNIT, 0,
+    LOGO_END};
+
+const int8_t logoX[] = {
+    LOGO_MOVE, 0, LOGO_UNIT,
+    LOGO_DRAW, 2 * LOGO_UNIT, LOGO_HALF,
+    LOGO_MOVE, -2 * LOGO_UNIT, 3 * LOGO_HALF,
+    LOGO_DRAW, 3 * LOGO_UNIT, -LOGO_UNIT,
+    LOGO_DRAW, 3 * LOGO_UNIT, LOGO_UNIT,
+    LOGO_DRAW, 0, -LOGO_UNIT,
+    LOGO_MOVE, -2 * LOGO_UNIT, -LOGO_HALF,
+    LOGO_DRAW, 2 * LOGO_UNIT, -LOGO_HALF,
+    LOGO_DRAW, 0, -LOGO_UNIT,
+    LOGO_END};
+
+const int8_t logoR[] = {
+    LOGO_MOVE, 0, LOGO_UNIT,
+    LOGO_DRAW, 3 * LOGO_UNIT, 0,
+    LOGO_MOVE, -3 * LOGO_UNIT, 2 * LOGO_UNIT,
+    LOGO_DRAW, 3 * LOGO_UNIT, -LOGO_UNIT,
+    LOGO_DRAW, LOGO_UNIT, LOGO_UNIT,
+    LOGO_DRAW, LOGO_UNIT, 0,
+    LOGO_DRAW, LOGO_UNIT, -LOGO_UNIT,
+    LOGO_DRAW, 0, -2 * LOGO_UNIT,
+    LOGO_MOVE, -LOGO_UNIT, LOGO_UNIT,
+    LOGO_DRAW, 0, LOGO_UNIT,
+    LOGO_DRAW, -LOGO_UNIT, 0,
+    LOGO_END};
+
+const int8_t logoZ[] = {
+    LOGO_MOVE, 0, 3 * LOGO_UNIT,
+    LOGO_DRAW, LOGO_UNIT, 0,
+    LOGO_DRAW, 0, -2 * LOGO_UNIT,
+    LOGO_DRAW, 4 * LOGO_UNIT, 2 * LOGO_UNIT,
+    LOGO_DRAW, LOGO_UNIT, 0,
+    LOGO_DRAW, 0, -3 * LOGO_UNIT,
+    LOGO_END};
+
+struct LogoLetter
+{
+    const int8_t *vectors;
+    int8_t x;
+};
+
+// letter positions at scale 0x7f, one logo unit is 7 at this scale
+const struct LogoLetter logo[] = {
+    {logoB, -112},
+    {logoL, -77},
+    {logoO, -49},
+    {logoX, -14},
+    {logoO, 21},
+    {logoR, 56},
+    {logoZ, 84}};
+
 enum GameState_t
 {
-    MainMenu,
+    Logo,
+    LevelSelect,
     ClearMenu,
     BlockMovingToStart,
     BlockWaiting,
@@ -284,6 +395,63 @@ void changeMusic(const uint8_t *music)
     currentMusic = music;
 }
 
+// starts a sound effect, but not in the demo, where the title music continues
+static void playEffect(const uint8_t *music, uint8_t vecxMusic)
+{
+    if (!attractMode)
+    {
+        changeMusic(music);
+        vecx[VECX_MUSIC] = vecxMusic;
+    }
+}
+
+static void startTitleMusic()
+{
+    vecx[VECX_MUSIC] = VECX_TITLE_MUSIC;
+    musicInit();
+}
+
+// EEPROM address of the highscore of a level, 2 bytes per level, level numbers start with 1
+static uint8_t highscoreAddress(uint8_t number)
+{
+    return (uint8_t)((number - 1) * 2);
+}
+
+static uint16_t readHighscore(uint8_t number)
+{
+    uint8_t address = highscoreAddress(number);
+    uint16_t highscore = readEeprom(address);
+    highscore |= ((uint16_t)readEeprom((uint8_t)(address + 1))) << 8;
+    return highscore;
+}
+
+// switches to the bank of a level and sets levelNumber, level numbers start with 1
+static void selectLevel(uint8_t number)
+{
+    if (number < currentLevelOffset || number >= currentLevelOffset + currentLevelCount)
+    {
+        setBank(nextBank);
+    }
+    levelNumber = (uint8_t)(number - currentLevelOffset);
+}
+
+static void showLogo()
+{
+    attractMode = 1;
+    frameCounter = 0;
+    gameState = Logo;
+}
+
+static void showLevelSelect()
+{
+    attractMode = 0;
+    frameCounter = 0;
+    // don't scroll right away with the joystick movement which ended the demo
+    joystickDelay = 10;
+    selectedHighscore = readHighscore(selectedLevel);
+    gameState = LevelSelect;
+}
+
 void moveBlock(enum BlockDirection_t move)
 {
     moveBlockImpl(move);
@@ -297,22 +465,20 @@ void startBlockFalling()
     gameState = BlockFalling;
     blockYOfs = 0;
     moveBlock(lastBlockDirection);
-    changeMusic(fallingMusic);
-    vecx[VECX_MUSIC] = VECX_FALLING_MUSIC;
+    playEffect(fallingMusic, VECX_FALLING_MUSIC);
 }
 
 void loadHighscore()
 {
     // get highscore from EEPROM
-    uint8_t index = (uint8_t)(levelOffset + levelNumber * 2);
-    levelHighscore = readEeprom(index);
-    levelHighscore |= ((uint16_t)readEeprom(index + 1)) << 8;
+    uint8_t number = (uint8_t)(levelOffset + levelNumber);
+    levelHighscore = readHighscore(number);
     if (levelHighscore == 0)
         levelHighscore = 999;
 
     // init text and update counter
     memcpy(highscoreText, "00 - 999\x80", 9);
-    itoa2(levelNumber + levelOffset, &highscoreText[0]);
+    itoa2(number, &highscoreText[0]);
     itoa3(levelHighscore, &highscoreText[5]);
     highscoreDisplayCounter = 0;
 }
@@ -327,12 +493,19 @@ void startLevel()
     blockStartLevel();
     blockYOfs = -30;
     gameState = BlockMovingToStart;
-    changeMusic(startMusic);
-    vecx[VECX_MUSIC] = VECX_START_MUSIC;
+    playEffect(startMusic, VECX_START_MUSIC);
     moveCount = 0;
     updateInfoText();
     loadHighscore();
     si = 0;
+}
+
+// starts the demo playback of a random level
+static void startDemo()
+{
+    attractMode = 1;
+    selectLevel((uint8_t)(Random() % lastLevel + 1));
+    startLevel();
 }
 
 #define ADD_WAITS                          \
@@ -627,6 +800,47 @@ void blockWaiting()
 {
     drawField();
     drawBlock(0);
+
+    if (attractMode)
+    {
+        // demo playback with the solution of the level
+        char move = solutions[levelNumber][si];
+        si++;
+        if (move == 'l')
+        {
+            moveBlock(Left);
+            gameState = BlockMoving;
+        }
+        else if (move == 'r')
+        {
+            moveBlock(Right);
+            gameState = BlockMoving;
+        }
+        else if (move == 'd')
+        {
+            moveBlock(Down);
+            gameState = BlockMoving;
+        }
+        else if (move == 'u')
+        {
+            moveBlock(Up);
+            gameState = BlockMoving;
+        }
+        else if (move == 's')
+        {
+            if (splitMode)
+            {
+                swapSplit();
+            }
+        }
+        else
+        {
+            // end of the solution without reaching the target
+            showLogo();
+        }
+        return;
+    }
+
     joybit();
     if (pot0 < -10)
     {
@@ -649,37 +863,10 @@ void blockWaiting()
         gameState = BlockMoving;
     }
 
-#if 0
-    char move = solutions[levelNumber][si];
-    if (move == 0) {
-        si = 0;
-    } else {
-        if (move == 'l') {
-            moveBlock(Left);
-            gameState = BlockMoving;
-        } else if (move == 'r') {
-            moveBlock(Right);
-            gameState = BlockMoving;
-        } else if (move == 'd') {
-            moveBlock(Down);
-            gameState = BlockMoving;
-        } else if (move == 'u') {
-            moveBlock(Up);
-            gameState = BlockMoving;
-        }
-        if (move == 's') {
-            if (splitMode) {
-                swapSplit();
-            }
-        }
-        si++;
-    }
-#endif
 
     if (gameState == BlockMoving)
     {
-        changeMusic(movingMusic);
-        vecx[VECX_MUSIC] = VECX_MOVING_MUSIC;
+        playEffect(movingMusic, VECX_MOVING_MUSIC);
     }
 
     Read_Btns();
@@ -710,7 +897,9 @@ void blockWaiting()
     }
     if (Vec_Buttons & 8)
     {
-        gameState = MainMenu;
+        selectedLevel = (uint8_t)(levelOffset + levelNumber);
+        startTitleMusic();
+        showLevelSelect();
     }
 }
 
@@ -771,8 +960,7 @@ void blockMoving()
         {
             blockYOfs = 0;
             gameState = BlockMovingAtEnd;
-            changeMusic(levelEndMusic);
-            vecx[VECX_MUSIC] = VECX_LEVEL_END_MUSIC;
+            playEffect(levelEndMusic, VECX_LEVEL_END_MUSIC);
         }
         else
         {
@@ -837,7 +1025,14 @@ void blockFalling()
     }
     if (blockYOfs == 50)
     {
-        startLevel();
+        if (attractMode)
+        {
+            showLogo();
+        }
+        else
+        {
+            startLevel();
+        }
     }
 }
 
@@ -848,31 +1043,150 @@ void blockMovingAtEnd()
     blockYOfs++;
     if (blockYOfs == 30)
     {
+        if (attractMode)
+        {
+            showLogo();
+            return;
+        }
         if (moveCount < levelHighscore)
         {
-            writeEeprom((uint8_t)(levelOffset + 2 * levelNumber), (uint8_t)(moveCount & 0xff));
-            writeEeprom((uint8_t)(levelOffset + 2 * levelNumber + 1), (uint8_t)(moveCount >> 8));
+            uint8_t address = highscoreAddress((uint8_t)(levelOffset + levelNumber));
+            writeEeprom(address, (uint8_t)(moveCount & 0xff));
+            writeEeprom((uint8_t)(address + 1), (uint8_t)(moveCount >> 8));
         }
         nextLevel();
     }
 }
 
-void mainMenu()
+static void drawLogo(uint8_t brightness)
+{
+    Intensity_a(brightness);
+    for (uint8_t i = 0; i < 7; i++)
+    {
+        Reset0Ref();
+        dp_VIA_t1_cnt_lo = 0x7f;
+        Moveto_d(LOGO_Y, logo[i].x);
+        dp_VIA_t1_cnt_lo = LOGO_SCALE;
+        Draw_VL_mode((void *)logo[i].vectors);
+    }
+    Reset0Ref();
+}
+
+// logo fading in and out, then the demo playback of a random level
+void logoScreen()
+{
+    uint8_t brightness = 100;
+    if (frameCounter < 50)
+    {
+        brightness = (uint8_t)(2 * frameCounter);
+    }
+    else if (frameCounter > 150)
+    {
+        brightness = (uint8_t)(100 - 2 * (frameCounter - 150));
+    }
+    if (brightness)
+    {
+        drawLogo(brightness);
+        Vec_Text_Width = 90;
+        Print_Str_d(-30, -78, "FRANK BUSS\x80");
+    }
+    if (frameCounter >= 200)
+    {
+        startDemo();
+    }
+}
+
+// list of the levels around the selected level, with the highscore of the selected level
+void levelSelect()
 {
     Read_Btns();
+    joybit();
+
+    // joystick down/up: next/previous level, right/left: 5 levels forward/back, repeated while held
+    uint8_t horizontal = (uint8_t)(pot0 < -10 || pot0 > 10);
+    uint8_t vertical = (uint8_t)(pot1 < -10 || pot1 > 10);
+    if (!horizontal && !vertical)
+    {
+        joystickDelay = 0;
+    }
+    else if (joystickDelay)
+    {
+        joystickDelay--;
+    }
+    else
+    {
+        uint8_t forward = (uint8_t)(pot0 > 10 || (!horizontal && pot1 < -10));
+        uint8_t steps = (uint8_t)(horizontal ? 5 : 1);
+        for (uint8_t i = 0; i < steps; i++)
+        {
+            if (forward)
+            {
+                selectedLevel = (uint8_t)(selectedLevel >= lastLevel ? 1 : selectedLevel + 1);
+            }
+            else
+            {
+                selectedLevel = (uint8_t)(selectedLevel <= 1 ? lastLevel : selectedLevel - 1);
+            }
+        }
+        selectedHighscore = readHighscore(selectedLevel);
+        joystickDelay = 10;
+        frameCounter = 0;
+    }
+
     Intensity_a(0x5f);
     Vec_Text_Width = 90;
-    Print_Str_d(100, -70, "MAIN MENU\x80");
-    Print_Str_d(50, -110, "1 START GAME\x80");
-    Print_Str_d(20, -110, "2 CLEAR HIGHSCORE\x80");
+    Print_Str_d(100, -80, "CHOOSE LEVEL\x80");
+    int8_t y = 60;
+    for (uint8_t i = 0; i < 5; i++)
+    {
+        uint8_t number = (uint8_t)(selectedLevel + i - 2);
+        if (number >= 1 && number <= lastLevel)
+        {
+            if (i == 2)
+            {
+                memcpy(infoText, "> 00 (000)\x80", 11);
+                itoa2(number, &infoText[2]);
+                if (selectedHighscore > 0 && selectedHighscore <= 999)
+                {
+                    itoa3(selectedHighscore, &infoText[6]);
+                }
+                else
+                {
+                    infoText[4] = '\x80';
+                }
+                Intensity_a(0x7f);
+            }
+            else
+            {
+                memcpy(infoText, "  00\x80", 5);
+                itoa2(number, &infoText[2]);
+                Intensity_a(0x3f);
+            }
+            Print_Str_d(y, -60, infoText);
+        }
+        y = (int8_t)(y - 20);
+    }
+    Intensity_a(0x5f);
+    Print_Str_d(-60, -110, "1 START GAME\x80");
+    Print_Str_d(-90, -110, "2 CLEAR HIGHSCORE\x80");
+
     if (Vec_Buttons & 1)
     {
-        levelNumber = 0;
+        selectLevel(selectedLevel);
         startLevel();
     }
-    if (Vec_Buttons & 2)
+    else if (Vec_Buttons & 2)
     {
         gameState = ClearMenu;
+    }
+    else if (Vec_Buttons)
+    {
+        frameCounter = 0;
+    }
+    else if (frameCounter > 500)
+    {
+        // back to the logo and the demo, when nothing was selected
+        showLogo();
     }
 }
 
@@ -886,15 +1200,16 @@ void clearMenu()
     Print_Str_d(20, -110, "4 NO\x80");
     if (Vec_Buttons & 4)
     {
-        for (uint8_t i = 0; i < 6; i++)
+        uint8_t end = highscoreAddress((uint8_t)(lastLevel + 1));
+        for (uint8_t i = 0; i < end; i++)
         {
             writeEeprom(i, 0xff);
         }
-        gameState = MainMenu;
+        showLevelSelect();
     }
     if (Vec_Buttons & 8)
     {
-        gameState = MainMenu;
+        showLevelSelect();
     }
 }
 
@@ -940,6 +1255,11 @@ void showInfo2()
 
 void showInfo()
 {
+    // no move count and highscore in the demo
+    if (attractMode)
+    {
+        return;
+    }
     Intensity_a(0x5f);
     Vec_Text_Width = 100;
     if (highscoreDisplayCounter > 60)
@@ -981,7 +1301,13 @@ int main()
     epot2 = 0;
     epot3 = 0;
 
-    gameState = MainMenu;
+    // number of the last level, which is the last level of the other bank
+    setBank(nextBank);
+    lastLevel = (uint8_t)(currentLevelOffset + currentLevelCount - 1);
+    setBank(0);
+
+    selectedLevel = 1;
+    showLogo();
     musicInit();
 
     while (1)
@@ -989,15 +1315,27 @@ int main()
         // wait for frame boundary (one frame = 30,000 cyles = 50 Hz)
         frwait();
 
+        // any button or joystick movement ends the logo and the demo
+        if (attractMode)
+        {
+            Read_Btns();
+            joybit();
+            if (Vec_Buttons || pot0 < -10 || pot0 > 10 || pot1 < -10 || pot1 > 10)
+            {
+                showLevelSelect();
+            }
+        }
+
         switch (gameState)
         {
-        case MainMenu:
-            mainMenu();
-            musicPlay();
+        case Logo:
+            logoScreen();
+            break;
+        case LevelSelect:
+            levelSelect();
             break;
         case ClearMenu:
             clearMenu();
-            musicPlay();
             break;
         case BlockMovingToStart:
             showInfo();
@@ -1021,14 +1359,19 @@ int main()
             break;
         }
 
-        // play next music note
-        if (gameState > ClearMenu)
+        // play next sound effect note, or the title music in the menus and in the demo
+        if (gameState > ClearMenu && !attractMode)
         {
             DP_to_C8();
             replay(currentMusic);
             DP_to_D0();
             reqout();
         }
+        else
+        {
+            musicPlay();
+        }
+        frameCounter++;
     }
     return 0;
 }

@@ -748,6 +748,21 @@ const struct Level *const levels[] = {
     &level14,
 };
 
+// solutions for the demo playback, checked with the level rules of solver.py
 const char *const solutions[] = {
-    "ulluulu",
+    "ulluulu", // level 1
+    "ruluuuurrluluurur", // level 2
+    "uruuurdlurruuulllur", // level 3
+    "rdruuruuuuuululllllurddddddl", // level 4
+    "dddudddddlulluuuuluuuuddddldddddd", // level 5
+    "uuullullulurdddrrdrrruuulldruulullu", // level 6
+    "ldruuuuuludrdddddlululuuurruldrurruuulululdr", // level 7
+    "uullllsrruu", // level 8
+    "uluuuuuuruldddddrsluuuuul", // level 9
+    "uudlllulllllddddrdddlruuuluuuslusrrurrrrddrdddddd", // level 10
+    "uuuurdllluuuldrdddrruruulurdddlldddrrurrdluruld", // level 11
+    "dluruldrurururuuullldrurrrddduuullldluruldrrruurldllldrurdrdddlld", // level 12
+    "rdlurdluurdrrdddddddlllurdlullulluruuuuurdldrr", // level 13
+    "uuuurddluuulllldddluuluuddrdruurrllddldruuurrrrddddddruldddddlllulu", // level 14
+    "uuuurrsrrrrruuurruuululrrsdddddddldddlllldruluuuuuuu", // level 15
 };

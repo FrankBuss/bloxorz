@@ -1989,4 +1989,24 @@ const struct Level *const levels[] = {
     &level17,
 };
 
-const char *const solutions[] = {};
+// solutions for the demo playback, checked with the level rules of solver.py
+const char *const solutions[] = {
+    "uuuusulsursuuuu", // level 16
+    "ldlllulruuuuruuudddldddddrrrruuuuuluuuuldrulruldrrulddrulddddrdddddlllluuuuuruuullrdrdddldddrrrdruuuuuluuu", // level 17
+    "rdluuuurrlldddlurddluruuullrrdddrdlurddlllluuddrrrruuldrulldruluruuuuulllurdllurdldru", // level 18
+    "uuuuuuuulurddddddluruuuuullllldddddldruuuuuurdldddddlllluuuddddddrr", // level 19
+    "ldluldrrurrdddlddrulldlldlrurrurruuuldlddddlllllsrdlsuuuul", // level 20
+    "uldrdluruuruuurdlllrrruldddlddldrulurdlurdlullulluuurrllddrdluuurrrruuu", // level 21
+    "uruuuulullldlrurrrdruldrdrddldddluruldlllulrdrrrurdlururuuuluuuur", // level 22
+    "ulluruuuuurdlurdddrrdsrlluullluuurur", // level 23
+    "lluurruruuuuulruuuu", // level 24
+    "ruldruldruuuurdrddrudluullddddluuruuurruuuruldrruldruld", // level 25
+    "rrdddldddluruurruuluuluurrsrrrddddddldddllllrrrruuuuulllluuusddrddddllllluud", // level 26
+    "uuuuurdlurulddddddlurddluruuuuruuuullldllldddldrrrruldddddddrdllurdlurd", // level 27
+    "dllluldrulluulluuurrrdrdrdrdluulululuuldlddrrrdrdrddrddldruuululululuddddlllddddrrddddlsddddddrrddddr", // level 28
+    "uldrdlurulluuddrrdlurdldrdrrdduulluluruldrurruuddlllllluuddrrrrdddddduuuuldruuuuuudddddrdlllldddlurdlurd", // level 29
+    "lulluuruuluuuurlddddrdddlldruuuuuurrruuurulllddldlurruldlddddrddlddrdldrurldluruluurdlldruuuuuuurdrrruuururdddddld", // level 30
+    "rdlddrrrrlllluuurdlurrrrurdllurdldddllldllrrurrrddddlurdllllldrudruluruuruuluuurdlurrrrruld", // level 31
+    "rrdlururuldurdldldruldrururulddllldlddrdluuurrrrruruurlddldlllllddddrudluuuurrrrruruurlddldllllldddruluurrruruurdldldlurddrdddddl", // level 32
+    "uuuurdlldrurruululurddrululluldlluurlddrrurdrrdrdlurdddllldlddldr", // level 33
+};
