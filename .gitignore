@@ -5,3 +5,8 @@ Vide/bin/*
 
 Vide/build/*
 !Vide/build/emptyfile
+
+__pycache__/
+Vide/Bloxorz_rom0.bin
+Vide/Bloxorz_rom1.bin
+Vide/solutions.txt

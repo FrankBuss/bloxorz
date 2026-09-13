@@ -1,0 +1,166 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://Scripts/Game.cs" id="1_game"]
+[ext_resource type="Script" path="res://Scripts/Vecx.cs" id="2_vecx"]
+[ext_resource type="Script" path="res://Scripts/InputTouch.cs" id="3_input"]
+
+[sub_resource type="Environment" id="Environment_glow"]
+background_mode = 3
+tonemap_mode = 0
+glow_enabled = true
+glow_levels/1 = 1.0
+glow_levels/2 = 1.0
+glow_levels/3 = 1.0
+glow_levels/4 = 1.0
+glow_levels/5 = 0.0
+glow_intensity = 0.7
+glow_blend_mode = 0
+glow_hdr_threshold = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_normal"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pressed"]
+bg_color = Color(0.25, 0.25, 0.25, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_focus"]
+
+[sub_resource type="Theme" id="Theme_touch"]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/font_sizes/font_size = 30
+Button/styles/focus = SubResource("StyleBoxEmpty_focus")
+Button/styles/hover = SubResource("StyleBoxFlat_normal")
+Button/styles/normal = SubResource("StyleBoxFlat_normal")
+Button/styles/pressed = SubResource("StyleBoxFlat_pressed")
+
+[node name="Bloxorz" type="Node"]
+script = ExtResource("1_game")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_glow")
+
+[node name="Vecx" type="Node2D" parent="."]
+script = ExtResource("2_vecx")
+
+[node name="Canvas" type="CanvasLayer" parent="."]
+
+[node name="InputTouch" type="Control" parent="Canvas" node_paths=PackedStringArray("vecx")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_touch")
+script = ExtResource("3_input")
+vecx = NodePath("../../Vecx")
+
+[node name="Up" type="Button" parent="Canvas/InputTouch"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 172.5
+offset_top = -307.5
+offset_right = 247.5
+offset_bottom = -232.5
+grow_vertical = 0
+focus_mode = 0
+action_mode = 0
+text = "W"
+
+[node name="Down" type="Button" parent="Canvas/InputTouch"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 172.5
+offset_top = -167.5
+offset_right = 247.5
+offset_bottom = -92.5
+grow_vertical = 0
+focus_mode = 0
+action_mode = 0
+text = "S"
+
+[node name="Left" type="Button" parent="Canvas/InputTouch"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 97.5
+offset_top = -237.5
+offset_right = 172.5
+offset_bottom = -162.5
+grow_vertical = 0
+focus_mode = 0
+action_mode = 0
+text = "A"
+
+[node name="Right" type="Button" parent="Canvas/InputTouch"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 247.5
+offset_top = -237.5
+offset_right = 322.5
+offset_bottom = -162.5
+grow_vertical = 0
+focus_mode = 0
+action_mode = 0
+text = "D"
+
+[node name="Button1" type="Button" parent="Canvas/InputTouch"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -262.5
+offset_top = -237.5
+offset_right = -187.5
+offset_bottom = -162.5
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+action_mode = 0
+text = "1"
+
+[node name="Button2" type="Button" parent="Canvas/InputTouch"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -172.5
+offset_top = -237.5
+offset_right = -97.5
+offset_bottom = -162.5
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+action_mode = 0
+text = "2"
+
+[connection signal="pressed" from="Canvas/InputTouch/Up" to="Canvas/InputTouch" method="Up"]
+[connection signal="pressed" from="Canvas/InputTouch/Down" to="Canvas/InputTouch" method="Down"]
+[connection signal="pressed" from="Canvas/InputTouch/Left" to="Canvas/InputTouch" method="Left"]
+[connection signal="pressed" from="Canvas/InputTouch/Right" to="Canvas/InputTouch" method="Right"]
+[connection signal="pressed" from="Canvas/InputTouch/Button1" to="Canvas/InputTouch" method="Button1"]
+[connection signal="pressed" from="Canvas/InputTouch/Button2" to="Canvas/InputTouch" method="Button2"]
