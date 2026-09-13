@@ -1,6 +1,9 @@
 #include "level.h"
 #include "block.h"
 
+// keeps the music playing during the level setup, which can take longer than a frame, in bloxorz.c
+extern void musicTick(uint8_t restartTimer);
+
 #define MAX_LINES 110
 uint8_t swatchesOn[19];
 /*
@@ -416,6 +419,7 @@ void setupX()
         int8_t x1 = -1;
         for (x = 0; x <= LEVEL_WIDTH; x++)
         {
+            musicTick(1);
             char c0 = 0;
             index = (long int)y * LEVEL_WIDTH + (long int)x;
             if (y >= 0 && x < LEVEL_WIDTH)
@@ -472,6 +476,7 @@ void setupY()
         int8_t y1 = -1;
         for (y = 0; y <= LEVEL_HEIGHT; y++)
         {
+            musicTick(1);
             if (isField(x, y) || isField(x + 1, y))
             {
                 if (y0 < 0)

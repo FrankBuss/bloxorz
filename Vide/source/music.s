@@ -20,18 +20,18 @@ arkosPlayerString:
 	
 	.globl  _musicInit
 _musicInit:
-	pshs    d,dp,x
+	pshs    d,dp,x,y,u   ; y and u are used by the player and must be preserved for C callers
  ldu #aks_song
  jsr    PLY_INIT 
-	puls d,dp,x,pc       ; restore registers from stack and return
+	puls d,dp,x,y,u,pc   ; restore registers from stack and return
  
 	.globl  _musicPlay
 _musicPlay:
-	pshs    d,dp,x
+	pshs    d,dp,x,y,u   ; y and u are used by the player and must be preserved for C callers
  jsr    PLY_PLAY   
  bsr do_ym_sound2
 
-	puls d,dp,x,pc       ; restore registers from stack and return
+	puls d,dp,x,y,u,pc   ; restore registers from stack and return
 
 	
 

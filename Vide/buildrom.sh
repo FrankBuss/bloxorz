@@ -1,0 +1,91 @@
+#!/bin/bash
+# Builds both ROM banks of Bloxorz with the Vide toolchain and combines them into
+# one 64K ROM image: bank 0 and bank 1, each padded to 32K. The bank is selected
+# with -DBANK=n, which overrides the default in source/bank.h.
+#
+# output: Vide/bloxorz.bin, which is also copied to godot/Data/Bloxorz.bin
+#
+# usage: ./buildrom.sh [path to Vide]
+# the Vide path defaults to $VIDE, or ~/data/projects/Vide
+set -e
+
+P="$(cd "$(dirname "$0")" && pwd)"
+VIDE="${1:-${VIDE:-$HOME/data/projects/Vide}}"
+case "$(uname -s)" in
+    Darwin) BIN="$VIDE/C/Mac/bin" ;;
+    *) BIN="$VIDE/C/Linux64/bin" ;;
+esac
+LIB="$VIDE/C/PeerC/vectrex/lib"
+
+CFLAGS=(-O1 -quiet -fverbose-asm -W -Wall -Wextra -Wconversion -Werror
+    -fomit-frame-pointer -mint8 -msoft-reg-count=0 -std=gnu99 -fno-time-report
+    -I"$VIDE/C/PeerC/vectrex/include"
+    '-DP_VERSION_80="1.0\x80"' '-DP_VERSION_0="1.0"' -D__RUM_FUNCTION=1 -DOMMIT_FRAMEPOINTER=1)
+
+C_MODULES="block bloxorz cartridge level leveldata"
+ASM_MODULES="arkosPlayer drawBlock music musicData pic"
+
+# vectrex library objects, linked in the same order as Vide does it
+VEC_RELS="vec_ram_0xc8_0 vec_ram_0xc8_1 vec_ram_0xc8_2 vec_ram_0xcb_0 vec_ram_0xcb_1
+    vec_ram_0xcb_2 vec_ram_0xcb_3 vec_ram_0xd0_0 vec_ram_0xd0_1 vec_ram_dpc8_0 vec_ram_dpc8_1
+    vec_ram_dpc8_2 vec_ram_dpcb_0 vec_ram_dpcb_1 vec_ram_dpcb_2 vec_ram_dpcb_3 vec_ram_dpd0_0
+    vec_ram_dpd0_1 vec_rom_0xed_0 vec_rom_0xfc_0 vec_rom_0xfd_0 vec_rom_0xfe_0 vec_rom_0xfe_1
+    vec_rom_0xff_0 vec_rom_dped_0 vec_rom_dpfc_0 vec_rom_dpfd_0 vec_rom_dpfe_0 vec_rom_dpfe_1
+    vec_rom_dpff_0 vec_rum_0xe7 vec_rum_0xe9 vec_rum_0xea vec_rum_0xf0 vec_rum_0xf1 vec_rum_0xf2
+    vec_rum_0xf3 vec_rum_0xf4 vec_rum_0xf5 vec_rum_0xf6 vec_rum_0xf7 vec_rum_0xf8 vec_rum_0xf9"
+
+build_bank()
+{
+    local bank=$1
+    local out="$P/build/rom/bank$bank"
+    rm -rf "$out"
+    mkdir -p "$out"
+
+    for f in $C_MODULES; do
+        "$BIN/cc1" -E "${CFLAGS[@]}" -DBANK=$bank "$P/source/$f.c" -o "$out/$f.i"
+        "$BIN/cc1" "${CFLAGS[@]}" "$out/$f.i" -o "$out/$f.s"
+    done
+    for f in $ASM_MODULES; do
+        cp "$P/source/$f.s" "$out/"
+    done
+    for f in $ASM_MODULES $C_MODULES; do
+        "$BIN/as6809" -x -p -l -o -y -g "$out/$f.rel" "$out/$f.s"
+    done
+
+    local rels=("$LIB/crt0.rel" "$LIB/gcc.rel")
+    for r in $VEC_RELS; do rels+=("$LIB/$r.rel"); done
+    rels+=("$LIB/vec_rum_fct_pjc.rel")
+    for f in $ASM_MODULES $C_MODULES; do rels+=("$out/$f.rel"); done
+    for r in $VEC_RELS vec_rum_0xff; do rels+=("$LIB/static/$r.rel"); done
+
+    # the linker reports lots of "PageN relocation error" warnings, which are normal for this project
+    (cd "$out" && "$BIN/aslink" -n -m -u -w -s -k "$LIB/" -l rum.lib -l libgcc.lib -l gcc.lib -l assert.lib \
+        "$out/Bloxorz.s19" "${rels[@]}" > "$out/link.log" 2>&1) || true
+    if grep -qi "undefined" "$out/link.log" || [ ! -f "$out/Bloxorz_rom.s19" ]; then
+        grep -vi "relocation error" "$out/link.log" || true
+        echo "bank $bank: link failed, see $out/link.log"
+        exit 1
+    fi
+
+    "$BIN/srec2bin" -q "$out/Bloxorz_rom.s19" "$out/Bloxorz_rom.bin"
+    "$BIN/srec2bin" -q -o -0xc880 "$out/Bloxorz_ram.s19" "$out/Bloxorz_ram.bin"
+    cat "$out/Bloxorz_rom.bin" "$out/Bloxorz_ram.bin" > "$out/Bloxorz.bin"
+
+    local size
+    size=$(wc -c < "$out/Bloxorz.bin")
+    if [ "$size" -gt 32768 ]; then
+        echo "bank $bank: $size bytes, too large for 32K"
+        exit 1
+    fi
+    echo "bank $bank: $size bytes"
+}
+
+build_bank 0
+build_bank 1
+
+{
+    cat "$P/build/rom/bank0/Bloxorz.bin" /dev/zero | head -c 32768
+    cat "$P/build/rom/bank1/Bloxorz.bin" /dev/zero | head -c 32768
+} > "$P/bloxorz.bin"
+cp "$P/bloxorz.bin" "$P/../godot/Data/Bloxorz.bin"
+echo "written $P/bloxorz.bin and godot/Data/Bloxorz.bin"

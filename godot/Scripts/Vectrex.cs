@@ -19,6 +19,8 @@ namespace Bloxorz
         /* the sound chip registers */
         public int[] snd_regs = new int[16];
         public int snd_select;
+        public E8910 psg = new E8910();
+        private int psgCycles;
 
         /* the via 6522 registers */
         public int via_ora;
@@ -109,6 +111,7 @@ namespace Bloxorz
                     if (snd_select != 14)
                     {
                         snd_regs[snd_select] = via_ora;
+                        psg.write(snd_select, via_ora);
                     }
 
                     break;
@@ -659,6 +662,9 @@ namespace Bloxorz
 
             snd_select = 0;
 
+            psg.reset();
+            psgCycles = 0;
+
             via_ora = 0;
             via_orb = 0;
             via_ddra = 0;
@@ -1035,6 +1041,13 @@ namespace Bloxorz
 
                 cycles -= (long)icycles;
                 fcycles += (long)icycles;
+
+                psgCycles += icycles;
+                while (psgCycles >= E8910.CyclesPerSample)
+                {
+                    psgCycles -= E8910.CyclesPerSample;
+                    psg.sample();
+                }
             }
         }
 

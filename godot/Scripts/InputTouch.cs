@@ -6,6 +6,12 @@ namespace Bloxorz
     {
         [Export] public Vecx vecx;
 
+        public override void _Ready()
+        {
+            // the on-screen buttons are only needed on touch devices
+            Visible = DisplayServer.IsTouchscreenAvailable();
+        }
+
         public void Button1() => vecx.Press(Vecx.Button1);
         public void Button2() => vecx.Press(Vecx.Button2);
         public void Button3() => vecx.Press(Vecx.Button3);

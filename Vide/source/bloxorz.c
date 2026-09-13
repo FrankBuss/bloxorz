@@ -75,6 +75,7 @@ extern void delay10ms();
 
 extern void musicInit();
 extern void musicPlay();
+void musicTick(uint8_t restartTimer);
 
 static char infoText[20];
 static char highscoreText[10];
@@ -97,6 +98,10 @@ static uint16_t frameCounter;
 static uint8_t selectedLevel;
 static uint16_t selectedHighscore;
 static uint8_t joystickDelay;
+static uint8_t highscorePending;
+
+// cycles the frames took longer than the 30,000 cycles of Wait_Recal, for the music tempo
+static uint16_t overrunCycles;
 
 // number of the last level, which is the last level of the other bank
 static uint8_t lastLevel;
@@ -317,6 +322,8 @@ static uint8_t sendCommand(uint8_t cmd, uint8_t arg)
         result = sendVecxCommand(cmd, arg);
     }
     delay10ms();
+    // keep the title music in time during EEPROM access and bank switching
+    musicTick(1);
     return result;
 }
 
@@ -449,6 +456,7 @@ static void showLevelSelect()
     // don't scroll right away with the joystick movement which ended the demo
     joystickDelay = 10;
     selectedHighscore = readHighscore(selectedLevel);
+    highscorePending = 0;
     gameState = LevelSelect;
 }
 
@@ -496,7 +504,11 @@ void startLevel()
     playEffect(startMusic, VECX_START_MUSIC);
     moveCount = 0;
     updateInfoText();
-    loadHighscore();
+    // no EEPROM access in the demo, the highscore is not shown and not saved there
+    if (!attractMode)
+    {
+        loadHighscore();
+    }
     si = 0;
 }
 
@@ -542,6 +554,11 @@ void __attribute__((noinline)) drawField()
     asm("STB     *0xd000     ;do it again just because");
     asm("LDB     #0x01");
     asm("STB     *0xd000     ;turn off mux");
+
+    // the first move needs scale 0x7f in the timer 1 low latch, like the later full moves, which set it after
+    // their draw. Don't rely on the code before, e.g. in the demo there is no info text which leaves it set.
+    asm("LDA     #0x7f");
+    asm("STA     *0xd004");
 
     // upon enter Zero is active!
     // hand optimized assembler of the previous C code
@@ -1108,6 +1125,12 @@ void levelSelect()
     if (!horizontal && !vertical)
     {
         joystickDelay = 0;
+        // read the highscore only after scrolling, the EEPROM access takes longer than a frame
+        if (highscorePending)
+        {
+            selectedHighscore = readHighscore(selectedLevel);
+            highscorePending = 0;
+        }
     }
     else if (joystickDelay)
     {
@@ -1128,7 +1151,8 @@ void levelSelect()
                 selectedLevel = (uint8_t)(selectedLevel <= 1 ? lastLevel : selectedLevel - 1);
             }
         }
-        selectedHighscore = readHighscore(selectedLevel);
+        selectedHighscore = 0;
+        highscorePending = 1;
         joystickDelay = 10;
         frameCounter = 0;
     }
@@ -1277,8 +1301,48 @@ void showInfo()
     }
 }
 
+// The music tempo depends on the frame rate. This plays the notes of the frames missed, when a frame
+// takes longer than the 30,000 cycles of Wait_Recal. It is called at the end of each frame, and with
+// restartTimer set during long calculations like initLevel, which restarts timer 2 like Wait_Recal, to
+// measure more than one frame. After the timeout, timer 2 continues counting down from 0xffff. Only the
+// high byte is read, because reading the low byte would clear the timeout flag Wait_Recal is waiting for.
+void musicTick(uint8_t restartTimer)
+{
+    // only for the title music in the menus and in the demo, never during normal game play
+    if (gameState > ClearMenu && !attractMode)
+    {
+        overrunCycles = 0;
+        return;
+    }
+    if (!(VIA_int_flags & 0x20))
+    {
+        return;
+    }
+    uint16_t overrun = ((uint16_t)(0xff - VIA_t2_hi)) << 8;
+    if (restartTimer)
+    {
+        // start the next frame like Wait_Recal, and play the note of the finished frame
+        VIA_t2 = Vec_Rfrsh;
+        musicPlay();
+    }
+    while (overrun >= 30000)
+    {
+        musicPlay();
+        overrun -= 30000;
+    }
+    overrunCycles += overrun;
+    if (overrunCycles >= 30000)
+    {
+        musicPlay();
+        overrunCycles -= 30000;
+    }
+}
+
 int main()
 {
+    // init the title music first, musicTick can already play it during the bank switching below
+    musicInit();
+
     // check if PIC is available
     picAvailable = 0;
     sendPicCommand(CMD_VERSION, 0);
@@ -1308,7 +1372,6 @@ int main()
 
     selectedLevel = 1;
     showLogo();
-    musicInit();
 
     while (1)
     {
@@ -1371,6 +1434,7 @@ int main()
         {
             musicPlay();
         }
+        musicTick(0);
         frameCounter++;
     }
     return 0;
