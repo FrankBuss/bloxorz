@@ -156,3 +156,92 @@ d2:    decb
     bne d1
 
 	puls d,dp,x,pc       ; restore registers from stack and return
+
+
+; switches the cartridge to another bank and cold starts the game in it, B = bank
+; The command is sent from a copy in RAM, because the ROM changes under the CPU when the PIC switches
+; the bank. The copy overwrites the level lines, which doesn't matter, the BIOS initializes the RAM again.
+	.globl  _startCartridge
+_startCartridge:
+	ldx #cartridgeSwitch
+	ldu #_lineYX_yx_s_dy_dx
+copy:
+	lda ,x+
+	sta ,u+
+	cmpx #cartridgeSwitchEnd
+	bne copy
+	jmp _lineYX_yx_s_dy_dx
+
+; position independent, runs in RAM
+cartridgeSwitch:
+	stb counter
+	lda #0hd0		; setup direct page to 0xd000
+	tfr a, dp
+	tst _picAvailable
+	beq switchVecx
+	lda #0x56		; 'V'
+	bsr sendByte
+	lda #5			; CMD_SET_BANK
+	bsr sendByte
+	lda counter
+	bsr sendByte		; the PIC switches the bank after this byte
+; wait about 16 ms, until the PIC sent its answer and released PB6
+	ldx #3000
+waitAnswer:
+	leax -1,x
+	bne waitAnswer
+	bra coldStart
+switchVecx:			; emulator, like sendVecxCommand in bloxorz.c
+	lda #0x56
+	sta 0x8001
+	lda #5
+	sta 0x8001
+	lda counter
+	sta 0x8001
+coldStart:
+	ldd #0
+	std 0xcbfe		; Vec_Cold_Flag != 0x7321: the BIOS cold starts with the title of the new game
+	jmp 0xf000
+
+; like _picWrite, with the byte in A
+sendByte:
+	sta data
+	lda #0xdf
+	sta *DCNTRL	; PB6 direction = output
+	lda *CNTRL
+	anda #0xbf
+	sta *CNTRL
+	ldb #8
+sendLoop:
+	lda data
+	bita #0x80
+	beq send0
+	lda #0x9f
+	sta *DCNTRL	; PB6 direction = input
+	nop
+	nop
+	nop
+	nop
+	lda #0xdf
+	sta *DCNTRL	; PB6 direction = output
+	bra sendNext
+send0:
+	lda #0x9f
+	sta *DCNTRL	; PB6 direction = input
+	lda #0xdf
+	sta *DCNTRL	; PB6 direction = output
+	nop
+	nop
+	nop
+	nop
+	bra sendNext
+sendNext:
+	lsl data
+	decb
+	bne sendLoop
+	ldb #10
+sendWait:
+	decb
+	bne sendWait
+	rts
+cartridgeSwitchEnd:

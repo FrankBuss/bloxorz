@@ -1,0 +1,36 @@
+# Other games in the flash banks after the two Bloxorz banks, shown in the "3 OTHER GAMES" menu of the
+# level select. One game per line: NAME|file, the file in this directory, at most 32K each and 14 games.
+# buildrom.sh generates source/games.h from this list and adds the games to the ROM image.
+#
+# The original GCE games are the dumps from archive.org (vectrex-* items) with the same crc32 as in the
+# MAME software list hash/vectrex.xml, noted after the file.
+# Karl Quappe by Malban, public domain, used with permission: https://github.com/malbanGit/KarlQuappe
+# Karl_Quappe_np.bin is the build without highscore saving, which would use PB6 like the PIC.
+
+ARMOR ATTACK|armora.bin
+# crc b7510971
+BERZERK|berzerk.bin
+# crc eafe2455
+BLITZ|blitz.bin
+# crc 0f11ce0c
+COSMIC CHASM|cchasm.bin
+# crc 6c1afa52
+FORTRESS NARZOD|fnarzod.bin
+# crc 13a35c8a
+HYPERCHASE|hyprchas.bin
+# crc 4bb13472
+KARL QUAPPE|Karl_Quappe_np.bin
+POLE POSITION|polepos.bin
+# crc a00ed3d6
+RIP-OFF|ripoff.bin
+# crc 34a98132
+SCRAMBLE|scramble.bin
+# crc 707c8ffe
+SOLAR QUEST|solarq.bin
+# crc 5c4611c8
+SPIKE|spike.bin
+# crc 62a61843
+STAR CASTLE|starcas.bin
+# crc c9039623
+WEB WARP|webwarp.bin
+# crc 521107c3

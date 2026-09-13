@@ -10,3 +10,8 @@ __pycache__/
 Vide/Bloxorz_rom0.bin
 Vide/Bloxorz_rom1.bin
 Vide/solutions.txt
+
+# KiCad backups and local view settings
+kicad/bloxorz-backups/
+kicad/rescue-backup/
+*.kicad_prl

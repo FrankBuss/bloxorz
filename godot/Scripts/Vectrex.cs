@@ -11,7 +11,8 @@ namespace Bloxorz
         public event Action<byte> SoundCommand;
 
         public byte[] rom = new byte[8192];
-        public byte[] cart = new byte[65536];
+        // 16 banks of 32K, like the SST39SF040 flash of the cartridge
+        public byte[] cart = new byte[16 * 0x8000];
         public byte[] ram = new byte[1024];
 
         public int bank = 0;
@@ -85,6 +86,8 @@ namespace Bloxorz
         public List<VectorT> lines = new List<VectorT>();
 
         public long fcycles;
+        private long lastFrameStart;
+        private long lastLineCycles;
 
         public E6809 cpu;
 
@@ -205,16 +208,20 @@ namespace Bloxorz
             }
         }
 
+        // A new frame starts when timer 2 is restarted, like in Wait_Recal of the BIOS, or in copies of it in games
+        // like Karl Quappe. A frame without lines, e.g. a restart during a long calculation, keeps the last frame,
+        // unless nothing was drawn for half a second.
+        private void frame_start()
+        {
+            lastFrameStart = fcycles;
+            if (lines.Count == 0 && fcycles - lastLineCycles < VECTREX_MHZ / 2) return;
+            (lines_last_frame, lines) = (lines, lines_last_frame);
+            lines.Clear();
+        }
+
         public byte read8(ushort address)
         {
             byte data = 0;
-
-            if (address == 0xF192)
-            {
-                // copy lines on frwait
-                (lines_last_frame, lines) = (lines, lines_last_frame);
-                lines.Clear();
-            }
 
             if ((address & 0xe000) == 0xe000)
             {
@@ -414,7 +421,8 @@ namespace Bloxorz
                 case PIC_Command.EEPROM_READ:
                     return eeprom[arg];
                 case PIC_Command.SET_BANK:
-                    bank = arg;
+                    // the PIC drives 4 bank lines
+                    bank = arg & 0x0f;
                     return 0;
                 default:
                     return 0;
@@ -568,6 +576,8 @@ namespace Bloxorz
 
                             int_update();
 
+                            frame_start();
+
                             break;
                         case 0xa:
                             alternate = true;
@@ -714,6 +724,8 @@ namespace Bloxorz
             lines_last_frame.Clear();
 
             fcycles = 0;
+            lastFrameStart = 0;
+            lastLineCycles = 0;
             cpu.reset();
         }
 
@@ -894,6 +906,7 @@ namespace Bloxorz
         public void alg_addline(long x0, long y0, long x1, long y1, byte color)
         {
             lines.Add(new VectorT(x0, y0, x1, y1, color, fcycles));
+            lastLineCycles = fcycles;
         }
 
         /* perform a single cycle worth of analog emulation */
@@ -1047,6 +1060,12 @@ namespace Bloxorz
                 {
                     psgCycles -= E8910.CyclesPerSample;
                     psg.sample();
+                }
+
+                // for games which don't restart timer 2 every frame
+                if (fcycles - lastFrameStart > 150000)
+                {
+                    frame_start();
                 }
             }
         }

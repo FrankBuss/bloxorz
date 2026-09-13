@@ -152,12 +152,11 @@ namespace Bloxorz
             vectrex.joyy(joyy);
         }
 
-        // a short tap is held for pressTime, so the game sees it. The joystick directions also stay held
-        // while the key is down, for the repeat function of the game. The game only reacts to new
-        // button presses, so buttons don't need that.
+        // a short tap is held for pressTime, so the game sees it, and a held key stays held, for games which
+        // repeat while a button or the joystick is held
         private bool Held(int input)
         {
-            return pressTimers[input] > 0 || (input >= Left && Input.IsActionPressed(actions[input]));
+            return pressTimers[input] > 0 || Input.IsActionPressed(actions[input]);
         }
 
         private void UpdateLayout()
