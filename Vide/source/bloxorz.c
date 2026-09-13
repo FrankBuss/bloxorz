@@ -35,9 +35,6 @@ bloxorz.c -> drawField()
 #include "level.h"
 #include "block.h"
 
-// time in seconds for arcade mode
-#define ARCADE_MODE_TIME 900
-
 // PIC commands
 #define CMD_VERSION 1
 #define CMD_SET_EEPROM_ADR 2
@@ -84,26 +81,13 @@ static char highscoreText[10];
 static uint8_t highscoreDisplayCounter;
 
 uint16_t moveCount;
-uint16_t frames;
 
 static uint16_t levelHighscore;
 
 uint8_t picAvailable;
 
-uint8_t arcadeMode;
-uint8_t arcadeSelection;
-uint8_t arcadeIndex;
-uint16_t arcadeScore;
-uint16_t arcadeTime;
-
 static uint8_t si = 0;
 extern const char *const solutions[];
-
-static const uint8_t arcadeLevels[4][5] = {
-    {1, 2, 0},
-    {4, 5, 6, 0},
-    {7, 8, 9, 0},
-    {10, 11, 12, 0}};
 
 const uint8_t startMusic[] = {
     0xFE, 0xE8, 0xFE, 0xB6, // ADSR and twang address tables, in Vectrex ROM
@@ -167,8 +151,6 @@ const uint8_t *currentMusic = startMusic;
 enum GameState_t
 {
     MainMenu,
-    ArcadeMenu,
-    ArcadeEnd,
     ClearMenu,
     BlockMovingToStart,
     BlockWaiting,
@@ -290,49 +272,10 @@ void itoa3(uint16_t number, char *text)
     }
 }
 
-// converts a number to int, up to 99,999, without leading zeros
-void itoa(uint16_t number, char *text)
-{
-    uint16_t muls[] = {10000, 1000, 100, 10, 1};
-    uint8_t pos = 0;
-    uint8_t started = 0;
-    for (uint8_t i = 0; i < 5; i++)
-    {
-        uint8_t d = 0;
-        while (number >= muls[i])
-        {
-            d++;
-            number -= muls[i];
-        }
-        if (d > 0)
-        {
-            started = 1;
-        }
-        if (started)
-        {
-            text[pos++] = d + '0';
-        }
-    }
-}
-
 void updateInfoText()
 {
-    if (arcadeMode) {
-        memcpy(infoText, "999 - 001\x80", 10);
-        itoa3(arcadeTime, &infoText[0]);
-        itoa3(moveCount, &infoText[6]);
-    } else {
-        memcpy(infoText, "001\x80", 4);
-        itoa3(moveCount, &infoText[0]);
-    }
-}
-
-void onArcadeGameOver()
-{
-    memcpy(infoText, "SCORE:      \x80", 13);
-    itoa(arcadeScore, &infoText[7]);
-    arcadeMode = 0;
-    gameState = ArcadeEnd;
+    memcpy(infoText, "001\x80", 4);
+    itoa3(moveCount, &infoText[0]);
 }
 
 void changeMusic(const uint8_t *music)
@@ -376,10 +319,6 @@ void loadHighscore()
 
 void startLevel()
 {
-    if (arcadeMode)
-    {
-        levelNumber = arcadeLevels[arcadeSelection][arcadeIndex] - 1;
-    }
     level = levels[levelNumber];
     initSwatches();
     initLevel();
@@ -752,11 +691,11 @@ void blockWaiting()
         }
     }
 
-    if ((Vec_Buttons & 2) && !arcadeMode)
+    if (Vec_Buttons & 2)
     {
         nextLevel();
     }
-    if ((Vec_Buttons & 4) && !arcadeMode)
+    if (Vec_Buttons & 4)
     {
         if (levelNumber > 0)
         {
@@ -914,27 +853,7 @@ void blockMovingAtEnd()
             writeEeprom((uint8_t)(levelOffset + 2 * levelNumber), (uint8_t)(moveCount & 0xff));
             writeEeprom((uint8_t)(levelOffset + 2 * levelNumber + 1), (uint8_t)(moveCount >> 8));
         }
-        if (arcadeMode)
-        {
-            arcadeIndex++;
-            levelNumber = arcadeLevels[arcadeSelection][arcadeIndex];
-            if (levelNumber == 0)
-            {
-                // all levels of the selected set played
-                gameState = ArcadeEnd;
-                memcpy(infoText, "TIME: 000 SECONDS\x80", 18);
-                itoa3(moveCount, &infoText[6]);
-                arcadeMode = 0;
-            }
-            else
-            {
-                startLevel();
-            }
-        }
-        else
-        {
-            nextLevel();
-        }
+        nextLevel();
     }
 }
 
@@ -944,83 +863,16 @@ void mainMenu()
     Intensity_a(0x5f);
     Vec_Text_Width = 90;
     Print_Str_d(100, -70, "MAIN MENU\x80");
-    Print_Str_d(50, -110, "1 PUZZLE MODE\x80");
-    Print_Str_d(20, -110, "2 ARCADE MODE\x80");
-    Print_Str_d(-10, -110, "3 CLEAR HIGHSCORE\x80");
+    Print_Str_d(50, -110, "1 START GAME\x80");
+    Print_Str_d(20, -110, "2 CLEAR HIGHSCORE\x80");
     if (Vec_Buttons & 1)
     {
-        arcadeMode = 0;
         levelNumber = 0;
         startLevel();
     }
     if (Vec_Buttons & 2)
     {
-        frames = 0;
-        arcadeTime = ARCADE_MODE_TIME;
-        arcadeMode = 1;
-        arcadeIndex = 0;
-        gameState = ArcadeMenu;
-    }
-    if (Vec_Buttons & 4)
-    {
         gameState = ClearMenu;
-    }
-}
-
-void arcadeMenu()
-{
-    Read_Btns();
-    Intensity_a(0x5f);
-    Vec_Text_Width = 90;
-    Print_Str_d(100, -70, "ARCADE MODE\x80");
-    Print_Str_d(50, -110, "1 SET 1\x80");
-    Print_Str_d(20, -110, "2 SET 2\x80");
-    Print_Str_d(-10, -110, "3 SET 3\x80");
-    Print_Str_d(-40, -110, "4 SET 4\x80");
-    if (Vec_Buttons & 1)
-    {
-        arcadeSelection = 0;
-        startLevel();
-    }
-    if (Vec_Buttons & 2)
-    {
-        arcadeSelection = 1;
-        startLevel();
-    }
-    if (Vec_Buttons & 4)
-    {
-        arcadeSelection = 2;
-        startLevel();
-    }
-    if (Vec_Buttons & 8)
-    {
-        arcadeSelection = 3;
-        startLevel();
-    }
-}
-
-void arcadeEnd()
-{
-    Read_Btns();
-    Intensity_a(0x5f);
-    Vec_Text_Width = 90;
-    Print_Str_d(100, -70, "GAME OVER\x80");
-    Print_Str_d(50, -90, infoText);
-    if (Vec_Buttons & 1)
-    {
-        gameState = MainMenu;
-    }
-    if (Vec_Buttons & 2)
-    {
-        gameState = MainMenu;
-    }
-    if (Vec_Buttons & 4)
-    {
-        gameState = MainMenu;
-    }
-    if (Vec_Buttons & 8)
-    {
-        gameState = MainMenu;
     }
 }
 
@@ -1092,11 +944,7 @@ void showInfo()
     Vec_Text_Width = 100;
     if (highscoreDisplayCounter > 60)
     {
-        if (arcadeMode) {
-            Print_Str_d(100, -70, infoText);
-        } else {
-            Print_Str_d(100, -25, infoText);
-        }
+        Print_Str_d(100, -25, infoText);
     }
     else
     {
@@ -1151,14 +999,6 @@ int main()
             clearMenu();
             musicPlay();
             break;
-        case ArcadeMenu:
-            arcadeMenu();
-            musicPlay();
-            break;
-        case ArcadeEnd:
-            arcadeEnd();
-            musicPlay();
-            break;
         case BlockMovingToStart:
             showInfo();
             blockMovingToStart();
@@ -1188,22 +1028,6 @@ int main()
             replay(currentMusic);
             DP_to_D0();
             reqout();
-        }
-
-        if (arcadeMode)
-        {
-            frames++;
-            if (frames == 50)
-            {
-                frames = 0;
-                if (arcadeTime > 0)
-                {
-                    arcadeTime--;
-                    updateInfoText();
-                } else {
-                    onArcadeGameOver();
-                }
-            }
         }
     }
     return 0;
