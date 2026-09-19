@@ -1,0 +1,10 @@
+[target.'cfg(all(target_arch = "arm", target_os = "none"))']
+# Flashed with a SEGGER J-Link / J-Trace over the Tag-Connect (SWD) footprint.
+# `cargo run --release` builds and then calls flash.sh with the resulting ELF.
+runner = "./flash.sh"
+
+[build]
+target = "thumbv8m.main-none-eabihf"
+
+[env]
+DEFMT_LOG = "debug"

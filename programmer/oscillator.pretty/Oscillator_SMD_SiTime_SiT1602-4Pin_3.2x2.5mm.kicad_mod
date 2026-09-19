@@ -1,0 +1,237 @@
+(footprint "Oscillator_SMD_SiTime_SiT1602-4Pin_3.2x2.5mm"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "U?"
+		(at -0.130625 -2.45475 0)
+		(layer "F.SilkS")
+		(uuid "f130d414-5ad2-4b8c-9542-ce9d2db1f99d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Oscillator_SMD_SiTime_SiT1602-4Pin_3.2x2.5mm"
+		(at -0.130625 2.746 0)
+		(layer "F.Fab")
+		(uuid "b5ea1f97-2fd9-4a22-a330-9d807fe3b90a")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "datasheets/SiT1602AI-22-33E-12.000000_C830041.pdf"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "8fd26b8c-b900-4cb5-b911-1a819b9d699e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "SiTime SiT1602 MEMS oscillator, 3.2x2.5 mm, 4 pad; 1=OE 2=GND 3=OUT 4=VDD"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "463615b2-042f-4080-9b8d-3fc353001f46")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_line
+		(start -2.29 1.89)
+		(end -2.29 0.9905)
+		(stroke
+			(width 0.152)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "936eb5b0-7fbd-4315-81c7-7f7927b5da83")
+	)
+	(fp_line
+		(start -2.29 1.89)
+		(end -2.29 1.97)
+		(stroke
+			(width 0.152)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "4729bedc-ea77-4a47-bc6f-0599674c688d")
+	)
+	(fp_line
+		(start -2.29 1.97)
+		(end -1.33 1.97)
+		(stroke
+			(width 0.152)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "6fd3024e-4ff5-48a0-8a45-9a1f1b8f6e61")
+	)
+	(fp_line
+		(start -2.0285 -1.75)
+		(end 2.0285 -1.75)
+		(stroke
+			(width 0.1525)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "c4f00331-d708-4607-b641-95473a1d6ec4")
+	)
+	(fp_line
+		(start -2.0285 1.75)
+		(end -2.0285 -1.75)
+		(stroke
+			(width 0.1525)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "4b25190d-f782-4810-a793-be630f3bd92d")
+	)
+	(fp_line
+		(start 2.0285 -1.75)
+		(end 2.0285 1.75)
+		(stroke
+			(width 0.1525)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "3d04c015-4f29-4907-8360-7cf54f7b264d")
+	)
+	(fp_line
+		(start 2.0285 1.75)
+		(end -2.0285 1.75)
+		(stroke
+			(width 0.1525)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "797b8b46-2e28-450f-8478-d8977fe26ebd")
+	)
+	(fp_line
+		(start -1.6 -1.25)
+		(end 1.6 -1.25)
+		(stroke
+			(width 0.051)
+			(type default)
+		)
+		(layer "User.2")
+		(uuid "80ff5be7-9fe7-403d-b366-589030cba9cc")
+	)
+	(fp_line
+		(start -1.6 1.25)
+		(end -1.6 -1.25)
+		(stroke
+			(width 0.051)
+			(type default)
+		)
+		(layer "User.2")
+		(uuid "3f779a82-0037-4771-be67-9ae71eb7f8b0")
+	)
+	(fp_line
+		(start 1.6 -1.25)
+		(end 1.6 1.25)
+		(stroke
+			(width 0.051)
+			(type default)
+		)
+		(layer "User.2")
+		(uuid "9e888bfa-1bb7-4bf4-9336-4fd743932c68")
+	)
+	(fp_line
+		(start 1.6 1.25)
+		(end -1.6 1.25)
+		(stroke
+			(width 0.051)
+			(type default)
+		)
+		(layer "User.2")
+		(uuid "5769866d-b240-4ca1-8871-b09e8500d097")
+	)
+	(fp_poly
+		(pts
+			(xy -1.544567 1.227039) (xy -1.577039 1.194567) (xy -1.622961 1.194567) (xy -1.655433 1.227039) (xy -1.655433 1.272961)
+			(xy -1.622961 1.305433) (xy -1.577039 1.305433) (xy -1.544567 1.272961)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "User.3")
+		(uuid "942dde2f-efe5-47ce-976c-ed0209d2b4c3")
+	)
+	(pad "1" smd rect
+		(at -1.1 0.95)
+		(size 1.4 1.2)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "8caaf933-fc2a-4f9c-addb-4aca0dfabd72")
+	)
+	(pad "2" smd rect
+		(at 1.1 0.95)
+		(size 1.4 1.2)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "ead63da8-b9e1-446c-b6f9-8e148eb13e52")
+	)
+	(pad "3" smd rect
+		(at 1.1 -0.95)
+		(size 1.4 1.2)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "dc16851a-f08c-4ebe-a621-0c330d7a47d4")
+	)
+	(pad "4" smd rect
+		(at -1.1 -0.95)
+		(size 1.4 1.2)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "970bffbb-f7d6-4136-81c1-90fc7f108375")
+	)
+	(attr smd)
+	(fp_line
+		(start -2.05 -1.8)
+		(end 2.05 -1.8)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+	)
+	(fp_line
+		(start 2.05 -1.8)
+		(end 2.05 1.8)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+	)
+	(fp_line
+		(start 2.05 1.8)
+		(end -2.05 1.8)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+	)
+	(fp_line
+		(start -2.05 1.8)
+		(end -2.05 -1.8)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+	)
+	(embedded_fonts no)
+)

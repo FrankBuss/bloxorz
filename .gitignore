@@ -14,7 +14,19 @@ Vide/solutions.txt
 # release builds of build.sh
 export/
 
-# KiCad backups and local view settings
+# KiCad backups, caches and local view settings
 kicad/bloxorz-backups/
 kicad/rescue-backup/
 *.kicad_prl
+fp-info-cache
+
+# programmer board: generated / local-only artifacts
+# gerber.zip is committed on purpose; the loose gerber/ dir is not
+programmer/gerber/
+programmer/programmer-backups/
+programmer/*.csv
+programmer/placements/
+programmer/bom/
+
+# Rust firmware build output
+programmer/firmware/target/

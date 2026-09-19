@@ -1,0 +1,12 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "USB4105-GF-A-120")(type "KiCad")(uri "${KIPRJMOD}/USB4105_GF_A_120/USB4105-GF-A-120.kicad_sym")(options "")(descr ""))
+  (lib (name "RP2354B")(type "KiCad")(uri "${KIPRJMOD}/RP2354B.kicad_sym")(options "")(descr ""))
+  (lib (name "vectrex-edge-connector")(type "KiCad")(uri "${KIPRJMOD}/vectrex-edge-connector.kicad_sym")(options "")(descr ""))
+  (lib (name "oscillator")(type "KiCad")(uri "${KIPRJMOD}/oscillator.kicad_sym")(options "")(descr ""))
+  (lib (name "TLV74311")(type "KiCad")(uri "${KIPRJMOD}/TLV74311.kicad_sym")(options "")(descr ""))
+  (lib (name "button")(type "KiCad")(uri "${KIPRJMOD}/button.kicad_sym")(options "")(descr ""))
+  (lib (name "TLV320AIC3104IRHBR")(type "KiCad")(uri "${KIPRJMOD}/TLV320AIC3104IRHBR/TLV320AIC3104IRHBR.kicad_sym")(options "")(descr ""))
+  (lib (name "TPA2005D1DGNR")(type "KiCad")(uri "${KIPRJMOD}/TPA2005D1DGNR/TPA2005D1DGNR.kicad_sym")(options "")(descr ""))
+  (lib (name "logos")(type "KiCad")(uri "${KIPRJMOD}/logos.kicad_sym")(options "")(descr "Project logos: frank-buss.de mark and the WEEE bin symbol"))
+)
