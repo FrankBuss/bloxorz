@@ -8,9 +8,11 @@
 //! Erase and program are issued through QMI **direct mode** (datasheet 12.14.5):
 //! direct mode disconnects the XIP window and turns the QSPI bus into a plain
 //! SPI port driven through DIRECT_TX / DIRECT_RX. While direct mode is enabled,
-//! the XIP window must not be touched - on this board that is fine because the
-//! firmware itself runs from the RP2354B's *internal* stacked flash, not from
-//! this array.
+//! the XIP window is dead - and the RP2354B's internal stacked flash, which the
+//! firmware executes from, is QMI CS0 on the same controller. So every
+//! transaction runs from RAM (`transact`, placed in `.data` and copied there by
+//! cortex-m-rt at boot) with interrupts disabled, and leaves direct mode again
+//! before returning. Nothing in between may call into flash.
 //!
 //! Each device is 32 MiB, which needs more than 24 address bits, so every device
 //! is put into 4-byte address mode at init and only 4-byte opcodes are used.
@@ -40,6 +42,9 @@ const CMD_ENTER_4B: u8 = 0xB7;
 
 const STATUS_BUSY: u8 = 0x01;
 
+/// Direct-mode SCK = clk_sys / DIRECT_CLKDIV.
+const DIRECT_CLKDIV: u8 = 30;
+
 #[derive(Copy, Clone, PartialEq, Debug)]
 pub enum FlashError {
     Timeout,
@@ -52,11 +57,27 @@ pub enum FlashError {
 // QMI direct mode
 // ---------------------------------------------------------------------------
 
-fn direct_enable(on: bool) {
-    pac::QMI.direct_csr().modify(|w| w.set_en(on));
-    if on {
-        while pac::QMI.direct_csr().read().busy() {}
+/// Route GPIO0 to QMI CS1 and make the decoder's bank-select pins outputs.
+fn pins_init() {
+    pac::IO_BANK0
+        .gpio(pins::FLASH_CS as usize)
+        .ctrl()
+        .write(|w| w.set_funcsel(pac::io::vals::Gpio0ctrlFuncsel::XIP_SS_N_1 as u8));
+    for gpio in [pins::FLASH_CS, pins::FLASH_SEL0, pins::FLASH_SEL1] {
+        pac::PADS_BANK0.gpio(gpio as usize).write(|w| {
+            w.set_ie(true);
+            w.set_od(false);
+        });
     }
+    for gpio in [pins::FLASH_SEL0, pins::FLASH_SEL1] {
+        pac::IO_BANK0
+            .gpio(gpio as usize)
+            .ctrl()
+            .write(|w| w.set_funcsel(pac::io::vals::Gpio0ctrlFuncsel::SIOB_PROC_0 as u8));
+    }
+    let sel = (1u32 << (pins::FLASH_SEL0 - 32)) | (1u32 << (pins::FLASH_SEL1 - 32));
+    pac::SIO.gpio_out(1).value_clr().write_value(sel);
+    pac::SIO.gpio_oe(1).value_set().write_value(sel);
 }
 
 /// Select which of the four devices the decoder will route CS to.
@@ -77,18 +98,9 @@ fn select_bank(bank: u8) {
     cortex_m::asm::delay(150);
 }
 
-fn cs_assert() {
-    pac::QMI.direct_csr().modify(|w| w.set_assert_cs1n(true));
-}
-
-fn cs_release() {
-    while pac::QMI.direct_csr().read().busy() {}
-    pac::QMI.direct_csr().modify(|w| w.set_assert_cs1n(false));
-}
-
 /// Push one byte, return the byte clocked back in.
+#[inline(always)]
 fn xfer(b: u8) -> u8 {
-    while !pac::QMI.direct_csr().read().txempty() {}
     pac::QMI.direct_tx().write(|w| {
         w.set_data(b as u16);
         w.set_dwidth(false);
@@ -97,11 +109,63 @@ fn xfer(b: u8) -> u8 {
     pac::QMI.direct_rx().read().0 as u8
 }
 
+/// Command byte plus optional 4-byte address, passed by value: a `&[u8]`
+/// literal would live in flash `.rodata`, unreadable inside `transact`.
+#[derive(Copy, Clone)]
+struct Head {
+    bytes: [u8; 5],
+    len: usize,
+}
+
+fn cmd(cmd: u8) -> Head {
+    Head { bytes: [cmd, 0, 0, 0, 0], len: 1 }
+}
+
+/// Command byte followed by a 4-byte address.
+fn cmd_addr4(cmd: u8, addr: u32) -> Head {
+    let a = addr.to_be_bytes();
+    Head { bytes: [cmd, a[0], a[1], a[2], a[3]], len: 5 }
+}
+
+/// One SPI transaction on CS1 with the bank already selected: `head` and `out`
+/// are clocked out, then `inp` is clocked in, CS asserted throughout.
+///
+/// Runs from RAM with interrupts off, because the firmware's own flash is
+/// unreachable while direct mode is enabled. Everything it calls must inline,
+/// and `out` must be in RAM too - every caller passes the USB transfer buffer.
+#[inline(never)]
+#[unsafe(link_section = ".data.ram_func")]
+fn transact(head: Head, out: &[u8], inp: &mut [u8]) {
+    let primask = cortex_m::register::primask::read();
+    cortex_m::interrupt::disable();
+
+    pac::QMI.direct_csr().modify(|w| {
+        w.set_clkdiv(DIRECT_CLKDIV);
+        w.set_en(true);
+    });
+    while pac::QMI.direct_csr().read().busy() {}
+    pac::QMI.direct_csr().modify(|w| w.set_assert_cs1n(true));
+    for &b in head.bytes.iter().take(head.len) {
+        xfer(b);
+    }
+    for &b in out {
+        xfer(b);
+    }
+    for b in inp.iter_mut() {
+        *b = xfer(0);
+    }
+    while pac::QMI.direct_csr().read().busy() {}
+    pac::QMI.direct_csr().modify(|w| w.set_assert_cs1n(false));
+    pac::QMI.direct_csr().modify(|w| w.set_en(false));
+
+    if primask.is_active() {
+        unsafe { cortex_m::interrupt::enable() };
+    }
+}
+
 fn cmd_only(bank: u8, cmd: u8) {
     select_bank(bank);
-    cs_assert();
-    xfer(cmd);
-    cs_release();
+    transact(self::cmd(cmd), &[], &mut []);
 }
 
 fn write_enable(bank: u8) {
@@ -109,12 +173,10 @@ fn write_enable(bank: u8) {
 }
 
 fn status(bank: u8) -> u8 {
+    let mut s = [0u8; 1];
     select_bank(bank);
-    cs_assert();
-    xfer(CMD_READ_STATUS1);
-    let s = xfer(0);
-    cs_release();
-    s
+    transact(cmd(CMD_READ_STATUS1), &[], &mut s);
+    s[0]
 }
 
 async fn wait_ready(bank: u8, timeout_ms: u64) -> Result<(), FlashError> {
@@ -125,13 +187,6 @@ async fn wait_ready(bank: u8, timeout_ms: u64) -> Result<(), FlashError> {
         Timer::after(Duration::from_millis(1)).await;
     }
     Err(FlashError::Timeout)
-}
-
-fn send_addr4(addr: u32) {
-    xfer((addr >> 24) as u8);
-    xfer((addr >> 16) as u8);
-    xfer((addr >> 8) as u8);
-    xfer(addr as u8);
 }
 
 // ---------------------------------------------------------------------------
@@ -146,17 +201,15 @@ fn split(addr: u64) -> Result<(u8, u32), FlashError> {
 }
 
 pub fn jedec_id(bank: u8) -> [u8; 3] {
+    let mut id = [0u8; 3];
     select_bank(bank);
-    cs_assert();
-    xfer(CMD_JEDEC_ID);
-    let id = [xfer(0), xfer(0), xfer(0)];
-    cs_release();
+    transact(cmd(CMD_JEDEC_ID), &[], &mut id);
     id
 }
 
 /// Put every device into 4-byte address mode and check that it answers.
 pub fn init() -> Result<(), FlashError> {
-    direct_enable(true);
+    pins_init();
     for bank in 0..CHIP_COUNT as u8 {
         let id = jedec_id(bank);
         // Winbond = 0xEF, W25Q256JV = 0x40 0x19.
@@ -168,6 +221,9 @@ pub fn init() -> Result<(), FlashError> {
     Ok(())
 }
 
+/// Longest stretch read in one transaction, to bound the time interrupts are off.
+const READ_CHUNK: usize = 256;
+
 pub fn read(addr: u64, buf: &mut [u8]) -> Result<(), FlashError> {
     let (bank, off) = split(addr)?;
     if off as u64 + buf.len() as u64 > CHIP_SIZE as u64 {
@@ -175,13 +231,11 @@ pub fn read(addr: u64, buf: &mut [u8]) -> Result<(), FlashError> {
         return Err(FlashError::Range);
     }
     select_bank(bank);
-    cs_assert();
-    xfer(CMD_READ_4B);
-    send_addr4(off);
-    for b in buf.iter_mut() {
-        *b = xfer(0);
+    let mut a = off;
+    for chunk in buf.chunks_mut(READ_CHUNK) {
+        transact(cmd_addr4(CMD_READ_4B, a), &[], chunk);
+        a += chunk.len() as u32;
     }
-    cs_release();
     Ok(())
 }
 
@@ -189,14 +243,7 @@ pub fn read(addr: u64, buf: &mut [u8]) -> Result<(), FlashError> {
 pub async fn program_page(addr: u64, data: &[u8]) -> Result<(), FlashError> {
     let (bank, off) = split(addr)?;
     write_enable(bank);
-    select_bank(bank);
-    cs_assert();
-    xfer(CMD_PAGE_PROGRAM_4B);
-    send_addr4(off);
-    for &b in data {
-        xfer(b);
-    }
-    cs_release();
+    transact(cmd_addr4(CMD_PAGE_PROGRAM_4B, off), data, &mut []);
     wait_ready(bank, 10).await
 }
 
@@ -222,11 +269,7 @@ pub async fn erase(addr: u64, len: u64) -> Result<(), FlashError> {
         let a = blk * BLOCK_SIZE as u64;
         let (bank, off) = split(a)?;
         write_enable(bank);
-        select_bank(bank);
-        cs_assert();
-        xfer(CMD_BLOCK_ERASE_4B);
-        send_addr4(off);
-        cs_release();
+        transact(cmd_addr4(CMD_BLOCK_ERASE_4B, off), &[], &mut []);
         // W25Q256JV: 64 KiB block erase is typically 150 ms, 2 s worst case.
         wait_ready(bank, 2500).await?;
     }

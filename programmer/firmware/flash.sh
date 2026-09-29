@@ -50,14 +50,17 @@ echo "flashing $ELF"
 echo "  device $DEVICE, $IFACE at ${SPEED} kHz"
 
 CMD="$(mktemp --suffix=.jlink)"
-trap 'rm -f "$CMD"' EXIT
+# J-Link picks the file format from the extension, and cargo's ELFs have none.
+ELF_COPY="$(mktemp --suffix=.elf)"
+trap 'rm -f "$CMD" "$ELF_COPY"' EXIT
+cp "$ELF" "$ELF_COPY"
 cat > "$CMD" <<EOF
 device $DEVICE
 si $IFACE
 speed $SPEED
 connect
 halt
-loadfile $ELF
+loadfile $ELF_COPY
 r
 g
 exit

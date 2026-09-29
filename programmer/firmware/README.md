@@ -121,6 +121,9 @@ direction so a host that loses framing can resynchronise by scanning.
 | 0x32 | AudioPlayFlash | addr:u32, len:u32 | — |
 | 0x33 | AudioStop | — | — |
 | 0x34 | AudioCodecInit | — | — |
+| 0x35 | AudioVolume | atten:u8 (0.5 dB steps, 0 = 0 dB, 127 = −63.5 dB) | — |
+| 0x36 | AudioCodecRead | reg:u8, count:u8 | register values |
+| 0x37 | AudioCodecWrite | (reg:u8, val:u8)* | — |
 | 0x40 | Bootsel | — | — (reboots into USB BOOTSEL) |
 
 Status: 0 ok, 1 bad CRC, 2 unknown command, 3 bad length, 4 cartridge timeout,
@@ -210,10 +213,22 @@ exactly one device. Each device is 32 MB — more than 24 address bits — so al
 four are put into **4-byte address mode** at init and only 4-byte opcodes are
 used (`13` read, `12` page program, `21` sector erase, `DC` block erase).
 
-Erase and program go through **QMI direct mode** (RP2350 datasheet §12.14.5), which
-disconnects the XIP window and turns the QSPI bus into a plain SPI port. That is
-safe here because the firmware runs from the RP2354B's *internal* stacked flash,
-not from this array.
+Erase, program and read go through **QMI direct mode** (RP2350 datasheet
+§12.14.5), which disconnects the XIP window and turns the QSPI bus into a plain
+SPI port. The RP2354B's internal stacked flash, which the firmware executes
+from, is CS0 on the same QMI, so while direct mode is on the firmware's own code
+is unreachable. Every transaction therefore runs in `extflash::transact`, which
+is placed in RAM (`.data`), runs with interrupts off, touches nothing in flash
+(not even `.rodata` constants - the command header is passed by value) and
+leaves direct mode before returning. Reads are split into 256-byte transactions
+to bound the interrupt-off time.
+
+GPIO0 must be muxed to `XIP_SS_N_1` and the two bank-select pins to SIO outputs;
+`extflash::init` does both.
+
+The direct-mode clock is **clk_sys / 30 ≈ 5 MHz** (`DIRECT_CLKDIV`), see §15.
+That gives 135 KiB/s programming, and reads keep up with 48 kHz stereo streaming
+(192 KB/s) - verified with a 30 s clip.
 
 ## 7. Codec bring-up
 
@@ -225,12 +240,18 @@ Order matters, and two of these are classic silent failures:
    stable, or the codec may not answer register access at all.
 2. **BCLK must already be running** before the PLL registers are written. I²C
    ACKs happily without a clock, so the writes appear to succeed and the PLL just
-   never locks.
+   never locks. The PIO stalls - clocks included - whenever its TX FIFO is empty,
+   so DMA channel 1 streams zeros into it in RP2350 endless mode whenever
+   nothing is playing (`silence_start`/`silence_stop` in `audio.rs`).
 3. `reg 102 = 0xA2` — **both** CLKDIV_IN and PLLCLK_IN must be set to BCLK, and
    the low nibble must be written as `0010`. Setting only the PLL mux (0x22) is
    the usual "BCLK as PLL source doesn't work" bug.
-4. Power-up order: DAC (reg 37) → routing (82/92) → drivers (86/93) → *then*
-   unmute the digital volume (43/44).
+4. Power-up order: DAC (reg 37) → routing (41) → drivers (86/93) → *then*
+   unmute the digital volume (43/44), at the stored volume rather than 0 dB.
+   Routing is **reg 41 = 0x50 (DAC_L3/R3 straight to the line drivers)**. The
+   default DAC_L1/R1 path through the output mixer (reg 82/92 = 0x80) is silent
+   on this board although every register reads back as written and the codec
+   reports DACs and line outputs powered - see §15.
 5. Mute polarity is inverted between registers: reg 43/44 D7 = 1 means muted,
    reg 86/93 D3 = 1 means **un**muted.
 6. The amplifiers stay in shutdown (GPIO33 low) for the whole sequence and are
@@ -243,7 +264,9 @@ and BCLK on GPIO45 while the stock driver expects the opposite order.
 
 The full sequence with a comment per register is the `INIT` table in
 `src/audio.rs`. Runtime volume is regs 43/44 (0 to −63.5 dB in 0.5 dB steps,
-soft-stepped, pop-free).
+soft-stepped, pop-free), set with `./upload.py audio volume <dB>`. It defaults
+to **−30 dB** at power-on and survives every codec re-init, because 0 dB drives
+the 2× amplifiers to their full ~1.4 W into the speakers.
 
 ## 8. Build and flash
 
@@ -332,7 +355,7 @@ firmware/
 
 ### 11.1 State of play
 
-Verified on 2026-09-19:
+Verified:
 
 | Thing | State |
 |---|---|
@@ -343,7 +366,7 @@ Verified on 2026-09-19:
 | Firmware | builds with **0 warnings**; 1.57 MB ELF, most of it debuginfo |
 | Toolchain | `thumbv8m.main-none-eabihf` installed; J-Link Commander V9.78 |
 | Debug probe | J-Trace PRO V3 Cortex-M, attached and working; `RP2350_M33_0` accepted |
-| Hardware test | **none — nothing here has ever run on silicon** |
+| Hardware test | Steps 1-3 and 5 of §11.2 pass: power, SWD, blink, USB enumeration, `info`, `flash id` (`EF 40 19` ×4), `flash banktest`, audio (1 kHz sine on both speakers). External flash direct mode needs a slow clock (`DIRECT_CLKDIV` = 30); at clkdiv 3 reads come back with bits smeared (`FF 60 1D`). The codec only outputs sound on the DAC_L3/R3 path (reg 41 = 0x50); the DAC_L1/R1 mixer path stays silent. Cartridge not yet tested |
 
 Not installed, and not needed for the J-Link flow: `picotool`, `probe-rs`,
 `elf2uf2-rs`.
@@ -416,7 +439,14 @@ Check in this order:
     took (a fallback warning is logged if it did not).
   * Only then look at audio. Silence with everything else healthy usually means
     the PLL did not lock — the classic cause is writing the PLL registers before
-    BCLK runs, or writing `0x22` instead of `0xA2` to register 102.
+    BCLK runs, or writing `0x22` instead of `0xA2` to register 102. On this
+    board it turned out to be the DAC routing (reg 41, see §7).
+  * `./upload.py audio regs` dumps the codec registers and `audio regw reg val
+    ...` writes them at runtime, without reflashing. Useful checks: reg 94
+    (module power status), reg 36 bit 7 (PGA gain applied - it only gets there
+    if the codec clock runs), and the analog bypass `regw 19 0x04 15 0x60 81
+    0x80`, which sends the open LINE1LP input through the PGA to LEFT_LOP and
+    proves the output stage without the DAC.
   * The amplifiers stay shut down (GPIO33 low) until the DAC is unmuted; if you
     hear a loud pop at start-up, that ordering has been broken.
 
@@ -436,24 +466,21 @@ GPIO39 drives the status LED.
 ## 12. Known risks and unverified assumptions
 
 Listed worst-first. None of these are known to be wrong; they are the places
-where being wrong would be expensive.
+where being wrong would be expensive. Power, USB, the external flash array and
+audio run on hardware now (§11.1); the cartridge side has not.
 
-1. **Nothing has run on hardware.** Everything below follows from that.
-2. **PIO I²S is untested.** The program is embassy's structure with the two
-   side-set bits swapped, because this board has WCLK on GPIO44 and BCLK on
-   GPIO45 while the stock driver expects the opposite order. If the audio comes
-   out as noise, suspect this first — swapping `side 0b10`/`0b01` back is a
-   two-line experiment.
-3. **The codec PLL divider depends on the frame length.** R=2 is right for a
+1. **The cartridge path is untested** - PB6 link, level shifters, bus timing
+   and the scrambler (§11.2 steps 6-7).
+2. **The codec PLL divider depends on the frame length.** R=2 is right for a
    32-BCLK frame. If the PIO program is ever changed to 64 BCLK, register 11
    must become 0x01.
-4. **Cartridge bus timing is open-loop.** The delays in `cart.rs` are generous
+3. **Cartridge bus timing is open-loop.** The delays in `cart.rs` are generous
    against the SST39SF040's 40 ns minimums, but the level shifters add delay and
    nothing has been scoped.
-5. **JLC rotations may not match KiCad's** for polarised parts: D1/D2, J5, U3,
+4. **JLC rotations may not match KiCad's** for polarised parts: D1/D2, J5, U3,
    the four WSON flash chips, the TPA2005D1s. Check the preview after uploading
    the CPL.
-6. **RP2350-E9**: there is a documented GPIO erratum about pads used as
+5. **RP2350-E9**: there is a documented GPIO erratum about pads used as
    high-impedance inputs holding a weak pull-down. It could matter for the
    cartridge bus when the shifters are in high-Z. Worth reading the errata
    against the silicon stepping actually received.
@@ -518,8 +545,37 @@ These cost real time during the design. A future session should know them.
 
 ## 15. Open work
 
-- [ ] Bring-up per §11, which will produce the real TODO list
-- [ ] Verify the PIO I²S output and the codec register sequence on hardware
+- [ ] Bring-up per §11: steps 1-5, 8 and 9 pass; the cartridge (steps 6-7) is
+      untested
+- [ ] **External flash runs at ~5 MHz instead of ~50 MHz.** At `DIRECT_CLKDIV`
+      = 3 (153.6 / 3 = 51.2 MHz SCK) every bit that follows a `1` reads back as
+      `1` (JEDEC ID `FF 60 1D` instead of `EF 40 19`): the QMI samples before
+      SO has fallen. Two things are wrong at that speed. The plain Read Data
+      command (`13h`, like `03h`) is only specified to fR = 50 MHz, so 51.2 MHz
+      is out of spec for it anyway - use Fast Read (`0Ch` with a dummy byte,
+      133 MHz) for speed. But JEDEC ID (`9Fh`, rated to 133 MHz) failed too, so
+      the sampling timing is also marginal: `DIRECT_CSR.RXDELAY` is 0, and SO
+      is shared by four flash chips plus the internal stacked flash behind
+      series resistors R14-R19, so its edges are slow. Next step: sweep
+      `clkdiv` and `rxdelay` with `flash id` / `flash banktest`, then move reads
+      to `0Ch`
+- [ ] **Codec DAC_L1/R1 mixer path is silent** (reg 41 = 0x00, reg 82/92 =
+      0x80). Unexplained; the direct DAC_L3/R3 path (reg 41 = 0x50) is used
+      instead, which loses the per-path analog volume of regs 82/92 (the
+      digital volume in 43/44 still works)
+- [ ] Audio distortion after the codec: a two-tone chord recorded from the
+      speakers carries odd-order products 17-22 dB down, while C31 on the scope
+      shows a clean two-tone signal. Source is the TPA2005D1 stage or the
+      speakers; not investigated
+- [ ] Maximum loudness is modest: the amps run at a gain of 2 (150 kΩ input
+      resistors R21-R24). Lower those if more level is needed
+- [ ] The 4-byte length of `AudioPlaySram` is read into `buf[0..4]`, which
+      overwrites the first stereo frame of the SRAM clip
+- [ ] Once, a clip played correctly from SRAM right after a reflash, which
+      should have cleared the buffer (`.bss`). Unexplained
+- [ ] `cart::init` enables the level shifters (`SHIFT_OE` low) at boot, so the
+      address and control lines drive the cartridge port even with no
+      cartridge inserted. Consider keeping them high-Z until `CartEnable`
 - [ ] Measure actual programming throughput and compare against the ~7-10 s
       estimate for a full 512 KB cartridge
 - [ ] Through-hole headers J1-J4 and the speaker headers LS1/LS2 (1x02, 2.54 mm)

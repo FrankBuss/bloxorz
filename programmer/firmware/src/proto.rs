@@ -47,6 +47,9 @@ pub enum Cmd {
     AudioPlayFlash = 0x32,
     AudioStop = 0x33,
     AudioCodecInit = 0x34,
+    AudioVolume = 0x35,
+    AudioCodecRead = 0x36,
+    AudioCodecWrite = 0x37,
 
     Bootsel = 0x40,
 }
@@ -73,6 +76,9 @@ impl Cmd {
             0x32 => AudioPlayFlash,
             0x33 => AudioStop,
             0x34 => AudioCodecInit,
+            0x35 => AudioVolume,
+            0x36 => AudioCodecRead,
+            0x37 => AudioCodecWrite,
             0x40 => Bootsel,
             _ => return None,
         })

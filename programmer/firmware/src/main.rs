@@ -22,13 +22,14 @@ use defmt::{info, warn};
 use embassy_executor::Spawner;
 use embassy_futures::join::join;
 use embassy_rp::bind_interrupts;
+use embassy_rp::gpio::{Level, Output};
 use embassy_rp::peripherals::USB;
 use embassy_rp::usb::{Driver, InterruptHandler};
 use embassy_usb::class::cdc_acm::{CdcAcmClass, State};
 use embassy_usb::driver::EndpointError;
 use embassy_usb::{Builder, Config};
 use proto::{Cmd, Status, MAX_PAYLOAD, SYNC_REQ, SYNC_RSP};
-use static_cell::StaticCell;
+use static_cell::{ConstStaticCell, StaticCell};
 use {defmt_rtt as _, panic_probe as _};
 
 bind_interrupts!(struct Irqs {
@@ -42,7 +43,9 @@ bind_interrupts!(struct Irqs {
 /// cartridge and hold an SRAM audio clip at the same time, which is fine - and
 /// it keeps 264 KiB of the RP2354B's 520 KiB free for everything else.
 const BUF_LEN: usize = 256 * 1024;
-static BUFFER: StaticCell<[u8; BUF_LEN]> = StaticCell::new();
+// ConstStaticCell, not StaticCell: StaticCell::init builds the array on the
+// stack first, and 256 KiB of stack runs straight through the other statics.
+static BUFFER: ConstStaticCell<[u8; BUF_LEN]> = ConstStaticCell::new([0; BUF_LEN]);
 
 #[unsafe(link_section = ".bi_entries")]
 #[used]
@@ -53,7 +56,7 @@ pub static PICOTOOL_ENTRIES: [embassy_rp::binary_info::EntryAddr; 3] = [
 ];
 
 #[embassy_executor::main(executor = "embassy_rp::executor::Executor", entry = "cortex_m_rt::entry")]
-async fn main(_spawner: Spawner) {
+async fn main(spawner: Spawner) {
     // 153.6 MHz rather than the 150 MHz default: it makes the I2S PIO divider
     // exactly 50, so BCLK has no dither for the codec's PLL to track.
     let mut cfg = embassy_rp::config::Config::default();
@@ -63,14 +66,15 @@ async fn main(_spawner: Spawner) {
         warn!("153.6 MHz unavailable, falling back to the default clock");
     }
     let p = embassy_rp::init(cfg);
-    let buf: &'static mut [u8; BUF_LEN] = BUFFER.init([0; BUF_LEN]);
+    spawner.spawn(heartbeat(Output::new(p.PIN_39, Level::Low)).unwrap());
+    let buf: &'static mut [u8; BUF_LEN] = BUFFER.take();
 
     cart::init();
     if let Err(e) = extflash::init() {
         warn!("external flash init failed: {:?}", defmt::Debug2Format(&e));
     }
     let mut codec = audio::Audio::new(
-        p.I2C0, p.PIN_40, p.PIN_41, p.PIO0, p.PIN_43, p.PIN_44, p.PIN_45, p.PIN_42, p.DMA_CH0, Irqs,
+        p.I2C0, p.PIN_40, p.PIN_41, p.PIO0, p.PIN_43, p.PIN_44, p.PIN_45, p.PIN_42, p.DMA_CH0, p.DMA_CH1, Irqs,
     );
 
     // ---- USB ----
@@ -110,14 +114,41 @@ async fn main(_spawner: Spawner) {
     join(usb_fut, proto_fut).await;
 }
 
+/// Status LED at 1 Hz. It stops if the firmware faults or the executor hangs.
+#[embassy_executor::task]
+async fn heartbeat(mut led: Output<'static>) {
+    loop {
+        led.toggle();
+        embassy_time::Timer::after_millis(500).await;
+    }
+}
+
 type Cdc<'d> = CdcAcmClass<'d, Driver<'d, USB>>;
 
-async fn read_exact<'d>(class: &mut Cdc<'d>, mut out: &mut [u8]) -> Result<(), EndpointError> {
-    let mut pkt = [0u8; 64];
+/// Unconsumed bytes of the last USB packet. One packet can hold the end of one
+/// field and the start of the next, so leftovers must survive between reads.
+struct Rx {
+    pkt: [u8; 64],
+    pos: usize,
+    len: usize,
+}
+
+impl Rx {
+    const fn new() -> Self {
+        Rx { pkt: [0; 64], pos: 0, len: 0 }
+    }
+}
+
+async fn read_exact<'d>(class: &mut Cdc<'d>, rx: &mut Rx, mut out: &mut [u8]) -> Result<(), EndpointError> {
     while !out.is_empty() {
-        let n = class.read_packet(&mut pkt).await?;
-        let n = core::cmp::min(n, out.len());
-        out[..n].copy_from_slice(&pkt[..n]);
+        if rx.pos == rx.len {
+            rx.len = class.read_packet(&mut rx.pkt).await?;
+            rx.pos = 0;
+            continue;
+        }
+        let n = core::cmp::min(rx.len - rx.pos, out.len());
+        out[..n].copy_from_slice(&rx.pkt[rx.pos..rx.pos + n]);
+        rx.pos += n;
         out = &mut out[n..];
     }
     Ok(())
@@ -149,38 +180,72 @@ async fn respond<'d>(class: &mut Cdc<'d>, status: Status, payload: &[u8]) -> Res
     write_all(class, &crc).await
 }
 
+/// Where an `AudioLoadSram` payload went: it is read straight to its offset,
+/// because the payload buffer and the PCM buffer are the same memory.
+#[derive(Copy, Clone, PartialEq)]
+enum Sram {
+    NotLoad,
+    Placed,
+    OutOfRange,
+}
+
 /// Read one request frame. Resynchronises by scanning for the sync bytes.
 async fn read_frame<'d>(
     class: &mut Cdc<'d>,
+    rx: &mut Rx,
     buf: &mut [u8],
-) -> Result<(u8, usize, bool), EndpointError> {
+) -> Result<(u8, usize, bool, Sram), EndpointError> {
     // sync
     let mut b = [0u8; 1];
     loop {
-        read_exact(class, &mut b).await?;
+        read_exact(class, rx, &mut b).await?;
         if b[0] != SYNC_REQ[0] {
             continue;
         }
-        read_exact(class, &mut b).await?;
+        read_exact(class, rx, &mut b).await?;
         if b[0] == SYNC_REQ[1] {
             break;
         }
     }
     let mut head = [0u8; 5];
-    read_exact(class, &mut head).await?;
+    read_exact(class, rx, &mut head).await?;
     let cmd = head[0];
     let len = u32::from_le_bytes([head[1], head[2], head[3], head[4]]) as usize;
     if len > buf.len() {
-        return Ok((cmd, 0, false)); // caller answers BadLen
+        return Ok((cmd, 0, false, Sram::NotLoad)); // caller answers BadLen
     }
-    read_exact(class, &mut buf[..len]).await?;
-    let mut crc_bytes = [0u8; 4];
-    read_exact(class, &mut crc_bytes).await?;
     let mut crc = proto::Crc32::new();
     crc.update(&head);
-    crc.update(&buf[..len]);
+    let mut sram = Sram::NotLoad;
+    if cmd == Cmd::AudioLoadSram as u8 && len >= 4 {
+        // offset:u32, then the PCM itself, written in place
+        let mut off = [0u8; 4];
+        read_exact(class, rx, &mut off).await?;
+        crc.update(&off);
+        let (off, n) = (u32::from_le_bytes(off) as usize, len - 4);
+        if off + n <= buf.len() {
+            read_exact(class, rx, &mut buf[off..off + n]).await?;
+            crc.update(&buf[off..off + n]);
+            sram = Sram::Placed;
+        } else {
+            let mut left = n;
+            let mut scratch = [0u8; 64];
+            while left > 0 {
+                let k = left.min(scratch.len());
+                read_exact(class, rx, &mut scratch[..k]).await?;
+                crc.update(&scratch[..k]);
+                left -= k;
+            }
+            sram = Sram::OutOfRange;
+        }
+    } else {
+        read_exact(class, rx, &mut buf[..len]).await?;
+        crc.update(&buf[..len]);
+    }
+    let mut crc_bytes = [0u8; 4];
+    read_exact(class, rx, &mut crc_bytes).await?;
     let ok = crc.finish() == u32::from_le_bytes(crc_bytes);
-    Ok((cmd, len, ok))
+    Ok((cmd, len, ok, sram))
 }
 
 fn u32_at(b: &[u8], off: usize) -> u32 {
@@ -192,8 +257,9 @@ async fn serve<'d>(
     buf: &mut [u8; BUF_LEN],
     codec: &mut audio::Audio<'_>,
 ) -> Result<(), EndpointError> {
+    let mut rx = Rx::new();
     loop {
-        let (cmd_byte, len, crc_ok) = read_frame(class, buf).await?;
+        let (cmd_byte, len, crc_ok, sram) = read_frame(class, &mut rx, buf).await?;
         if !crc_ok {
             respond(class, Status::BadCrc, &[]).await?;
             continue;
@@ -391,17 +457,11 @@ async fn serve<'d>(
 
             // offset:u32 followed by PCM data, accumulated into the SRAM buffer
             Cmd::AudioLoadSram => {
-                if payload_len < 4 {
-                    respond(class, Status::BadLen, &[]).await?;
-                } else {
-                    let off = u32_at(buf, 0) as usize;
-                    let n = payload_len - 4;
-                    if off + n > BUF_LEN {
-                        respond(class, Status::Range, &[]).await?;
-                    } else {
-                        buf.copy_within(4..payload_len, off);
-                        respond(class, Status::Ok, &[]).await?;
-                    }
+                // read_frame already put the PCM in place
+                match sram {
+                    Sram::Placed => respond(class, Status::Ok, &[]).await?,
+                    Sram::OutOfRange => respond(class, Status::Range, &[]).await?,
+                    Sram::NotLoad => respond(class, Status::BadLen, &[]).await?,
                 }
             }
 
@@ -437,6 +497,52 @@ async fn serve<'d>(
                 Ok(()) => respond(class, Status::Ok, &[]).await?,
                 Err(_) => respond(class, Status::FlashError, &[]).await?,
             },
+
+            Cmd::AudioVolume => {
+                if payload_len < 1 {
+                    respond(class, Status::BadLen, &[]).await?
+                } else {
+                    match codec.set_attenuation(buf[0]) {
+                        Ok(()) => respond(class, Status::Ok, &[]).await?,
+                        Err(_) => respond(class, Status::FlashError, &[]).await?,
+                    }
+                }
+            }
+
+            // reg:u8, count:u8 - read codec registers back, for bring-up
+            Cmd::AudioCodecRead => {
+                if payload_len < 2 {
+                    respond(class, Status::BadLen, &[]).await?
+                } else {
+                    let (first, count) = (buf[0], buf[1].min(128) as usize);
+                    let mut out = [0u8; 128];
+                    let mut ok = true;
+                    for (i, v) in out[..count].iter_mut().enumerate() {
+                        match codec.read_reg(first.wrapping_add(i as u8)) {
+                            Ok(b) => *v = b,
+                            Err(_) => ok = false,
+                        }
+                    }
+                    if ok {
+                        respond(class, Status::Ok, &out[..count]).await?
+                    } else {
+                        respond(class, Status::FlashError, &[]).await?
+                    }
+                }
+            }
+
+            // (reg:u8, val:u8)* - write codec registers, for bring-up
+            Cmd::AudioCodecWrite => {
+                let mut ok = payload_len % 2 == 0;
+                for pair in buf[..payload_len].chunks_exact(2) {
+                    ok &= codec.write_reg(pair[0], pair[1]).is_ok();
+                }
+                if ok {
+                    respond(class, Status::Ok, &[]).await?
+                } else {
+                    respond(class, Status::FlashError, &[]).await?
+                }
+            }
 
             Cmd::Bootsel => {
                 respond(class, Status::Ok, &[]).await?;

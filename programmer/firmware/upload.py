@@ -10,6 +10,7 @@ Everything goes over the board's USB CDC serial port:
     ./upload.py flash banktest              # check the '138 bank decode
     ./upload.py audio sram song.wav         # 256 KiB SRAM playback test
     ./upload.py audio flash 0 8000000       # stream from flash
+    ./upload.py audio volume -40            # DAC volume in dB, 0 to -63.5
     ./upload.py info
 
 The old PIC-based tool sent ASCII hex with one serial round trip per byte on the
@@ -40,7 +41,7 @@ CMD = {
     "cart_write": 0x15, "cart_read": 0x16,
     "flash_id": 0x20, "flash_erase": 0x21, "flash_write": 0x22, "flash_read": 0x23,
     "audio_load_sram": 0x30, "audio_play_sram": 0x31, "audio_play_flash": 0x32,
-    "audio_stop": 0x33, "audio_codec_init": 0x34,
+    "audio_stop": 0x33, "audio_codec_init": 0x34, "audio_volume": 0x35, "audio_codec_read": 0x36, "audio_codec_write": 0x37,
     "bootsel": 0x40,
 }
 
@@ -109,9 +110,17 @@ class Programmer:
             raise ProtocolError("response CRC mismatch")
         return status, payload
 
-    def cmd(self, name, payload=b"", expect_ok=True):
+    def cmd(self, name, payload=b"", expect_ok=True, timeout=None):
+        """`timeout` overrides the serial timeout for commands that only
+        answer when done, like a long erase or a playback."""
         self._send(CMD[name], payload)
-        status, data = self._recv()
+        saved = self.ser.timeout
+        if timeout is not None:
+            self.ser.timeout = timeout
+        try:
+            status, data = self._recv()
+        finally:
+            self.ser.timeout = saved
         if expect_ok and status != 0:
             raise ProtocolError(f"{name}: {STATUS.get(status, status)} {data.hex()}")
         return status, data
@@ -248,7 +257,9 @@ def flash_write(pr, path, addr=0):
     print(f"{path}: {len(data)} bytes -> flash 0x{addr:X}")
     print("erasing...", end="", flush=True)
     t0 = time.time()
-    pr.cmd("flash_erase", struct.pack("<II", addr, len(data)))
+    blocks = (addr + len(data) + 0xFFFF) // 0x10000 - addr // 0x10000
+    # W25Q256JV 64 KiB block erase: 2 s worst case each
+    pr.cmd("flash_erase", struct.pack("<II", addr, len(data)), timeout=10 + 2.5 * blocks)
     print(f" {time.time()-t0:.1f} s")
     started = time.time()
     for off in range(0, len(data), MAX_PAYLOAD):
@@ -301,7 +312,8 @@ def audio_flash(pr, addr, length):
     pr.cmd("audio_codec_init")
     print(f"streaming {length} bytes from flash 0x{addr:X} "
           f"({length/4/SAMPLE_RATE:.1f} s)")
-    pr.cmd("audio_play_flash", struct.pack("<II", addr, length))
+    pr.cmd("audio_play_flash", struct.pack("<II", addr, length),
+           timeout=10 + length / 4 / SAMPLE_RATE)
 
 
 # ---------------------------------------------------------------------------
@@ -341,6 +353,13 @@ def main():
     af.add_argument("length", type=lambda x: int(x, 0), nargs="?")
     af.add_argument("--file", help="upload this file first, then play it")
     a.add_parser("stop")
+    ar = a.add_parser("regs", help="dump codec registers (page 0)")
+    ar.add_argument("first", type=lambda x: int(x, 0), nargs="?", default=0)
+    ar.add_argument("count", type=lambda x: int(x, 0), nargs="?", default=110)
+    aw = a.add_parser("regw", help="write codec registers: reg val [reg val ...]")
+    aw.add_argument("pairs", type=lambda x: int(x, 0), nargs="+")
+    av = a.add_parser("volume", help="DAC volume, kept until reset (power-on -30 dB)")
+    av.add_argument("db", type=float, help="0 (loudest) to -63.5, in 0.5 dB steps")
 
     args = ap.parse_args()
     pr = Programmer(args.port)
@@ -401,6 +420,19 @@ def main():
             if not length:
                 sys.exit("give a length, or --file to upload one")
             audio_flash(pr, args.addr, length)
+        elif args.action == "regs":
+            _, d = pr.cmd("audio_codec_read", bytes([args.first, args.count]))
+            for i in range(0, len(d), 16):
+                row = " ".join(f"{b:02X}" for b in d[i:i + 16])
+                print(f"{args.first + i:3d}: {row}")
+        elif args.action == "regw":
+            if len(args.pairs) % 2:
+                sys.exit("give reg/value pairs")
+            pr.cmd("audio_codec_write", bytes(args.pairs))
+        elif args.action == "volume":
+            atten = max(0, min(127, round(-args.db * 2)))
+            pr.cmd("audio_volume", bytes([atten]))
+            print(f"volume {-atten / 2:.1f} dB")
         else:
             pr.cmd("audio_stop")
 

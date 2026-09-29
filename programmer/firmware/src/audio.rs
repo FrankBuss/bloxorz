@@ -48,12 +48,13 @@
 
 #![allow(dead_code)]
 
+use core::sync::atomic::AtomicU32;
 use crate::extflash;
 use crate::pins;
 use embassy_rp::dma;
 use embassy_rp::i2c::{self, I2c};
 use embassy_rp::interrupt;
-use embassy_rp::peripherals::{DMA_CH0, I2C0, PIN_40, PIN_41, PIN_42, PIN_43, PIN_44, PIN_45, PIO0};
+use embassy_rp::peripherals::{DMA_CH0, DMA_CH1, I2C0, PIN_40, PIN_41, PIN_42, PIN_43, PIN_44, PIN_45, PIO0};
 use embassy_rp::pio::{
     Common, Config, Direction, FifoJoin, LoadedProgram, Pio, ShiftConfig, ShiftDirection, StateMachine,
 };
@@ -115,12 +116,15 @@ static INIT: &[Step] = &[
     // ---- output stage, still silent ------------------------------------
     W(40, 0x80), // output common mode 1.65 V, soft-stepping on
     W(42, 0x6E), // pop reduction: 100 ms driver ramp, 4 ms steps, weak CM
-    W(41, 0x00), // DAC_L1 / DAC_R1 routing
+    // DAC_L3/R3: DACs straight to the line drivers. The default DAC_L1/R1
+    // path through the output mixer (regs 82/92) stays silent on this board
+    // although every register reads back as written.
+    W(41, 0x50),
     W(43, 0x80), // left DAC digital volume: muted, 0 dB
     W(44, 0x80), // right DAC digital volume: muted, 0 dB
-    // ---- route the DACs to the line outputs, kill every other path -----
-    W(82, 0x80), // DAC_L1 -> LEFT_LOP, 0 dB
-    W(92, 0x80), // DAC_R1 -> RIGHT_LOP, 0 dB
+    // ---- no mixer paths into the line outputs --------------------------
+    W(82, 0x00), // DAC_L1 -> LEFT_LOP off
+    W(92, 0x00), // DAC_R1 -> RIGHT_LOP off
     W(85, 0x00),
     W(89, 0x00),
     W(81, 0x00),
@@ -132,10 +136,12 @@ static INIT: &[Step] = &[
     W(86, 0x09), // LEFT_LOP:  0 dB, unmuted (D3=1), powered (D0=1)
     W(93, 0x09), // RIGHT_LOP: same. D3 polarity is inverted vs regs 43/44
     Delay(160),  // cover the 100 ms driver ramp configured in reg 42
-    W(43, 0x00), // unmute left DAC
-    W(44, 0x00), // unmute right DAC
-    Delay(5),    // digital volume soft-steps ~2.7 ms at 48 kHz
+    // unmuting (regs 43/44) happens in init_codec, at the stored volume
 ];
+
+/// Power-on DAC attenuation in 0.5 dB steps: -30 dB. The amps are 2x into
+/// the speakers, so 0 dB is the full ~1.4 W - never the default.
+const DEFAULT_ATTEN: u8 = 60;
 
 /// I2S output program with the side-set bits in this board's pin order.
 struct I2sProgram<'d> {
@@ -172,6 +178,10 @@ pub struct Audio<'d> {
     front: [u32; CHUNK],
     back: [u32; CHUNK],
     ready: bool,
+    /// Held only to reserve the channel; `silence_start` drives it directly.
+    _silence_ch: Peri<'d, DMA_CH1>,
+    /// DAC attenuation in 0.5 dB steps, 0 = 0 dB, 127 = -63.5 dB.
+    atten: u8,
 }
 
 impl<'d> Audio<'d> {
@@ -186,6 +196,7 @@ impl<'d> Audio<'d> {
         bclk: Peri<'d, PIN_45>,
         _din: Peri<'d, PIN_42>, // codec DOUT - unused, playback only
         dma_ch: Peri<'d, DMA_CH0>,
+        silence_ch: Peri<'d, DMA_CH1>,
         irqs: impl interrupt::typelevel::Binding<
                 <PIO0 as embassy_rp::pio::Instance>::Interrupt,
                 embassy_rp::pio::InterruptHandler<PIO0>,
@@ -195,6 +206,12 @@ impl<'d> Audio<'d> {
             > + Copy
             + 'd,
     ) -> Self {
+        // Both pins are driven through raw SIO below, which needs the pin muxed
+        // to SIO first - out of reset it is unconnected and its pad isolated.
+        // Amps off (R25 also pulls SHDN low), codec held in reset until init.
+        sio_output(pins::SPK_SHUTDOWN, false);
+        sio_output(pins::CODEC_RESET, false);
+
         let mut cfg = i2c::Config::default();
         cfg.frequency = 400_000;
         let i2c = I2c::new_blocking(i2c_periph, scl, sda, cfg);
@@ -233,10 +250,12 @@ impl<'d> Audio<'d> {
             front: [0; CHUNK],
             back: [0; CHUNK],
             ready: false,
+            _silence_ch: silence_ch,
+            atten: DEFAULT_ATTEN,
         }
     }
 
-    fn write_reg(&mut self, reg: u8, val: u8) -> Result<(), i2c::Error> {
+    pub fn write_reg(&mut self, reg: u8, val: u8) -> Result<(), i2c::Error> {
         self.i2c.blocking_write(CODEC_ADDR, &[reg, val])
     }
 
@@ -257,6 +276,9 @@ impl<'d> Audio<'d> {
         // BCLK/WCLK must be running before the PLL registers are written, and
         // they free-run from here on: silence is sent as zero samples rather
         // than by stopping the clocks, because the codec PLL is locked to BCLK.
+        // The PIO stalls - clocks included - whenever its FIFO runs dry, so an
+        // endless DMA keeps it fed with zeros whenever nothing is playing.
+        silence_start();
         self.sm.set_enable(true);
         Timer::after(Duration::from_millis(2)).await;
 
@@ -266,6 +288,10 @@ impl<'d> Audio<'d> {
                 Delay(ms) => Timer::after(Duration::from_millis(*ms)).await,
             }
         }
+        // Unmute at the stored volume, so a re-init never resets it to 0 dB.
+        self.write_reg(43, self.atten)?;
+        self.write_reg(44, self.atten)?;
+        Timer::after(Duration::from_millis(5)).await; // soft-step ~2.7 ms at 48 kHz
         amp_shutdown(false); // release the amplifiers last
         self.ready = true;
         Ok(())
@@ -280,31 +306,34 @@ impl<'d> Audio<'d> {
     /// Play PCM already sitting in RAM.
     pub async fn play_sram(&mut self, pcm: &[u8]) {
         self.ensure_ready().await;
+        silence_stop();
         let Self {
             sm, dma, front, back, ..
         } = self;
         let mut cur: &mut [u32; CHUNK] = front;
         let mut nxt: &mut [u32; CHUNK] = back;
 
+        // `start`/`pos` are byte offsets into `pcm`; `cur` holds the frames
+        // between them, one I2S word per frame.
+        let mut start = 0;
         let mut pos = fill_from_bytes(cur, pcm, 0);
-        while pos > 0 {
-            let words = ((pos.min(pcm.len()) - (pos - CHUNK.min(pos))) / BYTES_PER_FRAME).max(1);
-            let transfer = sm.tx().dma_push(dma, &cur[..words.min(CHUNK)], false);
+        while pos > start {
+            let frames = (pos - start) / BYTES_PER_FRAME;
+            let transfer = sm.tx().dma_push(dma, &cur[..frames], false);
             let next_pos = fill_from_bytes(nxt, pcm, pos);
             transfer.await;
             core::mem::swap(&mut cur, &mut nxt);
-            if next_pos == pos {
-                break;
-            }
+            start = pos;
             pos = next_pos;
         }
-        silence(sm, dma).await;
+        silence_start();
     }
 
     /// Stream from the external flash array. At 48 kHz stereo 16-bit the feed
     /// rate is 192 KiB/s, which the QSPI array supplies with room to spare.
     pub async fn play_flash(&mut self, addr: u64, len: u64) {
         self.ensure_ready().await;
+        silence_stop();
         let Self {
             sm, dma, front, back, ..
         } = self;
@@ -328,19 +357,22 @@ impl<'d> Audio<'d> {
             core::mem::swap(&mut cur, &mut nxt);
             have = got;
         }
-        silence(sm, dma).await;
+        silence_start();
     }
 
     pub fn stop(&mut self) {
         amp_shutdown(true);
     }
 
-    /// Runtime volume: 0 dB to -63.5 dB in 0.5 dB steps, soft-stepped by the
-    /// codec so it does not click.
-    pub fn set_volume_db(&mut self, db: f32) -> Result<(), i2c::Error> {
-        let atten = ((-db) * 2.0).clamp(0.0, 127.0) as u8;
-        self.write_reg(43, atten)?;
-        self.write_reg(44, atten)
+    /// Volume as DAC attenuation in 0.5 dB steps (0 = 0 dB, 127 = -63.5 dB),
+    /// soft-stepped by the codec so it does not click. Kept across re-inits.
+    pub fn set_attenuation(&mut self, atten: u8) -> Result<(), i2c::Error> {
+        self.atten = atten.min(127);
+        if self.ready {
+            self.write_reg(43, self.atten)?;
+            self.write_reg(44, self.atten)?;
+        }
+        Ok(())
     }
 }
 
@@ -374,11 +406,42 @@ fn read_chunk(raw: &mut [u8], pos: &mut u64, end: u64) -> usize {
     n
 }
 
-/// Push one buffer of zeros so the DAC settles on silence rather than on the
-/// last sample, while leaving the clocks running for the codec PLL.
-async fn silence(sm: &mut StateMachine<'_, PIO0, 0>, dma: &mut dma::Channel<'_>) {
-    let quiet = [0u32; 64];
-    sm.tx().dma_push(dma, &quiet, false).await;
+/// DMA channel that feeds zeros to the I2S state machine between playbacks.
+const SILENCE_CH: usize = 1;
+
+/// The one zero word the silence channel re-reads. Atomic so it lands in RAM:
+/// a plain static would sit in flash, which is unreadable while `extflash` has
+/// the QMI in direct mode.
+static ZERO: AtomicU32 = AtomicU32::new(0);
+
+/// Start an endless DREQ-paced DMA of zeros into the I2S TX FIFO, so BCLK and
+/// WCLK keep running and the DAC holds silence.
+fn silence_start() {
+    use embassy_rp::pac;
+    use embassy_rp::pac::dma::vals;
+    let ch = pac::DMA.ch(SILENCE_CH);
+    ch.read_addr().write_value(ZERO.as_ptr() as u32);
+    ch.write_addr().write_value(pac::PIO0.txf(0).as_ptr() as u32);
+    ch.trans_count().write(|w| {
+        w.set_mode(vals::TransCountMode::ENDLESS);
+        w.set_count(1);
+    });
+    ch.ctrl_trig().write(|w| {
+        w.set_treq_sel(vals::TreqSel::PIO0_TX0);
+        w.set_data_size(vals::DataSize::SIZE_WORD);
+        w.set_incr_read(false);
+        w.set_incr_write(false);
+        w.set_chain_to(SILENCE_CH as u8);
+        w.set_irq_quiet(true);
+        w.set_en(true);
+    });
+}
+
+/// Stop the silence DMA before a playback DMA takes over the FIFO.
+fn silence_stop() {
+    use embassy_rp::pac;
+    pac::DMA.chan_abort().write(|w| w.set_chan_abort(1 << SILENCE_CH));
+    while pac::DMA.ch(SILENCE_CH).ctrl_trig().read().busy() {}
 }
 
 /// `~SHDN` on both TPA2005D1s is active low: low shuts them down.
@@ -391,6 +454,27 @@ fn amp_shutdown(shutdown: bool) {
     } else {
         pac::SIO.gpio_out(1).value_set().write_value(m);
     }
+}
+
+/// Mux a bank-1 GPIO (32-47) to SIO as an output at the given level.
+fn sio_output(gpio: u8, high: bool) {
+    use embassy_rp::pac;
+    let m = 1u32 << (gpio - 32);
+    if high {
+        pac::SIO.gpio_out(1).value_set().write_value(m);
+    } else {
+        pac::SIO.gpio_out(1).value_clr().write_value(m);
+    }
+    pac::SIO.gpio_oe(1).value_set().write_value(m);
+    // Pad: ISO cleared, input and output enabled.
+    pac::PADS_BANK0.gpio(gpio as usize).write(|w| {
+        w.set_ie(true);
+        w.set_od(false);
+    });
+    pac::IO_BANK0
+        .gpio(gpio as usize)
+        .ctrl()
+        .write(|w| w.set_funcsel(pac::io::vals::Gpio0ctrlFuncsel::SIOB_PROC_0 as u8));
 }
 
 async fn codec_reset_pulse() {
