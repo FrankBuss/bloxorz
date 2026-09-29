@@ -277,6 +277,9 @@ rustup target add thumbv8m.main-none-eabihf     # not installed by default
 ./flash.sh --debug      # debug profile
 ./flash.sh some.elf     # flash an existing ELF
 cargo run --release     # same thing: the cargo runner calls flash.sh
+
+./usbflash.sh           # build release and flash over USB, no probe needed
+./usbflash.sh some.elf  # flash an existing ELF over USB
 ```
 
 Flashing goes through a **SEGGER J-Link / J-Trace** on the Tag-Connect
@@ -298,9 +301,14 @@ a way that looks like a dead board. V9.78 has `RP2350`, `RP2350_M33_0/1` and
 `RP2350_RV32_0/1`; `RP2350_M33_0` is verified against it. If the name is
 rejected, update the package rather than editing the script.
 
-USB BOOTSEL still works as a fallback — `./upload.py bootsel` calls the bootrom
-reboot, and a blank chip enters BOOTSEL by itself — but it is not needed when a
-probe is attached.
+**Over USB**, `usbflash.sh` converts the ELF with `elf2uf2.py` (256-byte UF2
+blocks, RP2350 ARM-secure family `0xE48BFF59`, `.data` taken at its flash load
+address), sends `./upload.py bootsel` so the running firmware reboots into the
+bootrom, copies the UF2 onto the `RP2350` drive (mounted with `udisksctl` if
+the desktop has not already), and waits for the programmer to re-enumerate. A
+full cycle takes about 7 s. It needs a firmware that still answers on USB; a
+blank chip enters BOOTSEL by itself, and anything else goes back to `flash.sh`
+over SWD.
 
 The RP2350 bootrom refuses to run an image without a valid IMAGE_DEF in the
 first 4 KB of flash. `embassy-rp` emits it automatically and `memory.x` provides
