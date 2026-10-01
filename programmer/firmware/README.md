@@ -3,10 +3,10 @@
 Firmware for the programmer board in `..` (KiCad project `programmer.kicad_pro`),
 plus `upload.py`, the host tool that drives it.
 
-Status: **code written, not yet run on hardware.** The cartridge bus sequences,
-the flash algorithms and the codec register sequence are all derived from working
-references (see §9) rather than guessed, but nothing here has been executed yet.
-§11 is the bring-up plan.
+Status: **USB, the external flash array, audio and the cartridge bus run on
+hardware.** The cartridge bus sequences, the flash
+algorithms and the codec register sequence are derived from working references
+(see §9). §11 is the bring-up plan.
 
 ---
 
@@ -104,14 +104,15 @@ direction so a host that loses framing can resynchronise by scanning.
 | Cmd | Name | Payload | Response |
 |---|---|---|---|
 | 0x01 | Ping | — | `"VXPROG"` |
-| 0x02 | Info | — | protocol, firmware, buffer size, cartridge size, flash size |
+| 0x02 | Info | — | protocol, firmware, buffer size, cartridge size, flash size, then the text of an init error if a block failed to come up |
 | 0x10 | CartId | — | manufacturer, device (expect `BF B7`) |
-| 0x11 | CartEnable | on:u8 | — |
-| 0x12 | CartBank | bank:u8 | — |
+| 0x11 | CartEnable | on:u8 | 8 × u16: PIC reply pulse widths in µs |
+| 0x12 | CartBank | bank:u8 | 8 × u16: PIC reply pulse widths in µs |
 | 0x13 | CartEraseChip | — | — |
 | 0x14 | CartEraseSector | addr:u32 | — |
 | 0x15 | CartWrite | addr:u32, data | CRC32 of the data programmed |
 | 0x16 | CartRead | addr:u32, len:u32 | data |
+| 0x17 | CartPic | cmd:u8, arg:u8 | 8 × u16: PIC reply pulse widths in µs |
 | 0x20 | FlashId | — | 4 × JEDEC ID |
 | 0x21 | FlashErase | addr:u32, len:u32 | — |
 | 0x22 | FlashWrite | addr:u32, data | CRC32 |
@@ -125,11 +126,20 @@ direction so a host that loses framing can resynchronise by scanning.
 | 0x36 | AudioCodecRead | reg:u8, count:u8 | register values |
 | 0x37 | AudioCodecWrite | (reg:u8, val:u8)* | — |
 | 0x40 | Bootsel | — | — (reboots into USB BOOTSEL) |
+| 0x50 | MidiSend | bytes | — (sent on the MIDI output) |
 
 Status: 0 ok, 1 bad CRC, 2 unknown command, 3 bad length, 4 cartridge timeout,
-5 verify failed, 6 wrong cartridge ID, 7 busy, 8 out of range, 9 flash error.
+5 verify failed, 6 wrong cartridge ID, 7 busy, 8 out of range, 9 flash error,
+10 hardware init failed (payload: which block and why).
+
+Nothing in the firmware panics or waits without a bound: PIO programs are
+loaded with the fallible API, a block that fails to initialise is reported by
+`info` and by every command that needs it, every wait on the cartridge has a
+timeout, and the programmer runs without a cartridge inserted.
 
 `Status::CartVerify` carries `addr:u32, wrote:u8, read:u8` — the first mismatch.
+`Status::CartTimeout` from `CartWrite` carries `addr:u32, read:u8` — the byte
+whose DQ7 never matched and what it read.
 
 ### Why this is faster than the PIC programmer
 
@@ -147,23 +157,24 @@ per 256-byte page ≈ 3.5 min for 128 MB), not by USB.
 
 ## 5. Cartridge programming
 
-**Chip:** SST39SF040, 512 KB, 5 V, ID `BF B7`, 4 KB sectors.
+**Chip:** SST39SF040, 512 KB, 5 V, ID `BF B7`, 4 KB sectors. The Vectrex bus
+carries A0-A14, so the flash is addressed as 16 banks of 32 KB; A15-A18 come
+from the cartridge PIC's bank register.
 
-| Operation | Sequence (flash-internal addresses) |
+### 5.1 Cartridge wiring
+
+Flash `/OE` is the Vectrex `/OE` line and flash `/WE` is `R/W`. Flash `/CE` is
+the output of the cartridge PIC's CLC:
+
+| Mode | flash `/CE` |
 |---|---|
-| Software ID entry | `5555←AA`, `2AAA←55`, `5555←90` |
-| Software ID exit | `5555←AA`, `2AAA←55`, `5555←F0` |
-| Byte program | `5555←AA`, `2AAA←55`, `5555←A0`, `addr←data` |
-| Sector erase | `5555←AA`, `2AAA←55`, `5555←80`, `5555←AA`, `2AAA←55`, `SA←30` |
-| Chip erase | `5555←AA`, `2AAA←55`, `5555←80`, `5555←AA`, `2AAA←55`, `5555←10` |
+| normal (power-up) | `CE` ∨ `/OE` |
+| programmer mode | (`CE` ∨ `/OE`) ∧ `HALT` |
 
-Completion is detected by **DQ7 polling** with a timeout, not by the fixed 25 µs
-delay the PIC firmware used. Flash DQ7 lands on bus bit 7 (the data scrambler
-maps 7→7), so the comparison is direct.
+Programmer mode is switched on over PB6 (§5.4). Without it `HALT` is ignored
+and the flash can only be read, which is the cartridge's write protection.
 
-### 5.1 Address and data scrambling — do not skip this
-
-The cartridge PCB routes the Vectrex bus to the flash with permuted lines:
+The cartridge PCB routes the bus to the flash with permuted lines:
 
 ```
 flash addr bit → bus bit:  0→0  1→12  2→13  3→14  4→10  5→2  6→3  7→11
@@ -174,36 +185,165 @@ flash data bit → bus bit:  0→3  1→4   2→2   3→5   4→1   5→6  6→0
 Only the flash's own **command** addresses and **command** bytes are scrambled.
 The ROM payload is written **raw** — the bits land permuted in the cells, but the
 Vectrex reads them back through the same wiring, so the image is correct.
-Getting this backwards corrupts every command sequence silently.
 
-### 5.2 Bus cycles
+### 5.2 Flash commands and status
 
-Writes are **CE#-controlled**: `/WE` falls before `/CE` and `/CE` rises before
-`/WE`, so address and data are latched on the **rising edge of HALT**. `/OE` must
-stay high throughout. The original firmware relied on PIC instruction timing for
-the pulse widths; here the delays are explicit (`delay_ns`) because the RP2350 is
-far faster than the SST39SF040's 40 ns minimums.
+Sequences in flash-internal addresses and bytes, each line one write cycle:
 
-### 5.3 PB6 and bank switching
+| Operation | Sequence |
+|---|---|
+| Software ID entry | `5555←AA`, `2AAA←55`, `5555←90`, then read `0` = `BF`, `1` = `B7` |
+| Software ID exit | `5555←AA`, `2AAA←55`, `5555←F0` |
+| Byte program | `5555←AA`, `2AAA←55`, `5555←A0`, `addr←data` |
+| Sector erase | `5555←AA`, `2AAA←55`, `5555←80`, `5555←AA`, `2AAA←55`, `SA←30` |
+| Chip erase | `5555←AA`, `2AAA←55`, `5555←80`, `5555←AA`, `2AAA←55`, `5555←10` |
 
-PB6 is a one-wire, pulse-width-encoded link to the cartridge's PIC16F18323
-(10 kΩ pull-up, drive low / release high). Frame: `'V'`, command, argument, MSB
-first, after a ≥5 µs low start. Bit cell 30 µs: `1` = ~10 µs high then ~20 µs
-low, `0` = ~5 µs high then ~25 µs low.
+The flash is busy after the last write of a program or erase sequence and
+ignores commands until done. Completion is read from DQ7 (**Data# polling**):
 
-| Command | Value | Effect |
+| Operation | DQ7 while busy | DQ7 when done | Maximum time |
+|---|---|---|---|
+| byte program, read at the programmed address | complement of the written bit 7 | written bit 7 | 20 µs |
+| sector erase, read in the sector | 0 | 1 | 25 ms |
+| chip erase, read anywhere | 0 | 1 | 100 ms |
+
+DQ7 is valid from the rising edge of the sequence's last write. Flash DQ7 sits
+on bus bit 7 (the data scrambler maps 7→7), so the comparison is direct.
+Programming can only clear bits; a cell that already holds a 0 where a 1 is
+written never shows the written bit 7, which the firmware reports as a timeout
+with the address and the byte read.
+
+Implementation: `program_byte` polls up to 200 reads (≈ 400 µs); `sector_erase`
+and `chip_erase` poll every 1 ms up to 100 ms and 500 ms.
+
+### 5.3 Bus cycles
+
+Flash requirements: address and data set up ≥ 0 ns before the latching edge,
+`/CE` low ≥ 40 ns, data hold ≥ 0 ns, read data valid 70 ns after `/CE` low
+and 35 ns after `/OE` low. The level shifters add a few ns, the CLC tens of ns.
+
+The bus is a PIO state machine (PIO1, GPIO base 0, clock divider 8, 52 ns per
+cycle). Every FIFO word is one pin image for GPIO1..30, or a pin direction
+image when bit 0 is set, held for 16 cycles = 833 ns; bit 31 samples all
+inputs 11 cycles = 573 ns after the image is applied.
+
+| Cycle | Words, each held 833 ns |
+|---|---|
+| read | `CE` and `/OE` low with the address, sampled; then both high |
+| write (CE#-controlled) | `R/W` low with address and data; `HALT` and `CE` low; `HALT` and `CE` high; `R/W` high |
+
+In a write the address is latched when flash `/CE` falls (word 2, address
+stable since word 1) and the data when it rises (word 3, data stable until
+after word 4). Direction changes of the data bus never overlap: before the
+RP2350 drives, `DIR_D` turns U6 towards the cartridge in its own word; before
+U6 turns back, the RP2350 pins are inputs for a word.
+
+Programming throughput is 31 KB/s, so a full cartridge takes about 17 s.
+
+### 5.4 PB6 link to the cartridge PIC
+
+One wire, 10 kΩ pull-up on the cartridge, idle high, driven low and released.
+The PIC16F18323 (`mplabx/cartridge.X/main.c`) decodes it like this:
+
+**Frame, host to PIC:** the line low for at least 6 µs, then 24 bits MSB
+first: `'V'` (0x56), command, argument. A bit is one high pulse; its width is
+the value: **2 to 6 µs = 0, 7 to 12 µs = 1** (the PIC gates an 8 MHz timer
+with the line and compares with 50 counts = 6.25 µs; the timer's low byte
+wraps at 32 µs). After each pulse the line is low; the next rising edge must
+come within 256 µs. No gaps are needed between bytes.
+
+| Command | Argument | Reply |
 |---|---|---|
-| `CMD_SET_BANK` | 5 | low 4 bits drive flash A15–A18 → 16 banks × 32 KB |
-| `CMD_ENABLE_PROGRAMMER` | 6 | re-gates flash `/CE` so HALT can assert it |
+| 1 VERSION | — | firmware version |
+| 2 SET_EEPROM_ADR | address | echo |
+| 3 EEPROM_WRITE | byte | byte read back |
+| 4 EEPROM_READ | address | byte |
+| 5 SET_BANK | bank 0-15, bits 0-3 = A15-A18 | echo |
+| 6 ENABLE_PROGRAMMER | 1 on, 0 off | echo |
+| 7 UART_COUNT | — | bytes waiting in the MIDI receive buffer, up to 16 |
+| 8 UART_READ | — | next received byte, 0 when the buffer is empty |
+| other | — | 0 |
 
-The PIC understands other commands, but these two are all the programmer sends.
+**Reply, PIC to host:** the PIC waits for the line to be high, then 405 µs,
+then drives it low for 200 µs and sends one byte MSB first: **high 160 µs =
+1, high 80 µs = 0**, each followed by low to a 300 µs bit period; then it
+releases the line.
 
-**`ENABLE_PROGRAMMER` is mandatory before writing.** Normally the cartridge's CLC
-gates `/CE` from `/OE` alone, so the Vectrex can only ever read — that is the
-cartridge's write protection. With programmer mode on, `/CE = (RA0 | /OE) & HALT`,
-which is why pulling HALT low asserts `/CE` during a write.
+Implementation: a PIO state machine (PIO2, GPIO base 16, 0.5 µs per cycle)
+sends the start low of 17.5 µs, pulses of 3.5 µs (0) and 9 µs (1) with lows
+of 18 and 21.5 µs, holds the line low 33-37 µs after the last bit and high
+for 2 µs, then releases it and measures the 8 reply pulses in 1 µs steps
+(measured 82 µs and 162 µs). After the last pulse the PIC holds the line low
+for up to 220 µs before releasing it; the state machine waits for the release
+plus 16 µs before it starts the next frame, since a frame that starts inside
+that window is dropped by the PIC. `CartEnable`, `CartBank` and `CartPic`
+return the 8 widths; `none` means the cartridge did not answer within 50 ms,
+which includes the 5 ms an EEPROM write stalls the PIC.
+`./upload.py cart pic <cmd> <arg>` sends any command, `cart eeprom dump` and
+`cart eeprom clear` read and erase the PIC's 256 EEPROM bytes, which hold the
+game's high scores as two bytes per level; 0xFF means none. The 1T45 direction
+pin is switched in the same instruction as the RP2350 pin direction, so the
+line is never driven from both sides.
 
-The Vectrex bus only carries A0–A14, so each bank restarts at address 0.
+### 5.5 Cartridge PIC firmware
+
+`mplabx/cartridge.X` holds the PIC16F18323 source and the MCC configuration;
+the MCC generated files are not in git. `build.sh` builds `build/cartridge.hex`
+with XC8 and `flash.sh` programs it over a PICkit 4. RC1 drives flash A17, so
+the build removes the EUSART TX routing to it that MCC generates while the TX
+pin is assigned in `MyConfig.mc3`, and it leaves out the generated
+`interrupt_manager.c`: the interrupt routine is in `main.c`, where it also
+collects the EUSART receive bytes. Programming the PIC erases its EEPROM, which
+holds the high scores.
+
+### 5.6 MIDI input
+
+The cartridge's DIN-5 socket is a MIDI input: DIN pin 4 through 220 Ω into the
+6N135 opto LED, DIN pin 5 back; the opto output drives the PIC's EUSART RX at
+31250 baud, 8N1. Received bytes go to a 16-byte buffer that the Vectrex reads
+with the PB6 commands 7 and 8.
+
+The programmer sends MIDI from test point **J3 (GPIO38)**: a PIO state machine
+sources about 5 mA through the LED when the pin is high, so the line idles
+low and the data bits are inverted. Wiring for the test: **J3 to DIN pin 4,
+programmer GND to DIN pin 5**, nothing else.
+
+```bash
+./upload.py cart miditest       # sends 11 bytes, reads them back over PB6
+./upload.py midi send 90 3c 7f  # any bytes, hex
+```
+
+### 5.7 Flashing a cartridge
+
+Two steps per cartridge. The first is needed once, or after a change of the
+PIC firmware; the second whenever the ROM image changes.
+
+1. **PIC firmware.** Cartridge on its own, PICkit 4 on J1 with its pin 1 on
+   the square pad: J1 pins 1-5 are VPP, VDD, GND, PGD, PGC in the PICkit's
+   order, J1 pin 6 and PICkit pins 6-8 stay unconnected. The PICkit powers the
+   cartridge at 5 V. Do not press the cartridge button, it shorts VPP to
+   ground. Then:
+
+   ```bash
+   mplabx/cartridge.X/flash.sh
+   ```
+
+   Cartridges with the firmware from before this fix work in the Vectrex and
+   with the old programmer, but only banks 0-3 of the flash are reachable.
+
+2. **ROM image.** Cartridge in the programmer, programmer on USB:
+
+   ```bash
+   Vide/buildrom.sh      # only after a source or game list change
+   Vide/flashrom.sh      # Vide/bloxorz.bin, or pass another image
+   ```
+
+   This prints the PIC's reply to the enable command (`0x01`) and the flash
+   ID (`BF B7`), tests an EEPROM write and read,
+   clears the high scores, then erases, programs the 16 banks at 31 KB/s and
+   verifies them, about 25 s in all, and ends with `SUCCESS` or `FAILED`. A
+   `cartridge timeout` with an address means that byte's DQ7 never matched,
+   `verify failed` names the first mismatch.
 
 ## 6. Data flash array
 
@@ -352,7 +492,7 @@ firmware/
     main.rs          USB CDC, command dispatch
     proto.rs         framing, CRC32, command and status codes
     pins.rs          GENERATED pin map and scatter tables
-    cart.rs          cartridge bus, SST39SF040, scrambler, PB6 link
+    cart.rs          cartridge bus and PB6 link on PIO, SST39SF040, scrambler
     extflash.rs      128 MB array over QMI direct mode
     audio.rs         codec init and 48 kHz playback
 ```
@@ -417,13 +557,16 @@ must not be touched while it is) and that the 27 Ω series resistors R14–R19 a
 populated.
 
 **6. Cartridge.** Insert a known-good cartridge, then `./upload.py cart id`,
-which expects `BF B7` (SST39SF040).
+which prints the PIC's reply to the enable command (`0x01` expected, `none` =
+no answer) and expects `BF B7` (SST39SF040).
 Order of operations matters: the host sends `CartEnable(1)` first, because the
 cartridge's CLC gates the flash `/CE` until the on-cart PIC is put into
 programmer mode over PB6. If the ID reads as `FF FF` or garbage:
-  * PB6 link — that is the most likely culprit, since its pulse timing is
-    open-loop and nothing reads the PIC's reply. Scope GPIO31: a frame is
-    `'V'`, command, argument, MSB first, 30 µs bit cells, after a ≥5 µs low.
+  * A read that returns the last byte written (e.g. `90 90`, the ID-entry
+    command) means the flash never drove the bus: `CE`, `/OE` or the cartridge
+    itself.
+  * PB6 link — scope GPIO31 if the PIC does not reply: a frame is `'V'`,
+    command, argument, MSB first, after a ≥5 µs low.
   * `SHIFT_OE` (GPIO34) must be **low** to enable the level shifters.
   * `DIR_D` (GPIO16) direction versus the read/write phase.
   * The scrambler — if the ID comes back as a *permuted* version of `BF B7`,
@@ -477,9 +620,7 @@ Listed worst-first. None of these are known to be wrong; they are the places
 where being wrong would be expensive. Power, USB, the external flash array and
 audio run on hardware now (§11.1); the cartridge side has not.
 
-1. **The cartridge path is untested** - PB6 link, level shifters, bus timing
-   and the scrambler (§11.2 steps 6-7).
-2. **The codec PLL divider depends on the frame length.** R=2 is right for a
+1. **The codec PLL divider depends on the frame length.** R=2 is right for a
    32-BCLK frame. If the PIO program is ever changed to 64 BCLK, register 11
    must become 0x01.
 3. **Cartridge bus timing is open-loop.** The delays in `cart.rs` are generous

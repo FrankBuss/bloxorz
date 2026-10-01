@@ -30,3 +30,7 @@ programmer/bom/
 
 # Rust firmware build output
 programmer/firmware/target/
+
+# cartridge PIC firmware build output
+mplabx/cartridge.X/build/
+mplabx/cartridge.X/mcc_generated_files/

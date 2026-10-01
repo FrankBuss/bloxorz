@@ -38,17 +38,18 @@ CMD = {
     "ping": 0x01, "info": 0x02,
     "cart_id": 0x10, "cart_enable": 0x11, "cart_bank": 0x12,
     "cart_erase_chip": 0x13, "cart_erase_sector": 0x14,
-    "cart_write": 0x15, "cart_read": 0x16,
+    "cart_write": 0x15, "cart_read": 0x16, "cart_pic": 0x17,
     "flash_id": 0x20, "flash_erase": 0x21, "flash_write": 0x22, "flash_read": 0x23,
     "audio_load_sram": 0x30, "audio_play_sram": 0x31, "audio_play_flash": 0x32,
     "audio_stop": 0x33, "audio_codec_init": 0x34, "audio_volume": 0x35, "audio_codec_read": 0x36, "audio_codec_write": 0x37,
+    "midi_send": 0x50,
     "bootsel": 0x40,
 }
 
 STATUS = {
     0: "ok", 1: "bad CRC", 2: "unknown command", 3: "bad length",
     4: "cartridge timeout", 5: "verify failed", 6: "wrong cartridge flash ID",
-    7: "busy", 8: "address out of range", 9: "flash error",
+    7: "busy", 8: "address out of range", 9: "flash error", 10: "hardware init failed",
 }
 
 MAX_PAYLOAD = 128 * 1024
@@ -129,7 +130,8 @@ class Programmer:
     def info(self):
         _, d = self.cmd("info")
         ver, minor, buf, cart, flash_kib = struct.unpack("<BBIII", d[:14])
-        return dict(protocol=ver, firmware=minor, buffer=buf,
+        error = d[16:].decode(errors="replace")
+        return dict(error=error, protocol=ver, firmware=minor, buffer=buf,
                     cart_size=cart, flash_size=flash_kib * 1024)
 
 
@@ -148,19 +150,101 @@ def progress(done, total, started, what):
 # cartridge
 # ---------------------------------------------------------------------------
 
+# cartridge PIC commands over PB6
+PIC_VERSION, PIC_SET_EEPROM_ADR, PIC_EEPROM_WRITE, PIC_EEPROM_READ, PIC_SET_BANK, PIC_ENABLE_PROGRAMMER = 1, 2, 3, 4, 5, 6
+PIC_UART_COUNT, PIC_UART_READ = 7, 8
+EEPROM_SIZE = 256
+
+
+def pic_decode(data):
+    """The cartridge PIC's answer: 8 high-pulse widths in us, 160 = 1, 80 = 0. None if it did not answer."""
+    w = struct.unpack("<8H", data[:16]) if len(data) >= 16 else ()
+    if not w or not all(w):
+        return None
+    v = 0
+    for x in w:
+        v = v << 1 | (x > 120)
+    return v
+
+
+def pic_reply(data):
+    v = pic_decode(data)
+    if v is None:
+        return "PIC reply: none"
+    return f"PIC reply: 0x{v:02X}  (pulses {list(struct.unpack('<8H', data[:16]))} us)"
+
+
+def pic(pr, cmd, arg):
+    """Send one command to the cartridge PIC and return its reply byte."""
+    _, r = pr.cmd("cart_pic", bytes([cmd, arg]))
+    v = pic_decode(r)
+    if v is None:
+        sys.exit(f"no reply from the cartridge PIC to command {cmd}")
+    return v
+
+
+def eeprom_read(pr, addr):
+    return pic(pr, PIC_EEPROM_READ, addr)
+
+
+def eeprom_write(pr, addr, value):
+    """Write one EEPROM byte; the PIC answers with the byte read back."""
+    pic(pr, PIC_SET_EEPROM_ADR, addr)
+    got = pic(pr, PIC_EEPROM_WRITE, value)
+    if got != value:
+        sys.exit(f"EEPROM write failed at {addr}: wrote {value:02X}, read back {got:02X}")
+
+
+def eeprom_clear(pr):
+    """Erase the whole EEPROM to 0xFF, which the game shows as no high score."""
+    started = time.time()
+    for addr in range(EEPROM_SIZE):
+        eeprom_write(pr, addr, 0xFF)
+        progress(addr + 1, EEPROM_SIZE, started, "clearing EEPROM")
+
+
+def pic_check(pr):
+    """EEPROM write/read test on the last byte."""
+    for value in (0xA5, 0x5A):
+        eeprom_write(pr, EEPROM_SIZE - 1, value)
+        got = eeprom_read(pr, EEPROM_SIZE - 1)
+        if got != value:
+            sys.exit(f"EEPROM read failed: wrote {value:02X}, read {got:02X}")
+    print("EEPROM write/read ok")
+
+
+def midi_test(pr):
+    """Send bytes on the MIDI output and read them back from the PIC's receive buffer."""
+    pattern = bytes([0x90, 0x3C, 0x7F, 0x80, 0x3C, 0x00, 0xF8, 0x55, 0xAA, 0x00, 0xFF])
+    while pic(pr, PIC_UART_COUNT, 0):
+        pic(pr, PIC_UART_READ, 0)
+    pr.cmd("midi_send", pattern)
+    time.sleep(0.05)
+    n = pic(pr, PIC_UART_COUNT, 0)
+    got = bytes(pic(pr, PIC_UART_READ, 0) for _ in range(n))
+    print(f"MIDI sent     {pattern.hex(' ')}")
+    print(f"PIC received  {got.hex(' ') if got else 'nothing'}")
+    if got != pattern:
+        sys.exit("MIDI receive test failed")
+    print("MIDI receive ok")
+
+
 def cart_write(pr, path, block=MAX_PAYLOAD, verify_pass=True):
     data = open(path, "rb").read()
     if len(data) > CART_SIZE:
         sys.exit(f"{path} is {len(data)} bytes, cartridge holds {CART_SIZE}")
 
     print(f"{path}: {len(data)} bytes")
-    pr.cmd("cart_enable", b"\x01")          # let HALT gate flash /CE
+    _, r = pr.cmd("cart_enable", b"\x01")   # let HALT gate flash /CE
+    print(pic_reply(r))
     status, ident = pr.cmd("cart_id")
     print(f"cartridge flash ID: {ident[0]:02X} {ident[1]:02X}", end="")
     if tuple(ident[:2]) != (0xBF, 0xB7):
         print("  (expected BF B7 = SST39SF040)")
         sys.exit("unexpected flash, aborting")
     print("  (SST39SF040)")
+    pic_check(pr)
+    eeprom_clear(pr)
 
     print("chip erase...", end="", flush=True)
     t0 = time.time()
@@ -333,6 +417,15 @@ def main():
     cw.add_argument("--block", type=int, default=MAX_PAYLOAD)
     cr = c.add_parser("read"); cr.add_argument("file"); cr.add_argument("length", type=lambda x: int(x, 0))
     c.add_parser("id")
+    cp = c.add_parser("pic", help="send a command to the cartridge PIC: cmd arg")
+    cp.add_argument("cmd", type=lambda x: int(x, 0)); cp.add_argument("arg", type=lambda x: int(x, 0))
+    cee = c.add_parser("eeprom").add_subparsers(dest="eeprom", required=True)
+    cee.add_parser("dump", help="print the PIC's 256 EEPROM bytes")
+    cee.add_parser("clear", help="erase the high scores")
+    c.add_parser("miditest", help="send MIDI bytes on J3 and read them back from the PIC")
+
+    m = sub.add_parser("midi").add_subparsers(dest="action", required=True)
+    ms = m.add_parser("send", help="send bytes on the MIDI output, hex"); ms.add_argument("bytes", nargs="+")
     ce = c.add_parser("erase", help="erase one 4 KiB sector, or the whole chip")
     ce.add_argument("addr", type=lambda x: int(x, 0), nargs="?",
                     help="sector address; omit to erase the whole chip")
@@ -372,6 +465,8 @@ def main():
         print(f"host buffer   {i['buffer']//1024} KiB")
         print(f"cartridge     {i['cart_size']//1024} KiB")
         print(f"data flash    {i['flash_size']//1024//1024} MiB")
+        if i["error"]:
+            print(f"ERROR         {i['error']}")
         _, ids = pr.cmd("flash_id")
         for b in range(4):
             print(f"  bank {b}: {ids[b*3]:02X} {ids[b*3+1]:02X} {ids[b*3+2]:02X}")
@@ -394,11 +489,30 @@ def main():
                 pr.cmd("cart_erase_sector", struct.pack("<I", args.addr))
                 print(f"erased sector at 0x{args.addr:X}")
             pr.cmd("cart_enable", b"\x00")
+        elif args.action == "pic":
+            _, r = pr.cmd("cart_pic", bytes([args.cmd & 0xFF, args.arg & 0xFF]))
+            print(pic_reply(r))
+        elif args.action == "miditest":
+            midi_test(pr)
+        elif args.action == "eeprom":
+            if args.eeprom == "dump":
+                data = bytes(eeprom_read(pr, a) for a in range(EEPROM_SIZE))
+                for off in range(0, EEPROM_SIZE, 16):
+                    print(f"{off:02X}: {data[off:off+16].hex(' ')}")
+            else:
+                eeprom_clear(pr)
+                print()
         else:
-            pr.cmd("cart_enable", b"\x01")
+            _, r = pr.cmd("cart_enable", b"\x01")
+            print(pic_reply(r))
+            print(f"PIC firmware version {pic(pr, PIC_VERSION, 0)}")
             _, d = pr.cmd("cart_id")
             print(f"{d[0]:02X} {d[1]:02X}")
             pr.cmd("cart_enable", b"\x00")
+    elif args.group == "midi":
+        data = bytes(int(b, 16) for b in args.bytes)
+        pr.cmd("midi_send", data)
+        print(f"sent {data.hex(' ')}")
     elif args.group == "flash":
         if args.action == "write":
             flash_write(pr, args.file, args.addr)

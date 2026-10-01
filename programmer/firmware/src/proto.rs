@@ -36,6 +36,7 @@ pub enum Cmd {
     CartEraseSector = 0x14,
     CartWrite = 0x15,
     CartRead = 0x16,
+    CartPic = 0x17,
 
     FlashId = 0x20,
     FlashErase = 0x21,
@@ -52,6 +53,8 @@ pub enum Cmd {
     AudioCodecWrite = 0x37,
 
     Bootsel = 0x40,
+
+    MidiSend = 0x50,
 }
 
 impl Cmd {
@@ -67,6 +70,7 @@ impl Cmd {
             0x14 => CartEraseSector,
             0x15 => CartWrite,
             0x16 => CartRead,
+            0x17 => CartPic,
             0x20 => FlashId,
             0x21 => FlashErase,
             0x22 => FlashWrite,
@@ -80,6 +84,7 @@ impl Cmd {
             0x36 => AudioCodecRead,
             0x37 => AudioCodecWrite,
             0x40 => Bootsel,
+            0x50 => MidiSend,
             _ => return None,
         })
     }
@@ -98,6 +103,8 @@ pub enum Status {
     Busy = 7,
     Range = 8,
     FlashError = 9,
+    /// A hardware block did not initialise; the payload says which.
+    InitFailed = 10,
 }
 
 // ---------------------------------------------------------------------------

@@ -11,6 +11,8 @@
 #define CMD_EEPROM_READ 4
 #define CMD_SET_BANK 5
 #define CMD_ENABLE_PROGRAMMER 6
+#define CMD_UART_COUNT 7
+#define CMD_UART_READ 8
 
 // firmware version
 #define VERSION 4
@@ -22,6 +24,12 @@ volatile uint8_t cmd;
 volatile uint8_t arg;
 volatile uint16_t eepromAdr;
 volatile uint8_t timeout;
+
+// bytes received on the EUSART (MIDI in), ring buffer filled by the interrupt
+#define RX_SIZE 16
+volatile uint8_t rxBuf[RX_SIZE];
+volatile uint8_t rxHead;
+volatile uint8_t rxTail;
 
 uint8_t readByte()
 {
@@ -266,6 +274,17 @@ void readCommand()
                 }
                 writeByte(arg);
                 break;
+            case CMD_UART_COUNT:
+                writeByte((uint8_t)(rxHead - rxTail));
+                break;
+            case CMD_UART_READ:
+                if (rxHead != rxTail) {
+                    writeByte(rxBuf[rxTail % RX_SIZE]);
+                    rxTail++;
+                } else {
+                    writeByte(0);
+                }
+                break;
             case CMD_ENABLE_PROGRAMMER:
                 if (arg) {
                     // LC2G1POL not_inverted; LC2G2POL not_inverted; LC2G3POL not_inverted; LC2G4POL not_inverted; LC2POL not_inverted; 
@@ -292,10 +311,30 @@ void tmr0irq()
     timeout = 1;
 }
 
+void interrupt isr(void)
+{
+    uint8_t b;
+    if (PIE0bits.TMR0IE && PIR0bits.TMR0IF) {
+        TMR0_ISR();
+    }
+    if (PIE1bits.RCIE && PIR1bits.RCIF) {
+        if (RC1STAbits.OERR) {
+            RC1STAbits.CREN = 0;
+            RC1STAbits.CREN = 1;
+        }
+        b = RC1REG;
+        if ((uint8_t)(rxHead - rxTail) < RX_SIZE) {
+            rxBuf[rxHead % RX_SIZE] = b;
+            rxHead++;
+        }
+    }
+}
+
 int main()
 {
     TMR0_InterruptHandler = tmr0irq;
     SYSTEM_Initialize();
+    PIE1bits.RCIE = 1;
     INTCONbits.GIE = 1;
     INTCONbits.PEIE = 1;
     __delay_ms(100);

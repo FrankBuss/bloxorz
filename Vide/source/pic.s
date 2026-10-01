@@ -10,14 +10,11 @@ bit_counter: .blkb   1
 
 	.globl  _picWrite
 _picWrite:
-	pshs    d,dp,x
+	pshs    d,dp,x,y,u
 	stb data
 
 	lda #0hd0		; setup direct page to 0xd000
 	tfr a, dp
-
-	ldx #0xdf
-	ldy #0x9f
 
 	; start with low signal
 	lda #0xdf
@@ -26,7 +23,13 @@ _picWrite:
 	lda *CNTRL
 	anda #0xbf
 	sta *CNTRL
-	
+
+	; start condition: 40 us low
+	ldb #12
+startlow:
+	decb
+	bne startlow
+
 	; byte transfer starts with high signal
 	; 1 bit needs 45 cycles (= 30 us)
 	; bit 0 = 4 us high
@@ -66,14 +69,14 @@ loop4:
 	decb
 	bne loop4
 
-	puls d,dp,x,pc       ; restore registers from stack and return
+	puls d,dp,x,y,u,pc       ; restore registers from stack and return
 
 
 
 
 	.globl  _picRead
 _picRead:
-	pshs    d,dp,x
+	pshs    d,dp,x,y,u
 
 	lda #0hd0		; setup direct page to 0xd000
 	tfr a, dp
@@ -91,13 +94,14 @@ wh:
 	lda #8
 	sta bit_counter
 
-; wait until PB6 is set to low from the PIC
+; wait up to 25 ms until PB6 is set to low from the PIC, an EEPROM write delays the answer by 5 ms
 	lda #0
 	sta data
 	ldb #0h40
+	ldx #0
 wait_start:
-	inca
-	cmpa #255
+	leax 1,x
+	cmpx #2000
 	beq timeout
 	bitb *CNTRL
 	bne wait_start
@@ -135,10 +139,20 @@ less:
 	dec bit_counter
 	bne next_bit
 
+; wait until the PIC released the line after the last bit, so the next command can't collide with the reply
+	lda #0
+	ldb #0h40
+wait_release:
+	inca
+	cmpa #255
+	beq timeout
+	bitb *CNTRL
+	beq wait_release
+
 timeout:
 
-; return high time
-	puls d,dp,x       ; restore registers from stack
+; return the byte
+	puls d,dp,x,y,u       ; restore registers from stack
 	ldb data
 	rts
 
@@ -146,7 +160,7 @@ timeout:
 ; wait about 10 ms
 	.globl  _delay10ms
 _delay10ms:
-	pshs    d,dp,x
+	pshs    d,dp,x,y,u
 
     lda #12
 d1:    ldb #0
@@ -155,7 +169,7 @@ d2:    decb
     deca
     bne d1
 
-	puls d,dp,x,pc       ; restore registers from stack and return
+	puls d,dp,x,y,u,pc       ; restore registers from stack and return
 
 
 ; switches the cartridge to another bank and cold starts the game in it, B = bank

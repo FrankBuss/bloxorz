@@ -35,6 +35,8 @@ use {defmt_rtt as _, panic_probe as _};
 bind_interrupts!(struct Irqs {
     USBCTRL_IRQ => InterruptHandler<USB>;
     PIO0_IRQ_0  => embassy_rp::pio::InterruptHandler<embassy_rp::peripherals::PIO0>;
+    PIO1_IRQ_0  => embassy_rp::pio::InterruptHandler<embassy_rp::peripherals::PIO1>;
+    PIO2_IRQ_0  => embassy_rp::pio::InterruptHandler<embassy_rp::peripherals::PIO2>;
     DMA_IRQ_0   => embassy_rp::dma::InterruptHandler<embassy_rp::peripherals::DMA_CH0>;
 });
 
@@ -69,7 +71,10 @@ async fn main(spawner: Spawner) {
     spawner.spawn(heartbeat(Output::new(p.PIN_39, Level::Low)).unwrap());
     let buf: &'static mut [u8; BUF_LEN] = BUFFER.take();
 
-    cart::init();
+    let mut cart = cart::Cart::new(p.PIO1, p.PIO2, Irqs);
+    if let Err(e) = &cart {
+        warn!("cartridge init failed: {}", e);
+    }
     if let Err(e) = extflash::init() {
         warn!("external flash init failed: {:?}", defmt::Debug2Format(&e));
     }
@@ -107,7 +112,7 @@ async fn main(spawner: Spawner) {
         loop {
             class.wait_connection().await;
             info!("host connected");
-            let _ = serve(&mut class, buf, &mut codec).await;
+            let _ = serve(&mut class, buf, &mut codec, &mut cart).await;
             info!("host gone");
         }
     };
@@ -256,6 +261,7 @@ async fn serve<'d>(
     class: &mut Cdc<'d>,
     buf: &mut [u8; BUF_LEN],
     codec: &mut audio::Audio<'_>,
+    cart: &mut Result<cart::Cart<'_>, &'static str>,
 ) -> Result<(), EndpointError> {
     let mut rx = Rx::new();
     loop {
@@ -281,108 +287,16 @@ async fn serve<'d>(
                 out[2..6].copy_from_slice(&(MAX_PAYLOAD.min(BUF_LEN) as u32).to_le_bytes());
                 out[6..10].copy_from_slice(&cart::FLASH_SIZE.to_le_bytes());
                 out[10..14].copy_from_slice(&((extflash::TOTAL_SIZE >> 10) as u32).to_le_bytes());
-                respond(class, Status::Ok, &out).await?
-            }
-
-            Cmd::CartId => match cart::check_id() {
-                Ok(()) => respond(class, Status::Ok, &[cart::MFG_SST, cart::DEV_39SF040]).await?,
-                Err(cart::CartError::WrongId { mfg, dev }) => {
-                    // Still report what was actually read - that is the useful
-                    // part when a cartridge is missing or held in reset.
-                    respond(class, Status::CartWrongId, &[mfg, dev]).await?
-                }
-                Err(_) => respond(class, Status::CartTimeout, &[]).await?,
-            },
-
-            Cmd::CartEnable => {
-                let on = payload_len >= 1 && buf[0] != 0;
-                cart::enable_programmer(on).await;
-                if !on {
-                    // Park the bus so a cartridge can be swapped safely.
-                    cart::release();
-                }
-                respond(class, Status::Ok, &[]).await?
-            }
-
-            Cmd::CartBank => {
-                if payload_len < 1 {
-                    respond(class, Status::BadLen, &[]).await?;
-                } else {
-                    cart::set_bank(buf[0]).await;
-                    respond(class, Status::Ok, &[]).await?;
-                }
-            }
-
-            Cmd::CartEraseChip => match cart::chip_erase().await {
-                Ok(()) => respond(class, Status::Ok, &[]).await?,
-                Err(_) => respond(class, Status::CartTimeout, &[]).await?,
-            },
-
-            Cmd::CartEraseSector => {
-                if payload_len < 4 {
-                    respond(class, Status::BadLen, &[]).await?;
-                } else {
-                    match cart::sector_erase(u32_at(buf, 0)).await {
-                        Ok(()) => respond(class, Status::Ok, &[]).await?,
-                        Err(_) => respond(class, Status::CartTimeout, &[]).await?,
-                    }
-                }
-            }
-
-            // addr:u32 followed by the block. Programs, then verifies by
-            // reading back, and reports the first mismatch if there is one.
-            Cmd::CartWrite => {
-                if payload_len < 4 {
-                    respond(class, Status::BadLen, &[]).await?;
-                } else {
-                    let addr = u32_at(buf, 0) as u16;
-                    let (head, data) = buf[..payload_len].split_at(4);
-                    let _ = head;
-                    match cart::program_block(addr, data) {
-                        Ok(()) => {
-                            let crc = proto::crc32(data);
-                            respond(class, Status::Ok, &crc.to_le_bytes()).await?
-                        }
-                        Err(cart::CartError::Verify { addr, wrote, read }) => {
-                            let mut out = [0u8; 6];
-                            out[..4].copy_from_slice(&addr.to_le_bytes());
-                            out[4] = wrote;
-                            out[5] = read;
-                            respond(class, Status::CartVerify, &out).await?
-                        }
-                        Err(_) => respond(class, Status::CartTimeout, &[]).await?,
-                    }
-                }
-            }
-
-            // addr:u32, len:u32 -> raw bytes
-            Cmd::CartRead => {
-                if payload_len < 8 {
-                    respond(class, Status::BadLen, &[]).await?;
-                } else {
-                    let addr = u32_at(buf, 0) as u16;
-                    let n = u32_at(buf, 4) as usize;
-                    if n > buf.len() {
-                        respond(class, Status::Range, &[]).await?;
-                    } else {
-                        for i in 0..n {
-                            buf[i] = cart::bus_read(addr.wrapping_add(i as u16));
-                        }
-                        let (data, _) = buf.split_at(n);
-                        // borrow ends before respond takes &mut class
-                        let mut head = [0u8; 7];
-                        head[..2].copy_from_slice(&SYNC_RSP);
-                        head[2] = Status::Ok as u8;
-                        head[3..7].copy_from_slice(&(n as u32).to_le_bytes());
-                        let mut crc = proto::Crc32::new();
-                        crc.update(&head[2..7]);
-                        crc.update(data);
-                        let crc = crc.finish().to_le_bytes();
-                        write_all(class, &head).await?;
-                        write_all(class, data).await?;
-                        write_all(class, &crc).await?;
-                    }
-                }
+                // followed by the text of an init error, if there is one
+                let err: &[u8] = match cart {
+                    Ok(c) => c.midi_error().map_or(&[], |e| e.as_bytes()),
+                    Err(e) => e.as_bytes(),
+                };
+                let mut msg = [0u8; 112];
+                let n = err.len().min(msg.len() - 16);
+                msg[..16].copy_from_slice(&out);
+                msg[16..16 + n].copy_from_slice(&err[..n]);
+                respond(class, Status::Ok, &msg[..16 + n]).await?
             }
 
             Cmd::FlashId => {
@@ -549,6 +463,159 @@ async fn serve<'d>(
                 embassy_time::Timer::after(embassy_time::Duration::from_millis(50)).await;
                 embassy_rp::rom_data::reboot(0x0002, 100, 0, 0); // BOOTSEL
             }
+            Cmd::CartId
+            | Cmd::CartEnable
+            | Cmd::CartBank
+            | Cmd::CartEraseChip
+            | Cmd::CartEraseSector
+            | Cmd::CartWrite
+            | Cmd::CartRead
+            | Cmd::CartPic
+            | Cmd::MidiSend => {
+                let cart = match cart {
+                    Ok(c) => c,
+                    Err(e) => {
+                        respond(class, Status::InitFailed, e.as_bytes()).await?;
+                        continue;
+                    }
+                };
+                match cmd {
+                Cmd::CartId => match cart.check_id() {
+                    Ok(()) => respond(class, Status::Ok, &[cart::MFG_SST, cart::DEV_39SF040]).await?,
+                    Err(cart::CartError::WrongId { mfg, dev }) => {
+                        // Still report what was actually read - that is the useful
+                        // part when a cartridge is missing or held in reset.
+                        respond(class, Status::CartWrongId, &[mfg, dev]).await?
+                    }
+                    Err(_) => respond(class, Status::CartTimeout, &[]).await?,
+                },
+
+                // cmd:u8, arg:u8 -> the PIC's reply pulse widths
+                Cmd::CartPic => {
+                    if payload_len < 2 {
+                        respond(class, Status::BadLen, &[]).await?;
+                    } else {
+                        let reply = pic_reply_bytes(cart.pic_command(buf[0], buf[1]).await);
+                        respond(class, Status::Ok, &reply).await?;
+                    }
+                }
+
+                // bytes to send on the MIDI output
+                Cmd::MidiSend => {
+                    match cart.midi_send(&buf[..payload_len]) {
+                        Ok(()) => respond(class, Status::Ok, &[]).await?,
+                        Err(e) => respond(class, Status::InitFailed, e.as_bytes()).await?,
+                    }
+                }
+
+                Cmd::CartEnable => {
+                    let on = payload_len >= 1 && buf[0] != 0;
+                    let reply = pic_reply_bytes(cart.enable_programmer(on).await);
+                    if !on {
+                        // Park the bus so a cartridge can be swapped safely.
+                        cart.release();
+                    }
+                    respond(class, Status::Ok, &reply).await?
+                }
+
+                Cmd::CartBank => {
+                    if payload_len < 1 {
+                        respond(class, Status::BadLen, &[]).await?;
+                    } else {
+                        let reply = pic_reply_bytes(cart.set_bank(buf[0]).await);
+                        respond(class, Status::Ok, &reply).await?;
+                    }
+                }
+
+                Cmd::CartEraseChip => match cart.chip_erase().await {
+                    Ok(()) => respond(class, Status::Ok, &[]).await?,
+                    Err(_) => respond(class, Status::CartTimeout, &[]).await?,
+                },
+
+                Cmd::CartEraseSector => {
+                    if payload_len < 4 {
+                        respond(class, Status::BadLen, &[]).await?;
+                    } else {
+                        match cart.sector_erase(u32_at(buf, 0)).await {
+                            Ok(()) => respond(class, Status::Ok, &[]).await?,
+                            Err(_) => respond(class, Status::CartTimeout, &[]).await?,
+                        }
+                    }
+                }
+
+                // addr:u32 followed by the block. Programs, then verifies by
+                // reading back, and reports the first mismatch if there is one.
+                Cmd::CartWrite => {
+                    if payload_len < 4 {
+                        respond(class, Status::BadLen, &[]).await?;
+                    } else {
+                        let addr = u32_at(buf, 0) as u16;
+                        let (head, data) = buf[..payload_len].split_at(4);
+                        let _ = head;
+                        match cart.program_block(addr, data) {
+                            Ok(()) => {
+                                let crc = proto::crc32(data);
+                                respond(class, Status::Ok, &crc.to_le_bytes()).await?
+                            }
+                            Err(cart::CartError::Verify { addr, wrote, read }) => {
+                                let mut out = [0u8; 6];
+                                out[..4].copy_from_slice(&addr.to_le_bytes());
+                                out[4] = wrote;
+                                out[5] = read;
+                                respond(class, Status::CartVerify, &out).await?
+                            }
+                            Err(cart::CartError::ProgramTimeout { addr, read }) => {
+                                let mut out = [0u8; 5];
+                                out[..4].copy_from_slice(&addr.to_le_bytes());
+                                out[4] = read;
+                                respond(class, Status::CartTimeout, &out).await?
+                            }
+                            Err(_) => respond(class, Status::CartTimeout, &[]).await?,
+                        }
+                    }
+                }
+
+                // addr:u32, len:u32 -> raw bytes
+                Cmd::CartRead => {
+                    if payload_len < 8 {
+                        respond(class, Status::BadLen, &[]).await?;
+                    } else {
+                        let addr = u32_at(buf, 0) as u16;
+                        let n = u32_at(buf, 4) as usize;
+                        if n > buf.len() {
+                            respond(class, Status::Range, &[]).await?;
+                        } else {
+                            for i in 0..n {
+                                buf[i] = cart.bus_read(addr.wrapping_add(i as u16));
+                            }
+                            let (data, _) = buf.split_at(n);
+                            // borrow ends before respond takes &mut class
+                            let mut head = [0u8; 7];
+                            head[..2].copy_from_slice(&SYNC_RSP);
+                            head[2] = Status::Ok as u8;
+                            head[3..7].copy_from_slice(&(n as u32).to_le_bytes());
+                            let mut crc = proto::Crc32::new();
+                            crc.update(&head[2..7]);
+                            crc.update(data);
+                            let crc = crc.finish().to_le_bytes();
+                            write_all(class, &head).await?;
+                            write_all(class, data).await?;
+                            write_all(class, &crc).await?;
+                        }
+                    }
+                }
+                    _ => respond(class, Status::BadCmd, &[]).await?,
+                }
+            }
         }
     }
+}
+
+/// PIC reply pulse widths as little-endian u16s.
+fn pic_reply_bytes(widths: [u16; 8]) -> [u8; 16] {
+    let mut out = [0u8; 16];
+    for (i, w) in widths.iter().enumerate() {
+        out[2 * i..2 * i + 2].copy_from_slice(&w.to_le_bytes());
+    }
+    out
 }
