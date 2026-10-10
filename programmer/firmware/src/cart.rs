@@ -8,15 +8,13 @@
 //!   set. Bit 31 samples all 32 GPIOs into the RX FIFO 11 cycles after the
 //!   image is applied. A word is held 16 cycles; at clock divider 8 that is
 //!   573 ns to the sample and 833 ns per word.
-//! * **PIO2, GPIO base 16: PB6.** One word per frame (`'V'`, command,
-//!   argument). The state machine drives the start condition, the 24
-//!   pulse-width coded bits and the trailer at 0.5 us per cycle, releases the
-//!   line, then measures the 8 high pulses of the PIC's reply in 1 us steps
-//!   and pushes each width.
-//!
-//! * **PIO2 SM1: MIDI out on test point J3 (GPIO38).** 31250 baud 8N1; a
-//!   high pin sources the current through the cartridge's opto LED, so the
-//!   line idles low and the sender inverts the data bits.
+//! * **PIO1 SM1: PB6 sampler.** Shifts in PB6 once per microsecond, 32 samples
+//!   per word, for the PB6 trace.
+//! * **PIO2, GPIO base 16: PB6.** Three words per frame: the number of bits
+//!   minus 1, then `'V'`, `'X'`, command, argument, then the check byte. The
+//!   state machine drives the start condition, the 40 pulse-width coded bits
+//!   and the trailer at 0.5 us per cycle, releases the line, then measures the
+//!   8 high pulses of the PIC's reply in 1 us steps and pushes each width.
 //!
 //! Direction changes never overlap: an RP2350 pin becomes an output only
 //! after its level shifter has been turned towards the cartridge, and it
@@ -57,7 +55,7 @@ use embassy_rp::interrupt::typelevel::Binding;
 use embassy_rp::pac;
 use embassy_rp::peripherals::{PIO1, PIO2};
 use embassy_rp::pio::{
-    Config, Instance, InterruptHandler, LoadedProgram, Pio, ShiftConfig, ShiftDirection, StateMachine,
+    Config, FifoJoin, Instance, InterruptHandler, LoadedProgram, Pio, ShiftConfig, ShiftDirection, StateMachine,
 };
 use embassy_rp::pio_programs::clock_divider::calculate_pio_clock_divider;
 use embassy_rp::Peri;
@@ -82,17 +80,19 @@ pub const SECTOR_SIZE: u32 = 4096;
 pub const MFG_SST: u8 = 0xBF;
 pub const DEV_39SF040: u8 = 0xB7;
 
-/// MIDI output: test point J3 to DIN pin 4, GND to DIN pin 5.
-const MIDI_OUT: u8 = 38;
-const MIDI_BAUD: u32 = 31250;
+/// PB6 trace sample rate.
+const TRACE_HZ: u32 = 1_000_000;
+/// Longest wait for the samples of one trace.
+const TRACE_TIMEOUT: Duration = Duration::from_millis(100);
 
 // PIO2 runs with GPIO base 16, so its pins must be 16..47.
-const _: () = assert!(PB6 >= 16 && PB6 < 48 && DIR_PB6 >= 16 && DIR_PB6 < 48 && MIDI_OUT >= 16 && MIDI_OUT < 48);
+const _: () = assert!(PB6 >= 16 && PB6 < 48 && DIR_PB6 >= 16 && DIR_PB6 < 48);
 // Bus pins 1..30 are driven as one image on PIO1 with GPIO base 0.
 const _: () = assert!(ADDR_CTRL_MASK | DATA_MASK | (1 << DIR_D) == 0x7fff_fffe);
 
 /// One-wire control link to the cartridge's PIC16F18323.
-const PIC_ID: u8 = b'V';
+/// A frame is `'V'`, `'X'`, command, argument and the check byte command ^ argument ^ PIC_CHECK.
+const PIC_CHECK: u8 = 0xA5;
 pub const PIC_CMD_SET_BANK: u8 = 5;
 pub const PIC_CMD_ENABLE_PROGRAMMER: u8 = 6;
 
@@ -107,8 +107,6 @@ const DIRS_OUT: u32 = ADDR_CTRL_MASK | (1 << DIR_D);
 /// PB6 state machine: `set pindirs, 2` (PB6 input, DIR output) and `set pins, 0`.
 const PB6_SET_PINDIRS_IN: u16 = 0xE082;
 const PB6_SET_PINS_LOW: u16 = 0xE000;
-/// MIDI state machine: `set pindirs, 1`.
-const MIDI_SET_PINDIRS_OUT: u16 = 0xE081;
 
 #[derive(Copy, Clone, PartialEq, Debug)]
 pub enum CartError {
@@ -213,14 +211,12 @@ fn sio_hi_output(gpio: u8, high: bool) {
 
 pub struct Cart<'d> {
     bus: StateMachine<'d, PIO1, 0>,
+    trace: StateMachine<'d, PIO1, 1>,
     pb6: StateMachine<'d, PIO2, 0>,
-    /// None when its program did not fit next to the PB6 program; the reason is in `midi_error`.
-    midi: Option<StateMachine<'d, PIO2, 1>>,
-    midi_error: Option<&'static str>,
     pb6_cfg: Config<'d, PIO2>,
     _bus_prg: LoadedProgram<'d, PIO1>,
+    _trace_prg: LoadedProgram<'d, PIO1>,
     _pb6_prg: LoadedProgram<'d, PIO2>,
-    _midi_prg: Option<LoadedProgram<'d, PIO2>>,
     /// Level shifters enabled and the bus driven.
     attached: bool,
     /// Data pins are RP2350 outputs and U6 points at the cartridge.
@@ -241,7 +237,10 @@ impl<'d> Cart<'d> {
 
         // ---- bus: one word per pin image ----
         let Pio {
-            mut common, sm0: mut bus, ..
+            mut common,
+            sm0: mut bus,
+            sm1: mut trace,
+            ..
         } = Pio::new(pio1, irqs);
         let prg = pio::pio_asm!(
             ".wrap_target",
@@ -282,26 +281,44 @@ impl<'d> Cart<'d> {
         bus.set_config(&cfg);
         bus.set_enable(true);
 
+        // ---- PB6 sampler: one sample per cycle at 1 MHz, 32 per word, first sample in bit 0 ----
+        let prg = pio::pio_asm!(".wrap_target", "    in pins, 1", ".wrap");
+        let trace_prg = common
+            .try_load_program(&prg.program)
+            .map_err(|_| "trace program does not fit into PIO1")?;
+        let mut cfg = Config::default();
+        cfg.use_program(&trace_prg, &[]);
+        cfg.clock_divider = calculate_pio_clock_divider(TRACE_HZ);
+        cfg.fifo_join = FifoJoin::RxOnly;
+        cfg.shift_in = ShiftConfig {
+            threshold: 32,
+            direction: ShiftDirection::Right,
+            auto_fill: true,
+        };
+        let mut p = cfg.get_pins();
+        p.in_base = PB6;
+        unsafe { cfg.set_pins(p) };
+        trace.set_config(&cfg);
+
         // ---- PB6: one word per frame ----
         let Pio {
             mut common,
             sm0: mut pb6,
-            sm1: mut midi,
             ..
         } = Pio::new(pio2, irqs);
         let prg = pio::pio_asm!(
             ".wrap_target",
-            "    pull block",           // 'V', command, argument, MSB first
+            "    pull block",           // number of bits - 1
+            "    mov y, osr",
+            "    pull block",           // 'V', 'X', command, argument, MSB first
             "    set pins, 2",          // DIR high: RP -> cartridge, PB6 register low
             "    set pindirs, 3 [31]",  // PB6 drives low: start condition, 16 us
-            "    set y, 23",            // 24 bits
             "bit:",
+            "    pull ifempty block",   // the check byte after 32 bits
             "    out x, 1",
-            "    jmp !x zero",
-            "    set pins, 3   [17]",   // '1': high 9.5 us
-            "    jmp low",
-            "zero:",
-            "    set pins, 3    [6]",   // '0': high 3.5 us
+            "    set pins, 3    [5]",
+            "    jmp !x low",           // '0': high 3.5 us
+            "    nop           [11]",   // '1': high 9.5 us
             "low:",
             "    set pins, 2   [15]",
             "    nop           [15]",
@@ -316,11 +333,9 @@ impl<'d> Cart<'d> {
             "    wait 1 pin 0",
             "    mov x, ~null",
             "cnt:",
-            "    jmp pin cont",
-            "    jmp rdone",
-            "cont:",
-            "    jmp x-- cnt",          // 2 cycles = 1 us per count
-            "rdone:",
+            "    jmp x-- high",
+            "high:",
+            "    jmp pin cnt",          // 2 cycles = 1 us per count
             "    mov isr, ~x",
             "    push block",
             "    jmp y-- rbit",
@@ -348,50 +363,15 @@ impl<'d> Cart<'d> {
         unsafe { pb6_cfg.set_exec(e) };
         pb6.set_config(&pb6_cfg);
 
-        // ---- MIDI out: one word per byte, 8 cycles per bit ----
-        let prg = pio::pio_asm!(
-            ".wrap_target",
-            "    pull block",
-            "    set pins, 1     [7]",   // start bit: current on
-            "bitloop:",
-            "    out pins, 1     [6]",   // data bits, inverted by the sender
-            "    jmp !osre bitloop",
-            "    set pins, 0     [7]",   // stop bit and idle: no current
-            ".wrap",
-        );
-        let (midi, midi_prg, midi_error) = match common.try_load_program(&prg.program) {
-            Ok(midi_prg) => {
-                let mut midi_cfg = Config::default();
-                midi_cfg.use_program(&midi_prg, &[]);
-                midi_cfg.clock_divider = calculate_pio_clock_divider(8 * MIDI_BAUD);
-                midi_cfg.shift_out = ShiftConfig {
-                    threshold: 8,
-                    direction: ShiftDirection::Right,
-                    auto_fill: false,
-                };
-                let mut p = midi_cfg.get_pins();
-                p.out_base = MIDI_OUT;
-                p.out_count = 1;
-                p.set_base = MIDI_OUT;
-                p.set_count = 1;
-                unsafe { midi_cfg.set_pins(p) };
-                midi.set_config(&midi_cfg);
-                unsafe { midi.exec_instr(MIDI_SET_PINDIRS_OUT) };
-                midi.set_enable(true);
-                (Some(midi), Some(midi_prg), None)
-            }
-            Err(_) => (None, None, Some("MIDI program does not fit into PIO2 next to the PB6 program")),
-        };
 
         let mut this = Self {
             bus,
+            trace,
             pb6,
-            midi,
-            midi_error,
             pb6_cfg,
             _bus_prg: bus_prg,
+            _trace_prg: trace_prg,
             _pb6_prg: pb6_prg,
-            _midi_prg: midi_prg,
             attached: false,
             data_out: false,
         };
@@ -407,16 +387,8 @@ impl<'d> Cart<'d> {
         }
         pio_pad(PB6, pac::io::vals::Gpio0ctrlFuncsel::PIO2_0, false);
         pio_pad(DIR_PB6, pac::io::vals::Gpio0ctrlFuncsel::PIO2_0, false);
-        if this.midi.is_some() {
-            pio_pad_drive(MIDI_OUT, pac::io::vals::Gpio0ctrlFuncsel::PIO2_0, false, pac::pads::vals::Drive::_12M_A);
-        }
         this.attach();
         Ok(this)
-    }
-
-    /// Why the MIDI output is unavailable, if it is.
-    pub fn midi_error(&self) -> Option<&'static str> {
-        self.midi_error
     }
 
     // ---- bus words ----
@@ -612,12 +584,18 @@ impl<'d> Cart<'d> {
         self.pb6.set_enable(true);
     }
 
+    /// Queue one frame for the PB6 state machine.
+    fn pb6_frame(&mut self, cmd: u8, arg: u8) {
+        self.pb6.tx().push(39);
+        self.pb6.tx().push(u32::from_be_bytes([b'V', b'X', cmd, arg]));
+        self.pb6.tx().push(((cmd ^ arg ^ PIC_CHECK) as u32) << 24);
+    }
+
     /// Send one frame to the cartridge PIC and return the width of each of the
     /// 8 high pulses of its reply in us, 0 = none.
     pub async fn pic_command(&mut self, cmd: u8, arg: u8) -> [u16; 8] {
         self.attach();
-        let frame = (PIC_ID as u32) << 24 | (cmd as u32) << 16 | (arg as u32) << 8;
-        self.pb6.tx().push(frame);
+        self.pb6_frame(cmd, arg);
         let mut widths = [0u16; 8];
         let t0 = Instant::now();
         for w in widths.iter_mut() {
@@ -636,20 +614,39 @@ impl<'d> Cart<'d> {
         widths
     }
 
-    /// Send bytes on the MIDI output. One byte takes 320 us; a FIFO that does
-    /// not drain within 10 ms means the state machine is not running.
-    pub fn midi_send(&mut self, data: &[u8]) -> Result<(), &'static str> {
-        let midi = self.midi.as_mut().ok_or(self.midi_error.unwrap_or("MIDI output unavailable"))?;
-        for &b in data {
-            let t0 = Instant::now();
-            while midi.tx().full() {
-                if t0.elapsed() > Duration::from_millis(10) {
-                    return Err("MIDI output stalled");
+    /// Send a frame and sample PB6 once per microsecond, 8 samples per byte LSB first.
+    pub fn pic_trace(&mut self, cmd: u8, arg: u8, out: &mut [u8]) -> Result<(), &'static str> {
+        self.attach();
+        self.set_data_out(false);
+        self.trace.set_enable(false);
+        self.trace.restart();
+        self.trace.clear_fifos();
+        self.trace.rx().stalled();
+        self.trace.set_enable(true);
+        self.pb6_frame(cmd, arg);
+        let t0 = Instant::now();
+        let mut result = Ok(());
+        'words: for word in out.chunks_mut(4) {
+            let v = loop {
+                if let Some(v) = self.trace.rx().try_pull() {
+                    break v;
                 }
+                if t0.elapsed() > TRACE_TIMEOUT {
+                    result = Err("PB6 sampler delivered no data");
+                    break 'words;
+                }
+            };
+            for (b, s) in word.iter_mut().zip(v.to_le_bytes()) {
+                *b = s;
             }
-            midi.tx().push(!b as u32 & 0xFF);
         }
-        Ok(())
+        self.trace.set_enable(false);
+        // a full FIFO stops the sampler and leaves a gap in the samples
+        if self.trace.rx().stalled() {
+            result = Err("PB6 samples lost");
+        }
+        self.pb6_restart();
+        result
     }
 
     /// Put the cartridge into programmer mode. Until this is done the cartridge's

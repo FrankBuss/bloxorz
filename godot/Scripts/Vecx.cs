@@ -46,11 +46,73 @@ namespace Bloxorz
 
             vectrex.vecx_reset();
 
+            // godot --headless --path godot -- --dump-psg file.psg seconds
+            string[] args = OS.GetCmdlineUserArgs();
+            if (args.Length == 3 && args[0] == "--dump-psg")
+            {
+                DumpPsg(args[1], int.Parse(args[2]));
+                SetProcess(false);
+                GetTree().Quit();
+                return;
+            }
+
             vectrex.vecx_emu(vectrex.VECTREX_MHZ * 8); // skip intro
             vectrex.lines.Clear();
             vectrex.psg.sampleCount = 0;
 
             LoadContent();
+        }
+
+        // records the sound chip register writes of the first seconds after reset as a PSG file
+        // (16 byte header, register/value pairs, 0xFF per 1/50 s frame, 0xFD end), starting with
+        // the register state and the frame in which the game takes over from the BIOS
+        private void DumpPsg(string path, int seconds)
+        {
+            var frames = new List<List<(int, int)>>();
+            var current = new List<(int, int)>();
+            int first = -1;
+            vectrex.psgWriteHook = (r, v) => { if (r < 14) current.Add((r, v)); };
+            vectrex.cpu.cartExecuted = false;
+            for (int i = 0; i < seconds * 50; i++)
+            {
+                vectrex.vecx_emu(vectrex.VECTREX_MHZ / 50);
+                vectrex.lines.Clear();
+                vectrex.psg.sampleCount = 0;
+                frames.Add(current);
+                current = new List<(int, int)>();
+                if (first < 0 && vectrex.cpu.cartExecuted) first = i;
+            }
+            vectrex.psgWriteHook = null;
+            int last = frames.FindLastIndex(f => f.Count > 0);
+            if (first < 0 || last < first)
+            {
+                GD.PrintErr("the game did not start or wrote nothing to the sound chip");
+                return;
+            }
+            var state = new int[14];
+            for (int i = 0; i < first; i++)
+            {
+                foreach (var (r, v) in frames[i]) state[r] = v;
+            }
+            using var f = Godot.FileAccess.Open(path, Godot.FileAccess.ModeFlags.Write);
+            f.StoreBuffer(new byte[] { (byte)'P', (byte)'S', (byte)'G', 0x1a, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 });
+            for (int r = 0; r < 14; r++)
+            {
+                f.Store8((byte)r);
+                f.Store8((byte)state[r]);
+            }
+            f.Store8(0xff);
+            for (int i = first; i <= last; i++)
+            {
+                foreach (var (r, v) in frames[i])
+                {
+                    f.Store8((byte)r);
+                    f.Store8((byte)v);
+                }
+                f.Store8(0xff);
+            }
+            f.Store8(0xfd);
+            GD.Print($"{path}: {(last - first + 2) / 50.0:F1} s of sound chip writes from frame {first}");
         }
 
         private void LoadContent()

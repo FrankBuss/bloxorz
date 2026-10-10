@@ -19,6 +19,8 @@ namespace Bloxorz
 
         /* the sound chip registers */
         public int[] snd_regs = new int[16];
+        // called with register and value for every sound chip write
+        public Action<int, int> psgWriteHook;
         public int snd_select;
         public E8910 psg = new E8910();
         private int psgCycles;
@@ -115,6 +117,7 @@ namespace Bloxorz
                     {
                         snd_regs[snd_select] = via_ora;
                         psg.write(snd_select, via_ora);
+                        psgWriteHook?.Invoke(snd_select, via_ora);
                     }
 
                     break;
@@ -397,6 +400,7 @@ namespace Bloxorz
             EEPROM_WRITE = 3,
             EEPROM_READ = 4,
             SET_BANK = 5,
+            GET_BANK = 10,
         };
         private const int VECX_MUSIC = 0x8000;
         private const int VECX_PIC_RW = 0x8001;
@@ -424,6 +428,8 @@ namespace Bloxorz
                     // the PIC drives 4 bank lines
                     bank = arg & 0x0f;
                     return 0;
+                case PIC_Command.GET_BANK:
+                    return (byte)bank;
                 default:
                     return 0;
             }

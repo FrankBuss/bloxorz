@@ -24,6 +24,8 @@ namespace Bloxorz
         public int reg_u; //stack pointer
         public int reg_s;
         public int reg_pc; //program counter
+        // set when an instruction was fetched from the cartridge, i.e. the game runs
+        public bool cartExecuted;
         public int reg_a; //accumulator
         public int reg_b;
         public int reg_dp; //direct page
@@ -242,6 +244,7 @@ namespace Bloxorz
         {
             int data;
 
+            if (reg_pc < 0x8000) cartExecuted = true;
             data = read8(reg_pc);
             reg_pc++;
 

@@ -13,23 +13,45 @@
 #define CMD_ENABLE_PROGRAMMER 6
 #define CMD_UART_COUNT 7
 #define CMD_UART_READ 8
+#define CMD_UART_READ_BLOCK 9
+#define CMD_GET_BANK 10
 
 // firmware version
-#define VERSION 4
+#define VERSION 5
+
+// a frame is 'V', 'X', command, argument and this check byte, other frames are ignored
+#define CHECK(cmd, arg) ((uint8_t)((cmd) ^ (arg) ^ 0xA5))
 
 volatile uint8_t shift;
 volatile uint8_t shiftCounter;
-volatile uint8_t id;
+volatile uint8_t id1;
+volatile uint8_t id2;
 volatile uint8_t cmd;
 volatile uint8_t arg;
+volatile uint8_t check;
 volatile uint16_t eepromAdr;
 volatile uint8_t timeout;
 
 // bytes received on the EUSART (MIDI in), ring buffer filled by the interrupt
-#define RX_SIZE 16
+#define RX_SIZE 128
+#define BLOCK_MAX 32
 volatile uint8_t rxBuf[RX_SIZE];
 volatile uint8_t rxHead;
 volatile uint8_t rxTail;
+
+// moves a received byte from the EUSART into the ring buffer
+#define RX_STORE() \
+    if (RC1STAbits.OERR) { \
+        RC1STAbits.CREN = 0; \
+        RC1STAbits.CREN = 1; \
+    } \
+    rxByte = RC1REG; \
+    if ((uint8_t)(rxHead - rxTail) < RX_SIZE) { \
+        rxBuf[rxHead & (RX_SIZE - 1)] = rxByte; \
+        rxHead++; \
+    }
+
+static void sendBlock(uint8_t limit);
 
 uint8_t readByte()
 {
@@ -44,29 +66,25 @@ uint8_t readByte()
         ; select bank for PORTC (bank 0)
         BANKSEL(PORTC)
                 
-        ; reset timer 1 and count pulse length
+        ; in the low phase after a pulse: reset the timeout and timer 1, which counts while PB6 is
+        ; high, and forget older falling edges
 start_read:
         movlw 0
         movwf TMR0L
         movwf TMR1L
         movwf TMR1H
-rwait1:
+        BANKSEL(IOCCF)
+        bcf BANKMASK(IOCCF), 3
+        ; wait for the falling edge at the end of the next pulse, latched in IOCCF3, so an interrupt
+        ; that covers the whole pulse doesn't lose it
+rwait:
         BANKSEL(_timeout)
-        btfsc _timeout, 0
+        btfsc BANKMASK(_timeout), 0
         goto timeout_exit
+        BANKSEL(IOCCF)
+        btfss BANKMASK(IOCCF), 3
+        goto rwait
         BANKSEL(PORTC)
-        btfss PORTC, 3
-        goto rwait1
-        BANKSEL(PORTC)
-        movlw 0
-        movwf TMR0L
-rwait0:                        
-        BANKSEL(_timeout)
-        btfsc _timeout, 0
-        goto timeout_exit
-        BANKSEL(PORTC)
-        btfsc PORTC, 3
-        goto rwait0
 
         ; test for 1 or 0 bit length
         movf TMR1L, W
@@ -94,6 +112,18 @@ timeout_exit:
 
 void writeByte(uint8_t b)
 {
+    // the line must be released within 65 ms, else there is no reply
+    uint8_t overflows = 0;
+    timeout = 0;
+    TMR0L = 0;
+    while (!PORTCbits.RC3) {
+        if (timeout) {
+            timeout = 0;
+            if (++overflows == 0) {
+                return;
+            }
+        }
+    }
     shiftCounter = 8;
     shift = b;
   #asm
@@ -212,30 +242,56 @@ void waitStart()
         ; select bank for PORTC (bank 0)
         BANKSEL(PORTC)
                 
-        ; wait for at least 5 us low on PB6
+        ; wait for at least 5 us low on PB6, or a falling edge of the cartridge button
 winit_wait:
         movlw 0
         movwf TMR0L
 wait:
+        BANKSEL(IOCAF)
+        btfsc BANKMASK(IOCAF), 3
+        goto wstart_end
+        BANKSEL(PORTC)
         btfsc PORTC, 3
         goto winit_wait
         movf TMR0L, W
         sublw 5
         btfsc STATUS, C
         goto wait
+wstart_end:
     #endasm
+}
+
+// cartridge button: back to bank 0 when it is still pressed after 20 ms, so the Vectrex reset starts
+// Bloxorz again; shorter pulses are bounces or noise
+void button()
+{
+    uint8_t i;
+    IOCAFbits.IOCAF3 = 0;
+    for (i = 0; i < 20; i++) {
+        __delay_ms(1);
+        if (PORTAbits.RA3) {
+            return;
+        }
+    }
+    LATCbits.LATC0 = 0;
+    LATAbits.LATA2 = 0;
+    LATCbits.LATC1 = 0;
+    LATAbits.LATA1 = 0;
 }
 
 void readCommand()
 {
-    waitStart();
-    id = readByte();
+    id1 = readByte();
+    if (timeout) return;
+    id2 = readByte();
     if (timeout) return;
     cmd = readByte();
     if (timeout) return;
     arg = readByte();
     if (timeout) return;
-    if (id =='V') {
+    check = readByte();
+    if (timeout) return;
+    if (id1 == 'V' && id2 == 'X' && check == CHECK(cmd, arg)) {
         switch (cmd) {
             case CMD_VERSION:
                 writeByte(VERSION);
@@ -285,6 +341,12 @@ void readCommand()
                     writeByte(0);
                 }
                 break;
+            case CMD_UART_READ_BLOCK:
+                sendBlock(arg);
+                break;
+            case CMD_GET_BANK:
+                writeByte((uint8_t)(LATCbits.LATC0 | LATAbits.LATA2 << 1 | LATCbits.LATC1 << 2 | LATAbits.LATA1 << 3));
+                break;
             case CMD_ENABLE_PROGRAMMER:
                 if (arg) {
                     // LC2G1POL not_inverted; LC2G2POL not_inverted; LC2G3POL not_inverted; LC2G4POL not_inverted; LC2POL not_inverted; 
@@ -306,40 +368,97 @@ void readCommand()
     }
 }
 
-void tmr0irq()
+// one byte of a fast reply: start bit low, 8 data bits LSB first, stop bit high, 24 us per bit on TMR0;
+// runs with interrupts off and stores a received MIDI byte in the stop bit
+static void fastByte(uint8_t b)
 {
-    timeout = 1;
+    uint8_t rxByte;
+    uint8_t i;
+    uint8_t t = 24;
+    TMR0L = 0;
+    LATCbits.LATC3 = 0;
+    for (i = 0; i < 8; i++) {
+        while (TMR0L < t) {
+        }
+        LATCbits.LATC3 = b & 1;
+        b >>= 1;
+        t += 24;
+    }
+    while (TMR0L < t) {
+    }
+    LATCbits.LATC3 = 1;
+    if (PIR1bits.RCIF) {
+        RX_STORE();
+    }
+    while (TMR0L < 240) {
+    }
+}
+
+// fast reply of up to BLOCK_MAX received bytes: the count, then the bytes
+static void sendBlock(uint8_t limit)
+{
+    uint8_t n = (uint8_t)(rxHead - rxTail);
+    if (n > limit) {
+        n = limit;
+    }
+    if (n > BLOCK_MAX) {
+        n = BLOCK_MAX;
+    }
+    // the Vectrex releases the line right after its request, give up after 255 us
+    timeout = 0;
+    TMR0L = 0;
+    while (!PORTCbits.RC3 && !timeout) {
+    }
+    if (timeout) {
+        return;
+    }
+    // an interrupt would shift the bit edges by its length
+    INTCONbits.GIE = 0;
+    LATCbits.LATC3 = 1;
+    TRISCbits.TRISC3 = 0;
+    TMR0L = 0;
+    while (TMR0L < 60) {
+    }
+    fastByte(n);
+    while (n) {
+        fastByte(rxBuf[rxTail % RX_SIZE]);
+        rxTail++;
+        n--;
+    }
+    TRISCbits.TRISC3 = 1;
+    INTCONbits.GIE = 1;
 }
 
 void interrupt isr(void)
 {
-    uint8_t b;
-    if (PIE0bits.TMR0IE && PIR0bits.TMR0IF) {
-        TMR0_ISR();
-    }
-    if (PIE1bits.RCIE && PIR1bits.RCIF) {
-        if (RC1STAbits.OERR) {
-            RC1STAbits.CREN = 0;
-            RC1STAbits.CREN = 1;
-        }
-        b = RC1REG;
-        if ((uint8_t)(rxHead - rxTail) < RX_SIZE) {
-            rxBuf[rxHead % RX_SIZE] = b;
-            rxHead++;
-        }
+    uint8_t rxByte;
+    if (PIR1bits.RCIF) {
+        RX_STORE();
+    } else if (PIR0bits.TMR0IF) {
+        PIR0bits.TMR0IF = 0;
+        timeout = 1;
     }
 }
 
 int main()
 {
-    TMR0_InterruptHandler = tmr0irq;
     SYSTEM_Initialize();
     PIE1bits.RCIE = 1;
+    // falling edges of the cartridge button and of PB6 are only latched in IOCAF3 and IOCCF3,
+    // without interrupt
+    IOCANbits.IOCAN3 = 1;
+    IOCCNbits.IOCCN3 = 1;
     INTCONbits.GIE = 1;
     INTCONbits.PEIE = 1;
     __delay_ms(100);
+    IOCAFbits.IOCAF3 = 0;
     while (1) {
-        readCommand();
+        waitStart();
+        if (IOCAFbits.IOCAF3) {
+            button();
+        } else {
+            readCommand();
+        }
     } 
 
     return 0;

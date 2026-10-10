@@ -25,6 +25,29 @@ _musicInit:
  jsr    PLY_INIT 
 	puls d,dp,x,y,u,pc   ; restore registers from stack and return
  
+; writes one sound chip register and its BIOS shadow: B = register, 2,s = value
+	.globl  _psgWrite
+_psgWrite:
+	pshs a,dp,x,u
+	lda #0hd0
+	tfr a,dp
+	lda 8,s
+	ldu #Vec_Snd_Shadow
+	sta b,u
+	exg a,b
+	sta *VIA_port_a
+	lda #0h19
+	sta *VIA_port_b
+	lda #0h01
+	sta *VIA_port_b
+	lda *VIA_port_a
+	stb *VIA_port_a
+	ldb #0h11
+	stb *VIA_port_b
+	ldb #0h01
+	stb *VIA_port_b
+	puls a,dp,x,u,pc
+
 	.globl  _musicPlay
 _musicPlay:
 	pshs    d,dp,x,y,u   ; y and u are used by the player and must be preserved for C callers

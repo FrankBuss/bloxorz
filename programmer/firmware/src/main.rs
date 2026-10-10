@@ -289,7 +289,7 @@ async fn serve<'d>(
                 out[10..14].copy_from_slice(&((extflash::TOTAL_SIZE >> 10) as u32).to_le_bytes());
                 // followed by the text of an init error, if there is one
                 let err: &[u8] = match cart {
-                    Ok(c) => c.midi_error().map_or(&[], |e| e.as_bytes()),
+                    Ok(_) => &[],
                     Err(e) => e.as_bytes(),
                 };
                 let mut msg = [0u8; 112];
@@ -471,7 +471,7 @@ async fn serve<'d>(
             | Cmd::CartWrite
             | Cmd::CartRead
             | Cmd::CartPic
-            | Cmd::MidiSend => {
+            | Cmd::CartTrace => {
                 let cart = match cart {
                     Ok(c) => c,
                     Err(e) => {
@@ -500,11 +500,16 @@ async fn serve<'d>(
                     }
                 }
 
-                // bytes to send on the MIDI output
-                Cmd::MidiSend => {
-                    match cart.midi_send(&buf[..payload_len]) {
-                        Ok(()) => respond(class, Status::Ok, &[]).await?,
-                        Err(e) => respond(class, Status::InitFailed, e.as_bytes()).await?,
+                // cmd:u8, arg:u8 -> 2048 bytes of PB6 samples, 8 per byte
+                Cmd::CartTrace => {
+                    if payload_len < 2 {
+                        respond(class, Status::BadLen, &[]).await?;
+                    } else {
+                        let (c, a) = (buf[0], buf[1]);
+                        match cart.pic_trace(c, a, &mut buf[..2048]) {
+                            Ok(()) => respond(class, Status::Ok, &buf[..2048]).await?,
+                            Err(e) => respond(class, Status::CartTimeout, e.as_bytes()).await?,
+                        }
                     }
                 }
 

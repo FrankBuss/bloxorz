@@ -38,11 +38,10 @@ CMD = {
     "ping": 0x01, "info": 0x02,
     "cart_id": 0x10, "cart_enable": 0x11, "cart_bank": 0x12,
     "cart_erase_chip": 0x13, "cart_erase_sector": 0x14,
-    "cart_write": 0x15, "cart_read": 0x16, "cart_pic": 0x17,
+    "cart_write": 0x15, "cart_read": 0x16, "cart_pic": 0x17, "cart_trace": 0x18,
     "flash_id": 0x20, "flash_erase": 0x21, "flash_write": 0x22, "flash_read": 0x23,
     "audio_load_sram": 0x30, "audio_play_sram": 0x31, "audio_play_flash": 0x32,
     "audio_stop": 0x33, "audio_codec_init": 0x34, "audio_volume": 0x35, "audio_codec_read": 0x36, "audio_codec_write": 0x37,
-    "midi_send": 0x50,
     "bootsel": 0x40,
 }
 
@@ -152,7 +151,8 @@ def progress(done, total, started, what):
 
 # cartridge PIC commands over PB6
 PIC_VERSION, PIC_SET_EEPROM_ADR, PIC_EEPROM_WRITE, PIC_EEPROM_READ, PIC_SET_BANK, PIC_ENABLE_PROGRAMMER = 1, 2, 3, 4, 5, 6
-PIC_UART_COUNT, PIC_UART_READ = 7, 8
+PIC_UART_COUNT, PIC_UART_READ, PIC_UART_READ_BLOCK = 7, 8, 9
+TRACE_US = 1.0   # sample spacing of cart_trace
 EEPROM_SIZE = 256
 
 
@@ -213,13 +213,168 @@ def pic_check(pr):
     print("EEPROM write/read ok")
 
 
-def midi_test(pr):
-    """Send bytes on the MIDI output and read them back from the PIC's receive buffer."""
-    pattern = bytes([0x90, 0x3C, 0x7F, 0x80, 0x3C, 0x00, 0xF8, 0x55, 0xAA, 0x00, 0xFF])
+VECTREX_AY_HZ = 1500000
+SYSEX_BATCH = bytes([0xF0, 0x7D, 0x7F])
+
+
+def psg_frames(path):
+    """Frame rate and frames of (register, value) writes of a PSG register dump. Byte 5 of the
+    header is the frame rate, 0 = 50 per second."""
+    d = open(path, "rb").read()
+    if d[:4] != b"PSG\x1a":
+        sys.exit(f"{path} is not a PSG file")
+    rate = d[5] or 50
+    frames, cur, i = [], [], 16
+    while i < len(d):
+        b = d[i]
+        if b == 0xFF:
+            frames.append(cur); cur = []; i += 1
+        elif b == 0xFE:
+            for _ in range(d[i + 1] * 4):
+                frames.append(cur); cur = []
+            i += 2
+        elif b == 0xFD:
+            break
+        else:
+            cur.append((b & 15, d[i + 1])); i += 2
+    if cur:
+        frames.append(cur)
+    return rate, frames
+
+
+class MidiOut:
+    """Output of a USB MIDI interface, the ALSA raw MIDI device /dev/snd/midiC<card>D<device>;
+    the first one when none is given."""
+
+    def __init__(self, device=None):
+        devices = sorted(glob.glob("/dev/snd/midiC*D*"))
+        self.path = device or (devices[0] if devices else None)
+        if not self.path:
+            sys.exit("no MIDI interface found (/dev/snd/midiC*D*)")
+        self.f = open(self.path, "wb", buffering=0)
+
+    def send(self, data):
+        self.f.write(bytes(data))
+
+
+def midi_play(out, path, clock, loop):
+    """Stream a PSG register dump as batch sysex, one message per frame, periods scaled from the
+    source chip clock to the Vectrex's 1.5 MHz."""
+    rate, frames = psg_frames(path)
+    scale = VECTREX_AY_HZ / clock
+    print(f"{path}: {len(frames) / rate:.1f} s at {rate} frames per second, "
+          f"{sum(map(len, frames))} register writes, clock {clock} Hz")
+    while True:
+        source = [0] * 16     # register state of the source
+        sent = [None] * 16    # last value sent to the Vectrex
+        t0 = time.perf_counter()
+        for n, frame in enumerate(frames):
+            for r, v in frame:
+                source[r] = v
+            msg = bytearray(SYSEX_BATCH)
+            touched = {r for r, _ in frame}
+            for r in sorted(touched | {r + 1 for r in touched if r in (0, 2, 4, 11)} | {r - 1 for r in touched if r in (1, 3, 5, 12)}):
+                if r in (0, 1, 2, 3, 4, 5):           # tone period pairs
+                    base = r & ~1
+                    period = min(4095, round((source[base] | source[base + 1] << 8) * scale))
+                    v = period & 0xFF if r == base else period >> 8
+                elif r == 6:                          # noise period
+                    v = min(31, max(1, round(source[6] * scale)))
+                elif r in (11, 12):                   # envelope period
+                    period = min(65535, round((source[11] | source[12] << 8) * scale))
+                    v = period & 0xFF if r == 11 else period >> 8
+                else:
+                    v = source[r]
+                if v != sent[r] or r == 13:           # 13 retriggers the envelope on every write
+                    sent[r] = v
+                    msg += bytes([(r << 3) | (v >> 5), v & 31])
+            if len(msg) > len(SYSEX_BATCH):
+                msg.append(0xF7)
+                out.send(msg)
+            delay = t0 + (n + 1) / rate - time.perf_counter()
+            if delay > 0:
+                time.sleep(delay)
+        if not loop:
+            break
+    # mute
+    out.send(SYSEX_BATCH + bytes([(8 << 3), 0, (9 << 3), 0, (10 << 3), 0, 0xF7]))
+
+
+def trace_edges(data):
+    """PB6 samples of cart_trace as a list of (level, start_us, length_us)."""
+    bits = [(b >> i) & 1 for b in data for i in range(8)]
+    runs, start = [], 0
+    for i in range(1, len(bits) + 1):
+        if i == len(bits) or bits[i] != bits[start]:
+            runs.append((bits[start], start * TRACE_US, (i - start) * TRACE_US))
+            start = i
+    return runs
+
+
+def fast_bytes(data, from_us):
+    """Decode a fast PB6 reply like the Vectrex does: after each low start bit sample 8 bits
+    36 us after its edge, 24 us apart, LSB first; a count byte then that many bytes."""
+    bits = [(b >> i) & 1 for b in data for i in range(8)]
+    end = len(bits) * TRACE_US
+    level = lambda us: bits[min(len(bits) - 1, int(us / TRACE_US))]
+    t = from_us
+    out = []
+    want = None
+    while want is None or len(out) < want:
+        while t < end and level(t) == 0:
+            t += TRACE_US
+        while t < end and level(t) == 1:
+            t += TRACE_US
+        if t >= end:
+            return want, out, "timeout"
+        v = 0
+        for i in range(8):
+            v |= level(t + 36 + 24 * i) << i
+        t += 36 + 24 * 8
+        if want is None:
+            want = v
+        else:
+            out.append(v)
+    return want, out, "ok"
+
+
+def trace_reply(pr, cmd, arg):
+    """Send a PIC command through cart_trace and decode a fast block reply from the samples."""
+    _, d = pr.cmd("cart_trace", bytes([cmd, arg]))
+    runs = trace_edges(d)
+    frame_end = next((s for l, s, n in runs if l == 1 and n > 40 and s > 500), None)
+    if frame_end is None:
+        return runs, None, [], "no frame end"
+    count, data, status = fast_bytes(d, frame_end)
+    return runs, count, data, status
+
+
+def block_test(pr, out):
+    """Send MIDI bytes into the cartridge in the programmer and read them back with the fast block
+    reply, decoded like the Vectrex does."""
     while pic(pr, PIC_UART_COUNT, 0):
         pic(pr, PIC_UART_READ, 0)
-    pr.cmd("midi_send", pattern)
-    time.sleep(0.05)
+    pattern = bytes([0x90, 0x3C, 0x7F, 0xF0, 0x7D, 0x7F, 0x00, 0x1F, 0xF7])
+    out.send(pattern)
+    time.sleep(0.1)
+    runs, count, data, status = trace_reply(pr, PIC_UART_READ_BLOCK, 32)
+    print(f"sent         {pattern.hex(' ')}")
+    print(f"block reply  count {count}, {bytes(data).hex(' ') if data else '-'} ({status})")
+    if bytes(data) != pattern:
+        print("edges:", " ".join(f"{'H' if l else 'L'}{n:.0f}" for l, s, n in runs[:60]))
+        sys.exit("fast block read failed")
+    print("fast block read ok")
+
+
+def midi_test(pr, out):
+    """Send MIDI bytes into the cartridge in the programmer and read them back from the PIC's
+    receive buffer."""
+    # complete MIDI messages only, a USB MIDI interface drops incomplete ones
+    pattern = bytes([0x90, 0x3C, 0x7F, 0x80, 0x3C, 0x00, 0xF8, 0xB0, 0x07, 0x55, 0xC1, 0x2A, 0xFF])
+    while pic(pr, PIC_UART_COUNT, 0):
+        pic(pr, PIC_UART_READ, 0)
+    out.send(pattern)
+    time.sleep(0.1)
     n = pic(pr, PIC_UART_COUNT, 0)
     got = bytes(pic(pr, PIC_UART_READ, 0) for _ in range(n))
     print(f"MIDI sent     {pattern.hex(' ')}")
@@ -406,6 +561,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--port", help="serial device (default: autodetect)")
+    ap.add_argument("--midi", help="raw MIDI device of the MIDI interface (default: the first /dev/snd/midiC*D*)")
     sub = ap.add_subparsers(dest="group", required=True)
 
     sub.add_parser("info")
@@ -422,10 +578,15 @@ def main():
     cee = c.add_parser("eeprom").add_subparsers(dest="eeprom", required=True)
     cee.add_parser("dump", help="print the PIC's 256 EEPROM bytes")
     cee.add_parser("clear", help="erase the high scores")
-    c.add_parser("miditest", help="send MIDI bytes on J3 and read them back from the PIC")
+    c.add_parser("miditest", help="send MIDI bytes through the MIDI interface and read them back from the PIC")
+    c.add_parser("blocktest", help="send MIDI bytes through the MIDI interface and read them back with the fast block reply, timed like the Vectrex")
+    ct = c.add_parser("pictrace", help="send a PIC command and print the PB6 edges"); ct.add_argument("cmd", type=lambda x: int(x, 0)); ct.add_argument("arg", type=lambda x: int(x, 0))
 
     m = sub.add_parser("midi").add_subparsers(dest="action", required=True)
-    ms = m.add_parser("send", help="send bytes on the MIDI output, hex"); ms.add_argument("bytes", nargs="+")
+    ms = m.add_parser("send", help="send bytes through the MIDI interface, hex"); ms.add_argument("bytes", nargs="+")
+    mp = m.add_parser("play", help="stream a PSG register dump as sysex"); mp.add_argument("file")
+    mp.add_argument("--clock", type=int, default=VECTREX_AY_HZ, help="sound chip clock of the dump in Hz, 1773400 for ZX Spectrum")
+    mp.add_argument("--loop", action="store_true")
     ce = c.add_parser("erase", help="erase one 4 KiB sector, or the whole chip")
     ce.add_argument("addr", type=lambda x: int(x, 0), nargs="?",
                     help="sector address; omit to erase the whole chip")
@@ -455,6 +616,15 @@ def main():
     av.add_argument("db", type=float, help="0 (loudest) to -63.5, in 0.5 dB steps")
 
     args = ap.parse_args()
+    if args.group == "midi":
+        out = MidiOut(args.midi)
+        if args.action == "play":
+            midi_play(out, args.file, args.clock, args.loop)
+        else:
+            data = bytes(int(b, 16) for b in args.bytes)
+            out.send(data)
+            print(f"sent {data.hex(' ')} to {out.path}")
+        return
     pr = Programmer(args.port)
 
     if args.group == "info":
@@ -493,7 +663,13 @@ def main():
             _, r = pr.cmd("cart_pic", bytes([args.cmd & 0xFF, args.arg & 0xFF]))
             print(pic_reply(r))
         elif args.action == "miditest":
-            midi_test(pr)
+            midi_test(pr, MidiOut(args.midi))
+        elif args.action == "blocktest":
+            block_test(pr, MidiOut(args.midi))
+        elif args.action == "pictrace":
+            runs, count, data, status = trace_reply(pr, args.cmd, args.arg)
+            print("edges:", " ".join(f"{'H' if l else 'L'}{n:.0f}" for l, s, n in runs[:80]))
+            print(f"fast reply: count {count}, {bytes(data).hex(' ') if data else '-'} ({status})")
         elif args.action == "eeprom":
             if args.eeprom == "dump":
                 data = bytes(eeprom_read(pr, a) for a in range(EEPROM_SIZE))
@@ -509,10 +685,6 @@ def main():
             _, d = pr.cmd("cart_id")
             print(f"{d[0]:02X} {d[1]:02X}")
             pr.cmd("cart_enable", b"\x00")
-    elif args.group == "midi":
-        data = bytes(int(b, 16) for b in args.bytes)
-        pr.cmd("midi_send", data)
-        print(f"sent {data.hex(' ')}")
     elif args.group == "flash":
         if args.action == "write":
             flash_write(pr, args.file, args.addr)

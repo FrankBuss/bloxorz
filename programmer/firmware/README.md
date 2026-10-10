@@ -113,6 +113,7 @@ direction so a host that loses framing can resynchronise by scanning.
 | 0x15 | CartWrite | addr:u32, data | CRC32 of the data programmed |
 | 0x16 | CartRead | addr:u32, len:u32 | data |
 | 0x17 | CartPic | cmd:u8, arg:u8 | 8 × u16: PIC reply pulse widths in µs |
+| 0x18 | CartTrace | cmd:u8, arg:u8 | 2048 bytes: PB6 sampled every microsecond from the start of the frame, 8 samples per byte, LSB first |
 | 0x20 | FlashId | — | 4 × JEDEC ID |
 | 0x21 | FlashErase | addr:u32, len:u32 | — |
 | 0x22 | FlashWrite | addr:u32, data | CRC32 |
@@ -126,7 +127,6 @@ direction so a host that loses framing can resynchronise by scanning.
 | 0x36 | AudioCodecRead | reg:u8, count:u8 | register values |
 | 0x37 | AudioCodecWrite | (reg:u8, val:u8)* | — |
 | 0x40 | Bootsel | — | — (reboots into USB BOOTSEL) |
-| 0x50 | MidiSend | bytes | — (sent on the MIDI output) |
 
 Status: 0 ok, 1 bad CRC, 2 unknown command, 3 bad length, 4 cartridge timeout,
 5 verify failed, 6 wrong cartridge ID, 7 busy, 8 out of range, 9 flash error,
@@ -245,12 +245,17 @@ Programming throughput is 31 KB/s, so a full cartridge takes about 17 s.
 One wire, 10 kΩ pull-up on the cartridge, idle high, driven low and released.
 The PIC16F18323 (`mplabx/cartridge.X/main.c`) decodes it like this:
 
-**Frame, host to PIC:** the line low for at least 6 µs, then 24 bits MSB
-first: `'V'` (0x56), command, argument. A bit is one high pulse; its width is
-the value: **2 to 6 µs = 0, 7 to 12 µs = 1** (the PIC gates an 8 MHz timer
-with the line and compares with 50 counts = 6.25 µs; the timer's low byte
-wraps at 32 µs). After each pulse the line is low; the next rising edge must
-come within 256 µs. No gaps are needed between bytes.
+**Frame, host to PIC:** the line low for at least 6 µs, then 40 bits MSB
+first: `'V'` (0x56), `'X'` (0x58), command, argument and the check byte
+command ^ argument ^ 0xA5. The PIC executes and answers only frames with both
+magic bytes and the right check byte; it ignores anything else on the line. A
+bit is one high pulse; its width is the value: **2 to 6 µs = 0, 7 to 12 µs =
+1** (the PIC gates an 8 MHz timer with the line and compares with 50 counts =
+6.25 µs; the timer's low byte wraps at 32 µs). The falling edge at the end of
+each pulse is latched in IOCCF3, so an interrupt during a pulse delays its
+decoding but never loses it. After each pulse the line is low for at least
+15 µs; the falling edge of the next pulse must come within 256 µs. No gaps are
+needed between bytes.
 
 | Command | Argument | Reply |
 |---|---|---|
@@ -260,20 +265,46 @@ come within 256 µs. No gaps are needed between bytes.
 | 4 EEPROM_READ | address | byte |
 | 5 SET_BANK | bank 0-15, bits 0-3 = A15-A18 | echo |
 | 6 ENABLE_PROGRAMMER | 1 on, 0 off | echo |
-| 7 UART_COUNT | — | bytes waiting in the MIDI receive buffer, up to 16 |
+| 7 UART_COUNT | — | bytes waiting in the MIDI receive buffer, up to 128 |
 | 8 UART_READ | — | next received byte, 0 when the buffer is empty |
+| 9 UART_READ_BLOCK | up to 32 | fast reply: the count, then the bytes |
+| 10 GET_BANK | — | bank 0-15 from the A15-A18 latches |
 | other | — | 0 |
 
-**Reply, PIC to host:** the PIC waits for the line to be high, then 405 µs,
+VERSION answers 5 since the frame with `'X'` and the check byte.
+
+**Fast reply** of UART_READ_BLOCK, for the Vectrex only: 60 µs after the
+line is released, each byte as a low start bit, 8 data bits LSB first and a
+high stop bit, **24 µs per bit**, bytes back to back, the line released after
+the last one. The Vectrex polls for the start edge every 7 to 15 cycles,
+samples bit 0 31-41 µs after it and then every 24 µs, and polls for the next
+start bit from inside the stop bit; the PIC times the bits on its 1 µs timer
+from the start edge, so one late edge never shifts the rest. Interrupts are
+off during the fast reply; a MIDI byte that arrives meanwhile is moved from
+the EUSART into the buffer in the next stop bit. A 32-byte block takes 9.4 ms
+including the request. The
+programmer's PB6 state machine cannot decode this format; `cart blocktest`
+records it with `CartTrace` and decodes it the way the Vectrex does.
+
+The cartridge button (SW1 on RA3) sets the bank back to 0, so after a game
+from another bank a press of the cartridge button followed by the Vectrex reset
+starts Bloxorz again. Its falling edge is latched in IOCAF3 and checked in the
+PIC's idle loop; the bank changes only when RA3 is still low after 20 ms, so
+noise and bounces don't switch it. The port carries no reset line, so there is
+nothing for the PIC to detect a reset by.
+
+**Reply, PIC to host:** the PIC waits for the line to be high, at most 65 ms,
+else it doesn't answer, then 405 µs,
 then drives it low for 200 µs and sends one byte MSB first: **high 160 µs =
 1, high 80 µs = 0**, each followed by low to a 300 µs bit period; then it
 releases the line.
 
 Implementation: a PIO state machine (PIO2, GPIO base 16, 0.5 µs per cycle)
-sends the start low of 17.5 µs, pulses of 3.5 µs (0) and 9 µs (1) with lows
-of 18 and 21.5 µs, holds the line low 33-37 µs after the last bit and high
-for 2 µs, then releases it and measures the 8 reply pulses in 1 µs steps
-(measured 82 µs and 162 µs). After the last pulse the PIC holds the line low
+sends the start low of 17 µs, pulses of 3.5 µs (0) and 9.5 µs (1) with lows
+of 17.5 µs, holds the line low about 33 µs after the last bit and high for
+2 µs, then releases it and measures the 8 reply pulses in 1 µs steps (measured
+82 µs and 162 µs). The host queues three words per frame: the number of bits
+minus 1, the first 32 bits and the check byte. After the last pulse the PIC holds the line low
 for up to 220 µs before releasing it; the state machine waits for the release
 plus 16 µs before it starts the next frame, since a frame that starts inside
 that window is dropped by the PIC. `CartEnable`, `CartBank` and `CartPic`
@@ -292,26 +323,62 @@ the MCC generated files are not in git. `build.sh` builds `build/cartridge.hex`
 with XC8 and `flash.sh` programs it over a PICkit 4. RC1 drives flash A17, so
 the build removes the EUSART TX routing to it that MCC generates while the TX
 pin is assigned in `MyConfig.mc3`, and it leaves out the generated
-`interrupt_manager.c`: the interrupt routine is in `main.c`, where it also
-collects the EUSART receive bytes. Programming the PIC erases its EEPROM, which
+`interrupt_manager.c`: the interrupt routine is in `main.c`, where it
+collects the EUSART receive bytes and sets the PB6 timeout. Programming the PIC erases its EEPROM, which
 holds the high scores.
 
 ### 5.6 MIDI input
 
 The cartridge's DIN-5 socket is a MIDI input: DIN pin 4 through 220 Ω into the
 6N135 opto LED, DIN pin 5 back; the opto output drives the PIC's EUSART RX at
-31250 baud, 8N1. Received bytes go to a 16-byte buffer that the Vectrex reads
-with the PB6 commands 7 and 8.
+31250 baud, 8N1. Received bytes go to a 128-byte buffer that the Vectrex reads
+with the PB6 commands 7, 8 and 9.
 
-The programmer sends MIDI from test point **J3 (GPIO38)**: a PIO state machine
-sources about 5 mA through the LED when the pin is high, so the line idles
-low and the data bits are inverted. Wiring for the test: **J3 to DIN pin 4,
-programmer GND to DIN pin 5**, nothing else.
+MIDI comes from a USB MIDI interface on the PC, the ALSA raw MIDI device
+`/dev/snd/midiC*D*` (the first one, or `--midi`), its MIDI out plugged into
+the DIN socket. With the cartridge in the programmer:
 
 ```bash
-./upload.py cart miditest       # sends 11 bytes, reads them back over PB6
-./upload.py midi send 90 3c 7f  # any bytes, hex
+./upload.py cart miditest       # sends 13 bytes, reads them back over PB6
+./upload.py cart blocktest      # sends 9 bytes, reads them with the fast reply
+./upload.py midi send 90 3c 7f  # any complete MIDI messages, hex
 ```
+
+The interface sends only complete MIDI messages; it drops a data byte without
+its status byte or a message that is cut short.
+
+On the Vectrex, button 4 in the level select starts the MIDI player. It reads
+blocks of up to 32 bytes from the PIC with UART_READ_BLOCK, about 9 ms per
+block, and redraws only every third block without waiting for the frame, so
+the sound chip follows the input with a few milliseconds of latency:
+
+* note on/off on any MIDI channel plays on the three tone channels of the
+  AY-3-8912, the chip's full polyphony: period from the note number, volume
+  from the velocity, a repeated note retriggers its channel, a fourth note
+  replaces the oldest one; the noise generator and the envelope are reachable
+  through sysex
+* `F0 7D rr hh ll F7` writes sound chip register `rr` (0-15) with the value
+  `hh << 4 | ll`, both nibbles as 7-bit data bytes
+* `F0 7D 7F d1 d2 d1 d2 ... F7` writes any number of registers, each as
+  `d1 = rr << 3 | value >> 5`, `d2 = value & 31`, applied as soon as its two
+  bytes arrived, so a whole frame of a register dump is one message
+* the screen shows the notes held on channels A, B, C, the received byte
+  count and the last sysex register write
+* register 7 keeps the I/O port an input, whatever a sysex writes, so the
+  buttons keep working
+
+Register dumps play with `./upload.py midi play file.psg`, one batch sysex per
+1/50 s frame with the changed registers only, `--loop` to repeat, `--clock`
+with the source chip's clock to rescale the tone, noise and envelope periods
+to the Vectrex's 1.5 MHz, 1773400 for ZX Spectrum tunes. Byte 5 of the dump
+header is the frame rate, 0 for 50. `../../music/` has two dumps to try and
+the tools: `vgm2psg.py` for the AY writes of a VGM file, `dump-bloxorz.sh`
+for the game's own title music. `../../music/README.md` has the licenses,
+`../../credits.md` where each tune comes from.
+
+Button 1 switches the drawing off, so nothing but the link and the sound chip
+is active and the hum stays constant, button 2 switches it on again, button 3
+ends the test and mutes the channels.
 
 ### 5.7 Flashing a cartridge
 
