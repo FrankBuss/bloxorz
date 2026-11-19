@@ -183,82 +183,81 @@ const uint8_t movingMusic[] = {
 
 const uint8_t *currentMusic = startMusic;
 
-// BLOXORZ logo, from the VecFever version, one Draw_VL_mode vector list per letter
+// BLOXORZ logo, one Draw_VL_mode vector list per letter, traced from a screenshot of the logo.
+// The lists are relative to the bottom left corner of the letter, at LOGO_SCALE.
 #define LOGO_MOVE 0
 #define LOGO_DRAW 2
 #define LOGO_END 1
-#define LOGO_UNIT 14
-#define LOGO_HALF 7
 #define LOGO_SCALE 0x3f
 #define LOGO_Y 0
 
 const int8_t logoB[] = {
-    LOGO_MOVE, 0, 2 * LOGO_UNIT,
-    LOGO_DRAW, LOGO_UNIT, LOGO_UNIT,
-    LOGO_DRAW, LOGO_UNIT, 0,
-    LOGO_DRAW, LOGO_UNIT, -LOGO_UNIT,
-    LOGO_DRAW, LOGO_UNIT, LOGO_UNIT,
-    LOGO_DRAW, LOGO_UNIT, 0,
-    LOGO_DRAW, LOGO_UNIT, -LOGO_UNIT,
-    LOGO_DRAW, 0, -2 * LOGO_UNIT,
-    LOGO_MOVE, -LOGO_UNIT, LOGO_UNIT,
-    LOGO_DRAW, 0, LOGO_UNIT,
-    LOGO_DRAW, -LOGO_UNIT, 0,
-    LOGO_MOVE, -2 * LOGO_UNIT, -LOGO_UNIT,
-    LOGO_DRAW, 0, LOGO_UNIT,
-    LOGO_DRAW, -LOGO_UNIT, 0,
+    LOGO_MOVE, 109, 0,
+    LOGO_DRAW, 0, 39,
+    LOGO_DRAW, -17, 11,
+    LOGO_DRAW, -18, 0,
+    LOGO_DRAW, -18, -12,
+    LOGO_DRAW, -21, 12,
+    LOGO_DRAW, -17, 0,
+    LOGO_DRAW, -18, -12,
+    LOGO_MOVE, 37, -25,
+    LOGO_DRAW, -22, 0,
+    LOGO_DRAW, 0, 13,
+    LOGO_MOVE, 79, -14,
+    LOGO_DRAW, -24, 0,
+    LOGO_DRAW, 0, 13,
     LOGO_END};
 
 const int8_t logoL[] = {
-    LOGO_MOVE, 0, 3 * LOGO_UNIT,
-    LOGO_DRAW, LOGO_UNIT, 0,
-    LOGO_DRAW, 0, -2 * LOGO_UNIT,
-    LOGO_DRAW, 5 * LOGO_UNIT, 0,
-    LOGO_DRAW, 0, -LOGO_UNIT,
+    LOGO_MOVE, 109, 0,
+    LOGO_DRAW, 0, 14,
+    LOGO_DRAW, -91, 0,
+    LOGO_DRAW, 0, 26,
+    LOGO_DRAW, -18, 0,
     LOGO_END};
 
 const int8_t logoO[] = {
-    LOGO_MOVE, 0, 3 * LOGO_UNIT,
-    LOGO_DRAW, 6 * LOGO_UNIT, 0,
-    LOGO_DRAW, 0, -3 * LOGO_UNIT,
-    LOGO_MOVE, -LOGO_UNIT, LOGO_UNIT,
-    LOGO_DRAW, 0, LOGO_UNIT,
-    LOGO_DRAW, -4 * LOGO_UNIT, 0,
+    LOGO_MOVE, 109, 0,
+    LOGO_DRAW, 0, 43,
+    LOGO_DRAW, -109, 0,
+    LOGO_MOVE, 90, -31,
+    LOGO_DRAW, -79, 0,
+    LOGO_DRAW, 0, 12,
     LOGO_END};
 
 const int8_t logoX[] = {
-    LOGO_MOVE, 0, LOGO_UNIT,
-    LOGO_DRAW, 2 * LOGO_UNIT, LOGO_HALF,
-    LOGO_MOVE, -2 * LOGO_UNIT, 3 * LOGO_HALF,
-    LOGO_DRAW, 3 * LOGO_UNIT, -LOGO_UNIT,
-    LOGO_DRAW, 3 * LOGO_UNIT, LOGO_UNIT,
-    LOGO_DRAW, 0, -LOGO_UNIT,
-    LOGO_MOVE, -2 * LOGO_UNIT, -LOGO_HALF,
-    LOGO_DRAW, 2 * LOGO_UNIT, -LOGO_HALF,
-    LOGO_DRAW, 0, -LOGO_UNIT,
+    LOGO_MOVE, 109, 0,
+    LOGO_DRAW, 0, 15,
+    LOGO_DRAW, -31, 8,
+    LOGO_MOVE, 31, 9,
+    LOGO_DRAW, 0, 16,
+    LOGO_DRAW, -53, -15,
+    LOGO_DRAW, -56, 15,
+    LOGO_MOVE, 0, -33,
+    LOGO_DRAW, 29, 9,
     LOGO_END};
 
 const int8_t logoR[] = {
-    LOGO_MOVE, 0, LOGO_UNIT,
-    LOGO_DRAW, 3 * LOGO_UNIT, 0,
-    LOGO_MOVE, -3 * LOGO_UNIT, 2 * LOGO_UNIT,
-    LOGO_DRAW, 3 * LOGO_UNIT, -LOGO_UNIT,
-    LOGO_DRAW, LOGO_UNIT, LOGO_UNIT,
-    LOGO_DRAW, LOGO_UNIT, 0,
-    LOGO_DRAW, LOGO_UNIT, -LOGO_UNIT,
-    LOGO_DRAW, 0, -2 * LOGO_UNIT,
-    LOGO_MOVE, -LOGO_UNIT, LOGO_UNIT,
-    LOGO_DRAW, 0, LOGO_UNIT,
-    LOGO_DRAW, -LOGO_UNIT, 0,
+    LOGO_MOVE, 109, 0,
+    LOGO_DRAW, 0, 40,
+    LOGO_DRAW, -17, 11,
+    LOGO_DRAW, -18, 0,
+    LOGO_DRAW, -20, -13,
+    LOGO_DRAW, -54, 13,
+    LOGO_MOVE, 49, -36,
+    LOGO_DRAW, -49, 0,
+    LOGO_MOVE, 90, 0,
+    LOGO_DRAW, -21, 0,
+    LOGO_DRAW, 0, 14,
     LOGO_END};
 
 const int8_t logoZ[] = {
-    LOGO_MOVE, 0, 3 * LOGO_UNIT,
-    LOGO_DRAW, LOGO_UNIT, 0,
-    LOGO_DRAW, 0, -2 * LOGO_UNIT,
-    LOGO_DRAW, 4 * LOGO_UNIT, 2 * LOGO_UNIT,
-    LOGO_DRAW, LOGO_UNIT, 0,
-    LOGO_DRAW, 0, -3 * LOGO_UNIT,
+    LOGO_MOVE, 109, -1,
+    LOGO_DRAW, 0, 40,
+    LOGO_DRAW, -18, 0,
+    LOGO_DRAW, -73, -23,
+    LOGO_DRAW, 0, 25,
+    LOGO_DRAW, -18, 0,
     LOGO_END};
 
 struct LogoLetter
@@ -267,15 +266,15 @@ struct LogoLetter
     int8_t x;
 };
 
-// letter positions at scale 0x7f, one logo unit is 7 at this scale
+// letter positions at scale 0x7f
 const struct LogoLetter logo[] = {
-    {logoB, -112},
-    {logoL, -77},
-    {logoO, -49},
+    {logoB, -107},
+    {logoL, -73},
+    {logoO, -46},
     {logoX, -14},
     {logoO, 21},
-    {logoR, 56},
-    {logoZ, 84}};
+    {logoR, 52},
+    {logoZ, 87}};
 
 enum GameState_t
 {
